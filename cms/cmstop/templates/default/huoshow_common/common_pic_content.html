@@ -1,0 +1,153 @@
+<div class="main_body">
+  <div class="Photo_Detailspage">
+    <div class="Photo_Detailspage_top"><h1 class="Photo_Detailspage_top_bt">{$title}</h1></div>
+    <div class="Photo_Detailspage_top_list">
+      <span class="Photo_Detailspage_top_shijian">{date('Y-m-d H:i', $published)} <!--{if $source_name}-->
+        <span>来源：<!--{if $source_url}--><a href="{$source_url}" target="_blank">{$source_name}</a><!--{else}-->{$source_name}<!--{/if}-->
+        </span><!--{/if}-->
+      </span>
+	  
+      <span class="Photo_Detailspage_top_tu03"><a href="{UPLOAD_URL}{$pages[$page][image]}" target="_blank"></a></span>    <a href="{UPLOAD_URL}{$pages[$page][image]}" target="_blank"> 查看原图</a> | <span class="Photo_Detailspage_top_tu04"> <a></a></span> <a href="{APP_URL}{url('comment/comment/index', 'contentid=' . $contentid)}"> 评论 [<span class="comments">{$comments}</span>]</a>
+  
+    </div>
+	
+    <div class="Photo_Detailspage_c">
+      <table>
+        <tr>
+          <td>
+            <!--{if $pages[$prevpage][url]}-->
+            <span class="Photo_Detailspage_left">
+              <a href="{$pages[$prevpage][url]}"></a>
+            </span>
+            <!--{/if}-->
+          </td>
+          <td width="100%">
+            <div class="photo-view">
+              <img src="{thumb($pages[$page][image], 941, 627)}" />
+            </div>
+          </td>
+          <td>
+            <!--{if $pages[$nextpage][url]}-->
+            <span class="Photo_Detailspage_right">
+              <a href="{$pages[$nextpage][url]}"></a>
+            </span>
+            <!--{/if}-->
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="Photo_Detailspage_bottom"><span class="Photo_Detailspage_bottom_shuzi">{$page}/<span class="sanshi">{$total}</span></span>
+      <div class="photo_Detailspage_bottom_text">
+     
+      <p class="curr-summary">{$pages[$page][note]}</p>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="pic">
+      <div class="pic_left">
+        <div class="pic_left_list">
+          <!--#include virtual ="{ROOT}api/article.php?act=getPicturePreNews&contentid={$contentid}&catid={$catid}"--> 
+        </div>
+      </div>
+      <div class="pic_right">
+        <div class="pic_left_list">
+          <!--#include virtual ="{ROOT}api/article.php?act=getPictureNextNews&contentid={$contentid}&catid={$catid}"--> 
+        </div>
+      </div>
+      <div class="pic_zhongjian" id="pbox111">
+        <div class="pic_zhongjian_left"><a class="pic_zhongjian_left1" href="#">&nbsp;</a></div>
+        <div class="pic_zhongjian_right"><a href="#" class="pic_zhongjian_right1">&nbsp;</a></div>	
+        <div class="pic_zhongjian_c">
+          <div class="pic_zhongjian_c_1">
+            <ul class="pic_zhongjian_tu">	
+              <!--{loop $pages $k $pic}-->
+              <?php if($k%4==1 and $k!=1){
+              echo '</ul><ul class="pic_zhongjian_tu">';
+              }?>
+              <li {if $page==$k} style="" {/if}>
+              <table>
+                <tr>
+                  <td class="imgre"><a href="{$pic[url]}" ><img  src="{thumb($pic[image], 110, 74)}"/></a></td>
+                </tr>
+              </table>
+              <div class="pic_left_list_pic_block"><span class="hot_movie_text">{$k}/{$total}</span></div>
+              </li>
+
+              <!--{/loop}-->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script>
+          make_pagebox('pbox111', {
+            pages_selector: '.pic_zhongjian_tu',
+            prev_selector: '.pic_zhongjian_left1',
+            next_selector: '.pic_zhongjian_right1',
+            effect: 1
+          });
+
+          pbox1.to(Math.floor(({$page}-1)/4));
+      </script>
+    </div>
+
+  </div>
+  <div class="clear"></div>
+
+  <div class="Comments">
+    <div class="Comments_bt"><h1 class="Comments_bt_bold">网友评论</h1>
+      <span class="tiaoshu">已有 <span class="er_hong"><em class="comments">0</em></span> 人参与评论</span><span class="See_all"><a href="{WWW_URL}app/?app=comment&amp;controller=comment&amp;action=index&amp;contentid={$contentid}" title="点击查看全部评论" target="_blank" >查看全部</a></span>
+    </div>
+
+
+    <ul class="Comments_text" id="latestComment">
+    </ul>
+    <div class="Published">
+      <div class="Published_liuyan">
+        <form id="commentForm" name="cform" action="{APP_URL}?app=comment&controller=comment&action=add" method="post">	
+          <input type="text" style="display:none;" name="contentid" value="{$contentid}">
+          <textarea name="content" id="comment_textarea" rows="10" cols="58"class="liuyan_kuang" ></textarea>
+          <div >
+            <input type="submit" style="background: url('{WWW_URL}img/templates/huoshow02/images/Published_anniu.jpg');border:0 none; width:72px;height:23px;" value=""/>
+          </div>
+        </form>
+      </div>
+      <p class="Published_liuyan_text">1.遵守中华人民共和国有关法律、 法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。<br>
+      2.本站拥有管理笔名和留言的一切权力。<br>
+      3.您的言论，本站有权在网站内转载或引用。<br>
+      4.评论仅供网友表达个人看法，不代表本站立场
+      </p>
+    </div>
+  </div>	
+
+
+  <div class="clear"></div>
+  <!--Body Bottom End-->
+</div>
+<script type="text/javascript">
+var contentid = {$contentid};
+function description(obj) {
+    var obj = $(obj);
+    if (obj.size()) {
+        var type = obj.attr('rel');
+        if (type == 'f') {
+            obj.parent().hide().next('p').show().css({
+                height: 'auto',
+                overflow: 'auto'
+            });
+        } else {
+            obj.parent().hide().prev('p').show();
+        }
+        $.cookie(COOKIE_PRE + 'p_' + contentid + '_desc', type);
+    }
+}
+(function($){
+	$('#commentForm').submit(function() 
+	{
+		if ($.trim($('#comment_textarea').val()) == '') {
+			alert('评论内容不能为空');
+			return false;
+		}
+	})
+})(jQuery);
+</script>

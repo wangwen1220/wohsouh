@@ -1,0 +1,71 @@
+<!--{template 'huoshow_events/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Main Body-->
+<div class="main_body">
+<div class="index_banner_W960_02">
+				{db sql="select * from #table_section where memo ='huoshow_events_schedule_image_960_88'"}
+                {$r[data]}
+                {/db}
+				</div>
+<!--Left-->
+<div class=" body_webgame_left">
+	<div class="wholeevents_W650" id="tiny_game_tabview1">
+			  <div class="subpage_event_bt"><h2 class="title_blue_big">赛事时间表</h2> <span class="ril_tub"><a href=""></a></span>
+						 <div class="xiazhou"><a class="hover_benzhou" href="javascript:;" onclick="hs.getAndFill('{ROOT}api/article.php?act=saishishijianbiao&type=huoshow_events_schedule_saishiricheng', hs.$('box_benzhou'));">本周</a><a href="javascript:;" onclick="hs.getAndFill('{ROOT}api/article.php?act=saishishijianbiao&type=huoshow_events_schedule_saishirichengyue', hs.$('box_benyue'));">本月</a><a href="javascript:;" onclick="hs.getAndFill('{ROOT}api/article.php?act=saishishijianbiao&type=huoshow_events_schedule_saishirichengnian', hs.$('box_bennian'));">本年</a></div>
+						 <div class="clear"></div>
+    </div>
+   
+		 <div class="table-tm" id="box_benzhou">&nbsp;</div>
+         <div class="table-tm" id="box_benyue">&nbsp;</div>
+         <div class="table-tm" id="box_bennian">&nbsp;</div>
+		 <script>
+                    window.tiny_game_tabview1 = make_pagebox('tiny_game_tabview1', {
+                    links_selector: '.xiazhou a',
+                    pages_selector: '.table-tm',
+                    current_class: 'hover_benzhou'
+                    }); 
+                    hs.getAndFill('{ROOT}api/article.php?act=saishishijianbiao&type=huoshow_events_schedule_saishiricheng', hs.$('box_benzhou'));
+                  </script>
+</div>
+</div>
+	<!--Right-->
+	<div class="body_webgame_right">
+<div class="web_game_banner_250">
+				{db sql="select * from #table_section where memo ='huoshow_events_schedule_image_300_250'"}
+                {$r[data]}
+                {/db}
+				</div>
+				<div class="events_W300">
+					<div class="events_title_300"> <span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">赛事焦点</h2>
+					</div>
+					<div class="Happy_girl_list">
+						<div class="Happy_girl_newslist">
+							<ul>
+							{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_saishijiaodian' ORDER BY d.sort desc limit 12"}
+								<li><span class="Point"><a target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+							{/db}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="events_W300">
+					<div class="events_title_300"> <span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">赛事美图</h2>
+					</div>
+					<div class="Small_games_pic_02">
+		<ul>
+		 {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_evemts_ph_saishimeitu' and d.thumb!='' ORDER BY d.sort desc limit 6"}
+		<li><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="124" height="90" /></a><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></li>
+		 {/db}
+		</ul>
+		</div>
+				</div>
+	<!--发售表--></div>
+	
+	<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--{template 'huoshow_events/footer.html'}-->

@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+<meta name="description" content="" />
+    <title>专题子栏目_专题_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/game.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/game1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+    <body class="body_bg">
+      <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a href="http://www.huoshow.com/">首页</a>-<a href="http://space.huoshow.com/show.php">直播</a>-<a href="http://www.huoshow.com/movie/">影视</a>-<a href="http://www.huoshow.com/music/">音乐</a>-<a href="http://www.huoshow.com/game/">游戏</a>-<a href="http://www.huoshow.com/myshow/">My秀</a>-<a href="http://space.huoshow.com/group.php">群组</a>-<a href="http://space.huoshow.com/home.php">空间</a>-<a href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+      <!--Navigator-->
+      <div class="nav_bg">
+        <div class="nav_body">
+          <a href="http://www.huoshow.com/game/" title="火秀游戏首页" class="channel_logo">火秀游戏频道</a>
+          <div id="sub_channel">
+            <a href="http://www.huoshow.com/game/webgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_01.png" width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/onlinegame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_02.png" width="75" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/mobile_game/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_03.png"  width="77" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/pcgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_04.png"  width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/flashgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_05.png" width="56" height="19"/></a>
+          </div>
+        </div>
+      </div>
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+       <a href=""></a> 
+    	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End--> 
+<!--Main Body-->
+<div class="main_body"> 
+  <!--Top-->
+  <div class="body_top"> 
+    <!--Top Left-->
+    <div class="body_top_left">
+      <!--Slide-->      
+      <div class="slide" id="slide1">
+       <!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_game_index_roll&width=314&height=366"--> 
+      </div>
+ 
+
+
+      <!--Reviews-->
+      <div class="reviews">
+        <div class="reviews_inner_bd">
+          <div class="game_left_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">游戏测评</h2>
+            <span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+          <ul class="reviews_pic">
+                        <li><span class="reviews_pic_bd"><a href="http://www.huoshow.com/2011/0707/15126.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0708/1310109747215.jpg" width="126" height="84" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0707/15126.shtml" target="_blank">《仙剑奇侠传5》玩家点评</a></span></li>
+                        <li><span class="reviews_pic_bd"><a href="http://www.huoshow.com/2011/0705/14636.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0705/1309857646587.jpg" width="126" height="84" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0705/14636.shtml" target="_blank">《黑暗孢子》 详细评测</a></span></li>
+                      </ul>
+          <div class="separator2"></div>
+          <ul class="reviews_newslist">
+                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0707/15126.shtml" target="_blank">《仙剑奇侠传5》玩家点评</a></span></li>
+                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0601/11195.shtml" target="_blank">单机《海豹突击队4》评测</a></span></li>
+                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0503/8990.shtml" target="_blank">X360 拳皇12 试玩游戏评测</a></span></li>
+                      </ul>
+        </div>
+      </div>
+
+
+      <!--Video-->
+      <div class="videos" id="pbox_video">
+        <div class="videos_inner_bd">
+          <div class="game_left_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">游戏视频</h2>
+            <span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+
+          <div class="game-video-body">
+            <ul class="videos_list">
+                                                        <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0524/10680.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0524/1306209664533.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0524/10680.shtml" target="_blank">《穿越火线》潘多拉觉醒版本宣传片</a></span> </li>
+                                                        <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0602/11371.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0602/1307005879652.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0602/11371.shtml" target="_blank">现代战争3全新要素视频</a></span> </li>
+                                          </ul><ul class="videos_list">              <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0525/10790.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306315967225.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0525/10790.shtml" target="_blank">DNF开发商《Cyphers》视频</a></span> </li>
+                                                        <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0525/10789.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306315999495.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0525/10789.shtml" target="_blank">《龙珠》新作宣传视频</a></span> </li>
+                                          </ul><ul class="videos_list">              <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0602/11369.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0602/1307005968663.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0602/11369.shtml" target="_blank">女玩家演奏魂斗罗音乐</a></span> </li>
+                                        </ul>
+          </div>
+
+          <div class="videos_nav">
+            <div class="juzhao_sanjiao_list">
+              <a href="#" class="juzhao_sanjiao_left">&nbsp;</a>
+              <span class="juzhao_sanjiao_zhongjian">
+                <a href="#">&nbsp;</a><a href="#">&nbsp;</a><a href="#">&nbsp;</a>              </span>
+              <a href="#" class="juzhao_sanjiao_right">&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(function(){
+        window.pbox_video = make_pagebox('pbox_video', {
+        links_selector: '.juzhao_sanjiao_zhongjian a',
+        pages_selector: '.videos_list',
+        prev_selector: '.juzhao_sanjiao_left',
+        next_selector: '.juzhao_sanjiao_right',
+        effect: 1
+        });
+        });
+      </script>
+
+
+
+    </div>
+    <!--Top Middle-->
+    <div class="body_top_mid">
+      <!--Top News-->
+      <div class="top_news">
+        <div class="top_news_inner_bd">
+          <div class="game_mid_title_bg"><span class="title_pointer"></span><h2 class="title_black_16">头条</h2></div>
+          <div class="top_news_content">
+            <div class="top_news_hl">
+                            <span class="hot_pointer">网游</span>
+              <h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0711/15756.shtml" target="_blank">魔兽世界：4.0灾变前夕职业排名</a></h3>
+                          </div>
+                        <div>
+                            </div><div>						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0706/14871.shtml">传《DotA2》8月亮相科隆</a>]
+                                          						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0705/14538.shtml">《神魔大陆》人体彩绘</a>]
+                                          </div><div>						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0705/14565.shtml">韩庚玩《天下贰》带刷副本</a>]
+                                          						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0705/14525.shtml">日服《TERA》首测</a>]
+                                        </div>
+          </div>
+          <div class="top_news_content">
+            <div class="top_news_hl">
+                            <span class="hot_pointer">单机</span>
+              <h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0711/15761.shtml" target="_blank">索尼宣布《地狱边境》即将登陆PSN</a></h3>
+                          </div>
+                        <div>
+                            </div><div>						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0610/12031.shtml">《最终幻想13-2》多结局确认 </a>]
+                                          						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0609/11879.shtml">索尼用户信息泄露高管集体降薪</a>]
+                                          </div><div>						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0610/12029.shtml">《战地3》将登陆iPhone及iPad</a>]
+                                          						
+              [<a target="_blank" href="http://www.huoshow.com/2011/0609/11886.shtml">鬼泣电影将开拍主角为新但丁</a>]
+                                        </div>
+          </div>
+          <div class="separator"></div>
+          <ul class="newslist_center">
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15827.shtml">魔兽世界大地裂变新增地区“暮光高地”介绍</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15818.shtml">魔兽世界大灾变新增系统 装备属性重铸系统</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15770.shtml">《地下城守护者OL》首曝两大阵营六大职业</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15764.shtml">《永恒之塔：主神的感召》7.11登临中国</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15743.shtml">QQ仙侠传裸婚男人装 仙魔狂秀极限性感</a></span></li>
+                      </ul>
+          <div class=" clear"></div>
+          <div class="promotion">
+                        <span class="hot_pointer">推广</span><a href="http://hao.17173.com/public/pages/393.shtml" target="_blank">《英雄联盟》不删档测试激活码领号中</a>
+                      </div>
+          <ul class="newslist_center">
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15811.shtml"> 天价难求 《仙剑奇侠传5》豪华版竟被炒至千元</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15780.shtml">《生化奇兵：无限》主角DeWitt造型首次曝光</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15761.shtml">XBLA好评游戏《地狱边境》即将登陆PSN</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15755.shtml">《战地3》职业大变动会给玩家全新游戏体验</a></span></li>
+                        <li><span class="newslist_content"><a target="_blank" href="http://www.huoshow.com/2011/0711/15719.shtml"> 韩厂商Nexon将在亚洲上市 可能在中国或日本</a></span></li>
+                      </ul>
+        </div>
+      </div>
+      <!--Walkthrough-->
+      <div class="walkthrough">
+        <div class="walkthrough_inner_bd">
+          <div class="game_mid_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">攻略</h2><span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+          <div class="walkthrough_top">
+            <dl>
+              
+              <dt><a href="http://www.huoshow.com/2011/0704/14343.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0706/1309941841553.jpg" width="118" height="160"></a></dt>
+              <dd class="walkthrough_top_title">70级DNF狂战刷图神器 </dd>
+              <dd class="walkthrough_top_briefing">文中不包括国服还没有开放的65粉武器和65SS武器，60图纸粉武器不清楚有没有开放暂时加了进去。<a href="http://www.huoshow.com/2011/0704/14343.shtml" target="_blank" class="text_brown">[详细] </a></dd>
+                          </dl>
+          </div>
+          <ul class="newslist_center">
+                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0707/15148.shtml" target="_blank">DNF红眼新技能技巧 详细讲解狂战技能变化</a></span></li>
+                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0707/15142.shtml" target="_blank">魔兽世界CTM10人普通团队本简易攻略</a></span></li>
+                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0707/15139.shtml" target="_blank">魔兽世界4.1英雄副本AOE经验分享</a></span></li>
+                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0707/15128.shtml" target="_blank">魔域投资300RMB却能收回成本的战士攻略</a></span></li>
+                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0707/15124.shtml" target="_blank">天龙八部2十大门派80技能实用指数点评</a></span></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+    <!--Top Right-->
+    <div class="body_top_right"> 
+      <!--Topic-->
+      <div class="topic">
+        <div class="topic_inner_bd">
+          <div class="game_right_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">专题</h2>
+            <span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+          <div class="topic_content">
+            <div class="topic_img">
+                            <a href="http://www.huoshow.com/2011/0427/8696.shtml" target="_blank" title="DNF高手的七大准则看你能做到几条"><img src="http://www.huoshow.com/upload/2011/0525/1306315839251.jpg" width="180" height="70" /></a>
+                          </div>
+            <ul class="topic_list">
+                            <li><a href="http://www.huoshow.com/2011/0510/9602.shtml" target="_blank" title="DNF浅谈高端刺客的走向">DNF浅谈高端刺客的走向</a></li>
+                            <li><a href="http://www.huoshow.com/2011/0510/9604.shtml" target="_blank" title="历数dnf中那些BT的史诗武器">历数dnf中那些BT的史诗武器</a></li>
+                            <li><a href="http://www.huoshow.com/2011/0426/8545.shtml" target="_blank" title="DNF剑魂单刷机械牛经验">DNF剑魂单刷机械牛经验</a></li>
+                          </ul>
+          </div>
+          <div class="topic_banners">
+  <!--Banner 180*70-->
+      <div class="banner_180_70">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(21);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://ad.huoshow.com/www/delivery/ck.php?n=4946dd8'><img border='0' alt='' src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=21&amp;n=4946dd8' /></a></noscript></div>    <!--Banner 180*70-->
+      <div class="banner_180_70">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(22);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://ad.huoshow.com/www/delivery/ck.php?n=75ab9cf'><img border='0' alt='' src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=22&amp;n=75ab9cf' /></a></noscript></div>    <!--Banner 180*70-->
+      <div class="banner_180_70">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(23);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://ad.huoshow.com/www/delivery/ck.php?n=1ca7604'><img border='0' alt='' src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=23&amp;n=1ca7604' /></a></noscript></div>    <!--Banner 180*70-->
+      <div class="banner_180_70">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(24);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://ad.huoshow.com/www/delivery/ck.php?n=717509d'><img border='0' alt='' src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=24&amp;n=717509d' /></a></noscript></div>    <!--Banner 180*150-->
+      <div class="banner_180_150">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(20);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://ad.huoshow.com/www/delivery/ck.php?n=1ea0c46'><img border='0' alt='' src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=20&amp;n=1ea0c46' /></a></noscript></div>            </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!--On Store-->
+      <div class="onstore">
+        <div class="onstore_inner_bd">
+          <div class="game_right_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">发售表</h2></div>
+          <div class="onstore_list">
+            <ul>
+
+              <li><span class="onstore_list_title">时间 </span><span class="onstore_list_title">游戏名称</span></li>
+                                                        <li class="onstore_list_light"><span>05-17</span><span class="onstore_list_content">神鬼寓言3</span></li>
+                                                        <li ><span>05-17</span><span class="onstore_list_content">巫师2：刺客之王</span></li>
+                                                        <li class="onstore_list_light"><span>06-17</span><span class="onstore_list_content">地牢围攻3</span></li>
+                                                        <li ><span>06-17</span><span class="onstore_list_content">永远的毁灭公爵</span></li>
+                                                        <li class="onstore_list_light"><span>07-07</span><span class="onstore_list_content">仙剑奇侠传5</span></li>
+                                                        <li ><span>09-08</span><span class="onstore_list_content">英雄无敌6</span></li>
+                            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--Top End-->
+  <!--Banner 960*90-->
+  <div class="banner_960_90">
+<script type="text/javascript">// <![CDATA[
+//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ad.huoshow.com/www/delivery/ajs.php':'http://ad.huoshow.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=17");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//
+// ]]></script>
+<noscript><a href='http://ad.huoshow.com/www/delivery/ck.php?n=a1f18a1a&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=17&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a1f18a1a' border='0' alt='' /></a></noscript></div>    <!--Body Mid-->
+  <!--Beauty-->
+  <div class="beauty">
+    <div class="beauty_title_bg">
+      <span class="beauty_logo"></span><h2 class="title_black_24">游戏美女</h2><span class="beauty_title_bg_closer"></span>
+    </div>
+    <div class="beauty_body">
+      <div class="pic_list">
+        <ul>
+          <li class="first">
+
+                    <div class="pic_text_bg_first"><span class="pic_text"><a href="http://www.huoshow.com/2011/0708/15278.shtml" target="_blank" title="G罩杯美乳女优西田麻衣喷血诱惑写真">G罩杯美乳女优西田麻衣喷血诱惑写真</a></span></div>
+          <a href="http://www.huoshow.com/2011/0708/15278.shtml" target="_blank" title="G罩杯美乳女优西田麻衣喷血诱惑写真"><img src="http://www.huoshow.com/upload/2011/0708/1310090209450.jpg" width="238" height="322" /></a>
+                    </li>
+
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0711/15726.shtml" target="_blank" title=" 《生化危机》最性感女主角艾达王COSPLAY"> 《生化危机》最性感女主角艾达王COSPLAY</a></span></div>
+          <a href="http://www.huoshow.com/2011/0711/15726.shtml" target="_blank" title=" 《生化危机》最性感女主角艾达王COSPLAY"><img src="http://www.huoshow.com/upload/2011/0711/1310377118119.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0711/15881.shtml" target="_blank" title="纱布蓝《真·三国无双6》王元姬Cosplay">纱布蓝《真·三国无双6》王元姬Cosplay</a></span></div>
+          <a href="http://www.huoshow.com/2011/0711/15881.shtml" target="_blank" title="纱布蓝《真·三国无双6》王元姬Cosplay"><img src="http://www.huoshow.com/upload/2011/0711/1310377138693.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0708/15265.shtml" target="_blank" title="宅男女神粉红色的性感 再爆大尺度写真庆生">宅男女神粉红色的性感 再爆大尺度写真庆生</a></span></div>
+          <a href="http://www.huoshow.com/2011/0708/15265.shtml" target="_blank" title="宅男女神粉红色的性感 再爆大尺度写真庆生"><img src="http://www.huoshow.com/upload/2011/0708/1310089936969.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0627/13471.shtml" target="_blank" title="日版瑶瑶 童颜巨乳篠崎爱胸器逼人写真">日版瑶瑶 童颜巨乳篠崎爱胸器逼人写真</a></span></div>
+          <a href="http://www.huoshow.com/2011/0627/13471.shtml" target="_blank" title="日版瑶瑶 童颜巨乳篠崎爱胸器逼人写真"><img src="http://www.huoshow.com/upload/2011/0708/1310090705584.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0708/15270.shtml" target="_blank" title="成人动漫《杀戮都市》女主角岸本惠性感COS">成人动漫《杀戮都市》女主角岸本惠性感COS</a></span></div>
+          <a href="http://www.huoshow.com/2011/0708/15270.shtml" target="_blank" title="成人动漫《杀戮都市》女主角岸本惠性感COS"><img src="http://www.huoshow.com/upload/2011/0708/1310090098298.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0708/15263.shtml" target="_blank" title="新一代“乳神”施柳屹美丝袜美腿">新一代“乳神”施柳屹美丝袜美腿</a></span></div>
+          <a href="http://www.huoshow.com/2011/0708/15263.shtml" target="_blank" title="新一代“乳神”施柳屹美丝袜美腿"><img src="http://www.huoshow.com/upload/2011/0708/1310089833637.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0625/13459.shtml" target="_blank" title="《娘王2》女主角大胆半裸写真">《娘王2》女主角大胆半裸写真</a></span></div>
+          <a href="http://www.huoshow.com/2011/0625/13459.shtml" target="_blank" title="《娘王2》女主角大胆半裸写真"><img src="http://www.huoshow.com/upload/2011/0625/1308973269870.jpg" width="118" height="160" /></a>
+          </li>
+                    <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="http://www.huoshow.com/2011/0625/13462.shtml" target="_blank" title="性感美女上演制服诱惑 女警扮相半乳尽露">性感美女上演制服诱惑 女警扮相半乳尽露</a></span></div>
+          <a href="http://www.huoshow.com/2011/0625/13462.shtml" target="_blank" title="性感美女上演制服诱惑 女警扮相半乳尽露"><img src="http://www.huoshow.com/upload/2011/0625/1308973447485.jpg" width="118" height="160" /></a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="chart">
+        <div class="charts_others">
+          <ul>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0627/13471.shtml" target="_blank" title="日版瑶瑶 童颜巨乳篠崎爱胸器逼人写真">日版瑶瑶 童颜巨乳篠崎爱胸</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0625/13459.shtml" target="_blank" title="《娘王2》女主角大胆半裸写真">《娘王2》女主角大胆半裸写</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0625/13463.shtml" target="_blank" title="“乳”此超性感高级女佣 雇个做情人">“乳”此超性感高级女佣 雇</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0625/13465.shtml" target="_blank" title="游戏美女杨茜黑色内衣秀诱人曲线">游戏美女杨茜黑色内衣秀诱人</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0625/13462.shtml" target="_blank" title="性感美女上演制服诱惑 女警扮相半乳尽露">性感美女上演制服诱惑 女警</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0627/13470.shtml" target="_blank" title="这就是个妖孽 《吊带袜天使》潘迪魅惑COS">这就是个妖孽 《吊带袜天使</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0627/13469.shtml" target="_blank" title="清凉夏装助阵《梦幻昆仑》">清凉夏装助阵《梦幻昆仑》</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0627/13468.shtml" target="_blank" title="DNF大波女枪手超诱惑COSPLAY">DNF大波女枪手超诱惑COSPLAY</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0625/13461.shtml" target="_blank" title="《魔域》美女海盗邀你劫商城">《魔域》美女海盗邀你劫商城</a></span></li>
+                        <li><span class="charts_text"><a href="http://www.huoshow.com/2011/0618/12768.shtml" target="_blank" title="豪乳细腰宅男最爱Cosplay合集">豪乳细腰宅男最爱Cosplay合</a></span></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--Online Game-->
+  <div class="olgame">
+    <div class="olgame_title_bg">
+      <span class="olgame_logo"></span><h2 class="title_black_24"><a href="onlinegame/">网络游戏</a></h2><span class="olgame_title_bg_closer"></span>
+    </div>
+    <div class="ongame_body">
+      <div class="ongame_body_left">
+
+        <div class="slide" id="slide2">
+        	<!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_game_index_olgamerole&width=300&height=250&navon=1"--> 
+          
+        </div>
+       
+
+        <div class="ongame_topic">
+          <div class="ongame_topic_logo">&nbsp;</div>
+          <ul>
+                        <li>
+            <a href="http://www.huoshow.com/2011/0530/11053.shtml" target="_blank">
+              <img src="http://www.huoshow.com/upload/2011/0704/1309752049403.jpg"  width="147" height="57" /><br>魔兽世界            </a>
+                        <li>
+            <a href="http://www.huoshow.com/2011/0704/14348.shtml" target="_blank">
+              <img src="http://www.huoshow.com/upload/2011/0704/1309751928119.jpg"  width="147" height="57" /><br>鹿鼎记            </a>
+                      </ul>
+        </div>
+      </div>
+
+
+
+      <div class="ongame_body_center">
+                <div class="bottom_center_topnews">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0712/15916.shtml" target="_blank" style="color:#EC8705">韩美少女网页游戏《SWORD GIRLS》原画</a></h3></div>
+          <div><strong class="text_gray">在韩国，4月开始运营的网页游戏《SWORD GIRLS》深受好评。</strong></div>
+        </div>
+                <div class="bottom_center_topnews">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0712/15933.shtml" target="_blank" style="color:#EC8705">口嫌体正直 动漫中的十大傲娇系角色</a></h3></div>
+          <div><strong class="text_gray">傲娇，日文音译读作“蹭得累”，是源自日本动漫行业的一种萌</strong></div>
+        </div>
+        
+        <div class="separator3"></div>
+        <ul class="bottom_center_newslist">
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/16087.shtml" target="_blank">诺亚传说详解军团作战任务中各种游击战术</a></span></li>
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/16057.shtml" target="_blank">天龙八部2帮派更新与活跃值之我见</a></span></li>
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/16049.shtml" target="_blank">鹿鼎记1至18级宝石RMB与YB价格计算表</a></span></li>
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/16051.shtml" target="_blank">梦幻西游转换门派需扣除经验对照表</a></span></li>
+                              </ul><ul class="bottom_center_newslist">          <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/15942.shtml" target="_blank">“功夫派”阎玺担任《醉逍遥》动作指导</a></span></li>
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/15935.shtml" target="_blank">《汉武大帝》首测获好评国战网游实至名归</a></span></li>
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/15936.shtml" target="_blank">《煮酒天下》召集令神秘现身签生死投名状</a></span></li>
+                                        <li><span class="newslist_content"><a href="http://www.huoshow.com/2011/0712/15974.shtml" target="_blank">痴迷玩家伤不起 功夫英雄各职业爆笑解读</a></span></li>
+                    					
+        </ul>
+
+      </div>
+      <div class="ongame_body_right">
+        <h2 class="title_black_14">本周最受关注</h2>
+        <!--#include virtual ="/api/article.php?act=gethsgameweekwelcome"-->      
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--PC Game-->
+  <div class="pcgame">
+    <div class="pcgame_title_bg">
+      <span class="pcgame_logo"></span><h2 class="title_black_24"><a href="pcgame/">单机游戏</a></h2><span class="pcgame_title_bg_closer"></span>
+    </div>
+    <div class="ongame_body">
+      <div class="pcgame_body_left">
+        <div class="game_left_title_bg">
+          <span class="title_pointer"></span><h2 class="title_Black">游戏测评</h2><span class="more"><a href="http://www.huoshow.com/game/pcgame/walkthrough" class="more_bg">更多</a></span>
+        </div>
+        <ul class="reviews_pic">					
+                    <li><span class="reviews_pic_bd"><a href="http://www.huoshow.com/2011/0711/15767.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0711/1310375946278.jpg" width="126" height="84" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0711/15767.shtml" target="_blank">《猎杀：恶魔熔炉》评测</a></span></li>
+                    <li><span class="reviews_pic_bd"><a href="http://www.huoshow.com/2011/0711/15840.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0711/1310375932796.jpg" width="126" height="84" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0711/15840.shtml" target="_blank">《仙剑5》全方位评测</a></span></li>
+                  </ul>
+        <div class="separator2"></div>
+        <ul class="reviews_newslist">
+
+                    <li><span class="newslist_content2"><img src="http://www.huoshow.com/img/templates/huoshow02/images/camera.gif" /> <a href="http://www.huoshow.com/2011/0711/15840.shtml" target="_blank">《仙剑奇侠传5》全方位评测</a></span></li>
+                    <li><span class="newslist_content2"><img src="http://www.huoshow.com/img/templates/huoshow02/images/camera.gif" /> <a href="http://www.huoshow.com/2011/0711/15767.shtml" target="_blank">年度平庸游戏之一《猎杀：恶魔熔炉》评测</a></span></li>
+                    <li><span class="newslist_content2"><img src="http://www.huoshow.com/img/templates/huoshow02/images/camera.gif" /> <a href="http://www.huoshow.com/2011/0708/15478.shtml" target="_blank">《白骑士物语》测评</a></span></li>
+                    <li><span class="newslist_content2"><img src="http://www.huoshow.com/img/templates/huoshow02/images/camera.gif" /> <a href="http://www.huoshow.com/2011/0708/15468.shtml" target="_blank">战地:叛逆连队2》评测</a></span></li>
+                    <li><span class="newslist_content2"><img src="http://www.huoshow.com/img/templates/huoshow02/images/camera.gif" /> <a href="http://www.huoshow.com/2011/0707/15138.shtml" target="_blank">跌破眼镜《真三国无双6》仅获IGN 5.0超低分</a></span></li>
+          
+        </ul>
+      </div>
+      <div class="pcgame_body_center">
+                <div class="bottom_center_topnews1">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0711/15715.shtml" target="_blank" style="color:#EC8705">F91登顶NESL：辛苦练习终回报 NesTea世界NO.1</a></h3></div>
+          <div><strong class="text_gray">KeSPA不会把自己的命运交给暴雪，而且星际1在韩国依然比星</strong></div>
+        </div>
+                <div class="bottom_center_topnews1">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0711/15625.shtml" target="_blank" style="color:#EC8705">暴雪秘邀KeSPA访美 星际2或将取代星际1</a></h3></div>
+          <div><strong class="text_gray">来自韩国媒体的惊爆新闻：暴雪秘密邀请韩国电子竞技协会(K</strong></div>
+        </div>
+        				
+        <div class="separator3"></div>
+        <div class="pcgame_walkthrough_title">
+          <span class="title_pointer"></span><h2 class="title_Black">游戏攻略</h2>
+        </div>
+        <ul class="bottom_center_newslist1">
+
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15845.shtml" target="_blank">《真三国无双5》夏侯惇使用心得</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15694.shtml" target="_blank">种族之间运营的艺术：对气的完美把控</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15849.shtml" target="_blank">《命令与征服之红色警戒3》帝国骚扰战术讨论</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15666.shtml" target="_blank">《仙剑奇侠传五》反激活说明与流程</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15683.shtml" target="_blank">《全明星战役》净化的使用方法</a></span></li>
+          					
+        </ul>
+      </div>
+      <div class="pcgame_body_right">
+        <div class="pcgame_download_title_bg">
+          <h2 class="title_black_14">精华下载</h2>
+        </div>
+        <ul class="pcgame_download">
+                    <li><span class="topic_list"><a href="http://www.gamersky.com/Soft/201105/28836.shtml" target="_blank">《神鬼寓言3》中文硬盘版下</a></span><span class="pcgame_download_icon"><a href="http://www.gamersky.com/Soft/201105/28836.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.gamersky.com/Soft/201105/28869.shtml" target="_blank">X360《尘埃3》美版全区下载</a></span><span class="pcgame_download_icon"><a href="http://www.gamersky.com/Soft/201105/28869.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.gamersky.com/Soft/201104/28256.shtml" target="_blank">《极品飞车15》中文汉化下载</a></span><span class="pcgame_download_icon"><a href="http://www.gamersky.com/Soft/201104/28256.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.yxdown.com/buding/35136.html" target="_blank">《实况足球2011》补丁 V1.02</a></span><span class="pcgame_download_icon"><a href="http://www.yxdown.com/buding/35136.html" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.yxdown.com/buding/35133.html" target="_blank">《蜘蛛侠：破碎维度》免DVD补</a></span><span class="pcgame_download_icon"><a href="http://www.yxdown.com/buding/35133.html" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.huoshow.com/2011/0527/10921.shtml" target="_blank">《尘埃3》免安装硬盘版下载</a></span><span class="pcgame_download_icon"><a href="http://www.huoshow.com/2011/0527/10921.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.huoshow.com/2011/0527/10922.shtml" target="_blank">《巫师2：刺客之王》5 DLC 破</a></span><span class="pcgame_download_icon"><a href="http://www.huoshow.com/2011/0527/10922.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.huoshow.com/2011/0527/10923.shtml" target="_blank">《边缘战士》3DM汉化组汉化</a></span><span class="pcgame_download_icon"><a href="http://www.huoshow.com/2011/0527/10923.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+                    <li><span class="topic_list"><a href="http://www.huoshow.com/2011/0527/10924.shtml" target="_blank">《神鬼寓言3》免DVD补丁</a></span><span class="pcgame_download_icon"><a href="http://www.huoshow.com/2011/0527/10924.shtml" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+          					
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Web Game-->
+  <div class="webgame">
+    <div class="webgame_title_bg">
+      <span class="webgame_logo"></span><h2 class="title_black_24"><a href="webgame/">网页游戏</a></h2><span class="webgame_title_bg_closer"></span>
+    </div>
+    <div class="webgame_body">
+      <div class="webgame_body_left">
+                <div class="webgame_list_bg">
+<div class="webgame_list_pic"><img src="http://www.huoshow.com/upload/2011/0705/1309858690419.jpg" border="0" width="126" height="84" /><a href="http://sea.sdo.com/Gameinfo/xssw.asp" target="_blank">新手</a> | <a href="http://sea.sdo.com/index.asp" target="_blank">官网</a> | <a href="https://pay.sdo.com/Deposit/HomePage.aspx?sel_game=100000400" target="_blank">充值</a></div>
+<div class="webgame_list_text">
+<h1>远洋传说</h1>
+类别：休闲娱乐<br />状态：公测 <a href="http://sea.sdo.com/index.asp" target="_blank"><img src="/img/templates/huoshow02/images/game_anniu.jpg" border="0" width="96" height="30" /></a></div>
+</div>
+<div class="webgame_list_bg">
+<div class="webgame_list_pic"><img src="http://www.huoshow.com/upload/2011/0525/1306317439432.jpg" border="0" width="126" height="84" /><a href="http://www.37wanwan.com/xxrz/newcard/index.shtml" target="_blank">新手</a> | <a href="http://www.37wanwan.com/xxrz/" target="_blank">官网</a> | <a href="http://www.37wanwan.com/app/passport/pay/dhyxb.php" target="_blank">充值</a></div>
+<div class="webgame_list_text">
+<h1>小小忍者</h1>
+类别：角色扮演<br />状态：运营中<a href="http://www.37wanwan.com/xxrz/server/" target="_blank"><img src="/img/templates/huoshow02/images/game_anniu.jpg" border="0" width="96" height="30" /></a></div>
+</div>
+<div class="webgame_list_bg">
+<div class="webgame_list_pic"><img src="http://www.huoshow.com/upload/2011/0525/1306317456961.jpg" border="0" width="126" height="84" /><a href="http://web.4399.com/mhxx/xsk/" target="_blank">新手</a> | <a href="http://web.4399.com/mhxx/" target="_blank">官网</a> | <a href="http://pay.4399.com/index.php?gamename=mhxx" target="_blank">充值</a></div>
+<div class="webgame_list_text">
+<h1>梦幻修仙</h1>
+类别：角色扮演<br />状态：公测期间<a href="http://web.4399.com/mhxx/select_server.html" target="_blank"><img src="/img/templates/huoshow02/images/game_anniu.jpg" border="0" width="96" height="30" /></a></div>
+</div>                <div class="left_more_button_bg"><div class="left_more_button"><a href="http://www.huoshow.com/game/webgame">更多游戏 >></a></div></div>
+      </div>
+      <div class="webgame_center">
+                <div class="bottom_center_topnews">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0708/15401.shtml" target="_blank" style="color:#EC8705">《山海创世录》动作特效 畅快连斩连杀</a></h3></div>
+          <div><strong class="text_gray">《山海创世录》是51wan独家运营的一款ARPG网页游戏。游</strong></div>
+        </div>
+                <div class="bottom_center_topnews">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="http://www.huoshow.com/2011/0709/15515.shtml" target="_blank" style="color:#EC8705">可爱甜美小萝莉三国杀甄姬COSPLAY欣赏</a></h3></div>
+          <div><strong class="text_gray">极萌的小萝莉</strong></div>
+        </div>
+        				
+        <div class="separator4"></div>				
+        <ul class="bottom_center_newslist">
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0709/15524.shtml" target="_blank">[小小忍者]杀敌狠招盘点</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0709/15510.shtml" target="_blank">[星海霸业]Star Supremacy美女教您分布地块</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0708/15427.shtml" target="_blank">[小小忍者]新手火速效率冲级攻略</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0708/15419.shtml" target="_blank">[小小忍者]外套合成（详细篇）非RMB</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0708/15487.shtml" target="_blank">正统3D MMORPG页游《生物语》试玩报告</a></span></li>
+                              </ul><ul class="bottom_center_newslist">          <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0708/15475.shtml" target="_blank">《钢达战记》前瞻：题材新颖</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0707/15212.shtml" target="_blank">冒险王评测：Q版唯美的画面，功能有待完善</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0707/15203.shtml" target="_blank">最真实的点评：一个中学生资深玩家眼中的淘米</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0709/15515.shtml" target="_blank">可爱甜美小萝莉三国杀甄姬COSPLAY欣赏</a></span></li>
+                                        <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0709/15498.shtml" target="_blank">战将online新玩法惹争议 野地夺宝上演杀人越货</a></span></li>
+                    					
+        </ul>				
+      </div>
+    </div>
+  </div>
+  <!--Flash Game-->
+  <div class="flashgame">
+    <div class="flashgame_title_bg">
+      <span class="flashgame_logo"></span><h2 class="title_black_24"><a href="flashgame/">小游戏</a></h2><span class="flashgame_title_bg_closer"></span>
+    </div>
+    <div class="flashgame_body">
+      <div class="flashgame_pic">
+        <ul>					
+                    <li><a href="http://www.huoshow.com/2011/0527/10951.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0527/1306483784640.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0527/10951.shtml" target="_blank">虚拟赛车</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10665.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317525251.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10665.shtml" target="_blank">拯救美羊羊</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10663.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317563165.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10663.shtml" target="_blank">雷电X中文版</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10662.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317598132.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10662.shtml" target="_blank">极限越野3</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10661.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317617657.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10661.shtml" target="_blank">西游传说</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10660.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317632803.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10660.shtml" target="_blank">建筑队大战僵尸</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10659.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317649718.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10659.shtml" target="_blank">CS经典场景射击</a></p></li>
+                    <li><a href="http://www.huoshow.com/2011/0524/10656.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317669786.jpg" width="109" height="75" /></a><p><a href="http://www.huoshow.com/2011/0524/10656.shtml" target="_blank">宠物连连看</a></p></li>
+          					
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Mobile Game-->
+  <div class="mobilegame">
+    <div class="mobilegame_title_bg">
+      <span class="mobilegame_logo"></span><h2 class="title_black_24"><a href="mobile_game/">手机游戏</a></h2><span class="mobilegame_title_bg_closer"></span>
+    </div>
+    <div class="mobilegame_body">
+      <div class="mobilegame_left">
+        <div class="mobilegame_list" id="pbox1">
+          <a href="#" class="mobilegame_list_left">&nbsp;</a>
+          <a href="#" class="mobilegame_list_right">&nbsp;</a>
+          <div class="mobilegame_list_body">
+                                                <div class="mobilegame_list_content">
+              <div class="mobilegame_list_pic"><a href="http://www.huoshow.com/2011/0527/10919.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0527/1306465534597.jpg" width="68" height="68" /></a></div>
+              <div class="mobilegame_list_text"><h1>iphone龙梦幻境 </h1>iphone龙梦幻境游戏下载<a href="http://www.huoshow.com/2011/0527/10919.shtml" target="_blank">下载</a></div>
+            </div>
+                                                <div class="mobilegame_list_content">
+              <div class="mobilegame_list_pic"><a href="http://www.huoshow.com/2011/0507/9463.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317730366.jpg" width="68" height="68" /></a></div>
+              <div class="mobilegame_list_text"><h1>钢铁勇士下载 </h1>钢铁勇士之秒杀之王下载<a href="http://www.huoshow.com/2011/0507/9463.shtml" target="_blank">下载</a></div>
+            </div>
+                                    </div><div class="mobilegame_list_body">            <div class="mobilegame_list_content">
+              <div class="mobilegame_list_pic"><a href="http://www.huoshow.com/2011/0506/9367.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317743473.jpg" width="68" height="68" /></a></div>
+              <div class="mobilegame_list_text"><h1>丧尸围城下载 </h1>手机游戏丧尸围城下载<a href="http://www.huoshow.com/2011/0506/9367.shtml" target="_blank">下载</a></div>
+            </div>
+                                                <div class="mobilegame_list_content">
+              <div class="mobilegame_list_pic"><a href="http://www.huoshow.com/2011/0506/9366.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0525/1306317809806.jpg" width="68" height="68" /></a></div>
+              <div class="mobilegame_list_text"><h1>惩戒之光下载 </h1>手机游戏惩戒之光下载<a href="http://www.huoshow.com/2011/0506/9366.shtml" target="_blank">下载</a></div>
+            </div>
+                        	
+
+          </div>
+        </div>
+        <script>
+          $(function(){
+          window.pbox1 = make_pagebox('pbox1', {
+          pages_selector: '.mobilegame_list_body',
+          prev_selector: '.mobilegame_list_left',
+          next_selector: '.mobilegame_list_right',
+          effect: 1
+          });
+          });
+        </script>
+
+        <div class="clear"></div>
+        <div class="left_more_button_bg"><div class="left_more_button"><a href="mobile_game/">更多游戏 >></a></div></div>
+      </div>
+      <div class="webgame_center">
+        <ul class="bottom_center_newslist">					
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15876.shtml" target="_blank">苹果明年将推出低端iPhone</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15873.shtml" target="_blank">苹果：把年轻人资源转化为金钱</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15875.shtml" target="_blank">未来iPad或带两个或以上底座接口</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15854.shtml" target="_blank">苹果先败一城，三星你有信心了么?</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15883.shtml" target="_blank">Final Fantasy III最终幻想3 【详尽攻略2】</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15888.shtml" target="_blank">Final Fantasy III最终幻想3 【详尽攻略3】</a></span></li>
+                    <li><span class="newslist_content2"><a href="http://www.huoshow.com/2011/0711/15874.shtml" target="_blank">苹果微软涉嫌合谋打压谷歌 将遭反垄断调查</a></span></li>
+          					
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Banner 250*250-->
+      <div class="banner_250_250">
+<script type="text/javascript">// <![CDATA[
+//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ad.huoshow.com/www/delivery/ajs.php':'http://ad.huoshow.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=19");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//
+// ]]></script>
+<noscript><a href='http://ad.huoshow.com/www/delivery/ck.php?n=a82f7e82&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ad.huoshow.com/www/delivery/avw.php?zoneid=19&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a82f7e82' border='0' alt='' /></a></noscript></div>    <div class="clear"></div>
+  <!--Partners-->
+  <!--  
+  <div class="partners">
+    <div class="layer_one"><a href="">合作火伴</a></div>
+    <div class="layer_two"><a href="">友情链接</a></div>
+    <div class="layer_content">
+      <p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+    </div>
+  </div>
+  -->
+  <!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

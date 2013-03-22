@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2011国庆七日,佳片有约,TOP10大影片展 火秀影视</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<link href="{WWW_URL}img/templates/zhuanti/css/gq_Movie.css" rel="stylesheet" type="text/css" />
+<link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.Special_events_03_lanse_bg,');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+</head>
+
+<body class="body_bg">
+<!--{template 'system/login_bar.html'}-->
+<div id="mian">
+<div class="box">
+  <div class="meili_nr">
+  <div class="gq_jj"><h1>专题简介：</h1>
+  {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_introduction' ORDER BY d.sort desc limit 1"}
+  {$r[description]}
+  {/db}
+  </div>
+  	<div class="White_box_960">
+  		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大爱情片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_love' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+</div>
+					<div class="Space_8px"></div>
+					<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大动作片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_motion' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+<div class="Space_8px"></div>
+<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大喜剧片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_comedy' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+</div>
+						<div class="Space_8px"></div>
+						<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大恐怖片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_terrorist' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+							<div class="Space_8px"></div>
+
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大战争片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_war' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+								<div class="Space_8px"></div>
+
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大科幻片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_Science' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+									<div class="Space_8px"></div>
+
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">10大动画片</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_cartoon' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+	<div class="Space_8px"></div>
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt"> <a href="{WWW_URL}about/about.shtml">关于火秀</a> | <a href="{WWW_URL}about/advertising.shtml">广告服务</a> | <a href="{WWW_URL}about/contact.shtml">联系我们</a> |  <a href="{WWW_URL}about/partners.shtml">合作伙伴</a> | <a href="{WWW_URL}about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+			</div>
+		</div>
+<!--Footer End-->
+<!--Banner Replacer-->
+		<div style="display:none">
+			{db sql="select * from #table_section  where memo ='banner_index_replacer'" }
+				{$r[data]}
+		    {/db}
+		</div>
+	</div>
+			
+  </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+	
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

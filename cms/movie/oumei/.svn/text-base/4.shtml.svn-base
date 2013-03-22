@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="明星,好莱坞,戛纳,美剧,迪士尼,梦工厂,预告片,欧美电影,安吉丽娜" />
+<meta name="description" content="火秀网影视频道为您呈上欧美精彩节目，好莱坞大片,欧美电影以及明星八卦等资讯。" />
+    <title>欧美_火秀影视_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/movie.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class="body_bg">
+    <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+    
+    <!--Navigator-->
+    <div class="nav_body">
+      <div class="nav_bg">
+        <h1 class="channel_logo"><a href="http://www.huoshow.com/movie/" title="火秀影视首页">火秀影视频道</a></h1>
+        <div id="sub_channel">
+          <ul>
+            <li><a id="ch_huayu" href="http://www.huoshow.com/movie/huayu/">华语</a></li>
+            <li><a id="ch_oumei" href="http://www.huoshow.com/movie/oumei/">欧美</a></li>
+            <li><a id="ch_rihan" href="http://www.huoshow.com/movie/rihan/">日韩</a></li>
+            <li><a id="ch_yingren" href="http://www.huoshow.com/movie/yingren/">影人</a></li>
+            <li><a id="ch_yingping" href="http://www.huoshow.com/movie/yingping/">影评</a></li>
+            <li><a id="ch_juzhao" href="http://www.huoshow.com/movie/juzhao/">剧照</a></li>
+            <li><a id="ch_pianhua" href="http://www.huoshow.com/movie/pianhua/">片花</a></li>
+         <!--<li><a id="ch_zhuanti" href="http://www.huoshow.com/movie/zhuanti/">专题</a></li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navigator End-->
+
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/movie/index.shtml">火秀影视</a> > <a href="http://www.huoshow.com/movie/oumei/index.shtml">欧美</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">欧美</h2></div>
+<ul>
+<li><span class="date_011"><a title="《壮志凌云》将转成3D形式 2012年初上映" href="http://www.huoshow.com/2011/0913/28059.shtml" target="_blank">《壮志凌云》将转成3D形式 2012年初上映</a></span><span class="date_01">2011-09-13</span></li>
+<!--  -->
+<li><span class="date_011"><a title="达斯汀霍夫曼推导演处女作 众多英伦老将加盟" href="http://www.huoshow.com/2011/0913/28047.shtml" target="_blank">达斯汀霍夫曼推导演处女作 众多英伦老将加盟</a></span><span class="date_01">2011-09-13</span></li>
+<!--  -->
+<li><span class="date_011"><a title="吕克·贝松奇幻大作《亚瑟3》9月23日上映" href="http://www.huoshow.com/2011/0913/28043.shtml" target="_blank">吕克·贝松奇幻大作《亚瑟3》9月23日上映</a></span><span class="date_01">2011-09-13</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《碟中谍4》曝光首张宣传海报 圣诞节上映" href="http://www.huoshow.com/2011/0913/28041.shtml" target="_blank">《碟中谍4》曝光首张宣传海报 圣诞节上映</a></span><span class="date_01">2011-09-13</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《传染病》北美票房夺冠 终结《帮助》纪录" href="http://www.huoshow.com/2011/0913/28027.shtml" target="_blank">《传染病》北美票房夺冠 终结《帮助》纪录</a></span><span class="date_01">2011-09-13</span></li>
+<!--  -->
+<li><span class="date_011"><a title="杰森·斯坦森谈《敢死队2》 甄子丹不加盟" href="http://www.huoshow.com/2011/0913/27887.shtml" target="_blank">杰森·斯坦森谈《敢死队2》 甄子丹不加盟</a></span><span class="date_01">2011-09-13</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a title="美剧《斯巴达克斯》男主角因癌症去世" href="http://www.huoshow.com/2011/0913/27671.shtml" target="_blank">美剧《斯巴达克斯》男主角因癌症去世</a></span><span class="date_01">2011-09-13</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《美国队长》9日无彩蛋上映 观众大呼失望" href="http://www.huoshow.com/2011/0909/27473.shtml" target="_blank">《美国队长》9日无彩蛋上映 观众大呼失望</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《预言者》导演新作确定 玛丽昂·歌迪亚出演" href="http://www.huoshow.com/2011/0909/27457.shtml" target="_blank">《预言者》导演新作确定 玛丽昂·歌迪亚出演</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《呼啸山庄》亮相威尼斯 个性化处理引争议" href="http://www.huoshow.com/2011/0909/27451.shtml" target="_blank">《呼啸山庄》亮相威尼斯 个性化处理引争议</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="莱昂纳多新片揭幕AFI影节 《胡佛》将提前亮相" href="http://www.huoshow.com/2011/0909/27409.shtml" target="_blank">莱昂纳多新片揭幕AFI影节 《胡佛》将提前亮相</a></span><span class="date_01">2011-09-09</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a title="看不懂《源代码》？ 导演邓肯琼斯涂鸦解读" href="http://www.huoshow.com/2011/0909/27277.shtml" target="_blank">看不懂《源代码》？ 导演邓肯琼斯涂鸦解读</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《死神来了5》妖魔化针灸 遭中医界强烈驳斥" href="http://www.huoshow.com/2011/0909/27275.shtml" target="_blank">《死神来了5》妖魔化针灸 遭中医界强烈驳斥</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="卡梅隆力荐《夺命深渊》 屏息入潜3D水世界" href="http://www.huoshow.com/2011/0909/27167.shtml" target="_blank">卡梅隆力荐《夺命深渊》 屏息入潜3D水世界</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《敢死队2》开局不坏 阿诺、威利斯确定出演" href="http://www.huoshow.com/2011/0908/27011.shtml" target="_blank">《敢死队2》开局不坏 阿诺、威利斯确定出演</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="威尼斯电影节《杀戮》半程夺冠 获一致好评" href="http://www.huoshow.com/2011/0908/27007.shtml" target="_blank">威尼斯电影节《杀戮》半程夺冠 获一致好评</a></span><span class="date_01">2011-09-08</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a title="科林·费斯亮相威尼斯 与加里·奥德曼飙演技" href="http://www.huoshow.com/2011/0908/27003.shtml" target="_blank">科林·费斯亮相威尼斯 与加里·奥德曼飙演技</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《蜈蚣2》10月7日映 噱头十足虐断观众神经" href="http://www.huoshow.com/2011/0908/26995.shtml" target="_blank">《蜈蚣2》10月7日映 噱头十足虐断观众神经</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《匪帮传奇》洛杉矶开机 剧情演员齐曝光" href="http://www.huoshow.com/2011/0908/26975.shtml" target="_blank">《匪帮传奇》洛杉矶开机 剧情演员齐曝光</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《兰戈》动画奖项先下一城 奥斯卡前景被看好" href="http://www.huoshow.com/2011/0908/26971.shtml" target="_blank">《兰戈》动画奖项先下一城 奥斯卡前景被看好</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/movie/oumei/3.shtml">上一页</a></li><li><a href="http://www.huoshow.com/movie/oumei/1.shtml">1</a></li><li><a href="http://www.huoshow.com/movie/oumei/2.shtml">2</a></li><li><a href="http://www.huoshow.com/movie/oumei/3.shtml">3</a></li><li><a href="http://www.huoshow.com/movie/oumei/4.shtml" class="now">4</a></li><li><a href="http://www.huoshow.com/movie/oumei/5.shtml">5</a></li><li><a href="http://www.huoshow.com/movie/oumei/6.shtml">6</a></li><li><a href="http://www.huoshow.com/movie/oumei/49.shtml">...49</a></li><li><a href="http://www.huoshow.com/movie/oumei/5.shtml">下一页</a></li></ul>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+<!--Banner 300*250-->
+    <div class="banner_300_250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(31);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a></noscript></div>            <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;"class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="/api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

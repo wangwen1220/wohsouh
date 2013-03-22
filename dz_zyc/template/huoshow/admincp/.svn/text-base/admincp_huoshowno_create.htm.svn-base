@@ -1,0 +1,21 @@
+<div class="itemtitle"><h3>火秀号管理</h3>
+<ul class="tab1">
+<li><a href="admin.php?action=huoshowno"><span>火秀号管理</span></a></li>
+<li class="current"><a href="admin.php?action=huoshowno&op=create"><span>生成火秀号</span></a></li>
+</ul></div>
+
+<br />
+<div>当前已有火秀号： {$total}个</div>
+<div>
+<form name="cpform" id="cpform" autocomplete="off" action="admin.php?action=huoshowno&op=create" method="POST">
+请选择需要生成火秀号的个数：
+<select name="neednum" id="neednum">
+<option value="100">100</option>
+<option value="500">500</option>
+<option value="1000">1000</option>
+<option value="5000">5000</option>
+<option value="10000">10000</option>
+</select>
+<input class="btn" type="submit" name="submit" value="生成" />
+</form>
+</div>

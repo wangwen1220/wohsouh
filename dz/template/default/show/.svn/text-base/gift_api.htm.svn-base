@@ -1,0 +1,19 @@
+<a href="#" onclick="hideGiftBox();return false;" class='close-gift-box'>关闭</a>
+<div class="lipin-tabs">
+  <!--{loop $giftType $key $value}-->
+  <a href="javascript:;">{$value[name]}</a>
+  <!--{/loop}-->
+</div>
+<div class="lipin">
+<!--{loop $giftType $key $value}-->
+  <ul class="lipin-b">
+	<!--{loop $giftList[$value[typeid]] $k $v}-->
+	<li>
+	<a href="#" giftId="$v[giftid]" giftName="{$v[name]}" giftPrice="{$v[price]}"><img src="static2/images/gift/{echo $v['image']}" width="48" height="48" />{$v[name]}</a>
+	</li>
+	<!--{/loop}-->
+  </ul>
+<!--{/loop}-->
+</div>
+		
+		

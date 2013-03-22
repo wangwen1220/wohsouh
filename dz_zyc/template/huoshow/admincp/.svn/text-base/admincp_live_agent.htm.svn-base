@@ -1,0 +1,29 @@
+<div class="itemtitle"><h3>直播管理</h3>
+<ul class="tab1">
+<li><a href="admin.php?action=live"><span>火秀明星管理</span></a></li>
+<li><a href="admin.php?action=live&op=addstar"><span>增加火秀明星</span></a></li>
+<li><a href="admin.php?action=live&op=addagent"><span>增加火秀经纪人</span></a></li>
+<li class="current"><a href="admin.php?action=live&op=agent"><span>火秀经纪人管理</span></a></li>
+<li><a href="admin.php?action=live&op=yugao"><span>直播预告</span></a></li>
+<li><a href="admin.php?action=live&op=audience"><span>观众统计</span></a></li>
+<li><a href="admin.php?action=live&op=admin"><span>巡管</span></a></li>
+</ul></div>
+<div>
+	<table class="tb tb2 ">
+		<tr class="partition">
+			<td class="td27">uid</td>
+			<td class="td27">用户名</td>
+			<td class="td27">名下艺人</td>
+			<td class="td27">操作</td>
+		</tr>
+		<!--{loop $list $key $value}-->
+		<tr>
+			<td>{$value['uid']}</td>
+			<td>{$value['username']}</td>
+			<td>{$value['stars_str']}</td>
+			<td><a href="admin.php?action=live&op=cancelagent&uid={$value['uid']}" onclick="return confirm('真的要取消  {$value[username]} 火秀经纪人资格吗？');">取消</a></td>
+		</tr>
+		<!--{/loop}-->
+		<tr><td colspan="5"><div class="cuspages right"><div class="pg">$multi</div></div></td></tr>
+	</table>
+</div>

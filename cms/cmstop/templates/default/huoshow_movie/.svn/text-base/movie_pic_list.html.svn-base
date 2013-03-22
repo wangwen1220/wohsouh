@@ -1,0 +1,35 @@
+<!--{template 'huoshow_movie/header.html'}-->
+<?php $_GET['section_memo'] = 'huoshow_movie_index_keywords';?>
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="pic_banner"><!--广告960*90-->
+    	{db sql="select * from #table_section  where memo ='huoshow_movie_pic_list_ad' " }
+               {$r[data]}
+        {/db}
+    </div>
+    <div class="Subpage_pic">
+        <div class="Subpage_pic_01">
+            <div class="Subpage_pic_list">
+            	<div class="Subpage_pic_bt"><h2 class="bt1">剧照</h2></div>
+            	<ul >
+				<!--{content catid="$catid" modelid="2" orderby="published desc" size="$pagesize" page="$page"}-->
+			   	<li>
+			   		<a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{thumb($r[thumb],158,118)}" width="158" height="118">
+			   		<span>{$r[title]}</span></a>
+			   	</li>
+				<!--{/content}-->
+			   </ul>
+                <div class="clear"></div>
+                <div class="fanye">
+        				<div id="fanye_01">
+							<ul><!--{pages($total, $page, $pagesize, 2, $urlrule)}--></ul>
+						</div>
+					</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--{template 'huoshow_movie/footer.html'}-->

@@ -1,0 +1,52 @@
+<!--{subtemplate common/header}-->
+
+	<form class="searchform" method="post" autocomplete="off" action="search.php?mod=video">
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+		<!--{subtemplate search/pubsearch}-->
+		<!--{hook/video_top}-->
+
+	</form>
+	<!--{if !empty($searchid) && submitcheck('searchsubmit', 1)}-->
+
+<div id="contain">
+<link href="static2/myshow.css" rel="stylesheet" type="text/css" />
+  <!--推荐视频-->
+  <div class="shipinqu">
+
+	<div class="shipininner pub">
+		<div class="topvideo">
+			<ul>
+				<!--{loop $myshowlist $i $value}-->
+				<li>
+					<!--{if $value[type]==2}-->
+					<div style="position:relative;">
+						<div class="label"><i>&nbsp;</i><em><!--{if $value[isfanart]}-->原创<!--{/if}--></em></div>
+						<a href="home.php?mod=space&do=myshow&id=$value[myshowid]">
+							<img src="$value[pic]" <!--{if $value[type]==2}-->onerror="this.onerror=null;this.src='static2/images/video_default.png'"<!--{else}-->onerror="this.onerror=null;this.src='static2/images/audio_default.png'"<!--{/if}--> />
+						</a>
+					</div>
+					<!--{/if}-->
+					<span <!--{if $value[type]==2}-->class="shipin"<!--{else}-->class="yinpin"<!--{/if}-->>
+						<a href="home.php?mod=space&do=myshow&id=$value[myshowid]" title="$value[title]">{echo cutstr($value[title],18,'')}</a>
+					</span><br />
+					<span class="videouploader">会员：<a href="home.php?mod=space&uid=$value[uid]" target="_blank">$value[author]</a></span>
+				</li>
+				<!--{if ($i+1)%6 == 0}-->
+				<li class="clear">&nbsp;</li>
+				<!--{/if}-->
+				<!--{/loop}-->
+			</ul>
+			<div class="clear">&nbsp;</div>
+		</div>  
+	</div>
+   <div class="clear"></div>
+   <!--{if $multipage}--><div class="pgs cl mtm">$multipage</div><!--{/if}-->
+  </div>
+</div>
+	<!--{/if}-->
+
+
+<!--{hook/video_bottom}-->
+
+<!--{subtemplate common/footer}-->

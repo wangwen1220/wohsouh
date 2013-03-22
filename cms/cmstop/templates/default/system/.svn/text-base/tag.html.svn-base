@@ -1,0 +1,35 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<!--[if IE 6]> 
+<link href="{IMG_URL}templates/{TEMPLATE}/css/ie6.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<![endif]-->
+
+<div class="main_body">
+<!-- *******************  end box   *********************** -->
+<div class="hr-h6"></div>
+<!-- *******************  start box   *********************** -->
+
+
+        <!-- *******************  start 列表   *********************** -->
+		<div class="bor-9fc" style="border:solid 1px #dddddd;">
+			<div class="fs-14 cor-06c padd-20" style="overflow:hidden;">
+		   <ul class="mode-txtlink c-lists">
+		       <!--{content tags="$tag" orderby="published desc" size="$pagesize" page="$page"}-->
+	           <li><a href="{$r[url]}" style="color:{$r[color]}">{$r[title]}</a><span class="date">{date('n月j日 G:i', $r['published'])}</span></li>  {if $i>0 && $i%5==0} <li class="hr-h10"></li>{/if}
+			   <!--{/content}-->
+			</ul>
+			<div class="page mar-l-8">
+				<ul class="inline">
+  				  <!--{pages($total, $page, $pagesize, 2)}--> 
+				</ul>
+				<div class="clear"></div>
+				</div>
+			</div>
+		</div> 
+
+<!-- *******************  end box   *********************** -->
+</div>
+<script type="text/javascript" src="{IMG_URL}templates/{TEMPLATE}/js/tabs.js"></script>	
+<!--{template 'huoshow_common/common_footer.html'}-->

@@ -1,0 +1,2 @@
+var content_note={add_submit:function(a){if(a.state){$("#note").val("");tableApp.load()}else ct.error(a.error)},search:function(a){ct.ajax("\u6279\u6ce8\u641c\u7d22","?app=system&controller=content_note&action=search&catid="+a,360,280,function(){$("input.input_calendar").focus(function(){WdatePicker({dateFmt:"yyyy-MM-dd HH:mm"})})},function(){tableApp.load($("#note_search"));return true})},del:function(a){$.getJSON("?app=system&controller=content_note&action=delete&days="+a,function(b){if(b.state){tableApp.load();
+ct.ok("\u64cd\u4f5c\u6210\u529f")}else ct.error(b.error)})}};

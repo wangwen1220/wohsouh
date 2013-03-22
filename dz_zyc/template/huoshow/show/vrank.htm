@@ -1,0 +1,166 @@
+{subtemplate show/rank_header}
+<script>
+  function week(page){
+    var url = '/show.php?mod=vrank&operation=week&page='+page;
+    _$.getJSON(url, function(data){
+    	var h = '<div class="ripai"><span>WEEK</span><h1>魅力之星数量周排行榜</h1></div>';
+    	h+='<div class="he"><table width="100%" border="0" class="paixing"> <tr class="wenzi"><td width="10%" >排名</td> <td width="52%">昵称</td> <td width="15%">数量</td> </tr>';
+      if( data['data'] ) {
+        var datalist=data['data'];
+//          if( data['pai'] ) { h+='<h3> 您的当前排名：'+data['pai']+'</h3>';}
+            for(var i=0,l=datalist.length; i<l; i++){
+              h += [ 
+              '<tr class="wenzi_huise"><td><span class="a">',
+                    (page-1)*15+i+1,
+                    '</span></td><td><a href="/',
+                    datalist[i].uid,
+                    '"><span style="float:left;">',
+                      datalist[i].nickname,
+                      '(',datalist[i].uid,')</span>',
+                    '</a></td><td>',
+                  datalist[i].value,
+                  '</td></tr>'
+              ].join("");
+            }
+      } 
+      h+= '</table></div><div class="Page"><div class="page_dian"><a href="#" onclick="goTop();return false;"></a></div>'+data['pagehtml']+'</div>';
+      _$("#week").html(h);                       
+    });
+  };
+  function day(page, date){
+    var url = '/show.php?mod=vrank&operation=day&page='+page+'&duidate='+date;
+    _$.getJSON(url, function(data){
+//      if( data['data'] ) {
+        var datalist=data['data'];
+        var h = '<div class="ripai"><span>DAY</span><h1>魅力之星数量日排行榜</h1><input type="submit" value="'+data['startTime']+'" id="vduidate1id" name="duidate1" onclick="showcalendar(event, this);rankGetter=day;duidate1id=\'vduidate1id\';" style="float:right; font-weight:bold; margin:1px 15px 0px 0px; background:url(static2/images/rili.jpg) no-repeat; width:30px; height:30px; padding-top:5px; "  />';
+          if( data['pai'] ) { h+='<h3> 您的当前排名：'+data['pai']+'</h3>';}
+          h+='</div><div class="he"><table width="100%" border="0" class="paixing"> <tr class="wenzi"><td width="10%" >排名</td> <td width="52%">昵称</td> <td width="15%">数量</td> </tr>';
+          if(datalist){
+            for(var i=0,l=datalist.length; i<l; i++){
+              h += [ 
+              '<tr class="wenzi_huise"><td><span class="a">',
+                    (page-1)*15+i+1,
+                    '</span></td><td><a href="/',
+                    datalist[i].uid,
+                    '"><span style="float:left;">',
+                      datalist[i].nickname,
+                      '(',datalist[i].uid,')</span>',
+                    '</a></td><td>',
+                  datalist[i].value,
+                  '</td></tr>'
+              ].join("");
+            }
+          }
+            h+= '</table></div><div class="Page"><div class="page_dian"><a href="#" onclick="goTop();return false;"></a></div>'+data['pagehtml']+'</div>';
+        _$("#day").html(h);
+//      }                        
+    });
+  };
+  function huomonth(page,date){
+    var url = '/show.php?mod=vrank&operation=huomonth&page='+page+'&duidate='+date;
+    _$.getJSON(url, function(data){
+//      if( data['data'] ) {
+        var datalist=data['data'];
+        var h = '<div class="ripai"><span>MONTH</span><h1>魅力之星数量月排行榜</h1><input type="submit" value="'+data['startTime']+'" id="vmonth" name="duidate1" onclick="showcalendar(event, this);rankGetter=huomonth;duidate1id=\'vmonth\';" style="float:right; font-weight:bold; margin:1px 2px 0px 0px; background:url(static2/images/rili.jpg) no-repeat; width:30px; height:30px; padding-top:5px; "  />';
+          if( data['pai'] ) { h+='<h3> 您的当前排名：'+data['pai']+'</h3>';}
+          h+='</div><div class="he"><table width="100%" border="0" class="paixing"> <tr class="wenzi"><td width="10%" >排名</td> <td width="52%">昵称</td> <td width="15%">数量</td> </tr>';
+          if(datalist){
+            for(var i=0,l=datalist.length; i<l; i++){
+              h += [ 
+              '<tr class="wenzi_huise"><td><span class="a">',
+                    (page-1)*15+i+1,
+                    '</span></td><td><a href="/',
+                    datalist[i].uid,
+                    '"><span style="float:left;">',
+                      datalist[i].nickname,
+                      '(',datalist[i].uid,')</span>',
+                    '</a></td><td>',
+                  datalist[i].value,
+                  '</td></tr>'
+              ].join("");
+            }
+          }
+            h+= '</table></div><div class="Page"><div class="page_dian"><a href="#" onclick="goTop();return false;"></a></div>'+
+          data['pagehtml']+'</div>';
+        _$("#huomonth").html(h);
+//      }                        
+    });
+  };
+  function all(page){
+    var url = '/show.php?mod=vrank&operation=all&page='+page;
+    _$.getJSON(url, function(data){
+    	var h = '<div class="ripai"><span>TOTAL</span><h1>魅力之星数量总排行榜</h1></div>';
+    	h+='<div class="he"><table width="100%" border="0" class="paixing"> <tr class="wenzi"><td width="10%" >排名</td> <td width="52%">昵称</td> <td width="15%">数量</td> </tr>';
+      if( data['data'] ) {
+        var datalist=data['data'];
+          //if( data['pai'] ) { h+='<h3> 您的当前排名：'+data['pai']+'</h3>';}
+            for(var i=0,l=datalist.length; i<l; i++){
+              h += [ 
+              '<tr class="wenzi_huise"><td><span class="a">',
+                    (page-1)*15+i+1,
+                    '</span></td><td><a href="/',
+                    datalist[i].uid,
+                    '"><span style="float:left;">',
+                      datalist[i].nickname,
+                      '(',datalist[i].uid,')</span>',
+                    '</a></td><td>',
+                  datalist[i].value,
+                  '</td></tr>'
+              ].join("");
+            }
+      } 
+      h+= '</table></div><div class="Page"><div class="page_dian"><a href="#" onclick="goTop();return false;"></a></div>'+data['pagehtml']+'</div>';
+      _$("#all").html(h);                       
+    });
+  };
+</script>
+
+<div id="pt" class="bm cl">
+  <!--{subtemplate common/simplesearchform}-->
+  <div class="z">
+    <a name="top"></a>
+    <a href="./" class="nvhm" title="{lang home}">$_G[setting][bbname]</a><em>&rsaquo;</em>
+    <a href="show.php">直播</a><em>&rsaquo;</em>
+    <a href="show.php?mod=vrank">魅力之星数量排行榜</a>
+  </div>
+</div>
+<div class="w961">
+  <div class="nr">
+    <div class="paixing_left">
+      <div class="left"> 
+        <div class="left_01" id="day">
+        </div>
+        <div class="left_02"  id="week">
+        </div>
+        <p>&nbsp;</p>
+      </div>
+      <div class="left"> 
+        <div class="left_01" id="huomonth">
+        </div>
+        <div class="left_02" id="all">
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+  </div>
+
+  <div class="right">
+    <div class="anniu"><a href="/"><img src="static2/images/an1.gif" width="276" height="34" /></a></div>
+    <div class="zhubo_bj"><a href="/show.php?mod=zrank"class="ahover">魅力指数排行榜</a></div>
+    <div class="zhubo_bj"><a href="/show.php?mod=rank"class="ahover">魅力排行榜</a></div>
+    <div class="zhubo_bj2"><a href="/show.php?mod=vrank"class="ahover">魅力之星数量排行榜</a></div>
+    <div class="zhubo_bj"><a href="/show.php?mod=frank">富豪排行榜</a></div>
+    <div class="zhubo_bj"><a href="/show.php?mod=yrank">友谊排行榜</a></div>
+  </div>
+</div>
+<div style=" clear:both;">
+</div>
+</div>
+</div>
+<script>
+  day(1);
+  week(1);
+  huomonth(1);
+  all(1)
+</script>
+{subtemplate common/footer}

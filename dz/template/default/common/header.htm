@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<!--[if lte IE 8]>
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<![endif]-->
+<!--[if IE 9]>
+<meta http-equiv="x-ua-compatible" content="ie=9" />
+<![endif]-->
+
+    <title><!--{if $liveSeoTitle}-->{$liveSeoTitle}<!--{else}--><!--{if !empty($navtitle)}-->{$navtitle}_<!--{/if}--><!--{if empty($nobbname1)}-->{$_G['setting']['bbname']}<!--{/if}--><!--{/if}--></title>
+    $_G['setting']['seohead'] 
+    <meta name="keywords" content="{if !empty($metakeywords)}{echo htmlspecialchars($metakeywords)}{/if}" />
+    <meta name="description" content="{if !empty($metadescription)}{echo htmlspecialchars($metadescription)} {/if},$_G['setting']['bbname']" />
+    <base href="$_G['siteurl']" />              
+    <!--{csstemplate}-->
+
+    <link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="{WWW_URL}img/templates/huoshow02/css/index.css" rel="stylesheet" type="text/css" />
+    <script src="{IMG_URL}js/lib/jquery.js"></script>
+    <script src="static2/js/jquery.tools.min.js?{VERHASH}"></script> 
+    <script src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+    <script src="{IMG_URL}templates/huoshow_01/js/basic.js"></script>
+    <script src="{IMG_URL}js/config.js"></script>
+    <script>
+      var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', DXURL = '$_G[siteurl]', CMSURL = 'http://www.huoshow.com/';
+    </script>
+    <script src="{$_G[setting][jspath]}common.js?{VERHASH}"></script>
+    <script src="{DX_URL}static2/js/huoshow_common.js?{VERHASH}"></script>
+
+    <!--{if defined('CURMODULE') && ($_G['basescript'] == 'forum' || $_G['basescript'] == 'group') && (CURMODULE == 'index' || CURMODULE == 'forumdisplay' || CURMODULE == 'group')}-->$rsshead<!--{/if}-->
+    <!--{if $_G['basescript'] == 'forum'}-->
+    <!--{if !empty($_G['cookie']['widthauto']) && empty($_G['disabledwidthauto'])}-->
+    <link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+    <script>HTMLNODE.className += ' widthauto'</script>
+    <!--{/if}-->
+    <script src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+    <!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+    <script src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+    <!--{elseif $_G['basescript'] == 'portal'}-->
+    <script src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+    <!--{/if}-->
+    <!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && ($_G[mod] == 'topic' || $_G[group][allowdiy]) && !empty($_G['style']['tplfile'])}-->
+    <script src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+    <!--{/if}-->
+    <!--{if $_GET[diy] == 'yes' && ($_G[mod] == 'topic' || $_G[group][allowdiy]) && !empty($_G['style']['tplfile'])}-->
+    <link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+    <!--{/if}-->
+  </head>
+
+<body class="body_bg">
+  <div id="append_parent"></div>
+  <div id="ajaxwaitid"></div>
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+          <a target="_blank" href="{WWW_URL}">首页</a>-<a target="_blank" href="{DX_HUOSHOW_SHOW_URL}">直播</a>-<a target="_blank" href="{WWW_URL}events/">赛事</a>-<a target="_blank" href="{WWW_URL}star/">明星</a>-<a target="_blank" href="{WWW_URL}movie/">影视</a>-<a target="_blank" href="{WWW_URL}music/">音乐</a>-<a target="_blank" href="{WWW_URL}game/">游戏</a>-<a target="_blank" href="{WWW_URL}pic/">美图</a>-<a target="_blank" href="{WWW_URL}myshow/">My秀</a>-<a target="_blank" href="{DX_URL}group.php">群组</a>-<a target="_blank" href="{DX_URL}home.php">空间</a>-<a target="_blank" href="{DX_HUOSHOW_BBS_URL}">论坛</a>
+        </div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('{DX_URL}api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+
+<div class="nav_bg">
+  <h1 class="channel_logo"><a target="_blank" href="{WWW_URL}">火秀网</a></h1>
+  <div id="sub_channel">
+    <ul>
+      <li><a target="_blank" href="{WWW_URL}">首页</a></li>
+      <li><a target="_blank" href="{DX_HUOSHOW_SHOW_URL}">直播</a></li>
+      <li><a target="_blank" href="{WWW_URL}events/">赛事</a></li>
+	  <li><a target="_blank" href="{WWW_URL}star/">明星</a></li>
+      <li><a target="_blank" href="{WWW_URL}movie/">影视</a></li>
+      <li><a target="_blank" href="{WWW_URL}music/">音乐</a></li>
+      <li><a target="_blank" href="{WWW_URL}game/">游戏</a></li>
+      <li><a target="_blank" href="{WWW_URL}pic/">美图</a></li>
+      <!--<li><a href="#">排行榜</a></li>-->
+      <li><a target="_blank" href="{WWW_URL}myshow/">MY秀</a></li>
+      <li><a target="_blank" href="{DX_URL}group.php">群组</a></li>
+      <li><a target="_blank" href="{DX_URL}home.php">空间</a></li>
+      <li><a target="_blank" href="{DX_HUOSHOW_BBS_URL}">论坛</a></li>
+    </ul>
+  </div>
+  <!--<div class="search_index">
+    <script>
+      (function($){
+        $(function(){
+          window.clearKeyword = function () {
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字'){
+              $("#search_wd").val('');
+            }
+            if(search_wd==''){
+              $("#search_wd").val('请输入关键字');
+            }
+          };
+
+          window.checkSForm = function () {
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字' || search_wd==''){
+              alert('请输入关键字');
+              return false;
+            }
+          };
+        });
+      })(jQuery);
+    </script>
+
+    <form method="get" name="search" id="search" action="{WWW_URL}app/" target="_blank" onSubmit="return checkSForm()">
+      <input type="hidden" value="search" name="app"/>
+      <input type="hidden" value="index" name="controller"/>
+      <input type="hidden" value="search" name="action"/>
+      <input type="hidden" value="all" name="type"/>
+      <input type="text" class="search_input_index" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><span class="search_button_index">
+        <input type="submit" class="search_submit_index" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" /></span>
+    </form>
+  </div>-->
+        <div class="clear"></div>
+      </div>
+
+      <div class="red_bar">
+        <div class="red_bar_text">
+          <div class="red_bar_today"><span class="red_bar_today_bg"></span>{DATE_YMD} 星期{DATE_WEEK}</div>
+          <div id="header_rollnews_keywords" >                           
+          </div>
+		  <div class="shuru_suosou">
+	 <script>
+      (function($){
+        $(function(){
+
+          window.clearKeyword = function(){
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字'){
+              $("#search_wd").val('');
+            }
+            if(search_wd==''){
+              $("#search_wd").val('请输入关键字');
+            }
+          }
+
+          window.checkSForm = function() {
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字' || search_wd==''){
+              alert('请输入关键字');
+              return false;
+            }
+          }
+
+        });
+      })(jQuery);
+    </script>
+		<!--<div class="k"><input name="" type="text" class="shuru_k" /></div>
+		<div class="s_suo"><a href=""><img src="images/s_suo.jpg" width="57" height="20" /></a></div>-->
+		<form method="get" name="search" id="search" action="{WWW_URL}app/" target="_blank" onSubmit="return checkSForm()">
+      <input type="hidden" value="search" name="app"/>
+      <input type="hidden" value="index" name="controller"/>
+      <input type="hidden" value="search" name="action"/>
+      <input type="hidden" value="all" name="type"/>
+      <input type="text" class="shuru_k" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><div class="s_suo">
+        <input type="submit" class="search_submit_index" value=" " width="57" height="20"/></div>
+    </form>
+	</div>
+          <script>
+            (function($){
+              $(function(){
+                $.getJSON('{WWW_URL}api/article.php?act=get_header_rollnews_keywords&do=ajax&jsoncallback=?', function(d){
+                  $("#header_rollnews_keywords").html(d.html);
+
+                });
+              });
+            })(jQuery);
+          </script>
+        </div>
+      </div>
+<div class="clear"></div>
+<div class="main_body">

@@ -1,0 +1,102 @@
+<a name="comment_anchor_$value[cid]"></a>
+<!--{if empty($ajax_edit)}--><dl id="comment_$value[cid]_li" class="bbda cl"><!--{/if}-->
+	<!--{if $value[author]}-->
+	<dd class="m avt"><a href="home.php?mod=space&uid=$value[authorid]" c="1"><!--{avatar($value[authorid],small)}--></a></dd>
+	<!--{else}-->
+	<dd class="m avt"><img src="{STATICURL}image/magic/hidden.gif" alt="hidden" /></dd>
+	<!--{/if}-->
+	<dt>
+		<span class="y xw0">
+		<!--{if $value['authorid'] != $_G['uid'] && $value['author'] == "" && $_G[magic][reveal]}-->
+			<a id="a_magic_reveal_{$value[cid]}" href="home.php?mod=magic&mid=reveal&idtype=cid&id=$value[cid]" onclick="ajaxmenu(event,this.id,1)"><img src="{STATICURL}image/magic/reveal.small.gif" alt="reveal" />{$_G[magic][reveal]}</a>
+			<span class="pipe">|</span>
+		<!--{/if}-->
+
+		<!--{hook/space_blog_comment_op $k}-->
+		<!--{if $value[authorid]==$_G[uid]}-->
+			<!--{if $_G[magic][anonymous]}-->
+				<img src="{STATICURL}image/magic/anonymous.small.gif" alt="anonymous" class="vm" />
+				<a id="a_magic_anonymous_{$value[cid]}" href="home.php?mod=magic&mid=anonymous&idtype=cid&id=$value[cid]" onclick="ajaxmenu(event,this.id, 1)">{$_G[magic][anonymous]}</a>
+				<span class="pipe">|</span>
+			<!--{/if}-->
+			<!--{if $_G['setting']['magicstatus'] && !empty($_G['setting']['magics']['flicker'])}-->
+				<img src="{STATICURL}image/magic/flicker.small.gif" alt="flicker" class="vm" />
+					<!--{if $value[magicflicker]}-->
+				<a id="a_magic_flicker_{$value[cid]}" href="home.php?mod=spacecp&ac=magic&op=cancelflicker&idtype=cid&id=$value[cid]&handlekey=cfhk_{$value[cid]}" onclick="showWindow(this.id, this.href, 'get', 0)">{lang cancel}{$_G['setting']['magics']['flicker']}</a>
+					<!--{else}-->
+				<a id="a_magic_flicker_{$value[cid]}" href="home.php?mod=magic&mid=flicker&idtype=cid&id=$value[cid]" onclick="showWindow(this.id, this.href, 'get', 0)">{$_G['setting']['magics']['flicker']}</a>
+					<!--{/if}-->
+				<span class="pipe">|</span>
+			<!--{/if}-->
+
+			<a href="home.php?mod=spacecp&ac=comment&op=edit&cid=$value[cid]&handlekey=editcommenthk_{$value[cid]}" id="c_$value[cid]_edit" onclick="showWindow(this.id, this.href, 'get', 0);">{lang edit}</a>
+		<!--{/if}-->
+		<!--{if $value[authorid]==$_G[uid] || $value[uid]==$_G[uid] || checkperm('managecomment')}-->
+			<a href="home.php?mod=spacecp&ac=comment&op=delete&cid=$value[cid]&handlekey=delcommenthk_{$value[cid]}" id="c_$value[cid]_delete" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a>
+		<!--{/if}-->
+		<!--{if $value[authorid]!=$_G[uid] && ($value['idtype'] != 'uid' || $space[self])}-->
+			<a href="home.php?mod=spacecp&ac=comment&op=reply&cid=$value[cid]&feedid=$feedid&handlekey=replycommenthk_{$value[cid]}" id="c_$value[cid]_reply" onclick="showWindow(this.id, this.href, 'get', 0);">{lang reply}</a>
+		<!--{/if}-->
+        <!--{if checkperm('managecomment')}-->
+			<span class="xg1 xw0">IP: $value[ip]</span>
+		<!--{/if}-->
+			<!--a href="home.php?mod=spacecp&ac=common&op=report&idtype=comment&id=$value[cid]&handlekey=reportcommenthk_{$value[cid]}" id="a_report_$value[cid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang report}</a-->
+		</span>
+
+		<!--{if $value[author]}-->
+		<a href="home.php?mod=space&uid=$value[authorid]" id="author_$value[cid]">{$value[author]}</a>
+		<!--{else}-->
+		{lang anonymity}
+		<!--{/if}-->
+		<span class="xg1 xw0"><!--{date($value[dateline])}--></span>
+		<!--{if $value[status] == 1}--><b>({lang moderate_need})</b><!--{/if}-->
+	</dt>
+
+	<dd id="comment_$value[cid]"{if $value[magicflicker]} class="magicflicker"{/if}><!--{if $value[status] == 0 || $value[authorid] == $_G[uid] || $_G[adminid] == 1}-->$value[message]<!--{else}--> {lang moderate_not_validate} <!--{/if}--></dd>
+    
+    <dd>
+        <div class="mod_comment" style="width: 420px;" id="comment_reply_list_{$value[cid]}">
+            <!--{loop $value[reply_arr] $reply}-->
+            <li class="bg2" id="comment_reply_li_$reply[reply_id]">
+                <div class="mod_comment_cont">
+                    <p class="mod_comment_avatar">
+                    <!--{if $reply[reply_user]}-->
+                    <a class="q_namecard" href="home.php?mod=space&uid=$reply[reply_uid]" c="1" target="_blank"><!--{avatar($reply[reply_uid],small)}--></a>
+                    <!--{else}-->
+                    <img src="{STATICURL}image/magic/hidden.gif" alt="hidden" />
+                    <!--{/if}-->
+                    </p>
+                    <div class="bg2 comment_cont">
+                        <p>
+                            <span class="mod_comment_authorname">
+                            <!--{if $reply[reply_user]}-->
+                                <a href="home.php?mod=space&uid=$reply[reply_uid]" class="c_tx q_namecard" target="_blank">{$reply[nickname]}</a>
+                            <!--{else}-->
+                                {lang anonymity}
+                            <!--{/if}-->
+                            </span>{$reply[reply_content]}
+                        </p>
+                        <p class="mod_comment_last"><span class="c_tx3 mod_comment_time"><!--{date($reply[reply_dateline])}--> <!--{if $reply[reply_uid]==$_G[uid]||$value[uid]==$_G[uid]}-->
+                        <a class="c_tx mod_comment_del" onclick="ajax.delelte_reply('$reply[reply_id]');" style="cursor:pointer">{lang delete}</a><!--{/if}--></span></p>
+                    </div>    	
+                </div>
+            </li>
+        <!--{/loop}-->
+        </div>
+        <!--{if $_G[uid]}-->
+        <div class="bg2 mod_clear mod_comment_post" id="commentModule$value[cid]_commentTip" style="width:420px">
+            <p style="width: auto;" class="mod_comment_default_input textinput"  onclick="return comment_reply_hidden('commentModule$value[cid]_commentTip','commentModule$value[cid]_commentBox','$value[cid]')"></p>
+        </div>
+        <div class="bg2 mod_comment_post" id="commentModule$value[cid]_commentBox" style="width:420px;display: none;" >
+            <p id="commentModule{$value[cid]}_emoticonButtonWrapper"><span id="comment_face{$value[cid]}" title="{lang insert_emoticons}" onclick="showFace(this.id, 'comment_reply_$value[cid]');return false;" style="cursor: pointer;"><img src="{IMGDIR}/facelist.gif" alt="facelist" class="vm" /></span></p>
+            
+            <p class="mod_comment_textarea"><span><textarea class="textarea textinput input_focus" rows="5" cols="60" id="comment_reply_$value[cid]"></textarea></span></p>
+            <p style="display: none;" class="hint" id="commentModule1_hintBox"><span class="icon_hint"></span><span></span></p><p class="mod_comment_option"><span class="mod_comment_sub"><button class="bt_tx2" id="commentModule$value[cid]_postButton" type="button" onclick="ajax.reply_ajax_submit('$value[cid]')">{lang submit}</button> <a class="c_tx3" href="javascript:;" onclick="comment_reply_hidden('commentModule$value[cid]_commentBox','commentModule$value[cid]_commentTip','$value[cid]')">{lang cancel}</a><span class="mod_comment_extension" id="commentModule1_extension_bottom"></span></span>
+            </p>
+         </div>
+         <!--{/if}-->
+    </dd>
+
+	<!--{hook/space_blog_comment_bottom}-->
+
+<!--{if empty($ajax_edit)}--></dl><!--{/if}-->

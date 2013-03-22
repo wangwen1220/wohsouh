@@ -1,0 +1,265 @@
+<style type="text/css">
+.tb a{
+	cursor:default;
+	outline:none;
+}
+
+.tb a:hover{
+	text-decoration:none;
+	color:#555;
+}
+
+#flashRecord object{
+	margin: 1em auto;
+	display:block;
+}
+
+.uct-block2{
+	padding:1em 5px;
+	margin:1em 5px;
+	background:#FFFAC8;
+	border-top:1px solid #E4DA69;
+	border-bottom:1px solid #E4DA69;
+}
+
+.tb-body{
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #ccc;
+}
+
+#record_box,#upload_box{
+	padding:1em;
+}
+
+.to_audio h3,
+.to_video h3,
+.to_audio a,
+.to_video a{
+	color:#33789C;
+}
+
+
+.to_audio p, .to_video p{
+	padding-left:80px;
+	position:absolute;
+	width:150px;
+}
+
+.to_audio, .to_video{
+	background: #E8EFF7;
+	border:1px solid #D9E3EF;
+	padding:1em;
+	width:222px;
+	margin: 10px 0 10px 20px;
+	float:left;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+}
+.opt{
+margin-left:0px;
+margim-top:10px;
+}
+
+.opt th{
+	height:30px;
+	text-align:left;
+	padding-left:10px;
+font-weight:bold;
+}
+
+.opt td{
+height:30px;
+vertical-align:middle;
+padding:0;
+margin:0;
+padding-left:10px;
+}
+.opt td INPUT {
+height:20px;
+width:200px;
+}
+.opt td TEXTAREA{
+padding:5px;
+}
+
+
+</style>
+<div id="contain">
+	<div class="main-hbox-left">
+		<div>
+			<h1 class="mt"><img alt="trade" src="{STATICURL}image/feed/favorite.gif" alt="task" class="vm" /> {lang myshow_add}</h1>
+			<ul class="tb cl">
+				<li <!--{if $do=='audio' || $do=='video'}--> class="a"<!--{/if}-->><a href="javascript:;">{lang myshow_record}</a></li>
+				<li <!--{if $do=='info'}--> class="a"<!--{/if}-->><a href="javascript:;">{lang myshow_fill_info}</a></li>
+				<li <!--{if $do=='finish'}--> class="a"<!--{/if}-->><a href="javascript:;">{lang myshow_finish}</a></li>
+			</ul>
+		
+			<!--{if $do=='audio' || $do=='video'}-->
+					{lang myshow_record_help_1}
+					<!--{if $do=='audio'}--> 
+						<div id="flashRecord">
+							<object width="400" height="340" data="static2/Record.swf?recordType=audio&userId=$_G[uid]" type="application/x-shockwave-flash">
+								<param name="movie" value="static2/Record.swf?recordType=audio&userId=$_G[uid]" />
+								<param name="quality" value="high" />
+								<param name="allowScriptAccess" value="always" />
+							</object>
+						</div>
+					<!--{/if}--> 	
+				
+					<!--{if $do=='video'}--> 
+						<div id="flashRecord">
+							<object width="400" height="340" data="static2/Record.swf?recordType=video&sendUrl=source/module/home/home_saveimg.php&userId=$_G[uid]" type="application/x-shockwave-flash">
+								<param name="movie" value="static2/Record.swf?recordType=video&sendUrl=source/module/home/home_saveimg.php&userId=$_G[uid]" />
+								<param name="quality" value="high" />
+								<param name="allowScriptAccess" value="always" />
+							</object>
+						</div>
+					<!--{/if}--> 
+					{lang myshow_record_help_2}
+			<!--{elseif $do=='info'}-->
+					<form action="home.php?mod=spacecp&ac=myshow&op=record&do=info" method="post" onsubmit="return checksub()" >
+						<input type="hidden" name="file" value="{$file}" />
+						<input type="hidden" name="type" value="{$typeId}" />
+						<input type="hidden" name="typename" value="{$type}" />
+						
+						<table class="opt">	
+							<div id="check"></div>							
+							<tr>
+								<th><!--{if $typeId==2}-->{lang myshow_video_title}<!--{else}-->{lang myshow_audio_title}<!--{/if}-->:</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="title" id="title" value="" class="txt" />
+								</td>
+							</tr>							
+							<tr>
+								<th>{lang myshow_classtype}:</th>								
+							</tr>
+							<tr>
+								<td>
+									<select name="classify"  id="classify" class="ps">
+									<!--{loop $classify $value}-->
+									<option value="$value[id]" selected>$value[name]</option>
+									<!--{/if}--> 
+									</select>
+								</td>
+							</tr>
+							
+							<tr>
+								<th>{lang myshow_language}:</th>
+							</tr>
+							<tr>
+								<td>
+									<select name="language"  id="language">
+										<option  value="1">{lang myshow_language_cn}</option>
+										<option  value="2">{lang myshow_language_yueyu}</option>
+										<option  value="3">{lang myshow_language_en}</option>
+										<option  value="4">{lang myshow_language_jp}</option>
+										<option  value="5">{lang myshow_language_hy}</option>
+										<option  value="9">{lang myshow_language_other}</option>
+									</select>
+								</td>
+							</tr>
+	
+							<tr>
+								<th>{lang myshow_copy}: <input type="checkbox" class="checkbox" name="isfanart" value="1" /> {lang myshow_fanart}</th>
+							</tr>
+							
+							<!--{if $typeId==1}-->
+							<tr>
+								<th>{lang myshow_lyricist}:</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="lyricist" value="" class="txt" />
+								</td>
+							</tr>
+							
+							<tr>
+								<th>{lang myshow_compose}:</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="compose" value="" class="txt" />
+								</td>
+							</tr>
+							
+							<tr>
+								<th>{lang myshow_singer}:</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="singer" value="" class="txt" />
+								</td>
+							</tr>
+							
+							<tr>
+								<th>{lang myshow_lyrics}: </th>
+							</tr>
+							<tr>
+								<td>
+									<textarea  name="lyrics" cols="70" rows="7"></textarea>
+								</td>
+							</tr>
+							
+							<!--{/if}-->
+							
+							<tr>
+								<th>{lang myshow_introduce}: </th>
+							</tr>
+							<tr>
+								<td>
+									<textarea  name="content" cols="70" rows="7"></textarea>
+								</td>
+							</tr>
+	
+							<tr>
+								<th><input type="checkbox" class="checkbox" name="clause" id="clause" value="1" /> {lang myshow_clause}</th>
+							</tr>
+							<tr>
+								<th>{lang myshow_clause_list}</th>
+							</tr>
+							
+						</table>
+						<div class="opt"><input type="submit" name="submitinfo" value=" {lang submit} " class="btn" tabindex="3" /></div>
+					</form>
+			<!--{elseif $do=='finish'}-->
+					<p>{lang myshow_success}</p>
+					{lang myshow_success_other}
+			<!--{/if}-->
+		</div>
+	</div>
+</div>	
+
+<script type="text/javascript">
+function checksub(){
+	if(document.getElementById("title").value==''){
+		document.getElementById("check").innerHTML="<font color='red'>*标题不能为空</font>";
+		document.getElementById("title").focus();
+		return false;
+	}else if(document.getElementById("classify").value==''){
+		document.getElementById("check").innerHTML="<font color='red'>*分类不能为空</font>";
+		document.getElementById("classify").focus();
+		return false;
+	}else if(document.getElementById("language").value==''){
+		document.getElementById("check").innerHTML="<font color='red'>*语言不能为空</font>";
+		//alert("语言不能为空");
+		document.getElementById("language").focus();
+		return false;
+	}else if(!document.getElementById("clause").checked){
+		document.getElementById("check").innerHTML="<font color='red'>*请先勾选火秀条款</font>";
+		//alert("请先勾选火秀条款");
+		document.getElementById("clause").focus();
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+var times = 0;
+function openSaveWindow(type, fileName) {
+	window.location.href = 'home.php?mod=spacecp&ac=myshow&op=record&do=info&type='+type+'&file='+fileName;
+}
+</script>

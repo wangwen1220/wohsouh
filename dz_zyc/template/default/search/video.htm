@@ -1,0 +1,17 @@
+<!--{subtemplate common/header}-->
+<div id="ct" class="w">
+	<form class="searchform" method="post" autocomplete="off" action="search.php?mod=video">
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+		<!--{subtemplate search/pubsearch}-->
+		<!--{hook/video_top}-->
+
+	</form>
+	<!--{if !empty($searchid) && submitcheck('searchsubmit', 1)}-->
+	<!--{subtemplate search/video_list}-->
+	<!--{/if}-->
+
+</div>
+<!--{hook/video_bottom}-->
+
+<!--{subtemplate common/footer}-->

@@ -1,0 +1,154 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{IMG_URL}templates/huoshow02/css/common.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+
+<script type="text/javascript">
+
+var contentid = {$contentid};	
+</script>
+
+<!-- *******************  start box   *********************** -->
+
+<div class="main_body">
+	<div class="content_nav">
+		<span class="content_logo"><img src="{WWW_URL}img/templates/huoshow02/images/link-icon.jpg" /></span>
+		<span class="content_cont">
+			<!--{loop $pos $cat}-->
+				<a href="{$cat[url]}">{$cat[name]}</a> > 
+			<!--{/loop}-->投票
+		</span>
+	</div>
+	<!-- leftSide -->
+    <div class="column_left" style="line-height:25px;border-right:solid 0px;">
+		<div class="content-wrap bor-9fc padd-20 padd-b-0">
+			<h1 style="margin-bottom: 0;">{$title}</h1>
+			
+			<div class="arti-atttibute">
+				<span>{date('Y-m-d H:i',$starttime)}</span>
+			<!--{if $endtime}-->截止时间：<span>{date('Y-m-d H:i',$endtime)}</span><!--{/if}-->
+			</div>
+
+            <!--{if $description}-->
+			<p class="cont-summary fs-small" id="ctrlfssummary">
+				{$description}
+			</p>
+            <!--{/if}-->
+			
+			<div class="cont-detail fs-big" id="ctrlfscont">
+				<form id="vote_form" name="vote_form" method="POST" action="{APP_URL}?app=vote&controller=vote&action=vote">
+				<input name="contentid" type="hidden" value="{$contentid}"/>
+					<ul class="cont-vote-list">
+  <!--{if $type=='radio'}-->
+      <!--{loop $option $k $v}-->
+	  <li><span><input type="{$type}" name="optionid" value="{$v[optionid]}"/></span><label>{$v[name]}</label></li>
+      <!--{/loop}-->
+  <!--{else}-->
+      <!--{loop $option $k $v}-->
+	  <li><span><input type="{$type}" name="optionid[]" value="{$v[optionid]}"/></span><label>{$v[name]}</label></li>
+      <!--{/loop}-->
+  <!--{/if}-->
+  	  <li class="vote-btn-area"><input type="submit" name="" value="投票" class="post-btn fs-12" /><a href="{APP_URL}?app=vote&controller=vote&action=result&contentid={$contentid}" class="fs-12 cor-06c mar-l-10">查看结果</a></li>
+					</ul>
+				</form>
+			</div>
+			<div class="hr-h10"></div>
+			<div class="arti-rel">
+				<p class="tags-wrap"><strong class="fs-14">其他投票</strong></p>
+				<div class="mode-txtlink fs-14 cor-06c">
+					<ul>
+					<!--{content modelid="8" orderby="published desc" weight="60" status="6" size="6"}-->
+						<li><a href="{$r[url]}" >{$r[title]}</a> <em class="fs-12 cor-666">{date('Y-m-d', $r[published])}</em></li>
+					<!--{/content}-->
+					</ul>
+				</div>
+			</div>					
+		</div>
+		<!-- *******************  end 内容区   *********************** -->
+		<div class="hr-h10"></div>
+		<!--{if $allowcomment}-->
+		<!-- *******************  start 评论   *********************** -->
+		 <!--{template 'article/comment.html'}-->
+			<!-- *******************  end 评论   *********************** -->
+		<!--{/if}-->
+	
+	
+	</div>
+    <!-- //leftSide -->
+    <!-- rightSide -->
+        <div class="Subpage_right">
+            <div class="right_banner" id="rollImg">
+            {db sql="select * from #table_section  where memo ='banner_common_topright_300_250'"}
+        {$r[data]}
+    {/db}
+            </div>
+            <!--div class="right_news_jiaodian">
+                <div class="right_news_jiaodian_01">
+                    <div class="right_news_jiaodian_bt"><span class="wenzi">点击榜 </span></div>
+                    <div class="right_news_jiaodian_list">
+                        <ul>						
+                            {db sql="SELECT title,url FROM #table_content  order by pv DESC limit 10 "}			           
+                            <li><span class="icon1"></span><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],40,'')}</a></li>
+                            {/db}
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_news_jiaodian">
+                <div class="right_news_jiaodian_01">
+                    <div class="right_news_jiaodian_bt"><span class="wenzi">热点推荐</span> </div>
+                        <ul class="redian_news">
+                            
+                            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_other_news_hot_recommend' ORDER BY d.sort desc limit 10"}
+                            <li>·<a href="{$r[url]}"  target="_blank" title="{$r['title']}">{str_cut($r[title],40,'')}</a></li>
+                            {/db}
+                            
+    
+                        </ul>
+                        
+                    </div>
+            </div>
+            <div class="right_news_jiaodian">
+                <div class="right_news_jiaodian_01">
+                    <div class="right_news_jiaodian_bt"><span class="wenzi">精彩图集</span> </div>
+                        <div class="Small_games_pic">
+            <ul>
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_other_wonder_pic'  and d.thumb!='' ORDER BY d.sort desc limit 10"}
+            <li><a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="133" height="90" />{$r[title]}</a></li>
+            {/db}		
+            </ul>
+            </div>
+                        
+                    </div>
+            </div-->
+            
+        </div>
+		<!-- //rightSide -->
+</div>
+<!-- *******************  end box   *********************** -->
+<div class="clear"></div>
+<!--{template 'huoshow_common/common_footer.html'}-->
+<script type="text/javascript">
+(function($){
+$.getJSON(APP_URL+'?app=system&controller=content&action=stat&jsoncallback=?&contentid='+contentid, function(data){
+});
+$('#vote_form').submit(function(){
+	var checkeds = $('#vote_form input:checked').length;
+	if(checkeds == 0){
+		alert('请选择投票选项');
+		return false;
+	}
+	<!--{if $type == 'checkbox'}-->
+	if(checkeds > {$maxoptions}){
+		alert('最多允许选{$maxoptions}项');
+		return false;
+	}
+	<!--{/if}-->
+});
+})(jQuery);
+</script>
+<!-- *************  end content************* -->
+<!-- 版权部份 -->
+
+<script type="text/javascript" src="{IMG_URL}templates/{TEMPLATE}/js/tabs.js"></script>

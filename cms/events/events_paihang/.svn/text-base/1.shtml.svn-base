@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="快女、快乐女生、花儿朵朵、快乐男声、星光大道、中国达人秀、金钟奖、火秀魅力之星、舞林大会、非同凡响" />
+<meta name="description" content="火秀网友投票所得时下最火爆娱乐赛事排行榜，在这里可以查到你所喜爱的快女，达人秀，舞林大会等赛事在众多网友心中的喜爱程度。" />
+    <title>赛事排行_火秀赛事_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/events_global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/events.css" rel="stylesheet" type="text/css" />
+ <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+
+</head>
+
+  <body class="body_bg">
+    <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/events" title="火秀赛事首页">火秀赛事频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a href="http://www.huoshow.com/events/wholeevents/">赛事快报</a></li>
+<li><a href="http://www.huoshow.com/events/events_paihang">赛事排行</a></li>
+<li><a href="http://www.huoshow.com/events/saishiricheng">赛事日程</a></li>
+<li><a href="http://www.huoshow.com/events/events_zt">赛事专题</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/events/index.shtml">火秀赛事</a> > <a href="http://www.huoshow.com/events/events_paihang/index.shtml">赛事排行</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Main Body-->
+<div class="main_body">
+<div class="index_banner_W960_02">
+                <img src="http://www.huoshow.com/upload/2011/0822/1313994258113.gif" border="0" width="960" height="88" />                </div>
+<!--Left-->
+<div class=" body_webgame_left">
+<div class="eventsph_W650">
+<div class="eventph_bt">
+<h2 class="title_blue_big">赛事排行榜</h2>
+</div>
+                <div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top1.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=303" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314761230886.jpg" border="0" width="98" height="78" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=303" target="_blank">快乐女声</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /></span></h3>
+湖南卫视和天娱传媒于2009年5月起举办的大众歌手选秀赛。前身为湖南卫视2004年起举办的《超级女声》
+<p class="guzhu"><a href="  http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=303" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top2.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=307" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314763157597.jpg" border="0" width="109" height="78" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=307" target="_blank">花儿朵朵</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /> </span></h3>
+《花儿朵朵》是由青海卫视主办的大型歌唱类选秀节目，2010年、2011年，该选秀都第一个获得相关批文。&ldquo;花儿&rdquo;是流行于甘肃、青海、宁夏等地的一种山歌，是当地人民口头文学形式之一。
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=307" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top3.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=309" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314771494347.jpg" border="0" width="98" height="69" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=309" target="_blank">快乐男声</a><span>&nbsp;  火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /> </span></h3>
+快乐男声是湖南卫视于2007年举办的大众歌手选秀赛，参赛者必须是成年男性。  比赛采用淘汰制，通过自己的演唱得到评委和观众投票认可方可进入下一轮。
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=309" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top4.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=311" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314772513603.jpg" border="0" width="106" height="78" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=311" target="_blank">央视星光大道</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" width="18" height="12" /> </span></h3>
+《星光大道》是中央电视台综艺频道推出的一档大型综艺栏目，由葛延枰担任节目制片人、总导演，毕福剑主持。该栏目以百姓自娱自乐为宗旨，表演形式以唱歌为主，为大众提供展现才艺的舞台。
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=311" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top5.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=313" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314773127324.jpg" border="0" width="97" height="73" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=313" target="_blank">中国达人秀</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /></span></h3>
+<p>由东方卫视制作的一款真人秀节目，自2010年7月25日开始每周日晚在东方卫视播出。该节目旨在实现身怀绝技的普通人的梦想。</p>
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=313"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top6.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=315" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314774055711.jpg" border="0" width="107" height="81" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=315" target="_blank">华人星光大道</a><span> &nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /></span></h3>
+<p>《华人星光大道》前身为《超级星光大道》，是台湾一个电视歌唱选秀节目。由金星娱乐事业股份有限公司制作、中国电视公司监制。</p>
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=315" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top7.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=317" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314775151354.jpg" border="0" width="106" height="76" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=317" target="_blank">金钟奖流行音乐大赛</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /></span></h3>
+<p>中国音乐金钟奖由中国文联和中国音协会共同主办。是与戏剧梅花奖、电视金鹰奖、电影金鸡奖并列的国家级艺术大奖。</p>
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=317" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top8.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=305" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314776809513.jpg" border="0" width="109" height="92" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=305" target="_blank">火秀魅力之星</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /></span></h3>
+想成为火秀明星？想得到粉丝追捧？想以歌会友？或者想拿比赛奖金？那就来火秀！只要你会唱歌，或跳舞，或&hellip;&hellip;任你自由秀！不限时间、不限地点、不限方式，一台电脑、一个摄像头就可以走上你的星光大道！优秀选手不仅可以获得丰厚奖金，更有机会获得火秀官方签约和火秀年度双选会直通车资格!
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=305" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top9.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=319" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314775943474.jpg" border="0" width="105" height="74" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=319" target="_blank">舞林大会</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /></span></h3>
+《舞林大会》是上海文广新闻传媒集团(SMG)制作的一档以明星舞蹈竞技为主题的真人秀节目。
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=319" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>
+<div class="subpage_ph_sub">
+<div class="sub_topno"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/ph-top10.jpg" border="0" width="93" height="95" /></div>
+<div class="sub_topimg"><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=321" target="_blank"> <img src="http://www.huoshow.com/upload/2011/0831/1314777177356.jpg" border="0" width="107" height="81" /></a></div>
+<div class="sub_toppara">
+<h3><a href="http://space.huoshow.com/forum.php?mod=group&amp;fid=321" target="_blank">非同凡响</a><span>&nbsp; 火秀指数:<img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" width="18" height="12" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar2.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/Chart-Bar1.gif" border="0" /></span></h3>
+《非同凡响》是浙江卫视2010年全新推出的一档选秀节目。 该节目不同于以往选秀节目，对门槛提高了要求，并喊出&ldquo;谁来领唱华语乐坛&rdquo;的惊人口号。
+<p class="guzhu"><a href="http://space.huoshow.com/forum.php?mod=group&amp;action=join&amp;fid=321" target="_blank"><img src="http://www.huoshow.com/img/templates/huoshow02/images/events/plus.jpg" border="0" width="14" height="14" />加入该群组</a></p>
+</div>
+</div>                </div>
+</div>
+<!--Right-->
+<div class="body_webgame_right">
+<div class="web_game_banner_250">
+                <a href="http://www.huoshow.com/2011/0826/23539.shtml"><img src="http://www.huoshow.com/upload/2011/0901/1314841489455.jpg" border="0" width="300" height="250" /></a>                </div>
+<div class="events_W300">
+<div class="events_title_300"> <span class="game_right_title_bz"></span>
+<h2 class="Purple_Black">赛事焦点</h2>
+</div>
+<div class="Happy_girl_list">
+<div class="Happy_girl_newslist">
+<ul>
+<li><span class="Point"><a title="花儿谈“姣”色变 东部选手无人愿与张姣皎pk" target="_blank" href="http://www.huoshow.com/2011/0929/34959.shtml">花儿谈“姣”色变 东部选手无人愿与张</a></span></li>
+<li><span class="Point"><a title="美国偶像腹背受敌 X Factor完胜的八大理由" target="_blank" href="http://www.huoshow.com/2011/0928/34087.shtml">美国偶像腹背受敌 X Factor完胜的八大</a></span></li>
+<li><span class="Point"><a title="巩新亮:我离不开男人" target="_blank" href="http://www.huoshow.com/2011/0929/34885.shtml">巩新亮:我离不开男人</a></span></li>
+<li><span class="Point"><a title="图:周笔畅裸背照曝光" target="_blank" href="http://www.huoshow.com/2011/0929/34921.shtml">图:周笔畅裸背照曝光</a></span></li>
+<li><span class="Point"><a title="黄夕倍采访录:曾鄙视选秀 参赛乃“骑虎难下”" target="_blank" href="http://www.huoshow.com/2011/0927/33959.shtml">黄夕倍采访录:曾鄙视选秀 参赛乃“骑虎</a></span></li>
+<li><span class="Point"><a title="段林希刘忻微电影男主角曝光 金马型男加盟" target="_blank" href="http://www.huoshow.com/2011/0929/34517.shtml">段林希刘忻微电影男主角曝光 金马型男</a></span></li>
+<li><span class="Point"><a title="图:最美花儿汪小敏清纯写真" target="_blank" href="http://www.huoshow.com/2011/0928/34047.shtml">图:最美花儿汪小敏清纯写真</a></span></li>
+<li><span class="Point"><a title="《智勇大冲关》收官战惊现UFO" target="_blank" href="http://www.huoshow.com/2011/0930/35053.shtml">《智勇大冲关》收官战惊现UFO</a></span></li>
+<li><span class="Point"><a title="无腿女孩舞动奇迹 称霸《舞林大会》" target="_blank" href="http://www.huoshow.com/2011/0928/34079.shtml">无腿女孩舞动奇迹 称霸《舞林大会》</a></span></li>
+<li><span class="Point"><a title="决赛前夕 神秘明星来《舞林》"踢馆"" target="_blank" href="http://www.huoshow.com/2011/0930/34987.shtml">决赛前夕 神秘明星来《舞林》"踢馆"</a></span></li>
+<li><span class="Point"><a title="《达人秀》改版 姚明姚晨或加盟当评委" target="_blank" href="http://www.huoshow.com/2011/0928/34317.shtml">《达人秀》改版 姚明姚晨或加盟当评委</a></span></li>
+<li><span class="Point"><a title="图:花儿周晓晓嗨翻全场" target="_blank" href="http://www.huoshow.com/2011/0926/33099.shtml">图:花儿周晓晓嗨翻全场</a></span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="events_W300">
+<div class="events_title_300"> <span class="game_right_title_bz"></span>
+<h2 class="Purple_Black">赛事美图</h2>
+</div>
+<div class="Small_games_pic_02">
+<ul>
+  <li><a title="世界小姐迷人风采" target="_blank" href="http://www.huoshow.com/2011/0901/24497.shtml"><img alt="世界小姐迷人风采" src="http://www.huoshow.com/upload/2011/0901/1314860175299.jpg" width="124" height="90" /></a><a title="世界小姐迷人风采" target="_blank" href="http://www.huoshow.com/2011/0901/24497.shtml">世界小姐迷人风采</a></li>
+  <li><a title="李斯丹妮性感写真 大玩制服诱惑" target="_blank" href="http://www.huoshow.com/2011/0827/23689.shtml"><img alt="李斯丹妮性感写真 大玩制服诱惑" src="http://www.huoshow.com/upload/2011/0827/1314410314130.jpg" width="124" height="90" /></a><a title="李斯丹妮性感写真 大玩制服诱惑" target="_blank" href="http://www.huoshow.com/2011/0827/23689.shtml">李斯丹妮性感写真 大</a></li>
+  <li><a title="潘辰力挺洪辰送幸运手链 双辰炫美耀眼" target="_blank" href="http://www.huoshow.com/2011/0826/23673.shtml"><img alt="潘辰力挺洪辰送幸运手链 双辰炫美耀眼" src="http://www.huoshow.com/upload/2011/0826/1314352842228.jpg" width="124" height="90" /></a><a title="潘辰力挺洪辰送幸运手链 双辰炫美耀眼" target="_blank" href="http://www.huoshow.com/2011/0826/23673.shtml">潘辰力挺洪辰送幸运手</a></li>
+  <li><a title="快女付梦妮性感内衣照流出" target="_blank" href="http://www.huoshow.com/2011/0827/23693.shtml"><img alt="快女付梦妮性感内衣照流出" src="http://www.huoshow.com/upload/2011/0827/1314410720947.jpg" width="124" height="90" /></a><a title="快女付梦妮性感内衣照流出" target="_blank" href="http://www.huoshow.com/2011/0827/23693.shtml">快女付梦妮性感内衣照</a></li>
+  <li><a title="快女13强性感写真 上演“湿身诱惑”" target="_blank" href="http://www.huoshow.com/2011/0827/23688.shtml"><img alt="快女13强性感写真 上演“湿身诱惑”" src="http://www.huoshow.com/upload/2011/0827/1314409871965.jpg" width="124" height="90" /></a><a title="快女13强性感写真 上演“湿身诱惑”" target="_blank" href="http://www.huoshow.com/2011/0827/23688.shtml">快女13强性感写真 上</a></li>
+  <li><a title="花儿穿比基尼消暑 身材火辣引爆现场" target="_blank" href="http://www.huoshow.com/2011/0827/23757.shtml"><img alt="花儿穿比基尼消暑 身材火辣引爆现场" src="http://www.huoshow.com/upload/2011/0827/1314420918345.jpg" width="124" height="90" /></a><a title="花儿穿比基尼消暑 身材火辣引爆现场" target="_blank" href="http://www.huoshow.com/2011/0827/23757.shtml">花儿穿比基尼消暑 身</a></li>
+  </ul>
+</div>
+</div>
+<!--发售表--></div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

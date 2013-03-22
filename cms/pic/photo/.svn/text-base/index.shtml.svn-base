@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+    <title>明星写真_火秀图片_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/picset.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+<script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+<!--[if gte IE 6]>
+<link href="css/star_style_Below_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+
+<body  class="body_bg" id="star_pic">
+<!--Site Header-->
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+
+<!--Site Header End-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/pic/" title="火秀明星首页">火秀明星频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a href="http://www.huoshow.com/pic/moviebeauty/">影视美图</a></li>
+                <li><a href="http://www.huoshow.com/pic/musicbeauty/">音乐美图</a></li>
+                <li><a href="http://www.huoshow.com/pic/photo/">明星写真</a></li>	  	        
+<li><a href="http://www.huoshow.com/pic/atlas/">赛事图集</a></li>
+<li><a href="http://www.huoshow.com/pic/beauty/">游戏美图</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/pic/index.shtml">火秀图片</a> > <a href="http://www.huoshow.com/pic/photo/index.shtml">明星写真</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_pic">
+        <div class="Subpage_pic_01">
+            <div class="Subpage_pic_list">
+            	<div class="Subpage_pic_bt"><h2>明星写真</h2></div>
+            	<ul >
+   	<li>
+   		<a title="英国性感女星露西·皮德尔限制级诱惑写真" target="_blank" href="http://www.huoshow.com/2011/0914/28481.shtml"><img alt="英国性感女星露西·皮德尔限制级诱惑写真" src="http://www.huoshow.com/upload/2011/0914/1315988765282.jpg" width="158" height="118">
+   		<span >英国性感女星露西·皮</span></a>
+   	</li>
+   	<li>
+   		<a title="林志玲日本杂志《Grazia》美图集锦" target="_blank" href="http://www.huoshow.com/2011/0914/28393.shtml"><img alt="林志玲日本杂志《Grazia》美图集锦" src="http://www.huoshow.com/upload/2011/0914/1315985617115.jpg" width="158" height="118">
+   		<span >林志玲日本杂志《Graz</span></a>
+   	</li>
+   	<li>
+   		<a title="2011年世界小姐 热门人选泳装照曝光" target="_blank" href="http://www.huoshow.com/2011/0914/28335.shtml"><img alt="2011年世界小姐 热门人选泳装照曝光" src="http://www.huoshow.com/upload/2011/0914/1315981996735.jpg" width="158" height="118">
+   		<span >2011年世界小姐 热门</span></a>
+   	</li>
+   	<li>
+   		<a title="组图：日本性感女星苍井空比基尼出镜秀美背" target="_blank" href="http://www.huoshow.com/2011/0914/28275.shtml"><img alt="组图：日本性感女星苍井空比基尼出镜秀美背" src="http://www.huoshow.com/upload/2011/0914/1315981068821.jpg" width="158" height="118">
+   		<span >组图：日本性感女星苍井</span></a>
+   	</li>
+   	<li>
+   		<a title="美女明星董璇高清性感写真 清纯玉女变欲女" target="_blank" href="http://www.huoshow.com/2011/0913/28137.shtml"><img alt="美女明星董璇高清性感写真 清纯玉女变欲女" src="http://www.huoshow.com/upload/2011/0913/1315908237184.jpg" width="158" height="118">
+   		<span >美女明星董璇高清性感</span></a>
+   	</li>
+   	<li>
+   		<a title="陈数赵胤胤婚纱照曝光 甜蜜偎依16日完婚" target="_blank" href="http://www.huoshow.com/2011/0913/27691.shtml"><img alt="陈数赵胤胤婚纱照曝光 甜蜜偎依16日完婚" src="http://www.huoshow.com/upload/2011/0913/1315878254673.jpg" width="158" height="118">
+   		<span >陈数赵胤胤婚纱照曝光</span></a>
+   	</li>
+   	<li>
+   		<a title="杨幂现身称每天嚷着好想谈恋爱 严捂胸口防走光" target="_blank" href="http://www.huoshow.com/2011/0910/27603.shtml"><img alt="杨幂现身称每天嚷着好想谈恋爱 严捂胸口防走光" src="http://www.huoshow.com/upload/2011/0910/1315621328685.jpg" width="158" height="118">
+   		<span >杨幂现身称每天嚷着好</span></a>
+   	</li>
+   	<li>
+   		<a title="徐子淇一家三口照曝光 自曝还想再多生两个" target="_blank" href="http://www.huoshow.com/2011/0908/26821.shtml"><img alt="徐子淇一家三口照曝光 自曝还想再多生两个" src="http://www.huoshow.com/upload/2011/0908/1315454176687.jpg" width="158" height="118">
+   		<span >徐子淇一家三口照曝光</span></a>
+   	</li>
+   	<li>
+   		<a title="tina极品黑丝秀修长双腿性感完美身材" target="_blank" href="http://www.huoshow.com/2011/0907/26649.shtml"><img alt="tina极品黑丝秀修长双腿性感完美身材" src="http://www.huoshow.com/upload/2011/0907/1315387712190.jpg" width="158" height="118">
+   		<span >tina极品黑丝秀修长双</span></a>
+   	</li>
+   	<li>
+   		<a title="郭美美连发性感写真 网友批其炒作无耻" target="_blank" href="http://www.huoshow.com/2011/0907/26343.shtml"><img alt="郭美美连发性感写真 网友批其炒作无耻" src="http://www.huoshow.com/upload/2011/0907/1315367308223.jpg" width="158" height="118">
+   		<span >郭美美连发性感写真 </span></a>
+   	</li>
+   	<li>
+   		<a title="徐冬冬变身热辣兔女郎 挺酥胸秀中秋月饼" target="_blank" href="http://www.huoshow.com/2011/0905/25839.shtml"><img alt="徐冬冬变身热辣兔女郎 挺酥胸秀中秋月饼" src="http://www.huoshow.com/upload/2011/0905/1315216231309.jpg" width="158" height="118">
+   		<span >徐冬冬变身热辣兔女郎</span></a>
+   	</li>
+   	<li>
+   		<a title="贝克汉姆千金首曝光 小脸肉嘟嘟可爱至极" target="_blank" href="http://www.huoshow.com/2011/0905/25641.shtml"><img alt="贝克汉姆千金首曝光 小脸肉嘟嘟可爱至极" src="http://www.huoshow.com/upload/2011/0905/1315207132529.jpg" width="158" height="118">
+   		<span >贝克汉姆千金首曝光 </span></a>
+   	</li>
+   	<li>
+   		<a title="基努·里维斯骑摩托车出游 黑超遮面" target="_blank" href="http://www.huoshow.com/2011/0905/25597.shtml"><img alt="基努·里维斯骑摩托车出游 黑超遮面" src="http://www.huoshow.com/upload/2011/0905/1315206440161.jpg" width="158" height="118">
+   		<span >基努·里维斯骑摩托车</span></a>
+   	</li>
+   	<li>
+   		<a title="原干惠性感婚纱写真 小巧比基尼难掩丰胸" target="_blank" href="http://www.huoshow.com/2011/0905/25523.shtml"><img alt="原干惠性感婚纱写真 小巧比基尼难掩丰胸" src="http://www.huoshow.com/upload/2011/0905/1315193661128.jpg" width="158" height="118">
+   		<span >原干惠性感婚纱写真 </span></a>
+   	</li>
+   	<li>
+   		<a title="吴佩慈V领低胸泡吧与友人热聊 遭老外偷瞄" target="_blank" href="http://www.huoshow.com/2011/0905/25439.shtml"><img alt="吴佩慈V领低胸泡吧与友人热聊 遭老外偷瞄" src="http://www.huoshow.com/upload/2011/0905/1315189311585.jpg" width="158" height="118">
+   		<span >吴佩慈V领低胸泡吧与</span></a>
+   	</li>
+   	<li>
+   		<a title="汤唯华贵珠宝加身 低胸裙现身露傲人胸围" target="_blank" href="http://www.huoshow.com/2011/0904/25395.shtml"><img alt="汤唯华贵珠宝加身 低胸裙现身露傲人胸围" src="http://www.huoshow.com/upload/2011/0904/1315107482549.jpg" width="158" height="118">
+   		<span >汤唯华贵珠宝加身 低</span></a>
+   	</li>
+   	<li>
+   		<a title="杨幂登《女友花园》封面 展示俏皮性感一面" target="_blank" href="http://www.huoshow.com/2011/0902/24809.shtml"><img alt="杨幂登《女友花园》封面 展示俏皮性感一面" src="http://www.huoshow.com/upload/2011/0902/1314925883158.jpg" width="158" height="118">
+   		<span >杨幂登《女友花园》封</span></a>
+   	</li>
+   	<li>
+   		<a title="华表奖女星红毯争艳 袁莉透视装震撼全场" target="_blank" href="http://www.huoshow.com/2011/0829/23778.shtml"><img alt="华表奖女星红毯争艳 袁莉透视装震撼全场" src="http://www.huoshow.com/upload/2011/0915/1316077548828.jpg" width="158" height="118">
+   		<span >华表奖女星红毯争艳 </span></a>
+   	</li>
+   	<li>
+   		<a title="张馨予梦幻写真曝光 羽翼飞扬显魅惑风情" target="_blank" href="http://www.huoshow.com/2011/0826/23669.shtml"><img alt="张馨予梦幻写真曝光 羽翼飞扬显魅惑风情" src="http://www.huoshow.com/upload/2011/0826/1314351766157.jpg" width="158" height="118">
+   		<span >张馨予梦幻写真曝光 </span></a>
+   	</li>
+   	<li>
+   		<a title="网友微博曝董璇超美婚纱照 伴娘团性感美艳" target="_blank" href="http://www.huoshow.com/2011/0823/23094.shtml"><img alt="网友微博曝董璇超美婚纱照 伴娘团性感美艳" src="http://www.huoshow.com/upload/2011/0823/1314090783997.jpg" width="158" height="118">
+   		<span >网友微博曝董璇超美婚</span></a>
+   	</li>
+   </ul>
+                <div class="clear"></div>
+                <div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/pic/photo/1.shtml">上一页</a></li><li><a href="http://www.huoshow.com/pic/photo/1.shtml" class="now">1</a></li><li><a href="http://www.huoshow.com/pic/photo/2.shtml">2</a></li><li><a href="http://www.huoshow.com/pic/photo/2.shtml">下一页</a></li></ul>
+</div>
+</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a> |  <a href="http://www.huoshow.com/map.php">网站地图</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<!--Banner Replacer-->
+<div style="display:none">
+<div id="top_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(9);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a2796ca'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=9&n=a2796ca' /></a></noscript></div>
+<div id="top_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(8);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=4f0e3b4'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=8&n=4f0e3b4' /></a></noscript></div>
+<div id="movie_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(11);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=082cda0'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=11&n=082cda0' /></a></noscript></div>
+<div id="music_banner_250_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(13);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dd2b9e1'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=13&n=dd2b9e1' /></a></noscript></div>
+<div id="game_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(15);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=61b3c77'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=15&n=61b3c77' /></a></noscript></div>
+<script type="text/javascript">// <![CDATA[
+try{
+document.getElementById("top_banner_250_250").innerHTML = document.getElementById("top_banner_250_250_c").innerHTML;
+document.getElementById("top_banner_250_250_c").innerHTML = "";
+
+document.getElementById("top_banner_300_100").innerHTML = document.getElementById("top_banner_300_100_c").innerHTML;
+document.getElementById("top_banner_300_100_c").innerHTML = "";
+
+document.getElementById("movie_banner_300_100").innerHTML = document.getElementById("movie_banner_300_100_c").innerHTML;
+document.getElementById("movie_banner_300_100_c").innerHTML = "";
+
+document.getElementById("music_banner_250_100").innerHTML = document.getElementById("music_banner_250_100_c").innerHTML;
+document.getElementById("music_banner_250_100_c").innerHTML = "";
+
+document.getElementById("game_banner_250_250").innerHTML = document.getElementById("game_banner_250_250_c").innerHTML;
+document.getElementById("game_banner_250_250_c").innerHTML = "";
+}catch(e){}
+// ]]></script>    </div>
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

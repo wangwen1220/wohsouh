@@ -1,0 +1,70 @@
+<!--{template common/header}-->
+<link rel="stylesheet" type="text/css" href="static2/master.css" />
+
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="home.php">$_G[setting][navs][4][navname]</a> <em>&rsaquo;</em> 
+		<a href="home.php?mod=space&do=pay">{lang pay}</a>
+	</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div id="ct" class="ct2_a wp cl">
+	<div class="mn">
+		<div class="bm bw0">
+			<h1 class="mt"><img alt="blog" src="{STATICURL}image/feed/bi.png" class="vm" /> {lang pay}</h1>
+			
+			
+	
+     <div id="congzhititle">
+          <ul>
+            <li><a href="home.php?mod=space&do=pay">支付中心</a></li>
+            <li><a href="home.php?mod=space&do=pay&op=orderlog" class="congzhititleliahover2">充值明细</a></li>
+            <li><a href="home.php?mod=space&do=pay&op=showcoinlog">消费明细</a></li>
+       </ul>
+     </div>
+     <div id="congzhikuang">
+          <div class="kongge"></div><div class="kongge"></div>
+           <div class="wodetyue">以下交易金额以<span class="text8"> 人民币（元）</span>为单位。</div>
+           <div id="congzhinr">
+           <table width="100%" height="405" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+    <td width="11%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">订单号</td>
+    <td width="15%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">操作类型</td>
+    <td width="11%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">业务名称</td>
+    <td width="8%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">交易金额</td>
+    <td width="9%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">支付方式</td>
+    <td width="19%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">下单时间</td>
+    <td width="18%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">成交时间</td>
+    <td width="9%" align="center" valign="middle" bgcolor="#ebebeb" class="congzhitext6">订单状态</td>
+  </tr>
+  <!--{loop $orderLog $key $value}-->
+  <tr>
+    <td width="11%" align="center" valign="middle">{$value['code']}</td>
+    <td width="15%" align="center" valign="middle"><!--{if $value['optype']==1}-->购入自用<!--{elseif $value['optype']==2}-->赠送(UID{$value['targetuid']})<!--{/if}--></td>
+    <td width="11%" align="center" valign="middle">火币</td>
+    <td width="8%" align="center" valign="middle">{$value['money']}</td>
+    <td width="9%" align="center" valign="middle"><!--{if $value['paytype']==1}-->易宝<!--{elseif $value['paytype']==2}-->支付宝<!--{elseif $value['paytype']==3}-->财付通<!--{/if}--></td>
+    <td width="19%" align="center" valign="middle"><!--{if $value['dateline']}-->{echo date('Y-m-d H:i',$value['dateline'])}<!--{/if}--></td>
+    <td width="18%" align="center" valign="middle"><!--{if $value['bdateline']}-->{echo date('Y-m-d H:i',$value['bdateline'])}<!--{/if}--></td>
+    <td width="9%" align="center" valign="middle"><!--{if $value['status']==1}-->交易成功<!--{elseif $value['status']==0}-->等待支付<!--{elseif $value['status']==-1}-->过期作废<!--{/if}--></td>
+  </tr>
+  <!--{/loop}-->
+</table>    
+       </div>
+       <!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
+       <div class="clear"></div>
+    </div>
+		
+
+		</div>
+	</div>
+
+	<div class="appl">
+		<!--{subtemplate common/userabout}-->
+	</div>
+</div>
+
+<!--{template common/footer}-->

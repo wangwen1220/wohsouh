@@ -1,0 +1,775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="音乐、mp3、歌曲、好听的歌、网络歌曲、经典老歌、mv" />
+<meta name="description" content="火秀音乐为您提供全球时下最流行最全面的音乐动态，所有音乐一网打尽，内地，港台，欧美，日韩音乐mv等应有尽有" />
+<title>火秀音乐_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/music.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+<script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+<!--[if IE 6]>
+<script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+</head>
+
+<body class="body_bg">
+   <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+<!--Navigator-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/music" title="火秀音乐首页">火秀音乐频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a target="_blank" href="http://www.huoshow.com/music/neidi/">内地</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/gangtai/">港台</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/oumei/">欧美</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/rihan/">日韩</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/mv/">MV</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/live/">现场</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/yueping/">乐评</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/yinyueren/">音乐人</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/diebao/">碟报</a></li>
+<!--<li><a href="http://www.huoshow.com/music/zhuanti/">专题</a></li>-->
+</ul>
+</div>
+</div>
+</div>
+<!--Navigator End-->
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+       <a href=""></a> 
+    	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End--> 
+<!--Main Body-->
+<div class="main_body"> 
+<!--Left-->
+<div class="body_left"> 
+<!--Top News-->
+<div class="top_news">
+
+<div class="slide">
+<!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_music_index_scroll_image_288_406&width=288&height=406&navon=1"-->
+</div>
+
+<div class="biankuang_w394">
+<div class="biankuang_w394_01">
+<div class="right_title_bg"> 
+<h2 class="title_Black">头条</h2>
+<!--  <span class="more"><a href="" class="more_bg">更多</a></span>--> </div>
+<div class="music_toutiao_newslist">
+<h3 class="sexi_lan line_height"><a title="词作家张俊以写《坑爹》训李天一 歌词引争议" target="_blank" href="http://www.huoshow.com/2011/0923/32133.shtml">词作家张俊以写《坑爹》训李天一 歌词引争</a></h3>
+   <p>近日，网上盛传著名词作家张俊以创作了一首名为《坑爹》的歌曲，是为李双江之子李天一所写，目的是为了...<a title="词作家张俊以写《坑爹》训李天一 歌词引争议" target="_blank" href="http://www.huoshow.com/2011/0923/32133.shtml">[详细]</a></p>
+<h3 class="sexi_lan line_height"><a title="李玟香港最高楼办“国际范”婚礼 亲友住六星级" target="_blank" href="http://www.huoshow.com/2011/0923/32217.shtml">李玟香港最高楼办“国际范”婚礼 亲友住六</a></h3>
+   <p>36岁的乐坛天后李玟一直走的国际性路线，连婚礼也国际范十足，而且可谓不惜工本。她与爱情长跑8年的...<a title="李玟香港最高楼办“国际范”婚礼 亲友住六星级" target="_blank" href="http://www.huoshow.com/2011/0923/32217.shtml">[详细]</a></p>
+</div>
+<div class="newslist">
+<ul>
+<li><a title="张承中斥周刊挑拨自己和Hebe Ella关系" target="_blank" href="http://www.huoshow.com/2011/0923/32273.shtml">张承中斥周刊挑拨自己和Hebe Ella关系</a></li>
+<li><a title="视频：胡彦斌甩麦离场 称与主持话不投机" target="_blank" href="http://www.huoshow.com/2011/0923/32279.shtml">视频：胡彦斌甩麦离场 称与主持话不投机</a></li>
+<li><a title="孙楠面对超生话题反问：你是计生委的吗" target="_blank" href="http://www.huoshow.com/2011/0923/32283.shtml">孙楠面对超生话题反问：你是计生委的吗</a></li>
+<li><a title="张惠妹庾澄庆不排斥发展恋情 小S意外撮合" target="_blank" href="http://www.huoshow.com/2011/0923/32307.shtml">张惠妹庾澄庆不排斥发展恋情 小S意外撮合</a></li>
+<li><a title="BY2陷整容风波 公司澄清：只做了牙齿" target="_blank" href="http://www.huoshow.com/2011/0923/32309.shtml">BY2陷整容风波 公司澄清：只做了牙齿</a></li>
+<li><a title="疑似王力宏同性激情照疯传 性取向风波再起" target="_blank" href="http://www.huoshow.com/2011/0923/32301.shtml">疑似王力宏同性激情照疯传 性取向风波再起</a></li>
+<li><a title="传阿杜与李鑫雨已订婚 钻戒豪车表爱意" target="_blank" href="http://www.huoshow.com/2011/0923/32117.shtml">传阿杜与李鑫雨已订婚 钻戒豪车表爱意</a></li>
+	
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="top_news">
+<div class="top_news_left">
+<div class="top_news_left_inner_bd">
+<div class="yingshi_dujia">
+<div class="left_title_bg"> 
+<h2 class="title_Black">专题</h2>
+<!--  <span class="more"><a href="" class="more_bg">更多</a></span>-->  </div>
+<div class="list">
+<div class="yingren_pic_01">
+<ul>
+        	<li><img alt="第28届MTV大奖揭晓 凯蒂·佩里夺三项称霸" src="http://www.huoshow.com/upload/2011/0919/1316425973429.jpg" width="126" height="84" /><a title="第28届MTV大奖揭晓 凯蒂·佩里夺三项称霸" target="_blank" href="http://www.huoshow.com/zhuanti/2011vma/">第28届MTV大奖揭</a></li>
+<li><img alt="“怒放摇滚英雄演唱会”成都站演出被迫延期" src="http://www.huoshow.com/upload/2011/0723/1311398064563.jpg" width="126" height="84" /><a title="“怒放摇滚英雄演唱会”成都站演出被迫延期" target="_blank" href="http://www.huoshow.com/2011/0715/17008.shtml">“怒放摇滚英雄演</a></li>
+</ul>
+</div>
+<div class="ndi_Center_t_03">
+<ul>
+<li><a title="黑兔音乐节北京落幕 携手NBA打造街头文化" target="_blank" href="http://www.huoshow.com/2011/0919/29905.shtml">黑兔音乐节北京落幕 携手NBA打造街头</a></li>
+<li><a title="长江草莓十一上演 苏打绿将华丽开场" target="_blank" href="http://www.huoshow.com/2011/0907/26417.shtml">长江草莓十一上演 苏打绿将华丽开场</a></li>
+<li><a title="“王-后驾到”巨星巡演歌王歌后群集上海" target="_blank" href="http://www.huoshow.com/2011/0805/20666.shtml">“王-后驾到”巨星巡演歌王歌后群集</a></li>
+<li><a title="第28届MTV大奖揭晓 凯蒂·佩里夺三项称霸" target="_blank" href="http://www.huoshow.com/2011/0829/23843.shtml">第28届MTV大奖揭晓 凯蒂·佩里夺三项</a></li>
+<li><a title="崔健谢天笑“群英会”同场飙歌 三代摇滚唱将登台" target="_blank" href="http://www.huoshow.com/2011/0805/20698.shtml">崔健谢天笑“群英会”同场飙歌 三代</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="top_news_right">
+<div class="top_news_right_inner_bd">
+<div class="yingshi_tuotiao">
+<div class="right_title_bg"> 
+<h2 class="title_Black">乐评</h2>
+<span class="more"><a target="_blank" href="yueping/" class="more_bg">更多</a></span> </div>
+        <div class="item_02">
+    <h3 class="sexi_lan line_height"><a title="金莎飞离海蝶首先为脱“林俊杰师妹”之帽" target="_blank" href="http://www.huoshow.com/2011/0922/31945.shtml">金莎飞离海蝶首先为脱“林俊杰师妹”</a></h3>
+
+  <a title="金莎飞离海蝶首先为脱“林俊杰师妹”之帽" href="http://www.huoshow.com/2011/0922/31945.shtml" target="_blank"><img alt="金莎飞离海蝶首先为脱“林俊杰师妹”之帽" src="http://www.huoshow.com/upload/2011/0922/1316687662346.jpg" width="126" height="84"></a>
+                                  <p>继林俊杰约满到期转投华纳之后，一直以“林俊杰小师妹”形象示人的金莎也在与海蝶的八年合约期满之时，选择自立门户与天浩盛世携手成...<a title="金莎飞离海蝶首先为脱“林俊杰师妹”之帽" target="_blank" href="http://www.huoshow.com/2011/0922/31945.shtml" class="Text_color_a">[详细] </a>
+                                  </p>
+</div>
+<div class="ndi_Center_t_01">
+<ul>
+<li><a title="有了李宗盛 杨宗纬能否成为下个陈奕迅" target="_blank" href="http://www.huoshow.com/2011/0923/32205.shtml">有了李宗盛 杨宗纬能否成为下个陈奕迅</a></li>
+               <li><a title="田馥甄《My Love》：“二”得有款有型" target="_blank" href="http://www.huoshow.com/2011/0922/31703.shtml">田馥甄《My Love》：“二”得有款有型</a></li>
+               <li><a title="歌因剧而红 “多赢”选择打破传统新歌营销" target="_blank" href="http://www.huoshow.com/2011/0922/32063.shtml">歌因剧而红 “多赢”选择打破传统新歌营销</a></li>
+               <li><a title="流行乐坛掀“啃老”风 怀旧仍是最大招牌" target="_blank" href="http://www.huoshow.com/2011/0922/31839.shtml">流行乐坛掀“啃老”风 怀旧仍是最大招牌</a></li>
+               <li><a title="盘点金钟奖选手评委抢眼球招数" target="_blank" href="http://www.huoshow.com/2011/0921/31477.shtml">盘点金钟奖选手评委抢眼球招数</a></li>
+               	
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="top_news">
+<div class="xianchang">
+<!--Banner 300*100-->
+<div class="banner_300_100">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(29);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=5679824'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=29&n=5679824' /></a></noscript></div>            <div class="biankuang_w300">
+<div class="biankuang_w300_01">
+<div class="yingshi_dujia">
+<div class="left_title_bg">
+<h2 class="title_Black">现场</h2>
+<span class="more"><a target="_blank" href="live" class="more_bg">更多</a></span>  </div>
+<div class="list">
+<div class="ndi_Center_t_03">
+<ul>
+
+<li><a title="费玉清广州开唱 搞怪耍宝自比Rain模仿上瘾" target="_blank" href="http://www.huoshow.com/2011/0919/30095.shtml">费玉清广州开唱 搞怪耍宝自比Rain模仿上</a></li>
+
+<li><a title="巨星学院梦想欢乐夜票选演唱会曲目出炉" target="_blank" href="http://www.huoshow.com/2011/0919/30137.shtml">巨星学院梦想欢乐夜票选演唱会曲目出炉</a></li>
+
+<li><a title="宋祖英：国际巨星不敢当 只是很多人认识" target="_blank" href="http://www.huoshow.com/2011/0919/30159.shtml">宋祖英：国际巨星不敢当 只是很多人认识</a></li>
+
+<li><a title="揭秘西城男孩巡演看点 变脱衣舞男叫板Gaga" target="_blank" href="http://www.huoshow.com/2011/0919/30211.shtml">揭秘西城男孩巡演看点 变脱衣舞男叫板Gag</a></li>
+
+<li><a title="郭富城长沙开唱兴奋脱衣 轻吻舞台不舍演出" target="_blank" href="http://www.huoshow.com/2011/0920/30509.shtml">郭富城长沙开唱兴奋脱衣 轻吻舞台不舍演</a></li>
+
+<li><a title="“中国三高”全球巡演开票 豪言绝不送票" target="_blank" href="http://www.huoshow.com/2011/0920/30589.shtml">“中国三高”全球巡演开票 豪言绝不送票</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="top_news_right_2">
+<div class="top_news_right_2_inner_bd">
+<div class="yingshi_tuotiao">
+<div class="right_title_bg"> 
+<h2 class="title_Black">音乐人</h2>
+<span class="more"><a target="_blank" href="yinyueren/" class="more_bg">更多</a></span> </div>
+<div class="list">
+<div class="item_02">
+                                <a title="杜德伟：一直感觉我还是滚石的人" href="http://www.huoshow.com/2011/0923/32683.shtml" target="_blank"><img alt="杜德伟：一直感觉我还是滚石的人" src="http://www.huoshow.com/upload/2011/0923/1316774336626.jpg" width="96" height="112"></a>
+                                 <h3 class="sexi_lan line_height"><a title="杜德伟：一直感觉我还是滚石的人" target="_blank" href="http://www.huoshow.com/2011/0923/32683.shtml">杜德伟：一直感觉我还是滚石的人</a></h3>
+                                 <span>作为滚石打造的最成功的香港歌手，以及为数不多“能文又能舞”的舞曲天王，杜德伟的《情人》、《天真》打动了...<a title="杜德伟：一直感觉我还是滚石的人" target="_blank" href="http://www.huoshow.com/2011/0923/32683.shtml" class="Text_color_a">[详细] </a></span>
+
+                 </div>
+<div class="ndi_Center_t_02">
+<ul>
+
+<li><a title="蔡日轩：曾想出柜 以张国荣为目标" target="_blank" href="http://www.huoshow.com/2011/0921/31127.shtml">蔡日轩：曾想出柜 以张国荣为目标</a></li>
+
+<li><a title="谭维维：爱情里我是个贱人" target="_blank" href="http://www.huoshow.com/2011/0909/27235.shtml">谭维维：爱情里我是个贱人</a></li>
+
+<li><a title="Olivia：乐观，把平凡事也变浪漫" target="_blank" href="http://www.huoshow.com/2011/0920/30807.shtml">Olivia：乐观，把平凡事也变浪漫</a></li>
+
+<li><a title="誓言：庆幸赶上网络时代" target="_blank" href="http://www.huoshow.com/2011/0919/30025.shtml">誓言：庆幸赶上网络时代</a></li>
+
+<li><a title="黑龙：盲目做唱片会死很惨" target="_blank" href="http://www.huoshow.com/2011/0914/28511.shtml">黑龙：盲目做唱片会死很惨</a></li>
+
+<li><a title="西城男孩：从男孩到男人" target="_blank" href="http://www.huoshow.com/2011/0909/27509.shtml">西城男孩：从男孩到男人</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Left End--> 
+<!--Right-->
+<div class="body_right"> 
+<!--Hot Movie-->
+<div class="diebao">
+<div class="diebao_bt">
+<h2 class="baise">碟报</h2>
+</div>
+<div class="diebao_text">
+ 
+<div class="diebao_text_wenzi">
+                	<a title="张栋梁新碟《别再惊动爱情》分享轻熟男哲学" target="_blank" href="http://www.huoshow.com/2011/0914/28353.shtml" class="cover"><img alt="张栋梁新碟《别再惊动爱情》分享轻熟男哲学" src="http://www.huoshow.com/upload/2011/0917/1316241076160.jpg"/></a>
+                        <div class="diebao_info">
+                            <p class="diebao_text_1">专辑名：<a title="张栋梁新碟《别再惊动爱情》分享轻熟男哲学" target="_blank" href="http://www.huoshow.com/2011/0914/28353.shtml"><span class="lse">别再惊动爱情</span></a></p>
+                            <p class="diebao_text_1">
+歌手：<span class="lse"> 张栋梁</span></p>
+                            <p class="diebao_text_2">
+国语专辑</p>
+                            <p class="diebao_text_3">2011年09月</p>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="diebao_text_wenzi_xx">
+专辑介绍：今年加盟种子音乐后，张栋梁以“哲学新熟男”形象再度发...                        <a title="张栋梁新碟《别再惊动爱情》分享轻熟男哲学" target="_blank" href="http://www.huoshow.com/2011/0914/28353.shtml" class="Text_color_a">[详细] </a>
+                        </div>
+    	</div>
+<div class="hr"></div>
+ 
+<div class="diebao_text_wenzi">
+                	<a title="“潮舞达人”江映蓉新专辑《女人帮》粉色亮相" target="_blank" href="http://www.huoshow.com/2011/0914/28179.shtml" class="cover"><img alt="“潮舞达人”江映蓉新专辑《女人帮》粉色亮相" src="http://www.huoshow.com/upload/2011/0917/1316241067560.jpg"/></a>
+                        <div class="diebao_info">
+                            <p class="diebao_text_1">专辑名：<a title="“潮舞达人”江映蓉新专辑《女人帮》粉色亮相" target="_blank" href="http://www.huoshow.com/2011/0914/28179.shtml"><span class="lse">女人帮</span></a></p>
+                            <p class="diebao_text_1">
+歌手：<span class="lse"> 江映蓉</span></p>
+                            <p class="diebao_text_2">
+国语专辑</p>
+                            <p class="diebao_text_3">2011年09月</p>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="diebao_text_wenzi_xx">
+专辑介绍：VIVI江映蓉的第二张专辑《女人帮》，变身“潮舞达人”身...                        <a title="“潮舞达人”江映蓉新专辑《女人帮》粉色亮相" target="_blank" href="http://www.huoshow.com/2011/0914/28179.shtml" class="Text_color_a">[详细] </a>
+                        </div>
+    	</div>
+<div class="hr"></div>
+ 
+<div class="diebao_text_wenzi">
+                	<a title="《初告白》" target="_blank" href="http://www.huoshow.com/2011/0909/27239.shtml" class="cover"><img alt="《初告白》" src="http://www.huoshow.com/upload/2011/0917/1316241050604.jpg"/></a>
+                        <div class="diebao_info">
+                            <p class="diebao_text_1">专辑名：<a title="《初告白》" target="_blank" href="http://www.huoshow.com/2011/0909/27239.shtml"><span class="lse">初告白</span></a></p>
+                            <p class="diebao_text_1">
+歌手：<span class="lse"> 陈翔</span></p>
+                            <p class="diebao_text_2">
+国语专辑</p>
+                            <p class="diebao_text_3">2011年09月</p>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="diebao_text_wenzi_xx">
+专辑介绍：在2011年夏日之末，陈翔化身“飞行少年Sean”推出首张个...                        <a title="《初告白》" target="_blank" href="http://www.huoshow.com/2011/0909/27239.shtml" class="Text_color_a">[详细] </a>
+                        </div>
+    	</div>
+<div class="hr"></div>
+
+</div>
+</div>
+<!--Banner 250*250-->
+            <div class="banner_250_250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(27);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dfbd6b6'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=27&n=dfbd6b6' /></a></noscript></div>        <div class="music_W250">
+<div id="diaoc" class="music_W250_01">
+<h2 class="vote">投票</h2>
+<div style="clear:both;"></div>
+<div class="music_W250_tuopiao_text">
+<h1 class="Text_color">MTV音乐大奖，你最关注哪个奖项？</h1>
+一年一度的音乐录影带大奖(VMA)是美国最受欢迎的流行...<a title="MTV音乐大奖，你最关注哪个奖项？" target="_blank" href="http://www.huoshow.com/2011/0830/23994.shtml" class="Text_color_a">[详细] </a>
+</div>
+           
+<form id="vote_23994" name="vote_23994" method="post" action="http://www.huoshow.com/app/?app=vote&controller=vote&action=vote">
+                            
+<ul class="vote_options">           
+            
+                 
+                                                                               
+                        <li>
+                        <input name="contentid" type="hidden" value="23994" />
+                            <input type="radio" name="optionid" value="94"/> 年度音乐录影带 (VIDEO OF THE YEAR)                        </li>
+                        
+                   
+                                       
+                        <li>
+                        <input name="contentid" type="hidden" value="23994" />
+                            <input type="radio" name="optionid" value="95"/> 最佳流行录影带(BEST POP VIDEO)                        </li>
+                        
+                   
+                                       
+                        <li>
+                        <input name="contentid" type="hidden" value="23994" />
+                            <input type="radio" name="optionid" value="96"/> 最佳男歌手录影带(BEST MALE VIDEO)                        </li>
+                        
+                   
+                                       
+                        <li>
+                        <input name="contentid" type="hidden" value="23994" />
+                            <input type="radio" name="optionid" value="97"/> 最佳女歌手录影带(BEST MALE VIDEO)                        </li>
+                        
+                   
+                                       
+                        <li>
+                        <input name="contentid" type="hidden" value="23994" />
+                            <input type="radio" name="optionid" value="98"/> 其他奖项~                        </li>
+                        
+                   
+                                                   				  
+
+            <script type="text/javascript">
+            //验证投票选项
+            (function($){
+             $('#vote_23994').submit(function(){
+                 var checkeds = $('#vote_23994 input:checked').length;
+                 if(checkeds == 0){
+                 alert('请选择投票选项');
+                 return false;
+                 }
+                                  })
+             })(jQuery);
+</script>
+       		 </ul>  
+       		 <div class="vote_button">
+             <input type="image" src="http://www.huoshow.com/img/templates/huoshow02/images/music_anniu.gif" id="imageField" name="imageField">
+             </div>
+</form>
+        </div>
+</div>
+</div>
+<!--Top Video-->
+<div class="full_block">
+<div class="full_block_inner_bd">
+<div class="full_title_bg"> 
+<h2 class="title_Black">MV</h2>
+<span class="more"><a target="_blank" href="mv/" class="more_bg">更多</a></span> 
+</div>
+<div class="mv" id="pbox1"> 
+    <a href="#"><div class="mv_left"></div></a>
+<a href="#"><div class="mv_right"></div></a> 
+
+               <ul class="top_video">
+             <li><span class="top_video_pic_bg"><a title="伍佰《火山》MV-宅男最佳告白歌曲" target="_blank" href="http://www.huoshow.com/2011/0919/29741.shtml"><img alt="伍佰《火山》MV-宅男最佳告白歌曲" src="http://www.huoshow.com/upload/2011/0919/1316396904387.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="伍佰《火山》MV-宅男最佳告白歌曲" target="_blank" href="http://www.huoshow.com/2011/0919/29741.shtml">伍佰《火山》MV-...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="五月天《OAOA》MV-《追梦3DNA》主题曲" target="_blank" href="http://www.huoshow.com/2011/0919/29737.shtml"><img alt="五月天《OAOA》MV-《追梦3DNA》主题曲" src="http://www.huoshow.com/upload/2011/0919/1316396607398.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="五月天《OAOA》MV-《追梦3DNA》主题曲" target="_blank" href="http://www.huoshow.com/2011/0919/29737.shtml">五月天《OAOA》MV...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="王力宏《火力全开》MV完整版" target="_blank" href="http://www.huoshow.com/2011/0919/29729.shtml"><img alt="王力宏《火力全开》MV完整版" src="http://www.huoshow.com/upload/2011/0919/1316396552853.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="王力宏《火力全开》MV完整版" target="_blank" href="http://www.huoshow.com/2011/0919/29729.shtml">王力宏《火力全开...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="张柏芝唱新歌《曾经》泪洒现场" target="_blank" href="http://www.huoshow.com/2011/0919/29725.shtml"><img alt="张柏芝唱新歌《曾经》泪洒现场" src="http://www.huoshow.com/upload/2011/0919/1316396402277.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="张柏芝唱新歌《曾经》泪洒现场" target="_blank" href="http://www.huoshow.com/2011/0919/29725.shtml">张柏芝唱新歌《曾...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="欢子《我们回不去了》MV" target="_blank" href="http://www.huoshow.com/2011/0919/29719.shtml"><img alt="欢子《我们回不去了》MV" src="http://www.huoshow.com/upload/2011/0919/1316396145816.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="欢子《我们回不去了》MV" target="_blank" href="http://www.huoshow.com/2011/0919/29719.shtml">欢子《我们回不去...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="李佳薇《煎熬》MV完整版 创禁播首例" target="_blank" href="http://www.huoshow.com/2011/0916/29429.shtml"><img alt="李佳薇《煎熬》MV完整版 创禁播首例" src="http://www.huoshow.com/upload/2011/0916/1316170200826.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="李佳薇《煎熬》MV完整版 创禁播首例" target="_blank" href="http://www.huoshow.com/2011/0916/29429.shtml">李佳薇《煎熬》MV...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="情歌王子张栋梁新歌《怎么会哭》MV" target="_blank" href="http://www.huoshow.com/2011/0915/28653.shtml"><img alt="情歌王子张栋梁新歌《怎么会哭》MV" src="http://www.huoshow.com/upload/2011/0915/1316052112141.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="情歌王子张栋梁新歌《怎么会哭》MV" target="_blank" href="http://www.huoshow.com/2011/0915/28653.shtml">情歌王子张栋梁新...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="尚雯婕《我就这样》MV 个性到底" target="_blank" href="http://www.huoshow.com/2011/0915/28647.shtml"><img alt="尚雯婕《我就这样》MV 个性到底" src="http://www.huoshow.com/upload/2011/0915/1316051976196.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="尚雯婕《我就这样》MV 个性到底" target="_blank" href="http://www.huoshow.com/2011/0915/28647.shtml">尚雯婕《我就这样...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="苏醒《只谈心不贪心》MV 与孙骁骁谈知己情" target="_blank" href="http://www.huoshow.com/2011/0909/27119.shtml"><img alt="苏醒《只谈心不贪心》MV 与孙骁骁谈知己情" src="http://www.huoshow.com/upload/2011/0909/1315531963907.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="苏醒《只谈心不贪心》MV 与孙骁骁谈知己情" target="_blank" href="http://www.huoshow.com/2011/0909/27119.shtml">苏醒《只谈心不贪...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="戚薇《如果爱忘了》MV完整版 唯美同性之爱" target="_blank" href="http://www.huoshow.com/2011/0909/27115.shtml"><img alt="戚薇《如果爱忘了》MV完整版 唯美同性之爱" src="http://www.huoshow.com/upload/2011/0909/1315531608129.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="戚薇《如果爱忘了》MV完整版 唯美同性之爱" target="_blank" href="http://www.huoshow.com/2011/0909/27115.shtml">戚薇《如果爱忘了...</a></span> </li>
+             </ul><ul class="top_video"><li><span class="top_video_pic_bg"><a title="江映蓉《热门花招》MV动感混音舞曲" target="_blank" href="http://www.huoshow.com/2011/0909/27111.shtml"><img alt="江映蓉《热门花招》MV动感混音舞曲" src="http://www.huoshow.com/upload/2011/0909/1315531466185.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="江映蓉《热门花招》MV动感混音舞曲" target="_blank" href="http://www.huoshow.com/2011/0909/27111.shtml">江映蓉《热门花招...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="魏晨《破晓》MV正式版" target="_blank" href="http://www.huoshow.com/2011/0909/27105.shtml"><img alt="魏晨《破晓》MV正式版" src="http://www.huoshow.com/upload/2011/0909/1315531280936.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="魏晨《破晓》MV正式版" target="_blank" href="http://www.huoshow.com/2011/0909/27105.shtml">魏晨《破晓》MV正...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="韩国禁播MV-蔡妍-《两个人》" target="_blank" href="http://www.huoshow.com/2011/0915/28621.shtml"><img alt="韩国禁播MV-蔡妍-《两个人》" src="http://www.huoshow.com/upload/2011/0915/1316050182794.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="韩国禁播MV-蔡妍-《两个人》" target="_blank" href="http://www.huoshow.com/2011/0915/28621.shtml">韩国禁播MV-蔡妍-...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="黄立行禁播MV-《无神论》" target="_blank" href="http://www.huoshow.com/2011/0915/28627.shtml"><img alt="黄立行禁播MV-《无神论》" src="http://www.huoshow.com/upload/2011/0915/1316050805707.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="黄立行禁播MV-《无神论》" target="_blank" href="http://www.huoshow.com/2011/0915/28627.shtml">黄立行禁播MV-《...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="蔡依林《Mr. Q》禁播MV" target="_blank" href="http://www.huoshow.com/2011/0915/28617.shtml"><img alt="蔡依林《Mr. Q》禁播MV" src="http://www.huoshow.com/upload/2011/0915/1316049560907.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="蔡依林《Mr. Q》禁播MV" target="_blank" href="http://www.huoshow.com/2011/0915/28617.shtml">蔡依林《Mr. Q》...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="李玟《So Good》全国禁播MV" target="_blank" href="http://www.huoshow.com/2011/0915/28629.shtml"><img alt="李玟《So Good》全国禁播MV" src="http://www.huoshow.com/upload/2011/0915/1316051017731.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="李玟《So Good》全国禁播MV" target="_blank" href="http://www.huoshow.com/2011/0915/28629.shtml">李玟《So Good》...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="陈晓东《曾经》MV" target="_blank" href="http://www.huoshow.com/2011/0909/27127.shtml"><img alt="陈晓东《曾经》MV" src="http://www.huoshow.com/upload/2011/0909/1315532813990.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="陈晓东《曾经》MV" target="_blank" href="http://www.huoshow.com/2011/0909/27127.shtml">陈晓东《曾经》MV...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="牛奶咖啡《明天，你好》淡淡怀旧" target="_blank" href="http://www.huoshow.com/2011/0909/27123.shtml"><img alt="牛奶咖啡《明天，你好》淡淡怀旧" src="http://www.huoshow.com/upload/2011/0909/1315532380650.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="牛奶咖啡《明天，你好》淡淡怀旧" target="_blank" href="http://www.huoshow.com/2011/0909/27123.shtml">牛奶咖啡《明天，你...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="钟舒祺《燕儿翩翩飞》-新还珠片尾曲MV完整版" target="_blank" href="http://www.huoshow.com/2011/0909/27121.shtml"><img alt="钟舒祺《燕儿翩翩飞》-新还珠片尾曲MV完整版" src="http://www.huoshow.com/upload/2011/0909/1315532146191.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="钟舒祺《燕儿翩翩飞》-新还珠片尾曲MV完整版" target="_blank" href="http://www.huoshow.com/2011/0909/27121.shtml">钟舒祺《燕儿翩翩...</a></span> </li>
+             <li><span class="top_video_pic_bg"><a title="安心亚催泪情歌《我可以很勇敢》MV" target="_blank" href="http://www.huoshow.com/2011/0908/27101.shtml"><img alt="安心亚催泪情歌《我可以很勇敢》MV" src="http://www.huoshow.com/upload/2011/0908/1315476540899.jpg" width="134" height="83" /></a></span>
+<span class="top_video_text"><a title="安心亚催泪情歌《我可以很勇敢》MV" target="_blank" href="http://www.huoshow.com/2011/0908/27101.shtml">安心亚催泪情歌《...</a></span> </li>
+                        </ul>
+</div>
+
+ <script>
+          $(function(){
+          window.pbox1 = make_pagebox('pbox1', {
+          pages_selector: '.top_video',
+          prev_selector: '.mv_left',
+          next_selector: '.mv_right',
+          effect: 1
+          });
+          });
+        </script>
+
+</div>
+</div>
+<div class="clear"></div>
+<!--Banner 960*90-->
+<div class="banner_960_90">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(28);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=6fb3e02'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=28&n=6fb3e02' /></a></noscript></div>    <!--Region-->
+<div class="full_block">
+<div class="full_block_inner_bd">
+<div class="ndi-bt"> 
+<h2 class="title_black_24">内地</h2>
+</div>
+<div class="ndi">
+<div class="ndi_left">
+<div class="ndi_left_pic">
+<div class="ndi_left_tuwen">
+<ul class="ndi_left_tuwenlist">
+<li><a title="《如果爱忘了》 " target="_blank" href="http://www.huoshow.com/2011/0824/23185.shtml" class="cover1"><img alt="《如果爱忘了》 " src="http://www.huoshow.com/upload/2011/0917/1316241434667.jpg" width="90" height="90" /></a><br>
+<strong><a title="《如果爱忘了》 " target="_blank" href="http://www.huoshow.com/2011/0824/23185.shtml">戚薇</a></strong><br>
+<a title="《如果爱忘了》 " target="_blank" href="http://www.huoshow.com/2011/0824/23185.shtml">《如果爱忘了》 </a>
+</li>
+<li><a title="《In》" target="_blank" href="http://www.huoshow.com/2011/0907/26687.shtml" class="cover1"><img alt="《In》" src="http://www.huoshow.com/upload/2011/0917/1316241452295.jpg" width="90" height="90" /></a><br>
+<strong><a title="《In》" target="_blank" href="http://www.huoshow.com/2011/0907/26687.shtml">尚雯婕</a></strong><br>
+<a title="《In》" target="_blank" href="http://www.huoshow.com/2011/0907/26687.shtml">《In》</a>
+</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+<div class="ndi_left_news">
+<ul>
+<li><a title="《潘多拉的月光盒》" target="_blank" href="http://www.huoshow.com/2011/0812/21822.shtml">《潘多拉的月光盒》</a></li>
+<li><a title="一只猫的旅行" target="_blank" href="http://www.huoshow.com/2011/0719/17789.shtml">一只猫的旅行</a></li>
+<li><a title="《进行式》" target="_blank" href="http://www.huoshow.com/2011/0729/19598.shtml">《进行式》</a></li>
+<li><a title="马天宇《拯救世界》英式摇滚宣泄叛逆" target="_blank" href="http://www.huoshow.com/2011/0907/26425.shtml">马天宇《拯救世界》英式摇滚宣泄叛逆</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_Center">
+<div class="ndi_Center_newslist">
+<h3 class="sexi_hong line_height"><a title="视频：胡彦斌甩麦离场 称与主持话不投机" target="_blank" href="http://www.huoshow.com/2011/0923/32279.shtml">视频：胡彦斌甩麦离场 称与主持话不投机</a></h3>
+                        <p>胡彦斌日前做客某视频网站聊天，因和主持人言谈不和，中途甩麦走人。胡彦斌对主持人说：“我们俩不在同...<a title="视频：胡彦斌甩麦离场 称与主持话不投机" target="_blank" href="http://www.huoshow.com/2011/0923/32279.shtml">[详细]</a></p>
+                     <h3 class="sexi_hong line_height"><a title="陈思思周杰伦合唱视频 网友惊呼：有双下巴了" target="_blank" href="http://www.huoshow.com/2011/0923/32427.shtml">陈思思周杰伦合唱视频 网友惊呼：有双下巴了</a></h3>
+                        <p>日前，陈思思周杰伦清晰版《珊瑚海》网络首曝光，人们对思伦组合悲情演绎的《珊瑚海》津津乐道。除了...<a title="陈思思周杰伦合唱视频 网友惊呼：有双下巴了" target="_blank" href="http://www.huoshow.com/2011/0923/32427.shtml">[详细]</a></p>
+                     </div>
+<div class="ndi_Center_t">
+<ul class="ndi_Center_t_text">
+<li><a title="黄奕与王力宏新歌撞名 歌迷各挺偶像开战" target="_blank" href="http://www.huoshow.com/2011/0923/32401.shtml">黄奕与王力宏新歌撞名 歌迷各挺偶像开战</a></li>
+<li><a title="至上励合张远古装造型演反派 对戏前辈压力大" target="_blank" href="http://www.huoshow.com/2011/0923/32305.shtml">至上励合张远古装造型演反派 对戏前辈压力大</a></li>
+<li><a title="川子《我要结婚》微电影 透视现实黑色幽默" target="_blank" href="http://www.huoshow.com/2011/0923/32231.shtml">川子《我要结婚》微电影 透视现实黑色幽默</a></li>
+<li><a title="张杰谢娜婚礼场地藏式洞房内景曝光" target="_blank" href="http://www.huoshow.com/2011/0923/32299.shtml">张杰谢娜婚礼场地藏式洞房内景曝光</a></li>
+<li><a title="徐峰柏秋季潮服时尚帅气 新碟受肯定" target="_blank" href="http://www.huoshow.com/2011/0923/32641.shtml">徐峰柏秋季潮服时尚帅气 新碟受肯定</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_right">
+<div class="ndi_right_bt">
+<h2 class="ndi_right_heise">内地音乐榜</h2>
+</div>
+<div class="charts_others">
+<!--#include virtual ="/api/article.php?act=neidirank&type=neidi"-->      
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="full_block">
+<div class="full_block_inner_bd">
+<div class="ndi-bt"> 
+<h2 class="title_black_24">港台</h2>
+</div>
+<div class="ndi">
+<div class="ndi_left">
+<div class="ndi_left_pic_01">
+<div class="ndi_left_tuwen">
+<ul class="ndi_left_tuwenlist">
+<li><a title="《My Love》" target="_blank" href="http://www.huoshow.com/2011/0905/25833.shtml" class="cover1"><img alt="《My Love》" src="http://www.huoshow.com/upload/2011/0917/1316241476769.jpg" width="90" height="90" /></a><br>
+<a title="《My Love》" target="_blank" href="http://www.huoshow.com/2011/0905/25833.shtml">田馥甄Hebe</a><br>《My Love》</li>
+<li><a title="《仰望》" target="_blank" href="http://www.huoshow.com/2011/0818/22408.shtml" class="cover1"><img alt="《仰望》" src="http://www.huoshow.com/upload/2011/0908/1315475650326.jpg" width="90" height="90" /></a><br>
+<a title="《仰望》" target="_blank" href="http://www.huoshow.com/2011/0818/22408.shtml">杨丞琳</a><br>《仰望》</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+<div class="ndi_left_news">
+<ul>
+<li><a title="《Romance》" target="_blank" href="http://www.huoshow.com/2011/0729/19520.shtml">《Romance》</a></li>
+<li><a title="《3650》" target="_blank" href="http://www.huoshow.com/2011/0728/19509.shtml">《3650》</a></li>
+<li><a title="卫兰-《爱没有假如》" target="_blank" href="http://www.huoshow.com/2011/0805/20763.shtml">卫兰-《爱没有假如》</a></li>
+<li><a title="李治廷-《尼古拉》2011全新派台粤语单曲" target="_blank" href="http://www.huoshow.com/2011/0805/20772.shtml">李治廷-《尼古拉》2011全新派台粤语单曲</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_Center">
+<div class="ndi_Center_newslist">
+<h3 class="sexi_huang line_height"><a title="BY2陷整容风波 公司澄清：只做了牙齿" target="_blank" href="http://www.huoshow.com/2011/0923/32309.shtml">BY2陷整容风波 公司澄清：只做了牙齿</a></h3>
+                        <p>近日，针对目前有网友及个别公众歌手在微博爆料和传播我公司旗下艺人“BY2”的相关整容结婚传闻一...<a title="BY2陷整容风波 公司澄清：只做了牙齿" target="_blank" href="http://www.huoshow.com/2011/0923/32309.shtml">[详细]</a></p>
+                     <h3 class="sexi_huang line_height"><a title="张惠妹庾澄庆不排斥发展恋情 小S意外撮合" target="_blank" href="http://www.huoshow.com/2011/0923/32307.shtml">张惠妹庾澄庆不排斥发展恋情 小S意外撮合</a></h3>
+                        <p>同是狮子座的张惠妹(阿妹)和庾澄庆(哈林)居然传出了“双狮恋”？原本并没有太多交集的两人，居然在小...<a title="张惠妹庾澄庆不排斥发展恋情 小S意外撮合" target="_blank" href="http://www.huoshow.com/2011/0923/32307.shtml">[详细]</a></p>
+                     </div>
+<div class="ndi_Center_t">
+<ul class="ndi_Center_t_text_01">
+<li><a title="JPM《那不是雪中红》MV 3公尺黄金巨蟒入镜" target="_blank" href="http://www.huoshow.com/2011/0923/32673.shtml">JPM《那不是雪中红》MV 3公尺黄金巨蟒入镜</a></li>
+<li><a title="信乐团《情殇》MV曝光 唯美上演多角恋" target="_blank" href="http://www.huoshow.com/2011/0923/32605.shtml">信乐团《情殇》MV曝光 唯美上演多角恋</a></li>
+<li><a title="炎亚纶献唱香港公益活动 透露飞轮海将合体" target="_blank" href="http://www.huoshow.com/2011/0923/32543.shtml">炎亚纶献唱香港公益活动 透露飞轮海将合体</a></li>
+<li><a title="张承中斥周刊挑拨自己和Hebe Ella关系" target="_blank" href="http://www.huoshow.com/2011/0923/32273.shtml">张承中斥周刊挑拨自己和Hebe Ella关系</a></li>
+<li><a title="林忆莲香港个唱“逼疯”音乐总监伦永亮" target="_blank" href="http://www.huoshow.com/2011/0923/32223.shtml">林忆莲香港个唱“逼疯”音乐总监伦永亮</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_right_01">
+<div class="ndi_right_bt">
+<h2 class="ndi_right_heise">港台音乐榜</h2>
+</div>
+<div class="charts_others">
+<!--#include virtual ="/api/article.php?act=neidirank&type=tai"-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="full_block">
+<div class="full_block_inner_bd">
+<div class="ndi-bt"> 
+<h2 class="title_black_24">日韩</h2>
+</div>
+<div class="ndi">
+<div class="ndi_left">
+<div class="ndi_left_pic_02">
+<div class="ndi_left_tuwen">
+<ul class="ndi_left_tuwenlist">
+<li><a title="《Mr. Simple》" target="_blank" href="http://www.huoshow.com/2011/0816/22161.shtml" class="cover1"><img alt="《Mr. Simple》" src="http://www.huoshow.com/upload/2011/0917/1316241542641.jpg" width="90" height="90" /></a><br>
+<a title="《Mr. Simple》" target="_blank" href="http://www.huoshow.com/2011/0816/22161.shtml">Super Junior</a><br>《Mr. Simple》</li>
+<li><a title="《TONE》" target="_blank" href="http://www.huoshow.com/2011/0907/26647.shtml" class="cover1"><img alt="《TONE》" src="http://www.huoshow.com/upload/2011/0908/1315475853362.jpg" width="90" height="90" /></a><br>
+<a title="《TONE》" target="_blank" href="http://www.huoshow.com/2011/0907/26647.shtml">东方神起</a><br>《TONE》</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+<div class="ndi_left_news">
+<ul>
+<li><a title="《A Class》" target="_blank" href="http://www.huoshow.com/2011/0719/17715.shtml">《A Class》</a></li>
+<li><a title="《C’mon》" target="_blank" href="http://www.huoshow.com/2011/0802/20100.shtml">《C’mon》</a></li>
+<li><a title="Beautiful World" target="_blank" href="http://www.huoshow.com/2011/0803/20276.shtml">Beautiful World</a></li>
+<li><a title="《大明星》" target="_blank" href="http://www.huoshow.com/2011/0708/15385.shtml">《大明星》</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_Center">
+<div class="ndi_Center_newslist">
+<h3 class="sexi_lan line_height"><a title="韩组合Davichi献唱被呛 成员李海丽伤感道歉" target="_blank" href="http://www.huoshow.com/2011/0923/32639.shtml">韩组合Davichi献唱被呛 成员李海丽伤感道歉</a></h3>
+                        <p>韩国二人女子组合Davichi昨天(9月22日)在进行直播节目《M Countdown》录制中，在演唱歌曲《不要说...<a title="韩组合Davichi献唱被呛 成员李海丽伤感道歉" target="_blank" href="http://www.huoshow.com/2011/0923/32639.shtml">[详细]</a></p>
+                     <h3 class="sexi_lan line_height"><a title="张佑赫任宋祖英个唱嘉宾 请缨唱《辣妹子》" target="_blank" href="http://www.huoshow.com/2011/0923/32147.shtml">张佑赫任宋祖英个唱嘉宾 请缨唱《辣妹子》</a></h3>
+                        <p>民歌天后宋祖英将于10月15日晚在海心沙举行独唱音乐会，前晚，她这场广州个唱的首位嘉宾终于曝光：韩国...<a title="张佑赫任宋祖英个唱嘉宾 请缨唱《辣妹子》" target="_blank" href="http://www.huoshow.com/2011/0923/32147.shtml">[详细]</a></p>
+                     </div>
+<div class="ndi_Center_t">
+<ul class="ndi_Center_t_text_02">
+<li><a title="SARA《配角》台湾蹿红 大嘴巴求翻唱" target="_blank" href="http://www.huoshow.com/2011/0922/31857.shtml">SARA《配角》台湾蹿红 大嘴巴求翻唱</a></li>
+<li><a title="Super Junior被曝酬劳极低 始源新剧收视差" target="_blank" href="http://www.huoshow.com/2011/0921/30909.shtml">Super Junior被曝酬劳极低 始源新剧收视差</a></li>
+<li><a title="韩Hip-hop组合LeeSSang活泼明朗杂志写真" target="_blank" href="http://www.huoshow.com/2011/0922/31807.shtml">韩Hip-hop组合LeeSSang活泼明朗杂志写真</a></li>
+<li><a title="调查显示韩流明星东方神起裴勇俊人气最强" target="_blank" href="http://www.huoshow.com/2011/0921/31125.shtml">调查显示韩流明星东方神起裴勇俊人气最强</a></li>
+<li><a title="传滨崎步诈病激怒艾回 被勒令暂别娱乐圈" target="_blank" href="http://www.huoshow.com/2011/0920/30337.shtml">传滨崎步诈病激怒艾回 被勒令暂别娱乐圈</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_right_02">
+<div class="ndi_right_bt">
+<h2 class="ndi_right_heise">日韩音乐榜</h2>
+</div>
+<div class="charts_others">
+<!--#include virtual ="/api/article.php?act=neidirank&type=rihan"-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="full_block">
+<div class="full_block_inner_bd">
+<div class="ndi-bt"> 
+<h2 class="title_black_24">欧美</h2>
+</div>
+<div class="ndi">
+<div class="ndi_left">
+<div class="ndi_left_pic_03">
+<div class="ndi_left_tuwen">
+<ul class="ndi_left_tuwenlist">
+<li><a title="芭芭拉·史翠珊精选集" target="_blank" href="http://www.huoshow.com/2011/0905/25533.shtml" class="cover1"><img alt="芭芭拉·史翠珊精选集" src="http://www.huoshow.com/upload/2011/0908/1315476097428.jpg" width="90" height="90" /></a><br>
+<a title="芭芭拉·史翠珊精选集" target="_blank" href="http://www.huoshow.com/2011/0905/25533.shtml">芭芭拉·史翠珊</a><br>芭芭拉·史翠珊精</li>
+<li><a title="《4》" target="_blank" href="http://www.huoshow.com/2011/0701/14200.shtml" class="cover1"><img alt="《4》" src="http://www.huoshow.com/upload/2011/0706/1309945431964.jpg" width="90" height="90" /></a><br>
+<a title="《4》" target="_blank" href="http://www.huoshow.com/2011/0701/14200.shtml">碧昂斯·诺斯</a><br>《4》</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+<div class="ndi_left_news">
+<ul>
+<li><a title="When the Sun Goes Down" target="_blank" href="http://www.huoshow.com/2011/0701/14207.shtml">When the Sun Goes Down</a></li>
+<li><a title="Jay-Z携手坎耶韦斯特 新专辑推双碟豪华版" target="_blank" href="http://www.huoshow.com/2011/0714/16605.shtml">Jay-Z携手坎耶韦斯特 新专辑推双碟豪华版</a></li>
+<li><a title="Born This Way" target="_blank" href="http://www.huoshow.com/2011/0525/10818.shtml">Born This Way</a></li>
+<li><a title="Voy A Ser Yo" target="_blank" href="http://www.huoshow.com/2011/0525/10832.shtml">Voy A Ser Yo</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_Center">
+<div class="ndi_Center_newslist">
+<h3 class="sexi_zise line_height"><a title="皇后或为伦敦奥运演出重组 鼓手组致敬乐队" target="_blank" href="http://www.huoshow.com/2011/0923/32489.shtml">皇后或为伦敦奥运演出重组 鼓手组致敬乐队</a></h3>
+                        <p>近日，Queen（皇后）乐队鼓手Roger Taylor（罗杰 ·泰勒）在接受采访时透露表示，皇后乐队可能会与前Free乐队...<a title="皇后或为伦敦奥运演出重组 鼓手组致敬乐队" target="_blank" href="http://www.huoshow.com/2011/0923/32489.shtml">[详细]</a></p>
+                     <h3 class="sexi_zise line_height"><a title="蕾哈娜穿性感比基尼狂欢 遭咸猪手掐嫩臀" target="_blank" href="http://www.huoshow.com/2011/0923/32323.shtml">蕾哈娜穿性感比基尼狂欢 遭咸猪手掐嫩臀</a></h3>
+                        <p>北美流行音乐天后蕾哈娜（Rihanna）不拘小节，前两天她在酒店的阳台上，穿着睡衣与粉丝打招呼送飞吻，随后...<a title="蕾哈娜穿性感比基尼狂欢 遭咸猪手掐嫩臀" target="_blank" href="http://www.huoshow.com/2011/0923/32323.shtml">[详细]</a></p>
+                     </div>
+<div class="ndi_Center_t">
+<ul class="ndi_Center_t_text_03">
+<li><a title="布兰妮建议碧昂斯：应珍惜孩子未出生时光" target="_blank" href="http://www.huoshow.com/2011/0923/32529.shtml">布兰妮建议碧昂斯：应珍惜孩子未出生时光</a></li>
+<li><a title="Adele将不再小规模演出 现场遭观众喝倒彩" target="_blank" href="http://www.huoshow.com/2011/0923/32497.shtml">Adele将不再小规模演出 现场遭观众喝倒彩</a></li>
+<li><a title="杰克逊长子继承父亲遗志 处子秀献给慈善拍卖" target="_blank" href="http://www.huoshow.com/2011/0923/32627.shtml">杰克逊长子继承父亲遗志 处子秀献给慈善拍卖</a></li>
+<li><a title="《暮光之城4》主题曲曝光 布鲁诺·马尔斯演绎" target="_blank" href="http://www.huoshow.com/2011/0923/32189.shtml">《暮光之城4》主题曲曝光 布鲁诺·马尔斯演绎</a></li>
+<li><a title="图：碧昂斯成”蓝色歌姬“发布专属新品香水" target="_blank" href="http://www.huoshow.com/2011/0923/32343.shtml">图：碧昂斯成”蓝色歌姬“发布专属新品香水</a></li>
+</ul>
+</div>
+</div>
+<div class="ndi_right_03">
+<div class="ndi_right_bt">
+<h2 class="ndi_right_heise">欧美音乐榜</h2>
+</div>
+<div class="charts_others">
+<!--#include virtual ="/api/article.php?act=neidirank&type=omei"-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Partners-->
+<!-- 
+<div class="partners">
+<div class="layer_one"><a href="">合作火伴</a></div>
+<div class="layer_two"><a href="">友情链接</a></div>
+<div class="layer_content">
+<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+</div>
+</div>
+ -->
+<!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

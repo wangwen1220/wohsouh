@@ -1,0 +1,31 @@
+<!--[if IE 6]><iframe class='ie6select' src='javascript:;' frameborder='0'></iframe>
+<div class='ie6select'><![endif]-->
+<div class="addFans group">
+  <div style="position:relative;">
+    <span class="closeSpan"><a title="关闭" onclick="hideWindow('register')" class="flbc" href="javascript:;">关闭</a></span>
+    <form action="/huoshow/module/home/home_weibo_nogroup.php?tab=ingroup" method="post" id="group_add_user_form">
+      <input name="groupid" type="hidden" id="groupid" value="{$id}" />
+      <ul class="showIt">
+        {section name=n loop=$nogroup}
+        <li>
+        <label>
+          <input name="select[]" type="checkbox" value="{$nogroup[n].uid}" />
+          <a>
+            <span><img src="{$nogroup[n].head_img_url}" /></span>
+            <span class='name'>{$nogroup[n].nickname}</span>
+          </a>
+        </label>
+        </li>
+        {/section}
+      </ul>
+      <div class="clear"></div>
+      <div class="addPage">
+        {if $count == 1}
+        <input type="submit" value="应用" />
+        {else}没有未分组的关注用户！{/if}
+      </div>
+    </form>
+  </div>
+</div>
+<!--[if IE 6]></div><![endif]-->
+{include file="home/home_weibo_group_script.html"}

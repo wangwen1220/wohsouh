@@ -1,0 +1,143 @@
+<!--{template 'huoshow_game/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<div class="banner_960_60">
+	{db sql="select * from #table_section  where memo ='huoshow_mobile_game_top_image' " }
+    	{$r[data]}
+    {/db}
+</div> 
+<div class="main_body">
+	<!--Left-->
+	<div class="body_webgame_left">
+	
+		<div class="game_W702">
+			<div class="game_W702_01" id="game_tabview1">
+			<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">手机掌机</h2>
+					{if $name == '动态' }
+					<span class="web_remen_a">
+						<a href="{WWW_URL}game/mobile_game/" >推荐 </a>
+						<a href="{WWW_URL}game/mobile_game/mobilenews" class="Current">动态 </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilereview">测评  </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilewalkthrough">攻略</a>  
+						<a href="{WWW_URL}game/mobile_game/mobiledownload">下载</a>  
+					</span>
+					{/if}
+					{if $name == '测评' }
+					<span class="web_remen_a">
+						<a href="{WWW_URL}game/mobile_game/" >推荐 </a>
+						<a href="{WWW_URL}game/mobile_game/mobilenews" >动态 </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilereview" class="Current">测评  </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilewalkthrough">攻略</a>  
+						<a href="{WWW_URL}game/mobile_game/mobiledownload">下载</a>  
+					</span>
+					{/if}
+					{if $name == '攻略' }
+					<span class="web_remen_a">
+						<a href="{WWW_URL}game/mobile_game/" >推荐 </a>
+						<a href="{WWW_URL}game/mobile_game/mobilenews" >动态 </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilereview">测评  </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilewalkthrough" class="Current">攻略</a>  
+						<a href="{WWW_URL}game/mobile_game/mobiledownload">下载</a>  
+					</span>
+					{/if}
+					{if $name == '下载' }
+					<span class="web_remen_a">
+						<a href="{WWW_URL}game/mobile_game/" >推荐 </a>
+						<a href="{WWW_URL}game/mobile_game/mobilenews" >动态 </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilereview">测评  </a>  
+						<a href="{WWW_URL}game/mobile_game/mobilewalkthrough">攻略</a>  
+						<a href="{WWW_URL}game/mobile_game/mobiledownload" class="Current">下载</a>  
+					</span>
+					{/if}
+			</div>
+			<div class="Web_games_left_03">
+				<!--{content catid="$catid" $i=1 orderby="published desc" size="$pagesize" page="$page"}-->
+				<div class="Web_games_left_list_03">
+					<div class="Web_games_left_tuwen_03">
+						<div class="Web_games_left_tu_03"> 
+							{if $r[thumb] == ''}
+								<img src="{WWW_URL}img/templates/huoshow02/images/nopic.jpg" width="128" height="80" />
+							{else}
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="128" height="80" /></a>
+							{/if}
+						</div>
+		    			<div class="Web_games_left_zi_03">
+		    				<h1><a title="{$r[title]}" href="{$r[url]}" target="_blank">{$r[title]}</a></h1>
+		    				{str_cut($r[description],100)}<a title="{$r[title]}" href="{$r[url]}" target="_blank">[查看全文]</a>
+		    				<span class="Mobile_Time">{date("Y-m-d", $r[published])}</span>
+		    			</div>
+					</div>
+				</div>
+				<!--{/content}-->
+			</div>
+			<div class="clear"></div>
+				<div class="kongge_8">
+					
+				</div>
+				<div class="fanye">
+        				<div id="fanye_01">
+							<ul><!--{pages($total, $page, $pagesize, 2, $urlrule)}--></ul>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<!--Left End--> 
+	<!--Right-->
+	<div class="body_webgame_right"> 
+	<div class="kongge_8"></div>
+	
+	<div class="game_W250">
+			<div class="game_W250_01">
+			<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">苹果专区</h2></div>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_mobile_game_apple' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<div class="Web_games_left_list_04">
+					<div class="Web_games_left_tuwen_04">
+						<div class="Web_games_left_tu_04">
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="70" height="70" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_04">
+			    			<h1><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></h1>{str_cut($r[description],80)}
+			    		</div>
+					</div>
+				</div>
+				{/db}
+		    </div>
+			
+
+		</div>
+		<div class="mobilegame_banner_250">
+			{db sql="select * from #table_section  where memo ='huoshow_mobile_game_image' " }
+        		{$r[data]}
+        	{/db}
+		</div>
+		<div class="kongge_8"></div>
+		<div class="game_W250s">
+			<div class="game_W250_01">
+			<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">Android专区</h2></div>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_mobile_game_Android' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<div class="Web_games_left_list_04">
+					<div class="Web_games_left_tuwen_04">
+						<div class="Web_games_left_tu_04">
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="70" height="70" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_04">
+			    			<h1><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></h1>{str_cut($r[description],80)}
+			    		</div>
+					</div>
+				</div>
+				{/db}
+				
+		    </div>
+		</div>
+	</div>
+	<!--Banner 960*90--><!--网络游戏--><!--单机游戏--><!--网页游戏--><!--小游戏--><!--手机游戏-->
+	<div class="clear"></div>
+	<!--Partners--><!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--{template 'huoshow_game/footer.html'}-->

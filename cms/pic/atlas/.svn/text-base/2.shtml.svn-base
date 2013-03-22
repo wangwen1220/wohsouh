@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="蔡国庆、陈羽凡、快女、快乐女生、高晓松、星光大道、达人秀、周立波、曾轶可、李宇春、洪辰、段林希、刘忻、杨洋、陆翊、张靓颖、安又琪、陈楚生、苏醒、武艺、李斯丹妮、付梦妮、DL、金星、巩新亮、伍洲彤、陈羽凡、胡海泉、苏妙玲、周笔畅" />
+<meta name="description" content="火秀网赛事频道为您提供娱乐赛事最新资讯以及相关图片，包括快女、快男、中国达人秀、火秀魅力之星、舞林大会等全球时下最火爆的赛事以及涌现出的热门明星相关报道。" />
+    <title>赛事图集_火秀图片_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/picset.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+<script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+<!--[if gte IE 6]>
+<link href="css/star_style_Below_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+
+<body  class="body_bg" id="star_pic">
+<!--Site Header-->
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+
+<!--Site Header End-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/pic/" title="火秀明星首页">火秀明星频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a href="http://www.huoshow.com/pic/moviebeauty/">影视美图</a></li>
+                <li><a href="http://www.huoshow.com/pic/musicbeauty/">音乐美图</a></li>
+                <li><a href="http://www.huoshow.com/pic/photo/">明星写真</a></li>	  	        
+<li><a href="http://www.huoshow.com/pic/atlas/">赛事图集</a></li>
+<li><a href="http://www.huoshow.com/pic/beauty/">游戏美图</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/pic/index.shtml">火秀图片</a> > <a href="http://www.huoshow.com/pic/atlas/index.shtml">赛事图集</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_pic">
+        <div class="Subpage_pic_01">
+            <div class="Subpage_pic_list">
+            	<div class="Subpage_pic_bt"><h2>赛事图集</h2></div>
+            	<ul >
+   	<li>
+   		<a title="花儿朵朵全国十二强定妆照" target="_blank" href="http://www.huoshow.com/2011/0921/30971.shtml"><img alt="花儿朵朵全国十二强定妆照" src="http://www.huoshow.com/upload/2011/0921/1316572424130.jpg" width="158" height="118">
+   		<span >花儿朵朵全国十二强定</span></a>
+   	</li>
+   	<li>
+   		<a title="图:盘点超女 快女里的“短发妹”" target="_blank" href="http://www.huoshow.com/2011/0920/30837.shtml"><img alt="图:盘点超女 快女里的“短发妹”" src="http://www.huoshow.com/upload/2011/0920/1316510814179.jpg" width="158" height="118">
+   		<span >图:盘点超女 快女里的</span></a>
+   	</li>
+   	<li>
+   		<a title="当红超模凯特阿普顿不雅照 胸夹酒杯撩衣露乳" target="_blank" href="http://www.huoshow.com/2011/0920/30821.shtml"><img alt="当红超模凯特阿普顿不雅照 胸夹酒杯撩衣露乳" src="http://www.huoshow.com/upload/2011/0920/1316509434329.jpg" width="158" height="118">
+   		<span >当红超模凯特阿普顿不</span></a>
+   	</li>
+   	<li>
+   		<a title="盘点:段林希穿衣打扮" target="_blank" href="http://www.huoshow.com/2011/0920/30711.shtml"><img alt="盘点:段林希穿衣打扮" src="http://www.huoshow.com/upload/2011/0920/1316505810789.jpg" width="158" height="118">
+   		<span >盘点:段林希穿衣打扮</span></a>
+   	</li>
+   	<li>
+   		<a title="图:李宇春精品购物指南封面照" target="_blank" href="http://www.huoshow.com/2011/0920/30639.shtml"><img alt="图:李宇春精品购物指南封面照" src="http://www.huoshow.com/upload/2011/0920/1316503818695.jpg" width="158" height="118">
+   		<span >图:李宇春精品购物指</span></a>
+   	</li>
+   	<li>
+   		<a title="图:花儿朵朵前12强 个个有冠军相" target="_blank" href="http://www.huoshow.com/2011/0920/30297.shtml"><img alt="图:花儿朵朵前12强 个个有冠军相" src="http://www.huoshow.com/upload/2011/0920/1316482472431.jpg" width="158" height="118">
+   		<span >图:花儿朵朵前12强 个</span></a>
+   	</li>
+   	<li>
+   		<a title="组图:2011蜂鸟网摄影模特大赛总决赛" target="_blank" href="http://www.huoshow.com/2011/0919/30165.shtml"><img alt="组图:2011蜂鸟网摄影模特大赛总决赛" src="http://www.huoshow.com/upload/2011/0919/1316423345572.jpg" width="158" height="118">
+   		<span >组图:2011蜂鸟网摄影</span></a>
+   	</li>
+   	<li>
+   		<a title="组图:Jena Theo秀场 模特不慎露点" target="_blank" href="http://www.huoshow.com/2011/0919/30091.shtml"><img alt="组图:Jena Theo秀场 模特不慎露点" src="http://www.huoshow.com/upload/2011/0919/1316420823211.jpg" width="158" height="118">
+   		<span >组图:Jena Theo秀场 </span></a>
+   	</li>
+   	<li>
+   		<a title="快女12强素颜照曝光 前后对比大跌眼镜" target="_blank" href="http://www.huoshow.com/2011/0919/30047.shtml"><img alt="快女12强素颜照曝光 前后对比大跌眼镜" src="http://www.huoshow.com/upload/2011/0919/1316418991723.jpg" width="158" height="118">
+   		<span >快女12强素颜照曝光 </span></a>
+   	</li>
+   	<li>
+   		<a title="图:萧蔷耍大牌退赛 爆乳躺地打滚 方俊痛哭" target="_blank" href="http://www.huoshow.com/2011/0919/30027.shtml"><img alt="图:萧蔷耍大牌退赛 爆乳躺地打滚 方俊痛哭" src="http://www.huoshow.com/upload/2011/0919/1316417717996.jpg" width="158" height="118">
+   		<span >图:萧蔷耍大牌退赛 爆</span></a>
+   	</li>
+   	<li>
+   		<a title="图:段林希海军造型 令人刮目相看" target="_blank" href="http://www.huoshow.com/2011/0919/29985.shtml"><img alt="图:段林希海军造型 令人刮目相看" src="http://www.huoshow.com/upload/2011/0919/1316415547931.jpg" width="158" height="118">
+   		<span >图:段林希海军造型 令</span></a>
+   	</li>
+   	<li>
+   		<a title="图:刘忻生活照" target="_blank" href="http://www.huoshow.com/2011/0919/29923.shtml"><img alt="图:刘忻生活照" src="http://www.huoshow.com/upload/2011/0919/1316413672409.jpg" width="158" height="118">
+   		<span >图:刘忻生活照</span></a>
+   	</li>
+   	<li>
+   		<a title="图:花儿朵朵“鬼脸派对”图集" target="_blank" href="http://www.huoshow.com/2011/0919/29885.shtml"><img alt="图:花儿朵朵“鬼脸派对”图集" src="http://www.huoshow.com/upload/2011/0919/1316405024499.jpg" width="158" height="118">
+   		<span >图:花儿朵朵“鬼脸派</span></a>
+   	</li>
+   	<li>
+   		<a title="图:花儿朵朵各种鬼马搞怪" target="_blank" href="http://www.huoshow.com/2011/0919/29875.shtml"><img alt="图:花儿朵朵各种鬼马搞怪" src="http://www.huoshow.com/upload/2011/0919/1316404215725.jpg" width="158" height="118">
+   		<span >图:花儿朵朵各种鬼马</span></a>
+   	</li>
+   	<li>
+   		<a title="快女微电影花絮曝光 陆翊最清纯售货员" target="_blank" href="http://www.huoshow.com/2011/0919/29861.shtml"><img alt="快女微电影花絮曝光 陆翊最清纯售货员" src="http://www.huoshow.com/upload/2011/0919/1316403069422.jpg" width="158" height="118">
+   		<span >快女微电影花絮曝光 </span></a>
+   	</li>
+   	<li>
+   		<a title="图:快女三强作客《金鹰访谈》" target="_blank" href="http://www.huoshow.com/2011/0919/29735.shtml"><img alt="图:快女三强作客《金鹰访谈》" src="http://www.huoshow.com/upload/2011/0919/1316421353561.jpg" width="158" height="118">
+   		<span >图:快女三强作客《金</span></a>
+   	</li>
+   	<li>
+   		<a title="图：世界小姐赛比基尼走秀 鼻血止不住" target="_blank" href="http://www.huoshow.com/2011/0917/29665.shtml"><img alt="图：世界小姐赛比基尼走秀 鼻血止不住" src="http://www.huoshow.com/upload/2011/0919/1316421179774.jpg" width="158" height="118">
+   		<span >图：世界小姐赛比基尼走</span></a>
+   	</li>
+   	<li>
+   		<a title="图：中华小姐泳装秀 美丽Hold不住" target="_blank" href="http://www.huoshow.com/2011/0917/29661.shtml"><img alt="图：中华小姐泳装秀 美丽Hold不住" src="http://www.huoshow.com/upload/2011/0919/1316421093782.jpg" width="158" height="118">
+   		<span >图：中华小姐泳装秀 美</span></a>
+   	</li>
+   	<li>
+   		<a title="花儿黄夕倍后台“神婆”照曝光" target="_blank" href="http://www.huoshow.com/2011/0915/28623.shtml"><img alt="花儿黄夕倍后台“神婆”照曝光" src="http://www.huoshow.com/upload/2011/0915/1316081485242.jpg" width="158" height="118">
+   		<span >花儿黄夕倍后台“神婆</span></a>
+   	</li>
+   	<li>
+   		<a title="2011快乐女声 喻佳丽图集" target="_blank" href="http://www.huoshow.com/2011/0914/28463.shtml"><img alt="2011快乐女声 喻佳丽图集" src="http://www.huoshow.com/upload/2011/0915/1316081503698.jpg" width="158" height="118">
+   		<span >2011快乐女声 喻佳丽</span></a>
+   	</li>
+   </ul>
+                <div class="clear"></div>
+                <div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/pic/atlas/1.shtml">上一页</a></li><li><a href="http://www.huoshow.com/pic/atlas/1.shtml">1</a></li><li><a href="http://www.huoshow.com/pic/atlas/2.shtml" class="now">2</a></li><li><a href="http://www.huoshow.com/pic/atlas/3.shtml">3</a></li><li><a href="http://www.huoshow.com/pic/atlas/4.shtml">4</a></li><li><a href="http://www.huoshow.com/pic/atlas/3.shtml">下一页</a></li></ul>
+</div>
+</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a> |  <a href="http://www.huoshow.com/map.php">网站地图</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<!--Banner Replacer-->
+<div style="display:none">
+<div id="top_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(9);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a2796ca'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=9&n=a2796ca' /></a></noscript></div>
+<div id="top_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(8);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=4f0e3b4'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=8&n=4f0e3b4' /></a></noscript></div>
+<div id="movie_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(11);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=082cda0'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=11&n=082cda0' /></a></noscript></div>
+<div id="music_banner_250_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(13);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dd2b9e1'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=13&n=dd2b9e1' /></a></noscript></div>
+<div id="game_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(15);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=61b3c77'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=15&n=61b3c77' /></a></noscript></div>
+<script type="text/javascript">// <![CDATA[
+try{
+document.getElementById("top_banner_250_250").innerHTML = document.getElementById("top_banner_250_250_c").innerHTML;
+document.getElementById("top_banner_250_250_c").innerHTML = "";
+
+document.getElementById("top_banner_300_100").innerHTML = document.getElementById("top_banner_300_100_c").innerHTML;
+document.getElementById("top_banner_300_100_c").innerHTML = "";
+
+document.getElementById("movie_banner_300_100").innerHTML = document.getElementById("movie_banner_300_100_c").innerHTML;
+document.getElementById("movie_banner_300_100_c").innerHTML = "";
+
+document.getElementById("music_banner_250_100").innerHTML = document.getElementById("music_banner_250_100_c").innerHTML;
+document.getElementById("music_banner_250_100_c").innerHTML = "";
+
+document.getElementById("game_banner_250_250").innerHTML = document.getElementById("game_banner_250_250_c").innerHTML;
+document.getElementById("game_banner_250_250_c").innerHTML = "";
+}catch(e){}
+// ]]></script>    </div>
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<script type="text/javascript" src="<?=ADMIN_URL?>apps/video/js/flvplayer.js"></script>
+<script type="text/javascript">
+	var s1 = new SWFObject("flvplayer.swf","single","300","170","7");
+	s1.addParam("allowfullscreen","true");
+	s1.addVariable("file","<?=$videourl?>");
+	s1.addVariable("width","560");
+	s1.addVariable("height","455");
+	s1.write("player1");
+</script>
+<p id="player1"></p>

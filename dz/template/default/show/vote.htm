@@ -1,0 +1,63 @@
+<div id="vote_box">
+  <div class="vote_right">
+
+    <div id="vote_button_box">
+      <!--{if $usertype == 1}-->
+      <a href="javascript:;" id="canVoteStatus"><img src="/static2/images/vote_stop.gif" onclick="stopVote()"/></a>
+      <!--{else}-->
+      <div class="vote-button vote-button-wait">
+        <p><span class="red">[<span id="vote_timer_wait">60</span>]</span> 秒后可以给<br />TA赠送魅力之星</p>
+      </div>
+      <div class="vote-button vote-button-success">
+        <p><span class="vote_success">赠送成功</span><br /><span class="red">[<span id="vote_timer_success">60</span>]</span> 秒后继续赠送</p>
+      </div>
+      <a href='javascript:vote();' class="vote-button vote-button-vote"><img id="vote_button" src="/static2/images/star.gif"/></a>
+    <!--{/if}-->
+    </div>
+  </div>
+
+  <div class="vote_left">
+    <h1 class="vote_left_zi">我正在参加
+      <a href="{WWW_URL}zhuanti/" target="_blank" class="vote_left_crude">火秀魅力之星大赛</a> 支持我吧！
+    </h1>
+    <div style="text-align:right;padding-right:10px;">
+      <span>
+        <img style="position:absolute;" width="16" height="16" src="/static2/images/vote_help.jpg"
+        title="魅力指数为魅力值占60%，魅力之星个数占40%，通过换算得到的一个指数，最高为10000。" />
+      </span>
+    </div>
+    <div class="vote_zi">
+      <table>
+        <tr>
+          <td>
+            魅力值：
+          </td>
+          <td>
+            <span class="blue" id="charm_value">－</span>
+          </td>
+          <td>
+            魅力之星：
+          </td>
+          <td>
+            <span class="green" id="vote_value">－</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            魅力指数：
+          </td>
+          <td>
+            <span class="red" id="score_value">－</span>
+          </td>
+          <td>
+            当前排名：
+          </td>
+          <td>
+            <span class="red" id="paiming_value">－</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>

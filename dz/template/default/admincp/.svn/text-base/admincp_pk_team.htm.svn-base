@@ -1,0 +1,45 @@
+<div class="itemtitle"><h3>PK管理</h3>
+<ul class="tab1">
+<li class="current"><a href="admin.php?action=pk&op=team"><span>队伍管理</span></a></li>
+<li><a href="admin.php?action=pk&op=member"><span>成员管理</span></a></li>
+<li><a href="admin.php?action=pk&op=guess"><span>竞猜管理</span></a></li>
+</ul></div>
+<div>
+	<form name="cpform" id="cpform" autocomplete="off" action="admin.php?action=pk&op=team" method="POST" enctype="multipart/form-data">
+	<table class="tb tb2 ">
+		<tr>
+			<td>创建队伍</td>
+		</tr>
+		<tr>
+			<td><span class="td27">队伍名称 ：</span><input type="text" name="name" value=""/>
+				<span class="td27">logo：</span><input type="file" name="logo" value=""/>
+				<input class="btn" type="submit" name="submit" value="创建" /></td>
+		</tr>
+	</table>
+	</form>
+</div>
+<br />
+<div class="itemtitle"><h3>搜索结果</h3></div>
+<div>
+<table class="tb tb2 ">
+	<tr class="partition">
+		<td class="td27">id</td>
+		<td class="td27">队伍名称</td>
+		<td class="td27">logo</td>
+		<td class="td27">成员数</td>
+		<td class="td27">操作</td>
+	</tr>
+	<!--{if $list==''}--><tr><td colspan="5">暂无队伍</td></tr><!--{/if}-->
+	<!--{loop $list $value}-->
+	<tr>
+		<td>{$value['teamid']}</td>
+		<td>{$value['name']}</td>
+		<td><img src="{$value['logo']}"></td>
+		<td>{$value['membernum']}</td>
+		<td><a href="admin.php?action=pk&op=editteam&teamid={$value['teamid']}">编辑</a> 
+		<a href="admin.php?action=pk&op=member&teamid={$value['teamid']}">查看成员</a></td>
+	</tr>
+	<!--{/loop}-->
+	<tr><td colspan="8"><div class="cuspages right"><div class="pg">$multi</div></div></td></tr>
+</table>
+</div>

@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>火秀网-中国娱乐门户-我秀我火!我火我秀!</title>
+<meta name="keywords" content="娱乐网站,娱乐门户,娱乐新闻,赛事直播,明星八卦,音乐网站,游戏,火秀网" />
+<meta name="description" content="火秀网致力打造国内最专业娱乐门户网站,以报道时下最新内地、港台、日韩、欧美娱乐新闻和游戏资讯,涵盖电影、电视、音乐、游戏、视频、图片、明星、演艺、原创及翻唱集中展示、个人博客、论坛等娱乐相关领域,结合多种娱乐与互动为主题的功能与应用,结合线上线下活动,是年轻时尚的各类达人在线互动的娱乐门户平台。" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/index.css" rel="stylesheet" type="text/css" />
+    <script src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script src="http://space.huoshow.com/static/js/common.js"></script>
+    <script src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+    <script src="http://misc.huoshow.com/www/delivery/spcjs1.php?id=1"></script>
+  </head>
+
+<body class="body_bg">
+  <div id="append_parent"></div>
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="live_room"><a href="http://live.huoshow.com/" target="_blank">进入直播</a></div>
+        <div class="home"><a href="##" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.huoshow.com');">设为首页</a></div>
+        <div class="fav"><a target=_top href="javascript:window.external.addFavorite('http://www.huoshow.com','火秀网 - 中国娱乐门户');">加入收藏</a></div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+
+<div class="nav_bg">
+  <h1 class="channel_logo"><a href="http://www.huoshow.com/">火秀网</a></h1>
+  <div id="sub_channel">
+    <ul>
+      <li><a target="_blank" href="http://www.huoshow.com/">首页</a></li>
+      <li><a target="_blank" href="http://live.huoshow.com/">直播大厅</a></li>
+      <li><a target="_blank" href="http://www.huoshow.com/events/">赛事</a></li>
+  <li><a target="_blank" href="http://www.huoshow.com/star/">明星</a></li>
+      <li><a target="_blank" href="http://www.huoshow.com/movie/">影视</a></li>
+      <li><a target="_blank" href="http://www.huoshow.com/music/">音乐</a></li>
+      <li><a target="_blank" href="http://www.huoshow.com/game/">游戏</a></li>
+      <li><a href="http://www.huoshow.com/pic/">美图</a></li>
+      <!--<li><a href="#">排行榜</a></li>-->
+      <li><a target="_blank" href="http://www.huoshow.com/myshow/">MY秀</a></li>
+      <li><a target="_blank" href="http://space.huoshow.com/group.php">群组</a></li>
+      <li><a target="_blank" href="http://space.huoshow.com/home.php">空间</a></li>
+      <li><a target="_blank" href="http://bbs.huoshow.com/">论坛</a></li>
+    </ul>
+  </div>
+  <!--<div class="search_index">
+    <script>
+      (function($){
+        $(function(){
+
+          window.clearKeyword = function(){
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字'){
+              $("#search_wd").val('');
+            }
+            if(search_wd==''){
+              $("#search_wd").val('请输入关键字');
+            }
+          }
+
+          window.checkSForm = function() {
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字' || search_wd==''){
+              alert('请输入关键字');
+              return false;
+            }
+          }
+
+        });
+      })(jQuery);
+    </script>
+    <form method="get" name="search" id="search" action="/app/" target="_blank" onSubmit="return checkSForm()">
+      <input type="hidden" value="search" name="app"/>
+      <input type="hidden" value="index" name="controller"/>
+      <input type="hidden" value="search" name="action"/>
+      <input type="hidden" value="all" name="type"/>
+      <input type="text" class="search_input_index" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><span class="search_button_index">
+        <input type="submit" class="search_submit_index" value=" " /></span>
+    </form>
+  </div>-->
+  <div class="clear"></div>
+</div>
+
+<div class="red_bar">
+  <div class="red_bar_text">
+    <div class="red_bar_today"><span class="red_bar_today_bg"></span>
+      <!--#include virtual ="/api/article.php?act=index_time"-->
+    </div>
+    <div id="header_rollnews_keywords">
+      <!--#include virtual ="/api/article.php?act=get_header_rollnews_keywords"-->
+    </div>
+<div class="shuru_suosou">
+ <script>
+      (function($){
+        $(function(){
+
+          window.clearKeyword = function(){
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字'){
+              $("#search_wd").val('');
+            }
+            if(search_wd==''){
+              $("#search_wd").val('请输入关键字');
+            }
+          }
+
+          window.checkSForm = function() {
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字' || search_wd==''){
+              alert('请输入关键字');
+              return false;
+            }
+          }
+
+        });
+      })(jQuery);
+    </script>
+<!--<div class="k"><input name="" type="text" class="shuru_k" /></div>
+<div class="s_suo"><a href=""><img src="images/s_suo.jpg" width="57" height="20" /></a></div>-->
+<form method="get" name="search" id="search" action="/app/" target="_blank" onSubmit="return checkSForm()">
+      <input type="hidden" value="search" name="app"/>
+      <input type="hidden" value="index" name="controller"/>
+      <input type="hidden" value="search" name="action"/>
+      <input type="hidden" value="all" name="type"/>
+      <input type="text" class="shuru_k" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><div class="s_suo">
+        <input type="submit" class="search_submit_index" value=" " width="57" height="20"/></div>
+    </form>
+</div>
+  </div>
+</div>
+<div class="clear"></div>
+<!--Banner 960*90-->
+    <div id="top_banner_960_90" class="banner_960_90">
+<script type="text/javascript">// <![CDATA[
+    OA_show(7);
+// ]]></script>
+</div><!--Main Body Start-->
+<!--Top Area Start-->
+<div class="main_body">
+<!--Left-->
+<div class="body_left"> 
+<!--Slide轮显图片-->
+
+<div class="slide">
+        <!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_index_scroll_image_288_408&width=288&height=406&navon=1"-->
+</div>
+<div class="clear"></div>
+<!--Banner 300*100-->
+            <div id="top_banner_300_100" class="banner_300_100">
+<div class="banner_inter"><img src="/img/templates/huoshow02/images/loading.gif" border="0" /> 广告加载中...</div>
+</div>        <!--Hot Videos-->
+<div class="hot_video">
+<div class="channel_left_title2">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">热门视频</h1>
+</div>
+<div class="hot_video_pic_list">
+<ul>
+<li>
+<span class="video_pic_bg"><a title="《堵车》 新预告片" href="http://www.huoshow.com/2011/1014/39091.shtml" target="_blank"><img alt="《堵车》 新预告片" src="http://www.huoshow.com/upload/2011/1014/1318560205694.jpg" width="134" height="83" /></a></span>
+<span class="video_text"><a title="《堵车》 新预告片" href="http://www.huoshow.com/2011/1014/39091.shtml" target="_blank">《堵车》 新预告片</a></span> 
+</li>
+<li>
+<span class="video_pic_bg"><a title="《登陆之日》发预告片" href="http://www.huoshow.com/2011/1014/39183.shtml" target="_blank"><img alt="《登陆之日》发预告片" src="http://www.huoshow.com/upload/2011/1014/1318564302303.jpg" width="134" height="83" /></a></span>
+<span class="video_text"><a title="《登陆之日》发预告片" href="http://www.huoshow.com/2011/1014/39183.shtml" target="_blank">《登陆之日》发预告片</a></span> 
+</li>
+</ul>
+</div>
+<div class="hot_video_txt_list">
+<ul>
+<li><a title="《幸福额度》发特辑" href="http://www.huoshow.com/2011/1012/38125.shtml" target="_blank">《幸福额度》发特辑</a></li>
+<li><a title="《复仇者联盟》片花" href="http://www.huoshow.com/2011/1012/38267.shtml" target="_blank">《复仇者联盟》片花</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--Middle-->
+<div class="body_mid">
+<div class="top_news">
+      
+                
+<!--  --><!-- 判断是否是头条加粗显示新闻 -->
+<h3>
+
+<!--  -->
+<span class=""></span>
+<!--  -->
+
+<a title="金鸡爆冷不下双黄蛋 《飞天》夺奖被喝倒彩" target="_blank" href="http://www.huoshow.com/2011/1023/42803.shtml" class="text_black_28">金鸡爆冷不下双黄蛋 《飞天》夺奖被喝倒彩</a></h3>
+<div class="top_news_sub">
+<!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="干露露拍摄全裸写真" href="http://www.huoshow.com/2011/1023/42809.shtml" target="_blank">干露露拍摄全裸写真</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="潘玮柏天心爆冷获封视帝后" href="http://www.huoshow.com/2011/1022/42521.shtml" target="_blank">潘玮柏天心爆冷获封视帝</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="传朱迅与王志已分居" href="http://www.huoshow.com/2011/1022/42533.shtml" target="_blank">传朱迅与王志已分居</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="大S接棒《康熙》赛过小S" href="http://www.huoshow.com/2011/1022/42541.shtml" target="_blank">大S接棒《康熙》赛过小S</a>]</span>
+            <!--  -->
+                              </div>
+</div>
+
+<div class="top_news">
+      
+                
+<!--  --><!-- 判断是否是头条加粗显示新闻 -->
+<h3>
+
+<!--  -->
+<span class=""></span>
+<!--  -->
+
+<a title="第24届东京电影节开幕 范冰冰成龙撑场绿地毯" target="_blank" href="http://www.huoshow.com/2011/1023/42805.shtml" class="text_black_16">第24届东京电影节开幕 范冰冰成龙撑场绿地毯</a></h3>
+<div class="top_news_sub">
+<!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="模特网上直播自杀被救" target="_blank" href="http://www.huoshow.com/2011/1023/42807.shtml">模特网上直播自杀被救</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="谢霆锋否认删激情戏" target="_blank" href="http://www.huoshow.com/2011/1022/42593.shtml">谢霆锋否认删激情戏</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="成龙震后初踏日本" target="_blank" href="http://www.huoshow.com/2011/1022/42609.shtml">成龙震后初踏日本</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="霍思燕赴东京出席电影节" target="_blank" href="http://www.huoshow.com/2011/1022/42577.shtml">霍思燕赴东京出席电影节</a>]</span>
+            <!--  -->
+                              </div>
+</div>
+
+<div class="top_news">
+      
+                
+<!--  --><!-- 判断是否是头条加粗显示新闻 -->
+<h3>
+
+<!--  -->
+<span class=""></span>
+<!--  -->
+
+<a title="容祖儿不避何韵诗谈同性之爱：可能DNA出错" target="_blank" href="http://www.huoshow.com/2011/1024/42851.shtml" class="text_black_16">容祖儿不避何韵诗谈同性之爱：可能DNA出错</a></h3>
+<div class="top_news_sub">
+<!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="周杰伦新歌改名避争议" target="_blank" href="http://www.huoshow.com/2011/1022/42795.shtml" target="_blank">周杰伦新歌改名避争议</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="传张韶涵欲离开演艺界" target="_blank" href="http://www.huoshow.com/2011/1021/42119.shtml" target="_blank">传张韶涵欲离开演艺界</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="陈楚生首部个人形象片曝光" target="_blank" href="http://www.huoshow.com/2011/1021/42109.shtml" target="_blank">陈楚生首部个人形象片曝</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="马天宇MV大玩湿身诱惑" target="_blank" href="http://www.huoshow.com/2011/1021/42069.shtml" target="_blank">马天宇MV大玩湿身诱惑</a>]</span>
+            <!--  -->
+                              </div>
+</div>
+
+<ul class="newslist">
+    <li><a title="" href="http://www.huoshow.com/zhuanti/meilizhixing/meilizhixingph/index.shtml" target="_blank"><b>[魅力之星]</b></a><a title="火秀魅力之星10月23日三强产生" href="http://www.huoshow.com/2011/1024/42901.shtml" target="_blank">火秀魅力之星10月23日三强产生</a></li>
+    <li><a title="" href="http://www.huoshow.com/zhuanti/meilizhixing/meilizhixingph/index.shtml" target="_blank"><b>[魅力之星]</b></a><a title="10月第二、三周魅力之星奖金已支付" href="http://www.huoshow.com/2011/1019/40871.shtml" target="_blank">10月第二、三周魅力之星奖金已支付</a></li>
+    <li><a title="" href="http://www.huoshow.com/zhuanti/meilizhixing/meilizhixingph/index.shtml" target="_blank"><b>[魅力之星]</b></a><a title="火秀魅力之星10月第三周日三强名单" href="http://www.huoshow.com/2011/1017/39839.shtml" target="_blank">火秀魅力之星10月第三周日三强名单</a></li>
+    <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="不接拍"限制级"影片的十大美女明星(组图)" href="http://www.huoshow.com/2011/1023/42813.shtml" target="_blank">不接拍"限制级"影片的十大美女明星(组图)</a></li>
+    <li><a title="" href="http://www.huoshow.com/music/neidi/index.shtml" target="_blank"><b>[内地]</b></a><a title="李宇春赴南宁参加民歌节 粉丝接机惹混乱" href="http://www.huoshow.com/2011/1022/42797.shtml" target="_blank">李宇春赴南宁参加民歌节 粉丝接机惹混乱</a></li>
+</ul>
+<ul class="newslist">
+  <li><a title="" href="http://www.huoshow.com/music/neidi/index.shtml" target="_blank"><b>[内地]</b></a><a title="董文华军装撑场英姿飒爽 蔡国庆谭晶献唱" href="http://www.huoshow.com/2011/1022/42787.shtml" target="_blank">董文华军装撑场英姿飒爽 蔡国庆谭晶献唱</a></li>
+  <li><a title="" href="http://www.huoshow.com/music/gangtai/index.shtml" target="_blank"><b>[港台]</b></a><a title="李佳薇客串阿牛电影 贺军翔称其酷似蔡健雅" href="http://www.huoshow.com/2011/1022/42783.shtml" target="_blank">李佳薇客串阿牛电影 贺军翔称其酷似蔡健雅</a></li>
+  <li><a title="" href="http://www.huoshow.com/music/oumei/index.shtml" target="_blank"><b>[欧美]</b></a><a title="MTV欧洲音乐奖皇后获封全球偶像 11月颁奖" href="http://www.huoshow.com/2011/1022/42767.shtml" target="_blank">MTV欧洲音乐奖皇后获封全球偶像 11月颁奖</a></li>
+  <li><a title="" href="http://www.huoshow.com/music/oumei/index.shtml" target="_blank"><b>[欧美]</b></a><a title="杰克逊私人医生难逃其责" href="http://www.huoshow.com/2011/1022/42543.shtml" target="_blank">杰克逊私人医生难逃其责</a></li>
+  <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="盘点激情戏被删大呼可惜的明星们" href="http://www.huoshow.com/2011/1021/42479.shtml" target="_blank">盘点激情戏被删大呼可惜的明星们</a></li>
+</ul>
+<div class="clear"></div>
+<ul class="newslist">
+  <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="《与时尚同居》主创亮相 尹丽川称吻戏未删" href="http://www.huoshow.com/2011/1021/42183.shtml" target="_blank">《与时尚同居》主创亮相 尹丽川称吻戏未删</a></li>
+  <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="《温故一九四二》开机 冯小刚发飙后鞠躬道歉" href="http://www.huoshow.com/2011/1021/42169.shtml" target="_blank">《温故一九四二》开机 冯小刚发飙后鞠躬道</a></li>
+  <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="《幸福额度》亮相成都 林志玲传授熟女魅惑" href="http://www.huoshow.com/2011/1021/42161.shtml" target="_blank">《幸福额度》亮相成都 林志玲传授熟女魅惑</a></li>
+  <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="徐若瑄周渝民亲密拍床照; 新片吻戏吊胃口" href="http://www.huoshow.com/2011/1021/42057.shtml" target="_blank">徐若瑄周渝民亲密拍床照; 新片吻戏吊胃口</a></li>
+  <li><a title="" href="http://www.huoshow.com/movie/huayu/index.shtml" target="_blank"><b>[华语]</b></a><a title="吴宗宪卷入经济案再被约谈 曝周杰伦往事" href="http://www.huoshow.com/2011/1021/42019.shtml" target="_blank">吴宗宪卷入经济案再被约谈 曝周杰伦往事</a></li>
+</ul>
+</div>
+<!--Right-->
+<div class="body_right"> 
+<div class="top_event">
+<div class="top_event_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">专题活动</h1>
+</div>
+<div class="top_event_pic">
+ <a title="模特专题" href="http://www.huoshow.com/zhuanti/Model/" target="_blank"><img alt="模特专题" src="http://www.huoshow.com/upload/2011/0922/1316680670509.jpg" width="232" height="60" /></a>
+<a title="佳片有约" href="http://www.huoshow.com/zhuanti/gqmovie/" target="_blank"><img alt="佳片有约" src="http://www.huoshow.com/upload/2011/1010/1318240671388.jpg" width="232" height="60" /></a>
+<a title="“秋之音色”音乐专题" href="http://www.huoshow.com/zhuanti/autumnmusic/" target="_blank"><img alt="“秋之音色”音乐专题" src="http://www.huoshow.com/upload/2011/1022/1319264073920.jpg" width="232" height="60" /></a>
+</div>
+</div>
+<div class="clear"></div>
+<!--Banner 250*250-->
+          <div id="top_banner_250_250" class="banner_250_250">
+<div class="banner_inter"><img src="/img/templates/huoshow02/images/loading.gif" border="0" /> 广告加载中...</div>
+</div>        <div class="clear"></div>
+<!--Top Member-->
+<div class="top_member">
+<div class="top_member_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">火秀超级巨星</h1>
+</div>
+            <div class="best_member_bd">
+<div class="best_member_intro">
+<div class="best_member_pic"><a href="http://space.huoshow.com/home.php?mod=space&amp;uid=103791" target="_blank"><img src="http://www.huoshow.com/upload/2011/1022/1319245475921.jpg" border="0" width="90" height="90" /></a></div>
+<div class="best_member_profile">
+<h2 class="mbn"><a href="http://space.huoshow.com/home.php?mod=space&amp;uid=103791" target="_blank">夜精灵※倾城</a><img class="level_icon" src="http://www.huoshow.com/upload/2011/0609/1307610324630.jpg" border="0" width="16" height="16" /></h2>
+<span class="text_gray"><strong>火秀号：</strong>103791 <span class="text_gray"><strong>荣誉：</strong>魅力之星大赛10月23日冠军<span class="text_gray"> <span class="best_member_button"><a href="http://space.huoshow.com/home.php?mod=space&amp;uid=103791" target="_blank"><span class="best_member_button_arrow">&lt;&lt;</span> 进入TA的空间</a></span></span></span></span></div>
+</div>
+<div class="best_member_text"><strong>推荐理由：</strong>不求倾城的美貌，但求倾城一恋！ 这就是爱笑爱美的她！快乐而单纯，简约而阳光。感性的生活，感性的徜徉在音乐的海洋！欢迎来火秀与她相约！</div>
+</div>        </div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Top Area End-->
+<!--Movie Start-->
+<!--Movie Title-->
+<div class="main_body">
+<div class="full_title_outer_bd">
+<div class="full_title_bg">
+<div class="movie_title"></div>
+<div class="movie_channel">
+<a href="http://www.huoshow.com/movie/huayu/">华语</a> | <a href="http://www.huoshow.com/movie/oumei/">欧美</a> | <a href="http://www.huoshow.com/movie/rihan/">日韩</a> | <a href="http://www.huoshow.com/movie/yingren/">影人</a> | <a href="http://www.huoshow.com/movie/yingping/">影评</a> | <a href="http://www.huoshow.com/movie/juzhao/">剧照</a> | <a href="http://www.huoshow.com/movie/pianhua/">片花</a> <span class="movie_more"><a href="http://www.huoshow.com/movie/">>> 进入影视频道</a></span> 
+</div>
+</div>
+</div>
+<div class="full_title_shadow"></div>
+</div>
+<div class="clear"></div>
+<!--Movie Body-->
+<div class="main_body">
+<!--Left-->
+<div class="body_left"> 
+<!--Movie Slide-->
+
+<div class="channel_slide">
+        <!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_index_movie_image&width=300&height=250&navon=1"-->
+</div>
+
+<!--Hot Movie-->
+<div class="hot_movie">
+<div class="channel_left_title1">
+<span class="red_title_pointer"></span><h1 class="title_black_16">热映</h1>
+</div>
+<div class="hot_movie_content">
+<div class="hot_movie_pic">
+<div class="hot_movie_pic_img"><a title="《幸福额度》亮相" href="http://www.huoshow.com/2011/1021/42161.shtml" target="_blank"><img alt="《幸福额度》亮相" src="http://www.huoshow.com/upload/2011/1021/1319192204225.jpg" width="100" height="138" /></a></div>
+<div class="hot_movie_pic_text"><a title="《幸福额度》亮相" href="http://www.huoshow.com/2011/1021/42161.shtml" target="_blank">《幸福额度》亮相</a></div>
+</div>
+<div class="hot_movie_list">
+<ul>
+<li><a title="《爱封了》13日上映" href="http://www.huoshow.com/2011/1010/37099.shtml" target="_blank">《爱封了》13日上映</a></li>
+<li><a title="《第一大总统》首映" href="http://www.huoshow.com/2011/0926/33135.shtml" target="_blank">《第一大总统》首映</a></li>
+<li><a title="《辛亥革命》首映" href="http://www.huoshow.com/2011/0920/30505.shtml" target="_blank">《辛亥革命》首映</a></li>
+<li><a title="《全球热恋》上映" href="http://www.huoshow.com/2011/0908/26947.shtml" target="_blank">《全球热恋》上映</a></li>
+<li><a title="《美国队长》9日上映" href="http://www.huoshow.com/2011/0909/27473.shtml" target="_blank">《美国队长》9日上映</a></li>
+<li><a title="《大武生》北京首映" href="http://www.huoshow.com/2011/0906/26117.shtml" target="_blank">《大武生》北京首映</a></li>
+<li><a title="《源代码》8月30日上映" href="http://www.huoshow.com/2011/0830/23955.shtml" target="_blank">《源代码》8月30日上映</a></li>
+<li><a title="《恋夏》香港首映" href="http://www.huoshow.com/2011/0824/23276.shtml" target="_blank">《恋夏》香港首映</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--Movie People-->
+<div class="people">
+<div class="channel_left_title1">
+<span class="red_title_pointer"></span><h1 class="title_black_16">影人</h1><a href="movie/yingren/"><div class="more"></div></a>
+</div>
+<div class="people_content">
+<div class="left_first">
+<dl>
+<dt><a title="柳岩回应"一脱成名"质疑：我没脱 很无辜" href="http://www.huoshow.com/2011/1012/37931.shtml" target="_blank"><img alt="柳岩回应"一脱成名"质疑：我没脱 很无辜" src="http://www.huoshow.com/upload/2011/1021/1319192086843.jpg" width="111" height="77"></a></dt>
+<dd class="left_first_title"><a title="柳岩回应"一脱成名"质疑：我没脱 很无辜" href="http://www.huoshow.com/2011/1012/37931.shtml" target="_blank">柳岩回应"一脱成名"质疑</a></dd>
+<dd class="left_first_briefing">近日，柳岩接受南都娱乐周刊访问，并不忌讳地谈... <a title="柳岩回应"一脱成名"质疑：我没脱 很无辜" href="http://www.huoshow.com/2011/1012/37931.shtml" target="_blank">[详细] </a></dd>
+</dl>
+</div>
+<div class="people_list">
+<ul>
+<li><a title="徐娇：有舍才有得 我经历比别人丰富" href="http://www.huoshow.com/2011/1009/36617.shtml" target="_blank">徐娇：有舍才有得 我经历比别人丰富 </a></li>
+            <li><a title="孙俪否认邓超爱作秀赞其是艺术家" href="http://www.huoshow.com/2011/0927/33571.shtml" target="_blank">孙俪否认邓超爱作秀赞其是艺术家 </a></li>
+            <li><a title="林志玲否认邱士楷有十亿身家" href="http://www.huoshow.com/2011/0916/28987.shtml" target="_blank">林志玲否认邱士楷有十亿身家 </a></li>
+            </ul>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Banner 300*100-->
+          <div id="movie_banner_300_100" class="banner_300_100">
+<div class="banner_inter"><img src="/img/templates/huoshow02/images/loading.gif" border="0" /> 广告加载中...</div>
+</div>        </div>
+<!--Middle-->
+<div class="body_mid">
+  <div class="top_news">
+      
+                
+<!--  --><!-- 判断是否是头条加粗显示新闻 -->
+<h3>
+
+<!--  -->
+<span class=""></span>
+<!--  -->
+
+<a title="梁朝伟《听风者》造型曝光 与周迅片中斗智" href="http://www.huoshow.com/2011/1022/42709.shtml" class="text_black_16">梁朝伟《听风者》造型曝光 与周迅片中斗智</a></h3>
+<div class="top_news_sub">
+<!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="" href="http://www.huoshow.com/2011/1022/42695.shtml" target="_blank">李宗翰掀日本粉丝追捧</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="" href="http://www.huoshow.com/2011/1022/42689.shtml" target="_blank">《古宝奇缘》11月上映</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="" href="http://www.huoshow.com/2011/1022/42677.shtml" target="_blank">陈凯歌新片阴盛阳衰</a>]</span>
+            <!--  -->
+                          
+                
+<!--  -->
+           <span>[<a title="" href="http://www.huoshow.com/2011/1022/42671.shtml" target="_blank">《与时尚同居》拷贝延误</a>]</span>
+            <!--  -->
+                              </div>
+</div>
+
+<div class="div_dashed"></div>
+<ul class="newslist">
+<h2 class="title_black_18">华语</h2>
+<li><a title="盘点激情戏被删大呼可惜的明星们" href="http://www.huoshow.com/2011/1021/42479.shtml" target="_blank">盘点激情戏被删大呼可惜的明星们</a></li>
+<li><a title="《嘿·店》成都举行首映 谭维维廖健出" href="http://www.huoshow.com/2011/1022/42663.shtml" target="_blank">《嘿·店》成都举行首映 谭维维廖健出</a></li>
+<li><a title="《石器时代》亮相合肥 叶山豪最怕拍“脱戏”" href="http://www.huoshow.com/2011/1022/42661.shtml" target="_blank">《石器时代》亮相合肥 叶山豪最怕拍“脱戏”</a></li>
+<li><a title="李连杰徐克北大“话当年” 自曝因算命结片缘" href="http://www.huoshow.com/2011/1022/42657.shtml" target="_blank">李连杰徐克北大“话当年” 自曝因算命结片缘</a></li>
+</ul>
+<ul class="newslist">
+<li><a title="《白蛇传说》西班牙西切斯电影节获最佳贡献奖" href="http://www.huoshow.com/2011/1022/42655.shtml" target="_blank">《白蛇传说》西班牙西切斯电影节获最佳贡献奖</a></li>
+<li><a title="彭于晏谈金马影帝：有葛优，就知道我没戏" href="http://www.huoshow.com/2011/1022/42645.shtml" target="_blank">彭于晏谈金马影帝：有葛优，就知道我没戏</a></li>
+<li><a title="《楚汉争雄》开机 黄秋生柯蓝化身刘邦吕雉" href="http://www.huoshow.com/2011/1022/42641.shtml" target="_blank">《楚汉争雄》开机 黄秋生柯蓝化身刘邦吕雉</a></li>
+<li><a title="成龙震后初踏日本 中川翔子遇偶像望“不要死”" href="http://www.huoshow.com/2011/1022/42609.shtml" target="_blank">成龙震后初踏日本 中川翔子遇偶像望“不要死”</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">日韩</h2>
+<li><a title="《极速先锋》11月公映 主演三浦贵大来京宣传" href="http://www.huoshow.com/2011/1022/42727.shtml" target="_blank">《极速先锋》11月公映 主演三浦贵大来京宣传</a></li>
+<li><a title="严泰雄晒与郑丽苑"结婚照" 网友：还很般配" href="http://www.huoshow.com/2011/1022/42631.shtml" target="_blank">严泰雄晒与郑丽苑"结婚照" 网友：还很般配</a></li>
+<li><a title="遭小10岁男模猛追 河智苑婉拒叹息年龄差距大" href="http://www.huoshow.com/2011/1022/42629.shtml" target="_blank">遭小10岁男模猛追 河智苑婉拒叹息年龄差距大</a></li>
+<li><a title="《极速先锋》将映 山口百惠三浦友和有望来华" href="http://www.huoshow.com/2011/1021/42269.shtml" target="_blank">《极速先锋》将映 山口百惠三浦友和有望来华</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">欧美</h2>
+<li><a title="《蝙蝠侠：黑暗骑士崛起》蝠翼飞行器曝光" href="http://www.huoshow.com/2011/1022/42715.shtml" target="_blank">《蝙蝠侠：黑暗骑士崛起》蝠翼飞行器曝光</a></li>
+<li><a title="传斯嘉丽·约翰逊搭上约瑟夫 两人纽约亲密接吻" href="http://www.huoshow.com/2011/1022/42637.shtml" target="_blank">传斯嘉丽·约翰逊搭上约瑟夫 两人纽约亲密接吻</a></li>
+<li><a title="斯嘉丽因太漂亮落选新戏 导演:观众只想她脱衣服" href="http://www.huoshow.com/2011/1021/42287.shtml" target="_blank">斯嘉丽因太漂亮落选新戏 导演:观众只想她脱衣服</a></li>
+<li><a title="《暮色4》曝光新剧照 贝拉如愿以偿变吸血鬼" href="http://www.huoshow.com/2011/1021/42243.shtml" target="_blank">《暮色4》曝光新剧照 贝拉如愿以偿变吸血鬼</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">影评</h2>
+<li><a title="范冰冰自曝胸还会大 暗战新人柳岩" href="http://www.huoshow.com/2011/1010/36913.shtml" target="_blank">范冰冰自曝胸还会大 暗战新人柳岩</a></li>
+<li><a title="章子怡不较真 就被流言脏了身" href="http://www.huoshow.com/2011/1003/35491.shtml" target="_blank">章子怡不较真 就被流言脏了身</a></li>
+<li><a title="从经典小说到电影" href="http://www.huoshow.com/2011/0929/34641.shtml" target="_blank">从经典小说到电影</a></li>
+<li><a title="暑期档电影怪现象 作品口碑与票房成巨大反差" href="http://www.huoshow.com/2011/0924/32893.shtml" target="_blank">暑期档电影怪现象 作品口碑与票房成巨大反差</a></li>
+</ul>
+</div>
+<!--Right-->
+<div class="body_right"> 
+<!--Movie Topic-->
+<div class="topic">
+<div class="topic_pic"><a title="佳片有约" href="http://www.huoshow.com/zhuanti/gqmovie/"><img alt="佳片有约" src="http://www.huoshow.com/upload/2011/1010/1318240629589.jpg" width="220" height="80" /></a></div>
+<div class="topic_list">
+<ul>
+<li><a title="盘点人气模特" href="http://www.huoshow.com/zhuanti/Model/" target="_blank">盘点人气模特</a></li>
+<li><a title="《猿族崛起》专题" href="http://www.huoshow.com/zhuanti/apes/" target="_blank">《猿族崛起》专题</a></li>
+</ul>
+</div>
+</div>
+<!--Movie Charts-->
+                <div class="charts_block" id="pbox2">
+                  <div class="charts_title">
+                    <span class="red_title_pointer"></span><h1 class="title_black_16">电影票房排行</h1>
+                    <span class="charts_cate_right"><a class="charts_cate_def">内地</a><a >北美</a></span>
+                  </div>
+
+                  <ul class="charts_others">
+                    <!--#include virtual ="/api/article.php?act=movie_rank&type=neidi&in=index"-->   
+                  </ul>
+                  <ul class="charts_others">
+                    <!--#include virtual ="/api/article.php?act=movie_rank&type=beimei&in=index"-->   
+                  </ul>
+                </div>
+                <script>
+                  make_pagebox('pbox2', {
+                  links_selector: '.charts_cate_right a', 
+                  current_class: 'charts_cate_def',
+                  pages_selector: '.charts_others',
+                  event_type: 'mouseover'
+                  });
+                </script>
+<div class="clear"></div>
+<div class="charts_block">
+<div class="charts_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16">电视收视排行</h1>
+</div>
+<ul class="charts_others">
+<!--#include virtual ="/api/article.php?act=movie_rank&type=huoshow_tv&in=index"--> 
+</ul>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Movie Videos-->
+<div class="main_body">
+<div class="video_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">精彩片花</h1><a href="movie/pianhua/"><div class="more"></div></a>
+</div>
+    <div class="video_content" id="scrollbox3">
+          <div class="video_nav_left"></div>
+          <div class="video_nav_right"></div>
+          <ul class="video_list">
+                        <li><span class="video_pic_bg"><a title="《Hello！树先生》曝预告" href="http://www.huoshow.com/2011/1018/40531.shtml" target="_blank"><img alt="《Hello！树先生》曝预告" src="http://www.huoshow.com/upload/2011/1018/1318921472534.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《Hello！树先生》曝预告" href="http://www.huoshow.com/2011/1018/40531.shtml" target="_blank"> 《Hello！树先生》曝预...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《画壁》15秒裸戏" href="http://www.huoshow.com/2011/1018/40537.shtml" target="_blank"><img alt="《画壁》15秒裸戏" src="http://www.huoshow.com/upload/2011/1018/1318922151474.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《画壁》15秒裸戏" href="http://www.huoshow.com/2011/1018/40537.shtml" target="_blank"> 《画壁》15秒裸戏...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《丁丁历险记》美版预告" href="http://www.huoshow.com/2011/1018/40553.shtml" target="_blank"><img alt="《丁丁历险记》美版预告" src="http://www.huoshow.com/upload/2011/1018/1318922629208.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《丁丁历险记》美版预告" href="http://www.huoshow.com/2011/1018/40553.shtml" target="_blank"> 《丁丁历险记》美版预...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="年度第一奇片《堵车》" href="http://www.huoshow.com/2011/1014/39091.shtml" target="_blank"><img alt="年度第一奇片《堵车》" src="http://www.huoshow.com/upload/2011/1014/1318560205694.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="年度第一奇片《堵车》" href="http://www.huoshow.com/2011/1014/39091.shtml" target="_blank"> 年度第一奇片《堵车》...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《登陆之日》发预告片" href="http://www.huoshow.com/2011/1014/39183.shtml" target="_blank"><img alt="《登陆之日》发预告片" src="http://www.huoshow.com/upload/2011/1014/1318564302303.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《登陆之日》发预告片" href="http://www.huoshow.com/2011/1014/39183.shtml" target="_blank"> 《登陆之日》发预告片...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《幸福额度》曝预告" href="http://www.huoshow.com/2011/1014/39049.shtml" target="_blank"><img alt="《幸福额度》曝预告" src="http://www.huoshow.com/upload/2011/1014/1318558265260.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《幸福额度》曝预告" href="http://www.huoshow.com/2011/1014/39049.shtml" target="_blank"> 《幸福额度》曝预告...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="年度第一奇片《堵车》" href="http://www.huoshow.com/2011/1014/39091.shtml" target="_blank"><img alt="年度第一奇片《堵车》" src="http://www.huoshow.com/upload/2011/1014/1318560205694.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="年度第一奇片《堵车》" href="http://www.huoshow.com/2011/1014/39091.shtml" target="_blank"> 年度第一奇片《堵车》...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《登陆之日》发预告片" href="http://www.huoshow.com/2011/1014/39183.shtml" target="_blank"><img alt="《登陆之日》发预告片" src="http://www.huoshow.com/upload/2011/1014/1318564302303.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《登陆之日》发预告片" href="http://www.huoshow.com/2011/1014/39183.shtml" target="_blank"> 《登陆之日》发预告片...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《与时尚同居》发预告" href="http://www.huoshow.com/2011/1017/39705.shtml" target="_blank"><img alt="《与时尚同居》发预告" src="http://www.huoshow.com/upload/2011/1017/1318815808960.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《与时尚同居》发预告" href="http://www.huoshow.com/2011/1017/39705.shtml" target="_blank"> 《与时尚同居》发预告...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="《一夜迷情》曝预告片" href="http://www.huoshow.com/2011/1012/38275.shtml" target="_blank"><img alt="《一夜迷情》曝预告片" src="http://www.huoshow.com/upload/2011/1012/1318414332476.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="《一夜迷情》曝预告片" href="http://www.huoshow.com/2011/1012/38275.shtml" target="_blank"> 《一夜迷情》曝预告片...</a></span></li>
+                      </ul>
+        </div>
+        <script>
+          make_scrollbox('scrollbox3', {
+            item: 'li',
+            prev: '.video_nav_left',
+            next: '.video_nav_right',
+            interval: 3
+          });
+        </script>
+</div>
+<div class="clear"></div>
+<!--Movie End-->
+<!--Music Start-->
+<div class="main_body">
+<div class="full_title_outer_bd">
+<div class="full_title_bg">
+<div class="events_title"></div>
+<div class="events_channel">
+<a href="http://www.huoshow.com/events/wholeevents/neidisaishi/">内地赛事</a> | <a href="http://www.huoshow.com/events/wholeevents/gangtaisaishi/">港台赛事</a> | <a href="http://www.huoshow.com/events/wholeevents/gangtaisaishi/">海外赛事</a>	<span class="movie_more"><a href="http://www.huoshow.com/events/">>> 进入赛事频道</a></span> 
+</div>
+</div>
+</div>
+<div class="full_title_shadow"></div>
+</div>
+<div class="clear"></div>
+<!--Music Body-->
+<div class="main_body">
+<!--Left-->
+<div class="body_left">
+<!--Music Slide-->
+<div class="channel_slide">
+<!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_index_events_ad&width=300&height=250&navon=1"-->
+</div>
+<!--Music Album-->
+<!--热映-->
+<div class="Events_Top_Video">
+<div class="Top_Video_Title"><span class="Top_Video_Title_bg"></span><h1 class="title_Black_03">视频直播</h1>
+<span class="Top_Video_Title_bg_01"></span><a target="_blank" href="http://www.huoshow.com/events/jingcaishipin"><div class="index_More"></div></a> 
+</div>
+<div class="list">
+<ul class="top_video_list">
+<li><span class="top_video_pic_bg"><a title="金星毒舌点评" href="http://www.huoshow.com/2011/0906/26181.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/1014/1318578168451.jpg" width="134" height="83" /></a></span><span class="w">金星毒舌点评</span>
+</li>
+<li><span class="top_video_pic_bg"><a title="付梦妮微电影《在一起》" href="http://www.huoshow.com/2011/1012/37883.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/1014/1318578220273.jpg" width="134" height="83" /></a></span><span class="w">付梦妮微电影《在一起</span>
+</li>
+</ul>
+</div>
+<div class="Events_top_video_news">
+<ul>
+<li><span class="top_video_news_hui"><a title="李斯丹妮《光明骑士》快女微电影第五集" href="http://www.huoshow.com/2011/1012/37895.shtml" target="_blank">李斯丹妮《光明骑士》快女微电影第五集</a></span></li>
+<li><span class="top_video_news_hui"><a title="《X 达人秀》世界首映预告(X Factor)" href="http://www.huoshow.com/2011/1014/39153.shtml" target="_blank">《X 达人秀》世界首映预告(X Factor)</a></span></li>
+<li><span class="top_video_news_hui"><a title="萧蔷拒返舞林原因" href="http://www.huoshow.com/2011/0929/34447.shtml" target="_blank">萧蔷拒返舞林原因</a></span></li>
+<li><span class="top_video_news_hui"><a title="《非同凡响》精彩语录 犀利雷人" href="http://www.huoshow.com/2011/0926/33467.shtml" target="_blank">《非同凡响》精彩语录 犀利雷人</a></span></li>
+</ul>
+</div>
+</div>
+<!--Music People-->
+<div class="Events_hongren">
+
+<div class="reying_Title"><h1 class="title_Black_04">赛事红人</h1></div>
+<div class="reying_tuwen">
+        			<div class="review_first"><dl><dt><a href="http://www.huoshow.com/2011/0924/32935.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0926/1317025540100.jpg" border="0" width="115" height="81" /></a></dt><dd class="review_first_briefing"><a href="http://www.huoshow.com/2011/0924/32935.shtml" target="_blank">&ldquo;神婆&rdquo;黄夕倍，被誉为&ldquo;早期王菲&rdquo;，舞台表现总让人震惊，没有人知道她下一张会出哪张牌&hellip; [详细] </a></dd></dl></div>        		</div>
+</div>
+</div>
+<!--Middle-->
+<div class="body_mid">
+<div class="top_news">
+<h3>
+<!--  -->
+<a title="花儿朵朵7强出炉 张姣皎出局黄夕倍再夺魁" href="http://www.huoshow.com/2011/1022/42527.shtml" target="_blank" class="text_black_16">花儿朵朵7强出炉 张姣皎出局黄夕倍再夺魁</a></h3>
+<span class="top_news_sub">
+<strong class="text_gray"><a title="花儿朵朵7强出炉 张姣皎出局黄夕倍再夺魁" href="http://www.huoshow.com/2011/1022/42527.shtml" target="_blank">黄夕倍凭借自导自演、空灵演绎的纳西族民歌《回家》第四次夺得“花仙子”称号，张姣皎则意外出局。...</a></strong>
+</span>
+</div>
+<div class="div_dashed1" style="border-top:auto;"></div>
+<ul class="newslist">
+<h2 class="title_black_18">内地赛事</h2>
+<li><a title="花儿刘艾迪突破自我 动感十足成PK女王" href="http://www.huoshow.com/2011/1022/42761.shtml" target="_blank">花儿刘艾迪突破自我 动感十足成PK女王</a></li>
+<li><a title="中华旅游小姐佳丽探访甲骨文(图)" href="http://www.huoshow.com/2011/1022/42733.shtml" target="_blank">中华旅游小姐佳丽探访甲骨文(图)</a></li>
+<li><a title="最美最时尚 成都迎来国际小姐盛典" href="http://www.huoshow.com/2011/1022/42723.shtml" target="_blank">最美最时尚 成都迎来国际小姐盛典</a></li>
+<li><a title="钟镇涛助阵花儿朵朵 欲扶植乐坛新人发展" href="http://www.huoshow.com/2011/1022/42673.shtml" target="_blank">钟镇涛助阵花儿朵朵 欲扶植乐坛新人发展</a></li>
+<li><a title="“神婆”黄夕倍严重感冒 赛场发挥成悬念" href="http://www.huoshow.com/2011/1021/42143.shtml" target="_blank">“神婆”黄夕倍严重感冒 赛场发挥成悬念</a></li>
+<li><a title="中国藏歌会强强争霸 特色组合三分天下" href="http://www.huoshow.com/2011/1021/42015.shtml" target="_blank">中国藏歌会强强争霸 特色组合三分天下</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">港台赛事</h2>
+<li><a title="图:港姐朱希敏许亦妮试造型 备战国际选美" href="http://www.huoshow.com/2011/1021/42305.shtml" target="_blank">图:港姐朱希敏许亦妮试造型 备战国际选美</a></li>
+<li><a title="《金钟奖》陶晶莹狂瘦十斤 担心主持时跌倒" href="http://www.huoshow.com/2011/1021/42173.shtml" target="_blank">《金钟奖》陶晶莹狂瘦十斤 担心主持时跌倒</a></li>
+<li><a title="辣妈星时尚落幕 孙毓瑄夺得总冠军" href="http://www.huoshow.com/2011/1021/42373.shtml" target="_blank">辣妈星时尚落幕 孙毓瑄夺得总冠军</a></li>
+<li><a title="陶晶莹入围金钟奖 传被停播节目将起死回生" href="http://www.huoshow.com/2011/1020/41389.shtml" target="_blank">陶晶莹入围金钟奖 传被停播节目将起死回生</a></li>
+<li><a title="高清:香港珠宝小姐决赛将至 众佳丽首晤传媒" href="http://www.huoshow.com/2011/1019/40821.shtml" target="_blank">高清:香港珠宝小姐决赛将至 众佳丽首晤传媒</a></li>
+<li><a title="朱晨丽高调回乡 自比“灰姑娘”淡然面对质疑" href="http://www.huoshow.com/2011/1017/40187.shtml" target="_blank">朱晨丽高调回乡 自比“灰姑娘”淡然面对质疑</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">海外赛事</h2>
+<li><a title="视频:佳丽自曝选秀“陪睡潜规则”" href="http://www.huoshow.com/2011/1022/42683.shtml" target="_blank">视频:佳丽自曝选秀“陪睡潜规则”</a></li>
+<li><a title="图:菲律宾举办变性人选美大赛" href="http://www.huoshow.com/2011/1021/42297.shtml" target="_blank">图:菲律宾举办变性人选美大赛</a></li>
+<li><a title="钢管舞大赛首现男选手 谁说男人不能跳？" href="http://www.huoshow.com/2011/1021/42333.shtml" target="_blank">钢管舞大赛首现男选手 谁说男人不能跳？</a></li>
+<li><a title="韩国举办亚姐大赛 英美女不堪性骚扰离场" href="http://www.huoshow.com/2011/1021/42245.shtml" target="_blank">韩国举办亚姐大赛 英美女不堪性骚扰离场</a></li>
+<li><a title="法国巧克力时装秀 服装爆裂模特出丑(图)" href="http://www.huoshow.com/2011/1021/42195.shtml" target="_blank">法国巧克力时装秀 服装爆裂模特出丑(图)</a></li>
+<li><a title="安哥拉环球小姐任联合国沙漠化问题形象大使" href="http://www.huoshow.com/2011/1021/42225.shtml" target="_blank">安哥拉环球小姐任联合国沙漠化问题形象大使</a></li>
+</ul>
+</div>
+<!--Right-->
+<div class="body_right"> 
+<!--Music Topic-->
+<div class="topic">
+<div class="topic_pic">
+<a title="2011快乐女声专题 精彩不断" href="http://www.huoshow.com/zhuanti/happygirl/" target="_blank"><img alt="2011快乐女声专题 精彩不断" src="http://www.huoshow.com/upload/2011/0916/1316135719545.jpg" width="220" height="80" /></a>
+</div>
+<div class="topic_list">
+<ul>
+<li><a title="快乐女声 一场追梦的旅程" href="http://www.huoshow.com/2011/0901/24459.shtml" target="_blank">快乐女声 一场追梦的旅程</a></li>
+<li><a title="快乐女声——给出的是另一种选择" href="http://www.huoshow.com/2011/0905/25667.shtml" target="_blank">快乐女声——给出的是另一种选择</a></li>
+</ul>
+</div>
+</div>
+<!--Music Charts-->
+<div class="charts_block">
+<div class="charts_title"> <span class="Best_Member_Title_bg"></span>
+<h2 class="wenzi">赛事排行榜</h2>
+</div>
+<div class="charts_others">
+<ul>
+<!--#include virtual ="/api/article.php?act=getEventsList"-->
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<!--Music Vote-->
+<div class="Events_yingren">
+<div class="Events_reying_Title"><h1 class="title_Black_04">赛事预告</h1>
+<a target="_blank" href="http://www.huoshow.com/events/saishiricheng"><div class="index_More"></div></a>
+</div>
+<div class="reying_tuwen">
+<div class="newslist_01">
+<ul class="liston">
+<li><span class="ndi_Center_t_text_09"><a title="第八届音乐金钟奖将启动 五大亮点庆十周年" href="http://www.huoshow.com/2011/1014/39233.shtml" target="_blank">第八届音乐金钟奖将启动 五大亮点庆十</a></span></li>
+<li><span class="ndi_Center_t_text_09"><a title="第三届国际标准舞公开赛开幕" href="http://www.huoshow.com/2011/1010/37085.shtml" target="_blank">第三届国际标准舞公开赛开幕</a></span></li>
+<li><span class="ndi_Center_t_text_09"><a title="快女微电影《敢不敢》上线时间表" href="http://www.huoshow.com/2011/0922/31613.shtml" target="_blank">快女微电影《敢不敢》上线时间表</a></span></li>
+<li><span class="ndi_Center_t_text_09"><a title="达人招募站再度扩容 龙年春节迎“达人盛典”" href="http://www.huoshow.com/2011/0926/33133.shtml" target="_blank">达人招募站再度扩容 龙年春节迎“达人</a></span></li>
+<li><span class="ndi_Center_t_text_09"><a title="2011最后的盛宴 《超级男女》隆重登场" href="http://www.huoshow.com/2011/0923/32197.shtml" target="_blank">2011最后的盛宴 《超级男女》隆重登场</a></span></li>
+<li><span class="ndi_Center_t_text_09"><a title="《达人秀》进军海南 三亚招募即将启动" href="http://www.huoshow.com/2011/1014/39115.shtml" target="_blank">《达人秀》进军海南 三亚招募即将启动</a></span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Music MV-->
+<div class="main_body">
+<div class="video_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">赛事图集</h1><a target="_blank" href="http://www.huoshow.com/pic/atlas/"><div class="more"></div></a>
+</div>    
+        <div class="game_beauty_content" id="events_beauty">
+          <div class="game_beauty_nav_left">&nbsp;</div>
+          <div class="game_beauty_nav_right">&nbsp;</div>
+          <ul class="game_beauty_list">
+                        <li><div class="game_beauty_text"><a title="最美快女:陆翊" href="http://www.huoshow.com/2011/0914/28229.shtml" target="_blank">最美快女:陆翊...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0914/28229.shtml" target="_blank"><img alt="最美快女:陆翊" src="http://www.huoshow.com/upload/2011/0915/1316068314159.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="全球最“不要脸”赛事 只看屁股不看脸" href="http://www.huoshow.com/2011/0914/28593.shtml" target="_blank">全球最“不要脸”...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0914/28593.shtml" target="_blank"><img alt="全球最“不要脸”赛事 只看屁股不看脸" src="http://www.huoshow.com/upload/2011/1009/1318128431945.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="第61届世界小姐总决赛 性感比基尼走秀" href="http://www.huoshow.com/2011/0907/26311.shtml" target="_blank">第61届世界小姐总...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0907/26311.shtml" target="_blank"><img alt="第61届世界小姐总决赛 性感比基尼走秀" src="http://www.huoshow.com/upload/2011/0915/1316074591581.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="花儿时尚照曝光 甜美野性上演百变诱惑" href="http://www.huoshow.com/2011/0830/24083.shtml" target="_blank">花儿时尚照曝光 ...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0830/24083.shtml" target="_blank"><img alt="花儿时尚照曝光 甜美野性上演百变诱惑" src="http://www.huoshow.com/upload/2011/0915/1316074678522.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="图:夜店火辣MM选美大赛" href="http://www.huoshow.com/2011/0930/35029.shtml" target="_blank">图:夜店火辣MM选...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0930/35029.shtml" target="_blank"><img alt="图:夜店火辣MM选美大赛" src="http://www.huoshow.com/upload/2011/0930/1317351729924.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="世界小姐迷人风采" href="http://www.huoshow.com/2011/0901/24497.shtml" target="_blank">世界小姐迷人风采...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0901/24497.shtml" target="_blank"><img alt="世界小姐迷人风采" src="http://www.huoshow.com/upload/2011/0915/1316074828494.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="花儿成都晋级赛 主持人上演“湿身”诱惑" href="http://www.huoshow.com/2011/0831/24395.shtml" target="_blank">花儿成都晋级赛 ...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0831/24395.shtml" target="_blank"><img alt="花儿成都晋级赛 主持人上演“湿身”诱惑" src="http://www.huoshow.com/upload/2011/0915/1316074873845.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="最性感快女:付梦妮" href="http://www.huoshow.com/2011/0913/28141.shtml" target="_blank">最性感快女:付梦...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0913/28141.shtml" target="_blank"><img alt="最性感快女:付梦妮" src="http://www.huoshow.com/upload/2011/0915/1316068393294.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="”国际范“洪辰" href="http://www.huoshow.com/2011/0909/27591.shtml" target="_blank">”国际范“洪辰...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0909/27591.shtml" target="_blank"><img alt="”国际范“洪辰" src="http://www.huoshow.com/upload/2011/0915/1316074756453.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="花儿穿比基尼消暑 身材火辣引爆现场" href="http://www.huoshow.com/2011/0827/23757.shtml" target="_blank">花儿穿比基尼消暑...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0827/23757.shtml" target="_blank"><img alt="花儿穿比基尼消暑 身材火辣引爆现场" src="http://www.huoshow.com/upload/2011/0915/1316074937156.jpg" width="118" height="160" /></a></span></li>
+                      </ul>
+        </div>
+        <script>
+          make_scrollbox('events_beauty', {
+            item: 'li',
+            prev: '.game_beauty_nav_left',
+            next: '.game_beauty_nav_right',
+            interval: 3
+          });
+        </script>
+        
+        
+</div>
+<div class="clear"></div>
+<!--Music Title-->
+<div class="main_body">
+<div class="full_title_outer_bd">
+<div class="full_title_bg">
+<div class="music_title"></div>
+<div class="music_channel">
+<a href="http://www.huoshow.com/music/neidi/">内地</a> | <a href="http://www.huoshow.com/music/gangtai/">港台</a> | <a href="http://www.huoshow.com/music/oumei/">欧美</a> | <a href="http://www.huoshow.com/music/rihan/">日韩</a> | <a href="http://www.huoshow.com/music/mv/">MV</a> | <a href="http://www.huoshow.com/music/yueping/">乐评</a> | <a href="http://www.huoshow.com/music/yinyueren/">音乐人</a> | <a href="http://www.huoshow.com/music/diebao/">碟报</a> | <a href="http://www.huoshow.com/music/live/">现场</a>	<span class="movie_more"><a href="http://www.huoshow.com/music/">>> 进入音乐频道</a></span> 
+</div>
+</div>
+</div>
+<div class="full_title_shadow"></div>
+</div>
+<div class="clear"></div>
+<!--Music Body-->
+<div class="main_body">
+<!--Left-->
+<div class="body_left">
+<!--Music Slide-->
+<div class="channel_slide">
+<!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_index_music_scroll_image&width=300&height=250&navon=1"-->
+</div>
+<!--Music Album-->
+<div class="album">
+<div class="channel_left_title2">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">谍报</h1><a href="http://www.huoshow.com/music/diebao/"><div class="more"></div></a>
+</div>
+        	<div class="album_content">
+<div class="album_cover_bg"><a href="http://www.huoshow.com/2011/0525/10816.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0929/1317293136312.jpg" border="0" width="90" height="90" /></a></div>
+<div class="album_profile">
+<h1 class="ph"><a href="http://www.huoshow.com/2011/0914/28179.shtml" target="_blank">专辑名称：《女人帮》</a></h1>
+<a href="http://www.huoshow.com/2011/0914/28179.shtml" target="_blank"> <span class="text_gray_01">音乐风格：<span class="text_green">流行音乐</span></span> </a><a href="http://www.huoshow.com/2011/0914/28179.shtml" target="_blank"> <br /><span class="text_gray_01">发<span style="font-size: small;">行时间</span>：</span>2011-09-16<br /><span class="text_gray_01">演唱艺人：</span>江映蓉</a></div>
+</div>
+<div class="album_intro"><strong>专辑介绍：</strong>自出道以来，江映蓉就以极富感染力的舞蹈表现力，与辨识度极强的嗓音受到大家的关注，而她热辣时尚的动感形象也让人印象深刻。<a href="http://www.huoshow.com/2011/0914/28353.shtml" target="_blank">.</a><a href="http://www.huoshow.com/2011/0914/28179.shtml" target="_blank">.[详细]</a></div>        	</div>
+<!--Music People-->
+<div class="people">
+<div class="channel_left_title2">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">音乐人</h1><a href="http://www.huoshow.com/music/yinyueren/"><div class="more"></div></a>
+</div>
+<div class="people_content">
+<div class="left_first">
+<dl>
+<dt><a title="Hebe：想念SHE 一个人唱歌很寂寞" href="http://www.huoshow.com/2011/1017/39735.shtml" target="_blank"><img alt="Hebe：想念SHE 一个人唱歌很寂寞" src="http://www.huoshow.com/upload/2011/1017/1318845776552.jpg" width="111" height="77"></a></dt>
+<dd class="left_first_title"><a title="Hebe：想念SHE 一个人唱歌很寂寞" href="http://www.huoshow.com/2011/1017/39735.shtml" target="_blank">Hebe：想念SHE 一个</a></dd>
+<dd class="left_first_briefing">前日，田馥甄（Hebe）飞抵广州为第二张个人专辑《My Love》宣传造势，并...<a title="Hebe：想念SHE 一个人唱歌很寂寞" href="http://www.huoshow.com/2011/1017/39735.shtml" target="_blank">[详细] </a></dd>
+</dl>
+</div>
+<div class="people_list">
+<ul>
+<li><a title="孙耀威：其实我是rocker 只是外表斯文" href="http://www.huoshow.com/2011/1017/40107.shtml" target="_blank">孙耀威：其实我是rocker 只是外表斯文</a></li>
+<li><a title="“童颜巨肺”邓紫棋 又一颗新升的太阳" href="http://www.huoshow.com/2011/1002/35461.shtml" target="_blank">“童颜巨肺”邓紫棋 又一颗新升的太阳</a></li>
+<li><a title="龚琳娜携老锣谈《忐忑》:它的魂是中国的" href="http://www.huoshow.com/2011/1012/38031.shtml" target="_blank">龚琳娜携老锣谈《忐忑》:它的魂是中国的</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--Music Shows-->
+<div class="show">
+<div class="channel_left_title2">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">现场</h1><a href="http://www.huoshow.com/music/live/"><div class="more"></div></a>
+</div>
+<div class="show_content">
+<div class="show_pic">
+<a title="快女巡演杭州站11月开唱 活力海报曝光" href="http://www.huoshow.com/2011/1020/41543.shtml" target="_blank"><img alt="快女巡演杭州站11月开唱 活力海报曝光" src="http://www.huoshow.com/upload/2011/1020/1319106101329.jpg" width="268" height="95" /></a>
+</div>
+<div class="people_list">
+<ul>
+<li><a title="二十年磨一剑 屠洪刚开唱大腕争相加盟" href="http://www.huoshow.com/2011/1022/42791.shtml" target="_blank">二十年磨一剑 屠洪刚开唱大腕争相加盟</a></li>
+<li><a title="苏打绿11月北京开唱 门票秒杀创开票记录" href="http://www.huoshow.com/2011/1022/42789.shtml" target="_blank">苏打绿11月北京开唱 门票秒杀创开票记录</a></li>
+<li><a title="汪峰12月深圳开唱 鹏城寻找“励志青年”" href="http://www.huoshow.com/2011/1022/42785.shtml" target="_blank">汪峰12月深圳开唱 鹏城寻找“励志青年”</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!--Middle-->
+<div class="body_mid">
+<div class="top_news">
+<h3>
+<!--  -->
+<a title="音乐人郭峰办艺术展 打造3D虚拟画展" href="http://www.huoshow.com/2011/1022/42799.shtml" target="_blank" class="text_black_16">音乐人郭峰办艺术展 打造3D虚拟画展</a></h3>
+<span class="top_news_sub">
+<strong class="text_gray"><a title="音乐人郭峰办艺术展 打造3D虚拟画展" href="http://www.huoshow.com/2011/1022/42799.shtml" target="_blank">10月21日，以“郭峰色块”为主题的跨界艺术展在北京中华世纪坛拉开了帷幕。本次展览由中华世纪坛当...</a></strong>
+</span>
+</div>
+<div class="div_dashed1" style="border-top:auto;"></div>
+<ul class="newslist">
+<h2 class="title_black_18">华语乐坛</h2>
+<li><a title="马天宇《亲爱的你在哪里》MV大玩湿身诱惑" href="http://www.huoshow.com/2011/1021/42069.shtml" target="_blank">马天宇《亲爱的你在哪里》MV大玩湿身诱惑</a></li>
+<li><a title="Twins称霆锋对其个唱没兴趣 阿sa变蓝色妖姬" href="http://www.huoshow.com/2011/1022/42747.shtml" target="_blank">Twins称霆锋对其个唱没兴趣 阿sa变蓝色妖姬</a></li>
+<li><a title="黑Girl重组三人行重战乐坛 渡低谷全新呈现" href="http://www.huoshow.com/2011/1022/42793.shtml" target="_blank">黑Girl重组三人行重战乐坛 渡低谷全新呈现</a></li>
+<li><a title="李佳薇客串阿牛电影 贺军翔称其酷似蔡健雅" href="http://www.huoshow.com/2011/1022/42783.shtml" target="_blank">李佳薇客串阿牛电影 贺军翔称其酷似蔡健雅</a></li>
+</ul>
+<ul class="newslist">
+<li><a title="视频：陈楚生首部个人形象片曝光 回应“棱角“" href="http://www.huoshow.com/2011/1021/42109.shtml" target="_blank">视频：陈楚生首部个人形象片曝光 回应“棱角“</a></li>
+<li><a title="MIC男团打造奢华复古风 新单曲惊艳归来" href="http://www.huoshow.com/2011/1021/42101.shtml" target="_blank">MIC男团打造奢华复古风 新单曲惊艳归来</a></li>
+<li><a title="LOLLIPOP F发专辑练舞 赴韩特训PK天团SJ" href="http://www.huoshow.com/2011/1021/42459.shtml" target="_blank">LOLLIPOP F发专辑练舞 赴韩特训PK天团SJ</a></li>
+<li><a title="图：李克勤发国语专辑 情迷性感吸血女魔" href="http://www.huoshow.com/2011/1021/42439.shtml" target="_blank">图：李克勤发国语专辑 情迷性感吸血女魔</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">海外乐坛</h2>
+<li><a title="Brown Eyed Girls成员GaIn性感写真(图)" href="http://www.huoshow.com/2011/1020/41839.shtml" target="_blank">Brown Eyed Girls成员GaIn性感写真(图)</a></li>
+<li><a title="MTV欧洲音乐奖皇后获封全球偶像 11月颁奖" href="http://www.huoshow.com/2011/1022/42767.shtml" target="_blank">MTV欧洲音乐奖皇后获封全球偶像 11月颁奖</a></li>
+<li><a title="杰克逊私人医生难逃其责" href="http://www.huoshow.com/2011/1022/42543.shtml" target="_blank">杰克逊私人医生难逃其责</a></li>
+<li><a title="金贤重携新专辑回归舞台" href="http://www.huoshow.com/2011/1022/42757.shtml" target="_blank">金贤重携新专辑回归舞台</a></li>
+</ul>
+<ul class="newslist">
+<li><a title="Super Junior成知名游戏艺人版本第一代主人公" href="http://www.huoshow.com/2011/1022/42549.shtml" target="_blank">Super Junior成知名游戏艺人版本第一代主人公</a></li>
+<li><a title="西城男孩宣布解散：都需要一次喘息的机会" href="http://www.huoshow.com/2011/1021/42349.shtml" target="_blank">西城男孩宣布解散：都需要一次喘息的机会</a></li>
+<li><a title="最新研究称喜欢重金属的年轻人易患抑郁症" href="http://www.huoshow.com/2011/1021/42131.shtml" target="_blank">最新研究称喜欢重金属的年轻人易患抑郁症</a></li>
+<li><a title="布兰妮新MV力捧性感男友 上演激情限制戏码" href="http://www.huoshow.com/2011/1021/41955.shtml" target="_blank">布兰妮新MV力捧性感男友 上演激情限制戏码</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">乐评</h2>
+<li><a title="杰克逊领衔歌坛千奇百怪MV 有“煽动”才热" href="http://www.huoshow.com/2011/1014/39171.shtml" target="_blank">杰克逊领衔歌坛千奇百怪MV 有“煽动”才热</a></li>
+<li><a title="卡不掉的卡带岁月：从A面到B面的音乐时光" href="http://www.huoshow.com/2011/1019/41241.shtml" target="_blank">卡不掉的卡带岁月：从A面到B面的音乐时光</a></li>
+<li><a title="戴佩妮《回家路上》：沉淀后的最美风景" href="http://www.huoshow.com/2011/1018/40279.shtml" target="_blank">戴佩妮《回家路上》：沉淀后的最美风景</a></li>
+<li><a title="其实都是无赖" href="http://www.huoshow.com/2011/1016/39653.shtml" target="_blank">其实都是无赖</a></li>
+</ul>
+<ul class="newslist">
+<li><a title="关于杰克逊之死" href="http://www.huoshow.com/2011/1016/39651.shtml" target="_blank">关于杰克逊之死</a></li>
+<li><a title="揭秘演唱会取名内藏的营销技巧" href="http://www.huoshow.com/2011/1014/39341.shtml" target="_blank">揭秘演唱会取名内藏的营销技巧</a></li>
+<li><a title="关于所谓的"网络歌曲"" href="http://www.huoshow.com/2011/1014/38985.shtml" target="_blank">关于所谓的"网络歌曲"</a></li>
+<li><a title="《信仰在空中飘扬》：有意思吗？" href="http://www.huoshow.com/2011/1009/36795.shtml" target="_blank">《信仰在空中飘扬》：有意思吗？</a></li>
+</ul>
+</div>
+<!--Right-->
+<div class="body_right"> 
+<!--Music Topic-->
+<div class="topic">
+<div class="topic_pic">
+<a title="“秋之音色”音乐专题" href="http://www.huoshow.com/zhuanti/autumnmusic/" target="_blank"><img alt="“秋之音色”音乐专题" src="http://www.huoshow.com/upload/2011/1022/1319264245634.jpg" width="220" height="80" /></a>
+</div>
+<div class="topic_list">
+<ul>
+<li><a title="”欢乐长假 无乐不在” 国庆音乐专题" href="http://www.huoshow.com/festivalproject/gqmusic/" target="_blank">”欢乐长假 无乐不在” 国庆音乐</a></li>
+<li><a title="2011 MTV大奖专题" href="http://www.huoshow.com/zhuanti/2011vma/" target="_blank">2011 MTV大奖专题</a></li>
+</ul>
+</div>
+</div>
+<!--Music Charts-->
+<div class="music_chart_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16">火秀音乐榜单</h1>
+</div>
+                <div class="charts_block" id="pbox1">
+                  <div class="charts_title">
+                    <span class="charts_cate_left">
+                      <a class="charts_cate_def">内地</a>
+                      <a >港台</a>
+                      <a >日韩</a>
+                      <a >欧美</a>
+                    </span>
+                  </div>
+
+                  <ul class="charts_others">
+                    <!--#include virtual ="/api/article.php?act=getMusicList&type=music_neidi"-->
+                  </ul>
+                  <ul class="charts_others">
+                    <!--#include virtual ="/api/article.php?act=getMusicList&type=music_gangtai"-->
+                  </ul>  
+                  <ul class="charts_others">
+                    <!--#include virtual ="/api/article.php?act=getMusicList&type=music_rihan"-->
+                  </ul>
+                  <ul class="charts_others">
+                    <!--#include virtual ="/api/article.php?act=getMusicList&type=music_oumei"-->
+                  </ul>
+                </div>
+
+                <script>
+                  make_pagebox('pbox1', {
+                  links_selector: '.charts_cate_left a', 
+                  current_class: 'charts_cate_def',
+                  pages_selector: '.charts_others',
+                  event_type: 'mouseover'
+                  });
+
+                  window.json_render1 = function(data){                                                
+                  data = parse_json(data).rs;
+                  if(data){
+                  var html = ['<ul>'];
+                    for(var i=0, l=data.length; i<l; i++){
+
+                    //html.push(i+1);
+                    html.push('<li><span class="icon'+(i+1)+'"></span>');
+                    html.push('<a href="');
+                      html.push(data[i].url);
+                      html.push('" target="_blank">');
+                      html.push(data[i].title);
+                      html.push('</a></li>');
+                    }
+                    html.push('</ul>');
+                  return html.join('');
+                  }
+                  };
+
+                </script>
+<div class="clear"></div>
+<!--Banner 250*100-->
+        	<div id="music_banner_250_100" class="banner_250_100">
+<div class="banner_inter"><img src="/img/templates/huoshow02/images/loading.gif" border="0" /> 广告加载中...</div>
+</div>        <div class="clear"></div>
+<!--Music Vote-->
+<div class="vote">
+<div class="vote_title"><span class="vote_icon"></span><h2 class="title_black_16">投票</h2></div>
+<div class="vote_text">
+<h1 class="text_black"><b>你怎样看待昔日玉女杨钰莹的复出</b></h1>
+近日，不时有消息称隐退多年的“玉女”杨钰莹将复出，而其复出的第一炮很可能是担任湖南卫...<a title="你怎样看待昔日玉女杨钰莹的复出？" href="http://www.huoshow.com/2011/0805/20755.shtml" target="_blank">[详细]</a>
+ 
+</div>
+            <form id="vote_20755" name="vote_20755" method="post" action="http://www.huoshow.com/app/?app=vote&controller=vote&action=vote" target="_blank">	           
+            <input name="contentid" type="hidden" value="20755" />
+            <ul class="vote_options">           
+            
+<li>
+
+<input type="radio" name="optionid" value="67" />
+希望她复出，喜欢听她唱歌</li>
+<li>
+
+<input type="radio" name="optionid" value="68" />
+不复出的好，现在的娱乐圈太复杂</li>
+<li>
+
+<input type="radio" name="optionid" value="69" />
+无所谓啦~她已经是过去式了</li>
+<li>
+
+<input type="radio" name="optionid" value="70" />
+不关心，不了解</li>
+<script type="text/javascript">
+            //验证投票选项
+            (function($){
+             $('#vote_20755').submit(function(){
+                 var checkeds = $('#vote_20755 input:checked').length;
+                 if(checkeds == 0){
+                 alert('请选择投票选项');
+                 return false;
+                 }
+                                  })
+             })(jQuery);
+</script>
+       		 </ul>
+             <div class="vote_button">
+             <input type="image" src="http://www.huoshow.com/img/templates/huoshow02/images/vote_button.png" id="imageField" name="imageField">
+             </div>
+             </form>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Music MV-->
+<div class="main_body">
+<div class="video_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">MV</h1><a href="http://www.huoshow.com/music/mv/"><div class="more"></div></a>
+</div>
+<div class="video_content" id="scrollbox2">
+          <div class="video_nav_left"></div>
+          <div class="video_nav_right"></div>
+          <ul class="video_list">
+                        <li><span class="video_pic_bg"><a title="付辛博《全世界你最懂我》MV" href="http://www.huoshow.com/2011/1019/40797.shtml" target="_blank"><img alt="付辛博《全世界你最懂我》MV" src="http://www.huoshow.com/upload/2011/1019/1318987320826.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="付辛博《全世界你最懂我》MV" href="http://www.huoshow.com/2011/1019/40797.shtml" target="_blank"> 付辛博《全世界你最懂...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="那英《你不是说》MV" href="http://www.huoshow.com/2011/1019/40791.shtml" target="_blank"><img alt="那英《你不是说》MV" src="http://www.huoshow.com/upload/2011/1019/1318987087355.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="那英《你不是说》MV" href="http://www.huoshow.com/2011/1019/40791.shtml" target="_blank"> 那英《你不是说》MV...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="周笔畅《黑苹果》MV高清" href="http://www.huoshow.com/2011/1019/40785.shtml" target="_blank"><img alt="周笔畅《黑苹果》MV高清" src="http://www.huoshow.com/upload/2011/1019/1318986734149.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="周笔畅《黑苹果》MV高清" href="http://www.huoshow.com/2011/1019/40785.shtml" target="_blank"> 周笔畅《黑苹果》MV高...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="苍井空《燕雀的理想》-蛋糕炸弹-《在线爱》插曲MV" href="http://www.huoshow.com/2011/1018/40781.shtml" target="_blank"><img alt="苍井空《燕雀的理想》-蛋糕炸弹-《在线爱》插曲MV" src="http://www.huoshow.com/upload/2011/1018/1318934346290.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="苍井空《燕雀的理想》-蛋糕炸弹-《在线爱》插曲MV" href="http://www.huoshow.com/2011/1018/40781.shtml" target="_blank"> 苍井空《燕雀的理想》...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="许嵩《天龙八部之宿敌》MV 与金莎上演穿越之恋" href="http://www.huoshow.com/2011/1018/40463.shtml" target="_blank"><img alt="许嵩《天龙八部之宿敌》MV 与金莎上演穿越之恋" src="http://www.huoshow.com/upload/2011/1018/1318932750423.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="许嵩《天龙八部之宿敌》MV 与金莎上演穿越之恋" href="http://www.huoshow.com/2011/1018/40463.shtml" target="_blank"> 许嵩《天龙八部之宿敌...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="BY2《有没有》高清MV" href="http://www.huoshow.com/2011/1011/37411.shtml" target="_blank"><img alt="BY2《有没有》高清MV" src="http://www.huoshow.com/upload/2011/1011/1318299028196.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="BY2《有没有》高清MV" href="http://www.huoshow.com/2011/1011/37411.shtml" target="_blank"> BY2《有没有》高清MV...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="李佳薇《分隔线》正式版- -高清MV" href="http://www.huoshow.com/2011/1011/37407.shtml" target="_blank"><img alt="李佳薇《分隔线》正式版- -高清MV" src="http://www.huoshow.com/upload/2011/1011/1318298659940.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="李佳薇《分隔线》正式版- -高清MV" href="http://www.huoshow.com/2011/1011/37407.shtml" target="_blank"> 李佳薇《分隔线》正式...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="伍佰《火山》MV-宅男最佳告白歌曲" href="http://www.huoshow.com/2011/0919/29741.shtml" target="_blank"><img alt="伍佰《火山》MV-宅男最佳告白歌曲" src="http://www.huoshow.com/upload/2011/0919/1316396904387.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="伍佰《火山》MV-宅男最佳告白歌曲" href="http://www.huoshow.com/2011/0919/29741.shtml" target="_blank"> 伍佰《火山》MV-宅男...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="五月天《OAOA》MV-《追梦3DNA》主题曲" href="http://www.huoshow.com/2011/0919/29737.shtml" target="_blank"><img alt="五月天《OAOA》MV-《追梦3DNA》主题曲" src="http://www.huoshow.com/upload/2011/0919/1316396607398.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="五月天《OAOA》MV-《追梦3DNA》主题曲" href="http://www.huoshow.com/2011/0919/29737.shtml" target="_blank"> 五月天《OAOA》MV-《...</a></span></li>
+                        <li><span class="video_pic_bg"><a title="王力宏《火力全开》MV完整版" href="http://www.huoshow.com/2011/0919/29729.shtml" target="_blank"><img alt="王力宏《火力全开》MV完整版" src="http://www.huoshow.com/upload/2011/0919/1316396552853.jpg" width="134" height="83" /></a></span><span class="video_text"><a title="王力宏《火力全开》MV完整版" href="http://www.huoshow.com/2011/0919/29729.shtml" target="_blank"> 王力宏《火力全开》MV...</a></span></li>
+                      </ul>
+        </div>
+        <script>
+          make_scrollbox('scrollbox2', {
+            item: 'li',
+            prev: '.video_nav_left',
+            next: '.video_nav_right',
+            interval: 3
+          });
+        </script>
+</div>
+<div class="clear"></div>
+<!--Music End-->
+<!--Game Start-->
+<!--Game Title-->
+<div class="main_body">
+<div class="full_title_outer_bd">
+<div class="full_title_bg">
+<div class="game_title"></div>
+<div class="game_channel">
+<a href="http://www.huoshow.com/game/onlinegame/">网络游戏</a> | <a href="http://www.huoshow.com/game/pcgame/">单机游戏</a> | <a href="http://www.huoshow.com/game/mobile_game/">手机游戏</a> | <a href="http://www.huoshow.com/game/webgame/">网页游戏</a> | <a href="http://www.huoshow.com/game/flashgame/">小游戏</a> <span class="movie_more"><a href="http://www.huoshow.com/game/">>> 进入游戏频道</a></span> 
+</div>
+</div>
+</div>
+<div class="full_title_shadow"></div>
+</div>
+<div class="clear"></div>
+<!--Game Body-->
+<div class="main_body">
+<!--Left-->	
+<div class="body_left">
+<div class="channel_slide">
+<!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_index_game_scroll_image&width=300&height=250&navon=1"-->
+</div>
+<!--Hot Webgame-->
+<div class="hot_webgame">
+<div class="channel_left_title1">
+<span class="red_title_pointer"></span><h1 class="title_black_16">热门网页游戏</h1><a href="http://www.huoshow.com/game/webgame/"><div class="more"></div></a>
+</div>
+        	<div class="hot_webgame_content">
+<div class="hot_webgame_pic"><img src="http://www.huoshow.com/upload/2011/0726/1311646400882.jpg" border="0" width="111" height="76" /></div>
+<div class="hot_webgame_text">
+<h1 class="text_gray_01"><strong>十年一剑</strong></h1>
+<span class="text_gray_01">类别：角色扮演</span><br /><span class="text_gray_01">状态：新版新服开启</span></div>
+</div>
+<div class="webgame_button_bg"><span class="webgame_button_gray"><a href="http://10.uuzu.com/" target="_blank">官网</a></span> <span class="webgame_button_blue"><a href="http://10.uuzu.com/new_card/" target="_blank">领卡</a></span> <span class="webgame_button_orange"><a href="http://10.uuzu.com/">进入游戏</a></span> <span class="webgame_button_more"><a href="http://www.huoshow.com/game/webgame/">更多网页游戏 &gt;&gt;</a></span></div>        	</div>
+<!--Flash Game-->
+<div class="flashgame">
+<div class="channel_left_title1">
+<span class="red_title_pointer"></span><h1 class="title_black_16">小游戏</h1><a href="http://www.huoshow.com/game/flashgame/"><div class="more"></div></a>
+</div>
+<ul class="flashgame_list">
+<li><a title="狂野哈雷机车" href="http://www.huoshow.com/2011/0704/14393.shtml" target="_blank"><img alt="狂野哈雷机车" src="http://www.huoshow.com/upload/2011/0704/1309765435453.jpg" width="85" height="57" /></a><br><a title="狂野哈雷机车" href="http://www.huoshow.com/2011/0704/14393.shtml" target="_blank">狂野哈雷机车</a></li>
+<li><a title="疯狂棒球赛" href="http://www.huoshow.com/2011/0704/14389.shtml" target="_blank"><img alt="疯狂棒球赛" src="http://www.huoshow.com/upload/2011/0704/1309765507434.jpg" width="85" height="57" /></a><br><a title="疯狂棒球赛" href="http://www.huoshow.com/2011/0704/14389.shtml" target="_blank">疯狂棒球赛</a></li>
+<li><a title="雷电X中文版" href="http://www.huoshow.com/2011/0524/10663.shtml" target="_blank"><img alt="雷电X中文版" src="http://www.huoshow.com/upload/2011/0526/1306375933223.jpg" width="85" height="57" /></a><br><a title="雷电X中文版" href="http://www.huoshow.com/2011/0524/10663.shtml" target="_blank">雷电X中文版</a></li>
+</ul>
+</div>
+
+<div class="mobilegame">
+<div class="channel_left_title1">
+<span class="red_title_pointer"></span><h1 class="title_black_16">手机游戏</h1><a href="http://www.huoshow.com/game/mobile_game/"><div class="more"></div></a>
+</div>
+
+<div class="mobilegame_content">
+<div class="mobilegame_content_pic">
+<a title="iphone僵尸邻居" target="_blank"	href="http://www.huoshow.com/2011/0527/10920.shtml">
+<img alt="iphone僵尸邻居" src="http://www.huoshow.com/upload/2011/0527/1306467510722.jpg"></a>
+</div>
+<div class="mobilegame_content_text">
+<h4><a title="iphone僵尸邻居" href="http://www.huoshow.com/2011/0527/10920.shtml" target="_blank">iphone僵尸邻居 </a></h4>
+<div class="mobilegame_content_text_intro">
+<a title="iphone僵尸邻居"	href="http://www.huoshow.com/2011/0527/10920.shtml" target="_blank">免费下载试玩</a>
+</div>
+<span>最后更新:05-27</span>
+</div>
+</div>
+
+
+<div class="mobilegame_content">
+<div class="mobilegame_content_pic">
+<a title="iphone龙梦幻境" target="_blank"	href="http://www.huoshow.com/2011/0527/10919.shtml">
+<img alt="iphone龙梦幻境" src="http://www.huoshow.com/upload/2011/0527/1306466574937.jpg"></a>
+</div>
+<div class="mobilegame_content_text">
+<h4><a title="iphone龙梦幻境" href="http://www.huoshow.com/2011/0527/10919.shtml" target="_blank">iphone龙梦幻境 </a></h4>
+<div class="mobilegame_content_text_intro">
+<a title="iphone龙梦幻境"	href="http://www.huoshow.com/2011/0527/10919.shtml" target="_blank">免费下载试玩</a>
+</div>
+<span>最后更新:05-27</span>
+</div>
+</div>
+
+
+</div>
+</div>
+<div class="body_mid">	
+<div class="top_news">
+<h3>
+<!--  -->
+<a title="2011年暴雪嘉年华现场图片" href="http://www.huoshow.com/2011/1022/42617.shtml" target="_blank" class="text_black_16">2011年暴雪嘉年华现场图片</a></h3>
+<span class="top_news_sub">
+<strong class="text_gray"><a title="2011年暴雪嘉年华现场图片" href="http://www.huoshow.com/2011/1022/42617.shtml" target="_blank">暴雪今年在嘉年华现场放置了一个超大的泰瑞尔塑像，怎么样，是不是很酷...</a></strong>
+</span>
+</div>
+<div class="div_dashed1"></div>
+<ul class="newslist">
+<h2 class="title_black_18">攻略精华</h2>
+<li><a title="永恒之塔3.0各职业PVP地位综合分析" href="http://www.huoshow.com/2011/1021/42437.shtml" target="_blank">永恒之塔3.0各职业PVP地位综合分析</a></li>
+<li><a title="永恒之塔PVP型治愈介绍之装备选择分析" href="http://www.huoshow.com/2011/1021/42433.shtml" target="_blank">永恒之塔PVP型治愈介绍之装备选择分析</a></li>
+<li><a title="资深玩家点评AION3.0各职业技能" href="http://www.huoshow.com/2011/1021/42429.shtml" target="_blank">资深玩家点评AION3.0各职业技能</a></li>
+<li><a title="永恒之塔魔道VS护法空中战心得分享" href="http://www.huoshow.com/2011/1020/41791.shtml" target="_blank">永恒之塔魔道VS护法空中战心得分享</a></li>
+<li><a title="征途2新区如何快速从70升到90" href="http://www.huoshow.com/2011/1020/41771.shtml" target="_blank">征途2新区如何快速从70升到90</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">游戏评测</h2>
+<li><a title="《死亡岛》玩家点评" href="http://www.huoshow.com/2011/0907/26251.shtml" target="_blank">《死亡岛》玩家点评</a></li>
+<li><a title="8月强档FPS《杀出重围3》IGN详细点评" href="http://www.huoshow.com/2011/0824/23180.shtml" target="_blank">8月强档FPS《杀出重围3》IGN详细点评</a></li>
+<li><a title="《灰烬》玩家点评" href="http://www.huoshow.com/2011/0901/24725.shtml" target="_blank">《灰烬》玩家点评</a></li>
+<li><a title="3DM《风卷残云》评测：惊鸿一瞥下的诚意之作。" href="http://www.huoshow.com/2011/0801/19868.shtml" target="_blank">3DM《风卷残云》评测：惊鸿一瞥下的诚意之作。</a></li>
+<li><a title="《杀出重围3》首个评分出炉 获94高分" href="http://www.huoshow.com/2011/0730/19825.shtml" target="_blank">《杀出重围3》首个评分出炉 获94高分</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">网游</h2>
+<li><a title="网瘾战争导演性感玉米讽刺网络推手" href="http://www.huoshow.com/2011/1021/42431.shtml" target="_blank">网瘾战争导演性感玉米讽刺网络推手</a></li>
+<li><a title="网游美女生存法则 有爆点才是真王道" href="http://www.huoshow.com/2011/1021/42399.shtml" target="_blank">网游美女生存法则 有爆点才是真王道</a></li>
+<li><a title="QQ华夏跨服战实物奖励开始发放" href="http://www.huoshow.com/2011/1021/42313.shtml" target="_blank">QQ华夏跨服战实物奖励开始发放</a></li>
+<li><a title="主策谈九阴真经：随性而为才是江湖" href="http://www.huoshow.com/2011/1020/41693.shtml" target="_blank">主策谈九阴真经：随性而为才是江湖</a></li>
+<li><a title="好戏上演 高端公会团队副本实况演出" href="http://www.huoshow.com/2011/1020/41655.shtml" target="_blank">好戏上演 高端公会团队副本实况演出</a></li>
+</ul>
+<ul class="newslist">
+<h2 class="title_black_18">单机</h2>
+<li><a title="《上古卷轴5》“龙裔”等身青铜塑像开箱视频" href="http://www.huoshow.com/2011/1021/42379.shtml" target="_blank">《上古卷轴5》“龙裔”等身青铜塑像开箱视频</a></li>
+<li><a title="《质量效应3》多人试玩明年一月发布" href="http://www.huoshow.com/2011/1021/42375.shtml" target="_blank">《质量效应3》多人试玩明年一月发布</a></li>
+<li><a title="《暗黑破坏神3》女性Diablo将现身暴雪嘉年华" href="http://www.huoshow.com/2011/1021/42371.shtml" target="_blank">《暗黑破坏神3》女性Diablo将现身暴雪嘉年华</a></li>
+<li><a title="《使命召唤8》全新连杀系统游戏演示" href="http://www.huoshow.com/2011/1021/42369.shtml" target="_blank">《使命召唤8》全新连杀系统游戏演示</a></li>
+<li><a title="《古剑奇谭》二周目带来的惊喜" href="http://www.huoshow.com/2011/1021/42367.shtml" target="_blank">《古剑奇谭》二周目带来的惊喜</a></li>
+</ul>
+</div>
+<!--Right-->
+<div class="body_right"> 
+<!--Game Topic-->
+<div class="game_topic">
+<div class="game_topic_logo"></div>
+<div class="game_topic_content">
+<a title="魔兽世界" href="http://www.huoshow.com/zhuanti/wow/" target="_blank"><img alt="魔兽世界" src="http://www.huoshow.com/upload/2011/0722/1311319065841.jpg" width="180<a title="魔兽世界"height="70" /></a><a href="http://www.huoshow.com/zhuanti/wow/" target="_blank">魔兽世界</a>
+<a title="地下城与勇士" href="http://www.huoshow.com/2011/0510/9604.shtml" target="_blank"><img alt="地下城与勇士" src="http://www.huoshow.com/upload/2011/0525/1306313659473.jpg" width="180<a title="地下城与勇士"height="70" /></a><a href="http://www.huoshow.com/2011/0510/9604.shtml" target="_blank">地下城与勇士</a>
+</div>
+</div>
+<div class="clear"></div>
+<!--Game Charts-->
+<div class="charts_block">
+<div class="charts_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16">最受关注网游</h1>
+</div>
+                        <ul class="charts_others">
+                          <!--#include virtual ="/api/article.php?act=getMostAttentionGame"-->
+                        </ul>
+</div>
+<div class="clear"></div>
+<!--Banner 250*250-->
+        	<div id="game_banner_250_250" class="banner_250_250">
+<div class="banner_inter"><img src="/img/templates/huoshow02/images/loading.gif" border="0" /> 广告加载中...</div>
+</div>        </div>
+</div>
+<div class="clear"></div>
+<!--Game Beauty-->
+<div class="main_body">
+<div class="video_title">
+<span class="red_title_pointer"></span><h1 class="title_black_16w">游戏美女</h1>
+</div>
+
+        <div class="game_beauty_content" id="game_beauty">
+          <div class="game_beauty_nav_left">&nbsp;</div>
+          <div class="game_beauty_nav_right">&nbsp;</div>
+          <ul class="game_beauty_list">
+                        <li><div class="game_beauty_text"><a title="张优性感胸器逼人将现CJ网龙展台 性感写真曝光" href="http://www.huoshow.com/2011/0723/18603.shtml" target="_blank">张优性感胸器逼人...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0723/18603.shtml" target="_blank"><img alt="张优性感胸器逼人将现CJ网龙展台 性感写真曝光" src="http://www.huoshow.com/upload/2011/0723/1311389714452.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="酥胸微露曲线玲珑 第一公会美女王若伊诱惑写真" href="http://www.huoshow.com/2011/0723/18598.shtml" target="_blank">酥胸微露曲线玲珑...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0723/18598.shtml" target="_blank"><img alt="酥胸微露曲线玲珑 第一公会美女王若伊诱惑写真" src="http://www.huoshow.com/upload/2011/0723/1311389388577.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="WCG Girl五强吕婉柔写真图赏" href="http://www.huoshow.com/2011/0716/17206.shtml" target="_blank">WCG Girl五强吕婉...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0716/17206.shtml" target="_blank"><img alt="WCG Girl五强吕婉柔写真图赏" src="http://www.huoshow.com/upload/2011/0716/1310787275720.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="爆乳刚小希如何走红游戏圈 欲望与激情的力量" href="http://www.huoshow.com/2011/0716/17196.shtml" target="_blank">爆乳刚小希如何走...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0716/17196.shtml" target="_blank"><img alt="爆乳刚小希如何走红游戏圈 欲望与激情的力量" src="http://www.huoshow.com/upload/2011/0716/1310786049206.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="日版瑶瑶 童颜巨乳篠崎爱胸器逼人写真" href="http://www.huoshow.com/2011/0627/13471.shtml" target="_blank">日版瑶瑶 童颜巨...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0627/13471.shtml" target="_blank"><img alt="日版瑶瑶 童颜巨乳篠崎爱胸器逼人写真" src="http://www.huoshow.com/upload/2011/0708/1310090966321.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="新剑网3美女破衣COS 打完副本不修装备的后果" href="http://www.huoshow.com/2011/0716/17192.shtml" target="_blank">新剑网3美女破衣C...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0716/17192.shtml" target="_blank"><img alt="新剑网3美女破衣COS 打完副本不修装备的后果" src="http://www.huoshow.com/upload/2011/0716/1310785813859.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="成人动漫《杀戮都市》女主角岸本惠性感COS" href="http://www.huoshow.com/2011/0708/15270.shtml" target="_blank">成人动漫《杀戮都...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0708/15270.shtml" target="_blank"><img alt="成人动漫《杀戮都市》女主角岸本惠性感COS" src="http://www.huoshow.com/upload/2011/0708/1310090098298.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="新一代“乳神”施柳屹美丝袜美腿" href="http://www.huoshow.com/2011/0708/15263.shtml" target="_blank">新一代“乳神”施...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0708/15263.shtml" target="_blank"><img alt="新一代“乳神”施柳屹美丝袜美腿" src="http://www.huoshow.com/upload/2011/0708/1310089833637.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="T裤女王SASA抚胸演绎 《龙之谷》限制级原画COS" href="http://www.huoshow.com/2011/0708/15267.shtml" target="_blank">T裤女王SASA抚胸...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0708/15267.shtml" target="_blank"><img alt="T裤女王SASA抚胸演绎 《龙之谷》限制级原画COS" src="http://www.huoshow.com/upload/2011/0708/1310090032108.jpg" width="118" height="160" /></a></span></li>
+                        <li><div class="game_beauty_text"><a title="宅男女神粉红色的性感 再爆大尺度写真庆生" href="http://www.huoshow.com/2011/0708/15265.shtml" target="_blank">宅男女神粉红色的...</a></div><span class="game_beauty_pic"><a href="http://www.huoshow.com/2011/0708/15265.shtml" target="_blank"><img alt="宅男女神粉红色的性感 再爆大尺度写真庆生" src="http://www.huoshow.com/upload/2011/0708/1310089936969.jpg" width="118" height="160" /></a></span></li>
+                      </ul>
+        </div>
+        <script>
+          make_scrollbox('game_beauty', {
+            item: 'li',
+            prev: '.game_beauty_nav_left',
+            next: '.game_beauty_nav_right',
+            interval: 3
+          });
+        </script>
+
+</div>
+<div class="clear"></div>
+<!--Game End-->
+<!--Partners-->
+<div class="main_body">
+<!--  
+<div class="partners">
+<div class="layer_one"><a href="">合作火伴</a></div>
+<div class="layer_two"><a href="">友情链接</a></div>
+<div class="layer_content">
+<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+</div>
+</div>
+-->
+</div>
+<div class="clear"></div>
+
+<!--Main Body End--> 
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<!--Banner Replacer-->
+<div style="display:none">
+<div id="top_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(9);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a2796ca'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=9&n=a2796ca' /></a></noscript></div>
+<div id="top_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(8);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=4f0e3b4'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=8&n=4f0e3b4' /></a></noscript></div>
+<div id="movie_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(11);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=082cda0'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=11&n=082cda0' /></a></noscript></div>
+<div id="music_banner_250_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(13);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dd2b9e1'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=13&n=dd2b9e1' /></a></noscript></div>
+<div id="game_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(15);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=61b3c77'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=15&n=61b3c77' /></a></noscript></div>
+<script type="text/javascript">// <![CDATA[
+try{
+document.getElementById("top_banner_250_250").innerHTML = document.getElementById("top_banner_250_250_c").innerHTML;
+document.getElementById("top_banner_250_250_c").innerHTML = "";
+
+document.getElementById("top_banner_300_100").innerHTML = document.getElementById("top_banner_300_100_c").innerHTML;
+document.getElementById("top_banner_300_100_c").innerHTML = "";
+
+document.getElementById("movie_banner_300_100").innerHTML = document.getElementById("movie_banner_300_100_c").innerHTML;
+document.getElementById("movie_banner_300_100_c").innerHTML = "";
+
+document.getElementById("music_banner_250_100").innerHTML = document.getElementById("music_banner_250_100_c").innerHTML;
+document.getElementById("music_banner_250_100_c").innerHTML = "";
+
+document.getElementById("game_banner_250_250").innerHTML = document.getElementById("game_banner_250_250_c").innerHTML;
+document.getElementById("game_banner_250_250_c").innerHTML = "";
+}catch(e){}
+// ]]></script>    </div>
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

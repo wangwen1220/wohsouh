@@ -1,0 +1,1 @@
+var video={setting:function(){ct.form("\u89c6\u9891\u8bbe\u7f6e","?app=video&controller=setting&action=index",300,50,function(a){a.state?ct.tips("\u89c6\u9891\u8bbe\u7f6e\u6210\u529f"):ct.error("\u89c6\u9891\u8bbe\u7f6e\u5931\u8d25");return true})},select:function(){ct.fileManager(function(a){for(k=0;k<a.length;k++){var b=a[k];group.add(b.aid,b.src)}},null,true)}};

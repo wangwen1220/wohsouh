@@ -1,0 +1,184 @@
+CREATE TABLE `pre_multilive_room` (
+  `roomid` INT(10) UNSIGNED NOT NULL COMMENT 'roomid',
+  `room_name` VARCHAR(128) DEFAULT NULL COMMENT '房间名称',
+  `room_class_id` BIGINT(10) DEFAULT NULL COMMENT '房间类型ID 如果房间类型ID最后为1，则降级为0，如果为0，则说明此房间已经不是多功能直播间',
+  `room_type` INT(2) DEFAULT NULL COMMENT '1为免费获得；2为收费获得',
+  `cover_img` VARCHAR(512) DEFAULT NULL COMMENT '房间封面图片地址',
+  `description` VARCHAR(1024) DEFAULT NULL COMMENT '房间描述',
+  `available` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '是否可用',
+  `uid` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '用户id',
+  `username` VARCHAR(15) NOT NULL COMMENT '用户名',
+  `stat` SMALLINT(6) NOT NULL COMMENT '状态，-1，违规、0：关闭、1：激活',
+  `dateline` INT(10) NOT NULL DEFAULT '0' COMMENT '增加时间',
+  `expire_time` INT(10) DEFAULT NULL COMMENT '到期时间',
+  `ismsg` INT(10) NOT NULL DEFAULT '0' '1为发送，0为未发送',
+  PRIMARY KEY (`roomid`),
+  KEY `stat` (`stat`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间房间信息'
+
+CREATE TABLE `pre_multilive_room_log` (
+  `id` BIGINT(10) NOT NULL AUTO_INCREMENT,
+  `roomid` BIGINT(10) DEFAULT NULL COMMENT '房间ID',
+  `activate_uid` BIGINT(10) DEFAULT NULL COMMENT '激活的用户ID',
+  `activate_username` VARCHAR(64) DEFAULT NULL COMMENT '激活的用户名',
+  `close_uid` BIGINT(10) DEFAULT NULL COMMENT '关闭的用户ID',
+  `close_username` VARCHAR(64) NOT NULL COMMENT '关闭的用户名',
+  `start_time` INT(10) NOT NULL COMMENT '直播开始时间',
+  `end_time` INT(10) NOT NULL COMMENT '直播结束时间',
+  `max_members` INT(10) NOT NULL COMMENT '最高人数',
+  `gift_huocoid_sum` BIGINT(10) DEFAULT NULL COMMENT '礼物对应的火币总额',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间每场相关统计信息'
+
+CREATE TABLE `pre_multilive_gift_log` (
+  `logid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `uid` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '用户id',
+  `username` VARCHAR(15) NOT NULL COMMENT '用户名',
+  `roomid` INT(10) UNSIGNED NOT NULL COMMENT '房间id',
+  `roomlogid` INT(11) NOT NULL COMMENT '场次ID',
+  `action` TINYINT(1) NOT NULL COMMENT '行为1.赠送，2.接收',
+  `giftid` SMALLINT(6) UNSIGNED NOT NULL COMMENT '礼物id',
+  `giftname` VARCHAR(50) NOT NULL COMMENT '礼物名称',
+  `giftprice` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT '火秀币',
+  `num` MEDIUMINT(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT '数量',
+  `targetuid` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '目标用户id',
+  `targetusername` VARCHAR(15) NOT NULL COMMENT '目标用户名',
+  `dateline` INT(10) NOT NULL DEFAULT '0' COMMENT '增加时间',
+  `pointticket_price` DOUBLE(9,2) DEFAULT NULL COMMENT '对应的换算后的点券价值',
+  PRIMARY KEY (`logid`),
+  KEY `roomlogid` (`roomlogid`),
+  KEY `targetuid` (`targetuid`,`action`,`dateline`)
+) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='多人直播间每场送礼日志'
+
+
+CREATE TABLE `pre_multilive_top` (
+  `id` SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `roomid` BIGINT(10) DEFAULT NULL COMMENT '房间ID',
+  `cate` VARCHAR(20) NOT NULL DEFAULT '0' COMMENT '1：消费值（用于粉丝排行榜），2：麦霸',
+  `uid` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '用户id',
+  `username` VARCHAR(15) NOT NULL COMMENT '用户名',
+  `daynum` INT(10) NOT NULL DEFAULT '0' COMMENT '天值',
+  `weeknum` INT(10) NOT NULL DEFAULT '0' COMMENT '周值',
+  `monthnum` INT(10) NOT NULL DEFAULT '0' COMMENT '月值',
+  `totalnum` INT(10) UNSIGNED NOT NULL COMMENT '总数',
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`),
+  KEY `cate` (`cate`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间排行榜信息'
+
+
+
+
+CREATE TABLE `pre_mutilive_room_manager` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `roomid` BIGINT(10) DEFAULT NULL COMMENT '房间ID',
+  `uid` BIGINT(10) DEFAULT NULL COMMENT '管理员用户ID',
+  `username` VARCHAR(128) DEFAULT NULL COMMENT '用户名',
+  `type` INT(2) DEFAULT '0' COMMENT '管理员类型',
+  `percent` FLOAT DEFAULT NULL COMMENT '提点百分比，形如0.5',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='多人直播间管理员表'
+
+
+
+CREATE TABLE `pre_mutilive_person_room_time` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `roomid` BIGINT(10) DEFAULT NULL COMMENT '房间ID',
+  `uid` BIGINT(20) DEFAULT NULL COMMENT '用户ID',
+  `username` VARCHAR(64) DEFAULT NULL COMMENT '用户名',
+  `starttime` BIGINT(10) DEFAULT NULL COMMENT '开始时间',
+  `endtime` BIGINT(10) DEFAULT NULL COMMENT '结束时间',
+  `timediff` BIGINT(10) DEFAULT NULL COMMENT '开始-结束时间差',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='记录用户在某多人直播间待了多长时间'
+
+CREATE TABLE `pre_mutilive_ticket_stat` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `uid` MEDIUMINT(8) UNSIGNED NOT NULL COMMENT '用户id',
+  `pointticket_totalprice` DOUBLE(9,2) UNSIGNED NOT NULL COMMENT '总点券价值',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='多人直播间点券统计'
+
+
+
+CREATE TABLE `pre_mutilive_room_type` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `room_type_name` VARCHAR(128) NOT NULL COMMENT '房间类型名称：如2麦200人上限',
+  `mic_count` INT(2) NOT NULL COMMENT '麦数',
+  `people_limit` INT(4) NOT NULL DEFAULT '200' COMMENT '人数最大上限，-1代表无限',
+  `huocoin_month` INT(6) NOT NULL COMMENT '付费情况下每月需要支付火币数',
+  `huocoin_year` INT(6) NOT NULL COMMENT '付费情况下每年需要支付火币数',
+  `huocoin_quarter` INT(6) NOT NULL COMMENT '付费情况下每季度需要支付火币数',
+  `free_first_charm` BIGINT(8) NOT NULL COMMENT '第一次免费申请需要的魅力值',
+  `free_first_rich` BIGINT(8) NOT NULL COMMENT '第一次免费申请需要的财富值',
+  `free_pay_huocoin` BIGINT(8) NOT NULL COMMENT '如果希望继续免费使用，则上月需要消耗的火币数，下月考核不达标，则自动降级',
+  `free_up_huocoin` BIGINT(8) NOT NULL COMMENT '升级所需要的火币数',
+  `manager_count` INT(3) NOT NULL COMMENT '管理员最大数',
+  `room_huocoin_percent` FLOAT NOT NULL COMMENT '房间提点（总提点的百分比），形如0.5',
+  `level` INT(3) NOT NULL COMMENT '房间等级，影响升降级',
+  `expire_alert` VARCHAR(512) DEFAULT NULL COMMENT '房间到期前7天提醒信息',
+  `is_free_apply` INT(2) DEFAULT NULL COMMENT '1,允许免费申请；2不允许免费申请',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='多人直播间房间类型'
+
+
+
+
+CREATE TABLE `pre_mutilive_room_buy_history` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uid` BIGINT(10) DEFAULT NULL COMMENT '购买/升级房间的uid',
+  `room_type_id` INT(4) DEFAULT NULL COMMENT '购买/升级的房间类型ID',
+  `dateline` BIGINT(10) DEFAULT NULL COMMENT '购买/升级的时间',
+  `buy_state` INT(2) DEFAULT NULL COMMENT '购买方式，1为免费，2为收费',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间购买历史'
+
+
+
+CREATE TABLE `pre_mutilive_site_msg` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `src_uid` BIGINT(10) DEFAULT NULL COMMENT '来源用户ID',
+  `src_username` VARCHAR(64) DEFAULT NULL COMMENT '来源用户名',
+  `msg_state` INT(3) DEFAULT NULL COMMENT '信息类型。1、用户申请免费成功 2、用户购买多功能房成功 3、用户多功能房间到期提示 4、用户多功能房间离到期只有一个星期提示 5、用户多功能房间升级提示',
+  `msg` VARCHAR(1024) DEFAULT NULL COMMENT '消息',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间站内信息'
+
+
+CREATE TABLE `pre_mutilive_usemic_log` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `roomid` BIGINT(10) DEFAULT NULL COMMENT '房间ID',
+  `roomlogid` BIGINT(10) DEFAULT NULL COMMENT '场次ID',
+  `uid` BIGINT(10) DEFAULT NULL COMMENT '用户ID',
+  `username` VARCHAR(128) DEFAULT NULL COMMENT '用户名',
+  `mic_starttime` BIGINT(10) DEFAULT NULL COMMENT '用户占卖开始时间',
+  `mic_endtime` BIGINT(10) DEFAULT NULL COMMENT '用户占卖结束时间',
+  `mic_num` INT(2) DEFAULT NULL COMMENT '占麦的麦号，1为1麦，2为2麦，3为3麦',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间用户占麦日志'
+
+
+CREATE TABLE `pre_mutilive_next_pass_event` (
+  `id` BIGINT(10) DEFAULT NULL,
+  `uid` BIGINT(10) DEFAULT NULL COMMENT '用户ID',
+  `username` VARCHAR(256) DEFAULT NULL COMMENT '用户名',
+  `mutillive_room_level` INT(2) DEFAULT NULL COMMENT '申请的房间级别',
+  `start_time` BIGINT(10) DEFAULT NULL COMMENT '开始时间',
+  `end_time` BIGINT(10) DEFAULT NULL COMMENT '结束时间',
+  `root_type` INT(2) DEFAULT NULL COMMENT '申请房间的方式：1为免费获得；2为收费获得'
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间下期开通事件表'
+
+==2011-12-09==
+CREATE TABLE `pre_mutilive_config` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `config_name` VARCHAR(128) DEFAULT NULL COMMENT '配置名',
+  `config_value` VARCHAR(256) DEFAULT NULL COMMENT '配置值',
+  `descript` VARCHAR(512) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='多人直播间配置表'
+
+CREATE TABLE `pre_mutilive_allow_user_list` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uid` BIGINT(10) DEFAULT NULL COMMENT '允许使用多人直播间的UID',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='多人直播间测试条件下允许使用的用户列表'

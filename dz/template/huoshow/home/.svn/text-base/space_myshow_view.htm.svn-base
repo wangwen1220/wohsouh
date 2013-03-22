@@ -1,0 +1,267 @@
+{eval 
+	$_G['home_tpl_titles'] = array($blog['subject'], '{lang myshow}');
+	$_G['home_tpl_spacemenus'][] = "<a href=\"home.php?mod=space&uid=$space[uid]&do=myshow&view=me\">{lang they_myshow}</a>";
+	$_G['home_tpl_spacemenus'][] = "<a href=\"home.php?mod=space&uid=$space[uid]&do=myshow&id=$myshowInfo[myshowid]\">{lang myshow_view}</a>";
+}
+<!--{template common/header}-->
+<style type="text/css">
+	.tab-con{
+		padding:10px;
+	}
+
+	.tb .current{
+		background:none repeat scroll 0 0 #FFFFFF;
+		border-bottom-color:#FFFFFF;
+		font-weight:700;
+	}
+
+	.G_Post_new p span{
+		padding-right:4em;
+	}
+
+	#myFlashContent{
+		border: 1px solid #CCCCCC;
+		margin: 1em 0;
+		overflow: hidden;
+		width:808px;
+		height:392px;
+	}
+
+	#myFlashContent object{
+		position:absolute;
+		margin-left:166px;
+		margin-top:4px;
+	}
+	
+</style>
+
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="home.php">$_G[setting][navs][4][navname]</a> <em>&rsaquo;</em> 
+		<a href="home.php?mod=space&do=myshow">{lang myshow}</a>
+		<em>&rsaquo;</em> {lang myshow_view}</a>
+	</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2_a wp cl">
+	<div class="mn">
+		<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
+		<div class="bm bw0">
+		<!--{if $space[self]}-->
+			<h1 class="mt"><img alt="myshow" src="{STATICURL}image/feed/myshow.png" class="vm" /> {lang myshow}</h1>
+			<ul class="tb cl mbm">
+				<li$actives[we]><a href="home.php?mod=space&uid=$space[uid]&do=myshow&view=we">{lang friend_myshow}</a></li>
+				<li$actives[me]><a href="home.php?mod=space&uid=$space[uid]&do=myshow&view=me">{lang my_myshow}</a></li>
+				<li$actives[all]><a href="home.php?mod=space&uid=$space[uid]&do=myshow&view=all">{lang view_all}</a></li>
+				<li class="o"><a href="home.php?mod=spacecp&ac=myshow">{lang post_new_myshow}</a></li>
+			<!--{if $_G[referer]}-->
+				<li class="y"><a href="$_G[referer]">&laquo; {lang previous_page}</a></li>
+			<!--{/if}-->
+			</ul>
+		<!--{else}-->
+			<!--{template home/space_menu}-->
+		<!--{/if}-->
+
+
+						<div class="mtm mbm">
+							<div class="h pbm bbs">
+								<h1 class="ph{if $myshowInfo[magiccolor]} magiccolor$myshowInfo[magiccolor]{/if}">{$myshowInfo[title]} <!--{if $myshowInfo[recommand]==1}--><img src="static2/images/jinghua.jpg" alt="{lang elite}" /><!--{/if}--></h1>
+								<p class="xg2">
+								<!--{if $myshowInfo[viewnum]}--><span class="xg1">已有 {$myshowInfo[viewnum]} 次播放 |</span><!--{/if}--> 
+								<span class="xg1"><!--{$myshowInfo[dateline]}--></span>
+								</p>
+							</div>
+
+							<div class="o cl">
+								<div id="myFlashContent" >
+									<object id="player" name="player" width="480" height="384"  style="position:absolute;z-index:3"
+										type="application/x-shockwave-flash" data="static2/player.swf">
+										<param name="movie" value="static2/player.swf" />
+										<param name="wmode" value="transparent"/>
+										<param name="allowfullscreen" value="true" />
+										<param name="allowscriptaccess" value="always" />
+										<param name="flashvars"
+										value="file={$myshowInfo[url]}&image={$myshowInfo[image]}" />
+									</object>
+									<div style="width:480px; height:384px;margin-left:166px; clear:both;position:absolute;z-index:2"><img src="static2/bfz.jpg" /></div>
+									<div style="position:absolute;z-index:1"><a href="{DX_HUOSHOW_SHOW_URL}" target="_blank"><img src="static2/images/goto_live.jpg" /></a>
+									</div>
+								</div>
+								
+								<div>
+									<ul class="tab-nav tb cl">
+										<li class="c" ><a id="tab_myshow_info" href="javascript:;" class="current">{lang myshow_info}</a></li>
+										<li><a id="tab_myshow_favorite" href="javascript:;">{lang myshow_favorite}</a></li>
+									</ul>
+									<div>
+										<div id="gtab1" class="tab-con" >
+											<div class="G_Post_new">
+												<p>
+												<span>{lang myshow_info_username}：<a href="home.php?mod=space&uid=$myshowInfo[uid]">$myshowInfo[author]</a></span>
+												<span>{lang myshow_info_language}：{$myshowInfo[language]}</span>
+												<span>{lang myshow_info_viewnum}：{$myshowInfo[viewnum]}</span>
+												</p>
+												<p>{lang myshow_info_content}：{$myshowInfo[content]}</p>
+											</div>
+										</div>
+										<div id="gtab2" class="tab-con" style="display: none;" >
+											<!--{if $favorites}-->
+											<ul class="ml mls cl">
+
+												<!--{loop $favorites  $value}-->
+												<li>
+													<div class="avt">
+														<!--{avatar($value[uid],small)}-->
+														<p>$value[username]</p>  
+													</div>
+												</li>
+												<!--{/loop}-->                        
+											</ul>
+											<!--{/if}-->
+										</div>
+									</div>
+									<div class="G_Post_foot"></div>
+								</div>
+							</div>
+
+							<div class="o cl">
+								<a href="home.php?mod=spacecp&ac=favorite&type=myshow&id=$myshowInfo[myshowid]&spaceuid=$myshowInfo[uid]&handlekey=favoritebloghk_{$myshowInfo[myshowid]}" id="a_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" class="oshr ofav">{lang favorite}</a>
+								<a href="home.php?mod=spacecp&ac=share&type=myshow&id=$myshowInfo[myshowid]&handlekey=sharebloghk_{$myshowInfo[myshowid]}" id="a_share" onclick="showWindow(this.id, this.href, 'get', 0);" class="oshr">{lang share}</a>
+								{hook/space_blog_op_extra}
+								<!--{if $_G[uid] == $myshowInfo[uid] || ($_G['group']['radminid'] == 1 || $_G['member']['allowadmincp'])}-->
+								<a href="home.php?mod=spacecp&ac=myshow&op=edit&id=$myshowInfo[myshowid]">{lang edit}</a><span class="pipe">|</span>
+								<a style="cursor: hand;" id="blog_delete_$myshowInfo[myshowid]" onclick="firm()">{lang delete}</a><span class="pipe">|</span>
+								<!--{/if}-->
+								<!--{if checkperm('manageblog')}-->
+								IP: $myshowInfo[ip]<span class="pipe"></span>
+								<!--{/if}-->
+							</div>
+						</div>
+						<div id="click_div">
+							<!--{template home/space_click}-->
+						</div>
+						<div id="div_main_content" class="mtm mbm">
+							<h3 class="bbs pbn">
+								<!--{if !empty($replyList)}-->
+								<a href="#quickcommentform_{$id}" class="y xi2 xw0">{lang publish_comment}</a>
+								<!--{/if}-->
+								{lang comment} (<span id="comment_replynum">$myshowInfo[reply]</span> {lang blog_replay})
+							</h3>
+							<div id="comment">
+								<!--{if $cid}-->
+								<div class="i">
+									{lang current_blog_replay}<a href="home.php?mod=space&uid=$myshowInfo[uid]&do=blog&id=$myshowInfo[blogid]">{lang click_view_all}</a>
+								</div>
+								<!--{/if}-->
+								<div id="comment_ul" class="xld xlda">
+									<!--{loop $replyList $k $value}-->
+									<!--{template home/space_comment_li}-->
+									<!--{/loop}-->
+								</div>
+							</div>
+							<!--{if $multi}--><div class="pgs cl">$multi</div><!--{/if}-->
+						</div>
+						<form id="quickcommentform_{$id}" action="home.php?mod=spacecp&ac=comment" method="post" autocomplete="off" onsubmit="ajaxpost('quickcommentform_{$id}', 'return_qcblog_$id');doane(event);">
+							<p>
+							<span id="comment_face" title="{lang insert_emoticons}" onclick="showFace(this.id, 'comment_message');return false;" style="cursor: pointer;"><img src="{IMGDIR}/facelist.gif" alt="facelist" class="vm" /></span>
+							{hook/space_blog_face_extra}
+							<!--{if !empty($_G['setting']['magics']['doodle'])}-->
+							<a id="a_magic_doodle" href="home.php?mod=magic&mid=doodle&showid=comment_doodle&target=comment_message" onclick="showWindow(this.id, this.href, 'get', 0)"><img src="{STATICURL}image/magic/doodle.small.gif" alt="doodle" class="vm" />{$_G[setting][magics][doodle]}</a>
+							<!--{/if}-->
+							</p>
+							<div class="tedt mtn mbn">
+								<div class="area">
+									<textarea id="comment_message" onkeydown="ctrlEnter(event, 'commentsubmit_btn');" name="message" rows="3" class="pt"></textarea>
+								</div>
+							</div>
+							<p class="pns">
+						<!--{if $secqaacheck || $seccodecheck}-->
+						<div class="rgs">
+						<!--{block sectpl}--><label><em><sec>: </em><sec> *</label><label><em style="height:30px">&nbsp;</em><sec></label>					                        <!--{/block}-->
+						<!--{subtemplate common/seccheck}-->
+						</div>
+					    <!--{/if}-->
+							<input type="hidden" name="referer" value="home.php?mod=space&do=myshow&view=$_GET[view]&id=$id" />
+							<input type="hidden" name="id" value="$id" />
+							<input type="hidden" name="idtype" value="myshowid" />
+							<input type="hidden" name="handlekey" value="qcblog_{$id}" />
+							<input type="hidden" name="commentsubmit" value="true" />
+							<input type="hidden" name="quickcomment" value="true" />
+							<button {if !$guestpost}type="submit" {else}type="button" onclick="showWindow('login', 'member.php?mod=logging&action=login&guestmessage=yes')" {/if} name="commentsubmit_btn"value="true" id="commentsubmit_btn" class="pn"{if !$_G[uid]} onclick="showWindow(this.id, this.form.action);return false;"{/if}><strong>{lang comment}</strong></button>
+							<span id="return_qcblog_{$id}"></span>
+							</p>
+							<input type="hidden" name="formhash" value="{FORMHASH}" />
+						</form>									
+
+
+		</div>
+		<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+	</div>
+
+	<div class="appl">
+		<!--{subtemplate common/userabout}-->
+	</div>
+</div>
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<script type="text/javascript">
+function succeedhandle_qcblog_$id(url, msg, values) {
+	if(values['cid']) {
+		comment_add(values['cid']);
+	} else {
+		$('return_qcblog_{$id}').innerHTML = msg;
+	}
+}
+function firm(){
+	if(confirm("确定要删除吗？")){
+		location.href='home.php?mod=spacecp&ac=myshow&op=delete&id=$myshowInfo[myshowid]';
+	}
+}
+(function($){
+	fn_change = function(v) {
+		if(v==2){
+			$("#tab_myshow_info").removeClass("current");
+			$("#tab_myshow_favorite").removeClass("current");
+			$("#tab_myshow_favorite").addClass("current");
+
+			$("#gtab1").css("display","none");
+			$("#gtab2").css("display","block");
+		} else {
+			$("#tab_myshow_info").removeClass("current");
+			$("#tab_myshow_favorite").removeClass("current");
+			$("#tab_myshow_info").addClass("current");
+			
+			$("#gtab1").css("display","block");
+			$("#gtab2").css("display","none");
+		}
+	}
+	$("#tab_myshow_info").mouseover( function() { fn_change(1); }  );
+	$("#tab_myshow_favorite").mouseover( function() { fn_change(2); } );
+})(jQuery);
+
+function addFriendCall(){
+	var el = $('friendinput');
+	if(!el || el.value == "")	return;
+	var s = '<input type="checkbox" name="fusername[]" class="pc vm" value="'+el.value+'" id="'+el.value+'" checked="checked">';
+	s += ' <label for="'+el.value+'">'+el.value+'</label>';
+	s += '<br />';
+	$('friends').innerHTML += s;
+	el.value = '';
+}
+resizeImg('div_main_content','450');
+
+var elems = selector('dd[class~=magicflicker]');
+for(var i=0; i<elems.length; i++){
+magicColor(elems[i]);
+}
+</script>
+<!--{template common/footer}-->

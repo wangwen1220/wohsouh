@@ -1,0 +1,216 @@
+<div class="column">
+    <div class="bor-9fc">
+        <div class="mode-head">
+	    <span class="comment-count" style="float:right"><a href="{APP_URL}{url('comment/comment/index', 'contentid=' . $contentid)}" title="点击查看全部评论">已有<em class="comments">0</em>人参与</a></span>
+		<h2 class="cor-c00">网友评论</h2>
+        </div>
+        <div class="padd-20 ie6">
+            <!-- 注意： 这里只显示5条评论 	 -->
+            <dl class="mode-comment" id="commentWrapper">
+
+            </dl>
+            <div class="view-comment" style="display:none;"><a title="点击查看全部评论"  href="{APP_URL}{url('comment/comment/index', 'contentid=' . $contentid)}">查看全部评论</a></div>
+        </div>
+        <div class="gall-comment-wrap">
+            <div class="post-comment-area gall-comment-area f-l" style="padding-left: 20px; border-top: none;">
+                <form id="commentForm" action="{APP_URL}?app=comment&controller=comment&action=add" method="post">
+                    <input name="contentid" type="hidden" value="{$contentid}"/>
+                    <textarea name="content" class="textarea gall-textarea" style="width: 592px;" cols="58" rows="10"></textarea>
+                    <div class="user-writeinfo">
+                        <span class="f-r"><input type="submit" class="post-btn" name="" value="发表评论" /></span>
+                        <span class="f-l"><label>用户名： </label><b id="nickname"></b></span>
+                        <span id="act-user-logged" class="f-l mar-l-10 padd-3"><input type="checkbox" name="anonymous" value="1" title="选中后，你将以匿名方式发布留言，不会显示你的用户名" onclick="comment.anonymous(this);" checked="checked" /> <label>匿名发表</label> <a href="javascript:void(0);" onclick="comment.user.logout();return false;">切换用户</a></span>
+                        <span id="act-user-login" class="f-l mar-l-10 padd-3"><a href="">快速登录</a></span>
+                        <span style="display:none;" id="user-login">
+                            <input type="text" class="input-text bor-gray" name="username" id="loginUsername" value="" /> 
+            				 密码：<input type="password" class="input-text bor-gray" name="password" id="loginPassword" />
+                            <input type="submit" onclick="comment.user.login(); return false;" value="登录" /> 
+                            <a href="javascript:void(0)" onclick="comment.user.sanonymous();">返回</a>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <ol class="post-explain">
+                    <li><p>1.遵守中华人民共和国有关法律、  法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。</p></li>
+                    <li><p>2.本站拥有管理笔名和留言的一切权力。</p></li>
+                    <li><p>3.您的言论，本站有权在网站内转载或引用。</p></li>
+                    <li><p>4.评论仅供网友表达个人看法，不代表本站立场</p></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+<?php $commentSetting = setting('comment');?>
+(function($) {
+    $(function() {
+        var islogin = {$commentSetting['islogin']}+0;
+
+        comment.init({
+            contentid: contentid,
+
+            islogin: islogin,
+            login_url: "{APP_URL}{url('member/index/login')}",
+            username: "{$commentSetting['defaultname']}",
+            default_name: "{$commentSetting['defaultname']}",
+
+            comment_tpl: '<dt><span class="user-info">{location}网友 [{nickname}]： </span><span class="post-time">{date}</span></dt><dd><p>{content}</p><div class="hr-dotted hr-h10"></div></dd>',
+            comment_wrapper: '#commentWrapper',
+            comment_init_callback: function(json) {
+                if(json.total >0 ) {
+					$('.comments').html(json.total);
+					$('.view-comment').show();
+				}
+            }
+        });
+
+        //评论提交
+        $('#commentForm').submit(function() {
+            if ($('textarea[name=content]', '#commentForm').val() == '') {
+                alert('评论内容不能为空');
+                return false;
+            }
+            if (islogin == 1 && !$.cookie(COOKIE_PRE+'auth')) {
+                alert('请登录后再发表评论');
+                return false;
+            }
+            return true;
+        });
+
+        $('#act-user-login > a').click(function() {
+            comment.user.slogin();
+            return false;
+        });
+        $('#quickLogout').click(function() {
+            comment.user.logout();
+            return false;
+        });
+    });
+})(jQuery);
+
+
+var comment = {
+    _opt: {
+        contentid: 0,
+        
+        islogin: false,
+        login_url: '',
+        username: '',
+        default_name: '',
+
+        comment_tpl: '',
+        comment_wrapper: '',
+        comment_init_callback: undefined
+    },
+
+    init: function(options) {
+        $.extend(this._opt, options);
+
+        $("input[name='contentid']").val(this._opt.contentid);
+        this.getlist();
+        
+        this.user.init();
+    },
+
+    submit: function() {},
+
+    getlist: function() {
+        var o = this._opt;
+        if(!o.contentid) return ;
+        $.getJSON(APP_URL+'?app=comment&controller=comment&action=get&contentid='+o.contentid+'&jsoncallback=?', function(json){
+            if(json.total) {
+                for (var i=0,item;item=json.data[i++];) {
+                    var html = o.comment_tpl;
+                    for (var key in item) {
+                        html = html.replace(new RegExp('{'+key+'}',"gm"), item[key]);
+                    }
+                    $(o.comment_wrapper).append(html);
+                }
+            }
+            typeof o.comment_init_callback == 'function' && o.comment_init_callback(json);
+        });
+    },
+
+    anonymous: function(obj) {
+        if($(obj).attr('checked') == true) {
+            $('#nickname').addClass('cor-666');
+        } else {
+            $('#nickname').removeClass('cor-666');
+        }
+    },
+
+    user: {
+        init: function() {
+            var o = comment._opt;
+            if ($.cookie(COOKIE_PRE+'auth')) {
+                this.sloggedin();
+            } else {
+                if (o.islogin) {
+                    this.slogin();
+                } else {
+                    this.sanonymous();
+                }
+            }
+        },
+        sanonymous: function() {
+            var o = comment._opt;
+            
+            $('#nickname').html(o.default_name);
+            $('#nickname').show();
+            $('#user-login, #act-user-logged').hide();
+            $('#act-user-login').show();
+        },
+        slogin: function() {
+            $('#act-user-logged, #act-user-login').hide();
+            $('#user-login').show();
+            $('#nickname').hide();
+        },
+        sloggedin: function() {
+            var o = comment._opt;
+            o.username = $.cookie(COOKIE_PRE+'username');
+            if(o.username == null) o.username = o.default_name;
+            $('#nickname').html(o.username);
+            $('#act-user-logged').show();
+            $('#act-user-login, #user-login').hide();
+            $('#nickname').show();
+        },
+        logout: function() {
+            var o = comment._opt, that = this;
+            $.getJSON(APP_URL+'?app=member&controller=index&action=ajaxlogout&jsoncallback=?', function(json){
+                if(json.state) {
+                    if(o.islogin == 1) {
+                        that.slogin();
+                    } else {
+                        that.slogin();
+                    }
+                    comment._opt.username = '';
+                } else {
+                    alert('退出失败');
+                }
+            });
+        },
+        login: function() {
+            var username = $('#loginUsername').val();
+            var password = $('#loginPassword').val();
+            if ( username == '') {
+                alert('用户名不能为空');
+                return false;
+            }
+            if ( password == '') {
+                alert('密码不能为空');
+                return false;
+            }
+
+            $.getJSON(APP_URL+'?app=member&controller=index&action=ajaxlogin&username='+username+'&password='+password+'&jsoncallback=?', function(json){
+                if(json.state) {
+                    comment._opt.username = json.username;
+                    comment.user.sloggedin();
+                } else {
+                    alert(json.error);
+                }
+            });
+        }
+    }
+};
+</script>

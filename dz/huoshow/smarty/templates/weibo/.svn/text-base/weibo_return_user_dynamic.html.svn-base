@@ -1,0 +1,66 @@
+{section name=u loop=$user_msg}
+<div class="t_body" id="wb_item_{$user_msg[u].id}">
+	<a class="suavt" href="#"> <img height="32" border="0" width="32"
+		src="{$user_msg[u].head_img_url}" alt="{$user_msg[u].nicename}">
+	</a>
+	<p class="t_cont">
+		<strong><a href="#">{$user_msg[u].nicename}</a>:</strong> <span
+			class="t_msg">{$user_msg[u].msg} </span>
+	</p>
+	<!--图片是否存在-->
+	{if $user_msg[u].attachment_img_count}
+	<div class="imageshow">
+		<a class="miniImg artZoom" href="javascript:void(0)"><img
+			src="http://weib.com/Public/attachments/photo/20120224/s_1330047959.jpg"></a>
+		<!--<div>图片放大时的DIV</div>-->
+		<div class="artZoomBox" style="display: none;">
+			<a class="maxImgLink" href="javascript:void(0)"> <img
+				class="maxImg"
+				src="http://weib.com/Public/attachments/photo/20120224/1330047959.jpg">
+			</a>
+		</div>
+	</div>
+	{/if}
+	<div class="clear"></div>
+	<!--转发-->
+	{if $user_msg[u].msg_type ==3}
+	<div class="stwi_reply">
+		<p class="twice_con">
+			<a class="suavt" href="#"> <img height="32" border="0" width="32"
+				alt="時事辯論會"
+				src="http://img.t.ifeng.com/201005/24/22/32x32_aed8b162e14a.jpg">
+			</a> <a href="#">{$user_msg[u].route_msg.msginfo.0.nicename}</a>：
+			{$user_msg[u].route_msg.msginfo.0.msg}
+		</p>
+		{if $user_msg[u].route_msg.msginfo.0.attachment_img_count}
+		<p class="t_img zoom_in_image" imgname="04601338ff0c.jpg"
+			imgdir="/201202/12/15/" tid="24464957">
+			<img border="0"
+				src="http://img.t.ifeng.com/201202/12/15/128x160_04601338ff0c.jpg">
+		</p>
+		{/if} {$user_msg[u].route_msg.msginfo.0.append_time} <span
+			style="float: right;"> <a>转发({$user_msg[u].route_msg.msginfo.0.route_count})</a>
+			<a>评论({$user_msg[u].route_msg.msginfo.0.reply_count})</a>
+		</span>
+		<div class="clear"></div>
+	</div>
+	{/if}
+	<!--转发结束-->
+	<div class="t_from">
+		<span class="wbInfoDate font12"> <strong class="fr"> <a
+				class="jsadd"
+				href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_forwarding&msg_id={$user_msg[u].id}&reply_msg_id={$user_msg[u].route_parent_msg_id}"
+				onclick="{if $user.uid}showWindow('register', this.href)
+						{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+					转发{if $user_msg[u].route_count}({$user_msg[u].route_count}){/if}</a> <a
+				class="jsadd"
+				href="javascript:WEIBO.showItemForm('wb_item_{$user_msg[u].id}', '/huoshow/module/weibo/weibo_user_comments.php?msg_id={$user_msg[u].id}');"
+				onclick="{if $user.uid}
+						{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+					评论{if $user_msg[u].reply_count}({$user_msg[u].reply_count}){/if}</a>
+		</strong> {$user_msg[u].append_time}
+		</span>
+	</div>
+	<div class="wb-item-form">&nbsp;</div>
+</div>
+{/section}

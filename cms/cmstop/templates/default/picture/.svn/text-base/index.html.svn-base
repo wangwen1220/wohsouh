@@ -1,0 +1,77 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/index.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<script type="text/javascript">
+(function($){
+	$("#dhindex").html('图片');
+})(jQuery)
+</script>
+<div class="hr-h10"></div>
+
+<div class="column">
+	<div class="col-l-main w-720">
+		<div>
+			<div style="border-top: 3px solid #000;"></div>
+			<div class="mode-imgtitle" style="border-bottom: 1px solid #ddd">
+			<h2 class="mode-fastimg">图片速读</h2>
+			</div>
+		
+		</div>
+		
+		
+		<div class="mode-col-2 col-imgList">
+		<ul>
+		<!--{loop channel() $cid $c}-->
+		<?php
+		if ($c['disabled']==0){
+		?>
+			<li class="padd-lr-8 wrap-one bor-ccc">
+				<div class="mode-head-2">
+					<h2 class="cor-c00">{$c[name]}</h2>
+					<a class="more" href="{$c[url]}">更多</a>
+				</div>
+				<div class="mode-imgtxt">
+					<ul class="per-25">
+						<!--{content modelid="2" catid="$c[catid]" orderby="published desc" size="8"}-->
+						<li>
+							<a href="{$r[url]}"><img src="{thumb($r[thumb],160,120)}" width="160" height="120" alt="{$r[title]}" /></a>
+							<p class="fix-h36"><a href="{$r[url]}">{$r[title]}</a></p>
+						</li>
+						<!--{/content}-->
+					</ul>
+				</div>
+			</li>
+		<?php }?>
+		<!--{/loop}-->
+			
+		</ul>
+	</div>
+	</div>
+	<div class="col-r-extra w-230">
+		<div class="video-news bor-9fc">
+			
+		<div class="mode-imgtitle mode-imgtitbg">
+			<h2 class="mode-videotitle mode-pictitle">图片排行榜</h2>
+		</div>
+		<div class="mode-imgtxtsummary mode-imgtxtsummary-2 index-v-news">
+			<ul>
+			<!--{content modelid="2" published="30" orderby="pv desc" size="10"}-->
+				<li>
+					<div class="imgtxt">
+						<a href="{$r[url]}"><img src="{thumb($r[thumb], 70, 52)}" width="70" height="52" alt="{$r[title]}" /></a>
+					</div>
+					<h3><a href="{$r[url]}">{$r[title]}</a></h3>
+				</li>
+			<!--{/content}-->
+
+			</ul>
+		</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="hr-h10"></div>
+<!--{template 'huoshow_common/common_footer.html'}-->

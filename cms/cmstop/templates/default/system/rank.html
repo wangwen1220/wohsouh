@@ -1,0 +1,160 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/index.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/others.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<!--[if IE 6]> 
+<link href="{IMG_URL}templates/{TEMPLATE}/css/ie6.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<![endif]-->
+<script type="text/javascript">
+(function($){
+	$("#dhindex").html('排行榜');
+})(jQuery)
+</script>
+
+<div class="column" style="padding-top:10px;">
+	<!-- ***************  start 热图排行  ************************ -->
+	<div class="col-r-extra w-160">
+    	<div class="channels-title ">
+        	热图排行
+        </div>
+        <div class="bor-9fc ">
+          <ul class="hot-pic padd-b-12">
+          <!--{content catid="$c[childids]" modelid="2" published="1" orderby="pv desc" size="10"}-->
+            <li>
+                	<a href="{$r[url]}"><img src="{thumb($r[thumb],140,105)}" alt="" width="140" height="105" /></a>
+                    <p><a href="{$r[url]}">{$r[title]}</a></p>
+            </li>
+            <!--{/content}-->
+          </ul>
+      </div>
+  </div>
+  <!-- ***************  end 热图排行  ************************ -->
+<div class="col-l-main w-790 tags-list">
+      <!-- ******************* start 详细显示    *********************** -->
+    <div class="tags-back" style="border-top:1px solid #9FCCE9">
+        <div>
+        	<span class="first-letter f-l cor-06c">排行榜</span>
+        	<div class="cor-06c bold f-l mood-nav">
+			<!--{loop channel() $channelid $c}-->
+            		<?php
+			if ($c['disabled']==0){
+			?>
+			<a href="#c_{$c[catid]}">{$c[name]}</a>
+			<?php }?>
+			<!--{/loop}-->
+            </div>
+            <div class="clear"></div>
+        </div>
+		<!--{loop channel() $channelid $c}-->
+<?php
+if ($c['disabled']==0){
+?>
+        <div class="padd-lr-8 mar-t-20">
+        	<div style="height:1%">
+                <span class="f-l fs-14 cor-06c bold mar-l-3">{$c[name]}</span>
+                <a name="c_{$c[catid]}" href="javascript:window.scroll(0,0)" class="f-r mar-r-10"><img src="{IMG_URL}templates/{TEMPLATE}/images/back.gif" alt="" /></a>
+                <div class="clear"></div>
+            </div>
+            <div class="hr-dotted hr-h10"></div>
+            <div class="mar-t-5">
+           	  <div class="bor-9fc w-380 f-l">
+			<div class="mode-tabs padd-r-0">
+				<h2 class="cor-c00">点击榜</h2>
+				<ul class="fs-12 f-r" id="tab-title-{$c[catid]}d">
+					<li><a href="javascript:;" class="tabs-focus">24小时</a></li>
+					<li><a href="javascript:;">本周</a></li>
+					<li><a href="javascript:;">本月</a></li>
+				</ul>
+			</div>
+			<div class="padd-tb-8 fs-14 cor-06c" id="tab-cont-{$c[catid]}d">
+				<div class="mode-rank">
+			<ol>
+			<!--{content catid="$c[childids]" published="1" orderby="pv desc" size="10"}-->
+<li><em<!--{if $i<=3}--> class="front"<!--{/if}-->>{$i}</em><a href="{$r[url]}">{$r[title]}</a></li>
+			 <!--{/content}-->
+				</ol>
+				</div>
+			<div class="mode-rank" style="display: none;">
+			<ol>
+			 <!--{content catid="$c[childids]" published="7" orderby="pv desc" size="10"}-->
+<li><em<!--{if $i<=3}--> class="front"<!--{/if}-->>{$i}</em><a href="{$r[url]}">{$r[title]}</a></li>
+			 <!--{/content}-->
+
+				</ol>
+
+			</div>
+			<div class="mode-rank" style="display: none;">
+			<ol>
+			 <!--{content catid="$c[childids]" published="30" orderby="pv desc" size="10"}-->
+<li><em<!--{if $i<=3}--> class="front"<!--{/if}-->>{$i}</em><a href="{$r[url]}">{$r[title]}</a></li>
+			 <!--{/content}-->
+
+				</ol>
+
+			</div>
+			</div>
+		</div>
+        <div class="bor-9fc w-380 f-r">
+			<div class="mode-tabs padd-r-0">
+				<h2 class="cor-c00">评论榜</h2>
+				<ul class="fs-12 f-r" id="tab-title-{$c[catid]}p">
+					<li><a href="javascript:;" class="tabs-focus">24小时</a></li>
+					<li><a href="javascript:;">本周</a></li>
+					<li><a href="javascript:;">本月</a></li>
+				</ul>
+			</div>
+			<div class="padd-tb-8 fs-14 cor-06c" id="tab-cont-{$c[catid]}p">
+				<div class="mode-rank">
+			<ol>
+			<!--{content catid="$c[childids]" published="1" status="6" orderby="comments desc" size="10"}-->
+			
+<li><em<!--{if $i<=3}--> class="front"<!--{/if}-->>{$i}</em><a href="{$r[url]}">{$r[title]}</a></li>
+				<!--{/content}-->
+				</ol>
+				</div>
+			<div class="mode-rank" style="display: none;">
+			<ol>
+				<!--{content catid="$c[childids]" published="7" status="6" orderby="comments desc" size="10"}-->
+			
+<li><em<!--{if $i<=3}--> class="front"<!--{/if}-->>{$i}</em><a href="{$r[url]}">{$r[title]}</a></li>
+				<!--{/content}-->
+				</ol>
+
+			</div>
+			<div class="mode-rank" style="display: none;">
+			<ol>
+
+<!--{content catid="$c[childids]" published="30" status="6" orderby="comments desc" size="10"}-->
+			
+<li><em<!--{if $i<=3}--> class="front"<!--{/if}-->>{$i}</em><a href="{$r[url]}">{$r[title]}</a></li>
+				<!--{/content}-->
+				</ol>
+			</div>
+			</div>
+		</div>
+            </div>
+        </div>
+		<div class="clear"></div>
+		<?php }?>
+		<!--{/loop}-->
+     
+    </div>
+<!-- ******************* end 详细显示    *********************** -->
+  </div>
+</div>
+<div class="hr-h10"></div>
+<!--{template 'huoshow_common/common_footer.html'}-->
+<script type="text/javascript" src="{IMG_URL}templates/{TEMPLATE}/js/tabs.js"></script>
+<script type="text/javascript">
+<!--{loop channel() $channelid $c}-->
+<?php
+if ($c['disabled']==0){
+?>
+cmstopTabs({tabStyle:'tabs-focus',title: '#tab-title-{$c[catid]}d',cont: '#tab-cont-{$c[catid]}d'});
+cmstopTabs({tabStyle:'tabs-focus',title: '#tab-title-{$c[catid]}p',cont: '#tab-cont-{$c[catid]}p'});
+<?php }?>
+<!--{/loop}-->
+</script>
+</body>
+</html>

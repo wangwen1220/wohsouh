@@ -1,0 +1,36 @@
+<div class="itemtitle" style="padding-left:15px;">
+<ul class="tab1">
+	<li class="current"><a href="?action=huoshow&operation=addawards&match_id={$matchid}"><span>添加奖项</span></a></li>
+</ul>
+</div>
+<table border="0" class="tb tb2">
+	<tr class="header">
+		<th>ID</th>
+		<th>奖项名称</th>
+		<th>奖项值</th>
+		<th>操作</th>
+	</tr>
+	{section name=a loop=$awards_arr}
+	<tr class="hover">
+		<td>{$awards_arr[a].id}</td>
+		<td>{$awards_arr[a].awards_name}</td>
+		<td>{$awards_arr[a].awards_value}</td>
+		<td><a href="?action=huoshow&operation=editawards&id={$awards_arr[a].id}&matchid={$matchid}">修改</a> | <a id="del" onclick="delError('?action=huoshow&operation=editawards&tab=delawards&id={$awards_arr[a].id}&matchid={$matchid}');"  href="javascript:;">删除</a></td>
+	</tr>
+	{/section}
+	<tr>
+    	<td colspan="5">{$page_str}</td>
+  	</tr>
+</table>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定删除？注意：此操作不可恢复，请谨慎操作！")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+</script>
+{/literal}

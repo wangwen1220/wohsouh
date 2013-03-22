@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {if $title !=''}
+		<meta name="keywords" content="{$tags}" />
+	{else}
+		<meta name="keywords" content="{$keywords}" />
+	{/if}
+	<meta name="description" content="{$description}" />
+    <title>{if $title!=''}{$title}_<?php echo $pos[1]['name'].'_';?>
+	<?php echo $pos[0]['name']; ?>频道_{else}<?php
+    $seoname='';
+    foreach($pos as $k=>$v){
+		$seoname = $v['name'].'_'.$seoname;
+	}
+	echo $seoname;
+    ?>{/if}{$SYSTEM[sitename]}</title>
+    <link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="{WWW_URL}img/templates/huoshow02/css/game.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+    <script type="text/javascript" src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{IMG_URL}templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="{IMG_URL}js/config.js"></script>
+    <script type="text/javascript" src="{DX_URL}static2/js/huoshow_common.js"></script>
+	<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="{WWW_URL}img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+    <body class="body_bg">
+      <!--{template 'system/login_bar.html'}-->
+      <!--Navigator-->
+      <div class="nav_bg">
+        <div class="nav_body">
+          <a href="{WWW_URL}game/" title="火秀游戏首页" class="channel_logo">火秀游戏频道</a>
+          <div id="sub_channel">
+            <a href="{WWW_URL}game/webgame/"><img src="{IMG_URL}templates/huoshow02/images/game_nav_01.png" width="75" height="19"/></a>  
+            <a href="{WWW_URL}game/onlinegame/"><img src="{IMG_URL}templates/huoshow02/images/game_nav_02.png" width="75" height="20"/></a>  
+            <a href="{WWW_URL}game/mobile_game/"><img src="{IMG_URL}templates/huoshow02/images/game_nav_03.png"  width="77" height="20"/></a>  
+            <a href="{WWW_URL}game/pcgame/"><img src="{IMG_URL}templates/huoshow02/images/game_nav_04.png"  width="75" height="19"/></a>  
+            <a href="{WWW_URL}game/flashgame/"><img src="{IMG_URL}templates/huoshow02/images/game_nav_05.png" width="56" height="19"/></a>
+          </div>
+        </div>
+      </div>

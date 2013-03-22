@@ -1,0 +1,51 @@
+<!--{template 'huoshow_events/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End-->
+<link href="{WWW_URL}img/templates/huoshow02/css/common.css" rel="stylesheet" type="text/css" />
+<!--Main Body-->
+<!--{template 'huoshow_common/common_pic_content.html'}-->
+<!--{template 'huoshow_events/footer.html'}-->
+<!--#include virtual ="{ROOT}api/article.php?act=getContentInfo&id={$contentid}"--> 
+<script type="text/javascript">
+  (function($){
+   window.setCopy = function(content){    
+   if(navigator.userAgent.toLowerCase().indexOf('ie') > -1) {    
+   clipboardData.setData('Text',content);    
+   alert ("该地址已经复制到剪切板");    
+   } else {    
+   prompt("请复制网站地址:",content);    
+   }    
+   }
+   
+	
+
+   window.getComments = function(){
+     var commentTpl = '<li><span>{date}</span><a href="" class="Comments_text_lan">{location}网友 [{nickname}]：</a><br>{content}</li>';
+     //<li><span>今天 13:55</span><a href="" class="Comments_text_lan">Iana网友[匿名]：</a><br>哇塞！！！好养眼啊</li>
+     $.getJSON('{WWW_URL}app/?app=comment&controller=comment&action=get&contentid={$contentid}&jsoncallback=?', function(json){
+			if(json.total > 0) {
+				$('.comments').html(json.total);
+				if(json.total >0 ) $('.view-comment').show();
+				for (var i=0,item;item=json.data[i++];) {
+					var html = commentTpl;
+					for (var key in item) {
+						html = html.replace(new RegExp('{'+key+'}',"gm"), item[key]);
+					}
+					$("#latestComment").append(html);
+				}
+			}else{
+				 $("#latestComment").append('<li style="border-bottom:none; padding-bottom:0px;">暂无评论！</li>');
+			}
+         })
+   }
+
+
+  
+
+   getComments();
+
+
+  })(jQuery);
+  //window.location.href= "#picposition";
+
+</script>

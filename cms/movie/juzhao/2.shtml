@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+<meta name="description" content="火秀网为您提供海量影视剧海报剧照，经典的、最新的，无论您是要回味经典还是体味新鲜，我们都能为您提供。" />
+    <title>剧照_火秀影视_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/movie.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class="body_bg">
+    <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+    
+    <!--Navigator-->
+    <div class="nav_body">
+      <div class="nav_bg">
+        <h1 class="channel_logo"><a href="http://www.huoshow.com/movie/" title="火秀影视首页">火秀影视频道</a></h1>
+        <div id="sub_channel">
+          <ul>
+            <li><a id="ch_huayu" href="http://www.huoshow.com/movie/huayu/">华语</a></li>
+            <li><a id="ch_oumei" href="http://www.huoshow.com/movie/oumei/">欧美</a></li>
+            <li><a id="ch_rihan" href="http://www.huoshow.com/movie/rihan/">日韩</a></li>
+            <li><a id="ch_yingren" href="http://www.huoshow.com/movie/yingren/">影人</a></li>
+            <li><a id="ch_yingping" href="http://www.huoshow.com/movie/yingping/">影评</a></li>
+            <li><a id="ch_juzhao" href="http://www.huoshow.com/movie/juzhao/">剧照</a></li>
+            <li><a id="ch_pianhua" href="http://www.huoshow.com/movie/pianhua/">片花</a></li>
+         <!--<li><a id="ch_zhuanti" href="http://www.huoshow.com/movie/zhuanti/">专题</a></li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navigator End-->
+
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="pic_banner"><!--广告960*90-->
+    	               <p class="p_img"><img src="http://news.beta.huoshow.com/upload/2011/0423/1303525336808.jpg" border="0" width="960" height="90" /></p>            </div>
+    <div class="Subpage_pic">
+        <div class="Subpage_pic_01">
+            <div class="Subpage_pic_list">
+            	<div class="Subpage_pic_bt"><h2 class="bt1">剧照</h2></div>
+            	<ul >
+   	<li>
+   		<a title="《杨门女将》曝油画版众女将定妆照" target="_blank" href="http://www.huoshow.com/2011/0809/21185.shtml"><img alt="《杨门女将》曝油画版众女将定妆照" src="http://www.huoshow.com/upload/2011/0809/thumb_158_118_1312875849534.jpg" width="158" height="118">
+   		<span>《杨门女将》曝油画版众女将定妆照</span></a>
+   	</li>
+   	<li>
+   		<a title="《全球热恋》曝徐帆剧照 旗袍尽显高贵气质" target="_blank" href="http://www.huoshow.com/2011/0809/21182.shtml"><img alt="《全球热恋》曝徐帆剧照 旗袍尽显高贵气质" src="http://www.huoshow.com/upload/2011/0809/thumb_158_118_1312875305397.jpg" width="158" height="118">
+   		<span>《全球热恋》曝徐帆剧照 旗袍尽显高贵气质</span></a>
+   	</li>
+   	<li>
+   		<a title="《画壁》发邹兆龙剧照 变仙境怪叔叔享艳福" target="_blank" href="http://www.huoshow.com/2011/0809/21173.shtml"><img alt="《画壁》发邹兆龙剧照 变仙境怪叔叔享艳福" src="http://www.huoshow.com/upload/2011/0809/thumb_158_118_1312874676384.jpg" width="158" height="118">
+   		<span>《画壁》发邹兆龙剧照 变仙境怪叔叔享艳福</span></a>
+   	</li>
+   	<li>
+   		<a title="张柏芝《无价之宝》剧照 轮滑女侠挑战极限" target="_blank" href="http://www.huoshow.com/2011/0808/20954.shtml"><img alt="张柏芝《无价之宝》剧照 轮滑女侠挑战极限" src="http://www.huoshow.com/upload/2011/0808/thumb_158_118_1312777509141.jpg" width="158" height="118">
+   		<span>张柏芝《无价之宝》剧照 轮滑女侠挑战极限</span></a>
+   	</li>
+   	<li>
+   		<a title="《画壁》发布大尺度剧照 柳岩为角色乍泄春光" target="_blank" href="http://www.huoshow.com/2011/0808/20940.shtml"><img alt="《画壁》发布大尺度剧照 柳岩为角色乍泄春光" src="http://www.huoshow.com/upload/2011/0808/thumb_158_118_1312775409425.jpg" width="158" height="118">
+   		<span>《画壁》发布大尺度剧照 柳岩为角色乍泄春光</span></a>
+   	</li>
+   	<li>
+   		<a title="《画壁》曝光邓超孙俪片场甜蜜照" target="_blank" href="http://www.huoshow.com/2011/0805/20754.shtml"><img alt="《画壁》曝光邓超孙俪片场甜蜜照" src="http://www.huoshow.com/upload/2011/0805/thumb_158_118_1312534298432.jpg" width="158" height="118">
+   		<span>《画壁》曝光邓超孙俪片场甜蜜照</span></a>
+   	</li>
+   	<li>
+   		<a title="落幕再回首 《哈利波特》十年首映礼珍贵回忆" target="_blank" href="http://www.huoshow.com/2011/0805/20704.shtml"><img alt="落幕再回首 《哈利波特》十年首映礼珍贵回忆" src="http://www.huoshow.com/upload/2011/0805/thumb_158_118_1312526836216.jpg" width="158" height="118">
+   		<span>落幕再回首 《哈利波特》十年首映礼珍贵回忆</span></a>
+   	</li>
+   	<li>
+   		<a title="《哈7下》纽约首映 斯内普驾到赫敏电眼魅惑" target="_blank" href="http://www.huoshow.com/2011/0804/20569.shtml"><img alt="《哈7下》纽约首映 斯内普驾到赫敏电眼魅惑" src="http://www.huoshow.com/upload/2011/0804/thumb_158_118_1312447942868.jpg" width="158" height="118">
+   		<span>《哈7下》纽约首映 斯内普驾到赫敏电眼魅惑</span></a>
+   	</li>
+   	<li>
+   		<a title="《哈7下》概念图赏 设计师亲解场景设定" target="_blank" href="http://www.huoshow.com/2011/0804/20564.shtml"><img alt="《哈7下》概念图赏 设计师亲解场景设定" src="http://www.huoshow.com/upload/2011/0804/thumb_158_118_1312447033966.jpg" width="158" height="118">
+   		<span>《哈7下》概念图赏 设计师亲解场景设定</span></a>
+   	</li>
+   	<li>
+   		<a title="《哈7（下）》几大主角人物海报 哈利手握双魔杖" target="_blank" href="http://www.huoshow.com/2011/0804/20434.shtml"><img alt="《哈7（下）》几大主角人物海报 哈利手握双魔杖" src="http://www.huoshow.com/upload/2011/0804/thumb_158_118_1312424200429.jpg" width="158" height="118">
+   		<span>《哈7（下）》几大主角人物海报 哈利手握双魔杖</span></a>
+   	</li>
+   	<li>
+   		<a title="《哈7（下）》海量剧照出炉 巫师界最盛大战争" target="_blank" href="http://www.huoshow.com/2011/0804/20422.shtml"><img alt="《哈7（下）》海量剧照出炉 巫师界最盛大战争" src="http://www.huoshow.com/upload/2011/0804/thumb_158_118_1312423069912.jpg" width="158" height="118">
+   		<span>《哈7（下）》海量剧照出炉 巫师界最盛大战争</span></a>
+   	</li>
+   	<li>
+   		<a title="《竞雄女侠·秋瑾》发布新海报剧照" target="_blank" href="http://www.huoshow.com/2011/0803/20337.shtml"><img alt="《竞雄女侠·秋瑾》发布新海报剧照" src="http://www.huoshow.com/upload/2011/0803/thumb_158_118_1312356883497.jpg" width="158" height="118">
+   		<span>《竞雄女侠·秋瑾》发布新海报剧照</span></a>
+   	</li>
+   	<li>
+   		<a title="《画壁》曝邓超郑爽剧照 书生仙女上演纯爱" target="_blank" href="http://www.huoshow.com/2011/0803/20334.shtml"><img alt="《画壁》曝邓超郑爽剧照 书生仙女上演纯爱" src="http://www.huoshow.com/upload/2011/0803/thumb_158_118_1312356636847.jpg" width="158" height="118">
+   		<span>《画壁》曝邓超郑爽剧照 书生仙女上演纯爱</span></a>
+   	</li>
+   	<li>
+   		<a title="《窃听风云2》曝黄奕叶璇单人海报" target="_blank" href="http://www.huoshow.com/2011/0803/20329.shtml"><img alt="《窃听风云2》曝黄奕叶璇单人海报" src="http://www.huoshow.com/upload/2011/0803/thumb_158_118_1312356299141.jpg" width="158" height="118">
+   		<span>《窃听风云2》曝黄奕叶璇单人海报</span></a>
+   	</li>
+   	<li>
+   		<a title="《如意》再曝剧照 杨幂刘恺威狱中戏曝光" target="_blank" href="http://www.huoshow.com/2011/0729/19733.shtml"><img alt="《如意》再曝剧照 杨幂刘恺威狱中戏曝光" src="http://www.huoshow.com/upload/2011/0729/thumb_158_118_1311933436956.jpg" width="158" height="118">
+   		<span>《如意》再曝剧照 杨幂刘恺威狱中戏曝光</span></a>
+   	</li>
+   	<li>
+   		<a title="《竞雄女侠·秋瑾》发剧照 聚焦于秋瑾生平" target="_blank" href="http://www.huoshow.com/2011/0729/19590.shtml"><img alt="《竞雄女侠·秋瑾》发剧照 聚焦于秋瑾生平" src="http://www.huoshow.com/upload/2011/0729/thumb_158_118_1311911489424.jpg" width="158" height="118">
+   		<span>《竞雄女侠·秋瑾》发剧照 聚焦于秋瑾生平</span></a>
+   	</li>
+   	<li>
+   		<a title="电影版《蓝精灵》8月10日内地公映曝海报" target="_blank" href="http://www.huoshow.com/2011/0728/19472.shtml"><img alt="电影版《蓝精灵》8月10日内地公映曝海报" src="http://www.huoshow.com/upload/2011/0728/thumb_158_118_1311841197701.jpg" width="158" height="118">
+   		<span>电影版《蓝精灵》8月10日内地公映曝海报</span></a>
+   	</li>
+   	<li>
+   		<a title="《画壁》发造型照 孙俪闫妮郑爽群芳争艳" target="_blank" href="http://www.huoshow.com/2011/0728/19451.shtml"><img alt="《画壁》发造型照 孙俪闫妮郑爽群芳争艳" src="http://www.huoshow.com/upload/2011/0728/thumb_158_118_1311838988854.jpg" width="158" height="118">
+   		<span>《画壁》发造型照 孙俪闫妮郑爽群芳争艳</span></a>
+   	</li>
+   	<li>
+   		<a title="《热浪球爱战》近日上映 罗仲谦背周秀娜显恩爱" target="_blank" href="http://www.huoshow.com/2011/0728/19449.shtml"><img alt="《热浪球爱战》近日上映 罗仲谦背周秀娜显恩爱" src="http://www.huoshow.com/upload/2011/0728/thumb_158_118_1311838639373.jpg" width="158" height="118">
+   		<span>《热浪球爱战》近日上映 罗仲谦背周秀娜显恩爱</span></a>
+   	</li>
+   	<li>
+   		<a title="《白蛇传说》再曝剧照 李连杰遭美艳狐妖色诱" target="_blank" href="http://www.huoshow.com/2011/0728/19398.shtml"><img alt="《白蛇传说》再曝剧照 李连杰遭美艳狐妖色诱" src="http://www.huoshow.com/upload/2011/0728/thumb_158_118_1311835621764.jpg" width="158" height="118">
+   		<span>《白蛇传说》再曝剧照 李连杰遭美艳狐妖色诱</span></a>
+   	</li>
+   </ul>
+                <div class="clear"></div>
+                <div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/movie/juzhao/1.shtml">上一页</a></li><li><a href="http://www.huoshow.com/movie/juzhao/1.shtml">1</a></li><li><a href="http://www.huoshow.com/movie/juzhao/2.shtml" class="now">2</a></li><li><a href="http://www.huoshow.com/movie/juzhao/3.shtml">3</a></li><li><a href="http://www.huoshow.com/movie/juzhao/4.shtml">4</a></li><li><a href="http://www.huoshow.com/movie/juzhao/3.shtml">下一页</a></li></ul>
+</div>
+</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

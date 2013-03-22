@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="火秀,火秀网,娱乐资讯,在线K歌,在线秀舞,在线演播" />
+        <meta name="description" content="火秀网致力打造专业娱乐网，拥有娱乐资讯、在线K歌、在线秀舞、在线演播、原创及翻唱集中展示、个人博客、论坛等，是各类网络达人、粉丝与美女帅哥在线互动的网络平台！只要你勇于秀出自己，即可成为网络达人。想火就要秀出来，我火我秀，我秀我火，就来火秀网！" />
+        <meta name="author" content="火秀网" />
+        <meta name="Copyright" content="火秀网版权所有" />
+        <meta http-equiv="MSThemeCompatible" content="Yes" />
+        <title>
+            赛事-火秀网        </title>       
+        <link href="http://space.huoshow.com/data/cache/style_1_common.css" rel="stylesheet" type="text/css" />
+        <link href="http://space.huoshow.com/static2/common.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">var STYLEID = '1', STATICURL = 'http://www.huoshow.com/img/templates/huoshow_01/css/', IMGDIR = 'http://www.huoshow.com/img/templates/huoshow_01/image/common', VERHASH = 'mxq', charset = 'utf-8', discuz_uid = '0', cookiepre = 'w6GR_', cookiedomain = '', cookiepath = '/', attackevasive = '0', disallowfloat = 'newthread|reply', creditnotice = '1|金钱|,2|威望|,3|火秀币|';
+            var DXURL = 'http://space.huoshow.com/', CMSURL = 'http://www.huoshow.com/';
+        </script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+        <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+        <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+
+        <script type="text/javascript" src="http://space.huoshow.com/static/js/common.js"></script>
+        <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+        
+        <script type="text/javascript">
+            (function($){
+             $(document).ready(function() {
+                 var urls = "http://space.huoshow.com/ajaxhead.php?jsoncallback=?";                    	
+ $.getJSON(urls,function( data ) {
+ if(data==''){
+ $('#um').hide();
+ $('#loginform').show();
+ $('#qmenu_menu').html('<p class="reg_tip"><a class="xi2" href="http://space.huoshow.com//member.php?mod=register">注册新用户，开通自己的个人中心</a></p>');
+ }else{
+ var uid = data.uid;
+ var username = data.username;
+ var len = data.money.length;      
+
+ $.each(data.money, function(i,item){
+ if(i==(len-1)){
+ $("#user_money").append('火币: '+data.huoshowbi+' , 秀币: '+data.huobi+' , ');
+ var dots = ''
+ }else{
+ var dots = ' , ';
+ }				
+ $("#user_money").append(item.title+': <a href="http://space.huoshow.com/home.php?mod=spacecp&ac=usergroup">'+item.value+'</a>'+dots);                      	         
+ });
+
+ $('#user_avatar').html([
+ '<a id="user_avatar_a" c="34" href="http://space.huoshow.com/home.php?mod=space&uid=', uid,
+ '" mid="ojCAxdbYJGikHPDKmXYKIYDKIaXLDLOI">',
+ '<img id="user_avatar_img" src="http://space.huoshow.com/uc_server/avatar.php?uid=', uid, '&size=small"></a>'
+ ].join(''));
+
+ $("#a_username").attr({'href':'http://space.huoshow.com//home.php?mod=space&uid='+uid});
+ $("#a_username").html(username);
+ if(data.newpm!='0'){
+ $("#pm_ntc").html('短消息('+data.newpm+')');
+ }else{
+ $("#pm_ntc").html('短消息');
+ }
+ if(data.notice!='0'){
+ $("#myprompt_check").html('（'+data.notice+'）');
+ $("#myprompt").addClass('new');
+ }
+
+ if(data.portalcp!='1'){
+ $("#is_portalcp").hide();
+ $("#is_cp_l").hide();
+ }
+ if(data.admin!='1'){
+ $("#is_admin").hide();
+ $("#is_ad_l").hide();
+ }
+ $("#a_logout").attr({'href':'http://space.huoshow.com/member.php?mod=logging&action=logout&formhash='+data.formhash});
+ $('#loginform').hide();
+ $('#um').show();
+
+ }
+ });});})(jQuery);
+</script>
+<script src="http://space.huoshow.com/static2/js/jquery.tools.min.js" type="text/javascript"></script> 
+
+            </head>
+            <body id="nv_portal" class="pg_index" onkeydown="if(event.keyCode==27) return false;">
+                <div id="append_parent"></div><div id="ajaxwaitid"></div>
+
+                <ul id="usersetup_menu" class="p_pop" style="display:none;">
+                    <li><a href="http://space.huoshow.com/home.php?mod=spacecp&amp;ac=avatar">修改头像</a></li>
+                    <li><a href="http://space.huoshow.com/home.php?mod=spacecp&amp;ac=profile">个人资料</a></li>
+                    <li><a href="http://space.huoshow.com/home.php?mod=spacecp&amp;ac=credit">积分</a></li>
+                    <li><a href="http://space.huoshow.com/home.php?mod=spacecp&amp;ac=usergroup">用户组</a></li>
+                    <li><a href="http://space.huoshow.com/home.php?mod=spacecp&amp;ac=privacy">隐私筛选</a></li>
+                    <li><a href="http://space.huoshow.com/home.php?mod=spacecp&amp;ac=profile&amp;op=password">密码安全</a></li>
+                </ul>
+
+                <div class="wrap">
+                    <div id="hd">
+                        <div class="wp">
+                            <div class="hdc cl">
+                                <h2><a href="/"><img src="http://space.huoshow.com/static2/images/logo.png"></a></h2>
+                                    <div id="um" style="display:none;bottom:0px;">
+                                    <div class="avt y" id="user_avatar"></div>
+    <p>
+    <strong><a title="访问我的空间" target="_blank" class="vwmy" href="" id="a_username" ></a></strong> 
+    <span class="pipe">|</span><span onmouseover="showMenu(this.id);" class="showmenu" id="usersetup"><a href="http://space.huoshow.com/home.php?mod=spacecp">设置</a></span><span class="pipe">|</span><a  id="myprompt" href="http://space.huoshow.com/home.php?mod=space&do=notice">提醒<span id="myprompt_check"></span></a><span class="pipe">|</span><a  id="pm_ntc" href="http://space.huoshow.com/home.php?mod=space&amp;do=pm"></a><span class="pipe">|</span><a href="http://space.huoshow.com/home.php?mod=space&do=friend">好友</a><span class="pipe">|</span><a href="http://space.huoshow.com/home.php?mod=task&amp;item=new">任务</a><span id="is_cp_l" class="pipe">|</span><a href="http://space.huoshow.com/portal.php?mod=portalcp" id="is_portalcp">门户管理</a><span class="pipe" id="is_ad_l">|</span><a target="_blank" href="http://space.huoshow.com/admin.php" id="is_admin">管理中心</a><span class="pipe">|</span><a href="" id="a_logout">退出</a>
+    </p>
+                                    <p id="user_money"></p>
+                                    </div>
+
+    <form method="post" name="login" id="loginform" class="cl" style="display:none;" action="http://space.huoshow.com/member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;loginhash=LKXLU">
+                                    
+                                        <div class="fastlg cl">
+                                            <span style="display: none;" id="return_ls"></span>
+                                            <div class="y">
+                                                <p><a class="xi2"  href="http://space.huoshow.com/member.php?mod=register">注册</a></p>
+                                                <p><a class="xi2" href="http://space.huoshow.com/member.php?mod=logging&action=login&viewlostpw">找回密码</a></p>
+                                            </div>
+                                            <div class="fastlg_fm y pns">
+                                                <p>
+                                                <span class="ftid">
+                                                    <select tabindex="900" width="45" id="ls_fastloginfield" name="fastloginfield">
+                                                        <option value="username">用户名</option> 
+                                                        <option value="uid">火秀号</option>
+                                                        <option value="email">Email</option>    
+                                                                                                           
+                                                    </select>
+                                                </span>
+
+
+                                                <script type="text/javascript">simulateSelect('ls_fastloginfield')</script>
+                                                <input type="text" tabindex="901" class="px vm"  id="ls_username" name="username">
+                                                &nbsp;<input type="checkbox" tabindex="903" value="2592000" class="pc" id="ls_cookietime" name="cookietime"> <label for="ls_cookietime">记住密码</label>
+                                                </p>
+                                                <p>
+                                                <label class="z psw_w" for="ls_password">密码</label> <input type="password"  tabindex="902"  class="px vm" id="ls_password" name="password">&nbsp;<button class="pn vm" type="submit" ><em>登录</em></button>
+                                                </p>
+                                                <input type="hidden" value="yes" name="quickforward">
+                                                <input type="hidden" value="ls" name="handlekey">
+                                            </div>
+                                        </div>
+                                        <div style="display: none;" id="ls_more">
+                                            <h3>
+                                                <em class="y"><a href="javascript:;" class="flbc" onclick="display('ls_more')" title="关闭">关闭</a></em>
+                                                安全验证
+                                            </h3>
+                                            <span class="z"><script type="text/javascript">var ls_sechash = '';</script></span>
+                                            <div class="ftid mtm mbn">
+                                                <select change="if($('ls_questionid').value &gt; 0) {$('ls_answer').style.display='';$('ls_answer').focus();} else {$('ls_answer').style.display='none';}" tabindex="905" name="questionid" width="131" id="ls_questionid">
+                                                    <option value="0">安全提问(未设置请忽略)</option>
+                                                    <option value="1">母亲的名字</option>
+                                                    <option value="2">爷爷的名字</option>
+                                                    <option value="3">父亲出生的城市</option>
+                                                    <option value="4">你其中一位老师的名字</option>
+                                                    <option value="5">你个人计算机的型号</option>
+                                                    <option value="6">你最喜欢的餐馆名称</option>
+                                                    <option value="7">驾驶执照最后四位数字</option>
+                                                </select>
+                                            </div>
+
+                                            <script type="text/javascript">simulateSelect('ls_questionid')</script>
+                                        </div>
+                                    </form>
+
+
+
+
+
+                            </div>
+
+                            <div style="display: none;" class="p_pop" id="qmenu_menu">
+                                <ul>
+                                    <li><a style="background-image: url(&quot;http://space.huoshow.com//static/image/feed/blog.gif&quot;) ! important;" href="http://space.huoshow.com//home.php?mod=space&amp;do=blog&amp;view=me">日志</a></li>
+                                    <li><a style="background-image: url(&quot;http://space.huoshow.com//static/image/feed/myshow.png&quot;) ! important;" href="http://space.huoshow.com//home.php?mod=space&amp;do=myshow&amp;view=me">MY秀</a></li>
+                                    <li><a style="background-image: url(&quot;http://space.huoshow.com//static/image/feed/album.gif&quot;) ! important;" href="http://space.huoshow.com//home.php?mod=space&amp;do=album&amp;view=me">相册</a></li>
+                                    <li><a style="background-image: url(&quot;http://space.huoshow.com//static/image/feed/thread.gif&quot;) ! important;" href="http://space.huoshow.com//home.php?mod=space&amp;do=thread&amp;view=me">帖子</a></li>
+                                    <li><a style="background-image: url(&quot;http://space.huoshow.com//static/image/task/giftss.gif&quot;) ! important;" href="http://space.huoshow.com//home.php?mod=space&amp;do=gifts">礼物</a></li>
+                                    <li><a style="background-image: url(&quot;http://space.huoshow.com//static/image/feed/bi.png&quot;) ! important;" href="http://space.huoshow.com//home.php?mod=space&amp;do=pay&amp;view=me">充值</a></li>
+                                </ul>
+                            </div>
+
+                            <div id="nv">
+                                <a onmouseover="showMenu(this.id)" id="qmenu" href="http://space.huoshow.com//home.php">我的中心</a>
+                                <ul>
+                                   
+<li id="mn_shouye"><a title="Live" hidefocus="true" href="http://www.huoshow.com/">首页<span>Live</span></a></li>
+<li id="mn_xinwen"><a title="Live" hidefocus="true" href="http://www.huoshow.com/news">新闻<span>Live</span></a></li>
+<li id="mn_Nc7f2"><a title="Live" hidefocus="true" href="http://space.huoshow.com/show.php">直播<span>Live</span></a></li>
+                                    <li id="mn_myshow"><a title="Live" hidefocus="true" href="http://www.huoshow.com/myshow">MY秀<span>Live</span></a></li>                                    
+                                    <li id="mn_group"><a title="Space" hidefocus="true" href="http://space.huoshow.com/group.php">群组<span>Space</span></a></li>
+                                    <li id="mn_home"><a title="Group" hidefocus="true" href="http://space.huoshow.com/home.php">空间<span>Group</span></a></li>
+                                    <li id="mn_forum"><a title="BBS" hidefocus="true" href="http://space.huoshow.com/forum.php">论坛<span>BBS</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="cl" id="mu">
+                        </div></div>
+                    </div>
+
+<div id="wp" class="wp">
+
+<div class="bm cl" id="pt"><div class="y" id="sc">
+        <form target="_blank" action="http://space.huoshow.com//search.php?searchsubmit=yes" onsubmit="searchFocus($('srchtxt'))" autocomplete="off" method="get" id="scform">
+            <input type="hidden" value="5036abbd" name="formhash">
+            <input type="hidden" value="title" name="srchtype">
+            <input type="hidden" value="0" name="srhfid">
+            <table cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                        <td><a onclick="showMenu(this.id);return false;" class="showmenu" id="sctype" target="_blank" href="#">搜索文章</a></td>
+                        <td><input type="text" onblur="searchBlur(this);" onfocus="searchFocus(this);" autocomplete="off" value="请输入搜索内容" class="px z" id="srchtxt" name="srchtxt"></td>
+                        <td><button class="xw1" value="true" type="submit" name="searchsubmit" id="search_submit">搜索</button></td>
+                    </tr>
+            </tbody></table>
+            <div class="p_pop cl" id="sctype_menu" style="display:none;">
+                <ul>
+                    <li>
+                    <a>
+                        <input type="radio" value="portal" checked="checked" name="mod" class="pr" id="mod_article"><label title="搜索文章" for="mod_article" class="">文章</label>
+                    </a>
+                    </li>
+                    <li>
+                    <a>
+                        <input type="radio" value="forum" name="mod" class="pr" id="mod_thread"><label title="搜索论坛" for="mod_thread" class="">论坛</label>
+                    </a>
+                    </li>
+                    <li>
+                    <a>
+                        <input type="radio" value="forum" name="mod" class="pr" id="mod_audio"><label title="搜索音频" for="mod_thread" class="">音频</label>
+                    </a>
+                    </li>
+                    <li>
+                    <a>
+                        <input type="radio" value="forum" name="mod" class="pr" id="mod_video"><label title="搜索视频" for="mod_thread" class="">视频</label>
+                    </a>
+                    </li>
+                    <a>
+                        <input type="radio" value="blog" name="mod" class="pr" id="mod_blog"><label title="搜索日志" for="mod_blog">日志</label>
+                    </a>
+                    </li>
+                    <li>
+                    <a>
+                        <input type="radio" value="album" name="mod" class="pr" id="mod_album"><label title="搜索相册" for="mod_album">相册</label>
+                    </a>
+                    </li>
+                    <li>
+                    <a>
+                        <input type="radio" value="group" name="mod" class="pr" id="mod_group"><label title="搜索群组" for="mod_group">群组</label>
+                    </a>
+                    </li>
+                    <li>
+                    <a>
+                        <input type="radio" value="user" name="mod" class="pr" id="mod_user"><label title="搜索用户" for="mod_user">用户</label>
+                    </a>
+                    </li>
+                </ul>
+                    </div>
+                    <!--for cms-->
+                    <input type="hidden" name="app" value="search" />
+                    <input type="hidden" name="controller" value="index" />
+                    <input type="hidden" name="type" value="all" />
+                    <input type="hidden" name="wd" id="wd" value="" />
+                </form>
+        
+    </div>
+    <div class="z">
+       
+        
+        <a title="首页" class="nvhm" href="http://www.huoshow.com/">Discuz! Board</a></a> 		
+  <em>?</em><a href="http://www.huoshow.com/news/index.shtml">新闻</a>
+  <em>?</em><a href="http://www.huoshow.com/news/saishi/index.shtml">赛事</a>
+     </div>
+</div>
+                    
+
+<link href="http://www.huoshow.com/img/templates/default/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="http://www.huoshow.com/img/templates/default/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+
+
+
+
+<div id="ct" class="wp cl">
+    <div class="article_left" style="line-height:25px;border-right:solid 0px;">
+
+<!-- *******************  start 列表   *********************** -->
+<div class="list_list">			
+   <ul >
+                  <li><a href="http://www.huoshow.com/2010/1102/3199.shtml" target="_blank" style="color:;font-size:14px;">飞轮海新专辑签唱 为selina唱生日歌祝福</a><span class="date">11月2日 9:34</span></li>                <li><a href="http://www.huoshow.com/2010/1102/3198.shtml" target="_blank" style="color:;font-size:14px;">《非诚勿扰2》宣传在即 舒淇要放假罢工</a><span class="date">11月2日 9:25</span></li>                <li><a href="http://www.huoshow.com/2010/1102/3197.shtml" target="_blank" style="color:;font-size:14px;">“春天”剧组暂时解散 病房selina庆生</a><span class="date">11月2日 9:13</span></li>                <li><a href="http://www.huoshow.com/2010/1102/3196.shtml" target="_blank" style="color:;font-size:14px;">蔡依林 对结婚没有冲动 为锦荣“求饶”</a><span class="date">11月2日 9:02</span></li>                <li><a href="http://www.huoshow.com/2010/1102/3195.shtml" target="_blank" style="color:;font-size:14px;">张惠妹大赞大S汪小菲般配 力挺同志游行</a><span class="date">11月2日 8:54</span></li>   <li class="hr-h10" style="list-style: none;"></li>              <li><a href="http://www.huoshow.com/2010/1101/3194.shtml" target="_blank" style="color:;font-size:14px;">万圣节狂欢夜 希尔顿比基尼扮印第安辣妹</a><span class="date">11月1日 17:18</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3193.shtml" target="_blank" style="color:;font-size:14px;">玛利亚·凯莉怀孕 丈夫“逼”穿平底鞋</a><span class="date">11月1日 17:11</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3192.shtml" target="_blank" style="color:;font-size:14px;">唐宁教堂低调完婚   哭着进行整个仪式</a><span class="date">11月1日 17:06</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3191.shtml" target="_blank" style="color:;font-size:14px;">爆张雨绮搭上刘涛老公王珂 京郊共筑爱巢</a><span class="date">11月1日 16:49</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3190.shtml" target="_blank" style="color:;font-size:14px;">华谊明星持股状况曝光 黄晓明身家猛增坐拥亿元</a><span class="date">11月1日 16:45</span></li>   <li class="hr-h10" style="list-style: none;"></li>              <li><a href="http://www.huoshow.com/2010/1101/3189.shtml" target="_blank" style="color:;font-size:14px;">“婚纱照”遭网站擅用  范冰冰法律维权成功</a><span class="date">11月1日 16:28</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3188.shtml" target="_blank" style="color:;font-size:14px;">秦海璐“大赤包”造型夸张 表演受宝岛观众肯定</a><span class="date">11月1日 16:20</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3187.shtml" target="_blank" style="color:;font-size:14px;">郭书瑶谈出专辑     不打算再走性感路线</a><span class="date">11月1日 16:07</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3186.shtml" target="_blank" style="color:;font-size:14px;">邱淑贞恢复辣妹身材   驾豪车全家聚餐</a><span class="date">11月1日 15:58</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3176.shtml" target="_blank" style="color:;font-size:14px;">罗志祥称与杨丞琳是“好姐妹”   否认拍拖</a><span class="date">11月1日 15:53</span></li>   <li class="hr-h10" style="list-style: none;"></li>              <li><a href="http://www.huoshow.com/2010/1101/3185.shtml" target="_blank" style="color:;font-size:14px;">“中国达人”闪耀世博 世博会闭幕式“草根”明星闪耀</a><span class="date">11月1日 13:47</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3184.shtml" target="_blank" style="color:;font-size:14px;">“中国达人秀”研讨会 “中国达人”明年赴欧洲巡演</a><span class="date">11月1日 11:47</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3183.shtml" target="_blank" style="color:;font-size:14px;">蔡琴将着“梦露装”性感 亮相上海个唱</a><span class="date">11月1日 11:37</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3182.shtml" target="_blank" style="color:;font-size:14px;">中华小姐南昌体验自然美 展示和谐自然人文美</a><span class="date">11月1日 11:36</span></li>                <li><a href="http://www.huoshow.com/2010/1101/3181.shtml" target="_blank" style="color:;font-size:14px;">新加坡金曲奖揭晓 S.H.E斩获5项大奖成大赢家</a><span class="date">11月1日 11:30</span></li>   <li class="hr-h10" style="list-style: none;"></li>   </ul>
+</div>
+<!-- *******************  end 列表   *********************** -->
+<!-- *******************  start 分页   *********************** -->
+<div class="page">
+<ul >
+  				  <li><a href="http://www.huoshow.com/news/saishi/21.shtml">上一页</a></li><li><a href="http://www.huoshow.com/news/saishi/1.shtml">1...</a></li><li><a href="http://www.huoshow.com/news/saishi/20.shtml">20</a></li><li><a href="http://www.huoshow.com/news/saishi/21.shtml">21</a></li><li><a href="http://www.huoshow.com/news/saishi/22.shtml" class="now">22</a></li><li><a href="http://www.huoshow.com/news/saishi/23.shtml">23</a></li><li><a href="http://www.huoshow.com/news/saishi/24.shtml">24</a></li><li><a href="http://www.huoshow.com/news/saishi/181.shtml">...181</a></li><li><a href="http://www.huoshow.com/news/saishi/23.shtml">下一页</a></li> 
+</ul>				
+</div>
+<!-- *******************  end 列表   *********************** -->
+
+</div>
+<div class="article_right">
+<!-- start 热门评论 -->
+<div style="border:solid 1px #eeeeee;">
+<div class="mode-tabs padd-r-0" style="background-position: left -0px;width:315px;">
+<h2 class="cor-c00">新闻排行</h2>
+<ul id="tab-title-4" class="fs-12 f-r">
+<li><a class="tabs-focus" href="#rank_day">日</a></li>
+<li><a href="#rank_week">周</a></li>
+<li><a href="#rank_month">月</a></li>
+</ul>
+</div>
+<div id="tab-cont-4" class="padd-tb-8">
+<div class="hot-subject-wrap" id="rank_day">
+<ul>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28681.shtml">显卡杀手！《绝境重启》获IGN 7.5分</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28645.shtml">快女冠军夜苏醒魏晨助阵 张杰忙婚礼而缺席</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28643.shtml">影后叶德娴情路坎坷 婚姻触礁又被传当小三</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28639.shtml">王宝强上北影学摄影  经纪人称有想法但没上</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28637.shtml">音乐新主播1067全国主持人选拔大赛启动</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28635.shtml">李念首度谈婚姻：没嫁豪门 不知道老公身价</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28631.shtml">网友曝央视招聘索人体照 央视:邮箱或被盗用</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28625.shtml">火秀魅力之星2011年9月14日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28619.shtml">昆凌默认是周杰伦女友 周董或为其操刀专辑</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>0</span>
+<p><a href="http://www.huoshow.com/2011/0915/28615.shtml">付梦妮陆翊首开歌友会 伍洲彤曝决赛将改赛制</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+</ul>
+</div>
+<div class="hot-subject-wrap" style="display: none;" id="rank_week">
+<ul>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0909/27113.shtml">火秀魅力之星2011年9月8日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0909/27331.shtml">欢度中秋，火秀有礼！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>4</span>
+<p><a href="http://www.huoshow.com/2011/0911/27607.shtml">火秀魅力之星2011年9月10日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>3</span>
+<p><a href="http://www.huoshow.com/2011/0912/27619.shtml">火秀魅力之星2011年9月11日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>2</span>
+<p><a href="http://www.huoshow.com/2011/0913/27697.shtml">火秀魅力之星9月12日中秋前三甲获奖名单</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>2</span>
+<p><a href="http://www.huoshow.com/2011/0913/27711.shtml">2011年9月第二周（5-11日）日冠军名单</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>2</span>
+<p><a href="http://www.huoshow.com/2011/0909/27325.shtml">火秀魅力之星增设日冠军公告</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>1</span>
+<p><a href="http://www.huoshow.com/2011/0910/27595.shtml">火秀魅力之星2011年9月9日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>1</span>
+<p><a href="http://www.huoshow.com/2011/0909/27363.shtml">“快女快快抢”活动详情</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>1</span>
+<p><a href="http://www.huoshow.com/2011/0909/27473.shtml">《美国队长》9日无彩蛋上映 观众大呼失望</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+</ul>
+</div>
+<div class="hot-subject-wrap" style="display: none;" id="rank_month">
+<ul>
+<li>
+<span>6</span>
+<p><a href="http://www.huoshow.com/2011/0902/24913.shtml">开学季爱清纯 带你看游戏宅男最爱娇媚妹子</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0825/23412.shtml">九月火秀魅力之星大赛 炫彩热秀星光闪耀</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0829/23843.shtml">第28届MTV大奖揭晓 凯蒂·佩里夺三项称霸</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0903/25375.shtml">与十大“AV女优”有“染”的华人男星大曝光</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0909/27113.shtml">火秀魅力之星2011年9月8日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0909/27331.shtml">欢度中秋，火秀有礼！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0907/26311.shtml">第61届世界小姐总决赛 性感比基尼走秀</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>5</span>
+<p><a href="http://www.huoshow.com/2011/0901/24807.shtml">2011快乐女声谁会夺冠？</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>4</span>
+<p><a href="http://www.huoshow.com/2011/0901/24421.shtml">火秀网2011年8月度魅力之星大赛获奖名单揭晓</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+<li>
+<span>4</span>
+<p><a href="http://www.huoshow.com/2011/0911/27607.shtml">火秀魅力之星2011年9月10日日冠军产生！</a></p>
+<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- end 热门评论 -->
+<div class="hr-h10"></div>
+</div>
+
+</div>
+
+
+<!-- *************  end content************* -->
+<!-- 版权部份 -->
+</div>
+
+<div class="footer">
+    <div class="footer_left">
+        <div class="footer_middle">
+            <div class="footer_logo">HUOSHOW.COM</div>
+            <div class="footer_copy">
+                <a href="#">关于火秀</a>&nbsp;|&nbsp;
+                <a href="#">商业合作</a>&nbsp;|&nbsp;
+                <a href="#">联系我们</a>&nbsp;|&nbsp;
+                <a href="#">加入我们</a>&nbsp;|&nbsp;
+                <a href="#">服务协议</a>&nbsp;|&nbsp;
+                <a href="#">网站帮助</a><br />&copy;2008-2010 (HUOSHOW.COM), All rights reserved. <span>粤ICP备06087881号</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="frt"></div>
+    </div>
+
+<script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19568132-1']);
+            _gaq.push(['_setDomainName', '.huoshow.com']);
+
+            _gaq.push(['_setAccount', 'UA-19568132-1']);
+            _gaq.push(['_addOrganic', 'baidu', 'word']);
+            _gaq.push(['_addOrganic', 'soso', 'w']);
+            _gaq.push(['_addOrganic', '3721', 'name']);
+            _gaq.push(['_addOrganic', 'yodao', 'q']);
+            _gaq.push(['_addOrganic', 'vnet', 'kw']);
+            _gaq.push(['_addOrganic', 'sogou', 'query']);
+            _gaq.push(['_addIgnoredOrganic', '火秀']);
+            _gaq.push(['_addIgnoredOrganic', '火秀网']);
+            _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+            _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+            _gaq.push(['_setDomainName', '.huoshow.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+         </script>
+         <span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/default/js/tabs.js"></script>

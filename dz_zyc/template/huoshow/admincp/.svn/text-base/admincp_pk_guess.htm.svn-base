@@ -1,0 +1,47 @@
+<div class="itemtitle"><h3>PK管理</h3>
+<ul class="tab1">
+<li><a href="admin.php?action=pk&op=team"><span>队伍管理</span></a></li>
+<li><a href="admin.php?action=pk&op=member"><span>成员管理</span></a></li>
+<li class="current"><a href="admin.php?action=pk&op=guess"><span>竞猜管理</span></a></li>
+</ul></div>
+<div>
+	<form name="cpform" id="cpform" autocomplete="off" action="admin.php?action=pk&op=team" method="POST" enctype="multipart/form-data">
+	<table class="tb tb2 ">
+		<tr>
+			<td><a href="admin.php?action=pk&op=addguess">创建竞猜</a></td>
+		</tr>
+	</table>
+	</form>
+</div>
+<br />
+<div>
+<table class="tb tb2 ">
+	<tr class="partition">
+		<td class="td27">id</td>
+		<td class="td27">时间段</td>
+		<td class="td27">选项</td>
+		<td class="td27">正确选项</td>
+		<td class="td27">需要火币</td>
+		<td class="td27">奖励火币</td>
+		<td class="td27">是否结束</td>
+		<td class="td27">奖励是否发放</td>
+		<td class="td27">操作</td>
+	</tr>
+	<!--{if $list==''}--><tr><td colspan="5">暂无竞猜</td></tr><!--{/if}-->
+	<!--{loop $list $value}-->
+	<tr>
+		<td>{$value['guessid']}</td>
+		<td>{$value['during_str']}</td>
+		<td>{$value['options_str']}</td>
+		<td>{$value['rightoption_str']}</td>
+		<td>{$value['needshowcoin']}</td>
+		<td>{$value['getshowcoin']}</td>
+		<td>{$value['end_str']}</td>
+		<td>{$value['drawed_str']}</td>
+		<td><a href="admin.php?action=pk&op=editguess&guessid={$value['guessid']}">编辑</a> 
+		<a href="admin.php?action=pk&op=delguess&guessid={$value['guessid']}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+	</tr>
+	<!--{/loop}-->
+	<tr><td colspan="8"><div class="cuspages right"><div class="pg">$multi</div></div></td></tr>
+</table>
+</div>

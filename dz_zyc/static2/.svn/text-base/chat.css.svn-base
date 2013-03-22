@@ -1,0 +1,87 @@
+.notebox{border:1px solid #ccc;padding:5px;background:#fff;}
+.nb-h{padding:0;margin:0;background:#eef;font-size:12px;padding:5px;height:20px;}
+.nb-b{padding:5px;}
+.m-time{color:#000;font-size:10px;}
+.m-src, .m-src a{color:blue;}
+.m-dest, .m-dest a{color:blue;}
+.m-time, .m-src, .m-dest{padding:0 2.5px;}
+.mt-sys{color:green;}
+
+.chat{border-color:#CC3300 #E0E0E0 #E0E0E0;border-style:solid;border-width:2px 1px 1px;background:#e4e4e4;overflow:hidden;}
+.chat .tab-h{height:32px;background:url("images/hbg.jpg") repeat scroll 0 0 #CCCCCC;}
+.chat .tab-h .on{background:url("images/hbg3.jpg") repeat scroll 0 0 #FFFFFF;}
+.chat .tab-h li{line-height:32px;float:left;border-right:1px solid #ccc;width:125px;text-align:center;font-size:14px;font-weight:bold;color:#333;}
+#chat_log_box{height:362px;overflow:hidden;font-size:14px;}
+#chat_msgbox{height:412px;overflow:hidden;background:#fff;border-bottom:1px solid #d8d8d8;}
+#chat_msgbox .tab-a a{display:inline-block;padding:0 2em;outline:none;}
+#chat_msgbox .tab-a a:hover{color:#f90;}
+#chat_msgbox .tab-a .on{background:url("images/hbg3.jpg") repeat scroll 0 0 #FFFFFF;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+#chat_log1_w{height:260px;overflow-x:hidden;overflow-y:auto;}
+#message_list{overflow-x:hidden;overflow-y:auto;font-size:14px;color:#000;padding:5px;}
+#chat_log2_w{overflow-x:hidden;overflow-y:auto;}
+#my_message_list{font-size:12px;padding:5px;}
+.splitter{position:absolute;height:11px;overflow:hidden;background:url(images/splitter_h.png) no-repeat scroll center top;}
+.splitter-v{width:6px;background:#e4e4e4;border-right:1px solid #d8d8d8;border-left:1px solid #d8d8d8;vertical-align:middle;}
+.splitter-v a{outline:none;background:url(images/right_arrow.png) no-repeat scroll center right #fefefe;display:block;height:60px;border-left:1px solid #d8d8d8;border-top:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8;position:relative;right:-1px;}
+.hide-online-list .splitter-v a{background:url(images/left_arrow.png) no-repeat scroll center right #fefefe!important;}
+.splitter-v a:hover{background-color:#fff;}
+
+#onlineUsers{width:120px; height:380px; overflow-x:hidden; overflow-y:auto;}
+#onlineUsers li{display: block;}
+#onlineUsers .odd{background:#efefef;}
+#onlineUsers a{display: block; width:100%; text-decoration:none;}
+#onlineUsers a span{display:block;padding:2px 5px;}
+#onlineUsers a:hover{background: #e4e4e4;}
+
+/*user types*/
+.u-web-admin{color:#0a0!important;}
+.u-room-admin{color:#f00!important;}
+.u-room-owner{color:#f90!important;}
+.u-room-user{color:#00f!important;}
+.u-room-guest{color:#555!important;}
+
+.current-user{font-weight:bold;}
+
+/*user menu*/
+.u-menu{width:100px; margin-left:-100px; background:#fff; position:absolute; display:none; border:1px solid #ccc; z-index:1000; overflow:hidden;}
+.u-menu a{padding:2px 5px!important;}
+.user-menu-open .u-menu{display:block!important;}
+
+#chat-form label{white-space:nowrap;display:inline-block;}
+#chat-form *{vertical-align:middle;}
+#chat-form-w{}
+.td-split{border-left:1px solid #ccc;border-right:1px solid #ccc;width:5px;vertical-align: middle;background:#e4e4e4;overflow:hidden;}
+.td-split em{display:block;height:60px;border-top:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8;background:#efefef;}
+.td-split a:hover{background:#fff;}
+#chat-form{padding:6px;overflow:hidden;}
+.chat-form-tools{padding-bottom:5px;}
+.chat-form-tools .tool-item{padding-right:5px;}
+#inputMessage{width:96%;padding:2px 5px;height:21px;line-height:21px;border:1px solid #ccc;background:#fff;box-shadow:0 1px 4px #ccc inset;}
+#users_label{display:block;background:#fff url(images/a_s.png) right top no-repeat;border:1px solid #ccc;padding:0 5px;line-height:20px;height:20px;cursor:pointer;width:7em;text-decoration:none; overflow:hidden;}
+#users_label:hover, .pop_active #users_label{background-color:#eee;}
+
+#audience-list{position: absolute;}
+#audience-list table{border:1px solid #ccc;background:#fff;width:96px;}
+#audience-list a{display:block;text-decoration:none;width:100%;}
+#audience-list a span{padding:2px 5px;display:block;white-space:nowrap;}
+#audience-list a:hover{background:#eee;}
+
+#face_box{width:220px; height:144px; border:1px solid #ccc;background:#fff;padding:5px;box-shadow:0 2px 4px #ccc;}
+#btn_face .btn-face{display:block;height:20px;width:20px;background:url(images/face.gif) center center no-repeat;text-decoration:none;border:1px solid #E4E4E4;}
+#btn_face .btn-face:hover{border-color:#fff;}
+
+.hs-button{color:black!important; font-weight:bold; text-decoration: none; background: url(images/bg.gif) repeat-x scroll 0 0 green; border: 1px solid #416302; border-radius: 3px; display: inline-block; font-size: 12px; padding: 2px 12px; text-align: center; white-space: nowrap;}
+.hs-button:hover {color: #FFF!important;}
+
+#online_box{width:120px;}
+#online_box_w{height:100%;background:#fff;border-bottom:1px solid #d8d8d8;}
+#gift_log_box{overflow-x:hidden;overflow-y:auto;height: 362px;width:100%;}
+#gift_log_box table{width:100%;}
+#gift_log_box td{padding:5px;border-bottom:1px dashed #ccc;}
+#gift_log_box img{width:32px;}
+.chat h3{font-size:14px;padding-left:1.4em;height:32px;line-height:32px;background:url("images/hbg.jpg") repeat scroll 0 0 #eee;}
+.hide-online-list #online_box{display:none;width:0!important;}
+#room_notice{font-size:12px; height:18px; overflow:hidden; white-space:nowrap;}
+.room-notice-bar{font-size:12px; height:18px; overflow:hidden; background:#ffffe0;border-bottom:1px solid #fea;}
+.room-notice-label{width:96px;float:left;overflow:hidden;}
+.room-notice-message{overflow:hidden;}

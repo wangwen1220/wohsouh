@@ -1,0 +1,211 @@
+<!--{template common/header}-->
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="home.php">$_G[setting][navs][4][navname]</a> <em>&rsaquo;</em> 
+		<a href="home.php?mod=space&do=withdraw">兑现</a> <em>&rsaquo;</em> 	
+	</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	
+</div>
+<link rel="stylesheet" type="text/css" href="/static2/gifts.css" />
+
+<div id="ct" class="ct2_a wp cl">
+	<div class="mn">
+		
+		<div class="bm bw0">			
+			
+			<div id="congzhititle" style="background:url('/static2/images/gifts/zhifu_08.gif');">
+		       <ul >
+		            <li><a class="congzhititleliahover2" href="/home.php?mod=space&do=withdraw">兑现</a></li>
+		            <li><a href="/home.php?mod=space&do=withdraw&act=record">兑现记录</a></li>
+		       </ul>
+		    </div>
+			<div id="congzhikuang">
+		        <div class="jju"></div>
+		           	<div id="congzhinr3">
+		           		<div style="border:solid 1px #999999;background:#eeeeee;width:710px;padding:10px 20px 10px 20px;">
+		           		<h1 style="color:#333333;font-size:15px;">我的账户余额：<img src='/static/image/feed/bi.png' /> <span style="color:#a80606">{$userHuoShowCoin}</span> 秀币</h1>
+		           		</div>
+		           		<!--{if $yifukuanCount>0 ||  $huifuCount>0 || $cuowuCount>0}-->
+		           		<div style="margin-top:5px;border:dotted 1px #999999;background:#FFFFCB;width:710px;padding:10px 20px 10px 20px;">
+		           		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		           		<tr><td valign="top" width="50"><img src="/static2/images/gantanhao.gif" /></td>
+		           		<td style="line-height:20px;font-weight: bold;font-size:15px;">
+		           		<!--{if $yifukuanCount>0}-->
+		           		你有<span style="color:red;text-decoration: underline;">{$yifukuanCount}</span>个订单已付款，请查收并及时确认或投诉<br>
+		           		<!--{/if}-->
+		           		<!--{if $huifuCount>0}-->
+		           		你有<span style="color:red;text-decoration: underline;">{$huifuCount}</span>个投诉订单已经得到了处理<br>
+		           		<!--{/if}-->
+		           		<!--{if $cuowuCount>0}-->
+		           		你有<span style="color:red;text-decoration: underline;">{$cuowuCount}</span>个错误订单<br>
+		           		<!--{/if}-->
+		           		<a href="/home.php?mod=space&do=withdraw&act=record" style="text-decoration:underline;color:blue;font-weight:normal;">去看看>></a>
+		           		</td>
+		           		</tr>
+		           		</table>		           		
+		           		</div>
+		           		<!--{/if}-->
+		            	<div class="clear"></div>		           
+		       		</div>
+		       		<div id="congzhinr3">
+			       		<div style="width:100%;font-size:15px;">兑现金额：
+			       		<select style="height:20px;" id="withdraw">
+			       		<option value="0">------------请选择金额------------</option>
+			       		<!--{loop $fl $k $value}-->
+			       		<option value="{$value['huoshow_coin']}">{$value['huoshow_coin']}秀币 = {$value['rmb']} 人民币</option>
+			       		<!--{/loop}-->
+			       		</select>
+			       		</div>
+		       		</div>
+		       		<div id="congzhinr3">
+		       			<div style="background:#f3f3f3;width:712px;color:#000;padding:10px 20px 10px 20px;float:left;">
+		       			<div style="width:680px;float:left;">银行帐号</div>
+		       			<div style="width:30px;float:left;"><a onclick="showWindow('register', this.href)" href="/home.php?mod=space&do=withdraw&act=addbank&times=$timet" style="color:#a80606">添加</a></div>
+		           		</div>
+		       		</div>
+		       		<div class="clear"></div>
+		       		<div id="congzhinr3" class="banklist">
+		       		<!--{if $bankInfo}-->
+		       		
+		       		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		       		<!--{loop $bankInfo $k $value}-->
+		       		<tr height="30">
+		       		<td width="30"><input type="radio" name="id" <!--{if $value['isdefault']==1}-->checked="checked"<!--{/if}--> value="{$value['id']}"></td>
+		       		<td>
+		       		{$value['bankname']}({$value['bankno']}) 
+		       		</td>
+		       		
+		       		<td width="300">{$value['areaname']['level1']['name']} {$value['areaname']['level2']['name']}</td>
+		       		<td width="100">{$value['account_name']}</td>
+		       		<td width="100"><a href="/home.php?mod=space&do=withdraw&act=addbank&times={$timet}&id={$value['id']}" onclick="showWindow('register', this.href)">编辑</a> 
+		       		<a onclick="deleteBankAcount('/home.php?mod=space&do=withdraw&act=deletebankacount&id={$value['id']}'); " href="javascript:;" >删除</a>
+		       		
+		       		</td>
+		       		</tr>
+		       		<!--{/loop}-->
+		       		<tr><td colspan="5"><br>
+		       		 <a href="javascript:;" onclick="duixian();" ><img src="/static2/images/gifts/liwu4.png" width="86" height="24" /></a>
+		       		</td></tr>
+		       		</table>
+		       		
+		       		<!--{else}-->
+		       		您还没有银行账户，请<a onclick="showWindow('register', this.href)" href="/home.php?mod=space&do=withdraw&act=addbank&times=$timet" style="color:#a80606">添加</a>一个
+		       		<!--{/if}-->
+		       		</div>
+		       		<div class="clear"></div>
+		      		
+		    </div>
+
+
+		</div>
+		
+		
+	</div>
+
+	<div class="appl">
+		<!--{subtemplate common/userabout}-->
+
+
+	</div>
+</div>
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<!--{template common/footer}-->
+<script  type="text/javascript">  
+(function($){
+	window.deleteBankAcount = function(href)
+	{
+		if (!confirm("确认删除？"))
+		{
+		    return false;
+		}
+		$.get(href,function(data){
+			if(data=='1'){
+				alert('删除成功');
+				var url2 = 'home.php?mod=space&do=withdraw&act=banklist&timt='+getNowTime();
+				$.get(url2,function(rs){
+					$(".banklist").html(rs);
+					
+				})
+			}else{
+				alert('删除失败');
+			}
+		})
+		return false;
+	}
+	window.duixian = function(){
+		
+		var withdraw = $("#withdraw").val();
+		var account  = $('input[name="id"]:[checked]').val();
+		if(withdraw==undefined || withdraw==0){
+			alert('请选择兑换金额');
+			$("#withdraw").focus();
+			return false;
+		}
+		var daycash = "$daycash['count']"
+		if (daycash >= '3'){
+			alert('您今天以超过三次兑换');
+			return false;
+		}
+		if(account==undefined || account==0){
+			alert('请选择银行帐号，如果你还没有银行帐号请添加一个');
+			return false;
+		}
+		var leaveCoin = "{$userHuoShowCoin}";
+		if(leaveCoin==""){
+			alert('您的余额不足以兑换');
+			return false;
+		}
+		if(withdraw>{$userHuoShowCoin}){
+			alert('您的余额不足以兑换');
+			return false;
+		}
+		if (!confirm("确认兑现？"))
+		{
+		    return false;
+		}
+
+		var url = '/home.php?mod=space&do=withdraw&act=duixian';
+		$.post(url,{'withdraw':withdraw,'account':account},function(data){
+			if(data=='1'){
+				alert('提交成功，我们将在3个工作日内将现金打入您的卡号内');
+
+				window.location.href='/home.php?mod=space&do=withdraw&act=record';
+				return;
+			}
+			if(data=='-1'){
+				alert('您的余额不足以兑换');
+				window.location.reload();
+				return;
+			}else{
+				//alert(data);
+				alert('失败，系统错误');
+				window.location.reload();
+				return;
+			}
+			
+		});
+	}
+	
+	window.getNowTime =  function(){
+		var now= new Date();   
+		var year=now.getYear();   
+		var month=now.getMonth()+1;   
+		var day=now.getDate();   
+		var hour=now.getHours();   
+		var minute=now.getMinutes();   
+		var second=now.getSeconds();   
+		var nowdate=year+""+month+""+day+""+hour+""+minute+""+second;   
+		return nowdate;
+	}
+})(jQuery);
+</script>

@@ -1,0 +1,7 @@
+{subtemplate show/multilive_header}
+<!--{eval  require_once(DISCUZ_ROOT."huoshow/module/".$module."/".$module."_".$op.".php");}-->
+{if $module==weibo}
+{subtemplate common/footer}
+{else}
+{subtemplate show/multilive_footer}
+{/if}

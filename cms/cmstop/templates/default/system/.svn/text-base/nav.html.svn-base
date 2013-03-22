@@ -1,0 +1,12 @@
+			<a href="{WWW_URL}">首页</a>
+			{loop channel() $catid $cha}
+			<a href="{$cha[url]}">{$cha[name]}</a>
+			{/loop}
+			<a href="{WWW_URL}photo.php">组图</a>
+			<a href="{WWW_URL}video.php">视频</a>
+			<a href="{WWW_URL}roll.php">滚动</a>
+			<a href="{WWW_URL}rank.php">排行</a>
+			<a href="{WWW_URL}space/">专栏</a>
+			<a href="{WWW_URL}rank.php">标签</a>
+			<a href="{WWW_URL}digg.php">Digg</a>
+			<a href="{WWW_URL}mood.php">心情</a>

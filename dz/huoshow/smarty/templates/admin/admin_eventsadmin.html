@@ -1,0 +1,70 @@
+{include file="admin/header.html"}
+<table width="986" border="0" cellspacing="1" cellpadding="1">
+<form name="from1" id="form1" action="" method="post">
+<tr>
+    <td width="117" align="center">赛事列表</td>
+    <td width="196" align="left"><label>
+      <select name="match_source" id="match_source">
+        <option value="0" {if $match_source==0}selected{/if}>全部</option>
+        <option value="1" {if $match_source==1}selected{/if}>官方举办</option>
+        <option value="2" {if $match_source==2}selected{/if}>用户创建</option>
+      </select>
+      </label>    </td>
+    <td width="176" align="left"><label>
+      <input name="match_name" id="match_name" type="text"  value="{if $match_name==''}输入赛事名称{else}{$match_name}{/if}">
+    </label></td>
+    <td width="241"><label>
+      <input type="submit" name="Submit" value="搜索">
+    </label></td>
+	
+    <td width="240" align="left">你有{$matchpass.matchpass}条赛事待审核</td>
+	
+  </tr>
+  </form>
+</table>
+<table width="986" border="0" cellspacing="1" cellpadding="1">
+<form name="from2" id="from2" action="" method="post">
+  <tr>
+    <td align="center"><strong>赛事ID</strong></td>
+    <td align="center"><strong>赛事名称</strong></td>
+    
+    <td align="center"><strong>参赛者数量</strong></td>
+    <td align="center"><strong>待审核选手</strong></td>
+    <td align="center"><strong>赛事状态</strong>
+        <label>
+        <select name="match_is_pass" id="match_is_pass" onchange="document.getElementById('from2').submit();">
+          <option value="0" {if $match_is_pass==0}selected{/if}>全部</option>
+          <option value="3" {if $match_is_pass==3}selected{/if}>待审核</option>
+          <option value="1" {if $match_is_pass==1}selected{/if}>举办中</option>
+          <option value="4" {if $match_is_pass==4}selected{/if}>已完成</option>
+		  <option value="2" {if $match_is_pass==2}selected{/if}>不通过</option>
+        </select>
+        <input name="match_source" type="hidden" id="match_source" value="{$match_source}" />
+        <input name="match_name" type="hidden" id="match_name" value="{$match_name}" />
+      </label></td>
+    <td align="center"><strong>时间</strong></td>
+    <td align="center">管理</td>
+  </tr>
+  {section name=a loop=$user_arr}
+  <tr>
+    <td width="100" align="center">{$user_arr[a].id}</td>
+    <td width="100" align="center">{$user_arr[a].match_name_zh}</td>
+    
+    <td width="100" align="center">{$user_arr[a].num}</td>
+    <td width="200" align="center">&nbsp;</td>
+    <td width="100" align="center">{if $user_arr[a].match_is_pass==1}举办中{elseif $user_arr[a].match_is_pass==2}不通过{elseif $user_arr[a].match_is_pass==3}待审核{elseif $user_arr[a].match_is_pass==4}已完成{/if}</td>
+    <td width="200" align="center">
+    	起止时间:{$user_arr[a].match_start_time}<br>至{$user_arr[a].match_end_time}
+    </td>
+    <td width="200" align="center"><p><a href="?action=huoshow&operation=matchrules&matchid={$user_arr[a].id}">赛事规则管理</a> <a href="?action=huoshow&operation=formbuild&matchid={$user_arr[a].id}">赛事表单管理</a><br />
+    <a href="?action=huoshow&operation=awards&matchid={$user_arr[a].id}">赛事奖项管理</a>
+      {if $user_arr[a].match_is_pass==3}{else}<a href="?action=huoshow&operation=eventsuser&matchid={$user_arr[a].id}">参赛者管理</a>{/if} <a href="?action=huoshow&operation=editmatch&match_id={$user_arr[a].id}">编辑</a> <a href="?action=huoshow&operation=eventsadmin&match_source={$match_source}&page={$page}&match_is_pass={$match_is_pass}&userdelete=delete&id={$user_arr[a].id}" onclick="return confirm('确实要删除么？')">删除</a></p>
+    </td>
+  </tr>
+  {/section}
+  </form>
+  <tr>
+    <td colspan="7">{$page_str}</td>
+  </tr>
+</table>
+

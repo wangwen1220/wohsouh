@@ -1,0 +1,127 @@
+<!--{template 'huoshow_events/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Main Body-->
+<div class="main_body">
+<div class="index_banner_W960_02">
+				{db sql="select * from #table_section where memo ='huoshow_events_zt_image_960_88'"}
+                {$r[data]}
+                {/db}
+				</div>
+<!--Left-->
+<div class="body_webgame_left">
+	<div class="wholeevents_W650">
+			<div class="wholeevents_title_bg_650"><h2 class="title_blue_big">赛事专题</h2> </div>
+				<div class="clear"></div>
+				<div class="web_game_pic_list">
+				<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_saishizhuanti' and d.thumb!='' ORDER BY d.sort desc limit 40"}
+		        	<li><div class="web_game_hot_movie_block_01"><span class="hot_movie_text"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],16,'')}</a></span></div>
+                    <a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="120" height="165" /></a></li>
+				{/db}
+					</ul>
+			</div>
+					
+				<div class="clear"></div>
+
+		</div>
+		
+		<div class="clear"></div>
+		<div class="clear"></div>
+</div>
+	<!--Right-->
+	<div class="body_webgame_right"> 
+	<div class="tp_events_W300">
+		<div class="tp_events_W300_title"><span class="tuotiao_bt_yuan_01"></span><h2 class="tp_title_blue_big">您最喜欢看哪类型的赛事</h2></div>
+				<div class=" clear"></div>
+				<div class="music_W250_tuopiao_text">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_zt_vote' ORDER BY d.sort desc limit 1"}
+					<h1 class="Text_color">{str_cut($r[title],30,'')}</h1>
+					{/db} 
+					</div>
+				<div class="music_W250_tuopiao_text_list">
+					<ul>
+						 <form id="vote_{$r[contentid]}" name="vote_{$r[contentid]}" method="post" action="{APP_URL}?app=vote&controller=vote&action=vote" target="_blank">	           
+            <input name="contentid" type="hidden" value="{$r[contentid]}" />
+            <ul class="vote_options">           
+	            {db sql="select d.*,v.type from #table_section_data d LEFT JOIN #table_section s ON d.sectionid = s.sectionid LEFT JOIN #table_vote v ON d.contentid = v.contentid where s.memo ='huoshow_events_zt_vote' and d.contentid !='' order by d.sort  desc limit 1" }
+					
+					<!--{if $r[type]=='radio'}-->
+					<?php $type=$r[type];?>
+					{db sql="select * from #table_vote_option where contentid =	$r[contentid] "}
+						<li>
+							
+							<input type="{$type}" name="optionid" value="{$r[optionid]}" />
+							{$r[name]}
+						</li>
+					{/db}
+					<!--{else}-->
+					{db sql="select * from #table_vote_option where contentid = $r[contentid] "}
+						<li>							
+							<input type="{$type}" name="optionid[]" value="{$r[optionid]}" />
+							{$r[name]}
+						</li>
+					{/db}
+					<!--{/if}-->
+					<script type="text/javascript">
+					            //验证投票选项
+					            (function($){
+					             $('#vote_{$r[contentid]}').submit(function(){
+					                 var checkeds = $('#vote_{$r[contentid]} input:checked').length;
+					                 if(checkeds == 0){
+					                 alert('请选择投票选项');
+					                 return false;
+					                 }
+					                 <!--{if $type == 'checkbox'}-->
+					                 if(checkeds > {$maxoptions}){
+					                 alert('最多允许选{$maxoptions}项');
+					                 return false;
+					                 }
+					                 <!--{/if}-->
+					                 })
+					             })(jQuery);
+							</script>
+				{/db}
+					</ul>
+					<div class="music_toutiao_anniu"><input type="image" src="{WWW_URL}img/templates/huoshow02/images/events/Music_anniu.gif" id="imageField" name="imageField"></div>
+					</form>
+				</div>
+		</div>
+	<div class="web_game_banner_250">
+				{db sql="select * from #table_section where memo ='huoshow_events_zt_image_300_250'"}
+                {$r[data]}
+                {/db}
+				</div>
+				<div class="events_W300">
+					<div class="events_title_300"> <span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">赛事焦点</h2>
+					</div>
+					<div class="Happy_girl_list">
+						<div class="Happy_girl_newslist">
+							<ul>
+								{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_saishijiaodian' ORDER BY d.sort desc limit 12"}
+								<li><span class="Point"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+							{/db}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="events_W300">
+					<div class="events_title_300"> <span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">赛事图片</h2>
+					</div>
+					<div class="Small_games_pic_02">
+		<ul>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_zt_saishitupian' and d.thumb!='' ORDER BY d.sort desc limit 6"}
+		<li><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="124" height="90" /></a><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></li>
+		{/db}
+		</ul>
+		</div>
+				</div>
+	<!--发售表--></div>
+	
+	<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--{template 'huoshow_events/footer.html'}-->

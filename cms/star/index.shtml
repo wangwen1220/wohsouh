@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+<meta name="description" content="" />
+    <title>火秀明星_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/star_global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/star.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+<script src="http://www.huoshow.com/img/templates/huoshow02/css/SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+  </head>
+<!--Site Header End--><body  class="body_bg">
+<!--Site Header-->
+ <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+<!--Site Header End-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a href="http://www.huoshow.com/star/huoshowmingxing">火秀明星</a></li>
+<li><a href="http://www.huoshow.com/star/neidimingxing">内地明星</a></li>
+<li><a href="http://www.huoshow.com/star/gangtaimingxing">港台明星</a></li>
+<li><a href="http://www.huoshow.com/star/rihanmingxing">日韩明星</a></li>
+                <li><a href="http://www.huoshow.com/star/oumeimingxing">欧美明星</a></li>
+                <li><a href="http://www.huoshow.com/star/mingxingtuku">明星图库</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/star/index.shtml">火秀明星</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<div class="clear"></div>
+    <div class="p1">
+          <div class="p1_l">
+                  <div class="flash"><!--#include virtual ="/api/article.php?act=getrollimg&memo=huoshow_star_index_left_image_300_341&width=300&height=341&navon=1"--></div>
+                  <div class="star_rank">
+                  <table>
+                  <caption><h2>明星排行</h2></caption>
+                  <colgroup span="1" class="table_bg_col1"></colgroup>
+                  <thead>
+                  <tr><th width="54">&nbsp;排名</th><th width="108">明星</th><th width="85">粉丝</th><th width="31">趋势</th></tr>
+                  </thead>
+                  
+                  <tbody>
+                 <!--#include virtual ="/api/article.php?act=starrank&type=starindex"-->
+                  </tbody>
+                  <tfoot>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                  </tfoot>
+                  </table>
+               
+</div>
+            		<div class="vote">
+<div><h2>我说了算....</h2></div>
+  <form id="vote_31637" name="vote_31637" method="post" action="http://www.huoshow.com/app/?app=vote&controller=vote&action=vote" target="_blank">	           
+            <input name="contentid" type="hidden" value="31637" />
+<ul>
+
+<li>
+
+<input type="radio" name="optionid" value="151" />
+路过</li>
+<li>
+
+<input type="radio" name="optionid" value="153" />
+送花</li>
+<li>
+
+<input type="radio" name="optionid" value="155" />
+握手</li>
+<li>
+
+<input type="radio" name="optionid" value="157" />
+拥抱</li>
+<script type="text/javascript">
+            //验证投票选项
+            (function($){
+             $('#vote_31637').submit(function(){
+                 var checkeds = $('#vote_31637 input:checked').length;
+                 if(checkeds == 0){
+                 alert('请选择投票选项');
+                 return false;
+                 }
+                                  })
+             })(jQuery);
+</script>
+</ul>					 
+<div class="submit_x"> <input type="image" src="http://www.huoshow.com/img/templates/huoshow02/images/star/tijiao.jpg" ></div>
+</form>
+
+</div>
+      </div>
+          <div class="p1_m">
+          <div class="hl_bar">
+    <h3><a target="_blank" href=""></a></h3>
+    </div>
+          				<div class="hl_p1"> 
+                        <h4>星闻快递</h4>
+           				
+<div class="h1_p1_text"><p>
+  <span><a target="_blank" href=""></a></span> | 
+ </p>
+</div>
+                        <div class="h1_p1_text2">
+                        </div>
+</div>
+                     <h4>港台星闻</h4>
+         			 <ul> 
+ <li><a target="_blank" href=""></a></li>
+
+</ul>
+                    <h4>日韩星闻</h4>
+          			<ul> 
+ <li><a target="_blank" href=""></a></li>
+
+</ul>
+                    <h4>内地星闻</h4>
+                    <ul>
+<li><a target="_blank" href=""></a></li>
+
+</ul>
+                    <h4>欧美星闻</h4>
+                    <ul> 
+<li><a target="_blank" href=""></a></li>
+
+</ul>
+          
+      </div>
+          <div class="p1_r">
+          <div class="p1_r_1">
+<h2>火热进行中</h2>
+<div class="pic_word">
+<ul>
+                    <div class="clear"></div>
+</ul>
+</div>
+</div>
+        	<div class="ad_r">
+                这儿输入html代码                </div>
+            <div class="p1_r_3">
+            <div class="bar_text"><h2>星踪</h2>
+              <a href="#"><span class="font_12">订阅星踪</span></a>
+<div class="clear"></div>
+            </div>
+            <dl>
+        </dl>
+             <ul> 
+   </ul>
+            </div>
+</div>
+          <div class="clear"></div>
+</div>
+    <div class="ad">                这儿输入html代码                </div>
+    
+    <div class="p2">
+    	
+        <div class="p2_l">
+        <div class="p2_l_l">
+        <div class="bar_text"><h2>本月寿星</h2>          
+          </div>
+              <dl>
+        <dt><a target="_blank" href="http://www.huoshow.com/2011/0922/31637.shtml"><img alt="织田裕二" src="http://www.huoshow.com/upload/2011/0922/1316660474553.jpg" width="100" height="90" /></a></dt>
+        <dd><span><a href="http://www.huoshow.com/2011/0922/31637.shtml">织田裕二</a></span>
+        <span>                星座：射手座<br /> 生日：12月13日              </span>
+             </dd>
+             <div class="clear"></div>
+       </dl>
+           <p class="font_12">一个在日本艺能界有着举足轻重地位的艺人，从他身上散发出的…颇丰<a target="_blank" href="http://www.huoshow.com/2011/0922/31637.shtml">[支持他]</a></p>
+  <form id="vote_31637" name="vote_31637" method="post" action="http://www.huoshow.com/app/?app=vote&controller=vote&action=vote" target="_blank">	           
+            <input name="contentid" type="hidden" value="31637" />
+<label>
+
+
+
+<input type="radio" name="optionid" value="151" onClick="submit()" />
+路过
+
+
+<input type="radio" name="optionid" value="153" onClick="submit()" />
+送花
+
+
+<input type="radio" name="optionid" value="155" onClick="submit()" />
+握手
+
+
+<input type="radio" name="optionid" value="157" onClick="submit()" />
+拥抱
+<script type="text/javascript">
+            //验证投票选项
+            (function($){
+             $('#vote_31637').submit(function(){
+                 var checkeds = $('#vote_31637 input:checked').length;
+                 if(checkeds == 0){
+                 alert('请选择投票选项');
+                 return false;
+                 }
+                                  })
+             })(jQuery);
+</script>
+</label>					 
+</form>
+        <span class="star_but">其它过生日的明星</span>
+        <table width="273" class="font_12">
+
+        </table>
+        </div>
+        <div class="p2_l_r">
+  <div class="pic_word2">
+            <div class="bar_text"><h2>明星视频</h2>
+              <a href="http://www.huoshow.com/star/mingxingshipin">更多</a>
+<div class="clear"></div>
+            </div>
+<ul class="font_12">
+                    <div class="clear"></div>
+</ul>		
+</div>
+        </div>
+        <div class="p2_b">
+          <div id="TabbedPanels1" class="TabbedPanels">
+            <ul class="TabbedPanelsTabGroup">
+              <li class="TabbedPanelsTab" tabindex="0"> 火秀明星</li>
+             <li class="TabbedPanelsTab" tabindex="0">影视</li>
+             <li class="TabbedPanelsTab" tabindex="0">乐坛</li>
+                <li class="TabbedPanelsTab2" tabindex="0">综艺</li>
+                <div class="clear"></div>
+            </ul>
+            <div class="TabbedPanelsContentGroup">
+              <div class="TabbedPanelsContent">
+              	<div class="TabContent_left">
+                	<strong><a target="_blank" href=""></a></strong>
+
+                    <p><a target="_blank" href="">[全文]</a></p>
+                    <ul>
+                    </ul></div>
+                <div class="TabContent_right">  
+               <div class="pic_word">
+<ul>
+                    <div class="clear"></div>
+</ul>
+</div>
+                </div>
+              <div class="clear"></div>
+              </div>
+              <div class="TabbedPanelsContent">	
+  <div class="TabContent_left">
+                	<strong><a target="_blank" href=""></a></strong>
+
+                    <p><a target="_blank" href="">[全文]</a></p>
+                    <ul>
+                    </ul></div>
+                <div class="TabContent_right">  
+               <div class="pic_word">
+<ul>
+                    <div class="clear"></div>
+</ul>
+</div>
+                </div>
+              <div class="clear"></div>
+  </div>
+              <div class="TabbedPanelsContent">
+ <div class="TabContent_left">
+                	<strong><a target="_blank" href=""></a></strong>
+
+                    <p><a target="_blank" href="">[全文]</a></p>
+                    <ul>
+                    </ul></div>
+                <div class="TabContent_right">  
+               <div class="pic_word">
+<ul>
+                    <div class="clear"></div>
+</ul>
+</div>
+                </div>
+              <div class="clear"></div>
+  </div>
+              <div class="TabbedPanelsContent">
+  <div class="TabContent_left">
+                	<strong><a target="_blank" href=""></a></strong>
+
+                    <p><a target="_blank" href="">[全文]</a></p>
+                    <ul>
+                    </ul></div>
+                <div class="TabContent_right">  
+               <div class="pic_word">
+<ul>
+                    <div class="clear"></div>
+</ul>
+</div>
+                </div>
+              <div class="clear"></div>
+  </div>
+            </div>
+          </div>
+         <div class="clear"></div>
+        </div>
+        </div>
+        <div class="p2_r">
+        		<div class="ad2">
+                这儿输入html代码                </div>
+                
+        		<div class="p2_r_1">
+                <div class="bar_text"><h2>找明星</h2>
+              <a target="_blank" href="http://space.huoshow.com/show.php"><span class="font_12">我要成名</span></a>
+<div class="clear"></div>
+            </div>
+<div>
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text"  id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <input type="submit" id="button" class="button_bg" value="找一下"/>
+  </form>
+ 
+</div>
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='ؼ'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('ؼ');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='ؼ' || search_wd==''){
+        alert('ؼ');
+        return false;
+      }
+    }
+  })
+</script>            
+ <ul>
+                <li><a href="#">李嘉欣</a> <a href="#">蔡卓妍</a> <a href="#">陈冠希</a> <a href="#">孙楠</a></li>
+<li><a href="#">张雨绮</a> <a href="#">徐熙媛</a> <a href="#">俞灏明</a> <a href="#">郝蕾</a></li>
+<li><a href="#">郭德纲</a> <a href="#">王菲</a> <a href="#">王珞丹</a> <a href="#">李光洁</a></li>
+<li><a href="#">巩俐</a> <a href="#">朴龙河</a> <a href="#">赵薇</a> <a href="#">章子怡</a></li>
+<li><a href="#">巩俐</a> <a href="#">朴龙河</a> <a href="#">赵薇</a> <a href="#">章子怡</a></li>
+<li><a href="#">李嘉欣</a> <a href="#">蔡卓妍</a> <a href="#">陈冠希</a> <a href="#">孙楠</a></li>
+<li><a href="#">张雨绮</a> <a href="#">徐熙媛</a> <a href="#">俞灏明</a> <a href="#">郝蕾</a></li>
+<li><a href="#">郭德纲</a> <a href="#">王菲</a> <a href="#">王珞丹</a> <a href="#">李光洁</a></li>
+<li><a href="#">巩俐</a> <a href="#">朴龙河</a> <a href="#">赵薇</a> <a href="#">章子怡</a></li>
+<li><a href="#">巩俐</a> <a href="#">朴龙河</a> <a href="#">赵薇</a> <a href="#">章子怡</a></li>                </ul>
+<div class="clear"></div>
+</div>
+               <div class="ad3">
+                   这儿输入html代码                   </div>
+      </div>
+        <div class="clear"></div>
+    </div>
+    <div class="ad">                这儿输入html代码                </div>
+    <div class="star_fans">
+    <div class="bar_text"><h2>明星粉丝圈</h2>
+              <a target="_blank" href="http://space.huoshow.com/group.php">更多</a>
+<div class="clear"></div>
+</div>
+<!--#include virtual ="/api/star.php?act=star"-->
+<!--#include virtual ="/api/star.php?act=starfensi"--> 		
+      <div class="clear"></div>
+    </div>
+    <div class="star_pic">
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+          <td rowspan="2" class="topic_w">明星美图</td>
+          <td rowspan="2">
+    </td>
+          <td rowspan="2">
+     </td>
+        </tr></table>
+           <table cellspacing="0" cellpadding="0"><tr><td>
+      </td></tr><tr><td>
+      </td></tr></table>
+           <table cellspacing="0" cellpadding="0"><tr><td>
+     </td></tr><tr><td>
+     </td></tr></table>
+        	<table cellspacing="0" cellpadding="0"><tr><td>
+</td> </tr></table>
+      		 
+</div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html><script type="text/javascript">
+<!--
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+//-->
+</script>
+</body>
+</html>

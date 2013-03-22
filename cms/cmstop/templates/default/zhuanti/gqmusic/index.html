@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢乐假期，无乐不在------火秀音乐</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<link href="{WWW_URL}img/templates/zhuanti/css/gq_music.css" rel="stylesheet" type="text/css" />
+
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.Special_events_03_lanse_bg,');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+</head>
+
+<body class="body_bg">
+
+<div id="mian">
+<div class="box">
+  <div class="meili_nr">
+  <div class="gq_music_daoyu">引语：
+  	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_music_introduction' ORDER BY d.sort desc limit 1"}
+  {$r[description]}
+  {/db}
+  </div>
+   <div class="gq_music_left">
+   <div class="gq_music_left_bt"><h1>MV欣赏</h1></div>
+<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'festival_zhuanti_music_mv' and d.thumb!='' ORDER BY d.sort desc limit 14"}
+				<li>
+					<span class="gq_music_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}">
+					<img src="{WWW_URL}upload/{$r[thumb]}" width="130" height="83" /></a></span>
+					<span class="top_video_text">
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a>
+					</span>
+				</li>
+				{/db}
+			</ul>
+		</div>
+   </div>
+   <div class="gq_music_right"> 
+   <div class="gq_music_nh"> 
+      <div class="gq_music_right_bt"><h1>旅行篇</h1></div>
+	  <div class="gq_music_tw">
+		 {db sql="select * from #table_section  where memo ='festival_zhuanti_music_travel'"}
+            {$r[data]}
+         {/db}
+	  </div>
+   </div>
+
+   <div class="gq_music_nh"> 
+      <div class="gq_music_right_bt"><h1>风景篇</h1></div>
+	  <div class="gq_music_tw">
+	 {db sql="select * from #table_section  where memo ='festival_zhuanti_music_scenery'"}
+            {$r[data]}
+         {/db}
+
+	  </div>
+   </div>
+   <div class="gq_music_nh"> 
+      <div class="gq_music_right_bt"><h1>玩乐篇</h1></div>
+	  <div class="gq_music_tw">
+	 {db sql="select * from #table_section  where memo ='festival_zhuanti_music_play'"}
+            {$r[data]}
+         {/db}
+
+	  </div>
+   </div>
+   <div class="gq_music_nh"> 
+      <div class="gq_music_right_bt"><h1>宅男宅女篇</h1></div>
+	  <div class="gq_music_tw">
+	 {db sql="select * from #table_section  where memo ='festival_zhuanti_music_ hometype'"}
+            {$r[data]}
+         {/db}
+
+	  </div>
+   </div>
+   </div>
+<!--{template 'article/gqmusic_comment.html'}-->
+  </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+
+</body>
+</html>

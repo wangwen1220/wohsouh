@@ -1,0 +1,57 @@
+<!--{template common/header}-->
+
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="home.php">$_G[setting][navs][4][navname]</a> <em>&rsaquo;</em> 
+		<a href="home.php?mod=space&do=myshow">{lang myshow}</a>
+		<!--{if $_GET['view']=='me'}-->
+		 <em>&rsaquo;</em> <a href="home.php?mod=space&do=myshow&view=me">{$space[username]}{lang somebody_myshow}</a>
+		<!--{/if}-->
+	</div>
+</div>
+
+<div id="contain">
+<link href="static2/myshow.css" rel="stylesheet" type="text/css" />
+  <!--推荐视频-->
+  <div class="shipinqu">
+  <!--{if $classify<10 }-->
+    <div class="shipintop">
+     <h3><span class="dalei"><img src="static2/images/yellowdot.jpg" width="12" height="13" /><strong>推荐音频</strong></span><span class="zilei"><a href="home.php?mod=space&do=myshow&classify=1">流行</a> | <a href="home.php?mod=space&do=myshow&classify=2">摇滚</a>  | <a href="home.php?mod=space&do=myshow&classify=3">民谣</a> | <a href="home.php?mod=space&do=myshow&classify=9">古典</a></span></h3>
+   </div>
+  <!--{else}--> 
+   <div class="shipintop">
+     <h3><span class="dalei"><img src="static2/images/yellowdot.jpg" width="12" height="13" /><strong>网友视频</strong></span><span class="zilei"><a href="home.php?mod=space&do=myshow&classify=10">我的音乐</a> | <a href="home.php?mod=space&do=myshow&classify=11">酷炫热舞</a>  | <a href="home.php?mod=space&do=myshow&classify=12">演出现场</a> | <a href="home.php?mod=space&do=myshow&classify=13">精彩推荐</a></span></h3>
+   </div>
+   <!--{/if}-->
+
+	<div class="shipininner pub">
+		<div class="topvideo">
+			<!--{if $count }-->
+			<ul>
+				<!--{loop $list $i $value}-->
+				<li>
+					<!--{if $classifyInfo[type_id]==2}-->
+						<!--{if $value[isfanart]}--><div class="label">原创</div><!--{/if}-->
+						<a href="home.php?mod=space&do=myshow&id=$value[myshowid]"><img src="$value[image]" onerror="this.onerror=null;this.src='static2/images/video_default.png'" /></a>
+					<!--{/if}-->
+					<span <!--{if $value[type]==2}-->class="shipin"<!--{else}-->class="yinpin"<!--{/if}-->>
+						<a href="home.php?mod=space&do=myshow&id=$value[myshowid]" title="$value[title]">{echo cutstr($value[title],18,'')}</a></span><br />
+					<span class="videouploader">会员：<a href="{DX_URL}$value[uid]" target="_blank">$value[author]</a></span>
+				</li>
+				
+				<!--{/loop}-->
+			</ul>
+			<div class="clear">&nbsp;</div>
+			<!--{else}-->
+			<div>此分类还未上传作品</div>
+			<!--{/if}-->
+		</div>  
+	</div>
+   <div class="clear"></div>
+   <!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
+  </div>
+</div>
+
+<!--{template common/footer}-->

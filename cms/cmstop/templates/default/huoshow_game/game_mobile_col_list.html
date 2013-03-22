@@ -1,0 +1,111 @@
+<!--{template 'huoshow_game/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<div class="banner_960_60">
+	{db sql="select * from #table_section  where memo ='huoshow_mobile_game_top_image' " }
+    	{$r[data]}
+    {/db}
+</div> 
+<div class="main_body">
+	<!--Left-->
+	<div class="body_webgame_left">
+	
+		<div class="game_W702">
+			<div class="game_W702_01" id="game_tabview1">
+			<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">手机掌机</h2>
+					<span class="web_remen_a"><a href="" class="Current">推荐 </a> <a href="mobilenews">动态 </a>  <a href="mobilereview">测评  </a>  <a href="mobilewalkthrough">攻略</a>  <a href="mobiledownload">下载</a>  </span>
+			</div>
+			<div class="Web_games_left_03">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_mobile_game_tuijian' and d.thumb!='' ORDER BY d.sort desc limit 12"}
+			  <?php $ca=$r; $contentid=$ca[contentid]; ?>
+			  {db sql="SELECT ca.url,ca.name FROM #table_content c LEFT JOIN #table_category ca ON ca.catid=c.catid WHERE c.contentid  = '$contentid' "}
+				<div class="Web_games_left_list_03">
+					<div class="Web_games_left_tuwen_03">
+						<div class="Web_games_left_tu_03">
+							<img alt="{$r[title]}" src="{WWW_URL}upload/{$ca[thumb]}" width="128" height="80" />
+						</div>
+		    			<div class="Web_games_left_zi_03">
+		    				<h1><a href="{$ca[url]}" target="_blank">{$ca[title]}</a>
+		    				{if $r[name] == '动态'}
+		    					<span class="dongtai_biao"><a href="mobilenews" target="_blank">{$r[name]}</a></span>
+		    				{elseif $r[name] == '测评'}
+		    					<span class="dongtai_biao_02"><a href="mobilereview" target="_blank">{$r[name]}</a></span>
+		    				{elseif $r[name] == '攻略'}
+		    					<span class="dongtai_biao_03"><a href="mobilewalkthrough" target="_blank">{$r[name]}</a></span>
+		    				{elseif $r[name] == '下载'}
+		    					<span class="dongtai_biao_01"><a href="mobiledownload" target="_blank">{$r[name]}</a></span>
+		    				{/if}
+		    				</h1>
+		    				{str_cut($ca[description],100)}<a href="{$ca[url]}" target="_blank">[查看全文]</a>
+		    				<span class="Mobile_Time">{date("m-d",$ca['commended'])}</span>
+		    			</div>
+					</div>
+				</div>
+				{/db}
+			{/db}
+			</div>
+			<div class="clear"></div>
+				<div class="kongge_8"></div>
+			</div>
+		</div>
+                
+		<div class="clear"></div>
+	</div>
+	
+	<!--Left End--> 
+	<!--Right-->
+	<div class="body_webgame_right"> 
+	<div class="kongge_8"></div>
+	
+	<div class="game_W250">
+			<div class="game_W250_01">
+			<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">苹果专区</h2></div>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_mobile_game_apple' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<div class="Web_games_left_list_04">
+					<div class="Web_games_left_tuwen_04">
+						<div class="Web_games_left_tu_04">
+							<a href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="70" height="70" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_04">
+			    			<h1><a href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></h1>{str_cut($r[description],80)}
+			    		</div>
+					</div>
+				</div>
+				{/db}
+		    </div>
+			
+
+		</div>
+		<div class="mobilegame_banner_250">
+			{db sql="select * from #table_section  where memo ='huoshow_mobile_game_image' " }
+        		{$r[data]}
+        	{/db}
+		</div>
+		<div class="kongge_8"></div>
+		<div class="game_W250s">
+			<div class="game_W250_01">
+			<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">Android专区</h2></div>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_mobile_game_Android' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<div class="Web_games_left_list_04">
+					<div class="Web_games_left_tuwen_04">
+						<div class="Web_games_left_tu_04">
+							<a href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="70" height="70" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_04">
+			    			<h1><a href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></h1>{str_cut($r[description],80)}
+			    		</div>
+					</div>
+				</div>
+				{/db}
+				
+		    </div>
+		</div>
+	</div>
+	<!--Banner 960*90--><!--网络游戏--><!--单机游戏--><!--网页游戏--><!--小游戏--><!--手机游戏-->
+	<div class="clear"></div>
+	<!--Partners--><!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--{template 'huoshow_game/footer.html'}-->

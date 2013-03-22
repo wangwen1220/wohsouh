@@ -1,0 +1,40 @@
+{subtemplate common/header}
+
+<table cellSpacing="0" cellPadding="0" border="0">
+	<tr>
+		<td id="fwin_content_sendlove" class="m_c" fwin="sendlove" width="520" height="40">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="480"><h3 style="CURSOR: move" id="fctrl_sendlove" class="flb"><em>提示信息</em></h3></td>
+				<td width="40"><a class="flbc" title="关闭" onclick="hideWindow('sendlove');" href="javascript:;">关闭</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr><td height="1" class="alt"></td></tr>
+	<tr>
+		<td id="fwin_content_sendlove" class="m_c" orgdisplay fwin="sendlove" width="520" height="210" valign="bottom">
+
+		<div class="c altw">
+			<div class="alert_info" style="width:430px;">
+				$msg<br><br>
+				<SCRIPT type=text/javascript reload="1">if(typeof errorhandle_sendlove=='function') {errorhandle_sendlove('$msg', {});}</SCRIPT>
+			</div>
+		</div>
+		<p class="o pns">
+		<button class="pn pnc" onclick="hideWindow('sendlove');" type="button">
+		<strong>关闭</strong></button></td>
+	</tr>
+</table>
+
+<!--{if $uloves == 1}-->
+<script language="javascript">
+	document.getElementById("ulove_{$pid}").innerHTML='<p><em><a title="你们正在相互暗恋，还不快给TA发消息吗？" onclick="showWindow(\'sendpm\', this.href)" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$uid}&touid={$uid}&pmid=0&daterange=2&pid={$pid}"><img src="source/plugin/ulove/images/like_4.gif" border="0"></a><center><a href="plugin.php?id=ulove:ulove" class="xi1">什么是暗恋？</a></center></em>';
+</script>
+<!--{elseif $uloves == 2}-->
+<script language="javascript">
+	document.getElementById("ulove_{$pid}").innerHTML='<p><em><a title="已经发送了暗恋信息了，不过还要耐心等待哦！"><img src="source/plugin/ulove/images/like_3.gif" border="0"></a><center><a href="plugin.php?id=ulove:ulove" class="xi1">什么是暗恋？</a></center></em>';
+</script>
+<!--{/if}-->
+
+{subtemplate common/footer}

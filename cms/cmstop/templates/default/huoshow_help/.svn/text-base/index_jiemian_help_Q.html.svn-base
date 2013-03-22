@@ -1,0 +1,25 @@
+<!--{template 'huoshow_help/header.html'}-->
+<!--Main Body-->
+<div class="main_body">
+	<div class="jiemian_left_help">
+	<div class="jiemian_help_bt"></div>
+	<div class="jiemian_left_nav">
+	<ul class="jiemian_left_help_nav">
+	<li class="help_nav_01"><a href="{WWW_URL}help/xinshoushanglu/">新手上路</a></li>
+	<li class="help_nav_01"><a href="{WWW_URL}help/huiyuandengji/">会员等级说明</a></li>
+	<li class="help_nav_01"><a href="{WWW_URL}help/pindaojieshao/">频道介绍</a></li>
+	<li class="help_nav_01"><a href="{WWW_URL}help/huobishuoming/">火币说明</a></li>
+	<li class="help_nav_01"><a href="{WWW_URL}help/chongzhifuwu/">充值服务</a></li>
+	<li class="went"><a href="{WWW_URL}help/changjianwenti/">常见问题</a></li>
+	</ul>
+	</div>
+	</div>
+		<div class="jiemian_right">
+			{db sql="select * from #table_section where memo ='huoshow_index_help_changjianwenti'"}
+                {$r[data]}
+                {/db}
+	</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--{template 'huoshow_help/footer.html'}-->

@@ -1,0 +1,10 @@
+<div class="live-object-box">
+  <object type="application/x-shockwave-flash" id="live_object"
+    data="/static2/live/live_<!--{if $roomType == 0}-->s<!--{else}-->c<!--{/if}-->.swf?{VERHASH}">
+    <param name="movie" value="/static2/live/live_<!--{if $roomType == 0}-->s<!--{else}-->c<!--{/if}-->.swf?{VERHASH}">
+    <param name="quality" value="high">
+    <param name="allowScriptAccess" value="always">
+    <param value="true" name="allowFullScreen">
+    <param name="flashvars" value="liveUrl=rtmp://{FMS_SERVER}/live&mediaName={$live_uid}&roomId={$space[uid]}">
+  </object>
+</div>

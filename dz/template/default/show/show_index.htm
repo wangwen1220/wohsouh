@@ -1,0 +1,332 @@
+{subtemplate common/header}
+<link href="static2/live.css" rel="stylesheet" type="text/css" />
+<div class="live" id="live">
+  <div class="live_left">
+    <div class="studio"> {$focusImges}</div>                      
+    <div class="hotanchor">                       
+      <div class="hotanchor_matches">
+        <div class="hotanchor_new_btt_wz">
+          <ul>
+            <li class="voiced">共有<span id="ajax_activeonlineMember" class="red">[{$activeonlineMember}]</span>位观众</li>
+            <li class="zheg">参赛直播<span id="ajax_activeonlineAnchors" class="cheng">[{$activeonlineAnchors}]</span>人</li>
+          </ul>
+        </div>
+        <div class="hotanchor_s">
+          <form action="show.php" method="GET" target="_blank">
+            <input type="hidden" name="operation" value="SearchMatchAnchor" />
+            <span>
+              <select name="type" class="hotanchor_s_01">
+                <option value="2">&nbsp;昵　称&nbsp;</option>
+                <option value="1">&nbsp;火秀号&nbsp;</option>                        
+              </select>
+            </span>
+            <span>
+              <input type="text" name="keyword" class="hotanchor_s_02" />
+            </span>
+            <span>
+              <input type="submit" class="search-button" />
+            </span>
+          </form>
+        </div>
+      </div>
+      <div class="hotanchor_text" >
+        <div id="activesearch_frd_msg" style="text-align:center; margin-bottom:5px;"></div>
+        <div id="ajax_activeanchors">&nbsp;</div>                      
+        <div id="ajax_pageHtml1" class="pgs cl">&nbsp;</div>
+      </div>	
+    </div> 
+
+    <!-- 主播列表 begin-->
+    <div class="hotanchor">                       
+      <div class="hotanchor_btt">
+        <div class="hotanchor_new_btt_wz">
+          <ul>
+            <li class="voiced">共有<span id="ajax_onlineMember" class="red">[{$onlineMember}]</span>位观众</li>
+            <li class="zheg">正在直播<span id="ajax_onlineAnchors" class="cheng">[{$onlineAnchors}]</span>人</li>
+          </ul>
+        </div>
+        <div class="hotanchor_s">
+          <form action="show.php" method="GET" target="_blank">
+            <input type="hidden" name="operation" value="SearchAnchor" />
+            <span>
+              <select name="type" class="hotanchor_s_01">
+                <option value="2">&nbsp;昵　称&nbsp;</option>
+                <option value="1">&nbsp;火秀号&nbsp;</option>                        
+              </select>
+            </span>
+            <span>
+              <input type="text" name="keyword" class="hotanchor_s_02" />
+            </span>
+            <span>
+              <input type="submit" class="search-button" />
+            </span>
+          </form>
+        </div>
+      </div>    
+      <div class="hotanchor_text" >
+        <div id="search_frd_msg" style="text-align:center; margin-bottom:5px;"></div>
+        <div id="ajax_anchors"><div class="loading"><span>&nbsp;</span></div></div>
+        <div id="ajax_pageHtml" class="pgs cl">&nbsp;</div>
+      </div>	
+    </div>  
+    <!-- 主播列表 end-->
+  </div>   
+
+  <div class="live_right">
+    <div>
+      <a href="/$_G['uid']" target="_blank" onclick="<!--{if $_G['uid']}--><!--{else}-->hideWindow('register');showWindow('login', 'member.php?mod=logging&action=login');<!--{/if}-->"><img src="static2/images/live.jpg" /></a>
+    </div>
+    <div class="gftg">
+      <div class="gftg_zi"><span class="gftg_title"><img src="static2/images/guanfang.gif" width="64" height="19" /></span><span class="gftg_more"><a href="{WWW_URL}zhuanti/meilizhixing/meilizhixingph/" target="_blank">更多>></a></span></div>
+      <!--{if empty($OffNotice)}--><div>暂无官方公告</div><!--{/if}-->{$OffNotice}
+    </div>
+	<!--{if $show_right_ad1}-->
+    <div id="show_right_ad1">
+      {$show_right_ad1}
+    </div>
+    <!--{/if}-->
+    <div class="zhishu_anchor_paihang" id="show_zhishu_list">
+      <div class="zhishu_anchor_paihang_btt">
+        <div class="anchor_paihang_tab">
+          <ul>
+            <li class="anchor_paihang_out"><a>日榜</a></li>
+            <li class="anchor_paihang_out"><a>周榜</a></li>
+            <li class="anchor_paihang_out"><a>月榜</a></li>
+          </ul>  
+          <div class="anchor_paihang_more"><a target="_blank" href="show.php?mod=zrank"><img src="static2/images/more.gif" width="33" height="15" border="0" /></a></div>	
+        </div>	
+      </div>	
+
+      <div class="anchor_paihang_text" style="display:block">
+        <!--{loop $exponent[lists][exponent]['today'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"><img src="static2/images/charmlevel/{$value[level]}.png" width="16" height="16" /></div>
+        </div>
+        <!--{/loop}-->                               
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists][exponent]['week'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"><img src="static2/images/charmlevel/{$value[level]}.png" width="16" height="16" /></div>
+        </div>
+        <!--{/loop}-->                               
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists][exponent]['month'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">
+          <!--{if strlen($value['nickname']) >= 30}-->
+          	{$value['nicename']}<br>({$value['uid']})
+          <!--{else}-->
+          	{$value['nicename']}({$value['uid']})
+          <!--{/if}-->
+          </a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"><img src="static2/images/charmlevel/{$value[level]}.png" width="16" height="16" /></div>
+        </div>
+        <!--{/loop}-->                               
+      </div>	
+    </div>
+
+
+    <div class="anchor_paihang" id="show_charm_list">
+      <div class="anchor_paihang_btt">
+        <div class="anchor_paihang_tab">
+          <ul>
+            <li class="anchor_paihang_out"><a>日榜</a></li>
+            <li class="anchor_paihang_out"><a>周榜</a></li>
+            <li class="anchor_paihang_out"><a>月榜</a></li>
+          </ul>  
+          <div class="anchor_paihang_more"><a target="_blank" href="show.php?mod=rank"><img src="static2/images/more.gif" width="33" height="15" border="0" /></a></div>	
+        </div>	
+      </div>	
+
+      <div class="anchor_paihang_text" style="display:block">
+        <!--{loop $exponent[lists]['clarm']['today'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"><img src="static2/images/charmlevel/{$value[level]}.png" width="16" height="16" /></div>
+        </div>
+        <!--{/loop}-->                               
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists]['clarm']['week'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"><img src="static2/images/charmlevel/{$value[level]}.png" width="16" height="16" /></div>
+        </div>
+        <!--{/loop}-->                               
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists]['clarm']['month'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"><img src="static2/images/charmlevel/{$value[level]}.png" width="16" height="16" /></div>
+        </div>
+        <!--{/loop}-->                               
+      </div>	
+
+
+    </div>
+
+    <div class="vote_anchor_paihang" id="show_huoshow_list">
+      <div class="vote_anchor_paihang_btt">
+        <div class="anchor_paihang_tab">
+          <ul>
+            <li class="anchor_paihang_out"><a>日榜</a></li>
+            <li class="anchor_paihang_out"><a>周榜</a></li>
+            <li class="anchor_paihang_out"><a>月榜</a></li>
+          </ul>
+          <div class="anchor_paihang_more"><a target="_blank" href="show.php?mod=vrank"><img src="static2/images/more.gif" width="33" height="15" border="0" /></a></div>	
+
+        </div>	
+
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists]['votes']['today'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"></div>
+        </div>
+        <!--{/loop}-->
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists]['votes']['week'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->  
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"></div>
+        </div>
+        <!--{/loop}-->
+      </div>	
+      <div class="anchor_paihang_text" style="display:none">
+        <!--{loop $exponent[lists]['votes']['month'] $key $value}-->
+        <!--{eval $tmp = $key+1;}-->   
+        <div class="paihang2">
+          <div class="icon0{echo $tmp}"><a target="_blank" href="/{$value['uid']}">{$value['nicename']}({$value['uid']})</a></div>
+          <div class="shuzi">{$value['value']}</div>
+          <div class="hongzuan"></div>
+        </div>
+        <!--{/loop}-->
+      </div>	
+    </div>
+    <!--友谊榜-->
+    {$friend}
+		<div class="gftg">
+          <div class="gftg_zi"><span class="gftg_title"><img src="static2/images/bangzu.gif" width="64" height="19" /></span><span class="gftg_more"><a target="_blank" href="{WWW_URL}events/huoshowhelp/index.shtml">更多>></a></span></div>
+          <!--{if empty($OffHelp)}--><div>暂无官方帮助</div><!--{/if}-->{$OffHelp}
+        </div>
+		<div class="gftg">
+          <div class="gftg_zi"> <img src="static2/images/kefu.gif" width="64" height="19" /></div>
+          <!--{if empty($OffContact)}--><div>暂无官方联系</div><!--{/if}-->{$OffContact}
+        </div>
+  </div>	
+</div>
+<script> 
+  (function($) {
+
+    $(function(){
+      make_pagebox("show_charm_list", {
+        links_selector: ".anchor_paihang_tab li",
+        pages_selector: ".anchor_paihang_text",
+        current_class: "anchor_paihang_on",
+        current: 1,
+        event_type: "mouseover"
+      });
+
+      make_pagebox("show_huoshow_list", {
+        links_selector: ".anchor_paihang_tab li",
+        pages_selector: ".anchor_paihang_text",
+        current_class: "anchor_paihang_on",
+        current: 1,
+        event_type: "mouseover"
+      });
+      
+      make_pagebox("show_friend_list", {
+        links_selector: ".anchor_paihang_tab li",
+        pages_selector: ".anchor_paihang_text",
+        current_class: "anchor_paihang_on",
+        current: 1,
+        event_type: "mouseover"
+      });
+
+      make_pagebox("show_zhishu_list", {
+        links_selector: ".anchor_paihang_tab li",
+        pages_selector: ".anchor_paihang_text",
+        current_class: "anchor_paihang_on",
+        current: 1,
+        event_type: "mouseover"
+      });
+
+      make_pagebox("top2banner", {
+        links_selector: ".top2banner-nav a",
+        pages_selector: ".top2banner-item",
+        current_class: "tab-on",
+        interval: 3
+      });
+
+      setTimeout(showRooms, 15);
+    });
+
+  })(jQuery);
+
+  /*主播列表*/
+  var HOTPAGE = 1;
+  var MATCHPAGE = 1;
+  var T1 = null;
+
+  function showRooms() {
+    var url=encodeURI(['show.php?operation=ajax&tab=anchors',
+    '&hotpage=', HOTPAGE, '&matchpage=', MATCHPAGE, '&t=', (new Date()).getTime()].join(''));
+    hs.ajax({
+      url: url,
+      onsuccess: function(data){
+        data = hs.parseJSON(data);
+        if(data.list1) {
+          hs.$("ajax_anchors").innerHTML = data.list1.anchors;
+          hs.$("ajax_pageHtml").innerHTML = data.list1.pageHtml;
+          hs.$("ajax_onlineAnchors").innerHTML = data.list1.onlineAnchors;
+          hs.$("ajax_onlineMember").innerHTML = data.list1.onlineMember;
+        }
+        if(data.list2) {
+          hs.$("ajax_activeanchors").innerHTML = data.list2.anchors;
+          hs.$("ajax_pageHtml1").innerHTML = data.list2.pageHtml;
+          hs.$("ajax_activeonlineAnchors").innerHTML = data.list2.onlineAnchors;
+          hs.$("ajax_activeonlineMember").innerHTML = data.list2.onlineMember;
+        }
+        },
+        oncomplete: function(data){
+          clearTimeout(T1);
+          T1 = setTimeout(showRooms, 60000);
+        }
+      });
+  }
+
+  function setHotPage(page) {
+    HOTPAGE = page;
+    showRooms();
+  }
+
+  function setMatchPage(page) {
+    MATCHPAGE = page;
+    showRooms();
+  }
+</script>
+
+{subtemplate common/footer}

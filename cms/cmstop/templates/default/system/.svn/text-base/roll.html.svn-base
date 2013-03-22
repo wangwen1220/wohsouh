@@ -1,0 +1,85 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/index.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link type="text/css" rel="stylesheet" href="{IMG_URL}templates/{TEMPLATE}/css/ajax_Page.css" />
+<!--[if IE 6]>
+<link href="{IMG_URL}templates/{TEMPLATE}/css/ie6.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<![endif]-->
+
+<script type="text/javascript">
+(function($){
+     $(function(){
+         $("#dhindex").html('滚动新闻');
+     });
+})(jQuery)
+</script>
+
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.pagination.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/datepicker/WdatePicker.js"></script>
+<script type="text/javascript" src="{IMG_URL}templates/{TEMPLATE}/js/roll.js"></script>
+
+<div class="column" style="padding-top:10px;">
+	<!-- **************** start频道列表  ***************** -->
+  <div class="col-l-main w-160">
+    	<div class="channels-title ">
+        	频道列表
+        </div>
+        <div class="channels-list bor-9fc">
+            <ul class="fs-14" id="cond-channel">
+            <li><a href="0">全部</a></li>
+            {loop channel() $catid $cha}
+		<?php
+		if ($cha['disabled']==0){
+		?>
+				<li><a href="{$catid}">{$cha[name]}</a></li>
+		<?php }?>
+			{/loop}
+            </ul>
+        </div>
+    </div>
+    <!-- **************** end频道列表  ***************** -->
+    
+<!-- ******************* start 详细显示 *********************** -->
+<div class="col-r-extra w-790">
+	<div class="select-top">
+    	<span class="fs-14 cor-f00 bold f-l" id="cond-date">{date('Y年n月j日')}</span>
+        <span class="historypage f-l"><a id="datepicker" href="#">往日回顾</a></span>
+        <div class="f-r" style="width:580px">
+            <div class="f-l select-button">
+                <ul id="cond-model">
+                    <li><a href="0">全部</a></li>
+                    <li><a href="2">组图</a></li>
+					<li><a href="4">视频</a></li>
+                </ul>
+            </div>
+			<span id="hand" class="refresh f-r mar-r-10">手动刷新</span>
+            <div class="f-r mar-l-10">
+            	<label style="cursor:pointer">
+            		<span ><input id="auto"  type="checkbox" name="privcy" /></span>
+            		<span id="auto-on" style="display:none"><b class="cor-c00 bold mar-l-3">59</b>秒后刷新</span>
+            		<span id="auto-off">自动刷新</span>
+            	</label>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="data-container" class="fs-14 cor-06c cont-list padd-12 mar-t-10"></div>
+    </div>
+    <div class="rolling-next-page">
+    	<div class="f-r mar-r-10"><a href="#"><img src="{IMG_URL}templates/{TEMPLATE}/images/back.gif" alt="" /></a></div>
+    	<div id="pagination" class="pagination"></div>
+    </div>	
+   
+  </div>
+</div>
+<div class="hr-h10"></div>
+<!--{template 'huoshow_common/common_footer.html'}-->
+
+<script type="text/javascript">
+    document.body.parentNode.style.overflow = "auto";
+    APP.init();
+</script>
+
+</body>
+</html>

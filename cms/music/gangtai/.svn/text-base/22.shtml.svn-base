@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="古典音乐、MP3下载、音乐网站、音乐排行榜" />
+<meta name="description" content="火秀网音乐频道为您提够最优质的古典音乐、mp3下载还具有音乐排行榜于一体的音乐网站" />
+<title>港台_火秀音乐_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/music.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+<script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+<!--[if IE 6]>
+<script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+</head>
+
+<body class="body_bg">
+   <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+<!--Navigator-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/music" title="火秀音乐首页">火秀音乐频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a target="_blank" href="http://www.huoshow.com/music/neidi/">内地</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/gangtai/">港台</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/oumei/">欧美</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/rihan/">日韩</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/mv/">MV</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/live/">现场</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/yueping/">乐评</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/yinyueren/">音乐人</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/diebao/">碟报</a></li>
+<!--<li><a href="http://www.huoshow.com/music/zhuanti/">专题</a></li>-->
+</ul>
+</div>
+</div>
+</div>
+<!--Navigator End-->
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/music/index.shtml">火秀音乐</a> > <a href="http://www.huoshow.com/music/gangtai/index.shtml">港台</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">港台</h2></div>
+<ul>						
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20846.shtml" target="_blank">吴克群何超莲“大黄蜂”里约会 男方否认</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20839.shtml" target="_blank">赵传宣传个唱 称会唱歌不代表会出唱片</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20837.shtml" target="_blank">苏永康自嘲怕害人 不带师妹李幸倪泡酒吧</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20834.shtml" target="_blank">TWINS称自己不是最惨组合 人气不过肥皂泡</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20831.shtml" target="_blank">杨丞琳重返《我猜》唱新歌 吴宗宪直称赞</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20825.shtml" target="_blank">Olivia与歌迷过七夕 谈及过往恋情很害羞</a></span><span class="date_01">2011-08-06</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20821.shtml" target="_blank">高层大换血 金牌大风向综合性娱乐公司迈进</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20819.shtml" target="_blank">莫文蔚过完七夕试婚纱 个唱有婚礼元素环节</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20817.shtml" target="_blank">薛凯琪否认与方大同交往 称两人是好友无惧被拍</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20788.shtml" target="_blank">Makiyo发碟穿百万古董衣 减肥打造细腰女王</a></span><span class="date_01">2011-08-06</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0806/20784.shtml" target="_blank">徐怀钰刚复出即遭“封杀” 所录节目全冻结</a></span><span class="date_01">2011-08-06</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20735.shtml" target="_blank">UP Girls蔡潆萱单飞 超负荷工作致身体不适</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20705.shtml" target="_blank">果味VC出席品牌发布会 与AC米兰亲密接触</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20702.shtml" target="_blank">王梓轩港日忙不停 被邀加拿大当嘉宾</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20677.shtml" target="_blank">信全创作专辑《黎明之前》MV禁播仍夺冠</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20667.shtml" target="_blank">张震岳西安签售新专辑 嘻哈装扮酷味十足</a></span><span class="date_01">2011-08-05</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20658.shtml" target="_blank">张震岳疲于演出没空创作 不满公司EP变专辑</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20657.shtml" target="_blank">徐峰柏吸血鬼造型曝光 烟熏妆似“暮光之城”</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20650.shtml" target="_blank">张震岳自曝写不出好歌 自嘲做作想人间蒸发</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0805/20648.shtml" target="_blank">孙耀威阔别10年再出新专辑 自称绝不离婚</a></span><span class="date_01">2011-08-05</span></li>
+<!--  -->
+</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/music/gangtai/21.shtml">上一页</a></li><li><a href="http://www.huoshow.com/music/gangtai/1.shtml">1...</a></li><li><a href="http://www.huoshow.com/music/gangtai/20.shtml">20</a></li><li><a href="http://www.huoshow.com/music/gangtai/21.shtml">21</a></li><li><a href="http://www.huoshow.com/music/gangtai/22.shtml" class="now">22</a></li><li><a href="http://www.huoshow.com/music/gangtai/23.shtml">23</a></li><li><a href="http://www.huoshow.com/music/gangtai/24.shtml">24</a></li><li><a href="http://www.huoshow.com/music/gangtai/85.shtml">...85</a></li><li><a href="http://www.huoshow.com/music/gangtai/23.shtml">下一页</a></li></ul>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+<!--Banner 300*250-->
+    <div class="banner_300*250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(30);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=e524c36'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=30&n=e524c36' /></a></noscript></div>            <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;" class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="/api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

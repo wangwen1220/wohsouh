@@ -1,0 +1,30 @@
+<div class="itemtitle"><h3>PK管理</h3>
+<ul class="tab1">
+<li class="current"><a href="admin.php?action=pk&op=team"><span>队伍管理</span></a></li>
+<li><a href="admin.php?action=pk&op=member"><span>成员管理</span></a></li>
+<li><a href="admin.php?action=pk&op=competition"><span>比赛轮次管理</span></a></li>
+<li><a href="admin.php?action=pk&op=race"><span>比赛场次管理</span></a></li>
+</ul></div>
+<div>
+
+</div>
+<br />
+<div class="itemtitle"><h3>编辑</h3></div>
+<div>
+<form name="cpform" id="cpform" autocomplete="off" action="admin.php?action=pk&op=editteam" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="teamid" value="{$teamInfo['teamid']}" />
+<table class="tb tb2 ">
+	<tr>
+		<td class="td27">队伍名称</td>
+		<td class="td27"><input type="text" name="name" value="{$teamInfo['name']}"/></td>
+	</tr>
+	<tr>
+		<td class="td27">队伍Logo</td>
+		<td class="td27"> <!--{if $teamInfo['logo']!=''}--><img src="{$teamInfo['logo']}"><br /><!--{/if}--><input type="file" name="logo" value=""/></td>
+	</tr>
+	<tr>
+		<td class="td27" colspan="2"><input type="submit" name="submit" value="提交"/></td>
+	</tr>
+</table>
+</form>
+</div>

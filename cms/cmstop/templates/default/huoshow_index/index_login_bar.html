@@ -1,0 +1,24 @@
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="home"><a href="##" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.huoshow.com');">设为首页</a></div>
+        <div class="fav"><a target=_top href="javascript:window.external.addFavorite('http://www.huoshow.com','火秀网 - 中国娱乐门户');">加入收藏</a></div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('{DX_URL}api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->

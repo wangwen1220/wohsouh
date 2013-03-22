@@ -1,0 +1,57 @@
+<script src="/static/js/calendar.js" type="text/javascript"></script>
+<form action="/admin.php?action=huoshow&operation=multifunction" method="POST" name="form">
+<table border="0">
+	<tr >
+		<td style="background:#DEEFFB;">
+			<strong>类型: </strong>
+			<select name="room_type" style="width:100px;">
+				<option value="0" {if $room_type==0}selected{/if}>全部</option>
+				<option value="2" {if $room_type==2}selected{/if}>付费</option>
+				<option value="1" {if $room_type==1}selected{/if}>免费</option>
+			</select>&nbsp;&nbsp;
+			<select name="room_class_id" style="width:100px;">
+			<option value="0">全部</option>
+			{section name=r loop=$RoomTypeName}
+				<option value="{$RoomTypeName[r].level}" {if $room_class_id==$RoomTypeName[r].level}selected{/if}>{$RoomTypeName[r].room_type_name}</option>
+			{/section}
+			</select>&nbsp;&nbsp;
+			<strong>房主: </strong>
+			<input type="text" name="room_name"  size="15" value="{$room_name}"/>&nbsp;&nbsp;
+			<strong>消费火币时间: </strong>
+			<input type="text"  size=15 name="dateline" onclick="showcalendar(event, this)" value="{$dateline}"/>-
+	        	<input type="text" name="dateline2" size=15 onclick="showcalendar(event, this)"  value="{$dateline2}"/>&nbsp;&nbsp;
+			<input type="submit" name="submit" value="搜索"/>
+		</td>
+	</tr>
+</table>
+</form>
+<table border="0" class="tb tb2">
+	<tr class="header">
+		<th>房间名称</th>
+		<th>房主</th>
+		<th>管理员</th>
+		<th>总消费火币</th>
+		<th>开通时间至到期时间</th>
+		<th>操作</th>
+	</tr>
+	{section name=m loop=$multi_arr}
+	<tr class="hover">
+		<td>{$multi_arr[m].room_name}</td>
+		<td>{$multi_arr[m].username}</td>
+		<td>{$multi_arr[m].manage}</td>
+		<td>{if $multi_arr[m].huo}{$multi_arr[m].huo}{else}0{/if}</td>
+		<td>{$multi_arr[m].dateline}-{$multi_arr[m].expire_time}</td>
+		<td><a href="?action=huoshow&operation=multidetailed&roomid={$multi_arr[m].roomid}">详细</a> | 
+		{if $multi_arr[m].system_close==0}
+		<a href="?action=huoshow&operation=multifunction&tab=del&op=close&roomid={$multi_arr[m].roomid}" onclick="return confirm('确定要关闭此房间？')">关闭</a>
+		{else}
+		<a href="?action=huoshow&operation=multifunction&tab=del&op=open&roomid={$multi_arr[m].roomid}" >打开</a>
+		{/if}
+		</td>	
+	</tr>
+	{/section}
+	<tr>
+		<td colspan="2">当前共有 {$multi_count} 个多功能直播间</td>
+    	<td colspan="4">{$page_str}</td>
+  	</tr>
+</table>

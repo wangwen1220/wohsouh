@@ -1,0 +1,204 @@
+<!--{template 'huoshow_game/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<div class="main_body"><!--Left-->
+	<div class="body_webgame_left">
+	<div class="game_W702">
+			<div class="game_W702_01">
+			<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">热门网页游戏</h2>	</div>
+				<div class="web_game_pic_list">
+				<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_webgame_remen' and d.thumb!='' ORDER BY d.sort desc limit 8"}
+					<li>
+						<div class="web_game_hot_movie_block_01"><span class="hot_movie_text"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></span></div>
+                    	<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="111" /></a>
+                    </li>
+                 {/db}
+				</ul>
+			</div>
+		    </div>
+
+		</div>
+		<div class="clear"></div>
+		<div class="game_W702">
+			<div class="game_W702_01">
+			<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+			<span class="xiaogame_more"><a href="yeyou" target="_blank"><< 更多</a></span>
+					<h2 class="title_Black_02">页游最新动态</h2></div>
+		<div class="Web_games_left_02">
+		<div class="Online_Games_left_pic_list_t_01"></div>
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_webgame_yeyou' and d.thumb!='' ORDER BY d.sort desc limit 3"}
+				<div class="Web_games_left_list_02">
+					<div class="Web_games_left_tuwen_02">
+						<div class="Web_games_left_tu_02">
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="103" height="85" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_02"><h1><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],22,'')}</a></h1>{str_cut($r[description],56)}<a href="{$r[url]}" target="_blank">详情>></a></div>
+					</div>
+				</div>
+			{/db}
+				
+			</div>
+			
+			<div class="Web_games_Center">
+				
+				<div class="ndi_Center_newslist_01">
+					{db sql="SELECT * FROM #table_content WHERE catid IN (SELECT catid FROM #table_category WHERE alias='yeyou') ORDER BY contentid DESC limit 1"}
+					<h3 class="sexi_cheng"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{$r[title]}</a></h3>
+					{/db}
+				</div>
+				
+				<div class="ndi_Center_t_02">
+								<ul class="liston">
+									{db sql="SELECT * FROM #table_content WHERE catid IN (SELECT catid FROM #table_category WHERE alias='yeyou') ORDER BY contentid DESC limit 2,10"}
+									<li><span class="ndi_Center_t_text_05"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></span></li>
+									{/db}
+								</ul>
+				</div>
+			</div>
+			
+					
+		    </div>
+			
+
+		</div>
+		<div class="clear"></div>
+		
+		<div class="game_W702">
+			<div class="game_W702_01">
+			<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+			<span class="xiaogame_more"><a href="wangye" target="_blank"><< 更多</a></span>
+					<h2 class="title_Black_02">网页测评专区</h2></div>
+		<div class="Web_games_left_02">
+		<div class="Online_Games_left_pic_list_t_02"></div>
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_webgame_wangye' and d.thumb!='' ORDER BY d.sort desc limit 2"}
+				<div class="Web_games_left_list_02">
+					<div class="Web_games_left_tuwen_02">
+						<div class="Web_games_left_tu_02">
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="103" height="85" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_02"><h1><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],22,'')}</a></h1>{str_cut($r[description],56)}<a title="{$r[title]}" href="{$r[url]}" target="_blank">详情>></a></div>
+					</div>
+				</div>
+			{/db}
+		</div>
+			
+			<div class="Web_games_Center">
+				<div class="ndi_Center_newslist_01">
+					{db sql="SELECT * FROM #table_content WHERE catid IN (SELECT catid FROM #table_category WHERE alias='wangye') ORDER BY contentid DESC limit 1"}
+					<h3 class="sexi_cheng"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{$r[title]}</a></h3>
+					{/db}
+				</div>
+				<div class="ndi_Center_t_02">
+					<ul class="liston">
+						{db sql="SELECT * FROM #table_content WHERE catid IN (SELECT catid FROM #table_category WHERE alias='wangye') ORDER BY contentid DESC limit 2,6"}
+						<li><span class="ndi_Center_t_text_05"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></span></li>
+						{/db}
+					</ul>
+				</div>
+			</div>
+		    </div>
+			
+
+		</div>
+		<div class="clear"></div>
+		<div class="game_W702">
+			<div class="game_W702_01">
+			<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+			<span class="xiaogame_more"><a href="gonglue" target="_blank"><< 更多</a></span>
+					<h2 class="title_Black_02">攻略专区</h2></div>
+		<div class="Web_games_left_02">
+		<div class="Online_Games_left_pic_list_t_03"></div>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_webgame_gonglue' and d.thumb!='' ORDER BY d.sort desc limit 3"}
+				<div class="Web_games_left_list_02">
+					<div class="Web_games_left_tuwen_02">
+						<div class="Web_games_left_tu_02">
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="103" height="85" /></a>
+						</div>
+			    		<div class="Web_games_left_zi_02"><h1><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],22,'')}</a></h1>{str_cut($r[description],56)}<a title="{$r[title]}" href="{$r[url]}" target="_blank">详情>></a></div>
+					</div>
+				</div>
+			{/db}
+		</div>
+			
+			<div class="Web_games_Center">
+				
+				<div class="ndi_Center_newslist_01">
+					{db sql="SELECT * FROM #table_content WHERE catid IN (SELECT catid FROM #table_category WHERE alias='gonglue') ORDER BY contentid DESC limit 1"}
+					<h3 class="sexi_cheng"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{$r[title]}</a></h3>
+					{/db}
+				</div>
+				<div class="ndi_Center_t_02">
+					<ul class="liston">
+						{db sql="SELECT * FROM #table_content WHERE catid IN (SELECT catid FROM #table_category WHERE alias='gonglue') ORDER BY contentid DESC limit 2,10"}
+							<li><span class="ndi_Center_t_text_05"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></span></li>
+						{/db}
+					</ul>
+				</div>
+			</div>
+			
+					
+		    </div>
+			
+
+		</div>
+	</div>
+	<!--Left End--> 
+	<!--Right-->
+	<div class="body_webgame_right"> 
+	<div class="web_game_banner_250">
+		{db sql="select * from #table_section  where memo ='huoshow_webgame_image'"}
+        	{$r[data]}
+        {/db}
+	</div>
+	<div class="game_W250">
+			<div class="game_W250_01">
+				<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">编辑推荐</h2>
+				</div>
+				{db sql="select * from #table_section  where memo ='huoshow_webgame_bianji' " }
+        			{$r[data]}
+        		{/db}
+		    </div>
+			
+
+		</div>
+	<!--发售表-->
+		<div class="game_W250">
+			<div class="game_W250_01">
+			<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">新游戏测试时间表</h2></div>
+				{db sql="select * from #table_section  where memo ='huoshow_webgame_xinyouxi' " }
+        			{$r[data]}
+        		{/db}
+					
+		    </div>
+			
+
+		</div>
+		<div class="game_W250">
+			<div class="game_W250_01">
+			<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+					<h2 class="title_Black_02">页游视野</h2></div>
+				<div class="Small_games_pic_01">
+		<ul>
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_webgame_shiye' and d.thumb!='' ORDER BY d.sort desc limit 4"}
+		<li><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="124" height="90" /></a><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></li>
+		{/db}
+		</ul>
+		</div>
+					
+		    </div>
+			
+
+		</div>
+		
+	</div>
+	
+	<!--Banner 960*90--><!--网络游戏--><!--单机游戏--><!--网页游戏--><!--小游戏--><!--手机游戏-->
+
+	<div class="clear"></div>
+	<!--Partners--><!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--{template 'huoshow_game/footer.html'}-->

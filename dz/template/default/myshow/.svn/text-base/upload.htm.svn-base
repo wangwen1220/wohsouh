@@ -1,0 +1,299 @@
+<style type="text/css">
+  .tb a{
+    cursor:default;
+    outline:none;
+  }
+
+  .tb a:hover{
+    text-decoration:none;
+    color:#555;
+  }
+
+  #flashRecord object{
+    margin: 1em auto;
+    display:block;
+  }
+
+  .uct-block2{
+    padding:1em 5px;
+    margin:1em 5px;
+    background:#FFFAC8;
+    border-top:1px solid #E4DA69;
+    border-bottom:1px solid #E4DA69;
+  }
+
+  .tb-body{
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    border-left:1px solid #ccc;
+  }
+
+  #record_box, #upload_box{
+    padding:1em;
+  }
+
+  #upload_box th{
+    padding:5px;
+    text-align:right;
+    font-weight:bold;
+  }
+
+  #upload_box .input-field,
+  #upload_box select{
+    width:300px;
+  }
+
+  #upload_box textarea{
+    width:500px;
+    height:150px;
+  }
+
+  .to_audio h3,
+  .to_video h3,
+  .to_audio a,
+  .to_video a{
+    color:#33789C;
+  }
+
+
+  .to_audio p, .to_video p{
+    padding-left:80px;
+    position:absolute;
+    width:150px;
+  }
+
+  .to_audio, .to_video{
+    background: #E8EFF7;
+    border:1px solid #D9E3EF;
+    padding:1em;
+    width:222px;
+    margin: 10px 0 10px 20px;
+    float:left;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    -o-border-radius:5px;
+  }
+
+  #upload{
+    height:24px;
+    line-height:22px;
+    padding:0;
+  }
+
+  #submit1{
+    height:24px;
+    line-height:22px;
+    padding:0;
+    width:60px;
+    margin-left:7px;
+
+  }
+  .opt{
+    margin-left:0;
+    margin-top:10px;
+  }
+
+  .opt th{
+    height:30px;
+    text-align:left;
+    padding-left:10px;
+    font-weight:bold;
+  }
+
+  .opt td{
+    height:30px;
+    vertical-align:middle;
+    padding:0;
+    margin:0;
+    padding-left:10px;
+  }
+  .opt td INPUT {
+    height:20px;
+    width:200px;
+  }
+  .opt td TEXTAREA{
+    padding:5px;
+  }
+
+
+</style>
+<div id="contain">
+  <div class="main-hbox-left">
+    <div>
+      <h1 class="mt"><img alt="trade" src="{STATICURL}image/feed/favorite.gif" alt="task" class="vm" /> {lang myshow_add}</h1>
+      <ul class="tb cl">
+        <li onclick="show_upload_box(this)" class="a" id="tab_upload_box"><a href="javascript:;">{lang myshow_upload}</a></li>
+        <!--<li onclick="show_record_box(this)"><a href="javascript:;">{lang myshow_record}</a></li>-->
+      </ul>
+      <div class="tb-body">
+        <div id="upload_box" style="display:block">
+          <!--{if $do=='finish'}-->
+          <!--{if $errNo==1}-->{lang myshow_upload_err_1}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==2}-->{lang myshow_upload_err_2}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==3}-->{lang myshow_upload_err_3}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==4}-->{lang myshow_upload_err_4}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==5}-->{lang myshow_upload_err_5}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==6}-->{lang myshow_upload_err_6}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==7}-->{lang myshow_upload_err_7}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==8}-->{lang myshow_upload_err_8}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{elseif $errNo==9}-->{lang myshow_upload_err_9}<a href="home.php?mod=spacecp&ac=myshow">返回</a><br /><br /><br />
+          <!--{else}-->{lang myshow_success}{lang myshow_success_other}<br /><br /><br />
+          <!--{/if}-->
+          <!--{elseif $do=='info'}-->
+          <form action="home.php?mod=spacecp&ac=myshow&op=upload&do=info" id="audioForm" method="post" onsubmit="return check();">
+            <input type="hidden" name="myshowid" value="{$myshowid}"/>
+            <table>
+              <tr>
+                <th>作品标题</th>
+                <td><input id="title" type="text" name="title" value="$rs[title]" class="input-field" /></td>
+              </tr>
+              <tr>
+                <th>所属分类</th>
+                <td>
+                  <select name="classify" id="classify">
+                    {$htmlType}
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>语言</th>
+                <td>
+                  <select name="language" id="language">
+                    <option value="1">国语</option>
+                    <option value="2">粤语</option>
+                    <option value="3">英语</option>
+                    <option value="4">日语</option>
+                    <option value="5">韩语</option>
+                    <option value="6">其他语种</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>版权所有</th>
+                <td>
+                  <input type="checkbox" name="isfanart" value="1" id="isfanart" />&nbsp;原创
+                </td>
+              </tr>
+              {if $rs['type']==1}
+              <tr>
+                <th>作词</th>
+                <td>
+                  <input name="lyricist" type="text" class="input-field" />
+                </td>
+              </tr>
+              <tr>
+                <th>作曲</th>
+                <td>
+                  <input name="compose" type="text" class="input-field" />
+                </td>
+              </tr>
+              <tr>
+                <th>原唱</th>
+                <td>
+                  <input name="singer" type="text" class="input-field" />
+                </td>
+              </tr>
+              <tr>
+                <th>歌词</th>
+                <td>
+                  <textarea name="lyrics" id="lyrics"></textarea>
+                </td>
+              </tr>
+              {/if}
+              <tr>
+                <th>作品简介</th>
+                <td>
+                  <textarea name="content" id="jj"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td style="text-align:center;">
+                  <input type="submit" name="submitinfo" value="提  交" style="padding:5px;" />
+                </td>
+              </tr>
+            </table>
+          </form>
+          <!--{else}-->
+          <div id="upload_form">
+            <form name="myupload" action="home.php?mod=spacecp&ac=myshow&op=upload" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="submitupload" value="yes" />
+              <input type="file" id="upload" name="upload" onkeydown="return false;" onpaste="return false;"/>
+              <input type="button" onclick="fn_upload();" value="{lang submit}" id="submit1" />
+              <input type="reset" />
+            </form>
+          </div>
+          <div id="loading" style="display:none"><img src="static2/images/help-loading.gif" /></div>
+          <p class="tip-block1">{lang myshow_upload_notice}</p>
+          <!--{/if}-->
+        </div>
+        <div id="record_box" style="display:none">
+          <h2>{lang myshow_select_record_type}</h2>
+
+          <div class="to_audio">
+            <h3>{lang myshow_record_audio}</h3>
+            <p>{lang myshow_save_audio}...<br /><a href="home.php?mod=spacecp&ac=myshow&op=record&do=audio">我要录制</a></p>
+            <img src="static2/images/mic_icon.png" />
+          </div>
+
+          <div class="to_video">
+            <h3>{lang myshow_record_video}</h3>
+            <p>{lang myshow_save_video}...<br /><a href="home.php?mod=spacecp&ac=myshow&op=record&do=video">我要录制</a></p>
+            <img src="static2/images/video_icon.png" />
+          </div>
+
+          <div class="clear">&nbsp;</div>						
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function($){
+    fn_upload = function() {
+      var filepath = $("#upload").val();
+      if (filepath != '') {
+        var back = checkFile(filepath);
+        if (!back) {alert("不支持该格式的文件，请重新选择！");return false;}
+        } else {
+        alert("请选择要上传的文件！");return false;
+      }
+
+      $("#loading").css("display","block");
+      $("#upload_form").css("display","none");
+      document.myupload.submit();
+    }
+  })(jQuery);
+  function checkFile(filePath) {
+    var okFileExtend = ".mp3,.wma,.mpeg,.avi,.mp4,.3gp,.rm,.rmvb,.mov,.wmv,.flv";
+    if(filePath.length>0) {
+      var fileExtend=filePath.substring(filePath.lastIndexOf('.')).toLowerCase();
+      if(okFileExtend.indexOf(fileExtend)>-1) {
+        return true;
+      }
+      } else {
+      return false;
+    }
+  }
+
+  var current = document.getElementById("tab_upload_box");
+  function show_record_box(o){
+    if(current) current.className = "";
+    o.className = "a";
+    current = o;
+    if(document.getElementById("record_box").style.display == "none"){
+      document.getElementById("record_box").style.display = "block";
+      document.getElementById("upload_box").style.display = "none";
+    }				
+  }
+  function show_upload_box(o){
+    if(current) current.className = "";
+    o.className = "a";
+    current = o;
+    if(document.getElementById("upload_box").style.display == "none"){
+      document.getElementById("upload_box").style.display = "block";
+      document.getElementById("record_box").style.display = "none";
+    }
+  }
+</script>

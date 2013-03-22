@@ -1,0 +1,193 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{WWW_URL}img/templates/huoshow02/css/charts.css" rel="stylesheet" type="text/css" />
+<style>
+#menu { width:205px; margin:auto;}
+ #menu h1 { font-size:14px; border-bottom:#dedcdd 1px solid;   background:url({WWW_URL}img/templates/huoshow02/images/Charts_bg.jpg) left 147px; width:205px; height:28px; display:inline-block;}
+.top_xian{ font-size:14px; border-bottom:#dedcdd 1px solid; border-top:#dedcdd 1px solid;   background:url({WWW_URL}img/templates/huoshow02/images/Charts_bg.jpg) left 147px; width:205px; height:28px; display:inline-block;}
+
+ #menu h2 a:hover{ font-size:14px; background:#8a8a8a; text-indent:41px; color:#fff;}
+#menu h2 { font-size:14px;text-indent:40px; line-height:15px;}
+
+ #menu ul { padding-left:15px; height:100px;border:#E7E7E7 1px solid; border-top:none;overflow:auto;}
+ #menu a { display:block; padding:8px 0 3px 10px; text-decoration:none; overflow:hidden;}
+#menu a img { position:relative;top:-2px;}
+.d img { padding-left:3px; }
+#menu h1 a{ line-height:15px;}
+ #menu h1 a:hover{ color:#ffffff; background:#c5091f; background:url({WWW_URL}img/templates/huoshow02/images/Charts_bg.jpg) left 110px;}
+ #menu .no {display:none;}
+ #menu .h1 a{color:#515151;}
+ #menu .h1 a:hover{color:#fff;}
+ #menu .h2 a{color:#515151;}
+ #menu  h1 a{color:#515151;}
+</style>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+
+
+<script language="JavaScript">
+<!--//
+function ShowMenu(obj,n){
+ var Nav = obj.parentNode;
+ if(!Nav.id){
+  var BName = Nav.getElementsByTagName("ul");
+  var HName = Nav.getElementsByTagName("h2");
+  var t = 2;
+ }else{
+  var BName = document.getElementById(Nav.id).getElementsByTagName("span");
+  var HName = document.getElementById(Nav.id).getElementsByTagName("h1");
+  var t = 1;
+ }
+ for(var i=0; i<HName.length;i++){
+  HName[i].innerHTML = HName[i].innerHTML.replace("-","+");
+  HName[i].className = "";
+ }
+ obj.className = "h" + t;
+ for(var i=0; i<BName.length; i++){if(i!=n){BName[i].className = "no";}}
+ if(BName[n].className == "no"){
+  BName[n].className = "";
+  obj.innerHTML = obj.innerHTML.replace("+","-");
+ }else{
+  BName[n].className = "no";
+  obj.className = "";
+  obj.innerHTML = obj.innerHTML.replace("-","+");
+ }
+}
+//-->
+</script>
+
+<!--Main Body-->
+<div class="main_body">
+<div class="index_Charts_yema">您目前的位置：<a href="{WWW_URL}">火秀网</a> > <a href="{WWW_URL}huoshow_charts">排行榜</a></div>
+<div class="index_Charts_left">
+<div class="index_Charts_left_bt"></div>
+<!--左边导航条 Begin-->
+<!--#include virtual ="{ROOT}api/article.php?act=getChartsIndexLeftNav"--> 
+<!--左边导航条 End-->
+
+</div>
+<div class="index_Charts_rught">
+<!--排行榜列表 Begin-->
+<!--#include virtual ="{ROOT}api/article.php?act=getChartsIndexChartsList"--> 
+<!--排行榜列表 End-->
+<!--
+<div class="index_Chartslist_01">
+<div class="index_Chartslist_01_bt">榜单名</div>
+<div class="index_Chartslist_others">
+					<ul>
+						<li><span class="index_Chartslist_text"><a href="#">列1项目</a>      <a href="#">列1项目</a></span><span class="x"></span><span class="rank_down"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">火星救母记</a></span><span class="x"></span><span class="rank_retain"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">野兽男孩</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">小红帽 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">兰戈</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">联邦调整局</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span> <span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+					</ul>
+				</div>
+				<div class=" clear"></div>
+				<p class="index_Chartslist_01_wenzi">来源：新浪网<br>时间：2011-5-2</p>
+				<span class="index_Chartslist_01_anniu_more"><a href=""><span class="Best_Member_anniu_sanxiao"><<</span> 查看更多</a></span>
+
+</div>
+
+<div class="index_Chartslist_02">
+<div class="index_Chartslist_01_bt">榜单名</div>
+<div class="index_Chartslist_others">
+					<ul>
+						<li><span class="index_Chartslist_text"><a href="#">列1项目</a>      <a href="#">列1项目</a></span><span class="x"></span><span class="rank_down"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">火星救母记</a></span><span class="x"></span><span class="rank_retain"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">野兽男孩</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">小红帽 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">兰戈</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">联邦调整局</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span> <span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+					</ul>
+				</div>
+				<div class=" clear"></div>
+				<p class="index_Chartslist_01_wenzi">来源：新浪网<br>时间：2011-5-2</p>
+				<span class="index_Chartslist_01_anniu_more"><a href=""><span class="Best_Member_anniu_sanxiao"><<</span> 查看更多</a></span>
+
+</div>
+<div class="index_Chartslist_03">
+<div class="index_Chartslist_01_bt">榜单名</div>
+<div class="index_Chartslist_others">
+					<ul>
+						<li><span class="index_Chartslist_text"><a href="#">列1项目</a>      <a href="#">列1项目</a></span><span class="x"></span><span class="rank_down"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">火星救母记</a></span><span class="x"></span><span class="rank_retain"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">野兽男孩</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">小红帽 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">兰戈</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">联邦调整局</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span> <span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+					</ul>
+				</div>
+				<div class=" clear"></div>
+				<p class="index_Chartslist_01_wenzi">来源：新浪网<br>时间：2011-5-2</p>
+				<span class="index_Chartslist_01_anniu_more"><a href=""><span class="Best_Member_anniu_sanxiao"><<</span> 查看更多</a></span>
+
+</div>
+<div class="index_Chartslist_04">
+<div class="index_Chartslist_04_bt">榜单名</div>
+<div class="index_Chartslist_others_04">
+					<ul>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+						<li><span class="index_Chartslist_text_04"><a href="#">列1项目 　　　　　　　　　</a>      <a href="#">列1项目</a>　　　　　　　　　　　　　　                 <a href="#">列1项目</a></span></li>
+					</ul>
+				</div>
+				<div class=" clear"></div>
+				<p class="index_Chartslist_01_wenzi">来源：新浪网<br>时间：2011-5-2</p>
+				<span class="index_Chartslist_01_anniu_more"><a href=""><span class="Best_Member_anniu_sanxiao"><<</span> 查看更多</a></span>
+
+</div>
+<div class="index_Chartslist_05">
+<div class="index_Chartslist_01_bt">榜单名</div>
+<div class="index_Chartslist_others">
+					<ul>
+						<li><span class="index_Chartslist_text"><a href="#">列1项目</a>      <a href="#">列1项目</a></span><span class="x"></span><span class="rank_down"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">火星救母记</a></span><span class="x"></span><span class="rank_retain"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">野兽男孩</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">小红帽 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">兰戈</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">联邦调整局</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span> <span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">偷情许可证 </a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+						<li><span class="index_Chartslist_text"><a href="#">刀见笑刀见笑</a></span><span class="x"></span><span class="rank_up"></span></li>
+					</ul>
+				</div>
+				<div class=" clear"></div>
+				<p class="index_Chartslist_01_wenzi">来源：新浪网<br>时间：2011-5-2</p>
+				<span class="index_Chartslist_01_anniu_more"><a href=""><span class="Best_Member_anniu_sanxiao"><<</span> 查看更多</a></span>
+
+</div>
+-->
+</div>
+
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--Footer-->
+<!--{template 'huoshow_index/footer.html'}-->

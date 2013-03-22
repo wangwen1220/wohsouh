@@ -1,0 +1,1 @@
+var digg={view:function(a,b){ct.assoc.open("?app=digg&controller=digg&action=view&modelid="+a+"&contentid="+b,"newtab")},tab:function(a){if(a=="supports"){$("#supports").removeClass("s_3").addClass("s_3");$("#againsts").removeClass("s_3")}else{$("#againsts").removeClass("s_3").addClass("s_3");$("#supports").removeClass("s_3")}}};

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {if $title !=''}
+		<meta name="keywords" content="{$tags}" />
+	{else}
+		<meta name="keywords" content="{$keywords}" />
+	{/if}
+	<meta name="description" content="{$description}" />
+    <title>{if $title!=''}{$title}_<?php echo $pos[0]['name']; ?>频道_{else}<?php
+    $seoname='';
+    foreach($pos as $k=>$v){
+		$seoname = $v['name'].'_'.$seoname;
+	}
+	echo $seoname;
+    ?>{/if}{$SYSTEM[sitename]}</title>
+    <link href="{WWW_URL}img/templates/huoshow02/css/events_global.css" rel="stylesheet" type="text/css" />
+    <link href="{WWW_URL}img/templates/huoshow02/css/events.css" rel="stylesheet" type="text/css" />
+	 <link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+    <script type="text/javascript" src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{IMG_URL}templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="{IMG_URL}js/config.js"></script>
+    <script type="text/javascript" src="{DX_URL}static2/js/huoshow_common.js"></script>
+
+</head>
+
+  <body class="body_bg">
+    <!--{template 'system/login_bar.html'}-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="{WWW_URL}events" title="火秀赛事首页">火秀赛事频道</a></h1>
+		<div id="sub_channel">
+			<ul>
+				<li><a href="{WWW_URL}events/wholeevents/">赛事快报</a></li>
+				<li><a href="{WWW_URL}events/events_paihang">赛事排行</a></li>
+				<li><a href="{WWW_URL}events/saishiricheng">赛事日程</a></li>
+				<li><a href="{WWW_URL}events/events_zt">赛事专题</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

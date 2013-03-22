@@ -1,0 +1,131 @@
+<!--{template 'system/header_channel.html'}-->
+<script type="text/javascript">
+(function($){
+	$("#mn_xinwen").addClass("a");
+})(jQuery);
+</script>
+<link href="{IMG_URL}templates/huoshow_01/css/news.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+(function($){
+     $(function(){
+         $("#jqtab_1").tab({
+            a: ".moer2 a",
+            b: ".tab-item",
+            t: 3000
+        });
+         $("#top2banner").tab({
+            a: ".top2banner-nav a",
+            b: ".top2banner-item",
+            t: 3000
+        });
+        $(".sss").scroll();
+        });
+})(jQuery);
+</script>
+
+<div id="mian2">
+	<div id="mian2top">
+		<div id="topnews">		
+			<!--#include virtual="{ROOT}section/14.html"-->		
+		</div>
+            <!--滚动图片 轮显图片-->
+            <!--#include virtual="{ROOT}section/21.html"--> 
+                
+ 		<div class="clear"></div>
+	</div>
+</div>
+
+<div id="mian2">
+	<div id="miantop">
+		<div id="mianleft">
+		
+		<!--精彩视频-->
+		<!--#include virtual="{ROOT}section/15.html"-->
+   	
+    	<div class="kongge"></div>
+    	<!--赛事-->
+		<!--#include virtual="{ROOT}section/16.html"-->
+    
+    	<div class="kongge"></div>
+    	<!--八卦-->
+		<!--#include virtual="{ROOT}section/17.html"-->
+		
+    	<div class="kongge"></div>          
+		<!--电影-->
+		<!--#include virtual="{ROOT}section/18.html"-->
+    
+   		<div class="kongge"></div> 
+		<!--电视-->
+		<!--#include virtual="{ROOT}section/19.html"-->
+
+		<div class="kongge"></div> 
+		<!--乐坛-->
+		<!--#include virtual="{ROOT}section/20.html"-->
+    
+</div>
+
+
+
+<div id="miancontent">
+    <div id="kuangzi">
+        <!--滚动新闻-->
+		<!--#include virtual="{ROOT}section/28.html"-->		
+		<!--调查-->
+		<!--#include virtual="{ROOT}section/26.html"-->
+        <!--热门调查-->
+		<!--#include virtual="{ROOT}section/27.html"-->
+		     
+    </div>
+    <div class="guanggao">
+        {db sql="select * from #table_section  where sectionid =25" }
+        {$r[data]}
+        {/db}
+    </div>
+</div>
+
+<div id="mianright">
+    <p>
+    {db sql="select * from #table_section  where sectionid =29" }
+    {$r[data]}
+    {/db}
+    </p>
+    <p class="kongge"></p>
+    <!--论坛热帖-->
+    <div id="luntanretie">
+    <?php
+    $durl = WWW_URL.'api/dz.php?act=luntanretie&dz_url='.DX_URL.'&time='.time();
+	echo file_get_contents($durl);
+    ?>
+    </div>
+    <!--新闻排行-->
+	<!--#include virtual="{ROOT}section/23.html"-->    
+   
+    <div class="kongge"></div>
+
+    <div id="saishiqunzu"> 
+    <?php
+    $durl = WWW_URL.'api/dz.php?act=saishiqunzu&dz_url='.DX_URL.'&time='.time(); 
+    echo file_get_contents($durl);       
+	?> 
+    </div>
+</div>
+</div>
+
+<div class="clear"></div>
+</div>
+
+<div id="mian2">
+    <div class="footbaner">
+    {db sql="select * from #table_section  where sectionid =24" }
+        {$r[data]}
+    {/db}
+    </div>
+    <!--精彩图集-->
+	<!--#include virtual="{ROOT}section/22.html"-->  
+</div>
+<div class="clear"></div>
+<br />
+
+
+</div>
+<!--{template 'system/footer.html'}-->

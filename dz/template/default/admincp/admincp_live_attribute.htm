@@ -1,0 +1,68 @@
+<div class="itemtitle"><h3>{$roomAttribute['username']}的房间属性</h3></div>
+<div>
+	<!--{if $op=='attribute'}-->
+	<form name="formattribute" action="admin.php?action=live&op=attribute" method="post">
+	<input type="hidden" name="uid" value="{$uid}"/>
+		<table class="tb tb2 ">
+			<tr class="partition">
+				<td colspan="2"><h4>房间标题</h3></td>
+			</tr>
+			<tr>
+				<td width="50">标题：</td>
+				<td><input type="text" name="title" value="{$roomAttribute['roomtitle']}" /></td>
+			</tr>
+			<tr>
+				<td>颜色：</td>
+				<td><input type="text" name="titlecolor" value="{$roomAttribute['titlecolor']}" /></td>
+			</tr>
+		</table>
+		<table class="tb tb2 ">
+			<tr class="partition">
+				<td colspan="2"><h4>房间公告</h3></td>
+			</tr>
+			<tr>
+				<td width="50">内容：</td>
+				<td><textarea name="content" rows="5" cols="80">{$roomAttribute['roominfo']}</textarea></td>
+			</tr>
+			<tr>
+				<td>颜色：</td>
+				<td><input type="text" name="contentcolor" value="{$roomAttribute['roominfocolor']}" /></td>
+			</tr>
+		</table>
+		<table class="tb tb2 ">
+			<tr class="partition">
+				<td colspan="2"><h4>离开状态</h3></td>
+			</tr>
+			<tr>
+				<td width="50">图片地址：</td>
+				<td><input type="text" name="img" value="{$roomAttribute['img']}" /></td>
+			</tr>
+			<tr>
+				<td>留言：</td>
+				<td><textarea name="starts" rows="5" cols="80">{$roomAttribute['starts']}</textarea></td>
+			</tr>
+		</table>	
+		<table class="tb tb2 ">
+			<tr>
+				<td colspan="2">　　<input class="btn" type="submit" name="submit" value="更新"/></td>
+			</tr>
+		</table>	
+	</form>
+	<!--{elseif $op=='pw'}-->
+	<table class="tb tb2 ">
+		<tr class="partition">
+			<td colspan="2"><h4>查看密码</h3></td>
+		</tr>
+		<!--{if $roomAttribute['pass']==1}-->		
+		<tr>
+			<td width="150">当前的房间密码是：</td>
+			<td>{$roomAttribute['password']}</td>
+		</tr>
+		<!--{else}-->
+		<tr>
+			<td colspan="2">当前房间不需要密码访问</td>
+		</tr>
+		<!--{/if}-->
+	</table>
+	<!--{/if}-->
+</div>

@@ -1,0 +1,25 @@
+<form action="" method="POST" name="form">
+<table border="0" class="tb tb2">
+	<tr>
+		<td>所属组件: 
+			<select name="plugin_id" style="width:200px;">
+				<option value="{$plugin_name[0].id}">{$plugin_name[0].plugin_name}</option>
+				{section name=p loop=$plugintype}
+				<option value="{$plugintype[p].id}">{$plugintype[p].plugin_name}</option>
+				{/section}
+			</select></td>
+	</tr>
+	<tr>
+		<td>规则描述: <textarea cols="50" rows="3" name="regular_descript" />{$rules.regular_descript}</textarea></td>
+	</tr>
+	<tr>
+		<td>规则简短描述: <textarea cols="50" rows="3" name="regular_short_name" />{$rules.regular_short_name}</textarea></td>
+	</tr>
+	<tr>
+		<td>描述规则的sql字符串: <textarea cols="50" rows="3" name="regular_sql" />{$rules.regular_sql}</textarea></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="submit" value="提交"/></td>
+	</tr>
+</table>
+</form>

@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>test</title>
+    <style>
+      {literal}
+      body{
+        font-size:12px;
+        padding:10px;
+        margin:0;
+      }
+
+      ul{
+        padding:0;
+        list-style:none;
+        overflow:hidden;
+        margin:0;
+      }
+
+      .toolbar{
+        padding:5px;
+      }
+
+      .item-box{
+        padding:5px;
+        border:1px solid #ccc;
+        width:620px;
+        clear:both;
+      }
+
+      .item-list li{
+        float:left;
+        padding-bottom:3px;
+        width:265px;
+        height:23px;
+        overflow:hidden;
+      }
+
+      .item{
+        border:1px solid #ccc;
+        background:#eee;
+        padding:10px;
+        margin-bottom:10px;
+        border-radius:3px;
+      }
+
+      .item label{
+        width:90px;
+        display:inline-block;
+        padding-left:5px;
+      }
+
+      .item input,
+      .item select{
+        width:150px;
+        padding:2px 1px;
+      }
+
+      .item-remove-button{
+        float:right;
+        padding:5px;
+        border:1px solid #ccc;
+        background:#fff;
+        text-decoration:none;
+        border-radius:3px;
+      }
+
+      .item-remove-button:hover{
+        border:1px solid #00f;
+        background-color:#eee;
+        box-shadow:0 0 4px #ccc;
+      }
+
+      .clearfix{
+        clear:both;
+        height:1px;
+        overflow:hidden;
+      }
+      {/literal}
+    </style>
+    <script src="/huoshow/js/jquery/jquery.min.js"></script>
+    <script src="/huoshow/js/json2.js"></script>
+  </head>
+  <body>
+    <div id="result">&nbsp;</div>
+    <div id="temp" style="display:none;">
+      <div class="item">
+        <a class="item-remove-button" href="#">X</a>
+        <form>
+          <ul>
+            <li>
+            <label>类型:</label>
+            <select class="item-field" name="x_param_type">
+              <option value="1">字符串</option>
+              <option value="2">数字</option>
+            </select>
+            </li>
+
+            <li>
+            <label>显示类型:</label>
+            <select class="item-field" name="x_param_display_type">
+              <option value="1">复选框</option>
+              <option value="2">单选框</option>
+              <option value="3">列表框</option>
+              <option value="4">输入框</option>
+              <option value="5">文本框</option>
+              <option value="6">上传文件</option>
+              <option value="7">密码框</option>
+            </select>
+            </li>
+
+            <li>
+            <label>名称:</label>
+            <input class="item-field" name="x_param_zh_name" value=""/>
+            </li>
+
+            <li>
+            <label>英文名:</label>
+            <input class="item-field" name="x_param_en_name" value=""/>
+            </li>
+
+            <li>
+            <label>字段长度:</label>
+            <input class="item-field" name="x_param_length" value=""/>
+            </li>
+
+            <li>
+            <label>可选值范围:</label>
+            <input class="item-field" name="x_param_option_value" value=""/>
+            </li>
+
+            <li>
+            <label>范围下限:</label>
+            <input class="item-field" name="x_param_rage_low" value=""/>
+            </li>
+
+            <li>
+            <label>范围上限:</label>
+            <input class="item-field" name="x_param_rage_hight" value=""/>
+            </li>
+
+            <li>
+            <label>验证表达式JS:</label>
+            <input class="item-field" name="x_param_verify_patten_js" value=""/>
+            </li>
+
+            <li>
+            <label>验证表达式PHP:</label>
+            <input class="item-field" name="x_param_verify_patten_php" value=""/>
+            </li>
+
+            <li>
+            <label>验证错误信息:</label>
+            <input class="item-field" name="x_param_verify_error_msg" value=""/>
+            </li>
+          </ul>
+        </form>
+        <div class="clearfix">&nbsp;</div>
+      </div>
+    </div>
+	
+    <div class="item-box">
+      <div class="item-list" id="item_list"></div>
+      <div style="text-align:right;">
+        <button onClick="add();">+</button>
+      </div>
+    </div>
+
+
+    <div class="toolbar">
+      <form action="?action=huoshow&operation=formbuild" method="post" onSubmit="return paramFormSubmit(this);">
+        <input type="hidden" id="jsonstr" name="jsonstr" value='{$jsonstr}'/>
+        <input type="hidden" id="matchid" name="matchid" value='{$matchid}'/>
+        <input type="hidden" id="action" name="action" value='submit'/>
+        <input type="submit" value="提交" onclick="document.getElementById('action').value='submit';"/>
+        <input type="submit" value="预览" onclick="document.getElementById('action').value='view';"/>
+      </form>
+    </div>
+
+
+    <script>
+      {literal}
+      ((function(){
+        function ParamItem(tempNode, data) {
+          this.node_ = tempNode.clone().get(0);
+          if(data){
+            this.data_ = data;
+          }else{
+            this.data_ = {x_param_type: 1, x_param_display_type: 1};
+          }
+        }
+        ParamItem.prototype.node_ = null;
+        ParamItem.prototype.data_ = null;
+        ParamItem.prototype.form_ = null;
+
+        ParamItem.prototype.init_ = function() {
+          var this_ = this;
+          this.form_ = $('form', this_.node_).get(0);
+
+          $('.item-remove-button', this_.node_).click(function(e){
+            e.preventDefault();
+            //if(confirm('确定要删除?')){
+              $(this_.node_).remove();
+              //}
+          });
+
+          $(this_.form_.x_param_type).change(function(e) {
+            this_.setParamType($(this).val());
+          });
+
+          $(this_.form_.x_param_display_type).change(function(e) {
+            this_.setParamDisplayType($(this).val());
+          });
+
+          for(var key in this_.data_){
+            $(this_.form_[key]).val(this_.data_[key]);
+          }
+
+          this_.setParamType(this_.data_['x_param_type']);
+          this_.setParamDisplayType(this_.data_['x_param_display_type']);
+        };
+
+        ParamItem.prototype.setParamType = function(type) {
+          this.data_['x_param_type'] = type;
+          this.refreshUI();
+        };
+
+        ParamItem.prototype.setParamDisplayType = function(type) {
+          this.data_['x_param_display_type'] = type;
+          this.refreshUI();
+        };
+
+        ParamItem.prototype.refreshUI = function() {
+          var type = this.data_['x_param_type'];
+          var displayType = this.data_['x_param_display_type'];
+
+          if(type == 2){
+            $(this.form_['x_param_rage_low']).parent().show();
+            $(this.form_['x_param_rage_hight']).parent().show();
+          }else{
+            $(this.form_['x_param_rage_low']).parent().hide();
+            $(this.form_['x_param_rage_hight']).parent().hide();
+          }
+
+          if(displayType == 1 || displayType == 2 || displayType == 3){
+            $(this.form_['x_param_option_value']).parent().show();
+          }else{
+            $(this.form_['x_param_option_value']).parent().hide();
+          }
+          if(displayType == 6 || displayType == 1 || displayType == 2 || displayType == 3){
+            $(this.form_['x_param_verify_patten_js']).parent().hide();
+            $(this.form_['x_param_verify_patten_php']).parent().hide();
+            $(this.form_['x_param_verify_error_msg']).parent().hide();
+          }else{
+            $(this.form_['x_param_verify_patten_js']).parent().show();
+            $(this.form_['x_param_verify_patten_php']).parent().show();
+            $(this.form_['x_param_verify_error_msg']).parent().show();
+          }
+          if(displayType == 4 || displayType == 5 || displayType == 7){
+            $(this.form_['x_param_length']).parent().show();
+          }else{
+            $(this.form_['x_param_length']).parent().hide();
+          }
+        };
+
+        ParamItem.prototype.appendTo = function(node) {
+          $(this.node_).appendTo(node);
+        };
+
+
+
+        function ParamItemList(parentNode) {
+          this.parentNode_ = parentNode;
+        }
+        ParamItemList.prototype.parentNode_ = null;
+
+        ParamItemList.prototype.add = function(paramItem) {
+          paramItem.appendTo(this.parentNode_);
+          paramItem.init_();
+        };
+
+        ParamItemList.prototype.toJSON = function() {
+          var itemList = [];
+          $('.item', this.parentNode_).each(function(){
+            var item = {};
+            $('.item-field', this).each(function(){
+              item[this.getAttribute('name')] = $(this).val();
+            });
+            itemList.push(item);
+          });
+          return JSON.stringify(itemList);
+        };
+
+
+        var tmp = $('#temp .item');
+        var paramItemList = new ParamItemList($('#item_list'));
+
+        window.add = function() {
+          var paramItem = new ParamItem(tmp);
+          paramItemList.add(paramItem);
+        };
+
+        window.loadData = function(data) {
+          if(!!data){
+            data = JSON.parse(data);
+            for(var i=0, l=data.length; i<l; i++){
+              var paramItem = new ParamItem(tmp, data[i]);
+              paramItemList.add(paramItem);
+            }
+          }
+        };
+
+        window.paramFormSubmit = function(form) {
+          form.jsonstr.value = paramItemList.toJSON();
+          alert(form.jsonstr.value);
+        };
+
+        loadData(document.getElementById('jsonstr').value);
+
+      })());
+      {/literal}
+    </script>
+  </body>
+</html>

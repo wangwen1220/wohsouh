@@ -1,0 +1,17 @@
+<table border="0" class="tb tb2">
+	<tr class="header">
+		<th>用户名</th>
+		<th>类型</th>
+		<th>礼物券</th>
+		<th>操作</th>
+	</tr>
+	{section name=m loop=$manager_arr}
+	<tr class="hover">
+		<td>{$manager_arr[m].username}</td>
+		<td>管理员</td>
+		<td>{if $manager_arr[m].price}{$manager_arr[m].price}{else}0{/if}</td>
+		<td><a href="http://space.zyc.huoshow.com/admin.php?action=members&operation=edit&uid={$manager_arr[m].uid}">详细</a> | <a href="?action=huoshow&operation=multidetailed&tab=del&uid={$manager_arr[m].uid}&roomid={$roomid}" onclick="return confirm('确定要删除此管理员？注意：此操作不可恢复，请谨慎操作！')">删除</a></td>
+		
+	</tr>
+	{/section}
+</table>

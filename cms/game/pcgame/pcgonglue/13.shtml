@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="单机游戏全攻略，游戏秘籍，完美攻略" />
+<meta name="description" content="火秀网单机游戏频道为您提供最专业的单机游戏攻略、动态、评测及下载" />
+    <title>单机攻略专区_单机游戏_火秀游戏_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/game.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+    <body class="body_bg">
+      <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+      <!--Navigator-->
+      <div class="nav_bg">
+        <div class="nav_body">
+          <a href="http://www.huoshow.com/game/" title="火秀游戏首页" class="channel_logo">火秀游戏频道</a>
+          <div id="sub_channel">
+            <a href="http://www.huoshow.com/game/webgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_01.png" width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/onlinegame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_02.png" width="75" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/mobile_game/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_03.png"  width="77" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/pcgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_04.png"  width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/flashgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_05.png" width="56" height="19"/></a>
+          </div>
+        </div>
+      </div>
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/game/index.shtml">火秀游戏</a> > <a href="http://www.huoshow.com/game/pcgame/index.shtml">单机游戏</a> > <a href="http://www.huoshow.com/game/pcgame/pcgonglue/index.shtml">单机攻略专区</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">单机攻略专区</h2></div>
+<ul>
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0705/14613.shtml" target="_blank">《虚拟网球4》操作</a></span><span class="date_01">2011-07-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0705/14612.shtml" target="_blank">《地牢围攻3》使用心得&技能推荐</a></span><span class="date_01">2011-07-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0705/14605.shtml" target="_blank">《古剑奇谭》重玩-彼岸浮灯 有感</a></span><span class="date_01">2011-07-05</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0704/14500.shtml" target="_blank">星际2攻略秘籍：你可能不太清楚的小技巧</a></span><span class="date_01">2011-07-04</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0704/14436.shtml" target="_blank">《魔法门英雄无敌6》作弊控制台开启方法</a></span><span class="date_01">2011-07-04</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0704/14434.shtml" target="_blank">《暗影诅咒》成就获得</a></span><span class="date_01">2011-07-04</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14297.shtml" target="_blank">《战地之叛逆连队2》870和m93终于白金了</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14293.shtml" target="_blank">《古剑奇谭》提供一个刷榜比较快的方法</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14274.shtml" target="_blank">《战神的挑战2》关于魔法的修改</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14272.shtml" target="_blank">《黑手党2》找到了最快的车</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14270.shtml" target="_blank">《古剑奇谭》低级通最终boss</a></span><span class="date_01">2011-07-02</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14268.shtml" target="_blank">《龙之纪元起源》终于通关了噩梦难度欣慰啊</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14265.shtml" target="_blank">《孢子》太空阶段的一些经验建议</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14262.shtml" target="_blank">《星际争霸2》实用小技巧 那些不为人所知的细节</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14253.shtml" target="_blank">《刺客信条2》新-船上商人杀法</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14249.shtml" target="_blank">《古剑奇谭》“神策天师”的获取心得</a></span><span class="date_01">2011-07-02</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14247.shtml" target="_blank">《异形丛生》100%联机法</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14237.shtml" target="_blank">《黑手党2》一个剧情上的小发现</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14235.shtml" target="_blank">《黑手党2》玩了一小半感觉是今年唯一的大作</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0702/14226.shtml" target="_blank">《行会2》新手入门心得</a></span><span class="date_01">2011-07-02</span></li>
+<!--  -->
+</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/12.shtml">上一页</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/1.shtml">1...</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/11.shtml">11</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/12.shtml">12</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/13.shtml" class="now">13</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/14.shtml">14</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/15.shtml">15</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/66.shtml">...66</a></li><li><a href="http://www.huoshow.com/game/pcgame/pcgonglue/14.shtml">下一页</a></li></ul>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+<!--Banner 300*250-->
+    <div class="banner_300_250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(32);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=3469ec5'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=32&n=3469ec5' /></a></noscript></div>            <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;" class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="/api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

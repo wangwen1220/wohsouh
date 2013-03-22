@@ -1,0 +1,343 @@
+<!--{template 'huoshow_movie/header.html'}-->
+<?php $_GET['section_memo'] = 'huoshow_movie_index_keywords';?>
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Main Body-->
+<div class="main_body">
+  <!--Left-->
+  <div class="body_left">
+    <!--Slide-->
+    <div class="slide" id="pbox3">
+      <!-- 轮换大图片 -->
+      {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_scroll_image' and d.thumb!='' ORDER BY d.sort desc LIMIT 4"}	
+      <div class="slide-page">
+        <img src="{WWW_URL}upload/{$r[thumb]}" width="702" height="365" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],34,'')}</a></h3>
+        <p>{str_cut($r[description],136)}</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      {/db}
+      <div class="slide-links-wrap">
+        <a href="#" class="slide-prev">&nbsp;</a>
+        <span class="slide-links">
+          {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_scroll_image' and d.thumb!='' ORDER BY d.sort desc LIMIT 4"}	
+          <a href="#">&nbsp;</a>
+          {/db}
+        </span>
+        <a href="#" class="slide-next">&nbsp;</a>
+      </div>
+      <script>
+        $(function(){
+          window.pbox3 = make_pagebox('pbox3', {
+            links_selector: '.slide-links a', 
+            current_class: 'slide-current',
+            pages_selector: '.slide-page',
+            prev_selector: '.slide-prev',
+            next_selector: '.slide-next',
+            interval: 4,
+            effect: 1
+          });
+        });
+      </script>
+
+
+    </div>
+    <div class="slide_shadow"></div>
+    <!--Top News-->
+    <div class="top_news">
+      <div class="top_news_left">
+        <div class="top_news_left_inner_bd">
+          <div class="left_title_bg">
+            <h2 class="title_blue">专题</h2>
+            
+          </div>
+          <div class="topic_first">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_exclusive_interview' and d.thumb!='' and d.description!='' ORDER BY d.sort desc limit 1"}
+            <dl>
+              <dt><a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="96" height="128"></a></dt>
+              <dd class="topic_first_title"><a href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></dd>
+              <dd class="topic_first_briefing">{str_cut($r[description],96)}<a href="{$r[url]}" target="_blank">[详细] </a></dd>
+            </dl>
+            {/db}
+          </div>
+          <ul class="list">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_exclusive_interview' ORDER BY d.sort desc limit 1,5"}
+            <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],36,'')}</a></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+      <div class="top_news_right">
+        <div class="top_news_right_inner_bd">
+          <div class="right_title_bg">
+            <h2 class="title_blue">头条</h2>
+          </div>
+          <div class="top_news_list">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_headline' ORDER BY d.sort desc limit 3"}
+            <a href="{$r[url]}" target="_blank"><h3 class="top_news_txt_hl">{str_cut($r[title],40,'')}</h3></a>
+            <p class="top_news_briefing">{str_cut($r[description],90)}<a target="_blank" href="{$r[url]}">[详细]</a></p>
+            {/db}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="top_news">
+      <div class="top_news_left">
+        <div class="top_news_left_inner_bd">
+          <div class="left_title_bg">
+            <h2 class="title_blue">影人</h2>
+            <span class="more"><a href="yingren/" class="more_bg">更多</a></span>
+          </div>
+          <div class="people_first">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_character_l' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+            <a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="247" height="84" /></a>
+            <a href="{$r[url]}" target="_blank">{str_cut($r[title],34,'')}</a>
+            {/db}
+          </div>
+          <ul class="list">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_character_l' ORDER BY d.sort desc limit 1,5"}
+            <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],36,'')}</a></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+      <div class="top_news_right">
+        <div class="top_news_right_inner_bd">
+          <div class="right_title_bg">
+            <h2 class="title_blue">影评</h2>
+            <span class="more"><a href="yingping/" class="more_bg">更多</a></span>
+          </div>
+          <div class="review_first">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_character_r' and d.thumb!='' and d.description!='' ORDER BY d.sort desc limit 1"}
+            <dl>
+              <dt><a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="150" height="105"></a></dt>
+              <dd class="review_first_title"><a href="{$r[url]}" target="_blank">{str_cut($r[title],28,'')}</a></dd>
+              <dd class="review_first_briefing">{str_cut($r[description],78)}<a href="{$r[url]}" target="_blank">[详细] </a></dd>
+            </dl>
+            {/db}
+          </div>
+          <ul class="list">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_character_r' ORDER BY d.sort desc limit 1,5"}
+            <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],46,'')}</a></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Top Video-->
+    <div class="top_video">
+      <div class="top_video_inner_bd">
+        <div class="cross_title_bg">
+          <h2 class="title_blue_big">精彩片花</h2>
+          <span class="more"><a href="pianhua/" class="more_bg">更多</a></span>
+        </div>
+        <ul class="top_video_list">
+          {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_trailer' and d.thumb!='' ORDER BY d.sort desc"}
+          <?php $num=$r[num];?>
+          <!-- {if $i<=$num} -->
+          <li><span class="top_video_pic_bg"><a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></span> </li>
+          <!-- {/if} -->
+          {/db}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Left End-->
+  <!--Right-->
+  <div class="body_right">
+
+
+    <!--Hot Movie-->
+    <div class="hot_movie" id="pbox1">
+      <div class="hot_movie_cate">
+        <a href="javascript:;" class="movie_cate_def">电影</a>
+        <a href="javascript:;">电视</a>
+      </div>
+      <div class="hot-movie-body">
+        <div class="movie_list">
+          <!--#include virtual ="{ROOT}api/article.php?act=movie_tv&type=movie"-->   
+        </div>
+        <div class="movie_list">
+          <!--#include virtual ="{ROOT}api/article.php?act=movie_tv&type=tv"-->   
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function(){
+        window.pbox1 = make_pagebox('pbox1', {
+          links_selector: '.hot_movie_cate a', 
+          current_class: 'movie_cate_def',
+          pages_selector: '.movie_list',
+          event_type: 'mouseover'
+        });
+      });
+    </script>
+
+
+    <!--Charts Movie-->
+    <div class="charts">
+      <div class="charts_inner_bd" id="pbox2">
+        <div class="charts_title">
+          <h2 class="title_black">电影票房排行</h2>
+          <span class="charts_cate"><a href="javascript:;"class="charts_cate_def">内地</a><a href="javascript:;">北美</a></span>
+        </div>
+
+        <div class="charts_block">
+           
+          <!--#include virtual ="{ROOT}api/article.php?act=movie_rank&type=neidi&in=movie"-->   
+        </div>
+        <div class="charts_block">
+          
+          <!--#include virtual ="{ROOT}api/article.php?act=movie_rank&type=beimei&in=movie"-->   
+        </div>
+        <script>
+          $(function(){
+            window.pbox1 = make_pagebox('pbox2', {
+              links_selector: '.charts_cate a', 
+              current_class: 'charts_cate_def',
+              pages_selector: '.charts_block',
+              event_type: 'mouseover'
+            });
+          });
+
+        </script>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!--Banner 250*250-->
+    {db sql="select * from #table_section  where memo ='banner_movie_left_250_250'"}
+		{$r[data]}
+    {/db}
+    <div class="clear"></div>
+    <!--Charts TV-->
+    <div class="charts">
+      <div class="charts_inner_bd">
+        <div class="charts_title">
+          <h2 class="title_black">电视收视排行</h2>
+        </div>
+        <div class="charts_block">
+           <!--#include virtual ="{ROOT}api/article.php?act=movie_rank&type=huoshow_tv&in=movie"-->   
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Right End-->
+  <div class="clear"></div>
+  <!--Banner 960*90-->
+  {db sql="select * from #table_section  where memo ='banner_movie_universal_960_90'"}
+	  {$r[data]}
+  {/db}
+  <!--Body Bottom-->
+  <!--Other News-->
+  <div class="full_block">
+    <div class="full_block_inner_bd">
+      <div class="other_news_title"></div>
+      <div class="other_news_sub">
+        <div class="other_news_sub_title"><h2 class="title_black">华语</h2>
+          <span class="more"><a href="huayu/" class="more_bg">更多</a></span>
+        </div>
+        <div class="list">
+          <ul class="liston">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_china' ORDER BY d.sort desc limit 10"}
+            <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+      <div class="other_news_sub">
+        <div class="other_news_sub_title"><h2 class="title_black">欧美</h2>
+          <span class="more"><a href="oumei/" class="more_bg">更多</a></span>
+        </div>
+        <div class="list">
+          <ul class="liston">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_occident' ORDER BY d.sort desc limit 10"}
+            <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></li>		
+            {/db}
+          </ul>
+        </div>
+      </div>
+      <div class="other_news_sub">
+        <div class="other_news_sub_title"><h2 class="title_black">日韩</h2>
+          <span class="more"><a href="rihan/" class="more_bg">更多</a></span>
+        </div>
+        <div class="list">
+          <ul class="liston">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_movie_jk' ORDER BY d.sort desc limit 10"}
+            <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],40,'')}</a></li>	
+            {/db}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Picture-->
+  <div class="full_block">
+    <div class="full_block_inner_bd">
+      <div class="full_title_bg">
+        <span class="title_blue_big">剧照</span>
+        <span class="more"><a href="juzhao/" class="more_bg">更多</a></span>
+      </div>
+      <div class="pic_list">
+        <ul>
+          {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_movie_index_stills' and d.thumb!='' ORDER BY d.sort desc limit 11"}
+          <!-- {if $i==1} -->
+          <li class="first"><a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="232" height="354" /></a><span class="pic_text_bg_first"><a href="{$r[url]}" target="_blank">{$r[title]}</a></span></li>
+          <!-- {else} -->
+          <li> <a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="119" height="160" /></a>
+           <!-- {if $i==2} -->
+         <span class="pic_txt_bg_red">
+          <!-- {/if} --> 
+           <!-- {if $i==3} -->
+         <span class="pic_txt_bg_blue">
+          <!-- {/if} --> 
+           <!-- {if $i==4} -->
+         <span class="pic_txt_bg_green">
+          <!-- {/if} --> 
+           <!-- {if $i==5} -->
+         <span class="pic_txt_bg_yellow">
+          <!-- {/if} --> 
+           <!-- {if $i==6} -->
+         <span class="pic_txt_bg_red">
+          <!-- {/if} --> 
+           <!-- {if $i==7} -->
+         <span class="pic_txt_bg_purple">
+          <!-- {/if} --> 
+           <!-- {if $i==8} -->
+         <span class="pic_txt_bg_yellow">
+          <!-- {/if} --> 
+           <!-- {if $i==9} -->
+         <span class="pic_txt_bg_cyan">
+          <!-- {/if} --> 
+           <!-- {if $i==10} -->
+         <span class="pic_txt_bg_red">
+          <!-- {/if} --> 
+           <!-- {if $i==11} -->
+         <span class="pic_txt_bg_green">
+          <!-- {/if} --> 
+          <a href="{$r[url]}">{$r[title]}</a></span></li>
+          <!-- {/if} --> 
+          {/db}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--Partners-->
+  <!-- 
+  <div class="partners">
+    <div class="layer_one"><a href="">合作火伴</a></div>
+    <div class="layer_two"><a href="">友情链接</a></div>
+    <div class="layer_content">
+      <p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+    </div>
+  </div>
+   -->
+  <!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+<!--{template 'huoshow_movie/footer.html'}-->

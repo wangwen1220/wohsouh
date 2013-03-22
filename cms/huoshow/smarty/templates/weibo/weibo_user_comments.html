@@ -1,0 +1,51 @@
+<div class="comment-form-body">
+  <form action="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_comments"
+    method="POST" id="send_comment_form">
+    <input type="hidden" value="{$msg_id}" name="msgid" />
+    <div class="c_tx5">
+      <a class="close" title="关闭" href="#close">关闭</a>
+      <span class="left">
+        <span class="number cNote">评论原文，把它分享给你的听众</span>
+        <span class="replyTitle"></span>
+        <span class="addReply">
+          <a href="#clean" class="reset-form">[清空评论理由]</a>
+        </span>
+      </span>
+    </div>
+    <div class="cont">
+      <div class="frameIn">
+        <textarea id="comment_textarea_{$msg_id}" class="inputTxt" style="overflow-y:hidden; height:68px;" padding="10" name="comments"></textarea>
+      </div>
+    </div>
+    <div class="bot">
+      <div class="insertFun">
+        <div class="sendList">
+          <a title="表情" href="javascript:;" class="txt wb-facepicker"><em class="sico ico_face2"></em></a>
+        </div>
+      </div>
+      <div class="naviL">
+        <label style="display:none"><input id="replayListCheckbox" class="check1" type="checkbox">同时转播</label>
+      </div>
+      <input class="inputBtn sendBtn" type="submit" title="评论" value="评论">
+    </div>
+  </form>
+
+  <div class="clear"></div>
+  <div class="relayList bgr3">
+    <div class="zb_multi">
+      <ul>
+        {section name=g loop=$getFullMsgReply}
+        <li class="">
+        <div class="msgCnt">
+          <strong><a rel="{$user_all_msg[g].nicename}" ctype="2" card="1" title="{$user_all_msg[g].nicename}" target="_blank" href="{$space_url}{$getFullMsgReply[g].uid}">{$getFullMsgReply[g].nicename}</a>:</strong>
+          <span class="content">{$getFullMsgReply[g].msg}</span>
+          <span class="cNote" from="3" >({$getFullMsgReply[g].append_time})</span>
+          <a class="replyCite reply-button" href="#reply">回复<input type="hidden" class="reply-text" value="|| @{$getFullMsgReply[g].nicename}:{$getFullMsgReply[g].msg1}" /></a>
+        </div>
+        <div class="clearfix"></div>
+        </li>
+        {/section}
+      </ul>
+    </div>
+  </div>
+</div>

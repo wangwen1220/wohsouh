@@ -1,0 +1,237 @@
+<!--{template 'huoshow_star/header.html'}-->
+
+<body  class="body_bg" id="star_ml">
+<!--Site Header-->
+ <!--{template 'system/login_bar.html'}-->
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+<h1 class="channel_logo"><a href="{WWW_URL}star" title="火秀明星首页">火秀明星频道</a></h1>
+		<!--{template 'huoshow_star/star_headerlink.html'}-->
+	</div>
+</div>
+<!--{template 'huoshow_star/star_list_header_search.html'}-->
+<div class="clear"></div>
+
+
+
+
+<div class="p1">
+		  <!--Slide-->
+    <div class="slide" id="pbox3">
+      <!-- 轮换大图片 -->
+      {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_scroll_image' and d.thumb!='' ORDER BY d.sort desc LIMIT 4"}	
+      <div class="slide-page">
+        <img src="{WWW_URL}upload/{$r[thumb]}" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="{$r[title]}" href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],34,'')}</a></h3>
+        <p>{str_cut($r[description],136)}</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      {/db}
+      <div class="slide-links-wrap">
+        <a href="#" class="slide-prev">&nbsp;</a>
+        <span class="slide-links">
+          {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_scroll_image' and d.thumb!='' ORDER BY d.sort desc LIMIT 4"}	
+          <a href="#">&nbsp;</a>
+          {/db}
+        </span>
+        <a href="#" class="slide-next">&nbsp;</a>
+      </div>
+      <script>
+        $(function(){
+          window.pbox3 = make_pagebox('pbox3', {
+            links_selector: '.slide-links a', 
+            current_class: 'slide-current',
+            pages_selector: '.slide-page',
+            prev_selector: '.slide-prev',
+            next_selector: '.slide-next',
+            interval: 4,
+            effect: 1
+          });
+        });
+      </script>
+
+
+    </div>
+        <div class="p1_r" id="p1_r"><div class="p1_r_1"><div class="bar_text"><h2 class='elementmask'>爆料台</h2><a target="_blank" href="{DX_URL}forum.php"><span class="font_12">我要爆料</span></a></div>
+            <ul> 
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_baoliaotai' ORDER BY d.sort desc limit 10"}
+                                   
+                                    <li><a target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></li>
+            {/db}
+
+                          </ul></div>
+        </div>
+        <div class="clear"></div>
+</div>
+<div class="p2">
+            <div class="p2_l"  id="p2_l_id">
+            		<div class="p2_l_l">
+                    
+                    <div class="star_rank">
+                  <table>
+                  <caption>
+                  <h2>港台明星排行榜</h2></caption>
+                  <colgroup span="1" class="table_bg_col1"></colgroup>
+                  <thead>
+                  <tr><th width="50">&nbsp;排名</th><th width="193">明星</th><th width="0"></th><th width="35">趋势</th></tr>
+                  </thead>
+                  
+                  <tbody>
+                 <!--#include virtual ="{ROOT}api/article.php?act=starrank&type=gangtai"--> 
+                  </tbody>
+                  <tfoot>
+                  <tr><td></td><td></td><td></td><td></td></tr>
+                  </tfoot>
+                  </table>
+               
+</div>
+            		</div>
+                    <div class="p2_l_r">
+        				<div class="hl_p1"><div class="bar_text"><h2>星动态</h2><a target="_blank" href="{WWW_URL}star/gangtaimingxing/xingdongtai">更多</a></div>
+                     <div class="hl_p1_pad">
+					 {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_xingdongtai' ORDER BY d.sort desc limit 1"}
+                       <h4><a target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></h4>
+					   {/db}
+                       <ul> 
+					   {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_xingdongtai' ORDER BY d.sort desc limit 1,9"}
+						<li><a target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></li>
+						{/db}
+					
+					</ul>
+					</div></div>
+              </div>
+        			<div class="clear"></div>
+            </div>
+            <div class="p2_r"><div class="bar_text">
+                <h2>港台热点</h2><a target="_blank" href="{WWW_URL}star/gangtaimingxing/gangtaijiaodian">更多</a></div>
+            <div class="pic_word">
+				<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_gangtairedian' and d.thumb!='' ORDER BY d.sort desc limit 6"}
+					<li><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="96" height="60" /><a target="_blank" href="{$r[url]}">{str_cut($r[title],12,'')}</a></li>
+				{/db}
+				                    <div class="clear"></div>
+				</ul>
+			</div>
+            </div>
+<div class="clear"></div>
+</div>
+
+<div class="ad">{db sql="select * from #table_section where memo ='huoshow_star_gangtaimingxing_image_960_90'"}
+                {$r[data]}
+                {/db}</div>
+
+<div class="p3">
+<div class="p3_l"><div class="vote">
+		<div>
+		  <h2>明星大调查</h2></div>
+				<div class=" clear"></div>
+			<div class="sb"><dl>
+        {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_vote' and d.description!='' ORDER BY d.sort desc limit 1"}
+        <dt><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="100" height="90" /></dt>
+        <dd>
+		{str_cut($r[title],20,'')}</ br>
+		{str_cut($r[description],50)}
+             </dd>
+			 {/db}
+             <div class="clear"></div>
+               </dl></div>
+			<form id="vote_{$r[contentid]}" name="vote_{$r[contentid]}" method="post" action="{APP_URL}?app=vote&controller=vote&action=vote" target="_blank">	           
+            <input name="contentid" type="hidden" value="{$r[contentid]}" />
+					<ul>
+					{db sql="select d.*,v.type from #table_section_data d LEFT JOIN #table_section s ON d.sectionid = s.sectionid LEFT JOIN #table_vote v ON d.contentid = v.contentid where s.memo ='huoshow_star_gangtaimingxing_vote' and d.contentid !='' order by d.sort  desc limit 1" }
+					
+					<!--{if $r[type]=='radio'}-->
+					<?php $type=$r[type];?>
+					{db sql="select * from #table_vote_option where contentid =	$r[contentid] "}
+						<li>
+							
+							<input type="{$type}" name="optionid" value="{$r[optionid]}" />
+							{$r[name]}
+						</li>
+					{/db}
+					<!--{else}-->
+					{db sql="select * from #table_vote_option where contentid = $r[contentid] "}
+						<li>							
+							<input type="{$type}" name="optionid[]" value="{$r[optionid]}" />
+							{$r[name]}
+						</li>
+					{/db}
+					<!--{/if}-->
+					<script type="text/javascript">
+					            //验证投票选项
+					            (function($){
+					             $('#vote_{$r[contentid]}').submit(function(){
+					                 var checkeds = $('#vote_{$r[contentid]} input:checked').length;
+					                 if(checkeds == 0){
+					                 alert('请选择投票选项');
+					                 return false;
+					                 }
+					                 <!--{if $type == 'checkbox'}-->
+					                 if(checkeds > {$maxoptions}){
+					                 alert('最多允许选{$maxoptions}项');
+					                 return false;
+					                 }
+					                 <!--{/if}-->
+					                 })
+					             })(jQuery);
+							</script>
+				{/db}
+					</ul>					 
+				<div class="submit_x"> <input type="image" src="{WWW_URL}img/templates/huoshow02/images/star/tijiao.jpg" ></div>
+				</form>
+		</div></div>
+<div class="p3_m"><div class="pic_word2">
+            <div class="bar_text">
+              <h2>星视频</h2>
+              <a target="_blank" href="{WWW_URL}star/gangtaimingxing/xingshipin">更多</a>
+<div class="clear"></div>
+            </div>
+				<ul class="font_12">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_xingshipin' and d.thumb!='' ORDER BY d.sort desc limit 6"}
+					<li><a target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="103" height="68" /></a><a target="_blank" href="{$r[url]}">{str_cut($r[title],14,'')}</a></li>
+					{/db}
+                    <div class="clear"></div>
+				</ul>
+			
+		</div></div>
+<div class="p3_r"><div class="p2_r_1" id="p2_r_id">
+                <div class="bar_text"><h2>找明星</h2>
+              <a target="_blank" href="http://space.huoshow.com/show.php"><span class="font_12">我要成名</span></a>
+<div class="clear"></div>
+            </div>
+               <!--{template 'huoshow_star/star_search.html'}-->   
+ <ul>
+{db sql="select * from #table_section where memo ='huoshow_star_zhaomingxing'"}
+                {$r[data]}
+                {/db}
+</ul>
+
+</div></div><div class="clear"></div>
+</div>
+
+<div class="meitu"><div class="bar_text">
+              <h2>港台明星美图</h2>
+              <a target="_blank" href="{WWW_URL}pic/photo/">更多</a>
+<div class="clear"></div>
+</div>
+<dl>
+{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_gangtaibigmeitu' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+<dt><a target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="281" height="340" /></a></dt>
+{/db}
+<dd><ul>
+{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_star_gangtaimingxing_gangtaimeitu' and d.thumb!='' ORDER BY d.sort desc limit 8"}
+  <li><a target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="140" height="140" /></a>{str_cut($r[title],18,'')}</li>
+  {/db}
+</ul></dd>
+</dl>
+<div class="clear"></div>
+
+</div>
+    <!--{template 'huoshow_star/footer.html'}-->
+</body>
+</html>

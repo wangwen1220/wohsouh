@@ -1,0 +1,17 @@
+<div class="wbInter">
+            <h3 class="font14">人气用户推荐</h3>
+              <ul class="clFrame">
+              {section name=bo loop=$watched_count}
+              <li>
+              <a href="{$space_url}{$watched_count[bo].uid}" title=""><img src="{$watched_count[bo].head_img_url}"></a>
+              <p><a href="{$space_url}{$watched_count[bo].uid}" title=""  class="uname">{$watched_count[bo].name}</a></p>
+              {if $watched_count[bo].is_att==0 && $watched_count[bo].uid !=$uid}
+              <p><a class="jsadd" href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_follow&dst_uid={$watched_count[bo].uid}"
+            onclick="{if $uid}showWindow('register', this.href)
+            {else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+            +加关注</a></p>{/if}
+              </li>
+                {/section}
+        </ul>
+              <div class="clear"></div>
+            </div>

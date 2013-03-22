@@ -1,0 +1,245 @@
+<!--{template 'huoshow_pic/header.html'}-->
+<?php $_GET['section_memo'] = 'huoshow_movie_index_keywords';?>
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<script>
+  function sTo(o) {
+    var id = o.href.split('#')[1];
+    var t = document.getElementById(id);
+    var y = 0;
+    if(t){
+      y = t.offsetTop - 36;
+    }
+    scrollTo(0, y);
+  }
+</script>
+<div class="guide">
+  <ul><li><a href="#">随便看看</a></li>
+  	<li><a href="#moviebeauty" onclick="sTo(this);return false;">影视美图</a></li>
+    <li><a href="#musicbeauty" onclick="sTo(this);return false;">音乐美图</a></li>
+    <li><a href="#photo" onclick="sTo(this);return false;">明星写真</a></li>
+    <li><a href="#atlas" onclick="sTo(this);return false;">赛事图集</a></li>
+    <li><a href="#beauty" onclick="sTo(this);return false;">游戏美图</a></li>
+    <li><a href="#top" onclick="sTo(this);return false;">Top<img src="{WWW_URL}img/templates/huoshow02/images/totop.jpg" align="absmiddle" /></a></li>
+  </ul>
+</div>
+
+<div class="p1">
+	<div class="star_flash">
+	<div class="slide" id="pbox3" style="border:0px; padding:0px;">
+      <!-- 轮换大图片 -->
+      {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_slides' and d.thumb!='' ORDER BY d.sort desc LIMIT 6"}	
+      <div class="slide-page">
+        <img src="{WWW_URL}upload/{$r[thumb]}" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="{$r[title]}" href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],34,'')}</a></h3>
+        <p>{str_cut($r[description],136)}</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      {/db}
+      <div class="slide-links-wrap">
+        <a href="#" class="slide-prev">&nbsp;</a>
+        <span class="slide-links">
+          {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_slides' and d.thumb!='' ORDER BY d.sort desc LIMIT 6"}	
+          <a href="#">&nbsp;</a>
+          {/db}
+        </span>
+        <a href="#" class="slide-next">&nbsp;</a>
+      </div>
+      <script>
+        $(function(){
+          window.pbox3 = make_pagebox('pbox3', {
+            links_selector: '.slide-links a', 
+            current_class: 'slide-current',
+            pages_selector: '.slide-page',
+            prev_selector: '.slide-prev',
+            next_selector: '.slide-next',
+            interval: 4,
+            effect: 1
+          });
+          make_pagebox('p1_r', {
+            links_selector: '.bar_text li', 
+            current_class: 'hover_sta',
+            pages_selector: '.p1_r-page'
+          });
+          
+        });
+      </script>
+    </div>
+	</div>
+    <div class="p1_r" id="p1_r">
+	    <div class="bar_text">
+	    	<ul><li class="hover_sta">内地焦点</li><li class="nohover_sta">热点推荐</li></ul>
+	    </div>
+	    <div class="sb p1_r-page">
+	    	<div class="pic_word">
+				<div class="sb">
+					<dl>
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_focus' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+			        	<dt><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="100px" height="90" /></dt>
+			        	<dd>{str_cut($r[description],46)}<a title="{$r[title]}" href="{$r[url]}" target="_blank">[详细]</a></dd>
+			        	{/db}
+		            </dl>
+	           	</div>
+			</div>
+	        <ul>
+	        	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_focus' ORDER BY d.sort desc limit 1,7"}
+	        	<li><span>·</span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],30,'')}</a></li>
+	        	{/db}
+	        </ul>
+	    </div>
+	    
+	    <div class="sb p1_r-page">
+	    	<div class="pic_word">
+				<div class="sb">
+					<dl>
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_recommend' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+			        	<dt><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="100px" height="90"/></dt>
+			        	<dd>{str_cut($r[description],46)}<a title="{$r[title]}" href="{$r[url]}" target="_blank">[详细]</a></dd>
+			        	{/db}
+		            </dl>
+	           	</div>
+			</div>
+	        <ul>
+	        	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_recommend' ORDER BY d.sort desc limit 1,7"}
+	        	<li><span>·</span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],30,'')}</a></li>
+	        	{/db}
+	        </ul>
+	    </div>
+	</div>
+<div class="clear"></div>
+</div>
+<div class="meitu_rec" id="scrollbox2">
+	<h2>美图推荐</h2>
+	<a class="click_skip_left" ></a><a class="click_skip_right" ></a>
+	<ul>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_picrecommend' and d.thumb!='' ORDER BY d.sort desc limit 20"}
+		<li ><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" /></a>{str_cut($r[title],18,'')}</li>
+		{/db}
+	</ul>
+	<script>
+	var scrollbox2 = make_scrollbox('scrollbox2', {
+		item: 'li',
+		prev: '.click_skip_left',
+		next: '.click_skip_right',
+		interval: 3
+	});
+        </script>
+</div>
+<div class="ad">
+{db sql="select * from #table_section  where memo ='huoshow_pic_ad' " }
+{$r[data]}
+{/db}
+</div>
+<div class="meitu" id="moviebeauty">
+    <div class="bar_text2">
+		<span> <a href="moviebeauty/">更多>></a> </span> 
+		<div class="bar_in3"><a name="ys">影视美图</a></div>  
+	</div>
+	<dl>
+		<dt>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_movie_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+		<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="280px" height="340" /></a>
+		{/db}
+		</dt>
+		<dd>
+			<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_movie_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1,8"}
+  				<li><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}"  width="140px" height="140px"/></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></span></li>
+				{/db}
+			</ul>
+		</dd>
+	</dl>
+	<div class="clear"></div>
+</div>
+
+<div class="meitu" id="musicbeauty">
+	<div class="bar_text2">
+		<span> <a href="musicbeauty/">更多>></a> </span> 
+		<div class="bar_in4"><a name="yy">音乐美图</a></div>  
+	</div>
+	<dl>
+		<dt>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_music_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+		<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="280px" height="340" /></a>
+		{/db}
+		</dt>
+		<dd>
+			<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_music_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1,8"}
+  				<li><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}"  width="140px" height="140px"/></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></span></li>
+				{/db}
+			</ul>
+		</dd>
+	</dl>
+	<div class="clear"></div>
+</div>
+<div class="meitu" id="photo">
+	<div class="bar_text2">
+    	<span><a href="photo/">更多>></a></span>  
+    	<div class="bar_in0"><a name="xz">明星写真</a></div>  
+	</div>
+	<dl>
+		<dt>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_photo' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+		<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="280px" height="340" /></a>
+		{/db}
+		</dt>
+		<dd>
+			<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_photo' and d.thumb!='' ORDER BY d.sort desc limit 1,8"}
+  				<li><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}"  width="140px" height="140px"/></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></span></li>
+				{/db}
+			</ul>
+		</dd>
+	</dl>
+	<div class="clear"></div>
+</div>
+
+<div class="meitu" id="atlas">
+	<div class="bar_text2">
+		<span> <a href="atlas/">更多>></a> </span> 
+		<div class="bar_in1"><a name="ss">赛事图集</a></div>  
+	</div>
+	<dl>
+		<dt>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+		<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="280px" height="340" /></a>
+		{/db}
+		</dt>
+		<dd>
+			<ul>
+  				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1,8"}
+  				<li><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}"  width="140px" height="140px"/></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></span></li>
+				{/db}
+			</ul>
+		</dd>
+	</dl>
+	<div class="clear"></div>
+</div>
+
+<div class="meitu" id="beauty">
+    <div class="bar_text2">
+		<span> <a href="beauty/">更多>></a> </span> 
+		<div class="bar_in2"><a name="gm">游戏美图</a></div>  
+	</div>
+	<dl>
+		<dt>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_game_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1"}
+		<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="280px" height="340" /></a>
+		{/db}
+		</dt>
+		<dd>
+			<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_pic_game_atlas' and d.thumb!='' ORDER BY d.sort desc limit 1,8"}
+  				<li><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}"  width="140px" height="140px"/></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],16,'')}</a></span></li>
+				{/db}
+			</ul>
+		</dd>
+	</dl>
+	<div class="clear"></div>
+</div>
+<!--Footer-->
+<!--{template 'huoshow_pic/footer.html'}-->

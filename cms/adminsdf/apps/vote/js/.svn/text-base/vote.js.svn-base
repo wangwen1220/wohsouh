@@ -1,0 +1,1 @@
+var vote={code:function(a){ct.ajax("\u83b7\u53d6\u8c03\u7528\u4ee3\u7801","?app=vote&controller=vote&action=code&contentid="+a,500,360)},vote_log:function(a){ct.iframe("?app=vote&controller=log&action=index&contentid="+a,500,360)},log_data:function(a){ct.iframe("?app=vote&controller=log_data&action=index&optionid="+a,500,360)}};

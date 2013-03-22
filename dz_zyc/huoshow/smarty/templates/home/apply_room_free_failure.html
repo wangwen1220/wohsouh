@@ -1,0 +1,47 @@
+<link href="/huoshow/css/zhibo/master.css" rel="stylesheet" type="text/css" />
+<div class="mn">
+<!--[diy=diycontenttop]--><div class="area" id="diycontenttop"></div><!--[/diy]-->
+				<div class="bm bw0">
+					<h1 class="mt"><img class="vm" src="/huoshow/img/zhibo/lv.jpg" alt="blog">直播</h1>
+					<ul class="tb cl"> 	    	    
+				        <li class="a"><a href="home.php?mod=huoshow&do=live">我的直播</a></li> 
+						<li><a href="home.php?mod=space&do=home&view=all" target="_blank">随便看看</a></li>
+						<li class="o2"><a href="home.php?mod=huoshow&do=apply_room&room_id={$userinfo[0].uid}">申请多功能直播间</a></li>
+					</ul>
+					<div class="clear"></div>
+					<div class="cst">
+					  <p><a href="home.php?mod=space&uid={$roomid}"><img src="{$userimages}" height="96" width="96" /></a></p>
+					  <ul class="lh2">
+						  <li class="wel">HI！{$userinfo[0].nickname}，欢迎参加火秀直播！</li>
+						  <li></li>
+					  </ul>
+					 <div class="clear"></div>
+					</div>
+					<div class="ba"> 
+						<a href="home.php?mod=huoshow&do=live" class="nopick bu">普通直播间</a> 
+         {if $ismutillive != 0}<a href="home.php?mod=huoshow&do=live&dou=1" class="bu pick">多功能直播间</a>{/if}
+							<div class="clear"></div>
+					</div>
+				</div>
+				<div class="emp">
+					<div class="bgset congr3">抱歉！您没有达到免费申请条件！<br />
+						<span class="ms12 pink">申请多功能房间魅力值需要{$free_first_charm}点或豪爽值{$free_first_rich}，您可以选择以下方式去发展魅力值或者豪爽值</span>
+					</div>
+				     <div class="sor_col">
+				       <ul class="sor">
+						 <li>魅力值：<span class="grn">{$user_charm}</span></li>
+						 <li class="red">末达成</li>
+						 <li>还差：{$reduce_charm}</li>
+                         <li><a href="{$liveroom}" class="sor_a">去直播</a> </li>
+					   </ul>
+                         <ul class="sor sor2">
+						 <li>豪爽值：<span class="grn">{$user_rich}</span></li>
+						 <li class="red">末达成</li>
+						 <li>还差：{$reduce_rich} </li>
+                         <li><a href="{$live}" class="sor_a">去送礼</a> </li>
+					   </ul>
+						 <Div class="clear"></Div>
+                 </div>
+          </div>
+	  </div>
+<div class="clear"></div>

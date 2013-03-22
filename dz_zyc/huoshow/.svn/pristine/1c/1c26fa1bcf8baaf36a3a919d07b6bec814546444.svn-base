@@ -1,0 +1,53 @@
+{include file="home/home_weibo_header.html"}
+<div class="conM" style="width:545px; margin:0px;">
+	{if $lists == 1 or $lists ==2}
+	{include_php file="huoshow/module/weibo/weibo_user_send_dynamic.php"}
+	{/if}
+	<article>
+		<div class="userBar font12">
+			{if $lists ==1} 
+				<a class="selectedFont">全部动态</a> | 
+				<a href="home.php?mod=huoshow&do=weibo&list=2">我的微博</a> | 
+				<a href="home.php?mod=huoshow&do=weibo&list=3">我的消息</a> |
+				<a href="home.php?mod=huoshow&do=weibo&list=4">随便看看</a>
+			{elseif $lists ==2} 
+				<a href="home.php?mod=huoshow&do=weibo&list=1">全部动态</a> | 
+				<a class="selectedFont">我的微博</a> | 
+				<a href="home.php?mod=huoshow&do=weibo&list=3">我的消息</a> |
+				<a href="home.php?mod=huoshow&do=weibo&list=4">随便看看</a>
+			{elseif $lists ==3}
+				<a href="home.php?mod=huoshow&do=weibo&list=1">全部动态</a> | 
+				<a href="home.php?mod=huoshow&do=weibo&list=2">我的微博</a> | 
+				<a class="selectedFont">我的消息</a> |
+				<a href="home.php?mod=huoshow&do=weibo&list=4">随便看看</a>
+			{else}
+				<a href="home.php?mod=huoshow&do=weibo&list=1">全部动态</a> | 
+				<a href="home.php?mod=huoshow&do=weibo&list=2">我的微博</a> | 
+				<a href="home.php?mod=huoshow&do=weibo&list=3">我的消息</a> |
+				<a class="selectedFont">随便看看</a>
+			{/if}
+		</div>
+		<div class="wb_info">
+			{if $lists ==1}  
+			{include file="weibo/weibo_user_all_dynamic.html"}
+			{elseif $lists ==2}
+			{include file="weibo/weibo_user_dynamic.html"}
+			{elseif $lists ==3}
+			{include_php file="huoshow/module/home/home_weibo_user_message.php"}
+			{else}
+			{include_php file="huoshow/module/home/home_weibo_all_sys_dynamic.php"}
+			{/if}
+		</div>
+	</article>
+</div>
+
+
+<div class="conR">
+	<!-- 微博统计信息 -->
+  	{include_php file="huoshow/module/home/home_weibo_user_info.php"}
+	<!-- 可能感兴趣的人 -->
+	{include_php file="huoshow/module/home/home_weibo_recommend.php"}
+	<!-- 人气用户推荐 -->
+	{include_php file="huoshow/module/home/home_weibo_hotrecommend.php"}
+</div>
+

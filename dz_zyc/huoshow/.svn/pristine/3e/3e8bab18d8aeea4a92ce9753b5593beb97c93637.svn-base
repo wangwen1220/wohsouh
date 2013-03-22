@@ -1,0 +1,34 @@
+1.事件：send_gift
+	POST参数：src_uid  送礼人的UID
+	协议参数=> 见 《Flash与RoomServer的命令交互协议 》04命令
+
+2.退房事件：logout
+	logout_uid 退出UID
+	logout_rid 退出房间
+	room_master_count 房管数
+	room_manager_count 管理员数
+
+3.设管理员事件：setup_manager
+	roomid  房间ID
+	dstuid	设的人UID
+	uid	被设人UID
+	act
+	act:1设为管理员 0:取消设置管理员
+	命令：026
+4.上麦事件：top_michael
+	roomid	房间ID
+	uid	上麦用户UID
+	mic_starttime	用户占卖开始时间
+	mic_num		用户占麦的麦号
+
+5.下麦事件：down_michael
+	roomid 房间ID
+	uid	下麦用户UID
+
+6.启动事件：server_start
+    用途：通知PHP消息服务器启动（可能是主动关闭后启动，也可能是崩溃后启动）。
+    date:时间
+
+7.通知某房间已经到期: room_expire
+	用途：通知PHP某个房间已经到期
+	roomid: 房间ID

@@ -1,0 +1,20 @@
+<?php
+return array (
+  'category.html' => '大栏目页',
+  'footer.html' => '页尾',
+  'header_php.html' => '页头-动态',
+  'header.html' => '内容页页头',
+  'list.html' => '栏目列表页',
+  'map.html' => '网站地图',
+  'rank.html' => '排行榜',
+  'rank_list.html' => '频道排行榜',
+  'right.html' => '内容页右侧-静态',
+  'roll.html' => '滚动更新',
+  'showmessage.html' => '提示信息',
+  'tags.html' => 'Tags',
+  'header_channel.html' => '频道页页头-静态',
+  'header_channel_php.html' => '频道页页头-动态',
+  'nav.html' => '导航菜单',
+  'right_php.html' => '内容页右侧-动态',
+  'tag.html' => 'Tag内容列表页',
+);

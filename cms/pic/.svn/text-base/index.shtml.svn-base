@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+    <title>火秀图片_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/picset.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+<script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+<!--[if gte IE 6]>
+<link href="css/star_style_Below_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+
+<body  class="body_bg" id="star_pic">
+<!--Site Header-->
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+
+<!--Site Header End-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/pic/" title="火秀明星首页">火秀明星频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a href="http://www.huoshow.com/pic/moviebeauty/">影视美图</a></li>
+                <li><a href="http://www.huoshow.com/pic/musicbeauty/">音乐美图</a></li>
+                <li><a href="http://www.huoshow.com/pic/photo/">明星写真</a></li>	  	        
+<li><a href="http://www.huoshow.com/pic/atlas/">赛事图集</a></li>
+<li><a href="http://www.huoshow.com/pic/beauty/">游戏美图</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<script>
+  function sTo(o) {
+    var id = o.href.split('#')[1];
+    var t = document.getElementById(id);
+    var y = 0;
+    if(t){
+      y = t.offsetTop - 36;
+    }
+    scrollTo(0, y);
+  }
+</script>
+<div class="guide">
+  <ul><li><a href="#">随便看看</a></li>
+  	<li><a href="#moviebeauty" onclick="sTo(this);return false;">影视美图</a></li>
+    <li><a href="#musicbeauty" onclick="sTo(this);return false;">音乐美图</a></li>
+    <li><a href="#photo" onclick="sTo(this);return false;">明星写真</a></li>
+    <li><a href="#atlas" onclick="sTo(this);return false;">赛事图集</a></li>
+    <li><a href="#beauty" onclick="sTo(this);return false;">游戏美图</a></li>
+    <li><a href="#top" onclick="sTo(this);return false;">Top<img src="http://www.huoshow.com/img/templates/huoshow02/images/totop.jpg" align="absmiddle" /></a></li>
+  </ul>
+</div>
+
+<div class="p1">
+<div class="star_flash">
+<div class="slide" id="pbox3" style="border:0px; padding:0px;">
+      <!-- 轮换大图片 -->
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0915/1316078899919.jpg" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="高清：日本性感女星杉原杏璃百张美图集锦" href="http://www.huoshow.com/2011/0914/28461.shtml" title="高清：日本性感女星杉原杏璃百张美图集锦" target="_blank">高清：日本性感女星杉原杏璃百张美图集</a></h3>
+        <p>高清组图：日本性感女星杉原杏璃爆乳写真。</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0916/1316138362312.jpg" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="皮肤白皙娇柔似水  美女写真上演清纯诱惑" href="http://www.huoshow.com/2011/0906/26023.shtml" title="皮肤白皙娇柔似水  美女写真上演清纯诱惑" target="_blank">皮肤白皙娇柔似水  美女写真上演清纯</a></h3>
+        <p>皮肤白皙娇柔似水  美女写真上演清纯诱惑</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0915/1316070817171.jpg" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="性感美女按摩室裸身按摩全过程" href="http://www.huoshow.com/2011/0914/28271.shtml" title="性感美女按摩室裸身按摩全过程" target="_blank">性感美女按摩室裸身按摩全过程</a></h3>
+        <p>性感美女按摩室裸身按摩全过程</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0915/1316079024190.jpg" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="原干惠性感婚纱写真 小巧比基尼难掩丰胸" href="http://www.huoshow.com/2011/0905/25523.shtml" title="原干惠性感婚纱写真 小巧比基尼难掩丰胸" target="_blank">原干惠性感婚纱写真 小巧比基尼难掩</a></h3>
+        <p>日本女星原干惠性感内衣写真，披白纱笑容甜美。</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0915/1316079054319.jpg" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="杨舒婷写真展惹火身材 变身性感撩人熟女" href="http://www.huoshow.com/2011/0803/20400.shtml" title="杨舒婷写真展惹火身材 变身性感撩人熟女" target="_blank">杨舒婷写真展惹火身材 变身性感撩人</a></h3>
+        <p>演员杨舒婷日前拍了一组新写真，让人领略到她的野性之美，时尚新兵不容小觑。</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0915/1316079102894.jpg" width="700" height="324" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a title="姜妍拍《男人装》写真 甜美性感完美融合" href="http://www.huoshow.com/2011/0725/18826.shtml" title="姜妍拍《男人装》写真 甜美性感完美融合" target="_blank">姜妍拍《男人装》写真 甜美性感完美</a></h3>
+        <p>日前，艺人姜妍受邀为《男人装》拍摄了一组写真。</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+            <div class="slide-links-wrap">
+        <a href="#" class="slide-prev">&nbsp;</a>
+        <span class="slide-links">
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+                  </span>
+        <a href="#" class="slide-next">&nbsp;</a>
+      </div>
+      <script>
+        $(function(){
+          window.pbox3 = make_pagebox('pbox3', {
+            links_selector: '.slide-links a', 
+            current_class: 'slide-current',
+            pages_selector: '.slide-page',
+            prev_selector: '.slide-prev',
+            next_selector: '.slide-next',
+            interval: 4,
+            effect: 1
+          });
+          make_pagebox('p1_r', {
+            links_selector: '.bar_text li', 
+            current_class: 'hover_sta',
+            pages_selector: '.p1_r-page'
+          });
+          
+        });
+      </script>
+    </div>
+</div>
+    <div class="p1_r" id="p1_r">
+    <div class="bar_text">
+    	<ul><li class="hover_sta">内地焦点</li><li class="nohover_sta">热点推荐</li></ul>
+    </div>
+    <div class="sb p1_r-page">
+    	<div class="pic_word">
+<div class="sb">
+<dl>
+        	<dt><img alt="妖艳妩媚迷人的钢琴女 气质美女也性感" src="http://www.huoshow.com/upload/2011/0915/1316071450222.jpg" width="100px" height="90" /></dt>
+        	<dd>妖艳妩媚迷人的钢琴女 气质美女也性感...<a title="妖艳妩媚迷人的钢琴女 气质美女也性感" href="http://www.huoshow.com/2011/0913/28103.shtml" target="_blank">[详细]</a></dd>
+        	            </dl>
+           	</div>
+</div>
+        <ul>
+        	        	<li><span>·</span><a title="肉体情书门:网曝女玩家赤露身体写满情书自拍" href="http://www.huoshow.com/2011/0908/27097.shtml" target="_blank">肉体情书门:网曝女玩家赤露身体</a></li>
+        	        	<li><span>·</span><a title="《红色管弦乐队2：斯大林格勒英雄》最新游戏截图" href="http://www.huoshow.com/2011/0906/26125.shtml" target="_blank">《红色管弦乐队2：斯大林格勒英雄</a></li>
+        	        	<li><span>·</span><a title="皮肤白皙娇柔似水  美女写真上演清纯诱惑" href="http://www.huoshow.com/2011/0906/26023.shtml" target="_blank">皮肤白皙娇柔似水  美女写真上演</a></li>
+        	        	<li><span>·</span><a title="2011快乐女声 喻佳丽图集" href="http://www.huoshow.com/2011/0914/28463.shtml" target="_blank">2011快乐女声 喻佳丽图集</a></li>
+        	        	<li><span>·</span><a title="2011快乐女声 金银玲图集" href="http://www.huoshow.com/2011/0914/28409.shtml" target="_blank">2011快乐女声 金银玲图集</a></li>
+        	        	<li><span>·</span><a title="图：李玉刚《四美图》化身四大美女秀绝技" href="http://www.huoshow.com/2011/0915/28727.shtml" target="_blank">图：李玉刚《四美图》化身四大美女</a></li>
+        	        	<li><span>·</span><a title="莫文蔚婚纱照曝光 不见新郎白马成主角" href="http://www.huoshow.com/2011/0915/28701.shtml" target="_blank">莫文蔚婚纱照曝光 不见新郎白马</a></li>
+        	        </ul>
+    </div>
+    
+    <div class="sb p1_r-page">
+    	<div class="pic_word">
+<div class="sb">
+<dl>
+        	<dt><img alt="汤唯华贵珠宝加身 低胸裙现身露傲人胸围" src="http://www.huoshow.com/upload/2011/0915/1316075752413.jpg" width="100px" height="90"/></dt>
+        	<dd>9月3日，北京，汤唯出席BVLGARI珠宝展。汤唯当天佩戴...<a title="汤唯华贵珠宝加身 低胸裙现身露傲人胸围" href="http://www.huoshow.com/2011/0904/25395.shtml" target="_blank">[详细]</a></dd>
+        	            </dl>
+           	</div>
+</div>
+        <ul>
+        	        	<li><span>·</span><a title="耐看型的漂亮女优性感内衣诱惑写真" href="http://www.huoshow.com/2011/0902/25197.shtml" target="_blank">耐看型的漂亮女优性感内衣诱惑写</a></li>
+        	        	<li><span>·</span><a title="妖艳性感美女模特何静蕾丝内衣写真" href="http://www.huoshow.com/2011/0902/25185.shtml" target="_blank">妖艳性感美女模特何静蕾丝内衣写</a></li>
+        	        	<li><span>·</span><a title="原干惠性感婚纱写真 小巧比基尼难掩丰胸" href="http://www.huoshow.com/2011/0905/25523.shtml" target="_blank">原干惠性感婚纱写真 小巧比基尼</a></li>
+        	        	<li><span>·</span><a title="基努·里维斯骑摩托车出游 黑超遮面" href="http://www.huoshow.com/2011/0905/25597.shtml" target="_blank">基努·里维斯骑摩托车出游 黑超</a></li>
+        	        	<li><span>·</span><a title="贝克汉姆千金首曝光 小脸肉嘟嘟可爱至极" href="http://www.huoshow.com/2011/0905/25641.shtml" target="_blank">贝克汉姆千金首曝光 小脸肉嘟嘟</a></li>
+        	        	<li><span>·</span><a title="童颜萝莉闪闪maity性感写真 爆乳出镜诱人" href="http://www.huoshow.com/2011/0905/25811.shtml" target="_blank">童颜萝莉闪闪maity性感写真 爆乳</a></li>
+        	        	<li><span>·</span><a title="超模坎蒂丝诱惑半裸 蕾丝内裤秀浑圆蜜桃臀" href="http://www.huoshow.com/2011/0905/25829.shtml" target="_blank">超模坎蒂丝诱惑半裸 蕾丝内裤秀</a></li>
+        	        </ul>
+    </div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="meitu_rec" id="scrollbox2">
+<h2>美图推荐</h2>
+<a class="click_skip_left" ></a><a class="click_skip_right" ></a>
+<ul>
+<li ><a title="侯诗辰黑丝美腿写真 薄纱豪乳不逊张馨予" href="http://www.huoshow.com/2011/0726/19051.shtml" target="_blank"><img alt="侯诗辰黑丝美腿写真 薄纱豪乳不逊张馨予" src="http://www.huoshow.com/upload/2011/0915/1316071653729.jpg" /></a>侯诗辰黑丝美腿写真</li>
+<li ><a title="小泽玛莉亚赴港出席动漫展 不担心被揩油" href="http://www.huoshow.com/2011/0729/19545.shtml" target="_blank"><img alt="小泽玛莉亚赴港出席动漫展 不担心被揩油" src="http://www.huoshow.com/upload/2011/0915/1316071732532.jpg" /></a>小泽玛莉亚赴港出席</li>
+<li ><a title="李依馨拍裸背写真 性感魅惑不失优雅" href="http://www.huoshow.com/2011/0730/19844.shtml" target="_blank"><img alt="李依馨拍裸背写真 性感魅惑不失优雅" src="http://www.huoshow.com/upload/2011/0915/1316071780529.jpg" /></a>李依馨拍裸背写真 </li>
+<li ><a title="杉本有美写真展私密一面 浴室湿身玩性感" href="http://www.huoshow.com/2011/0730/19845.shtml" target="_blank"><img alt="杉本有美写真展私密一面 浴室湿身玩性感" src="http://www.huoshow.com/upload/2011/0915/1316071815342.jpg" /></a>杉本有美写真展私密</li>
+<li ><a title="宋雨霏全新写真曝光 黑色紧身衣小露性感" href="http://www.huoshow.com/2011/0802/20197.shtml" target="_blank"><img alt="宋雨霏全新写真曝光 黑色紧身衣小露性感" src="http://www.huoshow.com/upload/2011/0915/1316071862992.jpg" /></a>宋雨霏全新写真曝光</li>
+<li ><a title="嫩模许颖透视装秀双峰 自摸酥胸坚称纯天然" href="http://www.huoshow.com/2011/0802/20207.shtml" target="_blank"><img alt="嫩模许颖透视装秀双峰 自摸酥胸坚称纯天然" src="http://www.huoshow.com/upload/2011/0915/1316071983697.jpg" /></a>嫩模许颖透视装秀双</li>
+<li ><a title="超模泳装示范 婀娜的曲线令人血脉喷张" href="http://www.huoshow.com/2011/0803/20399.shtml" target="_blank"><img alt="超模泳装示范 婀娜的曲线令人血脉喷张" src="http://www.huoshow.com/upload/2011/0915/1316072015136.jpg" /></a>超模泳装示范 婀娜</li>
+<li ><a title="杨舒婷写真展惹火身材 变身性感撩人熟女" href="http://www.huoshow.com/2011/0803/20400.shtml" target="_blank"><img alt="杨舒婷写真展惹火身材 变身性感撩人熟女" src="http://www.huoshow.com/upload/2011/0915/1316072091714.jpg" /></a>杨舒婷写真展惹火身</li>
+<li ><a title="艾玛疑有新恋情 与男子街头拥吻" href="http://www.huoshow.com/2011/0808/20888.shtml" target="_blank"><img alt="艾玛疑有新恋情 与男子街头拥吻" src="http://www.huoshow.com/upload/2011/0915/1316072192798.jpg" /></a>艾玛疑有新恋情 与</li>
+<li ><a title="徐冬冬变意大利足球宝贝 比基尼写真狂野性感" href="http://www.huoshow.com/2011/0808/21036.shtml" target="_blank"><img alt="徐冬冬变意大利足球宝贝 比基尼写真狂野性感" src="http://www.huoshow.com/upload/2011/0915/1316072236501.jpg" /></a>徐冬冬变意大利足球</li>
+<li ><a title="川村由纪野外拍写真 性感比基尼出镜" href="http://www.huoshow.com/2011/0808/21041.shtml" target="_blank"><img alt="川村由纪野外拍写真 性感比基尼出镜" src="http://www.huoshow.com/upload/2011/0915/1316072271427.jpg" /></a>川村由纪野外拍写真</li>
+<li ><a title="林青霞亮相书展 希望60岁能当上艺术家" href="http://www.huoshow.com/2011/0725/18831.shtml" target="_blank"><img alt="林青霞亮相书展 希望60岁能当上艺术家" src="http://www.huoshow.com/upload/2011/0915/1316072312330.jpg" /></a>林青霞亮相书展 希</li>
+<li ><a title="姜妍拍《男人装》写真 甜美性感完美融合" href="http://www.huoshow.com/2011/0725/18826.shtml" target="_blank"><img alt="姜妍拍《男人装》写真 甜美性感完美融合" src="http://www.huoshow.com/upload/2011/0915/1316072341104.jpg" /></a>姜妍拍《男人装》写</li>
+<li ><a title="日本性感女星杉原杏璃夏日爆乳写真" href="http://www.huoshow.com/2011/0725/18823.shtml" target="_blank"><img alt="日本性感女星杉原杏璃夏日爆乳写真" src="http://www.huoshow.com/upload/2011/0915/1316072370371.jpg" /></a>日本性感女星杉原杏</li>
+<li ><a title="台湾名模王思平登《GQ》 夏日清凉诱惑" href="http://www.huoshow.com/2011/0723/18645.shtml" target="_blank"><img alt="台湾名模王思平登《GQ》 夏日清凉诱惑" src="http://www.huoshow.com/upload/2011/0915/1316072404171.jpg" /></a>台湾名模王思平登《</li>
+<li ><a title="嫩模许颖书展大秀巨乳 写真被指太三级" href="http://www.huoshow.com/2011/0722/18545.shtml" target="_blank"><img alt="嫩模许颖书展大秀巨乳 写真被指太三级" src="http://www.huoshow.com/upload/2011/0915/1316072440180.jpg" /></a>嫩模许颖书展大秀巨</li>
+<li ><a title="张舒媛展S型性感曲线 足球宝贝狂爱梅西" href="http://www.huoshow.com/2011/0722/18544.shtml" target="_blank"><img alt="张舒媛展S型性感曲线 足球宝贝狂爱梅西" src="http://www.huoshow.com/upload/2011/0915/1316072473792.jpg" /></a>张舒媛展S型性感曲</li>
+<li ><a title="超模Viktoriya写真半裸上阵 电眼迷人" href="http://www.huoshow.com/2011/0721/18296.shtml" target="_blank"><img alt="超模Viktoriya写真半裸上阵 电眼迷人" src="http://www.huoshow.com/upload/2011/0915/1316072502547.jpg" /></a>超模Viktoriya写真</li>
+<li ><a title="金发超模人体彩绘写真化身性感蓝精灵" href="http://www.huoshow.com/2011/0721/18288.shtml" target="_blank"><img alt="金发超模人体彩绘写真化身性感蓝精灵" src="http://www.huoshow.com/upload/2011/0915/1316072531543.jpg" /></a>金发超模人体彩绘写</li>
+<li ><a title="装女郎梦想秀 《男人装》春光映画美女写真" href="http://www.huoshow.com/2011/0721/18287.shtml" target="_blank"><img alt="装女郎梦想秀 《男人装》春光映画美女写真" src="http://www.huoshow.com/upload/2011/0915/1316072615675.jpg" /></a>装女郎梦想秀 《男</li>
+</ul>
+<script>
+var scrollbox2 = make_scrollbox('scrollbox2', {
+item: 'li',
+prev: '.click_skip_left',
+next: '.click_skip_right',
+interval: 3
+});
+        </script>
+</div>
+<div class="ad">
+<p class="p_img"><a href="http://space.huoshow.com/show.php" target="_blank"><img src="http://www.huoshow.com/upload/2011/0915/1316079457956.jpg" border="0" width="960" height="90" /></a></p></div>
+<div class="meitu" id="moviebeauty">
+    <div class="bar_text2">
+<span> <a href="moviebeauty/">更多>></a> </span> 
+<div class="bar_in3"><a name="ys">影视美图</a></div>  
+</div>
+<dl>
+<dt>
+<a title="日本AV女优松岛枫 室内大胆露点性感写真" href="http://www.huoshow.com/2011/0826/23663.shtml" target="_blank"><img alt="日本AV女优松岛枫 室内大胆露点性感写真" src="http://www.huoshow.com/upload/2011/0915/1316074997801.jpg" width="280px" height="340" /></a>
+</dt>
+<dd>
+<ul>
+  				<li><a title="杨棋涵大尺度艳照震惊网友 豪乳美腿性感撩人" href="http://www.huoshow.com/2011/0812/21650.shtml" target="_blank"><img alt="杨棋涵大尺度艳照震惊网友 豪乳美腿性感撩人" src="http://www.huoshow.com/upload/2011/0915/1316077042984.jpg"  width="140px" height="140px"/></a><span><a title="杨棋涵大尺度艳照震惊网友 豪乳美腿性感撩人" href="http://www.huoshow.com/2011/0812/21650.shtml" target="_blank">杨棋涵大尺度艳照</a></span></li>
+  				<li><a title="日本女星秋山莉奈写真 暴露着装秀美臀" href="http://www.huoshow.com/2011/0721/18286.shtml" target="_blank"><img alt="日本女星秋山莉奈写真 暴露着装秀美臀" src="http://www.huoshow.com/upload/2011/0915/1316077065952.jpg"  width="140px" height="140px"/></a><span><a title="日本女星秋山莉奈写真 暴露着装秀美臀" href="http://www.huoshow.com/2011/0721/18286.shtml" target="_blank">日本女星秋山莉奈</a></span></li>
+  				<li><a title="韩星全慧彬拍性感写真 魔鬼身材黄金比例" href="http://www.huoshow.com/2011/0718/17473.shtml" target="_blank"><img alt="韩星全慧彬拍性感写真 魔鬼身材黄金比例" src="http://www.huoshow.com/upload/2011/0915/1316077107176.jpg"  width="140px" height="140px"/></a><span><a title="韩星全慧彬拍性感写真 魔鬼身材黄金比例" href="http://www.huoshow.com/2011/0718/17473.shtml" target="_blank">韩星全慧彬拍性感</a></span></li>
+  				<li><a title="日本80后女优樱井莉亚性感美图集锦" href="http://www.huoshow.com/2011/0716/17118.shtml" target="_blank"><img alt="日本80后女优樱井莉亚性感美图集锦" src="http://www.huoshow.com/upload/2011/0915/1316077177148.jpg"  width="140px" height="140px"/></a><span><a title="日本80后女优樱井莉亚性感美图集锦" href="http://www.huoshow.com/2011/0716/17118.shtml" target="_blank">日本80后女优樱井</a></span></li>
+  				<li><a title="高圆圆拍时尚写真 吐露“女孩女人”进化论" href="http://www.huoshow.com/2011/0711/15899.shtml" target="_blank"><img alt="高圆圆拍时尚写真 吐露“女孩女人”进化论" src="http://www.huoshow.com/upload/2011/0915/1316077208896.jpg"  width="140px" height="140px"/></a><span><a title="高圆圆拍时尚写真 吐露“女孩女人”进化论" href="http://www.huoshow.com/2011/0711/15899.shtml" target="_blank">高圆圆拍时尚写真</a></span></li>
+  				<li><a title="佟丽娅杂志写真华丽冷艳 变身御姐秀气场" href="http://www.huoshow.com/2011/0707/15232.shtml" target="_blank"><img alt="佟丽娅杂志写真华丽冷艳 变身御姐秀气场" src="http://www.huoshow.com/upload/2011/0915/1316077241162.jpg"  width="140px" height="140px"/></a><span><a title="佟丽娅杂志写真华丽冷艳 变身御姐秀气场" href="http://www.huoshow.com/2011/0707/15232.shtml" target="_blank">佟丽娅杂志写真华</a></span></li>
+  				<li><a title="自称谢霆锋小三 李美熙大尺度床照曝光" href="http://www.huoshow.com/2011/0714/16815.shtml" target="_blank"><img alt="自称谢霆锋小三 李美熙大尺度床照曝光" src="http://www.huoshow.com/upload/2011/0915/1316077294825.jpg"  width="140px" height="140px"/></a><span><a title="自称谢霆锋小三 李美熙大尺度床照曝光" href="http://www.huoshow.com/2011/0714/16815.shtml" target="_blank">自称谢霆锋小三 </a></span></li>
+  				<li><a title="莫小棋化妆间拍性感大片 妩媚身姿诱人遐想" href="http://www.huoshow.com/2011/0715/17102.shtml" target="_blank"><img alt="莫小棋化妆间拍性感大片 妩媚身姿诱人遐想" src="http://www.huoshow.com/upload/2011/0915/1316077320456.jpg"  width="140px" height="140px"/></a><span><a title="莫小棋化妆间拍性感大片 妩媚身姿诱人遐想" href="http://www.huoshow.com/2011/0715/17102.shtml" target="_blank">莫小棋化妆间拍性</a></span></li>
+</ul>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+
+<div class="meitu" id="musicbeauty">
+<div class="bar_text2">
+<span> <a href="musicbeauty/">更多>></a> </span> 
+<div class="bar_in4"><a name="yy">音乐美图</a></div>  
+</div>
+<dl>
+<dt>
+<a title="李玉刚《四美图》化身四大美女秀绝技" href="http://www.huoshow.com/2011/0915/28727.shtml" target="_blank"><img alt="李玉刚《四美图》化身四大美女秀绝技" src="http://www.huoshow.com/upload/2011/0915/1316073686994.jpg" width="280px" height="340" /></a>
+</dt>
+<dd>
+<ul>
+  				<li><a title="莫文蔚婚纱照曝光 不见新郎白马成主角" href="http://www.huoshow.com/2011/0915/28701.shtml" target="_blank"><img alt="莫文蔚婚纱照曝光 不见新郎白马成主角" src="http://www.huoshow.com/upload/2011/0915/1316073033940.jpg"  width="140px" height="140px"/></a><span><a title="莫文蔚婚纱照曝光 不见新郎白马成主角" href="http://www.huoshow.com/2011/0915/28701.shtml" target="_blank">莫文蔚婚纱照曝光</a></span></li>
+  				<li><a title="李孝利化身冷艳贵妇" href="http://www.huoshow.com/2011/0914/28589.shtml" target="_blank"><img alt="李孝利化身冷艳贵妇" src="http://www.huoshow.com/upload/2011/0915/1316073047362.jpg"  width="140px" height="140px"/></a><span><a title="李孝利化身冷艳贵妇" href="http://www.huoshow.com/2011/0914/28589.shtml" target="_blank">李孝利化身冷艳贵</a></span></li>
+  				<li><a title="李宇春紧身小露沟 逗趣玉米惹尖叫" href="http://www.huoshow.com/2011/0909/27143.shtml" target="_blank"><img alt="李宇春紧身小露沟 逗趣玉米惹尖叫" src="http://www.huoshow.com/upload/2011/0915/1316073025755.jpg"  width="140px" height="140px"/></a><span><a title="李宇春紧身小露沟 逗趣玉米惹尖叫" href="http://www.huoshow.com/2011/0909/27143.shtml" target="_blank">李宇春紧身小露沟</a></span></li>
+  				<li><a title="陈翔《初告白》写真 化身飞行少年" href="http://www.huoshow.com/2011/0914/28523.shtml" target="_blank"><img alt="陈翔《初告白》写真 化身飞行少年" src="http://www.huoshow.com/upload/2011/0915/1316073055171.jpg"  width="140px" height="140px"/></a><span><a title="陈翔《初告白》写真 化身飞行少年" href="http://www.huoshow.com/2011/0914/28523.shtml" target="_blank">陈翔《初告白》写</a></span></li>
+  				<li><a title="Gaga穿恨天高摔倒成乞丐" href="http://www.huoshow.com/2011/0914/28445.shtml" target="_blank"><img alt="Gaga穿恨天高摔倒成乞丐" src="http://www.huoshow.com/upload/2011/0915/1316073066429.jpg"  width="140px" height="140px"/></a><span><a title="Gaga穿恨天高摔倒成乞丐" href="http://www.huoshow.com/2011/0914/28445.shtml" target="_blank">Gaga穿恨天高摔倒</a></span></li>
+  				<li><a title="谭维维诠释冷艳另类性感" href="http://www.huoshow.com/2011/0913/27999.shtml" target="_blank"><img alt="谭维维诠释冷艳另类性感" src="http://www.huoshow.com/upload/2011/0915/1316073076525.jpg"  width="140px" height="140px"/></a><span><a title="谭维维诠释冷艳另类性感" href="http://www.huoshow.com/2011/0913/27999.shtml" target="_blank">谭维维诠释冷艳另</a></span></li>
+  				<li><a title="蕾哈娜大尺度性感代言 黑白写真勾勒曲线" href="http://www.huoshow.com/2011/0913/28127.shtml" target="_blank"><img alt="蕾哈娜大尺度性感代言 黑白写真勾勒曲线" src="http://www.huoshow.com/upload/2011/0915/1316073085945.jpg"  width="140px" height="140px"/></a><span><a title="蕾哈娜大尺度性感代言 黑白写真勾勒曲线" href="http://www.huoshow.com/2011/0913/28127.shtml" target="_blank">蕾哈娜大尺度性感</a></span></li>
+  				<li><a title="十年SHE专辑造型盘点：真的不想长大" href="http://www.huoshow.com/2011/0909/27593.shtml" target="_blank"><img alt="十年SHE专辑造型盘点：真的不想长大" src="http://www.huoshow.com/upload/2011/0915/1316073309708.jpg"  width="140px" height="140px"/></a><span><a title="十年SHE专辑造型盘点：真的不想长大" href="http://www.huoshow.com/2011/0909/27593.shtml" target="_blank">十年SHE专辑造型</a></span></li>
+</ul>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="meitu" id="photo">
+<div class="bar_text2">
+    	<span><a href="photo/">更多>></a></span>  
+    	<div class="bar_in0"><a name="xz">明星写真</a></div>  
+</div>
+<dl>
+<dt>
+<a title="高清：日本性感女星杉原杏璃百张美图集锦" href="http://www.huoshow.com/2011/0914/28461.shtml" target="_blank"><img alt="高清：日本性感女星杉原杏璃百张美图集锦" src="http://www.huoshow.com/upload/2011/0915/1316072926561.jpg" width="280px" height="340" /></a>
+</dt>
+<dd>
+<ul>
+  				<li><a title="林志玲日本杂志《Grazia》美图集锦" href="http://www.huoshow.com/2011/0914/28393.shtml" target="_blank"><img alt="林志玲日本杂志《Grazia》美图集锦" src="http://www.huoshow.com/upload/2011/0915/1316076334309.jpg"  width="140px" height="140px"/></a><span><a title="林志玲日本杂志《Grazia》美图集锦" href="http://www.huoshow.com/2011/0914/28393.shtml" target="_blank">林志玲日本杂志《</a></span></li>
+  				<li><a title="英国性感女星露西·皮德尔限制级诱惑写真" href="http://www.huoshow.com/2011/0914/28481.shtml" target="_blank"><img alt="英国性感女星露西·皮德尔限制级诱惑写真" src="http://www.huoshow.com/upload/2011/0915/1316076380683.jpg"  width="140px" height="140px"/></a><span><a title="英国性感女星露西·皮德尔限制级诱惑写真" href="http://www.huoshow.com/2011/0914/28481.shtml" target="_blank">英国性感女星露西</a></span></li>
+  				<li><a title="花花公子女郎女郎霍普性感美图集锦" href="http://www.huoshow.com/2011/0914/28403.shtml" target="_blank"><img alt="花花公子女郎女郎霍普性感美图集锦" src="http://www.huoshow.com/upload/2011/0915/1316076413693.jpg"  width="140px" height="140px"/></a><span><a title="花花公子女郎女郎霍普性感美图集锦" href="http://www.huoshow.com/2011/0914/28403.shtml" target="_blank">花花公子女郎女郎</a></span></li>
+  				<li><a title="日本女星杉本有美性感比基尼写真" href="http://www.huoshow.com/2011/0914/28379.shtml" target="_blank"><img alt="日本女星杉本有美性感比基尼写真" src="http://www.huoshow.com/upload/2011/0915/1316076449185.jpg"  width="140px" height="140px"/></a><span><a title="日本女星杉本有美性感比基尼写真" href="http://www.huoshow.com/2011/0914/28379.shtml" target="_blank">日本女星杉本有美</a></span></li>
+  				<li><a title="桐谷美玲登日本版《花花公子》封面" href="http://www.huoshow.com/2011/0914/28347.shtml" target="_blank"><img alt="桐谷美玲登日本版《花花公子》封面" src="http://www.huoshow.com/upload/2011/0915/1316076489440.jpg"  width="140px" height="140px"/></a><span><a title="桐谷美玲登日本版《花花公子》封面" href="http://www.huoshow.com/2011/0914/28347.shtml" target="_blank">桐谷美玲登日本版</a></span></li>
+  				<li><a title="2011年世界小姐 热门人选泳装照曝光" href="http://www.huoshow.com/2011/0914/28335.shtml" target="_blank"><img alt="2011年世界小姐 热门人选泳装照曝光" src="http://www.huoshow.com/upload/2011/0915/1316076550473.jpg"  width="140px" height="140px"/></a><span><a title="2011年世界小姐 热门人选泳装照曝光" href="http://www.huoshow.com/2011/0914/28335.shtml" target="_blank">2011年世界小姐 </a></span></li>
+  				<li><a title="兔牙超模杰西卡·哈特内衣写真半裸上阵" href="http://www.huoshow.com/2011/0914/28291.shtml" target="_blank"><img alt="兔牙超模杰西卡·哈特内衣写真半裸上阵" src="http://www.huoshow.com/upload/2011/0915/1316076579506.jpg"  width="140px" height="140px"/></a><span><a title="兔牙超模杰西卡·哈特内衣写真半裸上阵" href="http://www.huoshow.com/2011/0914/28291.shtml" target="_blank">兔牙超模杰西卡·</a></span></li>
+  				<li><a title="组图：日本性感女星苍井空比基尼出镜秀美背" href="http://www.huoshow.com/2011/0914/28275.shtml" target="_blank"><img alt="组图：日本性感女星苍井空比基尼出镜秀美背" src="http://www.huoshow.com/upload/2011/0915/1316076611540.jpg"  width="140px" height="140px"/></a><span><a title="组图：日本性感女星苍井空比基尼出镜秀美背" href="http://www.huoshow.com/2011/0914/28275.shtml" target="_blank">组图：日本性感女星</a></span></li>
+</ul>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+
+<div class="meitu" id="atlas">
+<div class="bar_text2">
+<span> <a href="atlas/">更多>></a> </span> 
+<div class="bar_in1"><a name="ss">赛事图集</a></div>  
+</div>
+<dl>
+<dt>
+<a title="2011快乐女声 喻佳丽图集" href="http://www.huoshow.com/2011/0914/28463.shtml" target="_blank"><img alt="2011快乐女声 喻佳丽图集" src="http://www.huoshow.com/upload/2011/0915/1316073997829.jpg" width="280px" height="340" /></a>
+</dt>
+<dd>
+<ul>
+  				  				<li><a title="2011快乐女声 金银玲图集" href="http://www.huoshow.com/2011/0914/28409.shtml" target="_blank"><img alt="2011快乐女声 金银玲图集" src="http://www.huoshow.com/upload/2011/0915/1316076703376.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 金银玲图集" href="http://www.huoshow.com/2011/0914/28409.shtml" target="_blank">2011快乐女声 金</a></span></li>
+  				<li><a title="2011快乐女声 DL组合图集" href="http://www.huoshow.com/2011/0914/28287.shtml" target="_blank"><img alt="2011快乐女声 DL组合图集" src="http://www.huoshow.com/upload/2011/0915/1316076750912.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 DL组合图集" href="http://www.huoshow.com/2011/0914/28287.shtml" target="_blank">2011快乐女声 DL</a></span></li>
+  				<li><a title="2011快乐女声 陆翊图集" href="http://www.huoshow.com/2011/0914/28229.shtml" target="_blank"><img alt="2011快乐女声 陆翊图集" src="http://www.huoshow.com/upload/2011/0915/1316076789835.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 陆翊图集" href="http://www.huoshow.com/2011/0914/28229.shtml" target="_blank">2011快乐女声 陆</a></span></li>
+  				<li><a title="2011快乐女声 付梦妮图集" href="http://www.huoshow.com/2011/0913/28141.shtml" target="_blank"><img alt="2011快乐女声 付梦妮图集" src="http://www.huoshow.com/upload/2011/0915/1316076831635.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 付梦妮图集" href="http://www.huoshow.com/2011/0913/28141.shtml" target="_blank">2011快乐女声 付</a></span></li>
+  				<li><a title="2011快乐女声 王艺洁图集" href="http://www.huoshow.com/2011/0913/28107.shtml" target="_blank"><img alt="2011快乐女声 王艺洁图集" src="http://www.huoshow.com/upload/2011/0915/1316076866187.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 王艺洁图集" href="http://www.huoshow.com/2011/0913/28107.shtml" target="_blank">2011快乐女声 王</a></span></li>
+  				<li><a title="2011快乐女声 李斯丹妮图集" href="http://www.huoshow.com/2011/0913/28033.shtml" target="_blank"><img alt="2011快乐女声 李斯丹妮图集" src="http://www.huoshow.com/upload/2011/0915/1316076890250.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 李斯丹妮图集" href="http://www.huoshow.com/2011/0913/28033.shtml" target="_blank">2011快乐女声 李</a></span></li>
+  				<li><a title="2011快乐女声 杨洋图集" href="http://www.huoshow.com/2011/0913/27959.shtml" target="_blank"><img alt="2011快乐女声 杨洋图集" src="http://www.huoshow.com/upload/2011/0915/1316076957893.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 杨洋图集" href="http://www.huoshow.com/2011/0913/27959.shtml" target="_blank">2011快乐女声 杨</a></span></li>
+  				<li><a title="2011快乐女声 苏妙玲图集" href="http://www.huoshow.com/2011/0913/27909.shtml" target="_blank"><img alt="2011快乐女声 苏妙玲图集" src="http://www.huoshow.com/upload/2011/0915/1316076981948.jpg"  width="140px" height="140px"/></a><span><a title="2011快乐女声 苏妙玲图集" href="http://www.huoshow.com/2011/0913/27909.shtml" target="_blank">2011快乐女声 苏</a></span></li>
+</ul>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+
+<div class="meitu" id="beauty">
+    <div class="bar_text2">
+<span> <a href="beauty/">更多>></a> </span> 
+<div class="bar_in2"><a name="gm">游戏美图</a></div>  
+</div>
+<dl>
+<dt>
+<a title="不性感照样吸引人 粉嫩娇羞大眼萝莉" href="http://www.huoshow.com/2011/0923/32087.shtml" target="_blank"><img alt="不性感照样吸引人 粉嫩娇羞大眼萝莉" src="http://www.huoshow.com/upload/2011/0923/1316741025819.jpg" width="280px" height="340" /></a>
+</dt>
+<dd>
+<ul>
+  				<li><a title="叶梓萱最新性感诱惑写真" href="http://www.huoshow.com/2011/0914/28369.shtml" target="_blank"><img alt="叶梓萱最新性感诱惑写真" src="http://www.huoshow.com/upload/2011/0914/1315984911217.jpg"  width="140px" height="140px"/></a><span><a title="叶梓萱最新性感诱惑写真" href="http://www.huoshow.com/2011/0914/28369.shtml" target="_blank">叶梓萱最新性感诱</a></span></li>
+  				<li><a title="TGS11现场ARPG角色精美Cosplay欣赏 第一弹" href="http://www.huoshow.com/2011/0921/31085.shtml" target="_blank"><img alt="TGS11现场ARPG角色精美Cosplay欣赏 第一弹" src="http://www.huoshow.com/upload/2011/0921/1316576420192.jpg"  width="140px" height="140px"/></a><span><a title="TGS11现场ARPG角色精美Cosplay欣赏 第一弹" href="http://www.huoshow.com/2011/0921/31085.shtml" target="_blank">TGS11现场ARPG角</a></span></li>
+  				<li><a title="宅男福利 名女优西野翔COS组图欣赏" href="http://www.huoshow.com/2011/0920/30601.shtml" target="_blank"><img alt="宅男福利 名女优西野翔COS组图欣赏" src="http://www.huoshow.com/upload/2011/0920/1316501357502.jpg"  width="140px" height="140px"/></a><span><a title="宅男福利 名女优西野翔COS组图欣赏" href="http://www.huoshow.com/2011/0920/30601.shtml" target="_blank">宅男福利 名女优</a></span></li>
+  				<li><a title="史上最传神的最终幻想COS" href="http://www.huoshow.com/2011/0919/30053.shtml" target="_blank"><img alt="史上最传神的最终幻想COS" src="http://www.huoshow.com/upload/2011/0919/1316419081863.jpg"  width="140px" height="140px"/></a><span><a title="史上最传神的最终幻想COS" href="http://www.huoshow.com/2011/0919/30053.shtml" target="_blank">史上最传神的最终</a></span></li>
+  				<li><a title="胸不在大，坚挺则灵！爆乳女神张优艺术照欣赏" href="http://www.huoshow.com/2011/0919/29743.shtml" target="_blank"><img alt="胸不在大，坚挺则灵！爆乳女神张优艺术照欣赏" src="http://www.huoshow.com/upload/2011/0919/1316396992756.jpg"  width="140px" height="140px"/></a><span><a title="胸不在大，坚挺则灵！爆乳女神张优艺术照欣赏" href="http://www.huoshow.com/2011/0919/29743.shtml" target="_blank">胸不在大，坚挺则灵</a></span></li>
+  				<li><a title="星野亚希 童颜爆乳" href="http://www.huoshow.com/2011/0915/28719.shtml" target="_blank"><img alt="星野亚希 童颜爆乳" src="http://www.huoshow.com/upload/2011/0915/1316074890155.jpg"  width="140px" height="140px"/></a><span><a title="星野亚希 童颜爆乳" href="http://www.huoshow.com/2011/0915/28719.shtml" target="_blank">星野亚希 童颜爆</a></span></li>
+  				<li><a title="屁股也性感 摄影师镜头下的绝美女性" href="http://www.huoshow.com/2011/0915/28715.shtml" target="_blank"><img alt="屁股也性感 摄影师镜头下的绝美女性" src="http://www.huoshow.com/upload/2011/0915/1316075173824.jpg"  width="140px" height="140px"/></a><span><a title="屁股也性感 摄影师镜头下的绝美女性" href="http://www.huoshow.com/2011/0915/28715.shtml" target="_blank">屁股也性感 摄影</a></span></li>
+  				<li><a title="郭美美爆性感写真" href="http://www.huoshow.com/2011/0915/28713.shtml" target="_blank"><img alt="郭美美爆性感写真" src="http://www.huoshow.com/upload/2011/0915/1316075261905.jpg"  width="140px" height="140px"/></a><span><a title="郭美美爆性感写真" href="http://www.huoshow.com/2011/0915/28713.shtml" target="_blank">郭美美爆性感写真</a></span></li>
+</ul>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a> |  <a href="http://www.huoshow.com/map.php">网站地图</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<!--Banner Replacer-->
+<div style="display:none">
+<div id="top_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(9);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a2796ca'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=9&n=a2796ca' /></a></noscript></div>
+<div id="top_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(8);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=4f0e3b4'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=8&n=4f0e3b4' /></a></noscript></div>
+<div id="movie_banner_300_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(11);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=082cda0'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=11&n=082cda0' /></a></noscript></div>
+<div id="music_banner_250_100_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(13);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dd2b9e1'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=13&n=dd2b9e1' /></a></noscript></div>
+<div id="game_banner_250_250_c">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(15);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=61b3c77'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=15&n=61b3c77' /></a></noscript></div>
+<script type="text/javascript">// <![CDATA[
+try{
+document.getElementById("top_banner_250_250").innerHTML = document.getElementById("top_banner_250_250_c").innerHTML;
+document.getElementById("top_banner_250_250_c").innerHTML = "";
+
+document.getElementById("top_banner_300_100").innerHTML = document.getElementById("top_banner_300_100_c").innerHTML;
+document.getElementById("top_banner_300_100_c").innerHTML = "";
+
+document.getElementById("movie_banner_300_100").innerHTML = document.getElementById("movie_banner_300_100_c").innerHTML;
+document.getElementById("movie_banner_300_100_c").innerHTML = "";
+
+document.getElementById("music_banner_250_100").innerHTML = document.getElementById("music_banner_250_100_c").innerHTML;
+document.getElementById("music_banner_250_100_c").innerHTML = "";
+
+document.getElementById("game_banner_250_250").innerHTML = document.getElementById("game_banner_250_250_c").innerHTML;
+document.getElementById("game_banner_250_250_c").innerHTML = "";
+}catch(e){}
+// ]]></script>    </div>
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

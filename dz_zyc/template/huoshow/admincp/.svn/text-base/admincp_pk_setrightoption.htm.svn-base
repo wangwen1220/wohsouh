@@ -1,0 +1,27 @@
+<script src="static/js/calendar.js" type="text/javascript"></script>
+<div class="itemtitle"><h3>PK管理</h3>
+<ul class="tab1">
+<li><a href="admin.php?action=pk&op=team"><span>队伍管理</span></a></li>
+<li><a href="admin.php?action=pk&op=member"><span>成员管理</span></a></li>
+<li class="current"><a href="admin.php?action=pk&op=guess"><span>竞猜管理</span></a></li>
+</ul></div>
+<div>
+	<form name="cpform" id="cpform" autocomplete="off" action="admin.php?action=pk&op=setrightoption" method="POST">
+	<input type="hidden" name="guessid" value="{$guessConfig['guessid']}"/>
+	<table class="tb tb2 ">
+		<tr>
+			<td width="120">正确选项</td>
+			<td>
+				<!--{loop $options $key=>$value}-->
+				<div><input type="radio" name="rightoption" value="{$key}" <!--{if $key==$guessConfig['rightoption']}-->checked="checked"<!--{/if}--> />{$value}</div>	
+				<!--{/loop}-->
+			</td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td><input type="submit" name="submit" value="提交" /></td>
+		</tr>
+	</table>
+	</form>
+</div>
+<br />

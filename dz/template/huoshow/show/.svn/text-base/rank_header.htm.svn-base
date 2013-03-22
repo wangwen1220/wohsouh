@@ -1,0 +1,22 @@
+{subtemplate common/header}
+<link href="/static2/rank.css" rel="stylesheet" type="text/css" />
+<script src="static2/js/jquery.min.js"></script>
+<script src="static2/js/huoshow_common.js"></script>
+<script>
+  function goTop() {
+    window.scroll(window.scrollX, 0);
+  }
+  jQuery.noConflict();
+</script>
+<script src="static/js/calendar.js" type="text/javascript"></script>
+
+<script>
+  var _settime = settime;
+  var rankGetter;
+  var duidate1id;
+  var settime = function(n){
+  	_settime(n);
+  	var date = document.getElementById(duidate1id).value;
+  	rankGetter(1, date);
+  };
+</script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>秋之音色-我们一起聆听,一起感动</title>
+<meta name="keywords" content="秋,秋天,音色,音乐,专题,歌,钢琴,流行,乡村" />
+<meta name="description" content="只收录适合秋天聆听的歌曲,让你感受音乐的魅力,让你感受秋日里发自心底最深处的温暖.让我们一起聆听,让我们一起感动." />
+<link href="{WWW_URL}img/templates/zhuanti/css/autumn_music.css" rel="stylesheet" type="text/css" />
+<link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/config.js"></script>
+<script type="text/javascript" src="{DX_URL}static2/js/huoshow_common.js"></script>
+<script type="text/javascript" src="{IMG_URL}apps/comment/js/comment.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.Special_events_03_lanse_bg,');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+</head>
+
+<body class="body_bg">
+<!--{template 'system/login_bar.html'}-->
+<div id="mian">
+<div class="box">
+  <div class="meili_nr">
+  <div class="Autumn_music_daoyu">
+<span class="yezi">  <img src="{WWW_URL}img/templates/zhuanti/images/autumnmusic/yezi.jpg" width="36" height="49"/></span>  
+<div class="daoyu_wenzi"><span>引语：</span>
+{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'autumnmusic_zhuanti_music_introduction' ORDER BY d.sort desc limit 1"}
+  {$r[description]}
+  {/db}
+</div></div>
+   <div class="Autumn_music_left">
+   <div class="Autumn_music_left_bt"><h1>MV欣赏</h1></div>
+<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'autumnmusic_zhuanti_music_mv' and d.thumb!='' ORDER BY d.sort desc limit 14"}
+				<li><span class="Autumn_music_bg"><a target="_blank" href="{$r[url]}" title="{$r[title]}">
+					<img src="{WWW_URL}upload/{$r[thumb]}" width="130" height="83" /></a></span>
+					<span class="top_video_text"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>
+   </div>
+   <div class="Autumn_music_right"> 
+   <div class="Autumn_music_nh"> 
+      <div class="Autumn_music_right_bt"><h1>秋之絮语</h1></div>
+	  <div class="Autumn_music_tw">
+	 {db sql="select * from #table_section  where memo ='autumnmusic_zhuanti_music_xuyu'"}
+            {$r[data]}
+         {/db}
+	  </div>
+   </div>
+
+   <div class="Autumn_music_nh"> 
+      <div class="Autumn_music_right_bt"><h1>流行秋歌</h1></div>
+	  <div class="Autumn_music_tw">
+	   {db sql="select * from #table_section  where memo ='autumnmusic_zhuanti_music_qiuge'"}
+            {$r[data]}
+         {/db}
+	  </div>
+   </div>
+   <div class="Autumn_music_nh"> 
+      <div class="Autumn_music_right_bt"><h1>乡村小调</h1></div>
+	  <div class="Autumn_music_tw">
+	 {db sql="select * from #table_section  where memo ='autumnmusic_zhuanti_music_xiaodiao'"}
+            {$r[data]}
+         {/db}
+	  </div>
+   </div>
+   <div class="Autumn_music_nh"> 
+      <div class="Autumn_music_right_bt"><h1>欢畅秋收</h1></div>
+	 {db sql="select * from #table_section  where memo ='autumnmusic_zhuanti_music_qiushou'"}
+            {$r[data]}
+         {/db}
+   </div>
+   </div>
+<!--{template 'article/autumnmusic_comment.html'}-->
+  </div>
+  </div>
+  <div class="clear"></div>
+
+</div>
+</div>
+</body>
+</html>

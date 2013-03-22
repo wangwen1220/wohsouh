@@ -1,0 +1,94 @@
+<!--{template common/header}-->
+<script type="text/javascript">
+		function seeagent(href)
+		{
+			if (!confirm("确定选择他成为您的经纪人吗？")) {
+				return false;
+			}else{
+				window.location.href= href;
+			}
+		}		
+</script>
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="home.php">$_G[setting][navs][4][navname]</a> <em>&rsaquo;</em> 
+		<a href="home.php?mod=space&do=live">直播管理</a> <em>&rsaquo;</em> 	
+	</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	
+</div>
+<link rel="stylesheet" type="text/css" href="/static2/gifts.css" />
+
+<div id="ct" class="ct2_a wp cl">
+	<div class="mn">
+		<div class="bm bw0">	
+			<div id="congzhititle" style="background:url('/static2/images/gifts/zhibo_1.gif');">
+		       <ul >
+		       	<li><a class="congzhititleliahover2" href="/home.php?mod=space&do=live">直播管理</a></li>
+		       </ul>
+		    </div>
+			<div id="congzhikuang">
+		        <div class="jju"></div>
+		        <div style="height:30px; line-height:30px; margin:5px 10px 5px 10px;">
+		        	<span style="float:left;">火秀明星 - 选择经纪人</span>
+		    		<span style="float:right;"><a style="color:red;" href="/home.php?mod=space&do=live"><<返回直播管理</a></span>
+		    	</div>
+		           	<div style="margin:10px 15px 0px 15px; width: 755px;">
+		           		<div class="">
+		           		<div style="margin-bottom:15px;">
+		           			<span style="font-size:20px; font-weight:bold;">请选择一位经纪人</span><br><br>
+		           			<span style="padding-left:20px;font-weight:bold;">帮助：</span>&nbsp;&nbsp;&nbsp;
+		           			<a style="color:#0000FF;" href="#">什么是经纪人？</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		           			<a style="color:#0000FF;" href="#">选择经纪人的好处是什么？</a> &nbsp;&nbsp;&nbsp;&nbsp;
+		           			<a style="color:#0000FF;" href="#">怎样挑选合适的经纪人？</a>
+		           		</div>
+			           		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			           			<tr style="background:#f3f3f3;height:30px;border-bottom:solid 1px #dddddd;">
+			           				<td width="30%" style="padding-left:20px;">经纪人姓名</td>
+			           				<td width="20%">豪爽度</td>
+			           				<td width="20%">魅力值</td>
+			           				<td width="10%">操作</td>
+			           			</tr>
+			           			<!--{loop $seeagent $k $v}-->
+			           			<tr style="height:30px;border-bottom:solid 1px #eeeeee;">
+			           				<td style="padding-left:20px;">
+			           					<!--{if $v[nickname]}-->
+			           						<a target="_blank" href="/home.php?mod=space&uid={$v['uid']}" >{$v['nickname']}</a>
+			           					<!--{else}-->
+			           						<a target="_blank" href="/home.php?mod=space&uid={$v['uid']}" >{$v['username']}</a>
+			           					<!--{/if}-->
+			           				</td>
+			           				<td>{$v['contribution']}</td>
+			           				<td>{$v['charm']}</td>
+			           				<td>
+			           					<!--{if $_G[uid] != $v[uid]}-->
+			           					<a onclick="seeagent('/home.php?mod=space&do=live&act=seeagent&opt=addagent&uid={$v['uid']}');" href="javascript:;" >签约</a>
+			           					<!--{else}-->
+			           						——
+			           					<!--{/if}-->
+			           				</td>
+			           				
+			           			</tr>
+			           			<!--{/loop}-->
+			           		</table>
+		           		</div>
+		       		</div>		      		
+		    </div>
+		</div>
+	</div>
+
+	<div class="appl">
+		<!--{subtemplate common/userabout}-->
+	</div>
+</div>
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<!--{template common/footer}-->

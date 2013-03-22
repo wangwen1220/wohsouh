@@ -1,0 +1,1 @@
+function default_select_treeview_channel(a){$.each(a,function(c,b){$("#category_"+b).attr("checked",true)})}function select_treeview_children_channel(a){a=$("#category_"+a);var c,b,e=a.attr("checked");$.each(a,function(f,d){d=$(d);c=d.parent("li");b=c.children("ul");b.children("li").children("input").attr("checked",e)})};

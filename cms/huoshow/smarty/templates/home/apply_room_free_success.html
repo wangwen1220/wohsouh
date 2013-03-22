@@ -1,0 +1,29 @@
+<link href="/huoshow/css/zhibo/master.css" rel="stylesheet" type="text/css" />
+<div class="mn">
+<!--[diy=diycontenttop]--><div class="area" id="diycontenttop"></div><!--[/diy]-->
+				<div class="bm bw0">
+					<h1 class="mt"><img class="vm" src="/huoshow/img/zhibo/lv.jpg" alt="blog">直播</h1>
+					<ul class="tb cl"> 	    	    
+				        <li class="a"><a href="home.php?mod=huoshow&do=live">我的直播</a></li> 
+						<li><a href="home.php?mod=space&do=home&view=all" target="_blank">随便看看</a></li>
+						<li class="o2"><a href="home.php?mod=huoshow&do=apply_room&room_id={$userinfo[0].uid}">申请多功能直播间</a></li>
+					</ul>
+					<div class="clear"></div>
+					<div class="cst">
+					  <p><a href="home.php?mod=space&uid={$room_id}"><img src="{$userimages}" height="96" width="96" /></a></p>
+					  <ul class="lh2">
+						  <li class="wel">HI！{$userinfo[0].nickname}，欢迎参加火秀直播！</li> 
+					  </ul>
+					 <div class="clear"></div>
+					</div>
+					<div class="ba"> 
+							<a href="home.php?mod=huoshow&do=live" class="nopick bu">普通直播间</a> 
+        	{if $ismutillive != 0}<a href="home.php?mod=huoshow&do=live&dou=1" class="bu pick">多功能直播间</a>{/if}
+							<div class="clear"></div>
+					</div>
+				</div>
+				<div class="emp">
+					<div class="bgset congr2">恭喜您的多功能直播间已开通！赶快填写<a href="/home.php?mod=huoshow&do=multilive_room_apply&room_id={$userinfo[0].uid}" class="pink decor">房间属性</a>吧！<br />
+				<input name="" type="button" class="xyb sett" onclick="location='/home.php?mod=huoshow&do=multilive_room_apply&room_id={$userinfo[0].uid}'"/></div></div>
+	  </div>
+<div class="clear"></div>

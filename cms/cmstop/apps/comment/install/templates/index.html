@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>评论：{$title}_{$SYSTEM[sitename]}</title>
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<!--[if IE 6]> 
+	<link href="{IMG_URL}templates/{TEMPLATE}/css/ie6.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<![endif]-->
+<link href="{IMG_URL}templates/{TEMPLATE}/css/ajax_Page.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/cmstop.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.pagination.js"></script>
+<script type="text/javascript" src="{IMG_URL}apps/comment/js/comment.table.js"></script>
+<script type="text/javascript" src="{IMG_URL}apps/comment/js/comment.js"></script>
+</head>
+<body>
+<!--{template 'system/header.html'}-->
+<div class="hr-h10"></div>
+<div class="column ad-area-1">
+	<div class="col-l-main"><?php include ROOT_PATH."section/30.html";?><!--内容页顶部banner1 --></div>
+	<div class="col-r-extra"><?php include ROOT_PATH."section/31.html";?><!--内容页顶部banner2 --></div>
+</div>
+<div class="hr-h10"></div>
+<div class="column">
+	<div class="mode-position">
+		<span>
+			<a href="{WWW_URL}">首页</a>
+			{loop $pos $cat}
+			<a href="{$cat[url]}">{$cat[name]}</a>
+			{/loop}
+		</span>
+		评论
+	</div>
+</div>
+<div class="hr-h6"></div>
+		<div class="column">
+			<div class="col-l-main w-720 bor-9fc">
+				<div class="comment-title"><h1>评论：<a href="{$url}" target="_blank">{$title}</a></h1></div>
+				<div id="comment_box">
+					<div class="mar-tb-10 padd-lr-20 pl-post">
+						<a href="" class="italk-pl f-l" id="italk-pl">我要评论</a><span class="f-l mar-t-10 mar-l-10">(评论<cite class="commentTotal">0</cite>条)</span> 
+						<div class="pagination f-r" id="paginationTop"><!--上部分页--></div>
+						<div class="clear"></div>
+						<!-- 顶部评论框 -->
+						<div class="post-comment-area italk-area" id="top_replyarea" style="display: none;">
+							<form action="?app=comment&controller=comment&action=comment" method="POST" onsubmit="return commentSubmit(this);">
+								<input type="hidden" name="contentid" value="{$contentid}"/>
+								<textarea name="content" class="textarea textarea-w630" cols="58" rows="10"></textarea>
+								<div class="user-writeinfo">
+								<span class="f-r"><input type="submit" class="post-btn" value="发表评论" /></span>
+								<!--{if $_username}-->
+									<span class="f-l">欢迎你，<strong class="cor-06c nickname">{$_username}</strong></span>
+									<span class="f-l mar-l-10 padd-3"><label><input type="checkbox" name="anonymous" value="1" title="选中后，你将以匿名方式发布留言，不会显示你的用户名" /> 匿名发表</label></span>
+								<!--{elseif !$islogin}-->
+									<span class="f-l"> 游客发布 
+										<a href="javascript:void(0);" class="f-l mar-l-10 padd-3">快速登录</a></span>
+								<!--{else}-->
+									<span class="f-l notLogin">
+										您需要登录后才能发言！ 
+										<a href="javascript:void(0);">快速登录</a>
+										<a href="{url('member/index/login')}" target="_blank">快速注册</a>
+									</span>
+								<!--{/if}-->
+							</div>
+							</form>
+						</div>
+					</div>
+					<!--{if $hiHot != 1}-->
+					<div class="padd-lr-20">
+						<h2 class="hot-pl-title">热门评论</h2>
+						<div class="hr-h10"></div>
+						<dl class="mode-comment" id="hotcomment"><!-- 热门评论加载区 --></dl>
+					</div>
+					<!--{/if}-->
+					<div class="padd-lr-20">
+						<h2 class="hot-pl-title">全部评论</h2>
+						<div class="hr-h10"></div>
+						<div id="commentList"><!-- 全部评论列表区 --></div>
+					</div>
+					<div class="padd-lr-20">
+						<div class="pagination f-r" id="pagination"><!--下部分页--></div>
+					</div>
+					
+					<div class="hr-h10"></div>
+					<div class="post-comment-area padd-lr-20">
+						<form action="?app=comment&controller=comment&action=comment" method="POST" onsubmit="return commentSubmit(this);" id="commentForm">
+							<div class="hr-h10"></div>
+							<input type="hidden" name="contentid" value="{$contentid}"/>
+							<textarea class="textarea textarea-w663" name="content" id="commentContent" cols="58" rows="10"></textarea>
+							<div class="user-writeinfo">
+								<span class="f-r"><input type="submit" class="post-btn" value="发表评论" /></span>
+								<!--{if $_username}-->
+									<span class="f-l">欢迎你，<strong class="cor-06c nickname">{$_username}</strong></span>
+									<span class="f-l mar-l-10 padd-3"><label><input type="checkbox" name="anonymous" value="1" title="选中后，你将以匿名方式发布留言，不会显示你的用户名" /> 匿名发表</label></span>
+								<!--{elseif !$islogin}-->
+									<span class="f-l"> 游客发布 
+										<a href="javascript:void(0);" id="quickLogin" class="mar-l-10 padd-3">快速登录</a></span>
+								<!--{else}-->
+									<span class="f-l notLogin">
+										您需要登录后才能发言！ 
+										<a href="javascript:void(0);" id="quickLogin">快速登录</a>
+										<a href="{url('member/index/login')}" target="_blank">快速注册</a>
+									</span>
+								<!--{/if}-->
+							</div>
+							<div style="display: none;" class="fast-login" id="fastLoginDiv" value="0">
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tr>
+										<th><label class="cor-ccc">用户名：</label></th>
+										<td><input type="text" class="input-text bor-gray"  name="username" id="loginUsername" value="" /></td>
+									</tr>
+									<tr>
+										<th><label>密码：</label></th>
+										<td><input type="password" class="input-text bor-gray" name="password" id="loginPassword" /></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td><input type="button" class="fast-login-btn" onclick="login(); return false;" value="登录" /></td>
+									</tr>
+								</table>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- rightSide -->
+			<div class="col-r-extra w-230">
+				<!-- start 热门评论 -->
+				<div class="bor-9fc">
+					<div class="mode-tabs padd-r-0">
+						<h2 class="cor-c00">新闻排行</h2>
+						<ul id="tab-title-4" class="fs-12 f-r">
+							<li><a class="tabs-focus" href="#rank_day">日</a></li>
+							<li><a href="#rank_week">周</a></li>
+							<li><a href="#rank_month">月</a></li>
+						</ul>
+					</div>
+					<div id="tab-cont-4" class="padd-tb-8">
+						<div class="hot-subject-wrap" id="rank_day">
+							<ul>
+							<!--{content published="1" orderby="comments desc" size="10"}-->
+								<li>
+									<span>{$r['comments']}</span>
+									<p><a href="{$r['url']}">{$r['title']}</a></p>
+									<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+								</li>
+							<!--{/content}-->
+							</ul>
+						</div>
+						<div class="hot-subject-wrap" style="display: none;" id="rank_week">
+							<ul>
+								<!--{content published="7" orderby="comments desc" size="10"}-->
+								<li>
+									<span>{$r['comments']}</span>
+									<p><a href="{$r['url']}">{$r['title']}</a></p>
+									<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+								</li>
+								<!--{/content}-->
+							</ul>
+						</div>
+						<div class="hot-subject-wrap" style="display: none;" id="rank_month">
+							<ul>
+								<!--{content published="30" orderby="comments desc" size="10"}-->
+								<li>
+									<span>{$r['comments']}</span>
+									<p><a href="{$r['url']}">{$r['title']}</a></p>
+									<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+								</li>
+								<!--{/content}-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- end 热门评论 -->
+				<div class="hr-h10"></div>
+			</div>
+			<!-- //rightSide -->
+		</div>
+<div class="hr-h6"></div>
+<script type="text/javascript">
+var contentid = {$contentid};
+var islogin = {$islogin};
+var ischeck = {$ischeck};
+var userid =  {intval($_userid)};
+var username =  '{$_username}';
+var defaultname = '{$SETTING[defaultname]}';
+var wordage = '{$SETTING[wordage]}';
+var total = {$total} + 0;
+
+var row_template = '<dl class="mode-comment" id="commentbox_{commentid}">';
+	row_template += '<dt><span class="user-info">'+defaultname+'{location}网友 {nickname}</span><span class="post-time">{date}</span></dt>';
+	row_template += '<dd class="citation-wrap fs-14">{content}</dd><dd>';
+	row_template += '<div class="relay-t f-r"><span class="f-l" onclick="support({commentid},this)">支持<em>[<b id="supportNum_{commentid}">{support}</b>]</em></span><span class="re-btn f-l" onclick="reply({commentid},this);">回复</span><a href="javascript:void(0)" onclick="report({commentid},this)" class="f-l">举报</a></div>';
+	row_template += '<div class="clear"></div><div id="replyBox_{commentid}" class="replyBox"></div><div class="hr-dotted hr-h10"></div></dd></dl>';
+</script>
+<script type="text/javascript">
+var tableApp = new ct.table('#commentList',  {
+	rowIdPrefix : 'div_',
+	pageSize : <?=$pagesize?>,
+	rowCallback: 'init_row_event',
+	jsonLoaded : 'json_loaded',
+	template : row_template,
+	baseUrl  : '?app=comment&controller=comment&action=page&contentid='+contentid+'&total=' + total
+});
+
+$(function() {
+	tableApp.load();
+	var reply_top = $('#top_replyarea');
+	$('#italk-pl').click(function(){
+		reply_top.slideToggle('fast');
+		return false;
+	});
+	$('#tab-title-4 >li >a').hover(function(){
+		var id = $(this).attr('href');
+		$('.tabs-focus').removeClass('tabs-focus');
+		$(this).addClass('tabs-focus');
+		$('.hot-subject-wrap').hide();
+		$(id).show();
+	});
+});
+
+$('#quickLogin').click(function() {
+		var _t = $(this);
+		var _d  = $('#fastLoginDiv');
+		var _lp = _t.offset().left;
+		var _tp = _t.offset().top;
+		var _v = _d.attr('value');
+			_d.css({'position':'absolute','left':_lp+50+'px','top':_tp-50+'px'})
+			
+		if(_v == 0) {
+			_d.fadeIn();
+			_d.attr('value',"1");
+			_t.html('关闭登录');
+			$('#loginUsername').focus();
+		} else {
+			_d.fadeOut();
+			_d.attr('value',"0");
+			_t.html('快速登录');
+		}
+	});
+
+</script>
+<div class="hr-h10"></div>
+<!--{template 'system/footer.html'}-->

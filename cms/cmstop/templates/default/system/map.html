@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网站地图_{$SYSTEM[sitename]}</title>
+<link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="{WWW_URL}img/templates/huoshow02/css/sitemap.css" rel="stylesheet" type="text/css" />
+<link href="{WWW_URL}img/templates/huoshow02/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="{IMG_URL}templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/config.js"></script>
+<script type="text/javascript" src="{DX_URL}static2/js/huoshow_common.js"></script>
+</head>
+
+<body class="body_bg">
+<!--Site Header-->
+<!--{template 'huoshow_index/index_login_bar.html'}-->
+<!--Site Header End--> 
+<!--Navigator-->
+<DIV class=nav_bg>
+<H1 class=channel_logo><A href="http://www.huoshow.com/">火秀网</A></H1>
+<DIV id=sub_channel>
+	<UL>
+	  <li><a href="{WWW_URL}">首页</a></li>
+				<li><a href="{DX_HUOSHOW_SHOW_URL}">直播大厅</a></li>
+				<li><a href="{WWW_URL}events/">赛事</a></li>
+				<li><a href="{WWW_URL}movie/">影视</a></li>
+				<li><a href="{WWW_URL}music/">音乐</a></li>
+				<li><a href="{WWW_URL}game/">游戏</a></li>
+				<!--<li><a href="#">排行榜</a></li>-->
+				<li><a href="{WWW_URL}myshow/">MY秀</a></li>
+				<li><a href="{DX_URL}group.php">群组</a></li>
+				<li><a href="{DX_URL}home.php">空间</a></li>
+				<li><a href="{DX_URL}forum.php">论坛</a></li>
+	</ul>
+</div>
+<div class="search_index">
+		<script type="text/javascript">
+		(function($){
+		$(function(){
+			window.clearKeyword = function(){
+				var search_wd = $.trim($("#search_wd").val());
+				if(search_wd=='请输入关键字'){
+					$("#search_wd").val('');
+				}
+				if(search_wd==''){
+					$("#search_wd").val('请输入关键字');
+				}
+			}
+			window.checkSForm = function()
+			{
+				var search_wd = $.trim($("#search_wd").val());
+				if(search_wd=='请输入关键字' || search_wd==''){
+					alert('请输入关键字');
+					return false;
+				}
+			}
+		}) 
+		})(jQuery);
+		</script>
+		<form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+		<input type="hidden" value="search" name="app"/>
+		<input type="hidden" value="index" name="controller"/>
+		<input type="hidden" value="search" name="action"/>
+		<input type="hidden" value="all" name="type"/>
+		<input type="text" class="search_input_index" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><span class="search_button_index">
+		<input type="submit" class="search_submit_index" value=" " /></span>
+		</form>
+	</div>
+	<DIV class=clear></DIV>
+</DIV>
+<div class="red_bar">
+	<div class="red_bar_text">
+		<div class="red_bar_today"><span class="red_bar_today_bg"></span>
+			<?php
+				echo date("Y年m月d日").'&nbsp;'.'星期';
+				if(date("w")==1) echo '一';
+				if(date("w")==2) echo '二';
+				if(date("w")==3) echo '三';
+				if(date("w")==4) echo '四';
+				if(date("w")==5) echo '五';
+				if(date("w")==6) echo '六';
+				if(date("w")==0) echo '日';
+			?>
+		</div>
+        <div id="header_rollnews_keywords">
+        </div>
+        <script>
+	      (function($){
+	          $(function(){
+	            $.getJSON('{WWW_URL}api/article.php?act=get_header_rollnews_keywords&do=ajax&jsoncallback=?', function(d){
+	            	$("#header_rollnews_keywords").html(d.html);
+	            });
+	          });
+	        })(jQuery);
+	      </script>
+	</div>
+</div>
+<div class="warp_border1" id="wrap">
+<div class="cor"></div>
+	<div class="warp_border1"><div class="warp_border1">
+		<div class="cont">
+			<div class="sitemap_logo">站点导航</div>
+			<dl class="dl_cls1">
+				<dt><a href="{WWW_URL}events/">赛事</a></dt>
+				<dd>
+					{db sql="select * from #table_category where parentid IN (SELECT catid FROM #table_category WHERE alias='events')"}
+						<a href="{$r[url]}" target="_blank" title="{$r[name]}">{$r[name]}</a>
+					{/db}
+				</dd>
+			</dl>
+			<dl class="dl_cls2">
+				<dt><a href="{WWW_URL}game/">游戏</a></dt>
+				<dd>
+					{db sql="select * from #table_category where parentid IN (SELECT catid FROM #table_category WHERE alias='game')"}
+						<a href="{$r[url]}" target="_blank" title="{$r[name]}">{$r[name]}</a>
+					{/db}
+				</dd>
+			 </dl>
+			<dl class="dl_cls3">
+				<dt><a href="{WWW_URL}movie/">影视</a></dt>
+				<dd>
+					{db sql="select * from #table_category where parentid IN (SELECT catid FROM #table_category WHERE alias='movie')"}
+						<a href="{$r[url]}" target="_blank" title="{$r[name]}">{$r[name]}</a>
+					{/db}
+				</dd>
+			</dl>
+			<dl class="dl_cls4">
+				<dt><a href="{WWW_URL}music/">音乐</a></dt>
+				<dd>
+					{db sql="select * from #table_category where parentid IN (SELECT catid FROM #table_category WHERE alias='music') "}
+						<a href="{$r[url]}" target="_blank" title="{$r[name]}">{$r[name]}</a>
+					{/db}
+				</dd>
+			</dl>
+			<dl class="dl_cls5">
+				<dt><a href="#">明星</a></dt>
+				<dd>
+					{db sql="select * from #table_category where parentid IN (SELECT catid FROM #table_category WHERE alias='star')"}
+						<a href="{$r[url]}" target="_blank" title="{$r[name]}">{$r[name]}</a>
+					{/db}
+				</dd>
+			</dl>
+			<dl class="dl_cls6">
+				<dt><a href="#">图库</a></dt>
+				<dd>
+					{db sql="select * from #table_category where parentid IN (SELECT catid FROM #table_category WHERE alias='atlas')"}
+						<a href="{$r[url]}" target="_blank" title="{$r[name]}">{$r[name]}</a>
+					{/db}
+				</dd>
+			</dl>
+			<dl class="dl_cls7">
+			  <dt><a href="{DX_URL}show.php">社区</a></dt>
+			  <dd><a href="{DX_HUOSHOW_SHOW_URL}">直播</a><a href="{WWW_URL}myshow/">my秀</a><a href="{DX_URL}group.php">群组</a>
+			  <a href="{DX_URL}home.php">空间</a><a href="{DX_URL}forum.php">论坛</a></dd>
+			</dl>
+		</div>
+	</div></div>
+</div>
+
+<div id="footer_bg">
+	<div id="footer">
+		<div class="footer_logo"></div>
+		<div class="footer_txt"> <a href="{WWW_URL}about/about.shtml">关于火秀</a> | <a href="{WWW_URL}about/advertising.shtml">广告服务</a> | <a href="{WWW_URL}about/contact.shtml">联系我们</a> |  <a href="{WWW_URL}about/partners.shtml">合作伙伴</a> | <a href="{WWW_URL}about/joinus.shtml">诚聘英才</a> |  <a href="{WWW_URL}map.php">网站地图</a>
+			<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+		</div>
+	</div>
+</div>
+<!--Footer End-->
+<!--Banner Replacer-->
+<div style="display:none">
+	{db sql="select * from #table_section  where memo ='banner_index_replacer'" }
+		{$r[data]}
+    {/db}
+</div>
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

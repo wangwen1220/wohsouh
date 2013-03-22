@@ -1,0 +1,60 @@
+<!--{template 'huoshow_events/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Main Body-->
+<div class="main_body">
+	<div class="index_banner_W960_02">
+	{db sql="select * from #table_section where memo ='huoshow_events_ph_960_88'"}
+                {$r[data]}
+                {/db}
+				</div>
+	<!--Left-->
+	<div class=" body_webgame_left">
+		<div class="eventsph_W650">
+			<div class="eventph_bt">
+				<h2 class="title_blue_big">赛事排行榜</h2>
+			</div>
+			{db sql="select * from #table_section where memo ='huoshow_evemts_ph_saishipaihangbang'"}
+                {$r[data]}
+                {/db}
+		</div>
+	</div>
+	<!--Right-->
+	<div class="body_webgame_right">
+		<div class="web_game_banner_250">
+		{db sql="select * from #table_section where memo ='huoshow_events_ph_300_250'"}
+                {$r[data]}
+                {/db}
+				</div>
+		<div class="events_W300">
+			<div class="events_title_300"> <span class="game_right_title_bz"></span>
+				<h2 class="Purple_Black">赛事焦点</h2>
+			</div>
+			<div class="Happy_girl_list">
+				<div class="Happy_girl_newslist">
+					<ul>
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_saishijiaodian' ORDER BY d.sort desc limit 12"}
+						<li><span class="Point"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+					{/db}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="events_W300">
+			<div class="events_title_300"> <span class="game_right_title_bz"></span>
+				<h2 class="Purple_Black">赛事美图</h2>
+			</div>
+			<div class="Small_games_pic_02">
+				<ul>
+				  {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_evemts_ph_saishimeitu' and d.thumb!='' ORDER BY d.sort desc limit 6"}
+					<li><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="124" height="90" /></a><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></li>
+				  {/db}
+				</ul>
+			</div>
+		</div>
+		<!--发售表--></div>
+	<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--{template 'huoshow_events/footer.html'}-->

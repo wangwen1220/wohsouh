@@ -1,0 +1,22 @@
+<script src="static/js/calendar.js" type="text/javascript"></script>
+<div class="itemtitle">
+	<h3>违规记录-{$username}({$uid})</h3>
+</div>
+<div>
+	<table class="tb tb2 ">
+		<tr class="partition">
+			<td class="td27" width="350">处罚时间段</td>
+			<td class="td27" width="100">解除方式</td>
+			<td class="td27">违规原因</td>
+		</tr>
+		<!--{if $list==''}--><tr><td colspan="3">没有记录</td></tr><!--{/if}-->
+		<!--{loop $list $key $value}-->
+		<tr>
+			<td>{$value['start_time_str']}---{$value['end_time_str']} ({$value['hours']}小时)</td>
+			<td>{$value['removetype_str']}</td>
+			<td>{$value['reason']}</td>
+		</tr>
+		<!--{/loop}-->
+		<tr><td colspan="5"><div class="cuspages right"><div class="pg">$multi</div></div></td></tr>
+	</table>
+</div>

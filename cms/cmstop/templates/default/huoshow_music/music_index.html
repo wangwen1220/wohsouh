@@ -1,0 +1,519 @@
+<!--{template 'huoshow_music/header.html'}-->
+<?php $_GET['section_memo'] = 'huoshow_music_index_keywords';?>
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End--> 
+<!--Main Body-->
+<div class="main_body"> 
+	<!--Left-->
+	<div class="body_left"> 
+		<!--Top News-->
+		<div class="top_news">
+			
+		<div class="slide">
+		<!--#include virtual ="{ROOT}api/article.php?act=getrollimg&memo=huoshow_music_index_scroll_image_288_406&width=288&height=406&navon=1"-->
+		</div>
+			
+			<div class="biankuang_w394">
+				<div class="biankuang_w394_01">
+					<div class="right_title_bg"> 
+						<h2 class="title_Black">头条</h2>
+						<!--  <span class="more"><a href="" class="more_bg">更多</a></span>--> </div>
+					<div class="music_toutiao_newslist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_top_news' ORDER BY d.sort desc limit 2"}
+						<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></h3>
+					   <p>{str_cut($r[description],90)}<a title="{$r[title]}" target="_blank" href="{$r[url]}">[详细]</a></p>
+					{/db}
+					</div>
+					<div class="newslist">
+						<ul>
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_top_news' ORDER BY d.sort desc limit 2,7"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a></li>
+					{/db}	
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="top_news">
+			<div class="top_news_left">
+				<div class="top_news_left_inner_bd">
+					<div class="yingshi_dujia">
+						<div class="left_title_bg"> 
+							<h2 class="title_Black">专题</h2>
+							<!--  <span class="more"><a href="" class="more_bg">更多</a></span>-->  </div>
+						<div class="list">
+							<div class="yingren_pic_01">
+								<ul>
+					        	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_exclusive_interview' and d.thumb!='' ORDER BY d.sort desc limit 2"}
+									<li><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="126" height="84" /><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],16,'')}</a></li>
+								{/db}
+								</ul>
+							</div>
+							<div class="ndi_Center_t_03">
+								<ul>
+								{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_exclusive_interview' ORDER BY d.sort desc limit 2,5"}
+									<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],34,'')}</a></li>
+								{/db}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top_news_right">
+				<div class="top_news_right_inner_bd">
+					<div class="yingshi_tuotiao">
+						<div class="right_title_bg"> 
+							<h2 class="title_Black">乐评</h2>
+							<span class="more"><a target="_blank" href="yueping/" class="more_bg">更多</a></span> </div>
+	      {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_leping' and d.thumb!='' and d.description!='' ORDER BY d.sort desc limit 1"}
+					  <div class="item_02">
+					    <h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],34,'')}</a></h3>
+
+								  <a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="126" height="84"></a>
+                                  <p>{str_cut($r[description],120)}<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细] </a>
+                                  </p>
+						</div>
+			{/db}
+							<div class="ndi_Center_t_01">
+								<ul>
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_leping'  ORDER BY d.sort desc limit 1,5"}
+									<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a></li>
+	               {/db}	
+								</ul>
+							</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top_news">
+			<div class="xianchang">
+				<!--Banner 300*100-->
+				{db sql="select * from #table_section  where memo ='banner_music_left_300_100'"}
+					{$r[data]}
+	            {/db}
+				<div class="biankuang_w300">
+					<div class="biankuang_w300_01">
+						<div class="yingshi_dujia">
+							<div class="left_title_bg">
+								<h2 class="title_Black">现场</h2>
+								<span class="more"><a target="_blank" href="live" class="more_bg">更多</a></span>  </div>
+							<div class="list">
+								<div class="ndi_Center_t_03">
+									<ul>
+							{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_xianchang'  ORDER BY d.sort desc limit 6"}
+					
+										<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],38,'')}</a></li>
+							{/db}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top_news_right_2">
+				<div class="top_news_right_2_inner_bd">
+					<div class="yingshi_tuotiao">
+						<div class="right_title_bg"> 
+							<h2 class="title_Black">音乐人</h2>
+							<span class="more"><a target="_blank" href="yinyueren/" class="more_bg">更多</a></span> </div>
+						<div class="list">
+							<div class="item_02">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_ren' and d.thumb!='' and d.description!='' ORDER BY d.sort desc limit 1"}
+                                <a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="96" height="112"></a>
+                                 <h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],30,'')}</a></h3>
+                                 <span>{str_cut($r[description],98)}<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细] </a></span>
+										
+                 {/db}
+							</div>
+							<div class="ndi_Center_t_02">
+								<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_ren'  ORDER BY d.sort desc limit 1,6"}
+				
+									<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a></li>
+				{/db}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Left End--> 
+	<!--Right-->
+	<div class="body_right"> 
+		<!--Hot Movie-->
+		<div class="diebao">
+			<div class="diebao_bt">
+				<h2 class="baise">碟报</h2>
+			</div>
+			<div class="diebao_text">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_diebao' and d.thumb!='' and d.description!='' ORDER BY d.sort desc limit 3"}
+				<?php 
+                                           $des=$r[description];
+
+                                           $name = explode(";", $des);
+                                              ?> 
+				<div class="diebao_text_wenzi">
+                	<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}"/></a>
+                        <div class="diebao_info">
+                            <p class="diebao_text_1">{$name[0]}：<a title="{$r[title]}" target="_blank" href="{$r[url]}"><span class="lse">{str_cut($name[1],12,'')}</span></a></p>
+                            <p class="diebao_text_1">{$name[2]}：<span class="lse">{str_cut($name[3],12,'')}</span></p>
+                            <p class="diebao_text_2">{str_cut($name[4],16,'')}</p>
+                            <p class="diebao_text_3">{date("Y年m月",$r[created])}</p>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="diebao_text_wenzi_xx">{$name[5]}：{str_cut($name[6],50)}
+                        <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细] </a>
+                        </div>
+		    	</div>
+				<div class="hr"></div>
+				{/db}
+				
+			</div>
+		</div>
+		<!--Banner 250*250-->
+		{db sql="select * from #table_section  where memo ='banner_music_left_250_250'"}
+            {$r[data]}
+        {/db}
+		<div class="music_W250">
+			<div id="diaoc" class="music_W250_01">
+			<h2 class="vote">投票</h2>
+				<div style="clear:both;"></div>
+				<div class="music_W250_tuopiao_text">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_vote' and d.description!='' ORDER BY d.sort desc limit 1"}
+					<h1 class="Text_color">{str_cut($r[title],30,'')}</h1>
+					{str_cut($r[description],50)}<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细] </a>
+			{/db}
+					</div>
+           
+<form id="vote_{$r[contentid]}" name="vote_{$r[contentid]}" method="post" action="{APP_URL}?app=vote&controller=vote&action=vote">
+                            
+<ul class="vote_options">           
+	           {db sql="select a.*,c.type from #table_section_data a LEFT JOIN #table_vote c ON a.contentid = c.contentid where a.sectionid =116 and a.contentid !='' order by a.sort  desc limit 1" } 
+				                 
+				                    <!--{if $r[type]=='radio'}-->
+				                    <?php $type=$r[type];?>
+				                    {db sql="select * from #table_vote_option where contentid = $r[contentid] "}
+				                   
+				                        <li>
+				                        <input name="contentid" type="hidden" value="{$r[contentid]}" />
+				                            <input type="{$type}" name="optionid" value="{$r[optionid]}"/> {$r[name]}
+				                        </li>
+				                        
+				                   
+				                    {/db}
+				                    <!--{else}-->
+				                    {db sql="select * from #table_vote_option where contentid = $r[contentid] "}
+				                    <li>
+				                       <input name="contentid" type="hidden" value="{$r[contentid]}" />
+				                       <input type="{$type}" name="optionid[]" value="{$r[optionid]}"/> {$r[name]} 
+				                    </li>
+				                    {/db}
+				                    <!--{/if}-->
+				           				  
+				
+				            <script type="text/javascript">
+					            //验证投票选项
+					            (function($){
+					             $('#vote_{$r[contentid]}').submit(function(){
+					                 var checkeds = $('#vote_{$r[contentid]} input:checked').length;
+					                 if(checkeds == 0){
+					                 alert('请选择投票选项');
+					                 return false;
+					                 }
+					                 <!--{if $type == 'checkbox'}-->
+					                 if(checkeds > {$maxoptions}){
+					                 alert('最多允许选{$maxoptions}项');
+					                 return false;
+					                 }
+					                 <!--{/if}-->
+					                 })
+					             })(jQuery);
+							</script>
+				{/db}
+       		 </ul>  
+       		 <div class="vote_button">
+             <input type="image" src="{WWW_URL}img/templates/huoshow02/images/music_anniu.gif" id="imageField" name="imageField">
+             </div>
+</form>
+        </div>
+		</div>
+	</div>
+	<!--Top Video-->
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="full_title_bg"> 
+				<h2 class="title_Black">MV</h2>
+				<span class="more"><a target="_blank" href="mv/" class="more_bg">更多</a></span> 
+				</div>
+			<div class="mv" id="pbox1"> 
+			    <a href="#"><div class="mv_left"></div></a>
+				<a href="#"><div class="mv_right"></div></a> 
+				
+			{db sql="select * from #table_section  where memo ='huoshow_music_index_mv' " }
+		       <?php $num=$r[num]; ?>
+		    {/db}
+		    <ul class="top_video">
+            {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_mv' and d.thumb!='' ORDER BY d.sort desc limit 20"}
+					 <?php if($i%10==1 and $i!=1){
+            echo '</ul><ul class="top_video">';
+            }?>
+					<li><span class="top_video_pic_bg"><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span>
+					<span class="top_video_text"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],16)}</a></span> </li>
+            {/db}
+            </ul>
+		</div>
+				
+				 <script>
+          $(function(){
+          window.pbox1 = make_pagebox('pbox1', {
+          pages_selector: '.top_video',
+          prev_selector: '.mv_left',
+          next_selector: '.mv_right',
+          effect: 1
+          });
+          });
+        </script>
+				
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!--Banner 960*90-->
+	{db sql="select * from #table_section  where memo ='banner_music_mainland_960_90'"}
+		{$r[data]}
+    {/db}
+	<!--Region-->
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt"> 
+				<h2 class="title_black_24">内地</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic">
+						<div class="ndi_left_tuwen">
+							<ul class="ndi_left_tuwenlist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_neidi' and d.thumb!='' ORDER BY d.sort desc limit 2"}
+								<li><a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="90" height="90" /></a><br>
+								<strong><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[description],16,'')}</a></strong><br>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],16,'')}</a>
+								</li>
+					{/db}
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+						<ul>
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_neidi'  ORDER BY d.sort desc limit 2,4"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></li>
+					{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_Center">
+					<div class="ndi_Center_newslist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_neidi_news' ORDER BY d.sort desc limit 2"}
+						<h3 class="sexi_hong line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],42,'')}</a></h3>
+                        <p>{str_cut($r[description],90)}<a title="{$r[title]}" target="_blank" href="{$r[url]}">[详细]</a></p>
+                     {/db}
+					</div>
+					<div class="ndi_Center_t">
+						<ul class="ndi_Center_t_text">
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_neidi_news' ORDER BY d.sort desc limit 2,5"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],46,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_right">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">内地音乐榜</h2>
+					</div>
+					<div class="charts_others">
+						<!--#include virtual ="{ROOT}api/article.php?act=neidirank&type=neidi"-->      
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt"> 
+				<h2 class="title_black_24">港台</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic_01">
+						<div class="ndi_left_tuwen">
+							<ul class="ndi_left_tuwenlist">
+							{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_tai' and d.thumb!=''  ORDER BY d.sort desc limit 2"}
+								<li><a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="90" height="90" /></a><br>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[description],16,'')}</a><br>{str_cut($r[title],16,'')}</li>
+							{/db}
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+						<ul>
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_tai'  ORDER BY d.sort desc limit 2,4"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_Center">
+					<div class="ndi_Center_newslist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_tai_news' ORDER BY d.sort desc limit 2"}
+						<h3 class="sexi_huang line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],42,'')}</a></h3>
+                        <p>{str_cut($r[description],90)}<a title="{$r[title]}" target="_blank" href="{$r[url]}">[详细]</a></p>
+                     {/db}
+					</div>
+					<div class="ndi_Center_t">
+						<ul class="ndi_Center_t_text_01">
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_tai_news' ORDER BY d.sort desc limit 2,5"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],46,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_right_01">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">港台音乐榜</h2>
+					</div>
+					<div class="charts_others">
+						<!--#include virtual ="{ROOT}api/article.php?act=neidirank&type=tai"-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt"> 
+				<h2 class="title_black_24">日韩</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic_02">
+						<div class="ndi_left_tuwen">
+							<ul class="ndi_left_tuwenlist">
+							{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_rihan' and d.thumb!='' ORDER BY d.sort desc limit 2"}
+								<li><a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="90" height="90" /></a><br>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[description],16,'')}</a><br>{str_cut($r[title],16,'')}</li>
+							{/db}
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+						<ul>
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_rihan'  ORDER BY d.sort desc limit 2,4"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_Center">
+					<div class="ndi_Center_newslist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_rihan_news' ORDER BY d.sort desc limit 2"}
+						<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],42,'')}</a></h3>
+                        <p>{str_cut($r[description],90)}<a title="{$r[title]}" target="_blank" href="{$r[url]}">[详细]</a></p>
+                     {/db}
+					</div>
+					<div class="ndi_Center_t">
+						<ul class="ndi_Center_t_text_02">
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_rihan_news' ORDER BY d.sort desc limit 2,5"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],46,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_right_02">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">日韩音乐榜</h2>
+					</div>
+					<div class="charts_others">
+						<!--#include virtual ="{ROOT}api/article.php?act=neidirank&type=rihan"-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt"> 
+				<h2 class="title_black_24">欧美</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic_03">
+						<div class="ndi_left_tuwen">
+							<ul class="ndi_left_tuwenlist">
+							{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_omei' and d.thumb!='' ORDER BY d.sort desc limit 2"}
+								<li><a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="90" height="90" /></a><br>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[description],16,'')}</a><br>{str_cut($r[title],16,'')}</li>
+							{/db}
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+						<ul>
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_omei'  ORDER BY d.sort desc limit 2,4"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_Center">
+					<div class="ndi_Center_newslist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_omei_news' ORDER BY d.sort desc limit 2"}
+						<h3 class="sexi_zise line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],42,'')}</a></h3>
+                        <p>{str_cut($r[description],90)}<a title="{$r[title]}" target="_blank" href="{$r[url]}">[详细]</a></p>
+                     {/db}
+					</div>
+					<div class="ndi_Center_t">
+						<ul class="ndi_Center_t_text_03">
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_music_index_omei_news' ORDER BY d.sort desc limit 2,5"}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],46,'')}</a></li>
+						{/db}
+						</ul>
+					</div>
+				</div>
+				<div class="ndi_right_03">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">欧美音乐榜</h2>
+					</div>
+					<div class="charts_others">
+						<!--#include virtual ="{ROOT}api/article.php?act=neidirank&type=omei"-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!--Partners-->
+	<!-- 
+	<div class="partners">
+		<div class="layer_one"><a href="">合作火伴</a></div>
+		<div class="layer_two"><a href="">友情链接</a></div>
+		<div class="layer_content">
+			<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+		</div>
+	</div>
+	 -->
+	<!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--{template 'huoshow_music/footer.html'}-->

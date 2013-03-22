@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="/static2/js/jquery.min.js" type="text/javascript"></script>
+		<script src="/static2/js/jquery.json.js" type="text/javascript"></script>
+
+		<script type='text/javascript'>
+			var _cache = {};
+
+			function getChatObject()
+			{
+				var id = "chat_object";
+				if(!_cache[id])
+					_cache[id] = document.getElementById(id); 
+				return _cache[id];
+			}
+
+			function connect()
+			{
+				var server = '192.168.2.94';
+				var port = 9999;
+				var firstData = {"roomid":"102", "uid":"27703",
+					"username":"kaka", "action":"connect", "usertype":"2"};
+				encoded=$.toJSON(firstData);
+
+				getChatObject().socketRun(encoded, server, port);
+			}
+
+
+			var msg_map = {
+				connect: function(o) {
+					$("#liaotian_c").append(o.connect + "<br />");
+				},
+
+				userlist: function(o) {
+					$("#userlist").html('');
+
+					for(var i=0, l=o.userlist.length; i<l; i++){			
+						$("#userlist").append(o.userlist[i].username + "<br />");		 
+					}		 
+				},
+
+				msgChat: function(o) {
+					var text = o.fromUsername + '对' + o.toUsername + '说:' + o.msgChat;
+					if(o.state==8){
+						text = text + '(悄悄话)'
+					}
+					if(o.state==9 || o.state==10){
+						text = o.msgChat;
+					}
+					$("#liaotian_c").append(text + "<br />");
+				},
+
+				msgStop: function(o) {
+					alert(o.msgStop);
+				},
+
+				canMsg: function(o) {
+					alert(o.canMsg);
+				},
+
+				msgKick: function(o) {
+					alert(o.msgKick);
+				},
+
+				msgToManage: function(o) {
+					alert(o.msgToManage);
+				},
+
+				msgDelManage: function(o) {
+					alert(o.msgDelManage);
+				}
+
+
+			};
+
+
+			function upAllComplete(upData)
+			{
+				var data = jQuery.parseJSON(upData);	
+				var func = msg_map[data.type];
+				if((typeof func) == "function")
+					func(data);
+			}
+
+			function onError(e)
+			{
+				if(e == "disconnect")
+					alert("与消息服务器的连接已断开");
+			}
+
+			/***************************************************************************/
+
+			function fasong()
+			{	
+				var dest= $("#actionto").val();
+				var ctype = $("#ctype").val();
+				var msg = $("#fasongneirong").val();
+				var p = {
+					"action":"msgChat",
+					"actionto":dest,
+					"type":ctype,
+					"msg":msg
+				};
+
+				getChatObject().fasong($.toJSON(p));
+			}
+
+
+			function tiren() {
+				var actionto = $("#actionto").val();
+				var fasongneirong = $("#fasongneirong").val();
+				var p = {
+					"action":"msgKick",
+					"actionto":actionto,
+					"msg":fasongneirong
+				};
+
+				var encoded = $.toJSON(p);	
+				getChatObject().fasong(encoded);
+			}
+
+
+			function jinyan() {
+				var actionto = $("#actionto").val();
+				var fasongneirong = $("#fasongneirong").val();
+				var p = {
+					"action":"msgStop",
+					"actionto":actionto,
+					"msg":fasongneirong		
+				};
+
+				var encoded = $.toJSON(p);	
+				getChatObject().fasong(encoded);
+
+			}
+
+
+			function huifufayan()
+			{
+				var actionto = $("#actionto").val();
+				var fasongneirong = $("#fasongneirong").val();
+				var p = {
+					"action":"canMsg",
+					"actionto":actionto,
+					"msg":fasongneirong
+				};
+
+				var encoded = $.toJSON(p);	
+				getChatObject().fasong(encoded);
+			}
+
+
+			function tishen() 
+			{
+				var actionto = $("#actionto").val();
+				var fasongneirong = $("#fasongneirong").val();
+				var p = {
+					"action":"msgToManage",
+					"actionto":actionto,
+					"msg":fasongneirong	,
+					"msgtoall":"用户XX被提升为管理员"	
+				};
+
+				var encoded = $.toJSON(p);	
+				getChatObject().fasong(encoded);
+
+			}
+
+
+			function shanchuguanli()
+			{
+				var actionto = $("#actionto").val();
+				var fasongneirong = $("#fasongneirong").val();
+				var p = {
+					"action":"msgDelManage",
+					"actionto":actionto,
+					"msg":fasongneirong	,
+					"msgtoall":"用户被设置为普通用户"	
+				};
+
+				var encoded = $.toJSON(p);	
+				getChatObject().fasong(encoded);
+			}
+
+		</script>
+
+		<style type="text/css">
+			#userlist, #liaotian_c{
+				margin-bottom:1em;
+				padding:1em;
+				background:#eee;
+				height:100px;
+				overflow:auto;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="liaotian_control">
+			<input type="text" id="fasongneirong" />
+			给<select id="actionto">
+				<option value="all">所有人</option>
+				<option value="27703">27703</option>
+				<option value="27704">27704</option>
+				<option value="27705">27705</option>
+				<option value="27705">27616</option>
+			</select>
+
+			<select id="ctype">	
+				<option value="2">公聊</option>
+				<option value="1">私聊</option>	
+			</select>
+
+			<input  type="button" value="发送" onclick="fasong()"/>
+			<input  type="button" value="禁言" onclick="jinyan()"/>
+			<input  type="button" value="恢复发言" onclick="huifufayan()"/>
+			<input  type="button" value="踢人" onclick="tiren()"/>
+			<input  type="button" value="设为管理员" onclick="tishen()"/>
+			<input  type="button" value="删除管理" onclick="shanchuguanli()"/>
+			<input  type="button" value="连接" onclick="connect()"/>
+		</div>
+
+		<div id="userlist"></div>
+		<div id="liaotian_c"></div>
+
+		<div id="chat_object_box">
+			<object id="chat_object" type="application/x-shockwave-flash" data="/static2/chat.swf" width="800" height="500">
+				<param name="movie" value="/static2/chat.swf" />
+			</object>
+		</div>
+	</body>
+
+</html>
+

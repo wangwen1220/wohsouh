@@ -1,0 +1,75 @@
+{subtemplate common/header}
+<link href="static2/live.css" rel="stylesheet" type="text/css" />
+  <div class="search-result">
+  	<div id="activesearch_frd_msg" style="text-align:center; margin-bottom:5px;">
+		<!--{if $type==1}-->
+			<p class="search-room-msg">你的搜索 火秀号包含"<strong>{$keyword}</strong>" 有以下结果。</p>
+		<!--{elseif $type==2 }-->
+			<p class="search-room-msg">你的搜索 昵称包含"<strong>{$keyword}</strong>" 有以下结果。</p>
+		<!--{/if}-->        
+    </div>
+    <div> 
+      <div class="hotanchor_text" >
+        <div id="ajax_activeanchors">
+        	<ul id="hotanchor_nav">
+        	<!--{loop $matchanchor $key $value}-->
+        		<li>
+				<div class="pp-box">
+				<div class="pp-bg">
+				<a class="pp" href="/{$value['roomid']}" target="_blank" style="background-image:url({$value['avatar']});">
+				<span class="hotanchor_sha">
+				<img src="static2/images/charmlevel/{$value['charmLevel']}.png" width="16" height="16" />
+				</span>
+				<span class="hotanchor_D_2"><!--{if $value['online']==1}--><img src="static2/images/cansai.png" width="44" height="15" /><!--{/if}--></span>
+				<span class="hotanchor_D_on">[{$value['onlineMember']}]</span>
+				</a>
+				</div>
+				</div>
+				<p class="hotanchor_ben">
+				<a href="/{$value['uid']}" target="_blank">{$value['nickname']}<br>({$value['uid']})</a>
+				</p>
+				</li>
+			<!--{/loop}-->
+        	</ul>
+        	<div id="ajax_pageHtml" class="pgs cl">
+        	{$activemulti}
+        	</div>
+        	<div class="clear"></div>
+        </div>                      
+      </div>	
+    </div> 
+    <!-- 主播列表 begin-->
+    <div>  
+      <div class="hotanchor_text" >
+        <div id="ajax_activeanchors">
+        	<ul id="hotanchor_nav">
+        	<!--{loop $hotanchors $key $value}-->
+        		<li>
+				<div class="pp-box">
+				<div class="pp-bg">
+				<a class="pp" href="/{$value['roomid']}" target="_blank" style="background-image:url({$value['avatar']});">
+				<span class="hotanchor_sha">
+				<img src="static2/images/charmlevel/{$value['charmLevel']}.png" width="16" height="16" />
+				</span>
+				<span class="hotanchor_D_2"><!--{if $value['online']==1}--><img src="static2/images/zaixian.png" width="44" height="15" /><!--{/if}--></span>
+				<span class="hotanchor_D_on">[{$value['onlineMember']}]</span>
+				</a>
+				</div>
+				</div>
+				<p class="hotanchor_ben">
+				<a href="/{$value['uid']}" target="_blank">{$value['nickname']}<br>({$value['uid']})</a>
+				</p>
+				</li>
+			<!--{/loop}-->
+        	</ul>
+        	<div id="ajax_pageHtml" class="pgs cl">
+        	{$multi}
+        	</div>
+        	<div class="clear"></div>
+        </div> 
+      </div>	
+    </div>  
+    <!-- 主播列表 end-->
+  </div>   
+
+{subtemplate common/footer}

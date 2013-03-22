@@ -1,0 +1,19 @@
+{* 颜色风格都不用管，表头用th，内容用td,css系统会自己搞定，风格是一致的 *}
+
+<table width="100%" border="0" align="center">
+  <tr>
+    <th height="20">ID</th>
+    <th>用户名</th>
+    <th>邮箱</th>
+  </tr>
+  {section name=a loop=$user_arr}
+  <tr>
+    <td>{$user_arr[a].uid} <a href="?action=huoshow&operation=test&a=1&b=2&c=3">aaa</a></td>
+    <td>{$user_arr[a].username}</td>
+    <td>{$user_arr[a].email}</td>
+  </tr>
+  {/section}
+  <tr>
+    <td colspan="3">{$page_str}</td>
+  </tr>
+</table>

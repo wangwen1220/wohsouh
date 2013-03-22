@@ -1,0 +1,39 @@
+<div class="vote_anchor_paihang" id="show_huoshow_list">
+	<div class="vote_anchor_paihang_btt">
+		<div class="anchor_paihang_tab">
+			<ul>
+				<li class="anchor_paihang_out"><a>日榜</a></li>
+				<li class="anchor_paihang_out"><a>周榜</a></li>
+				<li class="anchor_paihang_out"><a>月榜</a></li>
+			</ul>
+			<div class="anchor_paihang_more"><a target="_blank" href="show.php?mod=vrank"><img src="static2/images/more.gif" width="33" height="15" border="0" /></a></div>
+		</div>
+	</div>
+	<div class="anchor_paihang_text" style="display:block">
+		{section name=d loop=$day_data}
+		<div class="paihang2">
+			<div class="icon0{$smarty.section.d.index+1}"><a target="_blank" href="/{$day_data[d].uid}">{$day_data[d].nickname}({$day_data[d].uid})</a></div>
+			<div class="shuzi">{$day_data[d].value}</div>
+			<div class="hongzuan"></div>
+		</div>
+		{/section}
+	</div>	
+    <div class="anchor_paihang_text" style="display:none">
+    	{section name=w loop=$week_data}
+    	<div class="paihang2">
+    		<div class="icon0{$smarty.section.w.index+1}"><a target="_blank" href="/{$week_data[w].uid}">{$week_data[w].nickname}({$week_data[w].uid})</a></div>
+    		<div class="shuzi">{$week_data[w].value}</div>
+    		<div class="hongzuan"></div>
+    	</div>
+    	{/section}
+    </div>	
+    <div class="anchor_paihang_text" style="display:none">
+    	{section name=m loop=$month_data}
+    	<div class="paihang2">
+    		<div class="icon0{$smarty.section.m.index+1}"><a target="_blank" href="/{$month_data[m].uid}">{$month_data[m].nickname}({$month_data[m].uid})</a></div>
+    		<div class="shuzi">{$month_data[m].value}</div>
+    		<div class="hongzuan"></div>
+    	</div>
+    	{/section}
+    </div>	
+</div>

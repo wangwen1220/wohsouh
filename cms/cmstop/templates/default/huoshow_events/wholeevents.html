@@ -1,0 +1,161 @@
+<!--{template 'huoshow_events/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Main Body-->
+<div class="main_body"><!--Left--><div class="body_webgame_left">
+	<div class="wholeevents_W650_hr">
+			<div class="wholeevents_title_bg_650">
+				<h2 class="title_blue_big">火热进行中</h2>
+				<span class="more"><a href="{WWW_URL}events/wholeevents/huorejinxingzhong" class="more_bg">更多</a></span> </div>
+				<div class="clear"></div>
+				<div class="wholeevents_jinx">
+			<ul>
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_huorejinxingzhong' and d.thumb!='' ORDER BY d.sort desc limit 4"}
+				<li><span class="wholeevents_jinx_pic"><a title="{$r[title]}" href="{$r[url]}" target="_blank" ><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="115" height="95" /></a></span><span class="wholeevents_jinx_wz"><span class="wholeevents_jinx_wz_c">{str_cut($r[title],22,'')}</span><br>
+					{str_cut($r[description],64)}  <a title="{$r[title]}" href="{$r[url]}" target="_blank" >更多>></a></span></li>
+			{/db}	
+			</ul>
+		</div>
+					
+			
+
+		</div>
+		<div class="clear"></div>
+		<div class="wholeevents_W650">
+			<div class="wholeevents_title_bg_650">
+				<h2 class="title_blue_big">内地赛事</h2>
+				<span class="more"><a href="{WWW_URL}events/wholeevents/neidisaishi" class="more_bg">更多</a></span> </div>
+				<div class="clear"></div>
+		<div class="Web_games_left_02">
+		<ul class="events_top_video_list">
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_neidisaishi' and d.thumb!='' ORDER BY d.sort desc limit 4"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" href="{$r[url]}" target="_blank" ><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></span> </li>
+		{/db}
+			</ul>
+		</div>
+			
+			<div class="Web_games_Center">
+	<div class="nd_newslist">
+	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_neidisaishi' ORDER BY d.sort desc limit 1"}
+					<div class="nd_newslist_bt"><span class="Purple_wenzi"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></span></div>
+	{/db}
+					<ul>
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_neidisaishi' ORDER BY d.sort desc limit 1,9"}
+						<li><span class="Red_icon"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+					{/db}
+					</ul>
+				</div>
+			</div>
+			
+					
+			
+
+		</div>
+		<div class="wholeevents_W650">
+			<div class="wholeevents_title_bg_650">
+				<h2 class="title_blue_big">港台赛事</h2>
+				<span class="more"><a href="{WWW_URL}events/wholeevents/gangtaisaishi" class="more_bg">更多</a></span> </div>
+								<div class="clear"></div>
+
+		<div class="Web_games_left_02">
+		<ul class="events_top_video_list">
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_gangtaisaishi' and d.thumb!='' ORDER BY d.sort desc limit 4"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" href="{$r[url]}" target="_blank" ><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a href="{$r[url]}" target="_blank" >{str_cut($r[title],20,'')}</a></span> </li>
+		{/db}
+			</ul>
+		</div>
+			
+			<div class="Web_games_Center">
+	<div class="nd_newslist">
+	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_gangtaisaishi' ORDER BY d.sort desc limit 1"}
+					<div class="nd_newslist_bt"><span class="Purple_wenzi"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></span></div>
+	{/db}
+					<ul>
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_gangtaisaishi' ORDER BY d.sort desc limit 1,10"}
+						<li><span class="Red_icon"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+					{/db}
+					</ul>
+				</div>
+			</div>
+			
+					
+			
+
+		</div>
+		<div class="wholeevents_W650">
+			<div class="wholeevents_title_bg_650">
+				<h2 class="title_blue_big">海外赛事</h2>
+				<span class="more"><a href="{WWW_URL}events/wholeevents/haiwaisaishi" class="more_bg">更多</a></span> </div>
+								<div class="clear"></div>
+
+		<div class="Web_games_left_02">
+		<ul class="events_top_video_list">
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_haiwaisaishi' and d.thumb!='' ORDER BY d.sort desc limit 4"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" href="{$r[url]}" target="_blank" ><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a title="{$r[title]}" href="{$r[url]}" target="_blank" >{str_cut($r[title],20,'')}</a></span> </li>
+		{/db}
+			</ul>
+		</div>
+			
+			<div class="Web_games_Center">
+	<div class="nd_newslist">
+	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_haiwaisaishi' ORDER BY d.sort desc limit 1"}
+					<div class="nd_newslist_bt"><span class="Purple_wenzi"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></span></div>
+	{/db}
+					<ul>
+	{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_index_haiwaisaishi' ORDER BY d.sort desc limit 1,9"}
+						<li><span class="Red_icon"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+	{/db}
+					</ul>
+				</div>
+			</div>
+			
+					
+			
+
+		</div>
+		<div class="clear"></div>
+</div>
+	<!--Right-->
+	<div class="body_webgame_right"> 
+	<div class="qbzt_banner_250">
+	{db sql="select * from #table_section where memo ='huoshow_events_wholeevents_image_300_250'"}
+                {$r[data]}
+                {/db}
+				</div>
+				<div class="right_events_W300">
+			<div class="events_title_300"> <span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">赛事排行榜</h2>
+					</div>
+					
+					<div class="charts_block">
+					{db sql="select * from #table_section where memo ='huoshow_events_wholeevents_youcesaishipaihang'"}
+                	{$r[data]}
+                	{/db}
+				</div>
+				
+		  </div>
+		  <div class="events_W300">
+					<div class="events_title_300"> <span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">赛事焦点</h2>
+					</div>
+					<div class="Happy_girl_list">
+						<div class="Happy_girl_newslist">
+							<ul>
+							{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_events_wholeevents_saishijiaodian' ORDER BY d.sort desc limit 12"}
+								<li><span class="Point"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],36,'')}</a></span></li>
+							{/db}
+							</ul>
+						</div>
+					</div>
+				</div>
+	<!--发售表--></div>
+	
+	<div class="clear"></div>
+	<div class="banner_W960">{db sql="select * from #table_section where memo ='huoshow_events_wholeevents_960_88'"}
+                {$r[data]}
+                {/db}
+				</div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End--> 
+<!--{template 'huoshow_events/footer.html'}-->

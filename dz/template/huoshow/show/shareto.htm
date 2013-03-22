@@ -1,0 +1,38 @@
+<div class="shareto-bar">
+  <span>分享到：</span>
+  <script>
+    (function(){
+      var url=location.href;
+      var title='大家好，我正在火秀直播上观看 ['+ ENV.ownerName +'] 的精彩直播，邀请大家强势围观。';
+
+      var shareList = [];
+      shareList.push([['http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=', url,
+      '&title=', encodeURIComponent(title)].join(''), 'static2/images/share/qzone.gif']);
+      shareList.push([['http://service.weibo.com/share/share.php?url=', url,
+      '&title=', encodeURIComponent(title)].join(''), 'static2/images/share/sina.gif']);
+      shareList.push([['http://v.t.qq.com/share/share.php?url=', url,
+      '&title=', encodeURIComponent(title)].join(''), 'static2/images/share/qqmblog.gif']);
+      shareList.push([['http://www.douban.com/recommend/?url=', url,
+      '&title=', encodeURIComponent(title)].join(''), 'static2/images/share/douban.gif']);
+      shareList.push([['http://share.renren.com/share/buttonshare.do?url=', url,
+      '&title=', encodeURIComponent(title)].join(''), 'static2/images/share/renren.gif']);
+      shareList.push([['http://www.kaixin001.com/repaste/share.php?url=', url,
+      '&title=', encodeURIComponent(title)].join(''), 'static2/images/share/kaixin.gif']);
+      shareList.push([['http://t.163.com/article/user/checkLogin.do?link=', url,
+      '&info=', encodeURIComponent(title)].join(''), 'static2/images/share/163.gif']);
+      shareList.push([['http://t.sohu.com/third/post.jsp?url=', url,
+      '&content=UTF-8&title=', encodeURIComponent(title)].join(''), 'static2/images/share/sohu.gif']);
+      shareList.push([['http://cang.baidu.com/do/add?iu=', url,
+      '&it=', encodeURIComponent(title)].join(''), 'static2/images/share/baidu.gif']);
+      var html = [];
+      for(var i=0, l=shareList.length; i<l; i++){
+        html.push('<a target="_blank" href="');
+          html.push(shareList[i][0]);
+          html.push('"><img src="');
+          html.push(shareList[i][1]);
+          html.push('"/></a>\n');
+      }
+      document.write(html.join(''));
+    })();
+  </script>
+</div>

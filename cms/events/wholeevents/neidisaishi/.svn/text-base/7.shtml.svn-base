@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="快女、超级女声、快乐女生、快乐男声、星光大道、中国达人秀、火秀魅力之星、舞林大会、赛事、娱乐赛事、选秀节目、模特大赛、选美活动、选秀节目、英国达人秀、美国偶像、激情唱响、非同凡响、我心唱响、金钟奖" />
+<meta name="description" content="火秀网赛事频道为您提供娱乐赛事最新资讯，包括快女、快男、中国达人秀、火秀魅力之星、舞林大会等全球时下最火爆的赛事以及涌现出的热门明星相关报道。" />
+    <title>内地赛事_赛事快报_火秀赛事_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/events_global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/events.css" rel="stylesheet" type="text/css" />
+ <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+
+</head>
+
+  <body class="body_bg">
+    <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+<div class="nav_body">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/events" title="火秀赛事首页">火秀赛事频道</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a href="http://www.huoshow.com/events/wholeevents/">赛事快报</a></li>
+<li><a href="http://www.huoshow.com/events/events_paihang">赛事排行</a></li>
+<li><a href="http://www.huoshow.com/events/saishiricheng">赛事日程</a></li>
+<li><a href="http://www.huoshow.com/events/events_zt">赛事专题</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+       <a href=""></a> 
+    	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">内地赛事</h2></div>
+<ul>
+<li><span class="date_011"><a title="周笔畅否认整容 为公益捐高跟鞋" href="http://www.huoshow.com/2011/0909/27129.shtml" target="_blank">周笔畅否认整容 为公益捐高跟鞋</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="金星暴杀 范冰冰大S无辜中枪" href="http://www.huoshow.com/2011/0909/27117.shtml" target="_blank">金星暴杀 范冰冰大S无辜中枪</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="“史上最性感”《舞林大会》" href="http://www.huoshow.com/2011/0909/27109.shtml" target="_blank">“史上最性感”《舞林大会》</a></span><span class="date_01">2011-09-09</span></li>
+<!--  -->
+<li><span class="date_011"><a title="凤凰卫视打造高端选美 任贤齐领队华姐18强" href="http://www.huoshow.com/2011/0908/27103.shtml" target="_blank">凤凰卫视打造高端选美 任贤齐领队华姐18强</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="“限娱令”流言四起，快女或成绝唱" href="http://www.huoshow.com/2011/0908/27099.shtml" target="_blank">“限娱令”流言四起，快女或成绝唱</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="2011中国体育模特大赛海南选拔赛即将开赛" href="http://www.huoshow.com/2011/0908/27035.shtml" target="_blank">2011中国体育模特大赛海南选拔赛即将开赛</a></span><span class="date_01">2011-09-08</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a title="中国职业模特总决赛落幕 新疆前三甲获佳绩" href="http://www.huoshow.com/2011/0908/27027.shtml" target="_blank">中国职业模特总决赛落幕 新疆前三甲获佳绩</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="蔡国庆：那些说我傻的人比我还傻" href="http://www.huoshow.com/2011/0908/26997.shtml" target="_blank">蔡国庆：那些说我傻的人比我还傻</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="快女4强都有冠军梦 桂冠最终花落谁家？" href="http://www.huoshow.com/2011/0908/26983.shtml" target="_blank">快女4强都有冠军梦 桂冠最终花落谁家？</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="快女合辑将上市 金银玲《打报告》率先开炮" href="http://www.huoshow.com/2011/0908/26939.shtml" target="_blank">快女合辑将上市 金银玲《打报告》率先开炮</a></span><span class="date_01">2011-09-08</span></li>
+<!--  -->
+<li><span class="date_011"><a title="花儿宁婧性感升级 酥胸半露争12强" href="http://www.huoshow.com/2011/0907/26667.shtml" target="_blank">花儿宁婧性感升级 酥胸半露争12强</a></span><span class="date_01">2011-09-07</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a title="花儿朵朵主持人选手爆乳上阵 酥胸呼之欲出" href="http://www.huoshow.com/2011/0907/26657.shtml" target="_blank">花儿朵朵主持人选手爆乳上阵 酥胸呼之欲出</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="花儿12强赛后小休 忙回家回校忙充电" href="http://www.huoshow.com/2011/0907/26631.shtml" target="_blank">花儿12强赛后小休 忙回家回校忙充电</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="快女宣战 刘忻回应洪辰 ：孩子你还小" href="http://www.huoshow.com/2011/0907/26555.shtml" target="_blank">快女宣战 刘忻回应洪辰 ：孩子你还小</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="红裙惹火耀眼 苏妙玲欲挑战斗牛舞？" href="http://www.huoshow.com/2011/0907/26535.shtml" target="_blank">红裙惹火耀眼 苏妙玲欲挑战斗牛舞？</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《舞林大会》张杰酷炫劲装热舞压轴" href="http://www.huoshow.com/2011/0907/26517.shtml" target="_blank">《舞林大会》张杰酷炫劲装热舞压轴</a></span><span class="date_01">2011-09-07</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a title="《舞林》众女露底秀豪乳 张峻宁抓胸露点" href="http://www.huoshow.com/2011/0907/26499.shtml" target="_blank">《舞林》众女露底秀豪乳 张峻宁抓胸露点</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="《舞林》遗憾重重 该走的不走该留的不留" href="http://www.huoshow.com/2011/0907/26481.shtml" target="_blank">《舞林》遗憾重重 该走的不走该留的不留</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="杨臣刚亮相《挑战麦克风》被戏称“动物教主”" href="http://www.huoshow.com/2011/0907/26465.shtml" target="_blank">杨臣刚亮相《挑战麦克风》被戏称“动物教主”</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+<li><span class="date_011"><a title="时隔四年 张杰再次黑酷亮相《舞林》" href="http://www.huoshow.com/2011/0907/26457.shtml" target="_blank">时隔四年 张杰再次黑酷亮相《舞林》</a></span><span class="date_01">2011-09-07</span></li>
+<!--  -->
+</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/6.shtml">上一页</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/1.shtml">1...</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/5.shtml">5</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/6.shtml">6</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/7.shtml" class="now">7</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/8.shtml">8</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/9.shtml">9</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/23.shtml">...23</a></li><li><a href="http://www.huoshow.com/events/wholeevents/neidisaishi/8.shtml">下一页</a></li></ul>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+<!--Banner 300*250-->
+    <p class="p_img"><a href="http://www.huoshow.com/2011/0826/23539.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0905/1315195021801.jpg" border="0" width="300" height="250" /></a></p>            <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;"class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="/api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

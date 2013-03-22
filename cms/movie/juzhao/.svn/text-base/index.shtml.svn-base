@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+<meta name="description" content="火秀网为您提供海量影视剧海报剧照，经典的、最新的，无论您是要回味经典还是体味新鲜，我们都能为您提供。" />
+    <title>剧照_火秀影视_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/movie.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class="body_bg">
+    <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+    
+    <!--Navigator-->
+    <div class="nav_body">
+      <div class="nav_bg">
+        <h1 class="channel_logo"><a href="http://www.huoshow.com/movie/" title="火秀影视首页">火秀影视频道</a></h1>
+        <div id="sub_channel">
+          <ul>
+            <li><a id="ch_huayu" href="http://www.huoshow.com/movie/huayu/">华语</a></li>
+            <li><a id="ch_oumei" href="http://www.huoshow.com/movie/oumei/">欧美</a></li>
+            <li><a id="ch_rihan" href="http://www.huoshow.com/movie/rihan/">日韩</a></li>
+            <li><a id="ch_yingren" href="http://www.huoshow.com/movie/yingren/">影人</a></li>
+            <li><a id="ch_yingping" href="http://www.huoshow.com/movie/yingping/">影评</a></li>
+            <li><a id="ch_juzhao" href="http://www.huoshow.com/movie/juzhao/">剧照</a></li>
+            <li><a id="ch_pianhua" href="http://www.huoshow.com/movie/pianhua/">片花</a></li>
+         <!--<li><a id="ch_zhuanti" href="http://www.huoshow.com/movie/zhuanti/">专题</a></li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navigator End-->
+
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="pic_banner"><!--广告960*90-->
+    	               <p class="p_img"><img src="http://news.beta.huoshow.com/upload/2011/0423/1303525336808.jpg" border="0" width="960" height="90" /></p>            </div>
+    <div class="Subpage_pic">
+        <div class="Subpage_pic_01">
+            <div class="Subpage_pic_list">
+            	<div class="Subpage_pic_bt"><h2 class="bt1">剧照</h2></div>
+            	<ul >
+   	<li>
+   		<a title="《杨门女将》新剧照 张柏芝任贤齐伉俪情深" target="_blank" href="http://www.huoshow.com/2011/0922/32019.shtml"><img alt="《杨门女将》新剧照 张柏芝任贤齐伉俪情深" src="http://www.huoshow.com/upload/2011/0922/thumb_158_118_1316684614907.jpg" width="158" height="118">
+   		<span>《杨门女将》新剧照 张柏芝任贤齐伉俪情深</span></a>
+   	</li>
+   	<li>
+   		<a title="科幻电影《云图》开机 哈利·贝瑞片场照曝光" target="_blank" href="http://www.huoshow.com/2011/0920/30777.shtml"><img alt="科幻电影《云图》开机 哈利·贝瑞片场照曝光" src="http://www.huoshow.com/upload/2011/0920/thumb_158_118_1316507261995.jpg" width="158" height="118">
+   		<span>科幻电影《云图》开机 哈利·贝瑞片场照曝光</span></a>
+   	</li>
+   	<li>
+   		<a title="《暮色4》曝光新海报 贝拉婚戒耀眼夺目" target="_blank" href="http://www.huoshow.com/2011/0920/30403.shtml"><img alt="《暮色4》曝光新海报 贝拉婚戒耀眼夺目" src="http://www.huoshow.com/upload/2011/0920/thumb_158_118_1316486703815.jpg" width="158" height="118">
+   		<span>《暮色4》曝光新海报 贝拉婚戒耀眼夺目</span></a>
+   	</li>
+   	<li>
+   		<a title="《白蛇传说》曝李连杰剧照 展现法海捉妖生涯" target="_blank" href="http://www.huoshow.com/2011/0920/30349.shtml"><img alt="《白蛇传说》曝李连杰剧照 展现法海捉妖生涯" src="http://www.huoshow.com/upload/2011/0920/thumb_158_118_1316484764958.jpg" width="158" height="118">
+   		<span>《白蛇传说》曝李连杰剧照 展现法海捉妖生涯</span></a>
+   	</li>
+   	<li>
+   		<a title="《白蛇传说》新剧照 黄圣依林峰玩“裸婚”" target="_blank" href="http://www.huoshow.com/2011/0909/27145.shtml"><img alt="《白蛇传说》新剧照 黄圣依林峰玩“裸婚”" src="http://www.huoshow.com/upload/2011/0909/thumb_158_118_1315534005631.jpg" width="158" height="118">
+   		<span>《白蛇传说》新剧照 黄圣依林峰玩“裸婚”</span></a>
+   	</li>
+   	<li>
+   		<a title="《白蛇传说》曝新剧照 法海与能忍的师徒情" target="_blank" href="http://www.huoshow.com/2011/0905/25709.shtml"><img alt="《白蛇传说》曝新剧照 法海与能忍的师徒情" src="http://www.huoshow.com/upload/2011/0905/thumb_158_118_1315211009355.jpg" width="158" height="118">
+   		<span>《白蛇传说》曝新剧照 法海与能忍的师徒情</span></a>
+   	</li>
+   	<li>
+   		<a title="《竞雄女侠》剧照惊爆兵器谱 样式繁多" target="_blank" href="http://www.huoshow.com/2011/0902/25005.shtml"><img alt="《竞雄女侠》剧照惊爆兵器谱 样式繁多" src="http://www.huoshow.com/upload/2011/0906/thumb_158_118_1315290240639.jpg" width="158" height="118">
+   		<span>《竞雄女侠》剧照惊爆兵器谱 样式繁多</span></a>
+   	</li>
+   	<li>
+   		<a title="《白蛇传说》凄美剧照 阿Sa文章上演妖妖恋" target="_blank" href="http://www.huoshow.com/2011/0901/24643.shtml"><img alt="《白蛇传说》凄美剧照 阿Sa文章上演妖妖恋" src="http://www.huoshow.com/upload/2011/0901/thumb_158_118_1314862210365.jpg" width="158" height="118">
+   		<span>《白蛇传说》凄美剧照 阿Sa文章上演妖妖恋</span></a>
+   	</li>
+   	<li>
+   		<a title="《秋瑾》放送众女星剧照 群芳混搭上演民国奇情" target="_blank" href="http://www.huoshow.com/2011/0831/24343.shtml"><img alt="《秋瑾》放送众女星剧照 群芳混搭上演民国奇情" src="http://www.huoshow.com/upload/2011/0906/thumb_158_118_1315290348510.jpg" width="158" height="118">
+   		<span>《秋瑾》放送众女星剧照 群芳混搭上演民国奇情</span></a>
+   	</li>
+   	<li>
+   		<a title="《李献计历险记》10月5日公映 曝概念海报" target="_blank" href="http://www.huoshow.com/2011/0830/24069.shtml"><img alt="《李献计历险记》10月5日公映 曝概念海报" src="http://www.huoshow.com/upload/2011/0906/thumb_158_118_1315290428964.jpg" width="158" height="118">
+   		<span>《李献计历险记》10月5日公映 曝概念海报</span></a>
+   	</li>
+   	<li>
+   		<a title="《秋瑾》剧照 曝光黄奕郑嘉颖情感戏" target="_blank" href="http://www.huoshow.com/2011/0825/23485.shtml"><img alt="《秋瑾》剧照 曝光黄奕郑嘉颖情感戏" src="http://www.huoshow.com/upload/2011/0825/thumb_158_118_1314260323478.jpg" width="158" height="118">
+   		<span>《秋瑾》剧照 曝光黄奕郑嘉颖情感戏</span></a>
+   	</li>
+   	<li>
+   		<a title="《蜜桃成熟时33D》9月公映 大尺度照首曝光" target="_blank" href="http://www.huoshow.com/2011/0825/23456.shtml"><img alt="《蜜桃成熟时33D》9月公映 大尺度照首曝光" src="http://www.huoshow.com/upload/2011/0825/thumb_158_118_1314258399314.jpg" width="158" height="118">
+   		<span>《蜜桃成熟时33D》9月公映 大尺度照首曝光</span></a>
+   	</li>
+   	<li>
+   		<a title="《秋瑾》曝光人物对比照 真实还原历史人物" target="_blank" href="http://www.huoshow.com/2011/0823/23031.shtml"><img alt="《秋瑾》曝光人物对比照 真实还原历史人物" src="http://www.huoshow.com/upload/2011/0823/thumb_158_118_1314084185651.jpg" width="158" height="118">
+   		<span>《秋瑾》曝光人物对比照 真实还原历史人物</span></a>
+   	</li>
+   	<li>
+   		<a title="刘谦《大武生》剧照曝光 造型前卫有时尚感" target="_blank" href="http://www.huoshow.com/2011/0819/22663.shtml"><img alt="刘谦《大武生》剧照曝光 造型前卫有时尚感" src="http://www.huoshow.com/upload/2011/0819/thumb_158_118_1313741707326.jpg" width="158" height="118">
+   		<span>刘谦《大武生》剧照曝光 造型前卫有时尚感</span></a>
+   	</li>
+   	<li>
+   		<a title="《大武生》剧照曝光 吴尊韩庚生活极度时尚" target="_blank" href="http://www.huoshow.com/2011/0818/22474.shtml"><img alt="《大武生》剧照曝光 吴尊韩庚生活极度时尚" src="http://www.huoshow.com/upload/2011/0818/thumb_158_118_1313650655707.jpg" width="158" height="118">
+   		<span>《大武生》剧照曝光 吴尊韩庚生活极度时尚</span></a>
+   	</li>
+   	<li>
+   		<a title="《猿族崛起》曝如何制作逼真大猩猩" target="_blank" href="http://www.huoshow.com/2011/0817/22395.shtml"><img alt="《猿族崛起》曝如何制作逼真大猩猩" src="http://www.huoshow.com/upload/2011/0817/thumb_158_118_1313573767198.jpg" width="158" height="118">
+   		<span>《猿族崛起》曝如何制作逼真大猩猩</span></a>
+   	</li>
+   	<li>
+   		<a title="《猿族崛起》曝精美概念图 泄露重大玄机" target="_blank" href="http://www.huoshow.com/2011/0817/22393.shtml"><img alt="《猿族崛起》曝精美概念图 泄露重大玄机" src="http://www.huoshow.com/upload/2011/0817/thumb_158_118_1313573191288.jpg" width="158" height="118">
+   		<span>《猿族崛起》曝精美概念图 泄露重大玄机</span></a>
+   	</li>
+   	<li>
+   		<a title="《猿族崛起》首映 众男星捧月芙蕾达优雅美艳" target="_blank" href="http://www.huoshow.com/2011/0817/22390.shtml"><img alt="《猿族崛起》首映 众男星捧月芙蕾达优雅美艳" src="http://www.huoshow.com/upload/2011/0817/thumb_158_118_1313572186450.jpg" width="158" height="118">
+   		<span>《猿族崛起》首映 众男星捧月芙蕾达优雅美艳</span></a>
+   	</li>
+   	<li>
+   		<a title="《白蛇传说》曝官方六大角色单人海报" target="_blank" href="http://www.huoshow.com/2011/0815/21929.shtml"><img alt="《白蛇传说》曝官方六大角色单人海报" src="http://www.huoshow.com/upload/2011/0815/thumb_158_118_1313373053885.jpg" width="158" height="118">
+   		<span>《白蛇传说》曝官方六大角色单人海报</span></a>
+   	</li>
+   	<li>
+   		<a title="闫妮《画壁》剧照 首度挑战冷血女王角色" target="_blank" href="http://www.huoshow.com/2011/0810/21336.shtml"><img alt="闫妮《画壁》剧照 首度挑战冷血女王角色" src="http://www.huoshow.com/upload/2011/0810/thumb_158_118_1312958891352.jpg" width="158" height="118">
+   		<span>闫妮《画壁》剧照 首度挑战冷血女王角色</span></a>
+   	</li>
+   </ul>
+                <div class="clear"></div>
+                <div class="fanye">
+        				<div id="fanye_01">
+<ul><li><a href="http://www.huoshow.com/movie/juzhao/1.shtml">上一页</a></li><li><a href="http://www.huoshow.com/movie/juzhao/1.shtml" class="now">1</a></li><li><a href="http://www.huoshow.com/movie/juzhao/2.shtml">2</a></li><li><a href="http://www.huoshow.com/movie/juzhao/3.shtml">3</a></li><li><a href="http://www.huoshow.com/movie/juzhao/4.shtml">4</a></li><li><a href="http://www.huoshow.com/movie/juzhao/2.shtml">下一页</a></li></ul>
+</div>
+</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!--{template common/header}-->
+
+	<h3 class="flb">
+				<em id="return_$_G[gp_handlekey]">反馈</em>
+				<!--{if $_G[inajax]}--><span><a href="javascript:;" onclick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></span><!--{/if}-->
+	</h3>
+			<div id="__problemaddform" style="width:300px;">
+				<form method="post" autocomplete="off" id="problemaddform" name="problemaddform" onsubmit="if(!check_problem_form()) return false;" action="member.php?mod=problem">
+					<input type="hidden" name="referer" value="$_G[referer]">
+					<input type="hidden" name="problemsubmit" value="true" />
+					<!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_G[gp_handlekey]" /><!--{/if}-->
+					<input type="hidden" name="formhash" value="{FORMHASH}" />
+					<div class="c">
+						<p>如果你使用中遇到了BUG、疑问，或者有什么好的点子、建议。欢迎反馈给火秀。</p>
+						<p class="mtm">标题： <input type="text" id="problem_title" name="problem_title" value="" size="32" class="px" /></p>
+						<p style="padding-left:40px;color:red;display:none;" id="err_problem_title"></p>
+						<p class="mtm">email：<input type="text" id="problem_email" name="problem_email" value="" size="32" class="px" /></p>
+						<p style="padding-left:40px;color:red;display:none;" id="err_problem_email"></p>
+						<p class="mtm">内容： <textarea name="problem_content" id="problem_content" class="pt" cols="30" rows="5"/></textarea></p>
+						<p style="padding-left:40px;color:red;display:none;" id="err_problem_content"></p>
+					</div>
+					<p class="o pns" style="text-align:left;padding-left:40px;">
+					    <button type="submit" name="problemsubmit_btn" value="true" class="pn pnc"><strong>提交</strong></button>
+					</p>
+				</form>
+				
+			</div>
+
+			<script>
+			function check_problem_form()
+			{
+				if(trim($('problem_title').value).length < 1 || trim($('problem_title').value).length > 50)
+				{
+					$('err_problem_title').style.display="";
+					$('err_problem_title').innerHTML='<img src="static/image/common/check_error.gif" class="vm" width="16" height="16"/> 标题为空或超过50个字';
+					return false;
+				}
+				else
+				{
+					
+					$('err_problem_title').style.display="none";
+				}
+				if(trim($('problem_email').value).length < 1)
+				{
+					$('err_problem_email').style.display="";
+					$('err_problem_email').innerHTML='<img src="static/image/common/check_error.gif" class="vm" width="16" height="16"/> email为空';
+					return false;
+				}
+				else
+				{
+					$('err_problem_email').style.display="none";
+				}
+				
+				if(trim($('problem_content').value).length < 1)
+				{
+					$('err_problem_content').style.display="";
+					$('err_problem_content').innerHTML='<img src="static/image/common/check_error.gif" class="vm" width="16" height="16"/> 内容为空';
+					return false;
+				}
+				else
+				{
+					$('err_problem_content').style.display="none";
+				}
+				return true;
+			}
+			function trim(str) {
+				return str.replace(/^\s*(.*?)[\s\n]*$/g, '$1');
+			}
+			</script>
+<!--{template common/footer}-->

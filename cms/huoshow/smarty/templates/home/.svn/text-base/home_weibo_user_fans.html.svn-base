@@ -1,0 +1,106 @@
+<link href="/huoshow/css/weibo/style_weibo.css" rel="stylesheet"
+	type="text/css" />
+<div class="conM" style="width:555px; margin:0px;">
+	<div class="listPri">
+		<div class="attFirst">
+			<p class="font18">
+				我有<span>{$user_info[0].beFollowCount}</span>个粉丝
+			</p>
+		</div>
+		<li class="orderGroup">
+			<span class="font12">排序方式：</span>
+			{if $lists == 1}
+			<a class="selected">关注时间</a> <span class="ddd">|</span>
+			<a href="home.php?mod=huoshow&do=weibo_user_fans&list=2">最近更新</a><span class="ddd">|</span>
+			<a href="home.php?mod=huoshow&do=weibo_user_fans&list=4">粉丝数</a>
+			{elseif $lists == 2}
+			<a href="home.php?mod=huoshow&do=weibo_user_fans&list=1">关注时间</a> <span class="ddd">|</span>
+			<a class="selected">最近更新</a><span class="ddd">|</span>
+			<a href="home.php?mod=huoshow&do=weibo_user_fans&list=4">粉丝数</a>
+			{elseif $lists == 4}
+			<a href="home.php?mod=huoshow&do=weibo_user_fans&list=1">关注时间</a>
+			<a href="home.php?mod=huoshow&do=weibo_user_fans&list=2">最近更新</a><span class="ddd">|</span>
+			<a class="selected">粉丝数</a>
+			{/if}
+		</li>
+	</div>
+	<article>
+		<ul>
+		{section name=f loop=$my_fans}
+			<li class="itemAtt">
+				{if $my_fans[f].each_other !=1}
+				<div class="attR_closed font14">
+					<a onClick="add('home.php?mod=huoshow&do=weibo_user_fans&tab=add_fans&dst_uid={$my_fans[f].uid}');return false;" href="javascript:;" class="font12">加关注</a>
+					<div class="disNone">
+						<a onClick="delError('home.php?mod=huoshow&do=weibo_user_fans&tab=del_fans&src_uid={$my_fans[f].uid}');return false;" href="javascript:;" class="font12">移除粉丝</a>
+					</div>
+				</div>
+				{else}
+				<div class="attR font14">
+                	<a onClick="delError('home.php?mod=huoshow&do=weibo_user_fans&tab=del_fans&src_uid={$my_fans[f].uid}');return false;" href="javascript:;" class="font12">移除粉丝</a>
+                </div>
+				{/if}
+				<div class="attL">
+					<a href="{$space_url}{$my_fans[f].uid}"><img src="{$my_fans[f].head_img_url}" /></a>
+					<a href="{$space_url}{$my_fans[f].uid}"	class="font14">{$my_fans[f].nickname}</a>
+					<p class="font12">
+						关注：{$my_fans[f].watch_count} <span class="ddd">|</span> 粉丝：{$my_fans[f].is_watched_count}
+						<span class="ddd">|</span> 微博：{$my_fans[f].total}
+					</p>
+					<p>
+						<a class="jsadd"
+							href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_send_message&dst_uid={$my_fans[f].uid}&src_uid={$home_uid}"
+							onclick="{if $home_uid}showWindow('register', this.href)
+							{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+								发私信</a>
+					</p>
+				</div>
+				<div class="clear"></div>
+			</li>
+		{/section}
+		</ul>
+	</article>
+
+	<div class="W_pages">
+	{if $fans_count}{$page_str}{/if}
+	</div>
+
+</div>
+<div class="conR">
+	<!-- 微博统计信息 -->
+  	{include_php file="huoshow/module/home/home_weibo_user_info.php"}
+	<!-- 可能感兴趣的人 -->
+	{include_php file="huoshow/module/home/home_weibo_recommend.php"}
+	<!-- 人气用户推荐 -->
+	{include_php file="huoshow/module/home/home_weibo_hotrecommend.php"}
+</div>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定移除粉丝？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+
+function add(href)
+{
+	if (!confirm("确定关注？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+
+;(function($){
+  //修正 IE6 中 a 标签外的其它元素不支持hover伪类问题
+  $('.attR_closed').hover(function(){
+    $(this).addClass('hover');
+  },function(){
+    $(this).removeClass('hover');
+  });
+})(jQuery);
+</script>
+{/literal}

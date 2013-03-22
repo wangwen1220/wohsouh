@@ -1,0 +1,86 @@
+<!--{template 'huoshow_music/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">{$name}</h2></div>
+					<ul>
+						<!--{content catid="$catid" $i=1 orderby="published desc" size="$pagesize" page="$page"}-->
+						<li><span class="date_011"><a href="{$r[url]}" target="_blank">{$r[title]}</a></span><span class="date_01">{date("Y-m-d", $r[published])}</span></li>
+						<!-- {if $i==5 or $i==10 or $i==15 }-->
+						</ul><ul>
+						<!-- {/if} -->
+						<!--{/content}-->
+					</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+							<ul><!--{pages($total, $page, $pagesize, 2, $urlrule)}--></ul>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+        <div class="news_banner">                
+            <!--#include virtual ="{ROOT}api/article.php?act=getrollimg&memo=huoshow_music_com_rool_image_300_250&width=300&height=250"--> 
+        </div>
+        <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 新闻点击榜 </span><span class="news_huadong"><a href="javascript:;" class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="right_news_jiaodian_list" src="/api/article.php?act=ranking_list&type=day" render="json_render1">
+                    
+                  </div>
+                  <div class="right_news_jiaodian_list" src="/api/article.php?act=ranking_list&type=week" render="json_render1">
+                      
+                  </div>
+                  <div class="right_news_jiaodian_list" src="/api/article.php?act=ranking_list&type=month" render="json_render1">
+                     
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.right_news_jiaodian_list',
+                              event_type: 'mouseover'
+                          });
+
+                          window.json_render1 = function(data){                                                
+                              data = parse_json(data).rs;
+                              if(data){
+	                              var html = ['<ul>'];
+	                              for(var i=0, l=data.length; i<l; i++){
+	                                 
+	                                  //html.push(i+1);
+	                                  html.push('<li><span class="icon'+(i+1)+'"></span>');
+	                                  html.push('<a href="');
+	                                  html.push(data[i].url);
+	                                  html.push('" target="_blank">');
+	                                  html.push(data[i].title);
+	                                  html.push('</a></li>');
+	                              }
+	                              html.push('</ul>');
+	                              return html.join('');
+                              }
+                          };
+                      });
+
+                  </script>
+
+
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!--{template 'huoshow_movie/footer.html'}-->

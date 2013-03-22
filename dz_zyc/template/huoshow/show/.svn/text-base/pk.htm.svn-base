@@ -1,0 +1,262 @@
+<!--[if IE 6]>
+<script src="static2/js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.pk_gundong_02,.fanye_01 a,.fanye_03 a');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+<link href="static2/live_index2.css" rel="stylesheet" type="text/css" />
+<div class="clear"></div>
+<div >
+  <div class="xiazai">
+    <div class="pk_Race_bt">
+      <div class="pk_Race_zi"></div>
+            <div class="pk_Race_anniu"><a href="/campaign/campaing201103/pk/"><img src="static2/images/live_pk_images/pk_anniu_03.gif" width="88" height="21" /></a></div>
+
+    </div>
+    <div class="pk_left">
+      <div class="pk_Race_shenma"><img src="static2/images/live_pk_images/shema_pk_03_03.gif" width="162" height="49" /></div>
+      <div id="team1html">
+      <div class="pk_Race_shenma_pic">
+        <ul id="nav">
+          <!--{loop $team1['list'] $key $value}-->
+          <li>
+            <!--{if $value['online']==1}-->
+            <div class="info"><span class="sha"><img src="static2/images/live_pk_images/zaixian.png" width="12" height="12" /></span><span class="D_2">{$value['onlineMember']}/100</span>
+              <p class="pk_list_renshu"> <img src="static2/images/live_pk_images/renshu.png" width="8" height="10" /></p>
+            </div>
+            <!--{else}-->
+            <div class="info_01"><span class="sha"><img src="static2/images/live_pk_images/lixian.png" width="37" height="12" /></span> </div>
+            <!--{/if}-->
+            <p class="ben"><a href="/v{$value['uid']}">{$value['avatar']}           
+            {$value['nickname']}</a></p>
+          </li>
+          <!--{if $key%2==1 && $key!=3}-->
+           </ul>
+      </div>
+            <div class="clear"></div>
+      <div class="pk_Race_shenma_pic">
+        <ul id="nav">
+          <!--{/if}-->
+          <!--{/loop}-->     
+        </ul>
+      </div>
+      </div>
+      <div class="pk_left_sanjiao">
+        
+        
+        <table class="fanye_table"><tr>
+        <td><div class="fanye_01"> <a href="javascript:;" onclick="goTeamPage('back',1)"></a></div></td>
+        <td align="center" class="fanye_02">
+          <ul class="fenyeTeam">
+            {$team1Page}
+          </ul>
+          </td>
+          <td><div class="fanye_03"> <a href="javascript:;" onclick="goTeamPage('next',1)"></a></div></td>
+          </tr></table>
+       
+        
+      </div>
+    </div>
+    <div class="pk_Center">
+      <div class="pk_Center_zi">
+        <h1>[ 第 {$period['round']} 轮 ]</h1>
+        {$period['perSDay']}- {$period['perEDay']}</div>
+      <div class="vs">
+      
+	      <!--{if $period['roundStatus']==1}-->
+	      <img src="static2/images/live_pk_images/vs_03.gif" width="145" height="143" />
+	     
+	      <!--{else}-->
+	       <img src="static2/images/live_pk_images/vs_01.gif" width="145" height="127" />
+	      <!--{/if}-->
+      </div>
+      
+      <!--{if $period['roundStatus']==1}-->
+      <div class="pk_t">
+          <div class="progress"><div class="value" style="width:{$team1['percent']}%;">&nbsp;</div></div> 
+          <span class="D">{$team1['percent']}%</span> <span class="D_1">{$team2['percent']}%</span>
+      </div>
+     
+      <!--{else}-->
+      <div class="pk_t_01"><span class="pk_shijian_h" id="pk_shijian_h">00</span><span class="pk_shijian_m" id="pk_shijian_m">00</span><span class="pk_shijian_s" id="pk_shijian_s">00</span></div>
+      <script type="text/javascript">
+      (function($){
+		var leaveTime = "{$period['limitLeftTime']}";
+		function showCountDown () {
+			var h = parseInt(leaveTime/3600);
+			var m = parseInt((leaveTime-h*3600)/60);
+			var i = leaveTime%60;
+			if(h<10){h = '0'+h;}
+			if(m<10){m = '0'+m;}
+			if(i<10){i = '0'+i;}
+			$("#pk_shijian_h").html(h);
+			$("#pk_shijian_m").html(m);
+			$("#pk_shijian_s").html(i);			
+			leaveTime = leaveTime-1;
+			if(leaveTime == 0){clearInterval(begin);}
+		}
+		var begin = setInterval(showCountDown,1000);
+      })(jQuery);
+		</script>
+      <!--{/if}-->
+      <div class="clear"></div>
+      <div class="pk_Center_news">
+        <ul class="tx_text">
+          <li>·<a href="/campaign/campaing201103/pk/rule.php">活动介绍</a> 
+          <a href="/campaign/campaing201103/pk/apply.php">报名</a> 
+          <a href="campaign/campaing201103/pk/result.php">赛况</a> 
+          <a href="/campaign/campaing201103/pk/guess.php">竞猜</a></li>          
+          <!--{loop $saikuang['winList'] $key $value}-->
+          <li>·<a href="/campaign/campaing201103/pk/result.php" >{$value['showday']}日战况：{$value['name']}胜出！</a></li>          
+          <!--{/loop}-->
+        </ul>
+      </div>
+    </div>
+    <div class="pk_right">
+      <div class="pk_Race_shenma"><img src="static2/images/live_pk_images/shema_pk_06_06.gif" width="158" height="47" /></div>
+      <div id="team2html">
+      <div class="pk_Race_shenma_pic">
+        <ul id="nav">
+          <!--{loop $team2['list'] $key $value}-->
+          <li>
+            <!--{if $value['online']==1}-->
+            <div class="info"><span class="sha"><img src="static2/images/live_pk_images/zaixian.png" width="12" height="12" style="position: absolute;"/></span>
+            <span class="D_2"  style="position: absolute;"><img src="static2/images/live_pk_images/renshu.png" width="8" height="10"  /> {$value['onlineMember']}/100</span>             
+            </div>
+            <!--{else}-->
+            <div class="info_01"><span class="sha"><img src="static2/images/live_pk_images/lixian.png" width="37" height="12" /></span> </div>
+            <!--{/if}-->
+            <p class="ben"><a href="/v{$value['uid']}">{$value['avatar']}         
+            {$value['nickname']}</a></p>
+          </li>
+          <!--{if $key%2==1 && $key!=3}-->
+           </ul>
+      </div>
+            <div class="clear"></div>
+      <div class="pk_Race_shenma_pic">
+        <ul id="nav">
+          <!--{/if}-->
+          <!--{/loop}-->     
+        </ul>
+      </div>
+      </div>
+      <div class="pk_left_sanjiao">
+        <table class="fanye_table"><tr>
+        <td><div class="fanye_01"> <a href="javascript:;" onclick="goTeamPage('back',2)"></a></div></td>
+        <td align="center" class="fanye_02">
+          <ul class="fenyeTeam">
+          	 {$team2Page}
+          </ul>
+          </td>
+          <td><div class="fanye_03"> <a href="javascript:;" onclick="goTeamPage('next',2)"></a></div></td>
+          </tr></table>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<script type="text/javascript">
+(function($){
+	var page1 = parseInt("$page1");
+	var page2 = parseInt("$page2");
+	var totalPage1 = Math.ceil({$team1['count']}/4);
+	var totalPage2 = Math.ceil({$team2['count']}/4);
+	window.goTeamPage = function(page,teamid){
+		if(page=='next'){
+			if(teamid==1){
+				if(page1>=totalPage1) return false;
+				page1 = page1+1;
+				page = page1;
+			}else{
+				if(page2>=totalPage2) return false;
+				page2 = page2+1;
+				page = page2;
+			}
+		}
+		if(page=='back'){
+			
+			if(teamid==1){
+				if(page1<=1) return false;
+				page1 = page1-1;
+				page = page1;
+			}else{
+				if(page2<=1) return false;
+				page2 = page2-1;
+				page = page2;
+			}
+		}
+		if(page!='next' && page!='back'){			
+			if(teamid=='1'){				
+				page1 = page;
+			}else{				
+				page2 = page;
+			}
+		}
+		var url = 'show.php?operation=ajax&tab=pkteam&teamid='+teamid+'&page='+page+'&t='+getNowTime();
+		
+		$.get(url,function(rs){
+			if(teamid==1){
+				var tatals=totalPage1;
+			}else{
+				var tatals=totalPage2;
+			}
+			for(var i=0;i<tatals;i++){
+				var ii=i+1;
+				if(page==ii){
+					$("#team"+teamid+"page"+ii).html('&nbsp;<img src="static2/images/live_pk_images/sanjiao_061.png" width="14" height="14" onclick="goTeamPage('+ii+','+teamid+')"/></li>');
+				}else{
+					$("#team"+teamid+"page"+ii).html('&nbsp;<img src="static2/images/live_pk_images/sanjiao_06.png" width="14" height="14" onclick="goTeamPage('+ii+','+teamid+')"/></li>');
+					
+				}				
+			}
+			$("#team"+teamid+"html").html(rs);
+			
+		})
+	}
+	timerID = setTimeout(reshTeamPage,10000);
+	function  reshTeamPage(){
+		var url = 'show.php?operation=ajax&tab=pkteam&teamid=1&page='+page1+'&t='+getNowTime();		
+		$.get(url,function(rs){			
+			for(var i=0;i<totalPage1;i++){
+				var ii=i+1;
+				if(page1==ii){
+					$("#team1page"+ii).html('&nbsp;<img src="static2/images/live_pk_images/sanjiao_061.png" width="14" height="14" onclick="goTeamPage('+ii+',1)"/></li>');
+				}else{
+					$("#team1page"+ii).html('&nbsp;<img src="static2/images/live_pk_images/sanjiao_06.png" width="14" height="14" onclick="goTeamPage('+ii+',1)"/></li>');
+					
+				}				
+			}
+			$("#team1html").html(rs);
+
+			var url = 'show.php?operation=ajax&tab=pkteam&teamid=2&page='+page2+'&t='+getNowTime();	
+			$.get(url,function(rs){
+				for(var i=0;i<totalPage2;i++){
+					var ii=i+1;
+					if(page2==ii){
+						$("#team2page"+ii).html('&nbsp;<img src="static2/images/live_pk_images/sanjiao_061.png" width="14" height="14" onclick="goTeamPage('+ii+',2)"/></li>');
+					}else{
+						$("#team2page"+ii).html('&nbsp;<img src="static2/images/live_pk_images/sanjiao_06.png" width="14" height="14" onclick="goTeamPage('+ii+',2)"/></li>');
+						
+					}				
+				}
+				$("#team2html").html(rs);
+				timerID = setTimeout(reshTeamPage,30000);
+			})			
+		})
+	}
+	function getNowTime(){
+		var now= new Date();   
+		var year=now.getYear();   
+		var month=now.getMonth()+1;   
+		var day=now.getDate();   
+		var hour=now.getHours();   
+		var minute=now.getMinutes();   
+		var second=now.getSeconds();   
+		var nowdate=year+""+month+""+day+""+hour+""+minute+""+second;   
+		return nowdate;
+	}
+})(jQuery);
+</script>

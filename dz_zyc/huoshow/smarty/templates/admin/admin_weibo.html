@@ -1,0 +1,32 @@
+
+{include file="admin/admin_weibo_head.html"}
+<table border="0" class="tb tb2">
+	<tr class="header">
+		<th>排序</th>
+		<th>Uid</th>
+		<th>操作</th>
+	</tr>
+	{section name=bo loop=$weibo_recommend}
+	<tr class="hover">
+		<td>{$weibo_recommend[bo].id}</td>
+		<td>{$weibo_recommend[bo].uid}</td>
+		<td><a id="del" onclick="delError('?action=huoshow&operation=weibo&tab=delweibo&uid={$weibo_recommend[bo].uid}');return false;"  href="javascript:;">删除</a></td>
+	</tr>
+	{/section}
+
+	<tr>
+    	<td colspan="4">{$page_str}</td>
+  	</tr>
+</table>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定删除？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+</script>
+{/literal}

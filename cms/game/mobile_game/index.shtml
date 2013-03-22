@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="手机游戏，手机软件" />
+<meta name="description" content="这里是火秀网手机游戏频道，栏目包括手机游戏动态、测试、攻略以及手机游戏下载" />
+    <title>手机游戏_火秀游戏_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/game.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+    <body class="body_bg">
+      <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a href="http://www.huoshow.com/">首页</a>-<a href="http://space.huoshow.com/show.php">直播</a>-<a href="http://www.huoshow.com/movie/">影视</a>-<a href="http://www.huoshow.com/music/">音乐</a>-<a href="http://www.huoshow.com/game/">游戏</a>-<a href="http://www.huoshow.com/myshow/">My秀</a>-<a href="http://space.huoshow.com/group.php">群组</a>-<a href="http://space.huoshow.com/home.php">空间</a>-<a href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+      <!--Navigator-->
+      <div class="nav_bg">
+        <div class="nav_body">
+          <a href="http://www.huoshow.com/game/" title="火秀游戏首页" class="channel_logo">火秀游戏频道</a>
+          <div id="sub_channel">
+            <a href="http://www.huoshow.com/game/webgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_01.png" width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/onlinegame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_02.png" width="75" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/mobile_game/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_03.png"  width="77" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/pcgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_04.png"  width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/flashgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_05.png" width="56" height="19"/></a>
+          </div>
+        </div>
+      </div>
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/game/index.shtml">火秀游戏</a> > <a href="http://www.huoshow.com/game/mobile_game/index.shtml">手机游戏</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<div class="banner_960_60">
+    	<div class="banner_960_90">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(38);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dfbd6b6'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=27&n=dfbd6b6' /></a></noscript></div>    </div> 
+<div class="main_body">
+<!--Left-->
+<div class="body_webgame_left">
+
+<div class="game_W702">
+<div class="game_W702_01" id="game_tabview1">
+<div class="game_right_title_bg_702"> <span class="game_right_title_bz"></span>
+<h2 class="title_Black_02">手机掌机</h2>
+<span class="web_remen_a"><a href="" class="Current">推荐 </a> <a href="mobilenews">动态 </a>  <a href="mobilereview">测评  </a>  <a href="mobilewalkthrough">攻略</a>  <a href="mobiledownload">下载</a>  </span>
+</div>
+<div class="Web_games_left_03">
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310627102201.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16127.shtml" target="_blank">开辟第二战场 苹果起诉HTC专利侵权</a>
+    				    					<span class="dongtai_biao"><a href="mobilenews" target="_blank">动态</a></span>
+    				    				</h1>
+    				据美国媒体11日援引美国国际贸易委员会(ITC)网站公告报道，苹果公司于近日向该委员会提起了第二起针对宏达电(...<a href="http://www.huoshow.com/2011/0712/16127.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310627212159.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0713/16478.shtml" target="_blank">《Stanley博士的家2》完美流程攻略</a>
+    				    					<span class="dongtai_biao_03"><a href="mobilewalkthrough" target="_blank">攻略</a></span>
+    				    				</h1>
+    				选择好中文，开始游戏，有一开始是一段对前作的回顾CG动画，为各位没有玩过的玩家解释游戏的大背景，玩家可以看看字...<a href="http://www.huoshow.com/2011/0713/16478.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310627282929.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16122.shtml" target="_blank">果粉必备 看看只有在苹果总部才能买到的T恤</a>
+    				    					<span class="dongtai_biao"><a href="mobilenews" target="_blank">动态</a></span>
+    				    				</h1>
+    				这件价值17美刀的T恤很能解释当一个人访问了位于加利福尼亚Cupertino的苹果总部之后的心情，T恤上两排清晰明...<a href="http://www.huoshow.com/2011/0712/16122.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310627560903.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16117.shtml" target="_blank">Jailbreak升级补丁发布 修正相机套件无法使用BUG</a>
+    				    					<span class="dongtai_biao"><a href="mobilenews" target="_blank">动态</a></span>
+    				    				</h1>
+    				Comex发布的JailbreakMe 3.0虽然成功带来iPad2的越狱，也带来了一些小BUG，相机套件无法使用的确让很多人郁闷。...<a href="http://www.huoshow.com/2011/0712/16117.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310627636899.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16165.shtml" target="_blank">《奔跑的精灵 Wizard Rush》简单评测</a>
+    				    					<span class="dongtai_biao_02"><a href="mobilereview" target="_blank">测评</a></span>
+    				    				</h1>
+    				倘若你对于《柳忍者Yoo Ninja》快速躲避的玩法还在耿耿于怀，那么就快来试试这款全新的奔跑游戏《奔跑的精灵 ...<a href="http://www.huoshow.com/2011/0712/16165.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310627723695.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16137.shtml" target="_blank">伸出你的援手《带我回家 Take me Home》</a>
+    				    					<span class="dongtai_biao_02"><a href="mobilereview" target="_blank">测评</a></span>
+    				    				</h1>
+    				在各种休闲益智的佳品中，不论是《愤怒的小鸟》、《植物大战僵尸》甚至是让你手指切到要断掉的《水果忍者》，都...<a href="http://www.huoshow.com/2011/0712/16137.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310628403275.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16145.shtml" target="_blank">塔防游戏《坚守阵地Fieldrunners HD》</a>
+    				    					<span class="dongtai_biao_02"><a href="mobilereview" target="_blank">测评</a></span>
+    				    				</h1>
+    				如果你是一个塔防迷，那么你一定玩过《坚守阵地Fieldrunners HD》，不管是iPhone平台上的，还是PC电脑上的，这绝对...<a href="http://www.huoshow.com/2011/0712/16145.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310628471248.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16148.shtml" target="_blank">《卡米复古彩虹岛KAMI RETRO》简单评测</a>
+    				    					<span class="dongtai_biao_02"><a href="mobilereview" target="_blank">测评</a></span>
+    				    				</h1>
+    				《卡米复古彩虹岛KAMI RETRO》是一个充满了怀旧感的游戏，你可以看到一个复古8位机风格的游戏世界。
+
+...<a href="http://www.huoshow.com/2011/0712/16148.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310628527437.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16185.shtml" target="_blank">《时尚女魔头 Fashion Story》初级攻略</a>
+    				    					<span class="dongtai_biao_03"><a href="mobilewalkthrough" target="_blank">攻略</a></span>
+    				    				</h1>
+    				虽然人们常说女人钱最易赚，但到底你能否真的成为时装大亨，还是要看你有没有时装触觉啊。将时尚设计师的服饰系...<a href="http://www.huoshow.com/2011/0712/16185.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+    <div class="Web_games_left_list_03">
+<div class="Web_games_left_tuwen_03">
+<div class="Web_games_left_tu_03">
+<img src="http://www.huoshow.com/upload/2011/0714/1310628591353.jpg" width="128" height="80" />
+</div>
+    			<div class="Web_games_left_zi_03">
+    				<h1><a href="http://www.huoshow.com/2011/0712/16188.shtml" target="_blank">Android版魔兽世界《混沌与秩序》任务攻略</a>
+    				    					<span class="dongtai_biao_03"><a href="mobilewalkthrough" target="_blank">攻略</a></span>
+    				    				</h1>
+    				这次我们是要真的找到菲尔德杀了他了。他在落叶旅店北面进入博尔德伍德后的那条岔路往西北走，上了小坡来到哥...<a href="http://www.huoshow.com/2011/0712/16188.shtml" target="_blank">[查看全文]</a>
+    				<span class="Mobile_Time">07-14</span>
+    			</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="kongge_8"></div>
+</div>
+</div>
+                
+<div class="clear"></div>
+</div>
+
+<!--Left End--> 
+<!--Right-->
+<div class="body_webgame_right"> 
+<div class="kongge_8"></div>
+
+<div class="game_W250">
+<div class="game_W250_01">
+<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+<h2 class="title_Black_02">苹果专区</h2></div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16683.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310626275817.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16683.shtml" target="_blank">范 珀辛iphone</a></h1>范 珀辛 Van Pershing，这是一款大家都非常熟悉的横版动作射击游戏。2D卡通风格的游戏画...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16680.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310625585637.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16680.shtml" target="_blank">卡通防御2 iphone</a></h1>恶龙想夺取你的城市，用你的手指来击败他们，赚钱升级武器、技能和部队来守卫城堡。国王的...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16664.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310624093734.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16664.shtml" target="_blank">高台滑雪 iphone</a></h1>游戏动感十足，你可以观察到第一人称视角，当你从高高的滑雪台上一路俯冲而下时，就需要通过...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16621.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310613458308.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16621.shtml" target="_blank">口袋妖怪 iphone</a></h1>完整有趣的故事情节，一个神秘的世界等你来探索。你需要挑战和驯服超过350种怪物，随着经...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16599.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310612208674.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16599.shtml" target="_blank">鲨鱼跳跃 iphone</a></h1>你能尽量吃海里或者天空中的许多生物，甚至在太空,可爱的卡通图形和漂亮的多层次的背景...    		</div>
+</div>
+</div>
+    </div>
+
+
+</div>
+<div class="mobilegame_banner_250">
+        		<div class="banner_300_250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(37);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=dfbd6b6'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=27&n=dfbd6b6' /></a></noscript></div>        	</div>
+<div class="kongge_8"></div>
+<div class="game_W250s">
+<div class="game_W250_01">
+<div class="game_right_title_bg_250"> <span class="game_right_title_bz"></span>
+<h2 class="title_Black_02">Android专区</h2></div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16591.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310611727703.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16591.shtml" target="_blank">战争之王Android</a></h1>《战争之王》是公司继《别惹恶魔》后又一力作，是一个容易上手而且极富策略性的策略游戏...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16589.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310611154259.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16589.shtml" target="_blank">嗜血狂鲨 Android</a></h1>Hungry Shark 2是移植Iphone上一款类似大鱼吃小鱼的游戏，不过游戏的主角换成了鲨鱼,您...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16583.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310610746684.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16583.shtml" target="_blank">机器人塔防 Android</a></h1>游戏中我们要保护画面右边的堡垒不受敌人的入侵！刚开始、我们有30的游戏金币、在右下角...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16570.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310609373703.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16570.shtml" target="_blank">极限方程式Android</a></h1>准备好开始挑战极限方程式了吗？那就来试试这款Extreme Formula 极限方式吧。曾经是iPho...    		</div>
+</div>
+</div>
+<div class="Web_games_left_list_04">
+<div class="Web_games_left_tuwen_04">
+<div class="Web_games_left_tu_04">
+<a href="http://www.huoshow.com/2011/0714/16552.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0714/1310608600288.jpg" width="70" height="70" /></a>
+</div>
+    		<div class="Web_games_left_zi_04">
+    			<h1><a href="http://www.huoshow.com/2011/0714/16552.shtml" target="_blank">水果忍者Android</a></h1>Fruit Ninja正宗水果忍者是一款刺激好玩、容易上手却教人难以离手的动作游戏，玩家将会...    		</div>
+</div>
+</div>
+
+    </div>
+</div>
+</div>
+<!--Banner 960*90--><!--网络游戏--><!--单机游戏--><!--网页游戏--><!--小游戏--><!--手机游戏-->
+<div class="clear"></div>
+<!--Partners--><!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

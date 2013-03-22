@@ -1,0 +1,66 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/index.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<!--[if IE 6]> 
+	<link href="{IMG_URL}templates/{TEMPLATE}/css/ie6.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<![endif]-->
+
+
+			
+
+<div class="hr-h6"></div>
+<div class="column">
+	<div class="col-l-main w-160">
+    	<div class="channels-title ">
+        	热门tags
+        </div>
+        <div class="channels-list02 bor-9fc cor-06c">
+            <ul class="fs-12">
+			<!--{db sql="SELECT * FROM `#table_tag` ORDER BY `usetimes` DESC" size="100"}-->
+                <li><a href="?tag={urlencode($r[tag])}" style="color:{$r[color]}"><!--{if $r[tag]}-->{$r[tag]}<!--{/if}--></a></li>
+       		<!--{/db}-->
+            </ul>
+        </div>
+       
+    </div>
+<div class="col-r-extra w-790 tags-list">
+      <!-- ******************* start 详细显示    *********************** -->
+    <div class="bor-9fc tags-back">
+        <div>
+        	<span class="first-letter f-l cor-06c">首字母搜索</span>
+        	<div class="letter-nav cor-06c bold f-l">
+			 <!--{loop $letters $letter}-->
+            	<a href="#tag_{$letter}">{strtoupper($letter)}</a>
+			 <!--{/loop}-->
+			
+            </div>
+            <div class="clear"></div>
+        </div>
+		<!--{loop $letters $letter}-->
+        <div class="padd-lr-20 mar-t-20">
+        	<div class="hr-h20">
+                <span class="f-l leter-list">{strtoupper($letter)}</span>
+                <a name="tag_{$letter}" href="javascript:window.scroll(0,0);"class="f-r"><img src="{IMG_URL}templates/{TEMPLATE}/images/back.gif" alt="回到顶部" /></a>
+                <div class="clear"></div>
+            </div>
+            <div class="hr-dotted hr-h10"></div>
+            <div class="leter-search">
+            	<ul>
+				  <!--{db sql="SELECT * FROM `#table_tag` WHERE `initial`='$letter' ORDER BY `usetimes` DESC" size="100"}-->
+                	<li><a href="?tag={urlencode($r[tag])}" style="color:{$r[color]}">{$r[tag]}</a></li>
+                   <!--{/db}-->
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--{/loop}-->
+        
+        
+        
+    </div>
+<!-- ******************* end 详细显示    *********************** -->
+	</div>
+</div>
+<div class="hr-h10"></div>
+<!--{template 'huoshow_common/common_footer.html'}-->

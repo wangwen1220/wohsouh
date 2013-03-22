@@ -1,0 +1,238 @@
+<script>
+ENV.roomMType='{$userinfo[0].mic_count}';
+ENV.userType='{$UserType}';
+ENV.roomadminlist='{$roomlist}'
+</script>
+{include file="home/home_weibo_header.html"}
+<link href="/huoshow/css/multi_live.css" rel="stylesheet" type="text/css" />
+<div id="mian">
+  <div id="congzhileft">
+    <div class="room_left_flash">
+      <div style="position:relative;">
+        <object type="application/x-shockwave-flash" data="/huoshow/flash/multictrl.swf" name="multictrl_object" id="multictrl_object">
+          <param name="movie" value="/huoshow/flash/multictrl.swf">
+          <param name="wmode" value="transparent">
+          <param name="flashvars" value="userId={$uid}&roomId={$roomid}">
+          <param name="allowScriptAccess" value="always">
+        </object>
+        <div class="cams">
+          <object type="application/x-shockwave-flash" data="/huoshow/flash/cam1.swf" name="cam1_object" id="cam1_object">
+            <param name="movie" value="/huoshow/flash/cam1.swf">
+            <param name="wmode" value="opaque">
+            <param name="flashvars" value="userId={$uid}&roomId={$roomid}">
+            <param name="allowScriptAccess" value="always">
+          </object>
+          <object type="application/x-shockwave-flash" data="/huoshow/flash/cam2.swf" name="cam2_object" id="cam2_object">
+            <param name="movie" value="/huoshow/flash/cam2.swf">
+            <param name="wmode" value="opaque">
+            <param name="flashvars" value="userId={$uid}&roomId={$roomid}">
+            <param name="allowScriptAccess" value="always">
+          </object>
+          <object type="application/x-shockwave-flash" data="/huoshow/flash/cam3.swf" name="cam3_object" id="cam3_object">
+            <param name="movie" value="/huoshow/flash/cam3.swf">
+            <param name="wmode" value="opaque">
+            <param name="flashvars" value="userId={$uid}&roomId={$roomid}">
+            <param name="allowScriptAccess" value="always">
+          </object>
+        </div>
+        <div class="mic-buttons">
+          <a href="javascript:;" class="cam-setting-button">设置摄像头</a>
+          <a href="javascript:;" class="lineup">排麦</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="room_right_liaot">
+    
+      <div class="chat" id="chat">
+        <div id="chat_msgbox">
+          <h3><a href="/" target='_blank' style="float:right;"><img src='/static2/images/gohome_1.gif' /></a>聊天</h3>
+          <div class="room-notice-bar">
+            <div class="room-notice-label">【直播间公告】：</div>
+            <div class="room-notice-message">
+              <marquee scrolldelay="98" scrollamount="1" onmouseover="this.stop();" onmouseout="this.start();">
+              <span id="room_notice">{section name=a loop=$setNotice}{if !empty($setNotice[a].roominfourl)}<a target="_blank" href="{$setNotice[a].roominfourl}">{$setNotice[a].roominfo}</a>{else}{$setNotice[a].roominfo}{/if}{/section}</span>
+              </marquee>
+            </div>
+          </div>
+          <div id="chat_log_box">
+
+            <div id="chat_log1_w">
+              <div id="message_list"></div>
+            </div>
+
+            <div id="chat_log2_w">
+              <div id="my_message_list">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="chat-form-w">
+          <div id="chat-form">
+            <div class="chat-form-tools">
+              <table width="100%">
+                <tr>
+                  <td class="tool-item">
+                    <div id="btn_recentlist">所有人</div>
+                  </td>
+                  <td class="tool-item" style="display:none;">
+                    <div>
+                      <label for="isPrivate"><input type="checkbox" value="false" id="isPrivate" />&nbsp;悄悄话</label>
+                    </div>
+                  </td>
+                  <td class="tool-item">
+                    <a href="javascript:;" id="btn_face"><img src="/huoshow/img/multi_live/face.gif" width="16" height="16"/></a>
+                  </td>
+                  <td width="100%">
+                    <a href="javascript:;" id="btn_clap">喝彩</a>
+                  </td>
+                  <td>
+                    <div style="white-space:nowrap;">
+                      <a href="javascript:;" id="btn_autoscroll">停止滚屏</a>&nbsp;|&nbsp;<a href="javascript:;" id="btn_clean">清屏</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="chat-form-input">
+              <table width="100%">
+                <tr>
+                  <td width="100%">
+                    <input type="text" id="inputMessage" />
+                  </td>
+                  <td>
+                    <div id="button_sendmsg"><span>发送消息</span></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+    
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="gift-bar">
+      <input type="hidden" value="" name="giftid" id="giftid">
+      <input type="hidden" value="{$userinfo[0].uid}" name="targetuid" id="targetuid">
+      <table class="ui-layout">
+        <tr>
+          <td>挑选</td>
+          <td>
+            <a href="javascript:;" id="btn_giftbox" class="button-yellow">礼物盒子</a>
+          </td>
+          <td>数量</td>
+          <td><input type="text" class="shuru" id="giftnum" value="1" /></td>
+          <td>赠给</td>
+          <td><span class="zenggei" id="target_name">{$userinfo[0].nickname}</span></td>
+          <td><a href="javascript:;" onclick="givegift();return false;" class="gift-bar-button-send">&nbsp;</a></td>
+          <td><a target="_blank" href="/home.php?mod=space&do=pay" class="gift-bar-button-recharge">&nbsp;</a></td>
+          <td style="text-align:right;width:100%;">
+            <!--{if $uid==$roomid}-->
+            <a href="/huoshow/module/show/ajax/show_setting_away_config.php?&tab=setNotice&roomid={$uid}" onclick="showWindow('register', this.href)"><img src="/huoshow/img/multi_live/setnotice.gif"></a>
+            <a href="#" onclick="setRoomBg();return false;" class="gift-bar-button-setbg"><img src="/huoshow/img/multi_live/pifu.jpg"></a>
+            <!--{/if}-->
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div id="congzhiringht">
+    <div class="room_right_xx">
+      <div class="room_right_xx_01"><a href="javascript:;">&nbsp;</a></div>
+      <div class="room_right_xx_02"><a href="javascript:;">&nbsp;</a></div>
+      <div class="room_right_xx_04"><a href="javascript:;" class="on">&nbsp;</a></div>
+    </div>
+
+    <div class="member-tab-contents">
+      <div class="member-tab-content">
+        <h1>麦序(<span id="miclist_length">0</span>)</h1>
+        <div id="miclist" class="member-tab-content-body userlist">
+          <div id="takelist"></div>
+          <div id="waitlist"></div>
+        </div>
+      </div>
+      <div class="member-tab-content">
+        <h1>房管(<span id="adminlist_length">0</span>)</h1>
+        <div id="adminlist" class="member-tab-content-body userlist"></div>
+      </div>
+      <div class="member-tab-content">
+        <h1>观众(<span id="onlineNum">0</span>)</h1>
+        <div id="onlineUsers" class="member-tab-content-body userlist"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="clear"></div>
+  <!--下面弄成左右结构-->
+  <div class="dynamic">
+  	<div class="dynamic_left">
+		<div class="room_505">
+			<div class="room_505_xx">
+                          <div class="room_505_xxtext"><h1><span class="nick_{$userinfo[0].uid}">{$userinfo[0].nickname}</span> 会所</h1>
+					<div class="room_505_xx_pic">
+						<img src="{$livecover}" width="90" height="90">
+                                                <p><span class="fenhong">房主：</span><span class="nick_{$userinfo[0].uid}">{$userinfo[0].nickname}</span><br>
+						<span class="fenhong">简介：</span>{$userinfo[0].description}<br>
+						<span class="fenhong">开通时间：</span>{$start_time}</p>
+					</div>
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+			<!--动态信息-->
+			<!--{include_php file="$mutilroom_dynamic_path"}-->
+			{if $uid == $roomid}
+			{include_php file="huoshow/module/weibo/weibo_user_send_dynamic.php"}
+			{/if}
+			{include file="weibo/weibo_user_dynamic.html"}
+			<!--end-->
+		</div>
+	</div>
+	<div class="dynamic_right">
+		<div class="room_right_438">
+			<div class="room_right_438_bt"><h1><img src="/huoshow/img/multi_live/xin.jpg" width="22" height="22" />粉丝排行榜</h1></div>
+			<div class="right_438_text">
+				{section name=f loop=$fanslist}
+				<div class="right_438_textlist">
+					<div class="yi_{$smarty.section.f.index}"><a target="_blank" href="http://space.huoshow.com/{$fanslist[f].uid}"><img src="{$fanslist[f].avatar}" width="60" height="60" /></a></div>
+					<div class="right_nema">
+					<span class="nick_{$fanslist[f].uid}">{$fanslist[f].nickname}</span>
+					<br>({$fanslist[f].uid})
+					</div>
+					<div class="right_shuzi">{$fanslist[f].price}</div>
+				</div>
+				{/section}
+			</div>
+		</div>
+		<div class="room_right_438">
+			<div class="room_right_438_bt"><h1><img src="/huoshow/img/multi_live/maiba.jpg" width="22" height="22" />超级麦霸</h1></div>
+			<div class="right_438_text">
+				{section name=m loop=$micking}
+				<div class="right_438_textlist">
+					<div class="yi_{$smarty.section.m.index}"><a target="_blank" href="http://space.huoshow.com/{$micking[m].uid}"><img src="{$micking[m].avatar}" width="60" height="60" /></a></div>
+					<div class="right_nema">
+					<span class="nick_{$micking[m].uid}">{$micking[m].nickname}</span>
+					<br>({$micking[m].uid})
+					</div>
+					<div class="right_shuzi">{$micking[m].time}</div>
+				</div>
+				{/section}
+			</div>
+		</div>
+		
+  </div>
+  <!--end-->
+</div>
+
+<script src="/huoshow/js/jquery/jquery-ui.min.js"></script>
+<script src="/huoshow/js/hui.js"></script>
+<script src="/huoshow/js/multi_live.js"></script>
+<script src="/huoshow/js/weibo.js"></script>

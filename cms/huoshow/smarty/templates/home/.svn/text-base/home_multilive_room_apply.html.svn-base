@@ -1,0 +1,68 @@
+<link href="/huoshow/css/zhibo/master.css" rel="stylesheet" type="text/css" />
+
+<div class="mn"><!--[diy=diycontenttop]--><div class="area" id="diycontenttop"></div><!--[/diy]-->
+<div class="bm bw0">
+<h1 class="mt"><img class="vm" src="/huoshow/img/zhibo/lv.jpg" alt="blog">直播</h1>
+	<ul class="tb cl"> 	    	    
+		<li class="a"><a href="home.php?mod=huoshow&do=live">我的直播</a></li> 
+		<li><a href="home.php?mod=space&do=home&view=all" target="_blank">随便看看</a></li>
+		<li class="o2"><a href="home.php?mod=huoshow&do=apply_room&room_id={$userinfo[0].uid}">申请多功能直播间</a></li>
+	</ul>
+	<div class="clear"></div>
+	<div class="cst">
+		<p><a href="home.php?mod=space&uid={$homeowner_uid}"><img src="{$userimages}" height="96" width="96" /></a></p>
+		<ul class="lh2">
+			<li class="wel">HI！{if $userinfo[0].nickname}{$userinfo[0].nickname}{else}{$userinfo[0].username}{/if}，欢迎参加火秀直播！</li> 
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="ba"> 
+		<a href="home.php?mod=huoshow&do=live" class="nopick bu">普通直播间</a> 
+        {if $ismutillive != 0}<a href="home.php?mod=huoshow&do=live&dou=1" class="bu pick">多功能直播间</a>{/if}
+		<div class="clear"></div>
+	</div>
+    <div class="fm_area p20">
+    	<form action="" method="POST" name="form" onsubmit="return cformadd(this);">
+    	<p>多功能直播间名称：</p>
+        <label><input name="room_name" type="text" value="{$userinfo[0].room_name}" onchange="ajax_checking_name(this)" style="height: 20px; width:250px;"/>
+        <font color="red" id="room_name_error">&nbsp;</font>
+        </label>
+        <label><em class="vt">制作封面：<br /><img src="{$cover}"/><br /></em></label>
+        <iframe frameborder="0" scrolling="No" width="455" height="255" src="/huoshow/FrameWork/upload_dz/upload.php?uid={$homeowner_uid}&avatardir=livecover"></iframe>
+        <label><em>房间简介：</em><textarea name="description" cols="" rows="">{$userinfo[0].description}</textarea></label>
+        <span class="cen"><input name="submit" type="submit" value="" class="xyb suc"/></span>
+        </form>
+    </div>
+</div>
+<!--[diy=diycontentbottom]-->
+<div class="area" id="diycontentbottom"></div>
+<!--[/diy]-->
+</div>
+<div class="clear"></div>
+<script>
+var name_id = '{$userinfo[0].roomid}';
+</script>
+{literal}
+<script type="text/javascript">
+function cformadd(f){
+	if(f.room_name.value==''){
+		alert('名称不能为空，请输入名称！');
+		f.room_name.focus();
+		return false;
+	}
+	if(f.description.value==''){
+		alert('房间简介不能为空，请输入房间简介！');
+		f.description.focus();
+		return false;
+	}
+}
+	
+function ajax_checking_name(obj){
+	var $ = jQuery;
+	var url = 'home.php?mod=huoshow&do=ajax&filepath=mutiliveroom_user_manage_ajax&tab=ajax_checking_name';
+	$.post(url, {name: obj.value,roomid:name_id}, function(data){
+		$('#room_name_error').html(data);
+	});
+}
+</script>
+{/literal}

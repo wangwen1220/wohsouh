@@ -1,0 +1,49 @@
+<div class="blr" style="width:340px; background:url(/static2/images/gifts/liwu05.jpg)">
+  <h3 id="layer_reginfo_t" class="flb">
+    <em id="returnmessage4">关注用户</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('register')" title="关闭">关闭</a></span>
+  </h3>
+  <div style="height:80px; *overflow: hidden">
+    <div style="background:#f3f3f3;color:#000; padding:10px; float:left; height:35px; width:320px; _width: 340px;">确定关注用户:<span style="color:red"> <?php echo $user_info[0][nickname]?></span></div>
+    <p class="qiedingbg">
+      <a href="javascript:;" id="submitcom" onclick="return !!add();" ><img width="86" height="24" alt="确定"  src="/static2/images/gifts/liwu4.png"></a>
+      <a href="javascript:;" onclick="hideWindow('register')"><img width="86" height="24" alt="取消" src="/static2/images/gifts/liwu5.png"></a>
+      </p>
+  </div>
+</div>
+<script>
+(function($){
+  window.add = function(){
+    $("#submitcom").attr({"onclick":""});
+    var textContent = $('#text_content').val();
+    var url = '/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_add_follow&src_uid=<?php echo $uid?>&dst_uid=<?php echo $dst_uid?>&type=<?php echo $live?>';
+    $.post(url,function(data) {
+      if(data=='1'){
+        alert('关注成功');
+        location.reload();
+        hideWindow('register');
+        return;
+      }else if (data == '2'){
+		alert('关注成功');
+		$('#live_follow').hide();
+		hideWindow('register');
+	  }else{
+        alert('关注失败');
+        hideWindow('register');
+      }
+    });
+    doane();
+  }
+
+  //修正 IE6 SELECT 遮住 DIV 问题
+  if(ie6){
+  $(function(){
+    var $dialog = $('#fwin_register');
+    $dialog.children('.blr').wrap("<div class='ie6select' />");
+    var $dialog_width = $('div.ie6select').width() + 10;
+    var $dialog_height = $('div.ie6select').height() + 10;
+    $dialog.prepend("<iframe class='ie6select' src='javascript:;' frameborder='0' style='position: absolute; z-index: -1; width:" + $dialog_width + "px; height: " + $dialog_height + "px;' />");
+  });
+  }
+})(jQuery);
+</script>

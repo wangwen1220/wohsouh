@@ -1,0 +1,49 @@
+<div class="itemtitle"><h3>违规-{$username}({$uid})</h3></div>
+<div>
+<!--{if $roomInfo[stat] == -1}-->
+	<form id="formviolation" action="admin.php?action=live&op=violation" method="post">
+	<input type="hidden" name="uid" value="{$uid}"/>
+	<input type="hidden" name="tab" value="cancel"/>
+		<table class="tb tb2 ">
+			<tr class="partition">
+				<td colspan="2"><h4>解除违规</h3></td>
+			</tr>
+			<tr>
+				<td width="80">违规时间：</td>
+				<td>{$violationlog['start_time_str']}</td>
+			</tr>
+			<tr>
+				<td>违规原因：</td>
+				<td>{$violationlog['reason']}</td>
+			</tr>
+			<tr><td colspan="2"><h3>确定解除违规处罚？</h3></td></tr>
+			<td colspan="2">　　<input class="btn" type="submit" name="submit" value="确定"/>　　<input onclick="closeWindow();" type="button" class="btn" value="取消"/></td>
+		</table>
+	</form>
+<!--{else}-->
+	<form id="formviolation" action="admin.php?action=live&op=violation" method="post">
+	<input type="hidden" name="uid" value="{$uid}"/>
+		<table class="tb tb2 ">
+			<tr class="partition">
+				<td colspan="2"><h4>违规处理</h3></td>
+			</tr>
+			<tr>
+				<td width="80">违规原因：</td>
+				<td><textarea name="reason" rows="5" cols="80"></textarea></td>
+			</tr>
+			<tr>
+				<td>处罚时间：</td>
+				<td><input type="text" name="hours" size="8" value="1" />小时　　
+				<input type="checkbox" name="removetype" value="2" />只能手动删除</td>
+			</tr>
+			<td colspan="2">　　<input class="btn" type="submit" name="submit" value="提交"/></td>
+		</table>
+	</form>
+<!--{/if}-->
+</div>
+<script>
+function closeWindow() {
+	window.top.opener = null;
+	window.top.close();
+}  
+</script>

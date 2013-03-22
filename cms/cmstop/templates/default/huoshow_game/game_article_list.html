@@ -1,0 +1,63 @@
+<!--{template 'huoshow_game/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">{$name}</h2></div>
+					<ul>
+						<!--{content catid="$catid" $i=1 orderby="published desc" size="$pagesize" page="$page"}-->
+						<li><span class="date_011"><a href="{$r[url]}" target="_blank">{$r[title]}</a></span><span class="date_01">{date("Y-m-d", $r[published])}</span></li>
+						<!-- {if $i%5==1 and $i!=1 }-->
+						</ul><ul>
+						<!-- {/if} -->
+						<!--{/content}-->
+					</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+							<ul><!--{pages($total, $page, $pagesize, 2, $urlrule)}--></ul>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+		<!--Banner 300*250-->
+	    {db sql="select * from #table_section  where memo ='banner_game_common_topright_300_250'"}
+			{$r[data]}
+	    {/db}
+        <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;" class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="{ROOT}api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="{ROOT}api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="{ROOT}api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--{template 'huoshow_game/footer.html'}-->

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>精彩视频_火秀网</title>
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.huoshow.com/img/templates/huoshow02/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+<script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+
+</head>
+
+<body class="body_bg">
+<!--Site Header-->
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+
+<!--Site Header End--> 
+<!--Navigator-->
+
+<div class="zhongqiu_bj">
+<div class="nav_bg">
+<h1 class="channel_logo"><a href="http://www.huoshow.com/">火秀网</a></h1>
+<div id="sub_channel">
+<ul>
+<li><a target="_blank" href="http://www.huoshow.com/">首页</a></li>
+<li><a target="_blank" href="http://space.huoshow.com/show.php">直播大厅</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/events/">赛事</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/movie/">影视</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/music/">音乐</a></li>
+<li><a target="_blank" href="http://www.huoshow.com/game/">游戏</a></li>
+<li><a href="http://www.huoshow.com/pic/">美图</a></li>
+<!--<li><a href="#">排行榜</a></li>-->
+<li><a target="_blank" href="http://www.huoshow.com/myshow/">MY秀</a></li>
+<li><a target="_blank" href="http://space.huoshow.com/group.php">群组</a></li>
+<li><a target="_blank" href="http://space.huoshow.com/home.php">空间</a></li>
+<li><a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a></li>
+</ul>
+</div>
+<div class="search_index">
+<script type="text/javascript">
+(function($){
+$(function(){
+window.clearKeyword = function(){
+var search_wd = $.trim($("#search_wd").val());
+if(search_wd=='请输入关键字'){
+$("#search_wd").val('');
+}
+if(search_wd==''){
+$("#search_wd").val('请输入关键字');
+}
+}
+window.checkSForm = function()
+{
+var search_wd = $.trim($("#search_wd").val());
+if(search_wd=='请输入关键字' || search_wd==''){
+alert('请输入关键字');
+return false;
+}
+}
+}) 
+})(jQuery);
+</script>
+<form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+<input type="hidden" value="search" name="app"/>
+<input type="hidden" value="index" name="controller"/>
+<input type="hidden" value="search" name="action"/>
+<input type="hidden" value="all" name="type"/>
+<input type="text" class="search_input_index" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><span class="search_button_index">
+<input type="submit" class="search_submit_index" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" /></span>
+</form>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
+<div class="red_bar">
+<div class="red_bar_text">
+<div class="red_bar_today"><span class="red_bar_today_bg"></span>
+<!--#include virtual ="/api/article.php?act=index_time"-->
+</div>
+ <div id="header_rollnews_keywords" >                           
+         </div>
+         <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://www.huoshow.com/api/article.php?act=get_header_rollnews_keywords&do=ajax&jsoncallback=?', function(d){
+            	$("#header_rollnews_keywords").html(d.html);
+            	
+            });
+          });
+        })(jQuery);
+      </script>
+
+</div>
+</div>
+<style>
+<!--
+.search {
+    background: none repeat scroll 0 0 #F7F7F7;   
+
+}
+.search_text{padding-left:10px;}
+-->
+</style>
+<div class="search">
+  
+  <span class="search_text">
+  
+您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/zhuanti/index.shtml">专题</a> > <a href="http://www.huoshow.com/zhuanti/meilizhixing/index.shtml">魅力之星大赛</a> > <a href="http://www.huoshow.com/zhuanti/meilizhixing/ship/index.shtml">精彩视频</a>
+  </span>
+</div>
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="subpage_news">
+                    <div class="subpage_news_bt"><h2 class="bt1">精彩视频</h2></div>
+<ul>
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0402/7533.shtml" target="_blank">水冥寒激情热舞二</a></span><span class="date_01">2011-04-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0402/7532.shtml" target="_blank">水冥寒激情热舞一</a></span><span class="date_01">2011-04-02</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7475.shtml" target="_blank">爱斯翻唱金海心的《爱似水仙》</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7474.shtml" target="_blank">兰灵翻唱朱晓琳《妈妈的吻》</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7473.shtml" target="_blank">兰灵翻唱金沙《星月神话》</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7472.shtml" target="_blank">小怪兽翻唱裘海正的《爱我的人和我爱的人》</a></span><span class="date_01">2011-03-31</span></li>
+<!-- -->
+</ul><ul>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7464.shtml" target="_blank">小怪兽翻唱陈慧琳《不得了》</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7460.shtml" target="_blank">亲爱的你怎么不在我身边-燕子</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7459.shtml" target="_blank">燕子演唱《开心》</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+<li><span class="date_011"><a href="http://www.huoshow.com/2011/0331/7458.shtml" target="_blank">燕子演唱SHE歌曲串烧</a></span><span class="date_01">2011-03-31</span></li>
+<!--  -->
+</ul>
+                	<div class="clear"></div>
+        			<div class="fanye">
+        				<div id="fanye_01">
+<ul></ul>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="Subpage_right">
+<!--Banner 300*250-->
+    <div class="banner_300_250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(32);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=3469ec5'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=32&n=3469ec5' /></a></noscript></div>            <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;" class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="/api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="/api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</html>

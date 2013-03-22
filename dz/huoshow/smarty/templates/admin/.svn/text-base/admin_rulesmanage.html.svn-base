@@ -1,0 +1,40 @@
+<div class="itemtitle" style="padding-left:15px;">
+<ul class="tab1">
+	<li class="current"><a href="?action=huoshow&operation=addrules"><span>添加规则</span></a></li>
+</ul>
+</div>
+<table border="0" class="tb tb2">
+	<tr class="header">
+		<th>规则ID</th>
+		<th>所属组件</th>
+		<th>规则描述</th>
+		<th>规则简短描述</th>
+		<th>描述规则的sql字符串</th>
+		<th>操作</th>
+	</tr>
+	{section name=r loop=$rules_arr}
+	<tr class="hover">
+		<td>{$rules_arr[r].id}</td>
+		<td>{$rules_arr[r].plugin_name}</td>
+		<td>{$rules_arr[r].regular_descript}</td>
+		<td>{$rules_arr[r].regular_short_name}</td>
+		<td>{$rules_arr[r].regular_sql}</td>
+		<td><a href="?action=huoshow&operation=editrules&id={$rules_arr[r].id}">修改</a> | <a id="del" onclick="delError('?action=huoshow&operation=editrules&tab=delrules&id={$rules_arr[r].id}');"  href="javascript:;">删除</a></td>
+	</tr>
+	{/section}
+	<tr>
+    	<td colspan="6">{$page_str}</td>
+  	</tr>
+</table>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定删除？注意：此操作不可恢复，请谨慎操作！")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+</script>
+{/literal}

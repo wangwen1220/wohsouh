@@ -1,0 +1,257 @@
+<!--{template 'huoshow_common/common_header.html'}-->
+<link href="{IMG_URL}templates/huoshow02/css/common.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<script type="text/javascript" src="{IMG_URL}js/datepicker/WdatePicker.js"></script>
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<form method="GET" name="search" id="search" >
+		<div class="Subpage_Search">
+			<div class="Subpage_Search_show"></div>
+			<input type="hidden" value="search" name="app"/>
+			<input type="hidden" value="index" name="controller"/>
+			<input type="hidden" value="search" name="action"/>
+			
+			<?php
+				if($type=='all'){
+					$typeName = '全站';
+				}
+				if($type=='article'){
+					$typeName = '新闻';
+				}
+				if($type=='picture'){
+					$typeName = '图片';
+				}
+				if($type=='video'){
+					$typeName = '视频';
+				}
+			?>
+			
+                        <script>
+                          var showStatus = false;		
+                          var sttype = function (e){
+                            var stype = $(e).attr("value");
+                            if(stype=='all'){
+                              var typeName = '全站';
+                            }
+                            if(stype=='article'){
+                              var typeName = '新闻';
+                            }
+                            if(stype=='picture'){
+                              var typeName = '图片';
+                            }
+                            if(stype=='video'){
+                              var typeName = '视频';
+                            }
+                            $("#stype").html(typeName);
+                            $("#type").val(stype);								
+                            hide_type();
+                          };
+
+                          var show_type = function () {									
+                            $(".j-select-body").show();
+                            showStatus = true;	
+                            $(document).bind('mouseover', hide_type);
+                          };
+
+                          var hide_type = function () {
+                            $(".j-select-body").hide();
+                            showStatus = false;	
+                            $(document).unbind('mouseover', hide_type);
+                          };
+
+                          var settype = function () {
+                            if(showStatus==false){
+                              show_type();
+                            }else{
+                              hide_type();
+                            }
+                          };
+
+                          $(function(){
+                            $('.j-select').each(function(){
+                              $(this).bind('mouseover', function(e){
+                                e.stopPropagation();
+                              });
+
+                              $('.j-select-head', this).mousedown(function(){
+                                settype();
+                              });
+                            });
+                          });
+
+                        </script>
+
+                        <div class="Subpage_Search_x">
+                          <div class="j-select">
+                            <input type="hidden" value="{$type}" name="type" id="type" />
+                            <div class="j-select-head">
+                              <a href="##" onclick="return false;" id="stype">{$typeName}</a>
+                            </div>
+                            <div class="j-select-body">
+                              <iframe src="javascript:'';" frameborder="0" scrolling="no" style="width:71px;height:80px;position:absolute;"></iframe>
+                              <div style="position:relative;">
+                                <div class="j-select-item"><a value="all" href="##" onclick="sttype(this);return false;">全站</a></div>
+                                <div class="j-select-item"><a value="article" href="##" onclick="sttype(this);return false;">新闻</a></div>
+                                <div class="j-select-item"><a value="picture" href="##" onclick="sttype(this);return false;">图片</a></div>
+                                <div class="j-select-item"><a value="video" href="##" onclick="sttype(this);return false;">视频</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+			
+			<input type="text" name="wd" id="wd" value="{$wd}" size="40" class="Subpage_Search_k" />
+			<span class="Subpage_Search_an">
+			<input type="submit" class="search_page_search_submit" value="">			
+			</span>
+			<input type="button" name="imageField2" class="Subpage_Search_gao" style="cursor:pointer; background:url('{WWW_URL}img/templates/huoshow02/images/Subpage_Search_gao.jpg');width:55px;height:30px;border:0 none;" onclick="showAdSearch()"/>
+		</div>
+		<script type="text/javascript">
+		$(function(){
+			var openAdSearch = false;
+			window.showAdSearch = function()
+			{
+				if(openAdSearch==false){
+					openAdSearch = true;
+					$("#advanced").val('1');
+					$("#advanced_div").show('fast');
+				}else{
+					$("#advanced").val('');
+					openAdSearch = false;
+					$("#advanced_div").hide('fast');
+				}
+			}
+			$('input.input_calendar').focus(function(){
+				WdatePicker({dateFmt:'yyyy-MM-dd'});
+			});
+			//保持状态
+			if("{$_GET['advanced']}") {
+				$("#advanced").val('1');
+				openAdSearch = true;
+				$('#advanced_div').show();
+			}
+			var type = "{$_GET['type']}";
+			$('#model a[type='+type+']').addClass('now');
+			if("{$_GET['catid']}") {
+				$("#catid").val({$_GET['catid']});
+			}
+			if("{$_GET['content']}") {
+				$("#content").attr('checked', 1);
+			}
+			var order = "{$_GET['order']}";
+			$('#order').val(order);
+
+			
+		})
+		</script>
+		<div id="advanced_div" style="background:#f3f3f3;height:25px;padding-top:5px;display:none;">
+				&nbsp;&nbsp;
+				<input type="hidden" value="" id="advanced" name="advanced"/>
+				<select id="catid" name="catid">
+					<option value="">频道</option>
+					{loop $channel $v}
+					<option value="{$v['catid']}">{$v['name']}</option>
+					{/loop}
+				</select>
+				<select id="order" name="order">
+					<option value="">排序</option>
+					<option value="published">时间</option>
+					<option value="pv">点击</option>
+					<option value="comments">评论</option>
+				</select>
+				时间：
+				<input type="text" value="{$_GET['before']}" name="before" id="before" size="9"  class="input_calendar"/>
+				至
+				<input type="text" value="{$_GET['after']}" name="after" id="after" size="9"  class="input_calendar"/>
+				<input type="checkbox" value="1" id="content" name="content"/> 搜内容
+		</div>
+		</form>
+		<div class="Search_Results">
+			<h1 class="select_wenzi">搜索结果: <span class="f-r">找到 <span class="select_wenzi_hongse">{$wd}</span> 相关网页约<strong class="keyword"> {$data[total]} </strong>篇，用时<strong class="keyword"> <?php echo round(microtime(true)-CMSTOP_START_TIME,5);?> </strong>秒</span>！</h1>
+		</div>
+		{loop $data[data] $v}
+		<div class="index_Subpage_news" style="height:auto;">
+		<p class="index_Subpage_news_bt"><a href="{$v[url]}" target="_blank">{$v[title]}
+		<?php
+			if($v[modelid]==2){
+				echo ' <span class="index_Subpage_news_tu1"></span>';
+			}else{
+				echo ' <span class="index_Subpage_news_tu"></span>';
+			}
+		?>
+		</a></p>
+		<p class="index_Subpage_news_list">{$v[description]}</p>
+		<div class="index_Subpage_news_bottom_hui"><span class="index_Subpage_news_bottom_hui_left">>> <a href="{$v['caturl']}" target="_blank">[{$v['catname']}]</a></span><div class="index_Subpage_news_bottom_hui_right"><span class="tu2"></span>{date('Y-m-d H:i', $v['published'])}  | <span class="tu3"></span><a href="{APP_URL}{url('comment/comment/index', 'contentid='.$v['contentid'])}">{$v['comments']}</a> | <span class="tu4"></span>{$v['pv']} </div></div>
+		</div>
+		{/loop}
+		<div class="fanye" style="width:auto">
+		<div id="fanye_01">
+			<ul>{$multipage}</ul>
+		</div>
+		</div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+	    {db sql="select * from #table_section  where memo ='banner_common_topright_300_250'"}
+			{$r[data]}
+	    {/db}
+		<!--div class="right_news_jiaodian">
+			<div class="right_news_jiaodian_01">
+				<div class="right_news_jiaodian_bt"><span class="wenzi">点击榜 </span></div>
+				<div class="right_news_jiaodian_list">
+					<ul>						
+						{db sql="SELECT title,url FROM #table_content  order by pv DESC limit 10 "}			           
+						<li><span class="icon1"></span><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],40,'')}</a></li>
+						{/db}
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="right_news_jiaodian">
+			<div class="right_news_jiaodian_01">
+				<div class="right_news_jiaodian_bt"><span class="wenzi">热点推荐</span> </div>
+					<ul class="redian_news">
+						
+						{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_other_news_hot_recommend' ORDER BY d.sort desc limit 10"}
+						<li>·<a href="{$r[url]}"  target="_blank" title="{$r['title']}">{str_cut($r[title],40,'')}</a></li>
+						{/db}
+						
+
+					</ul>
+					
+				</div>
+		</div>
+		<div class="right_news_jiaodian">
+			<div class="right_news_jiaodian_01">
+				<div class="right_news_jiaodian_bt"><span class="wenzi">精彩图集</span> </div>
+					<div class="Small_games_pic">
+		<ul>
+		{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_other_wonder_pic'  and d.thumb!='' ORDER BY d.sort desc limit 10"}
+		<li><a href="{$r[url]}" target="_blank"><img src="{WWW_URL}upload/{$r[thumb]}" width="133" height="90" />{$r[title]}</a></li>
+		{/db}		
+		</ul>
+		</div>
+					
+				</div>
+		</div-->
+		
+	</div>
+</div>
+<div class="clear"></div>
+<!--{template 'huoshow_common/common_footer.html'}-->
+<script type="text/javascript">
+/*
+(function($){
+	$(function(){
+		window.getRollImg = function(){
+			var url = '{WWW_URL}api/article.php?act=getrollimg&memo=huoshow_other_rool_image_300_250&width=300&height=250';
+			$.get(url,function(rs){				
+				$("#rollImg").html(rs);
+			})
+			
+		}
+		getRollImg();
+	})
+})(jQuery);
+*/
+</script>

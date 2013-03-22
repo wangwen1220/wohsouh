@@ -1,0 +1,321 @@
+<!--{template 'huoshow_music/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_left">
+        <div class="Subpage_left_xx_01">
+            <div class="Subpage_left_xx">
+                <div class="Subpage_left_bt">
+                  <h1 class="bt_cu">{$title}</h1>
+                    <div class="titbar">
+                      <span class="pubTime">{date('Y-m-d H:i',$published)}</span>
+                      <!--{if $source_name}-->
+                      <span class="where">来源：<!--{if $source_url}--><a href="{$source_url}" target="_blank"><!--{/if}--><!--{if $source_logo}--><img src="{$source_logo}" title="{$source_name}"/><!--{/if}--><!--{if $source_url}--></a><!--{/if}--><!--{if $source_url}--><a href="{$source_url}" target="_blank"><!--{/if}-->{$source_name}<!--{if $source_url}--></a><!--{/if}--></span>
+                      <!--{/if}-->
+                      <!-- <span class="views">查看数: <span id="pvnums">0</span></span> -->
+                      <span class="comment"><a href="#to_comment">我来说两句</a> (<span class="commentnums">{$comments}</span>)</span>
+                    </div>
+                </div>
+                <!--{if $description}--><div class="Subpage_left_nr">摘要:{$description}</div><!--{/if}-->
+                <div class="Subpage_left_news" id = "ctrlfscont">
+                {$content}
+                  <!--{if $pages}-->	
+                  <div class="fanye">
+                    <!--{if $prevpage}-->
+                    <a href="{$pages[$prevpage][url]}">上一页</a>
+                    <!--{else}-->
+                    <a class="no-op" href="javascript:;">上一页</a>
+                    <!--{/if}-->
+
+                    <!--{loop $pages $k $v}-->
+                    <a href="{$v[url]}" <!--{if $k==$page}-->class="now"<!--{/if}-->>{$k}</a>
+                    <!--{/loop}-->
+
+                    <!--{if $nextpage}-->
+                    <a href="{$pages[$nextpage][url]}">下一页</a>
+                    <!--{else}-->
+                    <a class="no-op" href="javascript:;">下一页</a>
+                    <!--{/if}-->
+                    <div><a href="javascript:;" onclick="fulltext()" id="show-all-cont">单页阅读</a></div>
+                  </div>
+                  <!--{/if}-->
+                  <!--- start related --->				
+                  <!--{if $keywords || $related}-->
+                  <!--<?php $related_count = 0; ?>-->
+                  <div id="moreread">
+                    <h3>相关阅读</h3>
+                      <ul>
+                          <!--{if $related}-->
+                           <!--{loop $relateds $k $r}-->
+                           <!--<?php $related_count++; ?>-->
+                           <li><a href="{$r[url]}" target="_blank">{$r[title]}</a> <span class="date">{$r[time]}</span></li>
+                           <!--{/loop}-->
+                          <!--{else}-->
+                           <!--{content_related contentid="$contentid" tags="$tags" size="10"}-->
+                             <!--<?php $related_count++; ?>-->
+                             <li><a href="{$r[url]}" target="_blank">{$r[title]}</a> <span class="date">{date('Y-m-d', $r['published'])}</span></li>
+                              <!--{/content_related}-->
+                        <!--{/if}-->
+                      </ul>
+                  </div>
+                  <!--{/if}-->
+                  <!--- end related --->                  
+                </div>
+                <div style=" padding-left:10px;">标签：
+				<?php $newtags = explode(" ", $tags)?>
+                <!--{loop $newtags $k $r}-->
+                <a href="{WWW_URL}app/?app=search&controller=index&action=search&type=all&wd={$r}">{$r}</a>
+                 <!--{/loop}-->
+				</div>
+                <div class="hr-h10"></div>
+                <!--{if $editor}-->
+                      <p class="editor">责任编辑：{$editor}</p>
+                <!--{/if}-->
+                <div class="digg-share">
+                  <span class="supports"><img alt="顶" src="{IMG_URL}/templates/huoshow02/images/rec_add.gif" /><a id="supports"  href="javascript:adddigg(1)">顶 0&nbsp;&nbsp;0%</a></span>
+                  <span class="againsts"><img alt="踩" src="http://www.discuz.net/static/image/common/rec_subtract.gif" /><a id="againsts"  href="javascript:adddigg(0)">踩 0&nbsp;&nbsp;0%</a></span>
+                </div>
+                <div class="hr-h10"></div>
+                <div style="padding-left:10px;">
+					<span>分享到：
+						<a href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent('{$title}'+'  {$description}')+'&url='+encodeURIComponent(location.href)+'&appkey='+SINA_APPKEY,'_blank','width=450,height=400');})()"><img src="{IMG_URL}templates/{TEMPLATE}/images/sina.gif" title="新浪微博"/></a>
+						<a href="javascript:(function(){window.open('http://v.t.qq.com/share/share.php?title='+encodeURIComponent('{$title}'+'  {$description}')+'&url='+encodeURIComponent(location.href)+'&source='+QQ_SOURCEID+'&pic=','转播到腾讯微博', 'width=700, height=580, top=320, left=180, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no'); })()"><img src="{IMG_URL}templates/{TEMPLATE}/images/qq.png" title="腾讯微博"/></a>
+						
+						<a href="javascript:u=location.href;t='{$title}';c = %22%22 + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);var url=%22http://cang.baidu.com/do/add?it=%22+encodeURIComponent(t)+%22&iu=%22+encodeURIComponent(u)+%22&dc=%22+encodeURIComponent('{$description}')+%22&fr=ien#nw=1%22;window.open(url,%22_blank%22,%22scrollbars=no,width=600,height=450,left=75,top=20,status=no,resizable=yes%22); void 0"><img src="{IMG_URL}templates/{TEMPLATE}/images/baidu.gif" title="百度搜藏"/></a>
+						<a href="javascript:u='http://share.xiaonei.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{$title}'.substring(0,76));window.open(u,'xiaonei','toolbar=0,resizable=1,scrollbars=yes,status=1,width=626,height=436');void(0)" title="人人网"/></a>
+						<a href="javascript:window.open('http://shuqian.qq.com/post?from=3&title='+encodeURIComponent('{$title}'.substring(0,76))+'&uri='+encodeURIComponent(location.href)+'&jumpback=2&noui=1','favit','width=930,height=470,left=50,top=50,toolbar=no,menubar=no,location=no,scrollbars=yes,status=yes,resizable=yes');void(0)"><img src="{IMG_URL}templates/{TEMPLATE}/images/qzone.gif" title="Qzone" /></a>
+						<a href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(kaixin=window.open('http://www.kaixin001.com/~repaste/repaste.php?&rurl='+escape(d.location.href)+'&rtitle='+escape('{$title}')+'&rcontent='+escape('{$description}'),'kaixin'));kaixin.focus();"><img src="{IMG_URL}templates/{TEMPLATE}/images/kaixin.gif" title="开心网"/></a>
+						<a href="javascript:var%20u='http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{$title}'.substring(0,76));window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)"><img src="{IMG_URL}templates/{TEMPLATE}/images/douban.gif" title="豆瓣网"/></a>
+						<a title="分享到搜狐微博" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var f='http://t.sohu.com/third/post.jsp?',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=660,height=470,left=',(s.width-660)/2,',top=',(s.height-470)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','','','utf-8'));" ><img src="{IMG_URL}templates/{TEMPLATE}/images/sohu.png" title="搜狐微博"/></span></a>
+						<a href="javascript:var u=location.href;var t=document.title;t=t.substr(0,80)+'by:Addthis.org.cn';var c=''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text);c=c.substr(0,280);var e=encodeURIComponent;var url='http://share.renren.com/share/buttonshare.do?link='+e(u)+'&title='+e(t)+'';window.open(url,'addthis.org.cn','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=450');void(0)"><img src="{IMG_URL}templates/{TEMPLATE}/images/rr.gif" title="人人网"/></span></a>
+					</span>
+				</div>
+           </div>
+        </div>
+        <div class="clear"></div>
+
+				<div class="hr-h10"></div>
+        <!--{template 'article/mood.html'}-->
+		<div class="Subpage_left_xx1_00" >
+            <div class="Subpage_left_xx1" id="pbox_zixun">
+            	<div class="huayu_oumei_rhan">
+				<a href="javascript:;" class="huayu_oumei_rhan_moren">华语乐坛</a>  <a href="javascript:;"> 海外乐坛</a>  <a href="javascript:;"> 乐评</a> 
+				</div>
+				<div class="huayu_oumei_rhan_text">
+					<!--#include virtual ="{ROOT}api/article.php?act=getInformationSwitching&zixun=huoshow_index_chinese_music"-->
+				</div>
+				<div class="huayu_oumei_rhan_text">
+					<!--#include virtual ="{ROOT}api/article.php?act=getInformationSwitching&zixun=huoshow_index_overseas_music"-->
+				</div>
+				<div class="huayu_oumei_rhan_text">
+					<!--#include virtual ="{ROOT}api/article.php?act=getInformationSwitching&zixun=huoshow_index_musical_reviews"-->
+				</div>
+			<!--结束-->
+            </div>
+            <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox_zixun', {
+                              links_selector: '.huayu_oumei_rhan a', 
+                              current_class: 'huayu_oumei_rhan_moren',
+                              pages_selector: '.huayu_oumei_rhan_text',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+        <div class="clear"></div>
+        <div class="hr-h10"></div>
+        <!--{if $allowcomment}-->
+        <!--{template 'article/comment.html'}-->                
+        <!--{/if}-->          
+                
+    </div>
+    
+    <div class="Subpage_right">
+		<!--Banner 300*250-->
+	    {db sql="select * from #table_section  where memo ='banner_music_common_topright_300_250'"}
+			{$r[data]}
+	    {/db}
+        <div class="right_news_jiaodian">
+            <div class="right_news_jiaodian_01">
+                <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 今日推荐</span>
+                        <span class="yingshi_dujia_more"></span>
+                 </div>
+                <div class="zixun_pic">
+                	<ul>
+                	<!--#include virtual ="{ROOT}api/article.php?act=gettodayfocus"--> 
+                	</ul>
+                </div>
+            </div>
+        </div>
+        <div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;" class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <!--#include virtual ="{ROOT}api/article.php?act=ranking_list&type=day"--> 
+                  </div>
+                  <div class="paihangbang">
+                       <!--#include virtual ="{ROOT}api/article.php?act=ranking_list&type=week"--> 
+                  </div>
+                  <div class="paihangbang" >
+                     <!--#include virtual ="{ROOT}api/article.php?act=ranking_list&type=month"--> 
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a', 
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+                         
+                      });
+
+                  </script>
+        </div>
+        
+         <div class="right_xss_01">
+            <div class="right_xss" id="pbox_jctj">
+            	<div class="moren_xss">
+				<a href="javascript:;" class="moren_xss_moren">音乐</a><a href="javascript:;"> 赛事</a> <a href="javascript:;">影视</a> <a href="javascript:;">游戏</a> 
+				</div>
+				<div class="xss_text">
+						
+				<div class="xss_box">
+				<!--#include virtual ="{ROOT}api/article.php?act=getWonderfulRecommend&recommend=huoshow_content_music"-->				
+				</div>
+				<div class="xss_box">
+				<!--#include virtual ="{ROOT}api/article.php?act=getWonderfulRecommend&recommend=huoshow_content_events"-->				
+				</div>
+				<div class="xss_box">
+				<!--#include virtual ="{ROOT}api/article.php?act=getWonderfulRecommend&recommend=huoshow_content_movie"-->
+				</div>
+				<div class="xss_box">
+				<!--#include virtual ="{ROOT}api/article.php?act=getWonderfulRecommend&recommend=huoshow_content_game"-->
+				</div>
+				<script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox_jctj', {
+                              links_selector: '.moren_xss a', 
+                              current_class: 'moren_xss_moren',
+                              pages_selector: '.xss_box',
+                              event_type: 'mouseover'
+                          });
+                      });
+                  </script>
+				</div>     
+            </div>
+        </div>
+		
+		<div class="right_news_jiaodian">
+			<div class="right_news_zixun">
+	            <div class="right_news_zixun_01">
+	                <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 频道热门图片 </span></div>
+	                <div class="zixun_pic">
+						<!--#include virtual ="{ROOT}api/article.php?act=getContentPictures&description=huoshow_content_pictures_music"-->
+					</div>
+		        </div>
+	        </div>
+		</div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<!--{template 'huoshow_music/footer.html'}-->
+<!--#include virtual ="{ROOT}api/article.php?act=getContentInfo&id={$contentid}"--> 
+<script type="text/javascript">
+(function($){
+	window.setCopy = function(content){    
+	    if(navigator.userAgent.toLowerCase().indexOf('ie') > -1) {    
+	        clipboardData.setData('Text',content);    
+	        alert ("该地址已经复制到剪切板");    
+	    } else {    
+	        prompt("请复制网站地址:",content);    
+	    }    
+	}
+
+	window.getDigg = function(){
+		var url = "{WWW_URL}app/?app=digg&controller=digg&action=digg&contentid={$contentid}&jsoncallback=?";
+		$.getJSON(url,function(rs){		
+			var supports = parseInt(rs.supports);
+			var againsts = parseInt(rs.againsts);
+			var totaldigg =  parseInt(supports+againsts);
+			if(totaldigg==0) return false;
+			var supportsP = Math.round(supports/totaldigg*100);			
+			var againstsP = 100-supportsP;			
+			$("#supports").html('顶 '+supports+'&nbsp;&nbsp;'+supportsP+'%');			
+			$("#againsts").html('踩 '+againsts+'&nbsp;&nbsp;'+againstsP+'%');			
+		})
+	}	
+	getDigg();		
+	window.adddigg = function(i){
+		var url = "{WWW_URL}app/?app=digg&controller=digg&action=digg&contentid={$contentid}&flag="+i+"&jsoncallback=?";
+		$.getJSON(url,function(rs){
+			if(rs>0){
+				getDigg();
+			}else{
+				alert('你已经顶过了');				
+			}
+		})
+	}
+
+	var content = '';//第一页内容缓存
+	content = $('#ctrlfscont').html();
+    var context = '';//全文内容缓存
+    var isfulltext = false;
+    var contentid = {$contentid};
+
+    window.fulltext = function (){  //单页阅读
+        if(context =='')
+            $.getJSON(APP_URL+'?app=article&controller=article&action=fulltext&jsoncallback=?&contentid='+contentid,function(data){
+                    context = data.content;
+                    $('#ctrlfscont').html(context);
+                    $('#show-all-cont').html('分页阅读').parent().siblings().hide();
+                    $('.bor-ccc').hide();
+                    isfulltext = true;
+                    holdpic();
+        	});
+        else{
+            $('#ctrlfscont').html(isfulltext?content:context);
+            $('#show-all-cont').html(isfulltext?'单页阅读':'分页阅读').parent().siblings().toggle(isfulltext === true);
+            isfulltext = (isfulltext === false);
+            $('.bor-ccc').show();
+            holdpic();
+        }
+    };
+
+   window.holdpic = function (){//控制内容区域的的图片大小并为过大的图片添加查看原图
+        var options = {
+		imageLoading:IMG_URL+'js/lib/lightBox/lightbox-ico-loading.gif',
+            imageBtnPrev:IMG_URL+'js/lib/lightBox/lightbox-btn-prev.gif',
+            imageBtnNext:IMG_URL+'js/lib/lightBox/lightbox-btn-next.gif',
+            imageBtnClose:IMG_URL+'js/lib/lightBox/lightbox-btn-close.gif',
+            imageBlank:IMG_URL+'js/lib/lightBox/lightbox-blank.gif'
+        };
+        $('#ctrlfscont').find('img').each(function(){
+            var img = this;
+            if (img.width>608) {
+                img.style.width = '600px';
+                $(img).removeAttr('height');
+                var aTag = document.createElement('a');
+                aTag.href = img.src;
+                $(aTag).addClass('bPic')
+                .insertAfter(img).append(img)
+                .lightBox(options);
+            }
+        });
+    };
+
+    $(window).load(function(){
+    	holdpic();
+    });
+
+ 
+})(jQuery);
+</script>

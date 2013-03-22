@@ -1,0 +1,236 @@
+<!--{template 'zhuanti/2011vma/header.html'}-->
+
+<div id="mian">
+<div class="box">
+  <div class="meili_nr">
+   <div class="body_left">
+		<div class="left_w300">
+			<div class="banner_300x250"> <!--#include virtual ="{ROOT}api/article.php?act=getrollimg&memo=huoshow_zhuanti_2011vma_index_image&width=300&height=250&navon=1"--></div>
+			<div class="banner_300x100">{db sql="select * from #table_section  where memo ='huoshow_zhuanti_2011vma_index_left_image'"}
+            {$r[data]}
+            {/db}</div>
+			<div class="Space_8px"></div>
+			<div class="White_box_300">
+					<div class="movie_300_bt"><span class="right_250_wz">MTV大奖宣传片</span></div>
+					<div class="clear"></div>
+					<div class="left_300_Video">{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_harrypotter_index_yugao' ORDER BY d.sort desc limit 1"}
+					<!--{template 'video/player/zhuanti2011vmaflv.html'}-->
+					{/db}
+					</div>
+			</div>
+		</div>
+		<div class="White_box">
+			<div class="White_box_01">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_top_news' ORDER BY d.sort desc limit 3"}
+				<div class="Center_bt">
+					<h3 class="Color_red"><span class="Center_bt_tb"></span><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></h3>
+					<p class="Color_Gray">{str_cut($r[description],90)}</p>
+				</div>
+				{/db}
+				<div class="Center_news">
+					<ul class="Center_newslist">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_top_news' ORDER BY d.sort desc limit 3,14"}
+						<li><span class="Center_newslist_Date">{date("Y-m-d", $r[published])}</span><span class="Center_newslist_dian"></span><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a></li>
+						{/db}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="meili_right">
+<div class="meili_anniu"><a href="#"></a></div>
+      <div class="body_right">
+		<div class="White_box_250">
+			<div class="White_box_250_01">
+				<div class="right_250_bt"><span class="right_250_wz">MTV音乐大奖简介</span></div>
+				{db sql="select * from #table_section  where memo ='huoshow_zhuanti_2011vma_index_jianjie'"}
+                {$r[data]}
+                {/db}
+				<div class="right_250_Graphic">
+				</div>
+				
+			</div>
+		</div>
+		<div class="Space_8px"></div>
+		<div class="tp_box_250">
+				<div class="right_250_bt"><span class="right_250_wz">乐迷调查</span></div>
+				<div class="clear"></div>
+				<div class="W250_tuopiao_text">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_vote' ORDER BY d.sort desc limit 1"}
+					<h1 class="Text_color">{str_cut($r[title],30,'')}</h1>
+					{str_cut($r[description],30)}</div>
+					{/db}
+				<div class="W250_tuopiao_text_list">
+				<form id="vote_{$r[contentid]}" name="vote_{$r[contentid]}" method="post" action="{APP_URL}?app=vote&controller=vote&action=vote" target="_blank">	           
+            <input name="contentid" type="hidden" value="{$r[contentid]}" />
+					<ul>
+						{db sql="select d.*,v.type from #table_section_data d LEFT JOIN #table_section s ON d.sectionid = s.sectionid LEFT JOIN #table_vote v ON d.contentid = v.contentid where s.memo ='huoshow_zhuanti_2011vma_index_vote' and d.contentid !='' order by d.sort  desc limit 1" }
+					
+					<!--{if $r[type]=='radio'}-->
+					<?php $type=$r[type];?>
+					{db sql="select * from #table_vote_option where contentid =	$r[contentid] "}
+						<li>
+							
+							<input type="{$type}" name="optionid" value="{$r[optionid]}" />
+							{$r[name]}
+						</li>
+					{/db}
+					<!--{else}-->
+					{db sql="select * from #table_vote_option where contentid = $r[contentid] "}
+						<li>							
+							<input type="{$type}" name="optionid[]" value="{$r[optionid]}" />
+							{$r[name]}
+						</li>
+					{/db}
+					<!--{/if}-->
+					<script type="text/javascript">
+					            //验证投票选项
+					            (function($){
+					             $('#vote_{$r[contentid]}').submit(function(){
+					                 var checkeds = $('#vote_{$r[contentid]} input:checked').length;
+					                 if(checkeds == 0){
+					                 alert('请选择投票选项');
+					                 return false;
+					                 }
+					                 <!--{if $type == 'checkbox'}-->
+					                 if(checkeds > {$maxoptions}){
+					                 alert('最多允许选{$maxoptions}项');
+					                 return false;
+					                 }
+					                 <!--{/if}-->
+					                 })
+					             })(jQuery);
+							</script>
+				{/db}
+					</ul>	
+					<div><input type="image" src="{WWW_URL}img/templates/zhuanti/images/2011vma/input.png" class="toutiao_anniu" name="toutiao_anniu"></div>
+				</form>
+				</div>
+		</div>
+	</div>
+    
+  </div>
+  <div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="zt_more"></span>
+<span class="nr_960_wz">艺人风采</span>
+			</div>
+			<div class="zhuyan_pic">
+				<ul>
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_fengcai' and d.thumb!='' ORDER BY d.sort desc limit 8"}
+					<li> <a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="220" height="161" /></a><a href="{$r[url]}">{str_cut($r[title],32,'')}</a></li>
+					{/db}
+				</ul>
+			</div>
+		</div>
+	</div>
+			<div class="Space_8px"></div>
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">年度音乐录影带提名</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_nianduyinyue' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a title="{$r[title]}" href="{$r[url]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+				<div class="Space_8px"></div>
+				<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">最佳男歌手录影带提名</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_zuijianan' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a title="{$r[title]}" href="{$r[url]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+				<div class="Space_8px"></div>
+				<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">最佳女歌手录影带提名</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_zuijianv' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a title="{$r[title]}" href="{$r[url]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+					<div class="Space_8px"></div>
+
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">年度最佳流行音乐录影带大奖提名</span>	</div>
+		<div class="mtv_zt_video_nr">
+			<ul class="mtv_zt_video_list">
+				{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_zuijiaxinren' and d.thumb!='' ORDER BY d.sort desc limit 5"}
+				<li><span class="top_video_pic_bg"><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="83" /></a></span><span class="top_video_text"><a title="{$r[title]}" href="{$r[url]}">{str_cut($r[title],20,'')}</a></span></li>
+				{/db}
+			</ul>
+		</div>	
+		</div>
+	</div>
+						<div class="Space_8px"></div>
+
+<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">	<span class="nr_960_wz">上届典礼回顾</span>	</div>
+		<div class="zt_video_nr" id="scrollbox3">
+			<div class="zt_video_left"></div>
+			<ul class="zt_video_list">
+			{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_index_shangjiedianli' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+				<li><span class="top_video_pic_bg2"><a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="134" height="100" /></a></span><span class="top_video_text"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20)}</a></span></li>
+			{/db}
+			</ul>
+			<div class="zt_video_right"></div>
+			<script>
+          var scrollbox3 = make_scrollbox('scrollbox3', {
+            item: 'li',
+            prev: '.zt_video_left',
+            next: '.zt_video_right',
+            interval: 3
+          });
+        </script>	
+		</div>	
+		</div>
+	</div>
+	<div class="Space_8px"></div>
+
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">			<span class="zt_more"><a href="http://www.huoshow.com/app/?app=search&controller=index&action=search&type=all&wd=2011+MTV%E9%9F%B3%E4%B9%90%E5%BD%95%E5%BD%B1%E5%B8%A6%E5%A4%A7%E5%A5%96&advanced=&catid=&order=&before=&after=">更多 >></a></span>
+<span class="nr_960_wz">所有新闻</span>
+			</div>
+			<div class="Center_news_01">
+					<ul class="Center_newslist_01">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_news' ORDER BY d.sort desc limit 15"}
+						<li><span class="Center_newslist_Date_01">{date("Y-m-d", $r[published])}</span><span class="Center_newslist_dian_01"></span><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></li>
+						{/db}
+					</ul>
+				</div>
+				<div class="Center_news_02">
+					<ul class="Center_newslist_01">
+					{db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_zhuanti_2011vma_news' ORDER BY d.sort desc limit 15,15"}
+						<li><span class="Center_newslist_Date_01">{date("Y-m-d", $r[published])}</span><span class="Center_newslist_dian_01"></span><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></li>
+						{/db}
+					</ul>
+				</div>
+		</div>
+	</div>
+	<!--{template 'article/2011vma_comment.html'}--> 
+	
+  </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+<!--{template 'zhuanti/2011vma/footer.html'}-->
+</body>
+</html>

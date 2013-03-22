@@ -1,0 +1,27 @@
+<!--{subtemplate common/header}-->
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+		<em>&rsaquo;</em> <a href="home.php">$_G[setting][navs][4][navname]</a>
+	</div>
+</div>
+
+
+<style id="diy_style" type="text/css"></style>
+
+<div id="ct" class="ct3_a wp cl">
+	<div class="appl">
+		<!--{template common/userabout}-->
+	</div>
+	<div class="mn" style="float:left;margin-left:5px;">
+		<!--{eval require_once(DISCUZ_ROOT."huoshow/module/home/home_weibo_all_sys_dynamic.php");}-->
+	</div>
+	<div style="float:right;width:245px;" > 
+		<!-- 可能感兴趣的人 -->
+		<!--{eval require_once(DISCUZ_ROOT."huoshow/module/home/home_weibo_recommend.php");}-->
+		<!-- 人气用户推荐 -->
+		<!--{eval require_once(DISCUZ_ROOT."huoshow/module/home/home_weibo_hotrecommend.php");}-->
+	</div>
+</div>
+<!--{template common/footer}-->

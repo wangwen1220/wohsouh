@@ -1,0 +1,40 @@
+{subtemplate home/space_live_header}
+<div class="clean" id="clean"></div>
+<link href="/static2/live_room.css?{VERHASH}" rel="stylesheet" type="text/css" />
+<link href="/static2/chat.css?{VERHASH}" rel="stylesheet" type="text/css" />
+
+<object type="application/x-shockwave-flash" style="position:absolute; width:200px; height:200px; left:-99999em;" 
+  data="/static2/live/chat.swf?{VERHASH}" name="chat_client" id="chat_client">
+  <param value="/static2/live/chat.swf?{VERHASH}" name="movie">
+  <param value="always" name="allowScriptAccess">
+  <param name="flashvars" value="roomId={$space[uid]}">
+</object>
+
+<script>
+  var ENV = {
+    chatServerHost: '{MSN_HOST}',
+    chatServerPort: '{MSN_PORT}',
+
+    roomType: "{$roomType}",
+    roomId: '{$space[uid]}',
+
+    ownerId: '{$space[uid]}',
+    ownerName: '<!--{if $space[nickname]}-->$space[nickname]<!--{else}-->$space[username]<!--{/if}-->',
+
+    userId: '{$_G[uid]}',
+    userType: '{$usertype}',
+    userName: '<!--{if $_G[member][nickname]}-->$_G[member][nickname]<!--{else}-->$_G[username]<!--{/if}-->',
+
+    liveServer: '{FMS_SERVER}',
+    liveId: '{$live_uid}'
+  };
+  ENV.giftFiles = {};
+  <!--{loop $giftType $key $value}-->
+  <!--{loop $giftList[$value[typeid]] $k $v}-->
+  ENV.giftFiles["{$v[giftid]}"] = "{$v[image]}";
+  <!--{/loop}-->
+  <!--{/loop}-->
+</script>
+
+<div class="wrap wp w cl">
+    <div id="live_body">

@@ -1,0 +1,67 @@
+<!--{template 'huoshow_game/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<div class="main_body">
+	<div class="game_W960">
+
+          <div class="game_W960_01" id="game_beauty">
+            <div class="game_title_bg_960"> <span class="game_right_title_bz"></span>
+              <h2 class="title_Black_02">推荐小游戏</h2>					
+            </div>
+            <div class="xiaogame_jiantou"><a href="javascript:;"></a></div>
+            <div class="xiao_game_pic_list_01">
+              <ul>
+                {db sql="SELECT * FROM #table_section s LEFT JOIN #table_section_data d ON d.sectionid=s.sectionid WHERE s.memo = 'huoshow_littlegame_little' and d.thumb!='' ORDER BY d.sort desc limit 10"}
+                <li>
+                <a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="90" height="80" /></a>
+                <a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],10,'')}</a>
+                </li>
+                {/db}
+              </ul>
+            </div>
+            <div class="xiaogame_jiantou_01"><a href="javascript:;"></a></div>
+          </div>
+          <script>
+            var game_scrollview1 = make_scrollbox('game_beauty', {
+            item: 'li',
+            prev: '.xiaogame_jiantou',
+            next: '.xiaogame_jiantou_01',
+            interval: 3
+            }); 
+          </script>
+
+		</div>
+		<div class="game_W960">
+
+                  <div class="game_W960_01" id="tiny_game_tabview1">
+                    <div class="game_title_bg_960">
+                      <div class="xiao_game_bt">
+                        <a href="javascript:;" class="hover_game" onclick="hs.getAndFill('{ROOT}api/article.php?act=getLittleGame&type=huoshow_littlegame_dongzuo', hs.$('box_dongzuo'));">动作小游戏 </a>
+                        <a href="javascript:;" onclick="hs.getAndFill('{ROOT}api/article.php?act=getLittleGame&type=huoshow_littlegame_zhuangban', hs.$('box_zhuangban'));">装扮小游戏</a>
+                        <a href="javascript:;" onclick="hs.getAndFill('{ROOT}api/article.php?act=getLittleGame&type=huoshow_littlegame_sheji', hs.$('box_sheji'));">射击小游戏</a>    
+                        <a href="javascript:;" onclick="hs.getAndFill('{ROOT}api/article.php?act=getLittleGame&type=huoshow_littlegame_tiyu', hs.$('box_tiyu'));">体育小游戏</a>
+                      </div> 
+                      <span class="xiaogame_more"><a target="_blank" href="">&lt;&lt; 更多</a></span>	
+                    </div>
+                    <div class="xiao_game_pic_list" id="box_dongzuo">&nbsp;</div>
+                    <div class="xiao_game_pic_list" id="box_zhuangban">&nbsp;</div>
+                    <div class="xiao_game_pic_list" id="box_sheji">&nbsp;</div>
+                    <div class="xiao_game_pic_list" id="box_tiyu">&nbsp;</div>
+                  </div>
+                  <script>
+                    window.tiny_game_tabview1 = make_pagebox('tiny_game_tabview1', {
+                    links_selector: '.xiao_game_bt a',
+                    pages_selector: '.xiao_game_pic_list',
+                    current_class: 'hover_game'
+                    }); 
+                    hs.getAndFill('{ROOT}api/article.php?act=getLittleGame&type=huoshow_littlegame_dongzuo', hs.$('box_dongzuo'));
+                  </script>
+
+		</div>
+	<!--Left End--> 
+	<!--Right-->
+
+	<div class="clear"></div>
+	<!--Partners-->
+</div>
+<div class="clear"></div>
+<!--{template 'huoshow_game/footer.html'}-->

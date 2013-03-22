@@ -1,0 +1,54 @@
+<div class="Comments">
+<div class="Comments_bt"><h1 class="Comments_bt_bold"> 网友评论</h1><span class="tiaoshu">已有 <span class="er_hong">0</span> 人参与评论</span><span class="See_all"><a href="{WWW_URL}app/?app=comment&amp;controller=comment&amp;action=index&amp;contentid=29855">查看全部</a></span></div>
+<ul class="Comments_text" id="latestComment"></ul>
+<div class="Published">
+<div class="Published_liuyan">
+    <form id="commentForm" name="cform" action="{APP_URL}?app=comment&controller=comment&action=add" method="post">	
+      <input type="text" style="display:none;" name="contentid" value="29855">
+      <textarea name="content"  rows="10" cols="58"class="Published_liuyan_k" id="comment_textarea"></textarea>
+      <span style="display:inline;float:right">
+        <input type="submit" style="background: url('{WWW_URL}img/templates/zhuanti/images/harrypotter/Published_anniu.jpg');border:0 none; width:72px;height:23px;" value=""/>
+      </span>
+    </form>
+</div>
+<p class="Published_liuyan_text">1.遵守中华人民共和国有关法律、 法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。<br>
+2.本站拥有管理笔名和留言的一切权力。<br>
+3.您的言论，本站有权在网站内转载或引用。<br>
+4.评论仅供网友表达个人看法，不代表本站立场
+</p>
+</div>
+</div>
+<script type="text/javascript">
+(function($){
+	$('#commentForm').submit(function() 
+	{
+		if ($.trim($('#comment_textarea').val()) == '') {
+			alert('评论内容不能为空');
+			return false;
+		}
+	})
+
+	window.getComments = function()
+	{
+		var commentTpl = '<li><span>{date}</span><a class="Comments_text_lan">{location}网友[{nickname}]：</a><br>{content}</li>';
+		$.getJSON('{WWW_URL}app/?app=comment&controller=comment&action=get&contentid=29855&jsoncallback=?', function(json){
+			
+			if(json.total>0) {
+				$('.er_hong').html(json.total);
+				$('.commentnums').html(json.total);
+				if(json.total >0 ) $('.view-comment').show();
+				for (var i=0,item;item=json.data[i++];) {
+	                var html = commentTpl;
+					for (var key in item) {
+						html = html.replace(new RegExp('{'+key+'}',"gm"), item[key]);
+					}					
+					$("#latestComment").append(html);
+				}
+			}else{
+				$("#latestComment").append('<dt><span>暂无评论...</span></dt>');
+			}
+		})
+	}
+	getComments();
+})(jQuery);
+</script>

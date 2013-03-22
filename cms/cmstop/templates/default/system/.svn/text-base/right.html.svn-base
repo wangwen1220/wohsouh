@@ -1,0 +1,60 @@
+		<div class="col-r-extra w-318" style="border:solid 1px #eeeeee;">
+			<div class="bor-9fc" style="border:solid 0px ;">
+					<div class="mode-head"  style="background-position: left -0px;border-bottom:solid 1px #eeeeee;">
+						<h2 class="cor-c00">每日推荐</h2>
+					</div>
+					<div class="mode-txtlink line-h22 cor-4545">
+						<!--#include virtual="{ROOT}section/30.html"--><!-- 文章页：每日推荐 -->
+					</div>
+				</div>
+			<div class="col-r-extra w-318" style="border-left:solid 0px #eeeeee;">
+				<!-- start 热门评论 -->
+				<div style="border-top:solid 1px #eeeeee;">
+					<div class="mode-tabs padd-r-0" style="background-position: left -0px;width:310px;">
+						<h2 class="cor-c00">新闻排行</h2>
+						<ul id="tab-title-4" class="fs-12 f-r">
+							<li><a class="tabs-focus" href="#rank_day">日</a></li>
+							<li><a href="#rank_week">周</a></li>
+							<li><a href="#rank_month">月</a></li>
+						</ul>
+					</div>
+					<div id="tab-cont-4" class="padd-tb-8">
+						<div class="hot-subject-wrap" id="rank_day">
+							<ul>
+							<!--{content published="1" orderby="comments desc" size="10"}-->
+								<li>
+									<span>{$r['comments']}</span>
+									<p><a href="{$r['url']}">{$r['title']}</a></p>
+									<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+								</li>
+							<!--{/content}-->
+							</ul>
+						</div>
+						<div class="hot-subject-wrap" style="display: none;" id="rank_week">
+							<ul>
+								<!--{content published="7" orderby="comments desc" size="10"}-->
+								<li>
+									<span>{$r['comments']}</span>
+									<p><a href="{$r['url']}">{$r['title']}</a></p>
+									<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+								</li>
+								<!--{/content}-->
+							</ul>
+						</div>
+						<div class="hot-subject-wrap" style="display: none;" id="rank_month">
+							<ul>
+								<!--{content published="30" orderby="comments desc" size="10"}-->
+								<li>
+									<span>{$r['comments']}</span>
+									<p><a href="{$r['url']}">{$r['title']}</a></p>
+									<div class="hr-dotted hr-h6 hot-subject-hr"></div>
+								</li>
+								<!--{/content}-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- end 热门评论 -->
+				<div class="hr-h10"></div>
+			</div>
+		</div>	

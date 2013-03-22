@@ -1,0 +1,56 @@
+<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="{WWW_URL}star/huoshowmingxing">火秀明星</a></li>
+				<li class="menu-title"><a href="{WWW_URL}star/neidimingxingjuhe">内地明星</a>
+					<ul class="dropdawn">
+					<li><a href="{WWW_URL}star/neidimingxing/neidijiaodian/">内地焦点</a></li>
+					<li><a href="{WWW_URL}star/neidimingxing/neidimingxingdongtai/">明星动态</a></li>
+					<li><a href="{WWW_URL}star/neidimingxing/jiepai/">街拍</a></li>
+					</ul>
+				</li>
+				<li class="menu-title"><a href="{WWW_URL}star/gangtaimingxingjuhe">港台明星</a>
+					<ul class="dropdawn">
+					<li><a href="{WWW_URL}star/gangtaimingxing/xingdongtai/">星动态</a></li>
+					<li><a href="{WWW_URL}star/gangtaimingxing/gangtaijiaodian/">港台热点</a></li>
+					<li><a href="{WWW_URL}star/gangtaimingxing/xingshipin/">星视频</a></li>
+					</ul>
+				</li>
+				<li class="menu-title"><a href="{WWW_URL}star/rihanmingxingjuhe">日韩明星</a>
+					<ul id='ulmask' class="dropdawn">
+					<li><a href="{WWW_URL}star/rihanmingxing/rihanjiaodian/">日韩焦点</a></li>
+					<li><a href="{WWW_URL}star/rihanmingxing/rihanxingdongtai/">星动态</a></li>
+					<li><a href="{WWW_URL}star/rihanmingxing/xingxiu/">星秀</a></li>
+					</ul>
+				</li>
+				<li class="menu-title"><a href="{WWW_URL}star/oumeimingxingjuhe">欧美明星</a>
+					<!--[if lte IE 6.5]><div class='dropdawn sl_selectmask'><![endif]-->
+					<ul class="dropdawn ulmask">
+					<li><a href="{WWW_URL}star/oumeimingxing/oumeijiaodian/">欧美焦点</a></li>
+					<li><a href="{WWW_URL}star/oumeimingxing/oumeixingdongtai/">星动态</a></li>
+					<li><a href="{WWW_URL}star/oumeimingxing/oumeijiontu/">欧美街拍</a></li>
+					<li><a href="{WWW_URL}star/oumeimingxing/xingshipin/">星视频</a></li>
+					</ul>
+					<!--[if lte IE 6.5]><iframe id='iframemask' height='152' src="javascript:'';"></iframe>
+					</div><![endif]-->
+				</li>
+				<li><a href="{WWW_URL}pic/photo">明星图库</a></li>
+			</ul>
+		</div>
+<script type="text/JavaScript">
+navHover = function() {
+var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+for (var i=0; i<lis.length; i++) {
+lis[i].onmouseover=function() {
+this.className+=" iehover";
+}
+lis[i].onmouseout=function() {
+this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+}
+}
+}
+if (window.attachEvent) window.attachEvent("onload", navHover);
+
+//var iframemask = document.getElementById("iframemask");
+//var ulmask = document.getElementById("ulmask");
+//iframemask.style.height='100';
+</script>

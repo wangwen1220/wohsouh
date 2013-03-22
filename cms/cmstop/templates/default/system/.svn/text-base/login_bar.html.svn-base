@@ -1,0 +1,25 @@
+<!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+			<a target="_blank" href="{WWW_URL}">首页</a>-<a target="_blank" href="{WWW_URL}events/">赛事</a>-<a target="_blank" href="{WWW_URL}star/">明星</a>-<a target="_blank" href="{WWW_URL}movie/">影视</a>-<a target="_blank" href="{WWW_URL}music/">音乐</a>-<a target="_blank" href="{WWW_URL}game/">游戏</a>-<a target="_blank" href="{WWW_URL}pic/">美图</a>
+		</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('{DX_URL}api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->

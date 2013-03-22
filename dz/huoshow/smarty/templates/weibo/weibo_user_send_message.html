@@ -1,0 +1,45 @@
+<div class="blr" style="width:400px; background:url(/static2/images/gifts/liwu05.jpg)">
+  <h3 id="layer_reginfo_t" class="flb">
+    <em id="returnmessage4">发送私信</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('register')" title="关闭">关闭</a></span>
+  </h3>
+  <div>
+
+    <textarea class="input_text headtextarea" style="width:370px;margin-left:10px;" name="content" id="text_content"></textarea>
+    <p class="qiedingbg">
+      <a href="javascript:;" id="submitcom" onclick="return !!add();" ><img width="86" height="24" alt="确定"  src="/static2/images/gifts/liwu4.png"></a>
+      <a href="javascript:;" onclick="hideWindow('register')"><img width="86" height="24" alt="取消" src="/static2/images/gifts/liwu5.png"></a>
+      </p>
+  </div>
+</div>
+<script>
+(function($){
+  window.add = function(){
+    $("#submitcom").attr({"onclick":""});
+    var textContent = $('#text_content').val();
+    var url = '/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_add_send_message&src_uid=<?php echo $src_uid?>&dst_uid=<?php echo $dst_uid?>';
+    $.post(url,{name: textContent},function(data) {
+      if(data=='1'){
+        alert('发送私信成功');
+        hideWindow('register');
+        return;
+      }else{
+        alert('发送私信失败');
+        hideWindow('register');
+      }
+    });
+    doane();
+  }
+
+  //修正 IE6 SELECT 遮住 DIV 问题
+  if(ie6){
+  $(function(){
+    var $dialog = $('#fwin_register');
+    $dialog.children('.blr').wrap("<div class='ie6select' />");
+    var $dialog_width = $('div.ie6select').width() + 10;
+    var $dialog_height = $('div.ie6select').height() + 10;
+    $dialog.prepend("<iframe class='ie6select' src='javascript:;' frameborder='0' style='position: absolute; z-index: -1; width:" + $dialog_width + "px; height: " + $dialog_height + "px;' />");
+  });
+  }
+})(jQuery);
+</script>

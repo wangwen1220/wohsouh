@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+<meta name="description" content="" />
+    <title>小游戏_火秀游戏_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/game.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+    <body class="body_bg">
+      <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a href="http://www.huoshow.com/">首页</a>-<a href="http://space.huoshow.com/show.php">直播</a>-<a href="http://www.huoshow.com/movie/">影视</a>-<a href="http://www.huoshow.com/music/">音乐</a>-<a href="http://www.huoshow.com/game/">游戏</a>-<a href="http://www.huoshow.com/myshow/">My秀</a>-<a href="http://space.huoshow.com/group.php">群组</a>-<a href="http://space.huoshow.com/home.php">空间</a>-<a href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+      <!--Navigator-->
+      <div class="nav_bg">
+        <div class="nav_body">
+          <a href="http://www.huoshow.com/game/" title="火秀游戏首页" class="channel_logo">火秀游戏频道</a>
+          <div id="sub_channel">
+            <a href="http://www.huoshow.com/game/webgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_01.png" width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/onlinegame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_02.png" width="75" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/mobile_game/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_03.png"  width="77" height="20"/></a>  
+            <a href="http://www.huoshow.com/game/pcgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_04.png"  width="75" height="19"/></a>  
+            <a href="http://www.huoshow.com/game/flashgame/"><img src="http://www.huoshow.com/img/templates/huoshow02/images/game_nav_05.png" width="56" height="19"/></a>
+          </div>
+        </div>
+      </div>
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   您现在的位置：<a href="http://www.huoshow.com/">火秀 </a>  > <a href="http://www.huoshow.com/game/index.shtml">火秀游戏</a> > <a href="http://www.huoshow.com/game/flashgame/index.shtml">小游戏</a>	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<div class="main_body">
+<div class="game_W960">
+
+          <div class="game_W960_01" id="game_beauty">
+            <div class="game_title_bg_960"> <span class="game_right_title_bz"></span>
+              <h2 class="title_Black_02">推荐小游戏</h2>					
+            </div>
+            <div class="xiaogame_jiantou"><a href="javascript:;"></a></div>
+            <div class="xiao_game_pic_list_01">
+              <ul>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0707/15114.shtml"><img src="http://www.huoshow.com/upload/2011/0707/1310019688413.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0707/15114.shtml">白领美妆</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14928.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309939021930.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14928.shtml">铠甲勇士激</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14924.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309938635758.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14924.shtml">高尔夫杀手</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14865.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309934770369.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14865.shtml">外星小斗士</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14857.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309934126916.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14857.shtml">奥特曼扁怪</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14854.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309933394230.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14854.shtml">猎宝女剑士</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14852.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309933192862.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14852.shtml">黑刀猎人</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14844.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309932374512.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14844.shtml">铠甲勇士之</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14838.shtml"><img src="http://www.huoshow.com/upload/2011/0706/1309925327932.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0706/14838.shtml">街头血战无</a>
+                </li>
+                                <li>
+                <a target="_blank" href="http://www.huoshow.com/2011/0705/14705.shtml"><img src="http://www.huoshow.com/upload/2011/0705/1309852239741.jpg" width="90" height="80" /></a>
+                <a target="_blank" href="http://www.huoshow.com/2011/0705/14705.shtml">陆战射击演</a>
+                </li>
+                              </ul>
+            </div>
+            <div class="xiaogame_jiantou_01"><a href="javascript:;"></a></div>
+          </div>
+          <script>
+            var game_scrollview1 = make_scrollbox('game_beauty', {
+            item: 'li',
+            prev: '.xiaogame_jiantou',
+            next: '.xiaogame_jiantou_01',
+            interval: 3
+            }); 
+          </script>
+
+</div>
+<div class="game_W960">
+
+                  <div class="game_W960_01" id="tiny_game_tabview1">
+                    <div class="game_title_bg_960">
+                      <div class="xiao_game_bt">
+                        <a href="javascript:;" class="hover_game" onclick="hs.getAndFill('/api/article.php?act=getLittleGame&type=huoshow_littlegame_dongzuo', hs.$('box_dongzuo'));">动作小游戏 </a>
+                        <a href="javascript:;" onclick="hs.getAndFill('/api/article.php?act=getLittleGame&type=huoshow_littlegame_zhuangban', hs.$('box_zhuangban'));">装扮小游戏</a>
+                        <a href="javascript:;" onclick="hs.getAndFill('/api/article.php?act=getLittleGame&type=huoshow_littlegame_sheji', hs.$('box_sheji'));">射击小游戏</a>    
+                        <a href="javascript:;" onclick="hs.getAndFill('/api/article.php?act=getLittleGame&type=huoshow_littlegame_tiyu', hs.$('box_tiyu'));">体育小游戏</a>
+                      </div> 
+                      <span class="xiaogame_more"><a target="_blank" href="">&lt;&lt; 更多</a></span>	
+                    </div>
+                    <div class="xiao_game_pic_list" id="box_dongzuo">&nbsp;</div>
+                    <div class="xiao_game_pic_list" id="box_zhuangban">&nbsp;</div>
+                    <div class="xiao_game_pic_list" id="box_sheji">&nbsp;</div>
+                    <div class="xiao_game_pic_list" id="box_tiyu">&nbsp;</div>
+                  </div>
+                  <script>
+                    window.tiny_game_tabview1 = make_pagebox('tiny_game_tabview1', {
+                    links_selector: '.xiao_game_bt a',
+                    pages_selector: '.xiao_game_pic_list',
+                    current_class: 'hover_game'
+                    }); 
+                    hs.getAndFill('/api/article.php?act=getLittleGame&type=huoshow_littlegame_dongzuo', hs.$('box_dongzuo'));
+                  </script>
+
+</div>
+<!--Left End--> 
+<!--Right-->
+
+<div class="clear"></div>
+<!--Partners-->
+</div>
+<div class="clear"></div>
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

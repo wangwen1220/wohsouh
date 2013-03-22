@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php
+if($_GET['abc']=='about'){
+	echo '<meta name="keywords" content="火秀网,关于火秀" />';
+	echo '<meta name="description" content="火秀网致结合多种娱乐与互动为主题的功能与应用，结合线上线下活动，提供最新娱乐八卦新闻、在线K歌、以及最新电影、游戏、音乐等最新资讯，是年轻时尚的各类达人在线互动的娱乐门户平台。" />';
+}
+if($_GET['abc']=='ad_server'){
+	echo '<meta name="keywords" content="广告服务" />';
+	echo '<meta name="description" content="火秀网诚邀各大厂商的加盟，火秀广告服务为您的企业发展带入更广阔的天地." />';
+}
+if($_GET['abc']=='contactus'){
+	echo '<meta name="keywords" content="联系电话,邮箱,地址" />';
+	echo '<meta name="description" content="这是火秀网的联系方式,包括火秀网的联系电话,邮箱和地址." />';
+}
+if($_GET['abc']=='partners'){
+	echo '<meta name="keywords" content="商业合作,合作伙伴" />';
+	echo '<meta name="description" content="在这里你能看到与我们火秀网合作的商业伙伴." />';
+}
+if($_GET['abc']=='joinus'){
+	echo '<meta name="keywords" content="招聘,找工作" />';
+	echo '<meta name="description" content="火秀网因发展需要，需招聘各种人才，真诚地期待您的加入，找工作，就来火秀。" />';
+}
+?>
+<title><?php
+if($_GET['abc']=='about'){
+	echo '关于火秀_';
+}
+if($_GET['abc']=='ad_server'){
+	echo '广告服务_';
+}
+if($_GET['abc']=='contactus'){
+	echo '联系我们_';
+}
+if($_GET['abc']=='partners'){
+	echo '合作伙伴_';
+}
+if($_GET['abc']=='joinus'){
+	echo '诚聘英才_';
+}
+if($_GET['app']=='comment') echo '评论：';
+?>{if $title!=''}{$title}_{/if}{if $name}{$name}_{/if}{$SYSTEM[sitename]}</title>
+<link href="{WWW_URL}img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+<link href="{WWW_URL}img/templates/huoshow02/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="{IMG_URL}templates/huoshow_01/js/basic.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/config.js"></script>
+<script type="text/javascript" src="{DX_URL}static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+
+</head>
+
+<body class="body_bg">
+<!--Site Header-->
+<!--{template 'system/login_bar.html'}-->
+
+<!--Site Header End--> 
+<!--Navigator-->
+
+{if $_GET['app'] == 'comment' || $_GET['app'] == 'vote' || $modelid == 6}
+{else}
+
+<div class="nav_bg">
+	<h1 class="channel_logo"><a href="{WWW_URL}">火秀网</a></h1>
+	<div id="sub_channel">
+		<ul>
+			<li><a target="_blank" href="{WWW_URL}">首页</a></li>
+			<li><a target="_blank" href="{DX_HUOSHOW_SHOW_URL}">直播大厅</a></li>
+			<li><a target="_blank" href="{WWW_URL}events/">赛事</a></li>
+			<li><a target="_blank" href="{WWW_URL}star/">明星</a></li>
+			<li><a target="_blank" href="{WWW_URL}movie/">影视</a></li>
+			<li><a target="_blank" href="{WWW_URL}music/">音乐</a></li>
+			<li><a target="_blank" href="{WWW_URL}game/">游戏</a></li>
+			<li><a href="{WWW_URL}pic/">美图</a></li>
+			<!--<li><a href="#">排行榜</a></li>-->
+			<li><a target="_blank" href="{WWW_URL}myshow/">MY秀</a></li>
+			<li><a target="_blank" href="{DX_URL}group.php">群组</a></li>
+			<li><a target="_blank" href="{DX_URL}home.php">空间</a></li>
+			<li><a target="_blank" href="{DX_HUOSHOW_BBS_URL}">论坛</a></li>
+		</ul>
+	</div>
+	<!--<div class="search_index">
+		<script type="text/javascript">
+		(function($){
+		$(function(){
+			window.clearKeyword = function(){
+				var search_wd = $.trim($("#search_wd").val());
+				if(search_wd=='请输入关键字'){
+					$("#search_wd").val('');
+				}
+				if(search_wd==''){
+					$("#search_wd").val('请输入关键字');
+				}
+			}
+			window.checkSForm = function()
+			{
+				var search_wd = $.trim($("#search_wd").val());
+				if(search_wd=='请输入关键字' || search_wd==''){
+					alert('请输入关键字');
+					return false;
+				}
+			}
+		}) 
+		})(jQuery);
+		</script>
+		<form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+		<input type="hidden" value="search" name="app"/>
+		<input type="hidden" value="index" name="controller"/>
+		<input type="hidden" value="search" name="action"/>
+		<input type="hidden" value="all" name="type"/>
+		<input type="text" class="search_input_index" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><span class="search_button_index">
+		<input type="submit" class="search_submit_index" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" /></span>
+		</form>
+	</div>-->
+	<div class="clear"></div>
+</div>
+
+
+<div class="red_bar">
+	<div class="red_bar_text">
+		<div class="red_bar_today"><span class="red_bar_today_bg"></span>
+		<!--#include virtual ="{ROOT}api/article.php?act=index_time"-->
+		</div>
+		 <div id="header_rollnews_keywords" >                           
+         </div>
+		 <div class="shuru_suosou">
+	 <script>
+      (function($){
+        $(function(){
+
+          window.clearKeyword = function(){
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字'){
+              $("#search_wd").val('');
+            }
+            if(search_wd==''){
+              $("#search_wd").val('请输入关键字');
+            }
+          }
+
+          window.checkSForm = function() {
+            var search_wd = $.trim($("#search_wd").val());
+            if(search_wd=='请输入关键字' || search_wd==''){
+              alert('请输入关键字');
+              return false;
+            }
+          }
+
+        });
+      })(jQuery);
+    </script>
+		<!--<div class="k"><input name="" type="text" class="shuru_k" /></div>
+		<div class="s_suo"><a href=""><img src="images/s_suo.jpg" width="57" height="20" /></a></div>-->
+		<form method="get" name="search" id="search" action="/app/" target="_blank" onSubmit="return checkSForm()">
+      <input type="hidden" value="search" name="app"/>
+      <input type="hidden" value="index" name="controller"/>
+      <input type="hidden" value="search" name="action"/>
+      <input type="hidden" value="all" name="type"/>
+      <input type="text" class="shuru_k" id="search_wd" name="wd" value="请输入关键字"  onclick = "clearKeyword()" onblur = "clearKeyword()" /><div class="s_suo">
+        <input type="submit" class="search_submit_index" value=" " width="57" height="20"/></div>
+    </form>
+	</div>
+         <script>
+	      (function($){
+	          $(function(){
+	            $.getJSON('{WWW_URL}api/article.php?act=get_header_rollnews_keywords&do=ajax&jsoncallback=?', function(d){
+	            	$("#header_rollnews_keywords").html(d.html);
+	            	
+	            });
+	          });
+	        })(jQuery);
+	      </script>
+		
+	</div>
+</div>
+{/if}

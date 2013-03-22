@@ -1,0 +1,54 @@
+
+<div class="comment">
+<h2><span class="post_all">(<a name="to_comment" href="{WWW_URL}app/?app=comment&amp;controller=comment&amp;action=index&amp;contentid={$contentid}" title="点击查看全部评论" target="_blank">共有 <em class="comments">0</em> 条评论</a>)</span>网友评论</h2>
+<div class="clear"></div>
+<div class="latestComment">
+<span class="review_post" id="latestComment"></span> 
+</div>
+<div class="newComment">
+<span class="new_post"><span class="post_all">(<a href="{WWW_URL}app/?app=comment&amp;controller=comment&amp;action=index&amp;contentid={$contentid}" title="点击查看全部评论" target="_blank">共有 <em class="comments">0</em> 条评论</a>)</span>发表评论</span>
+    <form id="commentForm" name="cform" action="{APP_URL}?app=comment&controller=comment&action=add" method="post">	
+      <input type="text" style="display:none;" name="contentid" value="{$contentid}">
+      <textarea name="content"  rows="10" cols="58"class="fullPage_liuyan_kuang" id="comment_textarea"></textarea>
+      <span class="liuyan_anniu">
+        <input type="submit" style="background: url('{WWW_URL}img/templates/huoshow02/images/pic/liuyan_anniu.gif');border: solid 0px;width:82px;height:23px;cursor: pointer; color:#ffffff;" value='发表评论'>
+      </span>
+    </form>
+</div>
+
+</div>
+
+<script type="text/javascript">
+(function($){
+	$('#commentForm').submit(function() 
+	{
+		if ($.trim($('#comment_textarea').val()) == '') {
+			alert('评论内容不能为空');
+			return false;
+		}
+	})
+
+	window.getComments = function()
+	{
+		var commentTpl = "<dt><span class='user-info'>{location}网友 [{nickname}]： </span><span class='post-time'>{date}</span></dt><dd><p class='post-body'>{content}</p><div class='hr-dotted hr-h10'></div></dd>";
+		$.getJSON('{WWW_URL}app/?app=comment&controller=comment&action=get&contentid={$contentid}&jsoncallback=?', function(json){
+			
+			if(json.total>0) {
+				$('.comments').html(json.total);
+				$('.commentnums').html(json.total);
+				if(json.total >0 ) $('.view-comment').show();
+				for (var i=0,item;item=json.data[i++];) {
+	                var html = commentTpl;
+					for (var key in item) {
+						html = html.replace(new RegExp('{'+key+'}',"gm"), item[key]);
+					}					
+					$("#latestComment").append(html);
+				}
+			}else{
+				$("#latestComment").append('<dt><span>暂无评论...</span></dt>');
+			}
+		})
+	}
+	getComments();
+})(jQuery);
+</script>

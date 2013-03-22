@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="最新电影,经典电影,韩剧,最新韩剧,热播电视剧,好看的电影,恐怖片,tvb" />
+<meta name="description" content="火秀游戏为您提供最全面的最新的影视资讯，包括最新电影，韩剧，热播电视剧等，我们为您打造最全面影视娱乐平台。" />
+    <title>火秀影视_火秀网</title>
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.huoshow.com/img/templates/huoshow02/css/movie.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/templates/huoshow_01/js/basic.js"></script>
+    <script type="text/javascript" src="http://www.huoshow.com/img/js/config.js"></script>
+    <script type="text/javascript" src="http://space.huoshow.com/static2/js/huoshow_common.js"></script>
+<script type='text/javascript' src='http://misc.huoshow.com/www/delivery/spcjs.php?id=1'></script>
+    <!--[if IE 6]>
+    <script src="http://www.huoshow.com/img/templates/huoshow02/js/DD_belatedPNG.js"></script>
+    <script>
+      /* 示例 */
+      DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+      /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+      /* 如果要直接插入png图片，在单引号内加入img即可。 */
+    </script>
+    <![endif]-->
+  </head>
+
+  <body class="body_bg">
+    <!--Site Header-->
+<div class="top_nav">
+  <div class="top_nav_bar">
+    <div class="top_nav_bg">
+      <div class="top_nav_left">
+        <div class="common">
+<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://space.huoshow.com/show.php">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://space.huoshow.com/forum.php">论坛</a>
+</div>
+      </div>
+
+      <div class="top_nav_right" id="login_bar">&nbsp;</div>
+      <script>
+      (function($){
+          $(function(){
+            $.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+              $("#login_bar").html(d.html);
+            });
+          });
+        })(jQuery);
+      </script>
+
+    </div>
+  </div>
+</div>    
+<!--Site Header End-->
+    
+    <!--Navigator-->
+    <div class="nav_body">
+      <div class="nav_bg">
+        <h1 class="channel_logo"><a href="http://www.huoshow.com/movie/" title="火秀影视首页">火秀影视频道</a></h1>
+        <div id="sub_channel">
+          <ul>
+            <li><a id="ch_huayu" href="http://www.huoshow.com/movie/huayu/">华语</a></li>
+            <li><a id="ch_oumei" href="http://www.huoshow.com/movie/oumei/">欧美</a></li>
+            <li><a id="ch_rihan" href="http://www.huoshow.com/movie/rihan/">日韩</a></li>
+            <li><a id="ch_yingren" href="http://www.huoshow.com/movie/yingren/">影人</a></li>
+            <li><a id="ch_yingping" href="http://www.huoshow.com/movie/yingping/">影评</a></li>
+            <li><a id="ch_juzhao" href="http://www.huoshow.com/movie/juzhao/">剧照</a></li>
+            <li><a id="ch_pianhua" href="http://www.huoshow.com/movie/pianhua/">片花</a></li>
+         <!--<li><a id="ch_zhuanti" href="http://www.huoshow.com/movie/zhuanti/">专题</a></li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navigator End-->
+
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+    <input type="hidden" value="search" name="app"/>
+    <input type="hidden" value="index" name="controller"/>
+    <input type="hidden" value="search" name="action"/>
+
+    <input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+    <select name="type" id="search_type" >
+      <option value="article">新闻</option>
+      <option value="all">全站</option>
+      <option value="picture">图片</option>
+      <option value="video">视频</option>
+    </select>
+    <input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+   	
+  </span>
+</div>
+
+<script>
+  $(function(){
+    window.clearKeyword = function(){
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字'){
+        $("#search_wd").val('');
+      }
+      if(search_wd==''){
+        $("#search_wd").val('请输入关键字');
+      }
+    }
+    window.checkSForm = function()
+    {
+      var search_wd = $.trim($("#search_wd").val());
+      if(search_wd=='请输入关键字' || search_wd==''){
+        alert('请输入关键字');
+        return false;
+      }
+    }
+  })
+</script>
+<!--Main Body-->
+<div class="main_body">
+  <!--Left-->
+  <div class="body_left">
+    <!--Slide-->
+    <div class="slide" id="pbox3">
+      <!-- 轮换大图片 -->
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0919/1316429243230.jpg" width="702" height="365" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a href="http://www.huoshow.com/2011/0919/29973.shtml" title="瓜子脸美女模特艾米莉亚内衣写真" target="_blank">瓜子脸美女模特艾米莉亚内衣写真</a></h3>
+        <p>瓜子脸美女模特艾米莉亚内衣写真</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0916/1316170973375.jpg" width="702" height="365" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a href="http://www.huoshow.com/2011/0916/29431.shtml" title="前巴西小姐波尔图性感透视内衣写真" target="_blank">前巴西小姐波尔图性感透视内衣写真</a></h3>
+        <p>前巴西小姐波尔图(Sasckya Porto)透视内衣写真曝光，性感热辣。</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0914/1315993806173.jpg" width="702" height="365" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a href="http://www.huoshow.com/2011/0914/28271.shtml" title="性感美女裸身按摩全过程" target="_blank">性感美女裸身按摩全过程</a></h3>
+        <p>性感美女裸身按摩全过程 </p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+      	
+      <div class="slide-page">
+        <img src="http://www.huoshow.com/upload/2011/0913/1315909421848.jpg" width="702" height="365" />
+      <div class="slide-page-info">
+        <div class="slide-page-info-text">
+        <h3><a href="http://www.huoshow.com/2011/0913/28137.shtml" title="美女明星清纯玉女董璇高清性感写真" target="_blank">美女明星清纯玉女董璇高清性感写真</a></h3>
+        <p>美女明星董璇高清性感写真 清纯玉女变欲女</p>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      </div>
+            <div class="slide-links-wrap">
+        <a href="#" class="slide-prev">&nbsp;</a>
+        <span class="slide-links">
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+          	
+          <a href="#">&nbsp;</a>
+                  </span>
+        <a href="#" class="slide-next">&nbsp;</a>
+      </div>
+      <script>
+        $(function(){
+          window.pbox3 = make_pagebox('pbox3', {
+            links_selector: '.slide-links a', 
+            current_class: 'slide-current',
+            pages_selector: '.slide-page',
+            prev_selector: '.slide-prev',
+            next_selector: '.slide-next',
+            interval: 4,
+            effect: 1
+          });
+        });
+      </script>
+
+
+    </div>
+    <div class="slide_shadow"></div>
+    <!--Top News-->
+    <div class="top_news">
+      <div class="top_news_left">
+        <div class="top_news_left_inner_bd">
+          <div class="left_title_bg">
+            <h2 class="title_blue">专题</h2>
+            
+          </div>
+          <div class="topic_first">
+                        <dl>
+              <dt><a href="http://www.huoshow.com/2011/0919/29855.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0919/1316429407224.jpg" width="96" height="128"></a></dt>
+              <dd class="topic_first_title"><a href="http://www.huoshow.com/2011/0919/29855.shtml" target="_blank">名车配美女</a></dd>
+              <dd class="topic_first_briefing">名车配美女 劲爆性感惹火美女车模金美辛写真<a href="http://www.huoshow.com/2011/0919/29855.shtml" target="_blank">[详细] </a></dd>
+            </dl>
+                      </div>
+          <ul class="list">
+                        <li><a href="http://www.huoshow.com/2011/0903/25375.shtml" target="_blank">与十大AV女优有“染”的华人男星大曝光</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0831/24417.shtml" target="_blank">爱情连连看</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0829/23945.shtml" target="_blank">美模伊然演绎同性亲密</a></li>
+                        <li><a href="http://www.huoshow.com/zhuanti/apes/" target="_blank">猿族崛起</a></li>
+                        <li><a href="http://www.huoshow.com/zhuanti/HarryPotter/" target="_blank">哈利波特与死亡圣器（下）</a></li>
+                      </ul>
+        </div>
+      </div>
+      <div class="top_news_right">
+        <div class="top_news_right_inner_bd">
+          <div class="right_title_bg">
+            <h2 class="title_blue">头条</h2>
+          </div>
+          <div class="top_news_list">
+                        <a href="http://www.huoshow.com/2011/0923/32163.shtml" target="_blank"><h3 class="top_news_txt_hl">传赵本山或因身体状况缺席张杰谢娜婚礼</h3></a>
+            <p class="top_news_briefing">谢娜张杰的香格里拉大婚还在紧张筹备中，昨日有知情人透露，张杰谢娜婚礼的证婚人赵本山老师临时取消...<a target="_blank" href="http://www.huoshow.com/2011/0923/32163.shtml">[详细]</a></p>
+                        <a href="http://www.huoshow.com/2011/0923/32157.shtml" target="_blank"><h3 class="top_news_txt_hl">马伊琍被指与文章系二婚 与前夫曾育有一子</h3></a>
+            <p class="top_news_briefing">马伊琍与文章是二婚，还与前夫育有一子？昨日有网友在知名论坛发帖，指称现年35岁的马伊琍未红时曾与人...<a target="_blank" href="http://www.huoshow.com/2011/0923/32157.shtml">[详细]</a></p>
+                        <a href="http://www.huoshow.com/2011/0923/32297.shtml" target="_blank"><h3 class="top_news_txt_hl">张艺谋再冲奥斯卡《十三钗》挤掉《赵孤》</h3></a>
+            <p class="top_news_briefing">近日网友爆料称，《金陵十三钗》将代表中国内地参与明年奥斯卡最佳外语片的角逐，电影局国际交流处方...<a target="_blank" href="http://www.huoshow.com/2011/0923/32297.shtml">[详细]</a></p>
+                      </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="top_news">
+      <div class="top_news_left">
+        <div class="top_news_left_inner_bd">
+          <div class="left_title_bg">
+            <h2 class="title_blue">影人</h2>
+            <span class="more"><a href="yingren/" class="more_bg">更多</a></span>
+          </div>
+          <div class="people_first">
+                        <a href="http://www.huoshow.com/2011/0915/28657.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0921/1316598610999.jpg" width="247" height="84" /></a>
+            <a href="http://www.huoshow.com/2011/0915/28657.shtml" target="_blank">杨幂：特想当贤妻良母</a>
+                      </div>
+          <ul class="list">
+                        <li><a href="http://www.huoshow.com/2011/0913/27997.shtml" target="_blank">专访《蜜桃成熟时》吴晴晴</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0909/27521.shtml" target="_blank">专访朱媛媛张嘉译</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0905/25737.shtml" target="_blank">专访日本AV女优吉泽明步</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0903/25229.shtml" target="_blank">郭富城称想50岁前结婚</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0831/24205.shtml" target="_blank">王刚新角色被指现代版和珅</a></li>
+                      </ul>
+        </div>
+      </div>
+      <div class="top_news_right">
+        <div class="top_news_right_inner_bd">
+          <div class="right_title_bg">
+            <h2 class="title_blue">影评</h2>
+            <span class="more"><a href="yingping/" class="more_bg">更多</a></span>
+          </div>
+          <div class="review_first">
+                        <dl>
+              <dt><a href="http://www.huoshow.com/2011/0916/29299.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0916/1316171495270.jpg" width="150" height="105"></a></dt>
+              <dd class="review_first_title"><a href="http://www.huoshow.com/2011/0916/29299.shtml" target="_blank">《大武生》：商业片与艺术片杂交</a></dd>
+              <dd class="review_first_briefing">《大武生》宣传上一直毫不犹豫地打着商业电影的招牌，启用的全偶像明星演员阵容似乎也...<a href="http://www.huoshow.com/2011/0916/29299.shtml" target="_blank">[详细] </a></dd>
+            </dl>
+                      </div>
+          <ul class="list">
+                        <li><a href="http://www.huoshow.com/2011/0907/26503.shtml" target="_blank">《白蛇传说》：老汤新做 别具一格</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0829/23782.shtml" target="_blank">第14届中国电影华表奖：没态度的电影奖</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0827/23713.shtml" target="_blank">《巴黎宝贝》 谁与争锋？</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0825/23339.shtml" target="_blank">《赛车总动员2》：别总对皮克斯要求太高</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0816/22232.shtml" target="_blank">《猿族崛起》，文明的诞生与衰亡</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+    <!--Top Video-->
+    <div class="top_video">
+      <div class="top_video_inner_bd">
+        <div class="cross_title_bg">
+          <h2 class="title_blue_big">精彩片花</h2>
+          <span class="more"><a href="pianhua/" class="more_bg">更多</a></span>
+        </div>
+        <ul class="top_video_list">
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0919/30201.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0919/1316429489169.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0919/30201.shtml" target="_blank">《竞雄女侠秋瑾》预告</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0919/30189.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0919/1316429500294.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0919/30189.shtml" target="_blank">《白蛇传说》曝终极预</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0919/30151.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0919/1316429510942.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0919/30151.shtml" target="_blank">《幸福额度》发主题曲</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0919/30139.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0919/1316429520106.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0919/30139.shtml" target="_blank">《与时尚同居》片花</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0919/30127.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0919/1316429531227.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0919/30127.shtml" target="_blank">《怪物俱乐部》国际版</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0916/29293.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0916/1316171530933.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0916/29293.shtml" target="_blank">《李献计》新特辑曝光</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0906/26175.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0907/1315392506435.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0906/26175.shtml" target="_blank">《亚瑟3：终极对决》预</a></span> </li>
+          <!--  -->
+                              <!--  -->
+          <li><span class="top_video_pic_bg"><a href="http://www.huoshow.com/2011/0906/26091.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0907/1315392489695.jpg" width="134" height="83" /></a></span><span class="top_video_text"><a href="http://www.huoshow.com/2011/0906/26091.shtml" target="_blank">《白蛇传说》曝制作特</a></span> </li>
+          <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                              <!--  -->
+                  </ul>
+      </div>
+    </div>
+  </div>
+  <!--Left End-->
+  <!--Right-->
+  <div class="body_right">
+
+
+    <!--Hot Movie-->
+    <div class="hot_movie" id="pbox1">
+      <div class="hot_movie_cate">
+        <a href="javascript:;" class="movie_cate_def">电影</a>
+        <a href="javascript:;">电视</a>
+      </div>
+      <div class="hot-movie-body">
+        <div class="movie_list">
+          <!--#include virtual ="/api/article.php?act=movie_tv&type=movie"-->   
+        </div>
+        <div class="movie_list">
+          <!--#include virtual ="/api/article.php?act=movie_tv&type=tv"-->   
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function(){
+        window.pbox1 = make_pagebox('pbox1', {
+          links_selector: '.hot_movie_cate a', 
+          current_class: 'movie_cate_def',
+          pages_selector: '.movie_list',
+          event_type: 'mouseover'
+        });
+      });
+    </script>
+
+
+    <!--Charts Movie-->
+    <div class="charts">
+      <div class="charts_inner_bd" id="pbox2">
+        <div class="charts_title">
+          <h2 class="title_black">电影票房排行</h2>
+          <span class="charts_cate"><a href="javascript:;"class="charts_cate_def">内地</a><a href="javascript:;">北美</a></span>
+        </div>
+
+        <div class="charts_block">
+           
+          <!--#include virtual ="/api/article.php?act=movie_rank&type=neidi&in=movie"-->   
+        </div>
+        <div class="charts_block">
+          
+          <!--#include virtual ="/api/article.php?act=movie_rank&type=beimei&in=movie"-->   
+        </div>
+        <script>
+          $(function(){
+            window.pbox1 = make_pagebox('pbox2', {
+              links_selector: '.charts_cate a', 
+              current_class: 'charts_cate_def',
+              pages_selector: '.charts_block',
+              event_type: 'mouseover'
+            });
+          });
+
+        </script>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <!--Banner 250*250-->
+    <div id="banner_movie_left_250_250" class="banner_250_250">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(26);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a5e33ce'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=26&n=a5e33ce' /></a></noscript></div>        <div class="clear"></div>
+    <!--Charts TV-->
+    <div class="charts">
+      <div class="charts_inner_bd">
+        <div class="charts_title">
+          <h2 class="title_black">电视收视排行</h2>
+        </div>
+        <div class="charts_block">
+           <!--#include virtual ="/api/article.php?act=movie_rank&type=huoshow_tv&in=movie"-->   
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Right End-->
+  <div class="clear"></div>
+  <!--Banner 960*90-->
+    <div id="banner_movie_universal_960_90" class="banner_960_90">
+<script type="text/javascript">// <![CDATA[
+// <![CDATA[
+    OA_show(25);
+//
+// ]]></script>
+<noscript><a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=f4c1e40'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=25&n=f4c1e40' /></a></noscript></div>    <!--Body Bottom-->
+  <!--Other News-->
+  <div class="full_block">
+    <div class="full_block_inner_bd">
+      <div class="other_news_title"></div>
+      <div class="other_news_sub">
+        <div class="other_news_sub_title"><h2 class="title_black">华语</h2>
+          <span class="more"><a href="huayu/" class="more_bg">更多</a></span>
+        </div>
+        <div class="list">
+          <ul class="liston">
+                        <li><a href="http://www.huoshow.com/2011/0916/29129.shtml" target="_blank">周星驰为新片禁止好友电联 亲自督导拍摄</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0916/29135.shtml" target="_blank">吴尊叹"偷票房"可惜 渴望接拍文艺片</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0916/29229.shtml" target="_blank">陆川炮轰《鸿门宴》：卑鄙手段脱行业底裤</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0916/29243.shtml" target="_blank">《辛亥革命》首映 成龙只给房祖名20分</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0916/29249.shtml" target="_blank">《挪威的森林》很多激情戏内地看不到</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0916/29261.shtml" target="_blank">《危险关系》张柏芝搭档张东健章子怡</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0919/30173.shtml" target="_blank">《蜜桃成熟时》曝艳色剧照 镜头过于露骨</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0919/30177.shtml" target="_blank">林青霞：当美女好累 我就想做一个写作人</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0919/30209.shtml" target="_blank">《夏日乐悠悠》将映 朱雨辰片中深情献声</a></li>
+                        <li><a href="http://www.huoshow.com/2011/0919/30217.shtml" target="_blank">吴彦祖被曝整容脸变歪 闹乌龙粉丝虚惊一场</a></li>
+                      </ul>
+        </div>
+      </div>
+      <div class="other_news_sub">
+        <div class="other_news_sub_title"><h2 class="title_black">欧美</h2>
+          <span class="more"><a href="oumei/" class="more_bg">更多</a></span>
+        </div>
+        <div class="list">
+          <ul class="liston">
+                        <li><a href="http://www.huoshow.com/2011/0922/32045.shtml" target="_blank">《狂暴飞车》成9月黑马 首周票房破2300万</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0922/32051.shtml" target="_blank">《猩球崛起》10月底内地震撼上映</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0922/32061.shtml" target="_blank">欧洲投入最大的动画电影《亚瑟3》明日上映</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0922/32065.shtml" target="_blank">卡梅隆计划用每秒60帧拍摄《阿凡达》续集</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0922/32067.shtml" target="_blank">莱昂纳多《胡佛》扮相曝光 成奥斯卡热门</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0922/32073.shtml" target="_blank">配乐大师瞄准漫画电影 配乐《新蜘蛛侠》</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0923/32289.shtml" target="_blank">《海洋》放映延长 两月票房近2500万元</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0923/32681.shtml" target="_blank">斯皮尔伯格拍《林肯》 刘易斯加盟演主角</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0923/32685.shtml" target="_blank">《鬼影实录3》海报 小成本恐怖片也玩穿越</a></li>		
+                        <li><a href="http://www.huoshow.com/2011/0923/32689.shtml" target="_blank">《红灯》曝海报 德尼罗大玩“盗梦”悬疑</a></li>		
+                      </ul>
+        </div>
+      </div>
+      <div class="other_news_sub">
+        <div class="other_news_sub_title"><h2 class="title_black">日韩</h2>
+          <span class="more"><a href="rihan/" class="more_bg">更多</a></span>
+        </div>
+        <div class="list">
+          <ul class="liston">
+                        <li><a href="http://www.huoshow.com/2011/0921/31303.shtml" target="_blank">《孤胆特工》被指名字改得太2 观众称是旧片</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0921/31293.shtml" target="_blank">小出惠介开拓戏路 新片首映感叹生命可贵</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0921/31289.shtml" target="_blank">役所广司小栗旬《啄木鸟和雨》入围电影节</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0921/31283.shtml" target="_blank">韩国最贵战争史诗片《我的征途》首曝海报</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0921/31277.shtml" target="_blank">妻夫木聪主演《走私者》 多伦多电影节上映</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0920/30501.shtml" target="_blank">《桃树》10月上映 曹承佑柳德焕扮双胞胎</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0920/30499.shtml" target="_blank">《恐怖兔子3D》首映 满岛光头戴“兔耳”出</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0920/30495.shtml" target="_blank">3D动画《怪物岛的纳基》发预告 改编自童话</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0920/30491.shtml" target="_blank">宋慧乔《今天》海报曝光 感性唯美流露悲伤</a></li>	
+                        <li><a href="http://www.huoshow.com/2011/0919/30263.shtml" target="_blank">韩国电影巨头陷票房滑铁卢 大制作非良药</a></li>	
+                      </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Picture-->
+  <div class="full_block">
+    <div class="full_block_inner_bd">
+      <div class="full_title_bg">
+        <span class="title_blue_big">剧照</span>
+        <span class="more"><a href="juzhao/" class="more_bg">更多</a></span>
+      </div>
+      <div class="pic_list">
+        <ul>
+                    <!--  -->
+          <li class="first"><a href="http://www.huoshow.com/2011/0825/23456.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0905/1315219671704.jpg" width="232" height="354" /></a><span class="pic_text_bg_first"><a href="http://www.huoshow.com/2011/0825/23456.shtml" target="_blank">《蜜桃成熟时33D》</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0905/25709.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0905/1315219657869.jpg" width="119" height="160" /></a>
+           <!--  -->
+         <span class="pic_txt_bg_red">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0905/25709.shtml">《白蛇传说》曝新剧照</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0825/23485.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0905/1315219647175.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_blue">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0825/23485.shtml">《秋瑾》黄奕剧照</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0902/25005.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0905/1315219629978.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_green">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0902/25005.shtml">《竞雄女侠》剧照</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0819/22663.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0905/1315219606682.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_yellow">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0819/22663.shtml">刘谦《大武生》剧照</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0818/22474.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0823/1314093447427.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_red">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0818/22474.shtml">《大武生》剧照曝光</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0815/21929.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0823/1314093425559.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_purple">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0815/21929.shtml">《白蛇传说》单人海报</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0805/20754.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0823/1314093458909.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_yellow">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0805/20754.shtml">《画壁》邓超孙俪照</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0808/20954.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0812/1313143921530.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_cyan">
+          <!--  --> 
+           <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0808/20954.shtml">张柏芝《无价之宝》</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0808/20940.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0812/1313143904252.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_red">
+          <!--  --> 
+           <!--  --> 
+          <a href="http://www.huoshow.com/2011/0808/20940.shtml">《画壁》大尺度剧照</a></span></li>
+          <!--  --> 
+                    <!--  -->
+          <li> <a href="http://www.huoshow.com/2011/0809/21182.shtml" target="_blank"><img src="http://www.huoshow.com/upload/2011/0812/1313143889805.jpg" width="119" height="160" /></a>
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  --> 
+           <!--  -->
+         <span class="pic_txt_bg_green">
+          <!--  --> 
+          <a href="http://www.huoshow.com/2011/0809/21182.shtml">《全球热恋》徐帆剧照</a></span></li>
+          <!--  --> 
+                  </ul>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--Partners-->
+  <!-- 
+  <div class="partners">
+    <div class="layer_one"><a href="">合作火伴</a></div>
+    <div class="layer_two"><a href="">友情链接</a></div>
+    <div class="layer_content">
+      <p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+    </div>
+  </div>
+   -->
+  <!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+<!--Footer-->
+<div id="footer_bg">
+<div id="footer">
+<div class="footer_logo"></div>
+<div class="footer_txt"> <a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+</div>
+</div>
+</div>
+<!--Footer End-->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+
+   _gaq.push(['_setAccount', 'UA-19568132-1']);
+   _gaq.push(['_addOrganic', 'baidu', 'word']);
+   _gaq.push(['_addOrganic', 'soso', 'w']);
+   _gaq.push(['_addOrganic', '3721', 'name']);
+   _gaq.push(['_addOrganic', 'yodao', 'q']);
+   _gaq.push(['_addOrganic', 'vnet', 'kw']);
+   _gaq.push(['_addOrganic', 'sogou', 'query']);
+   _gaq.push(['_addIgnoredOrganic', '火秀']);
+   _gaq.push(['_addIgnoredOrganic', '火秀网']);
+   _gaq.push(['_addIgnoredOrganic', 'huoshow']);
+   _gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+   _gaq.push(['_setDomainName', '.huoshow.com']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<span style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090" language="JavaScript"></script></span>
+</body>
+</html>

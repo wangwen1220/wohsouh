@@ -1,0 +1,498 @@
+<!--{template 'huoshow_game/header.html'}-->
+<?php $_GET['section_memo'] = 'huoshow_game_index_keywords';?>
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End--> 
+<!--Main Body-->
+<div class="main_body"> 
+  <!--Top-->
+  <div class="body_top"> 
+    <!--Top Left-->
+    <div class="body_top_left">
+      <!--Slide-->      
+      <div class="slide" id="slide1">
+       <!--#include virtual ="{ROOT}api/article.php?act=getrollimg&memo=huoshow_game_index_roll&width=314&height=366"--> 
+      </div>
+ 
+
+
+      <!--Reviews-->
+      <div class="reviews">
+        <div class="reviews_inner_bd">
+          <div class="game_left_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">游戏测评</h2>
+            <span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+          <ul class="reviews_pic">
+            {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_gametest' AND a.thumb!='' order by a.sort DESC limit 2 "}
+            <li><span class="reviews_pic_bd"><a href="{$r['url']}" target="_blank"><img src="{WWW_URL}upload/{$r['thumb']}" width="126" height="84" /></a></span><span class="top_video_text"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+            {/db}
+          </ul>
+          <div class="separator2"></div>
+          <ul class="reviews_newslist">
+            {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_gametestlist'  order by a.sort DESC limit 3 "}
+            <li><span class="newslist_content2"><a href="{$r['url']}" target="_blank">{str_cut($r['title'],38,'')}</a></span></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+
+
+      <!--Video-->
+      <div class="videos" id="pbox_video">
+        <div class="videos_inner_bd">
+          <div class="game_left_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">游戏视频</h2>
+            <span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+
+          <div class="game-video-body">
+            <ul class="videos_list">
+              <?php $i=1; $ll=0;?>
+              {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_gamevideo' AND a.thumb!=''  order by a.sort DESC limit 10 "}
+              <?php if($i%2==1 and $i!=1){echo '</ul><ul class="videos_list">'; $ll++;}?>
+              <li><span class="top_video_pic_bg"><a href="{$r['url']}" target="_blank"><img src="{WWW_URL}upload/{$r['thumb']}" width="134" height="83" /></a></span><span class="top_video_text"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span> </li>
+              <?php $i++;?>
+              {/db}
+            </ul>
+          </div>
+
+          <div class="videos_nav">
+            <div class="juzhao_sanjiao_list">
+              <a href="#" class="juzhao_sanjiao_left">&nbsp;</a>
+              <span class="juzhao_sanjiao_zhongjian">
+                <?php for($i=0; $i<=$ll; $i++) echo '<a href="#">&nbsp;</a>'?>
+              </span>
+              <a href="#" class="juzhao_sanjiao_right">&nbsp;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(function(){
+        window.pbox_video = make_pagebox('pbox_video', {
+        links_selector: '.juzhao_sanjiao_zhongjian a',
+        pages_selector: '.videos_list',
+        prev_selector: '.juzhao_sanjiao_left',
+        next_selector: '.juzhao_sanjiao_right',
+        effect: 1
+        });
+        });
+      </script>
+
+
+
+    </div>
+    <!--Top Middle-->
+    <div class="body_top_mid">
+      <!--Top News-->
+      <div class="top_news">
+        <div class="top_news_inner_bd">
+          <div class="game_mid_title_bg"><span class="title_pointer"></span><h2 class="title_black_16">头条</h2></div>
+          <div class="top_news_content">
+            <div class="top_news_hl">
+              {db sql="SELECT a.title,a.url,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_1'   order by a.sort DESC limit 1 "}
+              <span class="hot_pointer">{$r['description']}</span>
+              <h3 class="title_orange_16"><a href="{$r['url']}" target="_blank">{$r['title']}</a></h3>
+              {/db}
+            </div>
+            <?php $i=0;?>
+            <div>
+              {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_1list'   order by a.sort DESC LIMIT 4 "}
+              <?php if($i%2==1 and $i!=0) echo '</div><div>';?>						
+              [<a target="_blank" href="{$r['url']}">{$r['title']}</a>]
+              <?php $i++;?>
+              {/db}
+            </div>
+          </div>
+          <div class="top_news_content">
+            <div class="top_news_hl">
+              {db sql="SELECT a.title,a.url,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_2'   order by a.sort DESC limit 1 "}
+              <span class="hot_pointer">{$r['description']}</span>
+              <h3 class="title_orange_16"><a href="{$r['url']}" target="_blank">{$r['title']}</a></h3>
+              {/db}
+            </div>
+            <?php $i=0;?>
+            <div>
+              {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_2list'   order by a.sort DESC LIMIT 8 "}
+              <?php if($i%2==1 and $i!=0) echo '</div><div>';?>						
+              [<a target="_blank" href="{$r['url']}">{$r['title']}</a>]
+              <?php $i++;?>
+              {/db}
+            </div>
+          </div>
+          <div class="separator"></div>
+          <ul class="newslist_center">
+            {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_3'  order by a.sort DESC LIMIT 5 "}
+            <li><span class="newslist_content"><a target="_blank" href="{$r['url']}">{$r['title']}</a></span></li>
+            {/db}
+          </ul>
+          <div class=" clear"></div>
+          <div class="promotion">
+            {db sql="SELECT a.title,a.url,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_4'   order by a.sort DESC limit 1 "}
+            <span class="hot_pointer">{$r['description']}</span><a href="{$r['url']}" target="_blank">{$r['title']}</a>
+            {/db}
+          </div>
+          <ul class="newslist_center">
+            {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_headline_4list'  order by a.sort DESC LIMIT 5 "}
+            <li><span class="newslist_content"><a target="_blank" href="{$r['url']}">{$r['title']}</a></span></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+      <!--Walkthrough-->
+      <div class="walkthrough">
+        <div class="walkthrough_inner_bd">
+          <div class="game_mid_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">攻略</h2><span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+          <div class="walkthrough_top">
+            <dl>
+              {db sql="SELECT a.title,a.url,a.thumb,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_raiders_top' AND  a.thumb!='' AND a.description!=''  order by a.sort DESC LIMIT 1 "}
+
+              <dt><a href="{$r['url']}" target="_blank"><img src="{WWW_URL}upload/{$r['thumb']}" width="118" height="160"></a></dt>
+              <dd class="walkthrough_top_title">{$r['title']}</dd>
+              <dd class="walkthrough_top_briefing">{$r['description']}<a href="{$r['url']}" target="_blank" class="text_brown">[详细] </a></dd>
+              {/db}
+            </dl>
+          </div>
+          <ul class="newslist_center">
+            {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_raiders_list'  order by a.sort DESC LIMIT 5 "}
+            <li><span class="newslist_content"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Top Right-->
+    <div class="body_top_right"> 
+      <!--Topic-->
+      <div class="topic">
+        <div class="topic_inner_bd">
+          <div class="game_right_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">专题</h2>
+            <span class="more"><!--<a href="" class="more_bg">更多</a>--></span>
+          </div>
+          <div class="topic_content">
+            <div class="topic_img">
+              {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_topic1' AND  a.thumb!=''   order by a.sort DESC LIMIT 1 "}
+              <a href="{$r['url']}" target="_blank" title="{$r['title']}"><img src="{WWW_URL}upload/{$r['thumb']}" width="180" height="70" /></a>
+              {/db}
+            </div>
+            <ul class="topic_list">
+              {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_topic1_list'  order by a.sort DESC LIMIT 3 "}
+              <li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],26,'')}</a></li>
+              {/db}
+            </ul>
+          </div>
+          <div class="topic_banners">
+  <!--Banner 180*70-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_top_promote1_180_70'"}
+    {$r['data']}
+  {/db}
+  <!--Banner 180*70-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_top_promote2_180_70'"}
+    {$r['data']}
+  {/db}
+  <!--Banner 180*70-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_top_promote3_180_70'"}
+    {$r['data']}
+  {/db}
+  <!--Banner 180*70-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_top_promote4_180_70'"}
+    {$r['data']}
+  {/db}
+  <!--Banner 180*150-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_top_promote5_180_150'"}
+    {$r['data']}
+  {/db}
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!--On Store-->
+      <div class="onstore">
+        <div class="onstore_inner_bd">
+          <div class="game_right_title_bg">
+            <span class="title_pointer"></span><h2 class="title_black_16">发售表</h2></div>
+          <div class="onstore_list">
+            <ul>
+
+              <li><span class="onstore_list_title">时间 </span><span class="onstore_list_title">游戏名称</span></li>
+              <?php $i=0;?>
+              {db sql="SELECT a.title,a.url,a.created  FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_offerlist'  order by a.sort DESC LIMIT 6 "}
+              <?php if($i%2==1){
+              $class='class="onstore_list_light"';
+              }else{
+              $class='';
+              }?>
+              <li {$class}><span>{date("m-d",$r['created'])}</span><span class="onstore_list_content">{str_cut($r['title'],18,'')}</span></li>
+              <?php $i++;?>
+              {/db}
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--Top End-->
+  <!--Banner 960*90-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_beauty_960_90'"}
+	{$r['data']}
+  {/db}
+  <!--Body Mid-->
+  <!--Beauty-->
+  <div class="beauty">
+    <div class="beauty_title_bg">
+      <span class="beauty_logo"></span><h2 class="title_black_24">游戏图片</h2><span class="beauty_title_bg_closer"></span>
+    </div>
+    <div class="beauty_body">
+      <div class="pic_list">
+        <ul>
+          <li class="first">
+
+          {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_gamegirl1' AND  a.thumb!=''   order by a.sort DESC LIMIT 1 "}
+          <div class="pic_text_bg_first"><span class="pic_text"><a href="{$r['url']}" target="_blank" title="{$r['title']}">{$r['title']}</a></span></div>
+          <a href="{$r['url']}" target="_blank" title="{$r['title']}"><img src="{WWW_URL}upload/{$r['thumb']}" width="238" height="322" /></a>
+          {/db}
+          </li>
+
+          {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_gamegirl2' AND  a.thumb!=''   order by a.sort DESC LIMIT 8 "}
+          <li>
+          <div class="pic_text_bg"><span class="pic_text"><a href="{$r['url']}" target="_blank" title="{$r['title']}">{$r['title']}</a></span></div>
+          <a href="{$r['url']}" target="_blank" title="{$r['title']}"><img src="{WWW_URL}upload/{$r['thumb']}" width="118" height="160" /></a>
+          </li>
+          {/db}
+
+        </ul>
+      </div>
+      <div class="chart">
+        <div class="charts_others">
+          <ul>
+            {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_jiongtu'  order by a.sort DESC LIMIT 10 "}
+            <li><span class="charts_text"><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],26,'')}</a></span></li>
+            {/db}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--Online Game-->
+  <div class="olgame">
+    <div class="olgame_title_bg">
+      <span class="olgame_logo"></span><h2 class="title_black_24"><a href="onlinegame/">网络游戏</a></h2><span class="olgame_title_bg_closer"></span>
+    </div>
+    <div class="ongame_body">
+      <div class="ongame_body_left">
+
+        <div class="slide" id="slide2">
+        	<!--#include virtual ="{ROOT}api/article.php?act=getrollimg&memo=huoshow_game_index_olgamerole&width=300&height=250&navon=1"--> 
+          
+        </div>
+       
+
+        <div class="ongame_topic">
+          <div class="ongame_topic_logo">&nbsp;</div>
+          <ul>
+            {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_olgame_topic' AND  a.thumb!=''   order by a.sort DESC LIMIT 2 "}
+            <li>
+            <a href="{$r['url']}" target="_blank">
+              <img src="{WWW_URL}upload/{$r['thumb']}"  width="147" height="57" /><br>{$r['title']}
+            </a>
+            {/db}
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="ongame_body_center">
+        {db sql="SELECT a.title,a.url,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_olgame_newstop' and a.description!='' order by a.sort DESC LIMIT 2 "}
+        <div class="bottom_center_topnews">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="{$r['url']}" target="_blank" style="color:#EC8705">{$r['title']}</a></h3></div>
+          <div><strong class="text_gray">{str_cut($r['description'],52,'')}</strong></div>
+        </div>
+        {/db}
+
+        <div class="separator3"></div>
+        <ul class="bottom_center_newslist">
+          <?php $i=1;?>
+          {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_olgame_newslist'  order by a.sort DESC LIMIT 8 "}
+          <?php if($i%4==1 and $i!=1) echo '</ul><ul class="bottom_center_newslist">';?>
+          <li><span class="newslist_content"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+          <?php $i++;?>
+          {/db}					
+        </ul>
+
+      </div>
+      <div class="ongame_body_right">
+        <h2 class="title_black_14">本周最受关注</h2>
+        <!--#include virtual ="{ROOT}api/article.php?act=gethsgameweekwelcome"-->      
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--PC Game-->
+  <div class="pcgame">
+    <div class="pcgame_title_bg">
+      <span class="pcgame_logo"></span><h2 class="title_black_24"><a href="pcgame/">单机游戏</a></h2><span class="pcgame_title_bg_closer"></span>
+    </div>
+    <div class="ongame_body">
+      <div class="pcgame_body_left">
+        <div class="game_left_title_bg">
+          <span class="title_pointer"></span><h2 class="title_Black">游戏测评</h2><span class="more"><a href="{WWW_URL}game/pcgame/pcceping" class="more_bg">更多</a></span>
+        </div>
+        <ul class="reviews_pic">					
+          {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_pcgame_left' AND  a.thumb!=''   order by a.sort DESC LIMIT 2 "}
+          <li><span class="reviews_pic_bd"><a href="{$r['url']}" target="_blank"><img src="{WWW_URL}upload/{$r['thumb']}" width="126" height="84" /></a></span><span class="top_video_text"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+          {/db}
+        </ul>
+		<div class="game_left_title_bg">
+          <span class="title_pointer"></span><h2 class="title_Black">游戏攻略</h2><span class="more"><a href="{WWW_URL}game/pcgame/pcgonglue" class="more_bg">更多</a></span>
+        </div>
+        <ul class="reviews_newslist">
+          {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_pcgame_raiders'  order by a.sort DESC LIMIT 5 "}
+          <li><span class="newslist_content2"><a href="{$r['url']}" target="_blank">{str_cut($r['title'],35,'')}</a></span></li>
+          {/db}
+
+        </ul>
+      </div>
+      <div class="pcgame_body_center">
+        {db sql="SELECT a.title,a.url,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_pcgame_news1' and a.description!='' order by a.sort DESC LIMIT 2 "}
+        <div class="bottom_center_topnews1">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="{$r['url']}" target="_blank" style="color:#EC8705">{$r['title']}</a></h3></div>
+          <div><strong class="text_gray">{str_cut($r['description'],52,'')}</strong></div>
+        </div>
+        {/db}				
+        <div class="separator3"></div>
+        <ul class="bottom_center_newslist1">
+          {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_pcgame_leftlist'  order by a.sort DESC LIMIT 7 "}
+          <li><span class="newslist_content2"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+          {/db}					
+        </ul>
+      </div>
+      <div class="pcgame_body_right">
+        <div class="pcgame_download_title_bg">
+          <h2 class="title_black_14">精华下载</h2>
+        </div>
+        <ul class="pcgame_download">
+          {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_pcgame_dl'  order by a.sort DESC LIMIT 9 "}
+          <li><span class="topic_list"><a href="{$r['url']}" target="_blank">{str_cut($r['title'],26,'')}</a></span><span class="pcgame_download_icon"><a href="{$r['url']}" target="_blank"><img src="{IMG_URL}templates/huoshow02/images/Download.gif" width="35" height="20" /></a></span></li>
+          {/db}					
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Web Game-->
+  <div class="webgame">
+    <div class="webgame_title_bg">
+      <span class="webgame_logo"></span><h2 class="title_black_24"><a href="webgame/">网页游戏</a></h2><span class="webgame_title_bg_closer"></span>
+    </div>
+    <div class="webgame_body">
+      <div class="webgame_body_left">
+        {db sql="SELECT `data` FROM #table_section WHERE memo like 'huoshow_game_index_webgame_left'"}
+        {$r['data']}
+        {/db}
+        <div class="left_more_button_bg"><div class="left_more_button"><a href="{WWW_URL}game/webgame">更多游戏 >></a></div></div>
+      </div>
+      <div class="webgame_center">
+        {db sql="SELECT a.title,a.url,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_webgame_newstop' and a.description!='' order by a.sort DESC LIMIT 2 "}
+        <div class="bottom_center_topnews">
+          <div class="bottom_news_hl"><h3 class="title_orange_16"><a href="{$r['url']}" target="_blank" style="color:#EC8705">{$r['title']}</a></h3></div>
+          <div><strong class="text_gray">{str_cut($r['description'],52,'')}</strong></div>
+        </div>
+        {/db}				
+        <div class="separator4"></div>				
+        <ul class="bottom_center_newslist">
+          <?php $i=1;?>
+          {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_webgame_newslist'  order by a.sort DESC LIMIT 10 "}
+          <?php if($i%5==1 and $i!=1) echo '</ul><ul class="bottom_center_newslist">';?>
+          <li><span class="newslist_content2"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+          <?php $i++;?>
+          {/db}					
+        </ul>				
+      </div>
+    </div>
+  </div>
+  <!--Flash Game-->
+  <div class="flashgame">
+    <div class="flashgame_title_bg">
+      <span class="flashgame_logo"></span><h2 class="title_black_24"><a href="flashgame/">小游戏</a></h2><span class="flashgame_title_bg_closer"></span>
+    </div>
+    <div class="flashgame_body">
+      <div class="flashgame_pic">
+        <ul>					
+          {db sql="SELECT a.title,a.url,a.thumb FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_flash_game' AND  a.thumb!=''   order by a.sort DESC LIMIT 8 "}
+          <li><a href="{$r['url']}" target="_blank"><img src="{WWW_URL}upload/{$r['thumb']}" width="109" height="75" /></a><p><a href="{$r['url']}" target="_blank">{$r['title']}</a></p></li>
+          {/db}					
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Mobile Game-->
+  <div class="mobilegame">
+    <div class="mobilegame_title_bg">
+      <span class="mobilegame_logo"></span><h2 class="title_black_24"><a href="mobile_game/">手机游戏</a></h2><span class="mobilegame_title_bg_closer"></span>
+    </div>
+    <div class="mobilegame_body">
+      <div class="mobilegame_left">
+        <div class="mobilegame_list" id="pbox1">
+          <a href="#" class="mobilegame_list_left">&nbsp;</a>
+          <a href="#" class="mobilegame_list_right">&nbsp;</a>
+          <div class="mobilegame_list_body">
+            <?php $i=1;?>
+            {db sql="SELECT a.title,a.url,a.thumb,a.description FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_mobilegame_role' AND  a.thumb!='' AND a.description!=''   order by a.sort DESC LIMIT 10 "}
+            <?php if($i%2==1 and $i!=1){
+            echo '</div><div class="mobilegame_list_body">';
+            }?>
+            <div class="mobilegame_list_content">
+              <div class="mobilegame_list_pic"><a href="{$r['url']}" target="_blank"><img src="{WWW_URL}upload/{$r['thumb']}" width="68" height="68" /></a></div>
+              <div class="mobilegame_list_text"><h1>{$r['title']} </h1>{$r['description']}<a href="{$r['url']}" target="_blank">下载</a></div>
+            </div>
+            <?php $i++;?>
+            {/db}	
+
+          </div>
+        </div>
+        <script>
+          $(function(){
+          window.pbox1 = make_pagebox('pbox1', {
+          pages_selector: '.mobilegame_list_body',
+          prev_selector: '.mobilegame_list_left',
+          next_selector: '.mobilegame_list_right',
+          effect: 1
+          });
+          });
+        </script>
+
+        <div class="clear"></div>
+        <div class="left_more_button_bg"><div class="left_more_button"><a href="mobile_game/">更多游戏 >></a></div></div>
+      </div>
+      <div class="webgame_center">
+        <ul class="bottom_center_newslist">					
+          {db sql="SELECT a.title,a.url FROM #table_section_data a LEFT JOIN #table_section b   ON a.sectionid = b.sectionid WHERE b.memo = 'huoshow_game_index_mobile_newslist'  order by a.sort DESC LIMIT 7 "}
+          <li><span class="newslist_content2"><a href="{$r['url']}" target="_blank">{$r['title']}</a></span></li>
+          {/db}					
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Banner 250*250-->
+  {db sql="SELECT `data`  FROM  #table_section WHERE memo = 'banner_game_mobile_250_250'"}
+    {$r['data']}
+  {/db}
+  <div class="clear"></div>
+<!--Partners-->
+<div class="main_body">
+	
+	{db sql="select * from #table_section  where memo ='huoshow_game_index_footfriendslinks'"}
+            {$r[data]}
+        {/db}
+	
+</div>
+  <!--Body Bottom End--> 
+</div>
+<div class="clear"></div>
+<!--{template 'huoshow_game/footer.html'}-->

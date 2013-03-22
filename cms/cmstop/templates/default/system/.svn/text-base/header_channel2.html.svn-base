@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$CONFIG[charset]}" />
+<meta name="keywords" content="{$tags}" />
+<meta name="description" content="{strip_tags($description)}" />
+<meta name="author" content="{$SYSTEM[sitename]}" />
+<meta name="Copyright" content="{$SYSTEM[sitename]}版权所有" />
+<title>{if $title}{$title}_{/if}{if $name}{$name}-{/if}{$SYSTEM[sitename]} </title>
+<link href="{IMG_URL}templates/{TEMPLATE}/css/style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link href="{IMG_URL}templates/{TEMPLATE}/css/content.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<link rel="stylesheet" type="text/css" href="{IMG_URL}templates/huoshow_01/css/style_1_common.css?mxq" />
+<link href="{IMG_URL}templates/huoshow_01/css/common.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]> 
+<link href="{IMG_URL}templates/{TEMPLATE}/css/ie6.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen"  />
+<![endif]-->
+<script type="text/javascript" src="{IMG_URL}js/config.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.cookie.js"></script>
+<script type="text/javascript">var STYLEID = '1', STATICURL = '{IMG_URL}templates/huoshow_01/css/', IMGDIR = '{IMG_URL}templates/huoshow_01/image/common', VERHASH = 'mxq', charset = 'utf-8', discuz_uid = '0', cookiepre = 'w6GR_', cookiedomain = '', cookiepath = '/', attackevasive = '0', disallowfloat = 'newthread|reply', creditnotice = '1|金钱|,2|威望|,3|火秀币|'</script>
+<script type="text/javascript" src="{IMG_URL}templates/huoshow_01/js/basic.js"></script>
+</head>
+
+
+<body id="nv_portal" class="pg_index" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+
+
+<div class="wrap">
+<div class="header">
+   <div class="top">
+<div class="logo">
+<a href="/"><img src="{IMG_URL}templates/huoshow_01/images/logo.png" width="114" height="67" /></a>
+</div>
+   </div>
+
+   <div class="menu">
+<div class="menu_middle">
+<ul>
+<!--{if $catid==''}-->
+<li class="menu_on"><a href="{WWW_URL}" target="_self">首页</a></li>
+<!--{loop channel() $cid $cha}-->
+<li ><a href="{$cha[url]}" cid="{$cid}" catid="{$catid}" parentid="{$parentid}">{$cha[name]}</a></li>
+<!--{/loop}-->
+<!--{else}-->
+<li><a href="{WWW_URL}" target="_self">首页</a></li>
+<!--{loop channel() $cid $cha}-->
+<li class="menu_on" ><a href="{$cha[url]}" cid="{$cid}" catid="{$catid}" parentid="{$parentid}">{$cha[name]}</a></li>
+<!--{/loop}-->
+<!--{/if}-->
+
+
+<li>
+<a href="show.php">直播</a>
+</li>
+<li>
+<a href="portal.php?mod=topic&amp;topic=myshow">My秀</a>
+</li>
+<li>
+<a href="home.php">空间</a>
+</li>
+<li>
+<a href="group.php">群组</a>
+</li>
+<li>
+<a href="forum.php">论坛</a>
+</li>
+</ul>
+</div>
+  </div>
+<script type="text/javascript">
+(function($){
+window.mysearch = function(v){
+if(v==1){$("#sctype").html('文章');$("#smodid").val('portal');}
+else if(v==2){$("#sctype").html('广场');$("#smodid").val('forum');}
+else if(v==3){$("#sctype").html('日志');$("#smodid").val('blog');}
+else if(v==4){$("#sctype").html('相册');$("#smodid").val('album');}
+else if(v==5){$("#sctype").html('群组');$("#smodid").val('group');}
+else if(v==6){$("#sctype").html('音频');$("#smodid").val('audio');}
+else if(v==7){$("#sctype").html('视频');$("#smodid").val('video');}
+$("#sctype_menu").css("display","none");
+};
+})(jQuery);				
+</script>
+<div class="nav-bottom"> 
+<form id="sc" class="y" method="post" autocomplete="off" action="search.php?searchsubmit=yes" target="_blank">
+<input id="smodid" name="mod" value="search" type="hidden" />
+<input type="hidden" name="formhash" value="cb9dfd99" />
+<input name="srchtype" value="title" type="hidden" />
+<label id="sctype" onmouseover="showMenu(this.id)" class="z">搜索</label>
+<input type="text" name="srchtxt" id="srchtxt" class="px z" value="请输入搜索内容" prompt="search_kw" autocomplete="off" onfocus="searchFocus(this);" onblur="searchBlur(this);" />
+<button id="searchsubmit" name="searchsubmit" prompt="search_submit" type="submit" value="true" class="y">搜索</button>
+<div id="sctype_menu" class="p_pop cl" style="display: none">
+<ul>
+<li><a href="javascript:;"><label for="mod_article" onclick="mysearch(1);">文章</label></a></li>
+<li><a href="javascript:;"><label for="mod_thread" onclick="mysearch(2);">广场</label></a></li>
+<li><a href="javascript:;"><label for="mod_blog" onclick="mysearch(3);">日志</label></a></li>
+<li><a href="javascript:;"><label for="mod_album" onclick="mysearch(4);">相册</label></a></li>
+<li><a href="javascript:;"><label for="mod_group" onclick="mysearch(5);">群组</label></a></li>
+<li><a href="javascript:;"><label for="mod_audio" onclick="mysearch(6);">音频</label></a></li>
+<li><a href="javascript:;"><label for="mod_video" onclick="mysearch(7);">视频</label></a></li>
+</ul>
+</div>
+</form>

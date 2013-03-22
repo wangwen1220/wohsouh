@@ -1,0 +1,27 @@
+<div class="tl">
+	<div class="sttl mbn">
+		<h2><!--{if $keyword}-->{lang search_result_keyword}<!--{else}-->{lang search_result}<!--{/if}--></h2>
+	</div>
+	<!--{if empty($myshowlist)}-->
+		<p class="emp xs2 xg2">{lang search_nomatch}</p>
+	<!--{else}-->
+		<div class="slst mtw">
+			<ul>
+				<!--{loop $myshowlist $myshow}-->
+				<li class="pbw">
+					<h3 class="xs3"><img src="static2/images/myshowyinpin.gif"/> <a href="home.php?mod=space&do=myshow&id=$myshow[myshowid]" target="_blank">$myshow[title]</a> <!--{if $myshow[recommand]==1}--><img src="static2/images/jinghua.jpg" alt="精华" /><!--{/if}--></h3>
+					<p class="xg1">$myshow[reply] {lang a_comment} - $myshow[viewnum] {lang a_visit}</p>
+					<p>$myshow[content]</p>
+					<p>
+						<span>$myshow[dateline]</span>
+						 - 
+						<span><a href="home.php?mod=space&uid=$myshow[uid]" target="_blank">$myshow[author]</a></span>
+					</p>
+				</li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+	<!--{/if}-->
+	<!--{if !empty($multipage)}--><div class="pgs cl mbm">$multipage</div><!--{/if}-->
+</div>
+</div>

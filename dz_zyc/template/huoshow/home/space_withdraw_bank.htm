@@ -1,0 +1,181 @@
+<div class="blr" style="width:550px; background:url(/static2/images/gifts/liwu05.jpg)">
+	<h3 id="layer_reginfo_t" class="flb">
+	<em id="returnmessage4">管理银行账户</em>
+	<span>
+	<a href="javascript:;" class="flbc" onclick="hideWindow('register')" title="关闭">关闭</a></span>
+	</h3>
+	 
+	  <div class="tangchuang2s" style="background:#ffffff;font-size:13px;color:#000000;padding-top:10px;">
+	  <table width="100%" height="180" border="0" cellspacing="0" cellpadding="10">
+	    <tr>
+	    	<td align="right">开户人真实姓名：</td>
+	    	<td align="left">&nbsp;<input type="text" 
+	    	id="account_name" style="height:18px;"
+			<!--{if $bankinfo}--> value="{$bankinfo['account_name']}"<!--{/if}--> 
+	    	/><span id="account_name_err" style="color:red"></span></td>
+	    </tr>
+	    <tr>
+	    	<td align="right">开户银行所在城市：</td>
+	    	<td align="left">&nbsp;<select style="height:18px;" onchange="selectSonCity(this.value,'level2')" id="level1">
+	    	<!--{if $bankinfo}--> <option value="{$bankinfo['areaname']['level1']['id']}">{$bankinfo['areaname']['level1']['name']}</option>
+	    	<!--{else}-->
+	    	<option value="0">请选择</option>
+	    	<!--{/if}-->
+	    	<!--{loop $level1 $k $value}-->
+	    	<option value="{$value['id']}">{$value['name']}</option>
+	    	<!--{/loop}-->
+	    	</select>&nbsp;
+	    	<select style="height:18px;" id="level2" 
+	    	<!--{if $bankinfo}--> ><option value="{$bankinfo['areaname']['level2']['id']}">{$bankinfo['areaname']['level2']['name']}</option>
+	    	<!--{else}-->
+	    	disabled="disabled">
+	    	<option value="0">请选择</option>
+	    	<!--{/if}-->
+	    	<!--{loop $level2city $k $value}-->
+	    	<option value="{$value['id']}">{$value['name']}</option>
+	    	<!--{/loop}-->
+	    	</select>
+			<span id="city_name_err" style="color:red"></span>
+	    	
+	    	</td>
+	    </tr>
+	    <tr>
+	    	<td align="right">选择银行：</td>
+	    	<td align="left">&nbsp;<select style="height:18px;" id="bankname">
+	    	<!--{if $bankinfo}--> <option value="{$bankinfo['bankid']}">{$bankinfo['bankname']}</option>
+	    	<!--{else}-->
+	    	<option value="0">请选择</option>
+	    	<!--{/if}-->
+	    	<!--{loop $bank $k $value}-->
+	    	<option value="{$value['id']}">{$value['name']}</option>
+	    	<!--{/loop}-->
+	    	</select><span id="bankname_err" style="color:red"></span></td>
+	    </tr>
+	    <tr>
+	    	<td align="right">银行帐号：</td>
+	    	<td align="left">&nbsp;<input type="text" style="height:18px;width:260px;" id="bankno" <!--{if $bankinfo}--> value="{$bankinfo['bankno']}"<!--{/if}--> /><span id="bankno_err" style="color:red"></span></td>
+	    </tr>
+	    <tr>
+	    	<td align="right">设为默认帐号：</td>
+	    	<td align="left">&nbsp;是
+	    	<input type="radio"  name="isdefault" value="1" 
+	    	<!--{if $bankinfo}--><!--{if $bankinfo['isdefault']=='1'}-->checked="checked"<!--{/if}--><!--{else}-->checked="checked"<!--{/if}-->/>&nbsp;&nbsp;否
+	    	<input type="radio"  name="isdefault" value="0" <!--{if $bankinfo}--><!--{if $bankinfo['isdefault']=='0'}-->checked="checked"<!--{/if}--><!--{/if}-->/>
+	    	</td>
+	    </tr>
+	    <tr>
+	      <td colspan="2" align="center">	    	 
+	          <a href="javascript:;" onclick="save('<!--{if $bankinfo}-->save<!--{else}-->add<!--{/if}-->');" ><img src="/static2/images/gifts/liwu4.png" width="86" height="24" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+	          <a href="javascript:;" onclick="hideWindow('register')" ><img src="/static2/images/gifts/liwu5.png" width="86" height="24" /></a>
+	          
+	      </td>
+	    </tr>
+	  </table>
+	</div>
+	
+<script type="text/javascript">
+(function($){
+	window.save = function(method)
+	{
+		
+		var account_name = $.trim($("#account_name").val());
+		var level1 = $.trim($("#level1").val());
+		var level1name = $("#level1").find("option:selected").text();
+		var level2 = $.trim($("#level2").val());
+		var level2name = $("#level2").find("option:selected").text();
+		var bankid = $.trim($("#bankname").val());
+		var bankname = $("#bankname").find("option:selected").text();
+		var bankno = $("#bankno").val();
+		var isdefault = $('input[name="isdefault"]:[checked]').val();
+		var id='{$bankinfo[id]}';
+		$("#account_name_err").html('');
+		$("#city_name_err").html('');
+		$("#bankname_err").html('');
+		$("#bankno_err").html('');
+		if(account_name==''){
+			$("#account_name_err").html('帐号姓名必须填写');
+			$("#account_name").val('');
+			$("#account_name").focus();
+			return false;
+		}
+		if(level2=='0'){
+			$("#city_name_err").html('开户城市必须选择');
+			$("#level1").focus();
+			return false;
+		}
+		if(bankid=='0'){
+			$("#bankname_err").html('银行必须选择');
+			$("#bankname").focus();
+			return false;
+		}
+		if(bankno.search(/^\d+$/) || bankno.length<15) {
+			
+			$("#bankno_err").html('银行帐号不正确');
+			$("#bankno").focus();
+			return false;
+		}
+		
+		var url = 'home.php?mod=space&do=withdraw&act=savebankacount&method='+method;
+		
+		
+		
+		
+		 $.post(url,{
+			 	'id':id,
+				'account_name':account_name,
+				'level1':level1,
+				'level1name':level1name,
+				'level2':level2,
+				'level2name':level2name,
+				'bankid':bankid,
+				'bankname':bankname,
+				'bankno':bankno,
+				'isdefault':isdefault	
+				},function( data ) {
+			if(data=='1'){
+				alert('保存成功');
+				var url2 = 'home.php?mod=space&do=withdraw&act=banklist&timt='+getNowTime();
+				$.get(url2,function(rs){
+					$(".banklist").html(rs);
+					hideWindow('register')
+				})
+				
+				//window.location.reload();
+			}else{
+				//alert(data);
+				alert('保存失败');
+				//window.location.reload();
+			}
+		})
+		
+	}
+	window.selectSonCity = function(id,showid){
+		if(id==0){
+			$("#"+showid).attr({'disabled':'disabled'});
+			$("#"+showid).html('<option value="0">请选择</option>');
+			return false;
+		}
+		
+		var url = 'home.php?mod=space&do=withdraw&act=getcity&upid='+id+'&jsoncallback=?';
+		$.getJSON(url,function( data ) {
+			if(data!=''){
+				$("#"+showid).attr({'disabled':''});
+				$("#"+showid).html(data);
+			}
+		})
+	}
+	window.getNowTime =  function(){
+		var now= new Date();   
+		var year=now.getYear();   
+		var month=now.getMonth()+1;   
+		var day=now.getDate();   
+		var hour=now.getHours();   
+		var minute=now.getMinutes();   
+		var second=now.getSeconds();   
+		var nowdate=year+""+month+""+day+""+hour+""+minute+""+second;   
+		return nowdate;
+	}
+
+})(jQuery);
+</script>
+</div>

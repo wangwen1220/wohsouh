@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*
+系统管理员css
+*/
+table{
+	border-collapse: collapse;
+	width:100%;
+	border:2 solid #EFEFEF; 
+	background:#EFEFEF;
+	font-size:12px;
+	}
+body, td, input, textarea, select, button {
+    color: #555555;
+    font: 12px "Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
+}
+table th{ padding:3; background:#DEEFFB; height:21px; line-height:21px;  font-weight: 700;font-size:12px;  padding: 5px !important;}
+table td{padding:3;  background:#FFFFFF;  border-top: 1px dotted #DEEFFB;  padding: 5px !important;}
+.hover:hover { background:#F5F9FD; }
+
+.tab1{ overflow:hidden; clear:both; margin-bottom:10px; }
+.tab1 li{ float:left; margin-right:3px; text-align:center; font-weight:700; }
+.tab1 a { display:block; line-height:26px; color:#666; white-space: nowrap; }
+.tab1 a span { display:block; padding:0 7px; }
+.tab1 a:hover { text-decoration:none; background:url(btn_block_2.gif) no-repeat 0 -52px; color:#09C; }
+.tab1 a:hover span { display:block; background:url(btn_block_2.gif) no-repeat right -78px; }
+.tab1 .current{}
+.tab1 .current a{ background:url(btn_block_2.gif) no-repeat 0 0; color:#FFF; }
+.tab1 .current a span{ background:url(btn_block_2.gif) no-repeat right -26px; }
+.tab1 .current a .highlight { color: #FF9; }
+.tab1 .current a em{ margin-left:3px; * margin-right:-5px; background:url(bg_repno.gif) no-repeat 0 -145px !important; background:url(bg_repno.gif) no-repeat 0 -147px; color:#666; }	
+.tab1 .hasdropmenu a em{ margin-left:3px; * margin-right:-5px; background:url(bg_repno.gif) no-repeat 0 -195px !important; background:url(bg_repno.gif) no-repeat 0 -197px; color:#FFF; }
+.dropmenu, .dropmenu1 { margin-left: -20px; white-space:nowrap; border:3px solid #A6C9D7; background:#F2F9FD; text-align:left; opacity:0.9; filter:Alpha(opacity=90); }
+.dropmenu1 { margin-left: 0; padding: 5px; }
+.tab1 .dropmenu a{ padding:2px 7px; background:none !important; color:#666 !important; font-weight:400; }
+.tab1 .dropmenu a:hover{ background:#DEEFFA !important; }
+.tab1 .dropmenu li { clear: both; margin:0; }
+.tab1 .dropmenu li.current a { background:#DEEFFA !important; }
+
+.tb2 tr.hover:hover td { background: #F2F9FD; }
+.tb2.tdhover tr:hover td { background: none; }
+.tb2.tdhover tr td:hover { background: #F2F9FD; }
+.tb2 td{ padding:5px 5px 3px 0; border-top: 1px dotted #DEEFFB; }
+.tb2 th{ padding:5px 5px 3px 0; line-height:21px; font-size: 12px; }
+
+.nav {clear:both; margin-bottom: 0 !important; overflow: hidden; height:25px; line-height:25px; color:#0099CC; font-weight:bold; padding-left:10px;}

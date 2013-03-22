@@ -1,0 +1,30 @@
+CREATE TABLE `pre_live_party_gift_list` (
+  `id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `party_gift_name` VARCHAR(128) DEFAULT NULL COMMENT '活动礼物名称',
+  `party_gift_huocoin` INT(3) DEFAULT NULL COMMENT '活动礼物价值(火币)',
+  `img` VARCHAR(1024) DEFAULT NULL COMMENT '活动礼物图片',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='活动礼物'
+
+CREATE TABLE `pre_live_party_user_box_gift_list` (
+   `id` bigint(10) unsigned NOT NULL AUTO_INCREMENT,
+   `uid` bigint(10) DEFAULT NULL COMMENT '用户ID',
+   `src_uid` bigint(10) DEFAULT NULL COMMENT '赠送UID',
+   `party_gift_id` bigint(10) DEFAULT NULL COMMENT '活动礼物ID',
+   `box_id` bigint(10) DEFAULT NULL COMMENT '所属礼包ID',
+   `party_gift_num` int(3) DEFAULT NULL COMMENT '活动礼物数量',
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户拥有的活动礼物ID列表'
+
+CREATE TABLE `pre_live_party_user_box_list` (
+  `id` BIGINT(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+  `src_uid` BIGINT(10) DEFAULT NULL COMMENT '赠送人UID',
+  `src_username` VARCHAR(1024) DEFAULT NULL COMMENT '赠送人用户名',
+  `dst_uid` BIGINT(10) DEFAULT NULL COMMENT '收礼人UID',
+  `dst_username` VARCHAR(1024) DEFAULT NULL COMMENT '收礼人用户名',
+  `box_num` INT(3) DEFAULT NULL COMMENT '收到的礼包数',
+  `state` INT(2) DEFAULT '0' COMMENT '0：没有打开, 1:已经打开',
+  `receive_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '礼包收到的时间',
+  `open_time` DATETIME NOT NULL COMMENT '礼包打开的时间',
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='用户收到的礼包表'

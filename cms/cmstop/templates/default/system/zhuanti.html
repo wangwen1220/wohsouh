@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2011【月】魅力比赛-专题页</title>
+<link href="{IMG_URL}templates/zhuanti/css/master.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="{IMG_URL}js/lib/jquery.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="{IMG_URL}templates/zhuanti/js/DD_belatedPNG.js"></script>
+<script>
+  /* 示例 */
+  DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.gftg_news1li');
+ /* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+ /* 如果要直接插入png图片，在单引号内加入img即可。 */
+</script>
+<![endif]-->
+</head>
+
+<body class="se">
+<div id="mian">
+<div class="box">
+  <div class="meili_nr">
+    <div class="nav"> <a href="{WWW_URL}">火秀首页</a> <a href="{WWW_URL}zhuanti/meilizhixing/saishi/index.shtml"> 赛事新闻 </a> <a href="{WWW_URL}zhuanti/meilizhixing/tuji/index.shtml"> 热点图集</a> <a href="{WWW_URL}zhuanti/meilizhixing/ship/index.shtml"> 精彩视频       </a> <a target="_blank" href="{DX_HUOSHOW_SHOW_URL}"> 拉票直播</a> <a target="_blank" href="{DX_HUOSHOW_SHOW_URL}show.php?mod=rank">火秀榜 </a> </div>
+    <div class="meili_left">
+      <div class="paihang_list">
+      </div>
+    </div>
+    <div class="meili_right">
+      <div class="gftg">
+        <div class="gftg_zi"><span style="float:left"><img src="{IMG_URL}templates/zhuanti/images/guanfang.gif" width="103" height="26" /></span><span style="float:right; line-height:28px;"><a style="color:#BC88F1; padding-right:10px;" target="_blank" href="{WWW_URL}zhuanti/meilizhixing/saishi/index.shtml">更多>></a></span></div>
+        <?php include ROOT_PATH.'section/'.ZT_NOTICE_ID.'.html';?>
+      </div>
+     
+      <div class="dongtai">
+      	
+      		<?php
+			 //   $durl = WWW_URL.'api/zhuanti.php?act=anchors&dz_url='.DX_URL.'&time='.time(); 
+				//echo $durl;
+   			//	echo file_get_contents($durl);       
+			?>
+		
+	</div>
+    </div>
+    <div class="clear"></div>
+    <div class="layout-3in">
+      <div class="in3styles">
+        <div class="in3styles_bt"><span style="float:right; line-height:31px;"><a style="color:#BC88F1; padding-right:10px;" target="_blank" href="{WWW_URL}zhuanti/meilizhixing/saishi/index.shtml">更多>></a></span></div>
+        <?php include ROOT_PATH.'section/'.ZT_TOUT_ID.'.html';?>
+      </div>
+      <div class="in3styles_03">
+        <div class="in3styles_bt"><span style="float:left;"><img src="{IMG_URL}templates/zhuanti/images/pingl.jpg" width="250" height="31" /></span><span style="float:right; line-height:31px;"><a style="color:#BC88F1; padding-right:10px;" target="_blank" href="http://bbs.huoshow.com/forum-266-1.html">更多>></a></span></div>
+        <div class="list">
+        <?php include ROOT_PATH.'section/'.ZT_SAISHI_ID.'.html';?>
+        </div>
+      </div>
+      <div class="in3styles_02">
+        <div class="in3styles_bt"><span style="float:left;"><img src="{IMG_URL}templates/zhuanti/images/jiaodian.jpg" width="250" height="31" /></span><span style="float:right; line-height:31px;"><a style="color:#BC88F1; padding-right:10px;" target="_blank" href="{WWW_URL}zhuanti/meilizhixing/saishi/index.shtml">更多>></a></span></div>
+        <div class="list">
+          <?php include ROOT_PATH.'section/'.ZT_JIAOD_ID.'.html';?>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="layout-index-up">
+<div class="tv-list">
+   	<div class="tv-list-inner">
+    	<h2 class="tab"><span class="name"><a id="tvtab_0" class="current" 
+href="{WWW_URL}/zhuanti/meilizhixing/ship/index.shtml" target="_blank">精彩视频</a></span></h2>
+<!--赛事回顾部分开始-->
+            <div class="list" id="tvtab_sub_0">
+            	<?php include ROOT_PATH.'section/'.ZT_SHIP_ID.'.html';?>
+                <div class=" clear"></div>
+            </div>	
+<!--赛事视频部分开始-->
+            <div class="list" id="tvtab_sub_1" style="display: none;">
+              	
+                <div class=" clear"></div>
+            </div>		
+    </div>
+      <SCRIPT type=text/javascript>
+/**
+* 视频及图集Tab切换代码
+*/
+function onTab(tabid,tabname,tablength,tabclass){
+	for(i=0;i<tablength;i++){
+		if(tabid == i){
+			document.getElementById(""+tabname+"_"+i+"").className = tabclass;
+		}else{
+			document.getElementById(""+tabname+"_"+i+"").className = '';
+		}
+	}
+	var subname = tabname + "_sub";
+	for(j=0;j<tablength;j++){
+		if(tabid == j){
+			document.getElementById(""+subname+"_"+j+"").style.display = 'block';
+		}else{
+			document.getElementById(""+subname+"_"+j+"").style.display = 'none';
+		}
+	}
+}
+</SCRIPT>
+                <div class=" clear"></div>
+    </div>
+</div>
+<div class="layout-index-up">
+<div class="gallery-list">
+        <div class="gallery-list-inner">
+            <h2 class="tab"><span class="name"><a id="galltab_0" 
+href="{WWW_URL}/zhuanti/meilizhixing/tuji/index.shtml" 
+target="_blank" class="current">热点图集</a></span></h2>
+			<div class="list">
+				<!--赛事图集开始-->            
+				<ul style="display: block;" id="galltab_sub_0">
+					<?php include ROOT_PATH.'section/'.ZT_TUJI_ID.'.html';?>  
+				</ul>
+				<!--选手图集开始-->                
+				<ul id="galltab_sub_1" style="display: none;"> 
+					                     
+				</ul>
+                <div class=" clear"></div>
+            </div>        
+        </div>
+    	<div class="gallery-list-ft"></div>    
+    </div>
+</div>
+<div class="clear"></div>
+  <div class="bottom">温馨提示：请勿上传任何未经授权的作品，否则侵犯版权后果由上传者承担<br> 
+    本次活动最终解释权归火秀网所有<br>
+  火秀网 版权所有 粤ICP备06087881号</div>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+ window.getNowTime = function (){
+     var now= new Date();   
+     var year=now.getYear();   
+     var month=now.getMonth()+1;   
+     var day=now.getDate();   
+     var hour=now.getHours();   
+     var minute=now.getMinutes();   
+     var second=now.getSeconds();   
+     var nowdate=year+""+month+""+day+""+hour+""+minute+""+second;   
+     return nowdate;
+ };
+ var url = "<?php echo WWW_URL.'api/zhuanti.php?act=anchors&dz_url='.DX_URL.'&time=';?>"+getNowTime();
+ $.get(url,function(rs){
+     $(".dongtai").html(rs);
+ })
+
+var url = "<?php echo WWW_URL.'api/zhuanti.php?act=zhuanti&dz_url='.DX_URL.'&time='; ?>"+getNowTime();
+$.get(url,function(rs){
+    $(".paihang_list").html('<div class="paihang_tb"><span style="float:right; line-height:30px;"><a style="color:#BC88F1; padding-right:10px;" target="_blank" href="{DX_HUOSHOW_SHOW_URL}show.php?mod=rank">更多>></a></span></div>'+rs+'<div class="fix"></div>');
+})
+</script>
+</body>
+</html>        

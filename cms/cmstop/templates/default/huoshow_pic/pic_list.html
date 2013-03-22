@@ -1,0 +1,30 @@
+<!--{template 'huoshow_pic/header.html'}-->
+<!--{template 'huoshow_common/common_list_header_search.html'}-->
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+    <div class="Subpage_pic">
+        <div class="Subpage_pic_01">
+            <div class="Subpage_pic_list">
+            	<div class="Subpage_pic_bt"><h2>{$name}</h2></div>
+            	<ul >
+				<!--{content catid="$catid" modelid="2" orderby="published desc" size="$pagesize" page="$page"}-->
+			   	<li>
+			   		<a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{WWW_URL}upload/{$r[thumb]}" width="158" height="118">
+			   		<span >{str_cut($r[title],20,'')}</span></a>
+			   	</li>
+				<!--{/content}-->
+			   </ul>
+                <div class="clear"></div>
+                <div class="fanye">
+        				<div id="fanye_01">
+							<ul><!--{pages($total, $page, $pagesize, 2, $urlrule)}--></ul>
+						</div>
+					</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--{template 'huoshow_pic/footer.html'}-->
+
