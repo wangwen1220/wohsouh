@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+	<meta name='keywords' content='{$SEO['keyword']}' />
+	<meta name='description' content='{$SEO['description']}' />
+	<meta name='author' content='火秀' />
+	<link href="{CSS_PATH}huoshow_supermodel.css" rel="stylesheet" />
+	<script src="{JS_PATH}jquery.min.js"></script>
+	<script src="{JS_PATH}jquery.cookie.js"></script>
+	<script src="{JS_PATH}huoshow_basic.js"></script>
+	<script src="{JS_PATH}huoshow_config.js"></script>
+	<script src="{JS_PATH}huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=2'></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body class="body_bg">
+	<!--Site Header-->
+	<div class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common">
+						<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>
+					</div>
+				</div>
+
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+							$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--Site Header End-->
+	<!--Navigator-->
+	<div class="nav_body">
+		<div class="nav_bg">
+		<h1 class="channel_logo"><a href="{$CATEGORYS[109][url]}" title="火秀超模首页">火秀超模频道</a></h1>
+		<div id="sub_channel">
+			<ul>
+				<li><a href="{$CATEGORYS[109][url]}">超模首页</a></li>
+				{loop subcat(109,0,0,$siteid) $r}
+				{php $num++}
+				{if $r[catid]!=140}
+				<li><a href="{$r[url]}">{$r[catname]}</a></li>
+				{/if}
+				{/loop}
+			</ul>
+		</div>
+		</div>
+	</div>
+	<!--Navigator End-->
+
+<div class="search">
+	<form action="{APP_PATH}index.php" id="search" method="get" target="_blank" onSubmit="return checkSForm()">
+	<input type="hidden" name="m" value="search" />
+	<input type="hidden" name="c" value="index" />
+	<input type="hidden" name="a" value="init" />
+	<input type="hidden" name="siteid" value="{$siteid}" id="siteid" />
+	<input type="text" class="text" name="q" id="q" value="请输入关键字" onFocus="clearKeyword()" onBlur="clearKeyword()"/>
+	{php $j=0}
+	{php $search_model = getcache('search_model_'.$siteid,'search');}
+	<select name="typeid" id="search_type">
+		<option value="1" >全部</option>
+		{loop $search_model $k=>$v} 
+		<option value="{$v['typeid']}" >{$v['name']}</option>
+		{/loop}
+	</select>
+	<input type="submit" id="search_submit" value="搜 索" />
+</form>
+<script>
+	$(function(){
+		window.clearKeyword = function(){
+			var search_wd = $.trim($("#q").val());
+			if(search_wd=='请输入关键字'){
+				$("#q").val('');
+			}
+			if(search_wd==''){
+				$("#q").val('请输入关键字');
+			}
+		}
+		window.checkSForm = function()
+		{
+			var search_wd = $.trim($("#q").val());
+			if(search_wd=='请输入关键字' || search_wd==''){
+				alert('请输入关键字');
+				return false;
+			}
+		}
+	})
+</script>
+	<span class="search_text">
+		您现在的位置: <a href="{siteurl($siteid)}">首页</a><span> &gt; </span>
+		{if $catid == 109}
+			{catpos($catid)}
+		{else}
+			{catpos($catid)} {if !empty($id)} &gt; 正文{else}{if $commentid} &gt; 评论列表{else} &gt; 列表{/if}{/if}
+		{/if}
+	</span>
+</div>

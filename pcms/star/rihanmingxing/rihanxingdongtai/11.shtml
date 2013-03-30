@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>日韩星动态 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">日韩星动态</h2>
+						<h3><a href='#'>内地焦点</a> | <a href='#'>明星动态</a> | <a href='#'>街拍</a></h3>
+					</div>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="山口百惠儿子讲述父母 三个誓约守住幸福" href="http://pnews.trunk.huoshow.com/2011/1202/68753.shtml" target="_blank">山口百惠儿子讲述父母 三个誓约守住幸福</a></span>
+							<span class="date_01">2011-12-02 15:35:26</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李敏镐上海粉丝会秀MJ舞步 太激动险摔倒(图)" href="http://pnews.trunk.huoshow.com/2011/1202/68431.shtml" target="_blank">李敏镐上海粉丝会秀MJ舞步 太激动险摔倒(图)</a></span>
+							<span class="date_01">2011-12-02 15:04:56</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="大东俊介宣布退出事务所 并暂时关闭博客" href="http://pnews.trunk.huoshow.com/2011/1202/68423.shtml" target="_blank">大东俊介宣布退出事务所 并暂时关闭博客</a></span>
+							<span class="date_01">2011-12-02 15:26:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星尹时允提供饭车套餐 感动工作人员(图)" href="http://pnews.trunk.huoshow.com/2011/1202/68421.shtml" target="_blank">韩星尹时允提供饭车套餐 感动工作人员(图)</a></span>
+							<span class="date_01">2011-12-02 15:28:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="城田优被选为名誉粉丝 与梅西一起谈论足球" href="http://pnews.trunk.huoshow.com/2011/1202/68419.shtml" target="_blank">城田优被选为名誉粉丝 与梅西一起谈论足球</a></span>
+							<span class="date_01">2011-12-02 15:25:35</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="李孝利曾自曝理想型 爱天黑后在公园约会" href="http://pnews.trunk.huoshow.com/2011/1202/68417.shtml" target="_blank">李孝利曾自曝理想型 爱天黑后在公园约会</a></span>
+							<span class="date_01">2011-12-02 15:20:46</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩童星金赛纶暴雨中展精彩演技 感情细腻丰富" href="http://pnews.trunk.huoshow.com/2011/1202/68415.shtml" target="_blank">韩童星金赛纶暴雨中展精彩演技 感情细腻丰富</a></span>
+							<span class="date_01">2011-12-02 15:23:32</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星李准基军中服役表现突出 再晋升成兵长" href="http://pnews.trunk.huoshow.com/2011/1202/68413.shtml" target="_blank">韩星李准基军中服役表现突出 再晋升成兵长</a></span>
+							<span class="date_01">2011-12-02 15:21:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李胜基成“最佳女婿” 首公开父母办公室恋情" href="http://pnews.trunk.huoshow.com/2011/1202/68333.shtml" target="_blank">李胜基成“最佳女婿” 首公开父母办公室恋情</a></span>
+							<span class="date_01">2011-12-02 15:18:12</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星孙艺珍素颜证件照曝光 被评“完美简历照”" href="http://pnews.trunk.huoshow.com/2011/1202/68327.shtml" target="_blank">韩星孙艺珍素颜证件照曝光 被评“完美简历照”</a></span>
+							<span class="date_01">2011-12-02 15:08:43</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="东方神起上海个唱50保镖护驾 提醒歌迷理智" href="http://pnews.trunk.huoshow.com/2011/1202/68325.shtml" target="_blank">东方神起上海个唱50保镖护驾 提醒歌迷理智</a></span>
+							<span class="date_01">2011-12-02 15:07:05</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="山口百惠次子曝父母三誓约:诚实戒烟不出轨" href="http://pnews.trunk.huoshow.com/2011/1202/68317.shtml" target="_blank">山口百惠次子曝父母三誓约:诚实戒烟不出轨</a></span>
+							<span class="date_01">2011-12-02 15:00:47</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李敏镐上海粉丝见面会 唱新歌秀MJ舞蹈(图)" href="http://pnews.trunk.huoshow.com/2011/1202/68315.shtml" target="_blank">李敏镐上海粉丝见面会 唱新歌秀MJ舞蹈(图)</a></span>
+							<span class="date_01">2011-12-02 15:16:45</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李胜基首公开父母职业 父母办公室恋情曝光" href="http://pnews.trunk.huoshow.com/2011/1202/68313.shtml" target="_blank">李胜基首公开父母职业 父母办公室恋情曝光</a></span>
+							<span class="date_01">2011-12-02 14:58:30</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星李孝利曾自曝理想型 首次公开恋爱场所" href="http://pnews.trunk.huoshow.com/2011/1202/68311.shtml" target="_blank">韩星李孝利曾自曝理想型 首次公开恋爱场所</a></span>
+							<span class="date_01">2011-12-02 14:54:52</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="全智贤冬装写真秀美腿 长靴迷你裙酷感十足" href="http://pnews.trunk.huoshow.com/2011/1201/68205.shtml" target="_blank">全智贤冬装写真秀美腿 长靴迷你裙酷感十足</a></span>
+							<span class="date_01">2011-12-01 16:58:21</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩娱看点多:WG自爆初体验 巨人萝莉谱恋曲" href="http://pnews.trunk.huoshow.com/2011/1201/68203.shtml" target="_blank">韩娱看点多:WG自爆初体验 巨人萝莉谱恋曲</a></span>
+							<span class="date_01">2011-12-01 17:18:45</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李信爱拍写真 性感俏丽的圣诞女郎吸眼球" href="http://pnews.trunk.huoshow.com/2011/1201/68201.shtml" target="_blank">李信爱拍写真 性感俏丽的圣诞女郎吸眼球</a></span>
+							<span class="date_01">2011-12-01 17:00:44</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="“花花公子”金贤重强势回归 宣传大片魅力十足" href="http://pnews.trunk.huoshow.com/2011/1201/68197.shtml" target="_blank">“花花公子”金贤重强势回归 宣传大片魅力十足</a></span>
+							<span class="date_01">2011-12-01 17:09:07</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="BEG成员Narsha拍内衣广告 酥胸大露红唇性感" href="http://pnews.trunk.huoshow.com/2011/1201/68195.shtml" target="_blank">BEG成员Narsha拍内衣广告 酥胸大露红唇性感</a></span>
+							<span class="date_01">2011-12-01 17:05:33</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="MAMA少女时代封后 红毯秀性感新战袍(图)" href="http://pnews.trunk.huoshow.com/2011/1201/68185.shtml" target="_blank">MAMA少女时代封后 红毯秀性感新战袍(图)</a></span>
+							<span class="date_01">2011-12-01 16:53:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩国女艺人朴真熙最新时尚写真曝光(图)" href="http://pnews.trunk.huoshow.com/2011/1201/68171.shtml" target="_blank">韩国女艺人朴真熙最新时尚写真曝光(图)</a></span>
+							<span class="date_01">2011-12-01 17:23:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="日本组合NMB48赴台湾观光 体验庙宇文化(图)" href="http://pnews.trunk.huoshow.com/2011/1201/68167.shtml" target="_blank">日本组合NMB48赴台湾观光 体验庙宇文化(图)</a></span>
+							<span class="date_01">2011-12-01 17:26:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="2PM泽演Nichkhun与敏雅拍滑雪服写真(图)" href="http://pnews.trunk.huoshow.com/2011/1201/68165.shtml" target="_blank">2PM泽演Nichkhun与敏雅拍滑雪服写真(图)</a></span>
+							<span class="date_01">2011-12-01 17:34:47</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="东方神起将在上海办歌友会 提醒歌迷注意安全" href="http://pnews.trunk.huoshow.com/2011/1201/68163.shtml" target="_blank">东方神起将在上海办歌友会 提醒歌迷注意安全</a></span>
+							<span class="date_01">2011-12-01 17:28:47</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="韩星崔智友为名表代言 显优雅高贵(图)" href="http://pnews.trunk.huoshow.com/2011/1201/68161.shtml" target="_blank">韩星崔智友为名表代言 显优雅高贵(图)</a></span>
+							<span class="date_01">2011-12-01 17:37:19</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="影视圈“怪”现象 苍井空内地走红汤唯难现身(图)" href="http://pnews.trunk.huoshow.com/2011/1201/67843.shtml" target="_blank">影视圈“怪”现象 苍井空内地走红汤唯难现身(图)</a></span>
+							<span class="date_01">2011-12-01 14:36:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星朱智勋退役 500粉丝冒寒风迎接" href="http://pnews.trunk.huoshow.com/2011/1201/67627.shtml" target="_blank">韩星朱智勋退役 500粉丝冒寒风迎接</a></span>
+							<span class="date_01">2011-12-01 14:09:38</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="日星麻生久美子被证实已怀孕五个月(图)" href="http://pnews.trunk.huoshow.com/2011/1201/67623.shtml" target="_blank">日星麻生久美子被证实已怀孕五个月(图)</a></span>
+							<span class="date_01">2011-12-01 14:16:12</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="KARA跻身日本红白奖 专辑创海外女组合纪录" href="http://pnews.trunk.huoshow.com/2011/1201/67621.shtml" target="_blank">KARA跻身日本红白奖 专辑创海外女组合纪录</a></span>
+							<span class="date_01">2011-12-01 14:21:46</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="李孝利无名指戴戒指 网友猜其已秘密结婚(图)" href="http://pnews.trunk.huoshow.com/2011/1201/67619.shtml" target="_blank">李孝利无名指戴戒指 网友猜其已秘密结婚(图)</a></span>
+							<span class="date_01">2011-12-01 14:18:27</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="朴真熙最新写真曝光 变身性感夜店女王(图)" href="http://pnews.trunk.huoshow.com/2011/1201/67617.shtml" target="_blank">朴真熙最新写真曝光 变身性感夜店女王(图)</a></span>
+							<span class="date_01">2011-12-01 14:14:59</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="山口百惠爱子冬日写真曝光 遗传父母好相貌" href="http://pnews.trunk.huoshow.com/2011/1130/67035.shtml" target="_blank">山口百惠爱子冬日写真曝光 遗传父母好相貌</a></span>
+							<span class="date_01">2011-11-30 14:55:56</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="至上励合携手快女刘忻王艺洁 慈善晚宴秀幸福" href="http://pnews.trunk.huoshow.com/2011/1130/67033.shtml" target="_blank">至上励合携手快女刘忻王艺洁 慈善晚宴秀幸福</a></span>
+							<span class="date_01">2011-11-30 14:58:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="言承旭再演纨绔子弟 被批“演技十年无突破”" href="http://pnews.trunk.huoshow.com/2011/1130/66839.shtml" target="_blank">言承旭再演纨绔子弟 被批“演技十年无突破”</a></span>
+							<span class="date_01">2011-11-30 11:11:53</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="金喜善性感黑丝机场现身 展“辣妈”风采(图)" href="http://pnews.trunk.huoshow.com/2011/1130/66835.shtml" target="_blank">金喜善性感黑丝机场现身 展“辣妈”风采(图)</a></span>
+							<span class="date_01">2011-11-30 11:17:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李孝利恋上丑男音乐人 网友:美女陪野兽" href="http://pnews.trunk.huoshow.com/2011/1130/66751.shtml" target="_blank">李孝利恋上丑男音乐人 网友:美女陪野兽</a></span>
+							<span class="date_01">2011-11-30 11:08:18</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="金喜善撇下孩子独自出国 机场展辣妈风采" href="http://pnews.trunk.huoshow.com/2011/1130/66749.shtml" target="_blank">金喜善撇下孩子独自出国 机场展辣妈风采</a></span>
+							<span class="date_01">2011-11-30 10:59:22</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星李智雅发童年照 可爱“兔女郎”笑容甜美(图)" href="http://pnews.trunk.huoshow.com/2011/1130/66747.shtml" target="_blank">韩星李智雅发童年照 可爱“兔女郎”笑容甜美(图)</a></span>
+							<span class="date_01">2011-11-30 11:02:29</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李孝利旧照曝光 男友李尚顺节目“以权谋私”" href="http://pnews.trunk.huoshow.com/2011/1130/66745.shtml" target="_blank">李孝利旧照曝光 男友李尚顺节目“以权谋私”</a></span>
+							<span class="date_01">2011-11-30 10:57:13</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="韩星李智雅公开童年照 脱“外星人”称号" href="http://pnews.trunk.huoshow.com/2011/1129/66633.shtml" target="_blank">韩星李智雅公开童年照 脱“外星人”称号</a></span>
+							<span class="date_01">2011-11-29 17:28:06</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="sj利特毕业照曝光 中学成绩优异梦想当艺人(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66577.shtml" target="_blank">sj利特毕业照曝光 中学成绩优异梦想当艺人(图)</a></span>
+							<span class="date_01">2011-11-29 16:11:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="田中千鹤服食兴奋剂被捕 曾与藤原纪香合作" href="http://pnews.trunk.huoshow.com/2011/1129/66471.shtml" target="_blank">田中千鹤服食兴奋剂被捕 曾与藤原纪香合作</a></span>
+							<span class="date_01">2011-11-29 15:06:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="朴宰范权丽世代言冬装 展彩色系青春洋溢(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66469.shtml" target="_blank">朴宰范权丽世代言冬装 展彩色系青春洋溢(图)</a></span>
+							<span class="date_01">2011-11-29 15:09:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="经纪公司证实日星麻生久美子怀孕五个月" href="http://pnews.trunk.huoshow.com/2011/1129/66467.shtml" target="_blank">经纪公司证实日星麻生久美子怀孕五个月</a></span>
+							<span class="date_01">2011-11-29 15:14:20</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="韩组合f(x)宋茜新写真 尽显纤细性感(组图)" href="http://pnews.trunk.huoshow.com/2011/1129/66463.shtml" target="_blank">韩组合f(x)宋茜新写真 尽显纤细性感(组图)</a></span>
+							<span class="date_01">2011-11-29 15:19:59</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="强尼德普携儿子与女友外出“轧马路”（图）" href="http://pnews.trunk.huoshow.com/2011/1129/66459.shtml" target="_blank">强尼德普携儿子与女友外出“轧马路”（图）</a></span>
+							<span class="date_01">2011-11-29 15:24:11</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李孝利自曝恋上音乐人 因动物结缘深夜约会" href="http://pnews.trunk.huoshow.com/2011/1129/66457.shtml" target="_blank">李孝利自曝恋上音乐人 因动物结缘深夜约会</a></span>
+							<span class="date_01">2011-11-29 14:59:39</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李孝利自承恋上音乐人 歌迷吃醋:美女配野兽" href="http://pnews.trunk.huoshow.com/2011/1129/66451.shtml" target="_blank">李孝利自承恋上音乐人 歌迷吃醋:美女配野兽</a></span>
+							<span class="date_01">2011-11-29 15:05:24</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星金秉万登记结婚 大喜日定为明年三月" href="http://pnews.trunk.huoshow.com/2011/1129/66113.shtml" target="_blank">韩星金秉万登记结婚 大喜日定为明年三月</a></span>
+							<span class="date_01">2011-11-29 15:30:09</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="韩星李孝利被曝正热恋 男友为金东律好友" href="http://pnews.trunk.huoshow.com/2011/1129/66095.shtml" target="_blank">韩星李孝利被曝正热恋 男友为金东律好友</a></span>
+							<span class="date_01">2011-11-29 10:55:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李孝利因宠物恋上音乐人 首次公布恋情" href="http://pnews.trunk.huoshow.com/2011/1129/66089.shtml" target="_blank">李孝利因宠物恋上音乐人 首次公布恋情</a></span>
+							<span class="date_01">2011-11-29 09:59:12</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="冈田将生将出演新剧 被中谷美纪“玩弄”(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66087.shtml" target="_blank">冈田将生将出演新剧 被中谷美纪“玩弄”(图)</a></span>
+							<span class="date_01">2011-11-29 09:56:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="日女星后藤真希为告别演艺圈发大尺度写真(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66085.shtml" target="_blank">日女星后藤真希为告别演艺圈发大尺度写真(图)</a></span>
+							<span class="date_01">2011-11-29 09:52:03</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李英爱和丈夫现身百货商店 与粉丝亲切合影(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66071.shtml" target="_blank">李英爱和丈夫现身百货商店 与粉丝亲切合影(图)</a></span>
+							<span class="date_01">2011-11-29 09:46:01</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="韩星尹彩伊最新写真 展修长丰满性感身材(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66029.shtml" target="_blank">韩星尹彩伊最新写真 展修长丰满性感身材(图)</a></span>
+							<span class="date_01">2011-11-29 16:47:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="小西真奈美井上真央等获第三届TAMA电影奖" href="http://pnews.trunk.huoshow.com/2011/1129/66027.shtml" target="_blank">小西真奈美井上真央等获第三届TAMA电影奖</a></span>
+							<span class="date_01">2011-11-29 16:49:51</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩国新人乐团Toxic拍写真 郁黑酷感十足(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66025.shtml" target="_blank">韩国新人乐团Toxic拍写真 郁黑酷感十足(图)</a></span>
+							<span class="date_01">2011-11-29 16:53:26</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星朴施厚釜山办签名会 接新片《我是杀人犯》" href="http://pnews.trunk.huoshow.com/2011/1129/66023.shtml" target="_blank">韩星朴施厚釜山办签名会 接新片《我是杀人犯》</a></span>
+							<span class="date_01">2011-11-29 15:03:29</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩星李孝利确认与年长5岁音乐家热恋" href="http://pnews.trunk.huoshow.com/2011/1129/66021.shtml" target="_blank">韩星李孝利确认与年长5岁音乐家热恋</a></span>
+							<span class="date_01">2011-11-29 16:54:58</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="言承旭再演富二代 称绝不做当年道明寺(图)" href="http://pnews.trunk.huoshow.com/2011/1129/66017.shtml" target="_blank">言承旭再演富二代 称绝不做当年道明寺(图)</a></span>
+							<span class="date_01">2011-11-29 10:49:32</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="AKB48脱衣性感献唱 风头难敌7岁女童星" href="http://pnews.trunk.huoshow.com/2011/1129/66013.shtml" target="_blank">AKB48脱衣性感献唱 风头难敌7岁女童星</a></span>
+							<span class="date_01">2011-11-29 10:46:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩电影青龙奖疑有“不当交易” 金荷娜大败汤唯" href="http://pnews.trunk.huoshow.com/2011/1129/66011.shtml" target="_blank">韩电影青龙奖疑有“不当交易” 金荷娜大败汤唯</a></span>
+							<span class="date_01">2011-11-29 10:42:35</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="歌迷为睹Super Junior风采 机场打地铺睡3天" href="http://pnews.trunk.huoshow.com/2011/1129/66009.shtml" target="_blank">歌迷为睹Super Junior风采 机场打地铺睡3天</a></span>
+							<span class="date_01">2011-11-29 10:27:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李孝利转行当主持 露背爆乳装性感抢镜(图)" href="http://pnews.trunk.huoshow.com/2011/1128/65327.shtml" target="_blank">李孝利转行当主持 露背爆乳装性感抢镜(图)</a></span>
+							<span class="date_01">2011-11-28 10:39:31</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="后藤真希发大尺度全裸写真 宣布告别演艺圈(图)" href="http://pnews.trunk.huoshow.com/2011/1128/65321.shtml" target="_blank">后藤真希发大尺度全裸写真 宣布告别演艺圈(图)</a></span>
+							<span class="date_01">2011-11-28 10:26:36</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="裴勇俊李东旭金在中等韩星绝密豪宅大揭秘" href="http://pnews.trunk.huoshow.com/2011/1128/65255.shtml" target="_blank">裴勇俊李东旭金在中等韩星绝密豪宅大揭秘</a></span>
+							<span class="date_01">2011-11-28 10:47:11</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="张东健上海拍新片《危险关系》 烟不离手(图)" href="http://pnews.trunk.huoshow.com/2011/1128/65253.shtml" target="_blank">张东健上海拍新片《危险关系》 烟不离手(图)</a></span>
+							<span class="date_01">2011-11-28 10:59:54</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="全智贤代言冬装 露平坦小腹大玩性感(图)" href="http://pnews.trunk.huoshow.com/2011/1128/65237.shtml" target="_blank">全智贤代言冬装 露平坦小腹大玩性感(图)</a></span>
+							<span class="date_01">2011-11-28 10:57:28</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李英爱拎名包与老公逛街 为龙凤胎置新衣(图)" href="http://pnews.trunk.huoshow.com/2011/1128/65235.shtml" target="_blank">李英爱拎名包与老公逛街 为龙凤胎置新衣(图)</a></span>
+							<span class="date_01">2011-11-28 10:54:35</span>
+						</li>
+																	</ul>
+										<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c"><a class="a1">1108条</a> <a href="/star/rihanmingxing/rihanxingdongtai/10.shtml" class="a1">上一页</a> <a href="/star/rihanmingxing/rihanxingdongtai/index.shtml">1</a><span>..</span> <a href="/star/rihanmingxing/rihanxingdongtai/7.shtml">7</a> <a href="/star/rihanmingxing/rihanxingdongtai/8.shtml">8</a> <a href="/star/rihanmingxing/rihanxingdongtai/9.shtml">9</a> <a href="/star/rihanmingxing/rihanxingdongtai/10.shtml">10</a> <span>11</span> <a href="/star/rihanmingxing/rihanxingdongtai/12.shtml">12</a> <a href="/star/rihanmingxing/rihanxingdongtai/13.shtml">13</a> <a href="/star/rihanmingxing/rihanxingdongtai/14.shtml">14</a> <a href="/star/rihanmingxing/rihanxingdongtai/15.shtml">15</a> <a href="/star/rihanmingxing/rihanxingdongtai/16.shtml">16</a> <a href="/star/rihanmingxing/rihanxingdongtai/12.shtml" class="a1">下一页</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=1&catid=12&other_catids=131,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=1"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=62&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

@@ -1,0 +1,537 @@
+@import "../hs-game-global.css";
+@charset "utf-8";
+
+/*
+名称：火秀游戏专题经典样式表
+简介：火秀游戏专题经典样式表
+维护：王文 wangwen1220#139.com
+日期：2013-1-14
+*/
+
+/* TPL
+----------------------------------------------------------------------------- */
+/*
+ * @name: .ui-header-classic
+ * @overview: 标题样式
+ * @require: .ui-header
+ */
+.ui-header-classic {
+	padding-left: 15px;
+	border-top: 1px solid #035CAD;
+	background: #F0F0F0;
+}
+.ui-header-classic .title {
+	color: #000;
+	font-family: '微软雅黑','黑体','宋体',arial;
+	font-size: 18px;
+}
+.ui-header-classic .link,
+.ui-header-classic .link a {
+	color: #999;
+}
+
+/*
+ * @name: .ui-pic-list
+ * @overview: 图片列表样式
+ * @require: null
+ */
+.ui-pic-list {
+	margin: 20px -30px 10px 0;
+}
+.ui-pic-list-item {
+	float: left;
+	margin: 0 30px 10px 0;
+	width: 136px;
+	overflow: hidden;
+}
+.ui-pic-list-item .img {
+	position: relative;
+	display: block;
+	padding: 1px;
+	border: 1px solid #DFDFDF;
+	background: #fff;
+}
+.ui-pic-list-item img {
+	display: block;
+}
+.ui-pic-list-item .img .icon-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 37px;
+	height: 37px;
+	margin-left: -18px;
+	margin-top: -18px;
+	background: url(../../images/game/icon-play.png) no-repeat 0 0;
+}
+.ui-pic-list-item .img:hover .icon-play {
+	background: url(../../images/game/icon-play-hover.png) no-repeat 0 0;
+}
+.ui-pic-list-item .title {
+	display: block;
+	margin-top: 3px;
+	height: 16px;
+	line-height: 16px;
+	overflow: hidden;
+	color: #666;
+}
+.ui-pic-list-item .time {
+	color: #999;
+}
+
+/*
+ * @name: .ui-pic-list-gallery
+ * @overview: 图片列表样式
+ * @require: .ui-pic-list
+ */
+.ui-pic-list-gallery {
+	margin-right: -14px;
+}
+.ui-pic-list-gallery .ui-pic-list-item {
+	margin-right: 14px;
+	padding: 8px 12px 14px 8px;
+	width: 132px;
+	height: 163px;
+	background: url(../../images/game/bg-pic-list-item-gallery.png) no-repeat 0 0;
+}
+.ui-pic-list-gallery .ui-pic-list-item .img {
+	padding: 0;
+	border: none;
+}
+.ui-pic-list-gallery .ui-pic-list-item .info {
+	position: relative;
+	z-index: 1;
+	margin-top: -20px;
+	padding: 0 5px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .6);
+	background: #000\9;
+	opacity: 0.75\9;
+	filter: alpha(opacity=75);
+}
+.ui-pic-list-gallery .ui-pic-list-item .date {
+	float: right;
+}
+.ui-pic-list-gallery .ui-pic-list-item .title {
+	height: 36px;
+	line-height: 18px;
+}
+
+/*
+ * @name: .ui-comment-list
+ * @overview: 评论列表样式
+ * @require: null
+ */
+.ui-comment-list {}
+.ui-comment-list-item {
+	position: relative;
+	padding: 20px 0;
+	border-bottom: 1px dotted #DFDFDF;
+}
+.ui-comment-list-item .img {
+	float: left;
+	border: 1px solid #E5E5E5;
+}
+.ui-comment-list-item .img img {
+	display: block;
+}
+.ui-comment-list-item .title,
+.ui-comment-list-item .cnt {
+	margin-left: 60px;
+}
+.ui-comment-list-item .title {
+	margin-right: 150px;
+	color: #999;
+}
+.ui-comment-list-item .title a {
+	color: #045DAD;
+}
+.ui-comment-list-item .cnt {
+	margin-top: 5px;
+	line-height: 1.8;
+	font-size: 14px;
+	color: #333;
+}
+.ui-comment-list-item .info {
+	position: absolute;
+	right: 0;
+	top: 20px;
+	color: #999;
+}
+
+/*
+ * @name: ui-rank-table
+ * @overview: 游戏领号表格样式
+ * @require: null
+ */
+.ui-rank-table {
+	width: 100%;
+}
+.ui-rank-table th,
+.ui-rank-table td {
+	padding: 0 10px;
+	height: 28px;
+	line-height: 28px;
+	color: #000;
+	text-align: center;
+	background-color: #EAEAEA;
+}
+.ui-rank-table td {
+	color: #333;
+	background: none;
+}
+.ui-rank-table td a {
+	color: #222;
+}
+.ui-rank-table td .num {
+	display: inline-block;
+	margin-right: 8px;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	border: 1px solid #BCBCBC;
+	border-radius: 3px;
+	text-align: center;
+	color: #444;
+	font-size: 11px;
+	vertical-align: middle;
+	font-family: '微软雅黑',arial,verdana,sans-serif;
+	background-color: #ddd;
+}
+.ui-rank-table td .num-hot {
+	border-color: #B20F0F;
+	color: #fff;
+	background-color: #C60000;
+}
+
+/* Global
+----------------------------------------------------------------------------- */
+/** Header **/
+#nav {
+	height: 32px;
+	background: #075FAF;
+}
+#header .search .search-submit {
+	background-color: #0C62B1;
+	background-image: url(../../images/game/btn-search-submit-blue.png);
+}
+#header .search .search-hotspot,
+#header .search .search-hotspot a {
+	color: #045DAD;
+}
+
+/** Side **/
+#side .ui-box-side {
+	border: none;
+	background: none;
+}
+#side .ui-box-side-title {
+	margin: 0 0 10px 0;
+	border: none;
+	height: 20px;
+	line-height: 20px;
+	color: #000;
+	background-image: url(../../images/game/icon-ui-title-blue.png);
+}
+
+/* Layout
+----------------------------------------------------------------------------- */
+/** 资料库 **/
+body.game-zlk .ui-layout {
+	overflow: hidden;
+}
+body.game-zlk .ui-layout .img-game {
+	float: left;
+	margin-bottom: 10px;
+}
+body.game-zlk .ui-layout .img-game img {
+	display: block;
+}
+body.game-zlk .ui-layout .cnt {
+	margin: 0 0 10px 380px;
+}
+body.game-zlk .ui-layout .cnt .title {
+	color: #666;
+}
+body.game-zlk .ui-layout .cnt .title a {
+	margin-right: 5px;
+	font: 25px/1 '微软雅黑','黑体','宋体',arial;
+	color: #035CAD;
+}
+body.game-zlk .ui-layout .cnt .vote {
+	float: right;
+	width: 100px;
+	height: 41px;
+	text-indent: -9999px;
+	background: url(../../images/game/btn-vote-red.png) no-repeat;
+}
+body.game-zlk .ui-layout .cnt .rank {
+	margin-top: 5px;
+	color: #666;
+}
+body.game-zlk .ui-layout .cnt .rank strong,
+body.game-zlk .ui-layout .cnt .rank em {
+	color: #CF0716;
+}
+body.game-zlk .ui-layout .cnt .rank strong {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 22px;
+}
+body.game-zlk .ui-layout .cnt .dt {
+	color: #999;
+}
+body.game-zlk .ui-layout .cnt .grade {
+	margin-top: 3px;
+	line-height: 14px;
+}
+body.game-zlk .ui-layout .cnt .grade .star {
+	display: inline-block;
+	width: 74px;
+	height: 14px;
+	background: url(../../images/game/icon-star0.png) no-repeat 0 50%;
+}
+body.game-zlk .ui-layout .cnt .grade .star-1 {
+	background-image: url(../../images/game/icon-star1.png);
+}
+body.game-zlk .ui-layout .cnt .grade .star-2 {
+	background-image: url(../../images/game/icon-star2.png);
+}
+body.game-zlk .ui-layout .cnt .grade .star-3 {
+	background-image: url(../../images/game/icon-star3.png);
+}
+body.game-zlk .ui-layout .cnt .grade .star-4 {
+	background-image: url(../../images/game/icon-star4.png);
+}
+body.game-zlk .ui-layout .cnt .grade .star-5 {
+	background-image: url(../../images/game/icon-star5.png);
+}
+body.game-zlk .ui-layout .cnt .info {
+	margin: 10px -10px 10px 0;
+	padding: 10px 0;
+	border-top: 1px solid #DFDFDF;
+	border-bottom: 1px solid #DFDFDF;
+	overflow: hidden;
+	*zoom: 1;
+}
+body.game-zlk .ui-layout .cnt .info li {
+	float: left;
+	width: 45%;
+	margin: 5px 10px 5px 0;
+	color: #666;
+}
+body.game-zlk .ui-layout .cnt .info li a {}
+body.game-zlk .ui-layout .cnt .desc {
+	margin-top: 10px;
+	color: #666;
+}
+body.game-zlk .ui-layout .cnt .desc h3 {
+	margin-bottom: 5px;
+	font-size: 15px;
+	color: #999;
+	font-weight: bold;
+}
+body.game-zlk .ui-layout .cnt .desc p {
+	line-height: 18px;
+}
+body.game-zlk .ui-layout .cnt .desc p span {
+	display: inline-block;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+body.game-zlk .ui-layout .cnt .desc p span.opened {
+	display: inline;
+	white-space: normal;
+	overflow: visible;
+	width: auto;
+	vertical-align: bottom;
+}
+body.game-zlk .ui-layout .cnt .desc p .open {
+	margin-left: 7px;
+	display: inline-block;
+	text-decoration: underline;
+	padding-right: 20px;
+	outline: none;
+	background: url(../../images/game/icon-open-gray.png) no-repeat 100% 50%;
+}
+body.game-zlk .ui-layout .cnt .desc .open:hover {
+	text-decoration: none;
+}
+body.game-zlk .ui-layout .share {
+	clear: both;
+	padding: 12px 10px;
+	background-color: #F0F0F0;
+}
+body.game-zlk .ui-layout .share .comment {
+	float: right;
+	color: #999;
+}
+body.game-zlk .ui-layout .share .comment a {
+	color: #999;
+	text-decoration: underline;
+}
+body.game-zlk .ui-layout .share .comment a:hover {
+	text-decoration: none;
+}
+body.game-zlk .ui-layout .share .comment em {
+	color: #CF0716;
+}
+
+/* main */
+body.game-zlk #main {
+	width: 670px;
+	padding-right: 10px;
+	border-right: 1px solid #E6E6E6;
+	_overflow: hidden;
+}
+body.game-zlk #main .article-news .ui-list-content {
+	border: none;
+}
+body.game-zlk #main .article-gallery .ui-pic-list {
+	margin-left: 18px;
+}
+body.game-zlk #main .article-gallery .ui-pic-list-gallery {
+	margin-left: 10px;
+}
+body.game-zlk #main .article-comment .ui-header .link em {
+	color: #CF0716;
+}
+body.game-zlk #main .article-comment .ui-header-comment {
+	margin: 10px 0 0;
+	padding: 0 0 5px;
+	border-bottom: 1px solid #E6E6E6;
+	background: none;
+}
+body.game-zlk #main .article-comment .ui-header-comment .title {
+	font-family: '微软雅黑','黑体','宋体',arial;
+	font-size: 17px;
+	color: #666;
+}
+body.game-zlk #main .article-comment .ui-header-comment .title .status {
+	font-size: 12px;
+	font-family: '宋体',arial;
+	color: #999;
+}
+body.game-zlk #main .article-comment .ui-header-comment .title .status em {
+	margin: 0 .2em;
+	color: #CF0716;
+	font-weight: bold;
+}
+body.game-zlk #main .article-comment .ui-header-comment .link {
+	right: 0;
+	color: #999;
+}
+body.game-zlk #main .article-pager a,
+body.game-zlk #main .article-pager span {
+	padding: 0 7px;
+	height: 20px;
+	line-height: 20px;
+}
+body.game-zlk #main .article-pager .current {
+	border-color: #035CAD;
+	background: #035CAD;
+}
+body.game-zlk #main .comment-form {
+	border: 1px solid #E6E6E6;
+	background-color: #F2F2F2;
+	padding: 0 20px;
+}
+body.game-zlk #main .comment-form .title {
+	height: 40px;
+	padding-left: 25px;
+	font: 16px/40px '微软雅黑','黑体','宋体',arial;
+	color: #666;
+	background: url(../../images/game/icon-comment-title.png) no-repeat 0 50%;
+}
+body.game-zlk #main .comment-form textarea {
+	margin: 0 -1px 0 -1px;
+	padding: 4px 0;
+	width: 100%;
+	height: 146px;
+	border: 1px solid #E6E6E6;
+	color: #444;
+	resize: vertical;
+	background: #fff url(../../images/game/bg-comment.png) no-repeat center center;
+}
+body.game-zlk #main .comment-form textarea:focus {
+	border: 1px solid #aaa;
+	box-shadow: 0 0 3px rgba(255, 0, 0, .3);
+}
+body.game-zlk #main .comment-form button {
+	float: right;
+	margin: 10px 0;
+	border: none;
+	height: 24px;
+	width: 60px;
+	text-indent: -9999px;
+	color: #fff;
+	background: url(../../images/game/btn-comment-submit-red.png) no-repeat;
+}
+body.game-zlk #main .comment-form .login {
+	margin: 10px 0;
+	line-height: 24px;
+	color: #045DAD;
+}
+body.game-zlk #main .comment-form .login a {
+	color: #045DAD;
+}
+
+/* side */
+body.game-zlk #side {
+	padding-left: 10px;
+	width: 269px;
+}
+body.game-zlk #side .ui-box-side .ui-art {
+	margin-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dotted #DFDFDF;
+	background: none;
+}
+body.game-zlk #side .ui-box-side .ui-art .title,
+body.game-zlk #side .ui-box-side .ui-art .info {
+	margin-left: 140px;
+}
+body.game-zlk #side .ui-box-side .ui-art .title {
+	color: #000;
+	font-weight: bold;
+}
+body.game-zlk #side .ui-box-side .ui-art .info {
+	margin-top: 3px;
+	line-height: 1.9;
+	color: #999;
+}
+body.game-zlk #side .ui-box-side-form {
+	margin: 15px 0 30px;
+}
+body.game-zlk #side .ui-box-side-form .search-wd {
+	width: 212px;
+	height: 23px;
+	line-height: 23px;
+	border: 1px solid #D0D0D0;
+	text-indent: 4px;
+	color: #999;
+}
+body.game-zlk #side .ui-box-side-form .search-wd:focus {
+	color: #666;
+}
+body.game-zlk #side .ui-box-side-form .search-submit {
+	width: 45px;
+	height: 25px;
+	border: none;
+	color: #fff;
+	text-align: center;
+	vertical-align: top;
+	background-color: #045DAD;
+}
+body.game-zlk #side .ui-box-side-rank {
+	margin: 10px 0;
+	padding-top: 15px;
+	border-top: 1px solid #DFDFDF;
+}

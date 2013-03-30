@@ -1,0 +1,64 @@
+{template "content","game_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="m_event">
+		{pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page"}
+		{loop $data $r}
+		<dl>
+			<dt><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,90)}" width="120" height="90"/></a></dt>
+			<dd><a target="_blank" href="{$r[url]}">{str_cut($r[title],80,'')}</a><br />
+				{$r['description']}<span>
+				<a target="_blank" href="{$r[url]}">详细>></a></span> </dd>
+		</dl>
+		<div class="clear"></div>
+		{/loop}
+		{/pc}
+		<div class="fanye">
+			<div id="fanye_01">{$pages}<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<div class="Subpage_right">
+		<div class="banner_300_250"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(55);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a65f6978'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=55&n=a65f6978' /></a>
+			</noscript></div>
+		<!-- 相关热点 -->
+		<div class="right_news_jiaodian">
+			<!--#include virtual="/api.php?op=movie&p=get_related_hot&catid={$catid}"-->
+		</div>
+		<!-- 相关热点结束 -->
+		<!-- 今日推荐 -->
+		<div class='ui_list_box'>
+			<!--#include virtual="/api.php?op=movie&p=get_day_recommended&catid=14"-->
+		</div>
+		<!-- 今日推荐结束 -->
+		<!-- 热点资讯排行 -->
+		<div class="ui_fold_box ui_fold_box_redian">
+			<!--#include virtual="/api.php?op=movie&p=get_hot_news_ranking&catid=14"-->
+		</div>
+		<!-- 热点资讯排行结束 -->
+		<!-- 网游、页游、单机、小游戏、掌机 tab切换 -->
+		<div class='ui_tab_artical_box' id='js_tab_artical_box'>
+			<!--#include virtual="/api.php?op=movie&p=get_tab_cutover&catid=14"-->
+		</div>
+		<!-- 网游、页游、单机、小游戏、掌机 tab切换结束 -->
+		<!-- 热点视频 -->
+		<div class="right_news_jiaodian">
+			<!--#include virtual="/api.php?op=movie&p=get_hot_video&catid=194"-->
+		</div>
+		<!-- 热点视频结束 -->
+
+		<!-- 游戏大观 -->
+		<div class="right_news_jiaodian">
+			<!--#include virtual="/api.php?op=movie&p=get_game_grand_view&catid=14"-->
+		</div>
+		<!-- 游戏大观结束 -->
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

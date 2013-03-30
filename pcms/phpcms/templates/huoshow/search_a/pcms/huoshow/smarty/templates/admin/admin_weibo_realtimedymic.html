@@ -1,0 +1,41 @@
+{include file="admin/admin_weibo_head.html"}
+<table>
+	<tr>
+		<th>用户ID</th>
+		<th>用户名</th>
+		<th>内容</th>
+		<th>状态</th>
+		<th>类型</th>
+		<th>发布IP</th>
+		<th>发布时间</th>
+		<th>操作</th>
+	</tr>
+	{section name=a loop=$arr}
+	<tr>
+		<td>{$arr[a].uid}</td>
+		<td>{$arr[a].username}</td>
+		<td>{$arr[a].msg}</td>
+		<td>{$arr[a].msg_is_del}</td>
+		<td>{$arr[a].msg_type_str}</td>
+		<td>{$arr[a].ip}</td>
+		<td>{$arr[a].append_time}</td>
+		<td>{if !$arr[a].is_del}<a id="del" onclick="delError('?action=huoshow&operation=weibo&tab=realtimedymic&op=deldymic&id={$arr[a].id}');return false;"  href="javascript:;">删除</a>{/if}</td>
+	</tr>
+	{/section}
+
+	<tr>
+    	<td colspan="8">{$page_str}</td>
+  	</tr>
+</table>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定删除？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+</script>
+{/literal}

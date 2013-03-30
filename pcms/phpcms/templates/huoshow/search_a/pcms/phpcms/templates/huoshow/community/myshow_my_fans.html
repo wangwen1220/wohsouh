@@ -1,0 +1,53 @@
+{template "community","myshow_header"}
+<div id="wrapper" class='fans-page'>
+	<h2 class="header">{$user_info[0][nickname]}的粉丝 ({$count})</h2>
+	{loop $datas $r}
+	<div class="fans fn-clear"><!--奇数行添加类odd-->
+		<a target='_blank' class="avatar" href='/m{$r[uid]}.html'><img src='{$r[head_img_url]}' alt='' width='50' height='50' /></a>
+		<div class='card'>
+			<div class='info'>
+				<a target='_blank' class='avatar' href='/m{$r[uid]}.html'><img src='{$user_info[0][head_img_url]}' alt='' width='60' height='60' /></a>
+				<a target='_blank' class='name boy' href='/m{$r[uid]}.html'>{$r[nickname]}</a><!-- 男孩：class='name boy'，女孩：class='name girl' -->
+				<span class='stats'>分享 <strong>{if $r[user_arr][share]}{$r[user_arr][share]}{else}0{/if}</strong> 粉丝 <strong>{if $r[user_arr][fans]}{$r[user_arr][fans]}{else}0{/if}</strong> 专辑 <strong>{if $r[user_arr][album]}{$r[user_arr][album]}{else}0{/if}</strong></span>
+				<p class='signature'>签名：{$r[signa]}</p>
+			</div>
+			<div class='actions fn-clear' data-uid='{$r[uid]}'>
+				<a class='letter send-msg btn' href='/index.php?m=community&c=index&a=send_message&src_uid={$myshowuid}&dst_uid={$r[uid]}'>发私信</a>
+				{if $r[is_arr] == 0}
+				<a class='follow btn' href='/index.php?m=community&c=myhuoshow&a=userfowllow&src_uid={$user[uid]}&dst_uid={$r[uid]}&myuid={$myshowuid}&url={$_GET[a]}'>关注Ta</a>
+				{else}
+				<a class='follow btn followed' href='/index.php?m=community&c=myhuoshow&a=userfowllow&src_uid={$user[uid]}&dst_uid={$r[uid]}&list=2&myuid={$myshowuid}&url={$_GET[a]}'>取消关注</a>
+				{/if}
+			</div>
+		</div>
+		<a target='_blank' class='name boy' target='_blank' href='/m{$r[uid]}.html'>{$r[nickname]}</a>
+		{if $user['uid'] == $myshowuid}
+			{if $r[each_other] != 1}
+			<div class='action'><a class='fbtn' href='/index.php?m=community&c=myhuoshow&a=userfowllow&src_uid={$user_info[0][uid]}&dst_uid={$r[uid]}&myuid={$myshowuid}&url={$_GET[a]}'><span>关注Ta</span></a></div><!--注意类名：dbfollowed -> 双向关注，followed -> 已关注-->
+			{else}
+			<div class='action'><a class='fbtn dbfollowed' href='/index.php?m=community&c=myhuoshow&a=userfowllow&src_uid={$user_info[0][uid]}&dst_uid={$r[uid]}&list=2&myuid={$myshowuid}&url={$_GET[a]}'>取消关注</a></div><!--注意类名：dbfollowed -> 双向关注，followed -> 已关注-->
+			{/if}
+		{else}
+			{if $r[uid] != $user['uid']}
+				{if $r[is_arr] == 0}
+				<div class='action'><a class='fbtn' href='/index.php?m=community&c=myhuoshow&a=userfowllow&src_uid={$user[uid]}&dst_uid={$r[uid]}&myuid={$myshowuid}&url={$_GET[a]}'><span>关注Ta</span></a></div>
+				{else}
+				<div class='action'><a class='fbtn followed' href='/index.php?m=community&c=myhuoshow&a=userfowllow&src_uid={$user[uid]}&dst_uid={$r[uid]}&list=2&myuid={$myshowuid}&url={$_GET[a]}'>取消关注</a></div><!--注意类名：dbfollowed -> 双向关注，followed -> 已关注-->
+				{/if}
+			{/if}
+		{/if}
+		<div class="hot-pins">
+			{php $i=0}
+			{loop $r[share_img][thumb] $v}
+			<a target='_blank' href='/show-{$r[share_img][s_id][$i]}.html'><img src='{$v}' alt='' width='50' height='50' /></a>
+			{$i++}
+			{/loop}
+		</div>
+	</div>
+	{/loop}
+	{if $count>20}
+	{$page_str}
+	{/if}
+</div>
+</body>
+</html>

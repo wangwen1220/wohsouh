@@ -1,0 +1,136 @@
+{template "content","supermodel_header"}
+<!--Main Body-->
+<div class="main_body">
+	<!-- 时装模特 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_5">
+			</span>
+			<a class="more_model" target="_blank" href="{$CATEGORYS[115][url]}">更多</a>
+		</div>
+		<dl>
+			<dt>
+			{pc:content  action="position" posid="65" order="listorder DESC" num="1"}
+			{loop $data $r}
+				<a target="_blank" href="{$r['url']}"><img src="{thumb($r[thumb],280,342)}" alt='{$r['title']}' /></a>
+			{/loop}
+			{/pc}
+			</dt>
+			<dd>
+				<ul>
+				{pc:content action="lists" catid="115" order="id DESC" num="10"}
+				{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r['url']}"><img src="{thumb($r[thumb],120,162)}" alt='{$r['title']}' /></a>
+						<a target="_blank" href="{$r['url']}" class='meitu_title'><span></span>{str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}	
+				{/pc}
+				</ul>
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 时装模特结束 -->
+
+	<!-- 内衣大片 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_6">
+			</span>
+			<a class="more_model" target="_blank" href="{$CATEGORYS[116][url]}">更多</a>
+		</div>
+		<dl>
+			<dt>
+			{pc:content  action="position" posid="66" order="listorder DESC" num="1"}
+			{loop $data $r}
+				<a target="_blank" href="{$r['url']}"><img src="{thumb($r[thumb],280,342)}" alt='{$r['title']}' /></a>
+			{/loop}
+			{/pc}
+			</dt>
+			<dd>
+				<ul>
+				{pc:content action="lists" catid="116" order="id DESC" num="10"}
+				{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt='{$r['title']}' /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 内衣大片结束 -->
+
+	<!-- 车模靓影 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_7">
+			</span>
+			<a class="more_model" target="_blank" href="{$CATEGORYS[117][url]}">更多</a>
+		</div>
+		<dl>
+			<dt>
+			{pc:content  action="position" posid="67" order="listorder DESC" num="1"}
+			{loop $data $r}
+				<a target="_blank" href="{$r['url']}"><img src="{thumb($r[thumb],280,342)}" alt='{$r['title']}' /></a>
+			{/loop}
+			{/pc}
+			</dt>
+			<dd>
+				<ul>
+				{pc:content action="lists" catid="117" order="id DESC" num="10"}
+				{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt='{$r['title']}' /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 车模靓影结束 -->
+
+	<!-- 男模专区 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_8">
+			</span>
+			<a class="more_model" target="_blank" href="{$CATEGORYS[118][url]}">更多</a>
+		</div>
+		<dl>
+			<dt>
+			{pc:content  action="position" posid="68" order="listorder DESC" num="1"}
+			{loop $data $r}
+				<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],280,342)}" alt='{$r['title']}' /></a>
+			{/loop}
+			{/pc}
+			</dt>
+			<dd>
+				<ul>
+				{pc:content action="lists" catid="118" order="id DESC" num="10"}
+				{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt='{$r['title']}' /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 男模专区结束 -->
+</div>
+{template "content","footer"}

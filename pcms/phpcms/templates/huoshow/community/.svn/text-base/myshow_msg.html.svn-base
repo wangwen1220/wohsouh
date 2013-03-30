@@ -1,0 +1,207 @@
+{template "community","myshow_header_lite"}
+
+<body class='msg'>
+<div id="wrapper" class='msg'>
+	<div class='msg-header'>
+		<h1><a href='/'>火秀</a></h1>
+	</div>
+
+	<div class="msg-body">
+		<h3 class='msg-nav'><span class='wrapper'><a class='letter current' href='javascript:;' hidefocus='true'>提到我的<span class='arrow'></span></a><a class='notice' href='javascript:;' hidefocus='true'>我的通知<span class='arrow'></span></a></span></h3>
+		<!-- 私信 -->
+		<div id='msg-letter' class="msg-container msg-letter" data-id='/index.php?m=community&c=myhuoshow&a=json_myshowmsg'>
+			<a id="load-more" class='load-more' href='javascript:;'>更多</a>
+			<div id="loading-end" style='border:none'><img src="/statics/images/myshow/loading-end.png" /></div>
+		</div>
+		<!-- 私信结束 -->
+
+		<!-- 通知 -->
+		<div class="msg-container msg-notice fn-hide">
+			<ul class="msg-list">
+			{loop $notification $r}
+				<li class="msg-item fn-clear">
+					<a class="avatar" href='#'><img src="/statics/images/myshow/avatar_notice.jpg" width='55' height='55' /></a>
+					<div class="msg-box">
+						<div class="content">
+							<h2><span class='time'>{date('Y-m-d H:i:s',$r['dateline'])}</span></h2>
+							<p> {$r['note']}</p>
+						</div>
+						<div class="action">
+							<a class="del" href='#'>删除</a>
+						</div>
+						<div class='new'>新</div><!-- #要判断是否为最新信息，如果不是就不要显示该行 -->
+						<div class='arrow'></div>
+					</div>
+				</li>
+				{/loop}
+			</ul>
+		</div>
+		<!-- 通知结束 -->
+	</div>
+</div>
+
+<script type="text/template" id="tpl">
+	<ul class="msg-list">
+	{@each data as item}
+		<li class="msg-item fn-clear" data-id='${item.id}'>
+			<a class="avatar" href='${item.sender_url}' data-id='${item.sender_uid}'><img src="${item.sender_avatar}" width='72' height='72' /></a>
+			<div class="msg-box">
+				<div class="content">
+					<h2><a class='name' href='${item.sender_url}' data-id='${item.sender_uid}'>${item.sender_name}</a> <span class='time'>${item.time}</span></h2>
+					<p>${item.msg}</p>
+				</div>
+				<div class='arrow'></div>
+				{@if item.isnew}<div class='new'>新</div>{@/if}
+				<div class="action">
+					<a class="del" href='${item.del_url}'>删除</a>
+				</div>
+				{@if item.msg_type == 0}
+				<div class="action-drop">
+					<div class='drop-arrow'></div>
+					<div class="wrapper fn-hide">
+						<a class="report" href='${item.report_url}'>举报</a>
+					</div>
+				</div>
+				<ul class="content-list">
+					{@if item.hasrefer}
+					{@each item.refer as refer}
+					<li class="content-item fn-clear" data-id='${refer.id}'>
+						<a class="avatar" href='${refer.url}'><img src="${refer.avatar}" width='45' height='45' /></a>
+						<div class="content">
+							<h2><a class='name' href='${refer.url}'>${refer.name}</a> <span class='time'>${refer.time}</span></h2>
+							<p>${refer.msg}</p>
+						</div>
+						<div class="action-drop">
+							<div class='drop-arrow'></div>
+							<div class="wrapper fn-hide">
+								{@if !refer.isself}<a class="report" href='${refer.report_url}'>举报</a>{@/if}
+								<a class="del" href='${refer.del_url}'>删除</a>
+							<div>
+						</div>
+					</li>
+					{@/each}
+					{@/if}
+					<li class="content-item fn-clear">
+						<a class="avatar" href='${item.url}'><img src="${item.avatar}" width='45' height='45' /></a>
+						<form class="content refer-form" name='refer' method='post' action='${item.refer_url}'>
+							<div><textarea class='refer-msg' name='mail_content'></textarea></div>
+							<div>
+								<button type='submit' class='submit'>发送</button>
+								<button type='reset' class='reset'>取消</button>
+							</div>
+						</form>
+					</li>
+				</ul>
+				{@else if item.msg_type == 3}
+				<div class='related-album'>
+					<a href="${item.album_url}">
+					{@each item.album_img as img}
+						<img src="${img}" width='50' height='50' />
+					{@/each}
+					</a>
+					<span class='share-btn share-hbtn'><strong>${item.share_count}</strong><em>分享</em></span>
+				</div>
+				{@else}
+				<div class='related-pin'>
+					<a href="${item.pin_url}"><img src="${item.pin_img}" width='60' height='60' /></a>
+				</div>
+				{@/if}
+			</div>
+		</li>
+	{@/each}
+	</ul>
+</script>
+
+<script src="{JS_PATH}juicer-min.js"></script>
+<script>
+	(function($){
+		var $msg_page = $('#wrapper.msg');
+			$msg_letter = $('#msg-letter'),
+			$load_more = $('#load-more'),
+			$loading_end = $('#loading-end'),
+			url = $msg_letter.attr('data-id'),
+			tpl_html = $('#tpl').html(),
+			compiled_tpl = juicer(tpl_html),// 仅编译模版暂不渲染，它会返回一个可重用的编译后的函数
+			nextpage = 1;
+		// 加载信息
+		$load_more.click(function(){
+			$.getJSON(url, {"page": nextpage, "perpage": 20}, function(d){
+				if (d.stat !== 'ok') {
+					$.dialog('数据加载错误，请联系管理员！');
+					return;
+				}
+				var html = compiled_tpl.render(d);// 根据给定的数据，对之前编译好的模板进行数据渲染
+				$load_more.before(html);
+				nextpage = d.page + 1;
+				if (nextpage > d.totalpage) {
+					//$.dialog('*>_<* 没有更多了！').time(2);
+					$load_more.unbind('click').hide();
+					if(nextpage > 2) $loading_end.show('slow');
+					return;
+				}
+			});
+		}).click();
+
+		//发送私信
+		$msg_letter.find('.refer-form').live('submit', function(){
+			var $ths = $(this);
+			$ths.ajaxSubmit({
+				beforeSubmit: function(){
+					var msg = $.trim($ths.find('textarea').val());
+					if(!msg){
+						$.dialog('请先输入内容，再发送！').time(2);
+						return false;
+					}
+				},
+				success: function(d){
+					$(d).hide().insertBefore($ths.parent()).fadeIn(1200);
+				},
+				resetForm: true
+			});
+			return false;
+		}).find('textarea').live('focus', function(){
+			$(this).animate({height: '95px'}, 'fast');
+		}).live('blur', function(){
+			$(this).animate({height: '50px'}, 'fast');
+		});
+
+		// 私信、通标签切换
+		$('.msg-nav a', $msg_page).click(function(){
+			var i = $(this).index('#wrapper.msg .msg-nav a'),
+				$msg_container = $('#wrapper.msg .msg-container');
+			$(this).addClass('current').siblings('a').removeClass('current');
+			$msg_container.hide().eq(i).show();
+		});
+
+		// 删除信息
+		$('.msg-list .del', $msg_page).live('click', function(){
+			var $ths = $(this);
+			$.get(this.href, function(d){
+				if(d == 1){
+					$ths.closest('li').fadeOut(377, function(){
+						$(this).remove();
+					});
+				}else{
+					$.dialog(d);
+				}
+			});
+			return false;
+		});
+
+		// 三角下拉箭头
+		$('.action-drop', $msg_page).live('hover', function(){
+			$('.wrapper', this).stop().toggle();
+		});/*.find('.report').live('click', function(){
+			var $ths = $(this);
+			$.get(this.href, function(d){
+				if(d){
+					//$ths.closest('li').fadeOut().remove();
+				}else{
+					$.dialog('出错了，请联系管理员！');
+				}
+			}
+		});*/
+	})(jQuery);
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+{if (empty($img_attachment_mode) || $img_attachment_mode==1)}
+	<!-- 图片详细页相册 -->
+<body class='game-picshow'>
+	<div id='content'>
+		<!-- 火秀相册 -->
+		<div id="mygallery-black" class="mygallery mygallery-black" data-skin='black'>
+			<div class='mygallery-header'>
+				<h2 class='title'>{$title}（<em class='index'>1</em>/<span class='total'>10</span>） <span class='time'>{$inputtime}</span></h2>
+				<p class='cnt'>{$description}</p>
+				<form class="search" name='' method='post' action=''></form>
+				<form id="search-form" class='search' name="" method="get" action="{APP_PATH}index.php" target="_blank">
+					<input type="hidden" value="search" name="app" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="typeid" value="3" id="typeid" /><!-- 搜索类型 -->
+					<input type='text' name='q' class='search-wd' value='搜索图片' /><button type='submit' class='search-submit'>搜索</button>
+				</form>
+			</div>
+			<div class='mygallery-view'>
+				<div class='mygallery-view-loading'></div>
+				<div class='mygallery-view-img'><img src='{thumb($pictureurls[0][url])}' /><span></span></div>
+				<div class='mygallery-view-prev'><a class='disabled' href='#p=1' hidefocus='true'></a></div>
+				<div class='mygallery-view-next'><a href='#p=2' hidefocus='true'></a></div>
+			</div>
+
+			<h2 class='mygallery-view-title'>{$description}</h2>
+
+			<div class='mygallery-action fn-clear'>
+				<!-- JiaThis Button BEGIN -->
+				<span id='jiathis' class="share jiathis_style jiathis">
+					<span class="jiathis_txt">分享到：</span>
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_renren"></a>
+					<a class="jiathis_button_tsohu"></a>
+					<a class="jiathis_button_kaixin001"></a>
+					<a class="jiathis_button_douban"></a>
+					<a class="jiathis_button_t163"></a>
+					<a class="jiathis_button_tieba"></a>
+					<a class="jiathis_button_taobao"></a>
+					<a class="jiathis_button_tianya"></a>
+					<!-- <a class="jiathis_button_ishare">一键分享奖Q币</a>-->
+					<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1349664104558770" charset="utf-8"></script>
+				</span>
+				<!-- JiaThis Button END -->
+				{php $commentid_tmp = id_encode("content_$catid",$id,$siteid);}
+				{pc:comment action="get_comment" commentid="$commentid_tmp"}
+				{php $comment = $data;}
+				<span class='view-comment'><a href='#'>评论</a><em>({if $comment[total]}{$comment[total]}{else}0{/if})</em></span>
+				{/pc}
+				<a class='view-original' href='{$pictureurls[$current_imgno][url]}'>查看原图</a>
+				<a class='view-all' href='#'>全部图片</a>
+			</div>
+
+			<div class='mygallery-nav'>
+				<div class='mygallery-nav-item mygallery-nav-prev'>
+					<a class='img' href='{$previous_page[url]}'><img src='{thumb($previous_page[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href='{$previous_page[url]}'>&lt; 上一图集</a>
+				</div>
+				{pc:content action="get_next_page" id="$id" catid="$catid"}
+				{if $data ==0}
+				<div class='mygallery-nav-item mygallery-nav-next'>
+					<a class='title'>没有找到下一图集</a>
+				</div>
+				{else}
+				{loop $data $r}
+				<div class='mygallery-nav-item mygallery-nav-next'>
+									<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],100,75)}' width='100' height='75' /></a>
+									<a class='title' href='{$r[url]}'>下一图集 &gt;</a>
+								</div>
+				{/loop}
+				{/if}
+				{/pc}
+				
+				
+				<!--<div class='mygallery-nav-item mygallery-nav-next'>
+					<a class='img' href='{$previous_page[url]}'><img src='{thumb($previous_page[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href='{$previous_page[url]}'>下一图集 &gt;</a>
+				</div>-->
+				
+				
+			</div>
+
+			<div class='mygallery-ctrl'>
+				<div class='mygallery-ctrl-thumb'>
+					<ul class='mygallery-ctrl-thumb-list fn-clear'>
+					{loop $pictureurls $r}
+						<li class='mygallery-ctrl-thumb-item {if $n==1}cur{/if}'>
+							<a class='thumb' href='#p={$n}' data-src='{$r[url]}' data-title='{$r[title]}'><img src='{thumb($r[url],75,75)}' alt='' width='75' height='75' /></a>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				<div class='mygallery-ctrl-bar'>
+					<div class='mygallery-ctrl-bar-main'>
+						<a class='mygallery-ctrl-bar-btn fn-clear' href='javascript:;'>
+							<span class='mygallery-ctrl-bar-btn-lt'></span>
+							<span class='mygallery-ctrl-bar-btn-rt'></span>
+							<span class='mygallery-ctrl-bar-btn-ct'><em></em></span>
+						</a>
+					</div>
+				</div>
+				<a class='mygallery-ctrl-prev' href='javascript:;' hidefocus='true'></a>
+				<a class='mygallery-ctrl-next' href='javascript:;' hidefocus='true'></a>
+			</div>
+		</div>
+		<!-- 火秀相册结束 -->
+
+		<div id='js-gallery-group' class='gallery-group'>
+			<div class='ui-header'>
+				<h2 class='title'>相关图集推荐</h2>。
+				<div class='link'><a class='change' href='#'>换一组</a></div>
+			</div>
+			<ul class='ui-img-list ui-img-list-plus'>
+			{pc:content action="lists" catid="$catid" order="id DESC" num="30"}
+			{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+				</li>
+			{/loop}
+			{/pc}	
+			</ul>
+		</div>
+
+		<div id='main' class='article-box'>
+			<div class='article-related article-gallery'>
+				<div class='header-news'>
+					<h2 class='title'>猜你喜欢</h2>
+					<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+				</div>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="key_news" catids="$catids" id="$id" newsnum="12"}
+				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],142,106)}' width='142' height='106' /></a>
+						<a class='title' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}	
+				{/pc}
+				</ul>
+			</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>热点推荐</h2>
+				{pc:content  action="rand_pic_hothits" catids="319,320,321,322,357,358,359" newsnum="13"}
+				{loop $data $r}
+				{if $n==1}
+				<div class='ui-art fn-clear'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,90)}' alt='{$r[title]}' width='122' height='90' /></a>
+					<h3 class='title'><a href='{$r[url]}'>{str_cut($r['title'],20,'')}2</a></h3>
+					<p class="content">{str_cut($r['description'],30,'')} <a class='more' href='{$r[url]}'>[详情]</a></p>
+				</div>
+				{else}
+				{if $n==2}<ul class='ui-list'>{/if}
+					<li class='ui-list-item'><a href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+				{if $n==13}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+		</div>
+		<!-- 评论 -->
+		{if $allow_comment && module_exists('comment')}
+		<iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+		{/if}
+	<!-- 评论结束 -->
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+{else}
+	<div id='content'>
+
+		<!-- 主内容 -->
+		<div id='main' class='article-box'>
+			<div class='article-header'>
+				<h2 class='title'>{$title}</h2>
+				<div class='link'><span>{$inputtime}</span> 
+					<!--<a href='#'>[欢迎纠错/提意见]</a> -->
+					<!--<a href='#'>[热门新闻TOP10]</a>-->
+					我要评论(<a href="#comment_iframe" id="comment" class='comment' style="margin-left:0px;">0</a>)
+					</div>
+			</div>
+
+			<div class='content'>
+			{template 'content', 'hs_mygallery'}
+				<p>{$content}</p>
+			</div>
+
+			<!-- <p class='intro'>相关推荐：<a href='#'><em>何洁在京举办新专辑发布会</em></a> - <a href='#'><em>而手捧99朵玫瑰花的男友赫子铭作为神</em></a> - <a href='#'><em>而手捧99朵玫瑰花的男友赫子铭作为神</em></a> - <a href='#'>把何洁感动得泪如雨下</a> - 而手捧99朵玫瑰花的男 - 友赫子铭作为神而手 - <a href='#'><em>把何洁感动得泪如雨下曾遭到坊间一阵热</em></a></p> -->
+
+			<div class='article-related article-actions'>
+				<!-- JiaThis Button BEGIN -->
+				<span id='jiathis' class="jiathis_style jiathis">
+					<span class="jiathis_txt">分享到：</span>
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_renren"></a>
+					<a class="jiathis_button_tsohu"></a>
+					<a class="jiathis_button_kaixin001"></a>
+					<a class="jiathis_button_douban"></a>
+					<a class="jiathis_button_t163"></a>
+					<a class="jiathis_button_tieba"></a>
+					<a class="jiathis_button_taobao"></a>
+					<a class="jiathis_button_tianya"></a>
+					<!-- <a class="jiathis_button_ishare">一键分享奖Q币</a>-->
+					<!-- <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> -->
+					<!-- <a class="jiathis_counter_style"></a> -->
+					<!--<span class='desc'><a href='#'>[奖励规则]</a> <a href='#'>[Q币商城]</a></span>-->
+					<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1349664104558770" charset="utf-8"></script>
+				</span>
+				<!-- JiaThis Button END -->			
+			</div>
+
+			<div class='article-related article-hotnews'>
+				<div class='header-news'>
+					<h2 class='title'>相关新闻</h2>
+					<!-- <div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>-->
+				</div>
+				<ul class='ui-list fn-clear'>
+				 {pc:content action="hits" catid="$catid" num="10" order="weekviews DESC" cache="3600"}
+				 {loop $data $r}
+					<li class='ui-list-item'><a href='{$r[url]}'>{str_cut($r['title'],100,'')}</a></li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			{if $allow_comment && module_exists('comment')}
+		   <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+			{/if}
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-step ui-box-side-top'>
+				<h2 class='ui-box-side-title'>装机必备</h2>
+				<dl class='ui-step'>
+					<dt>第一步：新手上路</dt>
+					<dd><a href='#'>WP是什么？</a> <a href='#'>怎样选手机</a></dd>
+
+					<dt>第二步：更上一级</dt>
+					<dd><a href='#'>见机必读</a> <a href='#'>安装应用</a> <a href='#'>见机必读</a> <a href='#'>安装应用</a> <a href='#'>见机必读</a> <a href='#'>安装应用</a> <a href='#'>USB 设置</a> <a href='#'>安装应用</a> <a href='#'>安装应用</a> <a href='#'>安装应用</a> <a href='#'>安装应用</a></dd>
+
+					<!-- <dt><a href='#'><img src='http://www.baidu.com/img/baidu_sylogo1.gif' alt='' width='120' height='50' /></a><a href='#'><img src='http://www.baidu.com/img/baidu_sylogo1.gif' alt='' width='120' height='50' /></a></dt> -->
+				</dl>
+				<ul class='ui-img-list ui-img-list-plus'>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='120' height='50' /></a>
+					</li>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='120' height='50' /></a>
+					</li>
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>Windows Phone 教程 <span class='link'><a class='more' href='#'>更多&gt;&gt;</a></span></h2>
+				<ul class='ui-list fn-clear'>
+				{pc:content action="lists" catid="80" order="id DESC" num="10"}
+				{loop $data $r}
+					<li class='ui-list-item'><a href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>专题推荐 <span class='link'><a class='more' href='#'>更多&gt;&gt;</a></span></h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="564" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,92)}' width='122' height='92' /></a>
+						<a class='title' href='{$r[url]}'>大话西战歌</a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>热门应用 <span class='link'><a class='more' href='#'>更多&gt;&gt;</a></span></h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="565" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,92)}' width='122' height='92' /></a>
+						<a class='title' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-tab ui-tab-lite'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'>本周<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>本月<span class='icon'></span></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-list-plus'>
+					 {pc:content action="hits" catid="$catid" num="10" order="weekviews DESC" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}	
+					</ol>
+					<ol class='ui-tab-cnt-item ui-list-plus'>
+					 {pc:content action="hits" catid="$catid" num="8" order="monthviews DESC" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}	
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+{/if}re

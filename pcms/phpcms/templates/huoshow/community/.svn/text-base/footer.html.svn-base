@@ -1,0 +1,13 @@
+	<!-- Footer -->
+	<div id="footer">
+		<p>
+		{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<a href="{$r[url]}" target="_blank">{$r[catname]}</a>{if $n<count($data)} |{/if}
+			{/loop}
+		{/pc}
+		</p>
+		<p>HuoShow Copyright &copy; 1998 - 2013 All Rights Reserved.</p>
+		<p>粤 ICP 备 06087881 号</p>
+	</div>
+	<!-- Footer End -->

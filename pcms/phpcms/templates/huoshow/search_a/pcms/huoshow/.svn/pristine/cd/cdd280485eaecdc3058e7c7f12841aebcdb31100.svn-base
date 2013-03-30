@@ -1,0 +1,14 @@
+{include file="home/home_weibo_header.html"}
+<div class="mn">
+<div class="conMidAtt">										
+         {include file="weibo/weibo_user_group_dynamic.html"}                
+        </div>
+		<div class="conR">
+        <!-- 微博统计信息 -->
+  	{include_php file="huoshow/module/home/home_weibo_user_info.php"}
+	<!-- 可能感兴趣的人 -->
+	{include_php file="huoshow/module/home/home_weibo_recommend.php"}
+	<!-- 人气用户推荐 -->
+	{include_php file="huoshow/module/home/home_weibo_hotrecommend.php"}   
+        </div>
+</div>

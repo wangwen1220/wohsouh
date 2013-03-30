@@ -1,0 +1,50 @@
+<!-- Header Start -->
+<div id="header" class='fn-clear'>
+	<div class='title'>
+		<a class='logo' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[246][url])}" title="火秀网"></a>
+		<h1><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[299][url])}">苹果<span>&bull;</span><em>iPhone专区</em></a></h1>
+		<h2>{catpos($catid)}</h2>
+	</div>
+
+	<form id="search-form" class='search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+		<input type="hidden" value="search" name="app" />
+		<input type="hidden" name="m" value="search" />
+		<input type="hidden" name="c" value="index" />
+		<input type="hidden" name="a" value="init" />
+		<input type="hidden" name="typeid" value="1" id="typeid" /><!-- 搜索类型 -->
+		<fieldset><input type='text' name='q' class='search-wd' value='搜索关键字' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+		{pc:content  action="position" posid="418" order="listorder DESC" num="3"}
+		<fieldset class='search-hotspot'>热点：{loop $data $r}<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a> {/loop}</fieldset>
+		{/pc}
+	</form>
+
+	<ul id="nav" class='nav fn-cb fn-clear'>
+		<li class='nav-item{if $catid==299} nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[299][url])}">苹果首页</a>
+		</li>
+		<li class='nav-item{if $catid==303} nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[303][url])}">游戏下载</a>
+		</li>
+		<li class='nav-item{if $catid==302} nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[302][url])}">软件下载</a>
+		</li>
+		<li class='nav-item{if $catid==304} nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[304][url])}">苹果资讯</a>
+		</li>
+		<li class='nav-item{if $catid==305} nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[305][url])}">焦点内容</a>
+		</li>
+		<li class='nav-item{if $catid==306} nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[306][url])}">壁纸</a>
+		</li>
+		<li class='drop-down'>
+			<h3><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[299][url])}">iPhone</a></h3>
+			<ul>
+				<li><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[299][url])}" target='_blank'>iPhone</a></li>
+				<li><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[300][url])}">Android</a></li>
+				<li><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[301][url])}" target='_blank'>WP/Win8</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<!-- Header End -->

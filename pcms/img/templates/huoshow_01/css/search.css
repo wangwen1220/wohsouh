@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+.search_left{ float:left; width:630px;}
+.search_right{float:right; width:300px; overflow:hidden;}
+.search_topbg{ background-color:#f2f2f2; line-height:30px; text-align:left; padding-left:10px; margin-bottom:10px;}
+/* 视频搜索 */
+.shipininner{
+	width:625px;
+	float:left;
+	clear:both;
+	margin-top:0px;
+}
+.shipininner .topvideo { margin:0px; padding:0px; border:0px;}
+.shipininner .topvideo img{
+padding:3px; border:1px solid #ccc; width:120px; height:90px; margin-bottom:10px;
+}
+.shipininner .topvideo ul{
+ width:600px; padding-left:0px; padding-right:10px; float:left; padding-bottom:10px; margin:0px; padding-top:0px; border-right:1px solid #e2e2e2;
+}
+.shipininner .topvideo li{
+ width:128px; float:left;margin-left:0px; margin-right:18px; margin-top:0px;
+}
+.shipininner .topvideo li a:link{ color:#3366cc; text-decoration:underline;}
+.shipininner .topvideo li a:visited{ color:#3366cc; text-decoration:underline;}
+.shipininner .topvideo li a:hover{ color:#3366cc; text-decoration:none;}
+.shipininner .topvideo li span.shipin{ line-height:18px; height:28px;width:128px; background-image: url(myshowshipin.gif); background-position: left top; padding-left:16px; background-repeat: no-repeat; text-align:left;}
+.shipininner .topvideo li span.yinpin{ line-height:18px; margin-bottom:10px; width:128px; background-image: url(myshowyinpin.gif); background-position: left top; padding-left:16px; background-repeat: no-repeat;text-align:left;}
+.shipininner .topvideo li span.videouploader{
+line-height:18px; margin-bottom:10px;width:128px;text-align:left;
+}
+/* 图片标签 */
+.shipininner .pt div{position:relative}
+.shipininner .label{ position:absolute; top:94px; left:4px; height:15px; color:#FFF; line-height:14px; text-align:right; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; padding-top: 3px; padding-right: 10px; padding-bottom: 0; padding-left: 0; }
+.shipininner .sc{ text-align:left;color:#FFF; font-size:12px; padding-right:60px;}
+.shipininner .label i{position:absolute;height:18px;width:120px;left:0;top:0;background:#000;filter:alpha(opacity=60);opacity: 0.60;}
+.shipininner .label em{ position:relative; z-index:2; color:#FFF; font-size:12px; font-style: normal;}
+
+.shipininner .leftarea{ float:left; background-image: url(rebang.gif); background-repeat: no-repeat; height: 300px; width:180px; padding:10px; margin-left:10px;*margin-left:10px!important;*margin-left:5px; clear:both;}
+.shipininner .leftarea ul{ float:left;width:180px; margin-top:10px; *height:260px!important;*height:250px; overflow:hidden;}
+.shipininner .leftarea li{ float:left;width:180px;display:inline; text-align:left; margin-bottom:15px;}
+.shipininner .leftarea li span.imgarea{ float:left; width:50px; margin-right:10px;}
+.shipininner .leftarea li img{ float:left;width:48px; height:48px; border:1px solid #ddd; }
+.shipininner .leftarea ul li a:link{ color:#3366cc; text-decoration:underline;}
+.shipininner .leftarea ul li a:visited{ color:#3366cc; text-decoration:underline;}
+.shipininner .leftarea ul li a:hover{ color:#3366cc; text-decoration:none;}
+.shipininner .leftarea li span.mname{line-height:18px; float:right; text-align:left; width:120px;}
+.shipininner .leftarea li span.minfo{line-height:18px; float:right; text-align:left;width:120px;} 
+.shipininner .leftarea h3{ text-align:center; line-height:36px; font-size:16px;font-family:"microsoft yahei", "微软雅黑","simsun", "宋体"; font-weight: bold;}
+.shipininner .musiclist{ float:left; width:200px; margin-left:5px;}
+.shipininner .musiclist ul{ float:left; width:200px;}
+.shipininner .musiclist li{ float:left; width:180px; background-image: url(Cover_46.gif); background-repeat: no-repeat; background-position: 0px 8px; padding-left:20px; border-bottom:1px solid #dedede; padding-top:4px;*padding-top:4px!important; *padding-top:3px;padding-bottom:4px;*padding-bottom:4px!important;*padding-bottom:3px;}
+.shipininner .musiclist li span.musicname{ width:130px; float:left; text-align:left; overflow:hidden;}
+.shipininner .musiclist li span.singer{ width:50px; float:left; text-align:left;overflow:hidden;}
+#shipinqu .shipinbottom{height: 5px;width: 625px;float:left;}
+#shipinqu h3{border:0px;margin:0 5px;color:#f58d00;line-height:25px;height:25px;padding-left:5px;font-weight: normal;
+}
+#shipinqu h3 IMG{ padding-right:5px;}
+#shipinqu h3 span.dalei{ float:left; text-align:left; font-size:14px;}
+#shipinqu h3 span.zilei{ float:right; text-align:right; font-size:12px; padding-right:12px; color:#555555;}
+/* 音频搜索 */
+.soundsinner{
+	width:625px;
+	float:left;
+	margin-top:0px;
+	margin-bottom:10px;
+	font-size:14px;
+}
+.soundsinner li{
+	width:625px;
+	border-bottom:1px dashed #f2f2f2;
+	float:left;
+	margin-top:0px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.soundsinner li a:link{ color:#3366cc; text-decoration:underline;}
+.soundsinner li a:visited{ color:#3366cc; text-decoration:underline;}
+.soundsinner li a:hover{ color:#3366cc; text-decoration:none;}
+.soundsinner li.titleon{
+	font-weight: bold;
+	border-bottom:2px solid #5b5b5b;    
+}
+.soundsinner li span.mp3name{
+	width:220px;
+	text-align:left;
+	float: left;
+}
+.soundsinner li span.mp3name img{
+	padding-right:5px;
+	padding-left:5px;
+	vertical-align: middle;
+}
+.soundsinner li span.singer{
+	width:130px;
+	text-align:center;
+	float: left;
+}
+.soundsinner li span.long{
+	width:100px;
+	text-align:center;
+	float: left;
+}
+.soundsinner li span.times{
+	width:100px;
+	text-align:center;
+	float: left;
+}
+.soundsinner li span.uptime{
+	width:75px;
+	text-align:left;
+	float: left;
+}
+.infor_list_pages{
+	clear:both;
+	width:420px;
+	height:40px;
+	text-align:center;
+	padding-left:200px;
+	}
+.infor_list_pages span{
+	float:left;
+	margin-left:10px;
+	}
+.infor_list_pages span a{
+	display:block;
+	padding:0px 4px;
+	border:1px solid #dddddd;
+	}
+.infor_list_pages span a:hover{
+	display:block;
+	color:#BA2636;
+	background-color:#f2f2f2;
+	}
+.infor_list_pages span .next{
+	display:block;
+	width:40px;
+	}
+.infor_list_pages span .c{
+	border:none;
+	font-weight:600;
+	}
+.infor_list{
+	clear:both;
+	width:620px;
+	height:120px;
+	background:url(line03.gif) left bottom repeat-x;
+	margin-bottom:15px;
+	}
+.infor_list .infor_list01{
+	float:left;
+	width:120px;
+	padding-right:10px;
+	}
+.infor_list .infor_list02{
+	float:left;
+	width:490px;
+	}
+.infor_list .infor_list02 .tip{
+	font-weight:600;
+	font-size:14px;
+	}
+.infor_list .infor_list02 .time{
+	color:#888888;
+	background:url(infor_list_bg.gif) 45px 6px no-repeat;
+	}
+.infor_list .infor_list02 .time span{
+	padding-left:15px;
+	}
+.infor_list .infor_list02 .more{
+	text-align:right;
+	padding-right:30px;
+	background:url(more.gif) right 4px no-repeat;
+	}
+.WondPic{
+	width:300px;
+	margin-top:15px;
+	padding-bottom:10px;
+	background:url(part_bg05.gif) left bottom no-repeat;
+	background-color:#f1f1f1;
+	}
+.WondPic .WondPic01 ul{
+	}
+.WondPic .WondPic01 li {
+	float:left;
+	padding-left:11px;
+	padding-top:10px;	
+	}
+.WondPic .WondPic01 li p{
+	padding:4px;
+	width:75px;
+	background-color:#ffffff;
+	border:1px solid #dddddd;
+	text-align:center;
+	}
+.HotComments{
+	width:300px;
+	margin-top:15px;
+	padding-bottom:10px;
+	background:url(part_bg05.gif) left bottom no-repeat;
+	background-color:#f1f1f1;
+	}
+.HotComments .HotComments01 ul{
+	padding:0 10px;
+	}
+.HotComments .HotComments01 ol{
+	padding:0 10px;
+	font-weight:600;
+	line-height:30px;
+	}
+.HotComments .HotComments01 li{
+	clear:both;
+	}
+.HotComments .HotComments01 li img{
+	float:left;
+	padding-right:10px;
+	}
+
+	
+	

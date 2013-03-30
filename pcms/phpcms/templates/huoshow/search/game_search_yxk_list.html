@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>单机游戏攻略 - 火秀网</title>
+	<meta name='keywords' content='火秀网络游戏' />
+	<meta name='description' content='火秀网络游戏' />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-global.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+123456
+<body class='game-search-list'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main' class='game-search-list'>
+			<div id='select'>
+				<div class='filter fn-clear'>
+					<dl class='order'>
+						<dt>排序：</dt>
+						<dd class='default cur'><a href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={$language}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time=all'>默认</a></dd>
+						<dd><a href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={$language}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time=1'>更新时间</a></dd>
+						<dd><a href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={$language}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time=2'>按评分</a></dd>
+					</dl>
+					<!-- a class='reset' href='#'>重新筛选</a> -->
+				</div>
+				<dl class='select-item fn-clear'>
+					<dt>类型：</dt>
+					<dd>
+						<a {if $cat_id==all}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid=all&language=all&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>全部</a>
+						{loop subcat(282,0,0,$siteid) $r}
+						<a {if $cat_id==$r[catid]} class= 'all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$r[catid]}&language={$language}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>{$r[catname]}</a>
+						{/loop}
+					</dd>
+				</dl>
+				<dl class='select-item fn-clear'>
+					<dt>语言：</dt>
+					<dd>
+						<a {if $language==all}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language=all&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>全部</a>
+						<a {if $language==中文版}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={urlencode(中文版)}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>中文版</a>
+						<a {if $language==英文版}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={urlencode(英文版)}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>英文版</a>
+						<a {if $language==其他版}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={urlencode(其他版)}&copytype={$copytype}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>其他版</a>
+					</dd>
+				</dl>
+				<dl class='select-item fn-clear'>
+					<dt>状态：</dt>
+					<dd>
+						<a {if $copytype==all}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={$language}&copytype=all&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>全部</a>
+						<a {if $copytype==未上市}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={$language}&copytype={urlencode(未上市)}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>未上市</a>
+						<a {if $copytype==已上市}class='all cur'{/if} href='?m=search&c=search_yxk&a=init&catid={$cat_id}&language={$language}&copytype={urlencode(已上市)}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}'>已上市</a>
+					</dd>
+				</dl>
+			</div>
+
+			<table class='game-table'>
+				<thead>
+					<tr>
+						<th width="40%">游戏名称</th>
+						<th>版本</th>
+						<th>大小</th>
+						<th width="10%">评分</th>
+						<th width="10%">发行厂商</th>
+						<th>发售日期</th>
+					</tr>
+				</thead>
+				<tbody>
+					{loop $dc_data $r}
+					<tr>
+						<td><a target='_blank' href="{url_change($r[url])}">{$r[title]}</a></td>
+						<td>{$r[copytype]}</td>
+						<td>{$r[gamecapacity]}</td>
+						<td>{$r[stars]}</td>
+						<td>{$r[publisher]}</td>
+						<td>{date('Y-m-d',$r[inputtime])}</td>
+					</tr>
+					{/loop}
+				</tbody>
+			</table>
+			<div id='pager' class="ui-pager">{$pages}</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>热门单机游戏下载</h2>
+				{pc:content action="hits" catid="91" num="10" order="views DESC" cache="3600"}
+				<ol class='ui-list-plus'>
+					{loop $data $r}
+					<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{url_change($r[url])}'>{$r[title]}</a></li>
+					{/loop}
+				</ol>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>最新入库</h2>
+				{pc:content action="lists" catid="282" num="10" order="inputtime DESC"}
+				<ol class='ui-list-plus'>
+					{loop $data $r}
+					<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{url_change($r[url])}'>{$r[title]}</a></li>
+					{/loop}
+				</ol>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>热门推荐</h2>
+				{pc:content action="position" posid="538" catid="$catid" order="listorder DESC" num="10"}
+				<ol class='ui-list-plus'>
+					{loop $data $r}
+					<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{url_change($r[url])}'>{$r[title]}</a></li>
+					{/loop}
+				</ol>
+				{/pc}
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

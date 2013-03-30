@@ -1,0 +1,46 @@
+<!-- 采集成功弹窗 -->
+<div id='repin-success-dialog' class="dialog">
+	<div class="header">
+		{if $transfer_type == 3}
+		<h2 class='title'>转藏成功</h2>
+		{elseif $transfer_type == 2}
+		<h2 class='title'>采集成功</h2>
+		{elseif $transfer_type == 1}
+		<h2 class='title'>上传成功</h2>
+		{/if}
+		<a id='close-dialog' class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<div class="repin-success">
+		<h3><span>恭喜，你已经
+			{if $transfer_type == 3}
+			成功转藏
+			{elseif $transfer_type == 2}
+			成功采集
+			{elseif $transfer_type == 1}
+			成功上传
+			{/if}到 <a href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$albumid}" target="_blank">{$albumname[0][album_name]}</a></span></h3>
+			{if $transfer_type==3}
+			<div class="pin-operations"><a class="view-pin" href="/index.php?m=community&c=index&a=show&share_id={$share_id}">查看该分享</a></div>
+			{/if}
+		<div class="pin-share-description">
+			<p>据说发现好东西是要分享给好友的</p>
+			<textarea>{$descrition}</textarea>
+		</div>
+		<div class="pin-share-btn"><a class="sbtn" href="#">分享</a></div>
+		<div class='pin-share'>
+			<!-- JiaThis Button BEGIN -->
+			<div class="jiathis_style">
+				<span class="jiathis_txt">分享到：</span>
+				<a class="jiathis_button_tsina"></a>
+				<a class="jiathis_button_tqq"></a>
+				<a class="jiathis_button_renren"></a>
+				<a class="jiathis_button_qzone"></a>
+				<a class="jiathis_button_kaixin001"></a>
+				<a href="http://www.jiathis.com/share?uid=96085" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+				<a class="jiathis_counter_style"></a>
+			</div>
+			<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=96085" charset="utf-8"></script>
+		</div>
+		<!-- JiaThis Button END -->
+	</div>
+</div>

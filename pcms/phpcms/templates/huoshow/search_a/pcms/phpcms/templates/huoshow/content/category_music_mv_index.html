@@ -1,0 +1,76 @@
+{template "content","music_header"}
+<!-- MV Banner -->
+<div id='mv_banner'>
+	<div class='mv_show' id='js_mv_show'>
+		{pc:content  action="position" posid="117" catid="$catid" order="listorder DESC" thumb="1" num="4"}
+		<ul class='mv_show_poster'>
+			{loop $data $r}
+			<li {if $n==1}class='current'{/if}><a href="{$r[url]}"><img src="{thumb($r[thumb],530,345)}" width='530' height='345' /></a></li>
+			{/loop}
+		</ul>
+		<ul class='mv_show_thumb'>
+			{loop $data $r}
+			<li {if $n==1}class='current'{/if}><a href='{$r[url]}'><img src='{thumb($r[thumb],99,71)}' width='99' height='71' /></a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+
+	<div class='mv_recommend'>
+		<h2>最新推荐</h2>
+		{pc:content  action="position" posid="118" catid="$catid" order="listorder DESC" thumb="1" num="4"}
+		<ul>
+			{loop $data $r}
+			<li>
+				<a class='image' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' width='120' height='90' /></a>
+				<h4><a href="{$r[url]}">{str_cut($r[title],30,'')}</a></h4>
+			</li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+</div>
+<!-- MV Banner End -->
+
+<!-- 华语MV -->
+<div class='mv_slide_box'>
+	<h2 class='png_bg'>华语MV</h2>
+	{pc:content action="lists" catid="174" thumb="1" order="updatetime DESC" num="18"}
+	<ul>
+		{loop $data $r}
+		<li><a class='image' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' width='120' height='90' /></a><h4><a href="{$r[url]}">{str_cut($r[title],60,'')}</a></h4></li>
+		{/loop}
+	</ul>
+	{/pc}
+	<div class='mv_slide_nav'><a class='more_cn' href="/music/mv/huayumv/" title='华语MV'>更多<span>&#9658;</span></a></div>
+</div>
+<!-- 华语MV结束 -->
+
+<!-- 日韩MV -->
+<div class='mv_slide_box'>
+	<h2 class='png_bg'>日韩MV</h2>
+	{pc:content action="lists" catid="175" thumb="1" order="updatetime DESC" num="18"}
+	<ul>
+		{loop $data $r}
+		<li><a class='image' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' width='120' height='90' /></a><h4><a href="{$r[url]}">{str_cut($r[title],60,'')}</a></h4></li>
+		{/loop}
+	</ul>
+	{/pc}
+	<div class='mv_slide_nav'><a class='more_cn' href="/music/mv/rihanmv/" title='日韩MV'>更多<span>&#9658;</span></a></div>
+</div>
+<!-- 日韩MV结束 -->
+
+<!-- 欧美MV -->
+<div class='mv_slide_box'>
+	<h2 class='png_bg'>欧美MV</h2>
+	{pc:content action="lists" catid="176" thumb="1" order="updatetime DESC" num="18"}
+	<ul>
+		{loop $data $r}
+		<li><a class='image' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' width='120' height='90' /></a><h4><a href="{$r[url]}">{str_cut($r[title],60,'')}</a></h4></li>
+		{/loop}
+	</ul>
+	{/pc}
+	<div class='mv_slide_nav'><a class='more_cn' href="/music/mv/oumeimv/" title='欧美MV'>更多<span>&#9658;</span></a></div>
+</div>
+<!-- 欧美MV结束 -->
+{template "content","footer"}

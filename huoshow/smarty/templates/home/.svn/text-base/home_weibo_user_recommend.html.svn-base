@@ -1,0 +1,17 @@
+<div class="wbfans">
+             <h3 class="font14">可能感兴趣的人</h3>
+            	 <ul class="clFrame">
+				 		{section name=bo loop=$user_recommend}
+							<li>
+							<a href="{$space_url}{$user_recommend[bo].uid}" title=""><img src="{$user_recommend[bo].head_img_url}"></a>
+							<p><a href="{$space_url}{$user_recommend[bo].uid}" title=""  class="uname">{$user_recommend[bo].name}</a></p>
+							{if $user_recommend[bo].is_att == 0 && $user_recommend[bo].uid !=$uid }
+							<p><a class="jsadd" href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_follow&dst_uid={$user_recommend[bo].uid}"
+						onclick="{if $uid}showWindow('register', this.href)
+						{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+						+加关注</a></p>{/if}
+							</li>
+		   				{/section}
+			  </ul>
+              <div class="clear"></div>
+             </div>

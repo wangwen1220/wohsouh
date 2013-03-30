@@ -1,0 +1,107 @@
+<!--<div id='upload-pin-dialog2' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>上传采集</h2>
+		<a id='close-dialog' class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id="upload-pin-form" class="search-pin-form" name='upload-pin' method='post' action="/index.php?m=community&c=index&a=myshow_get_img_api&s_url=">
+		<div class='fancy'><input type='text' name='upload-pin' class='upload-pin' /><label class='label'>请输入要采集图片的网址，如 http://www.qq.com</label><button type='submit' name='upload-pin_submit' class='btn'>浏览</button></div>
+		<div style="position: absolute; opacity: 0.01; overflow: hidden;"><iframe frameborder="no" src="javascript:'&lt;html&gt;&lt;/html&gt;'" border="0" name="IFrame_h5ovgmky" id="IFrame_h5ovgmky" style="display: none;"></iframe><input type="file" name="file" size="1" style="position: absolute; top: 0px; left: 0px; border: 0px none;"></div>
+	</form>
+
+	<div class='select-pin fn-clear'>
+		<div id='upload-img' class='pin-img'><a class='img' href='#'><img src='' width='170' height='224' /></a></div>
+		<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=index&a=myshow_collect_img&act_submit=yes">
+			<input type="hidden" name="thumb" id='img-src' />
+			<input type="hidden" name="local_path" id='search-url' />
+			<input type="hidden" name="album" class="inputselect" value="default_id"/>
+			<input type='hidden' id='pin-tags-id' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>我的专辑</cite>
+				<ul class='options'>
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+					{loop $a_arr $r}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+					{/loop}
+					{loop $list_arr $r}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+					{/loop}
+				</ul>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc'></textarea>
+				<label>描述一下这个专辑...别忘@好友哦</label>
+			</div>
+			<div class='fancy'>
+				<input type='text' id='pin-tags' class='tags' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+				<div id='menu-openness' class='menu-openness'>
+					<ul class='openness'>
+						<li><a href='javascript:;'><span>分享对所有人可见</span></a></li>
+						<li class='selected'><a href='javascript:;'><span>分享仅对被@好友可见</span></a></li>
+						<li><a href='javascript:;'><span>分享对自己可见</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<ul id='tag-list' class='tag-list'>
+				{loop $a_arr_tag $t}
+				<li><a id='{$t[tag_id]}' >{$t[tag_name]}</a></li>
+				{/loop}
+			</ul>
+			<p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p>
+		</div>
+	</div>
+</div>-->
+<div id='upload-img' class='pin-img'><a class='img' href='#'><img src='{$thumb}' width='170' height='224' /></a></div>
+<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=myhuoshow&a=myupload">
+	<input type="hidden" name="thumb" id='img-src' />
+	<input type="hidden" name="local_path" id='search-url' />
+	<input type="hidden" name="album" class="inputselect" value="default_id"/>
+	<input type='hidden' id='pin-tags-id' />
+	<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+	<div class='divselect'>
+		<cite class='selected'>我的专辑</cite>
+		<ul class='options'>
+			<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+			{loop $a_arr $r}
+			<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+			{/loop}
+			{loop $list_arr $r}
+			<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+			{/loop}
+		</ul>
+	</div>
+	<div class='fancy'>
+		<textarea name='desc'></textarea>
+		<label>描述一下这个专辑...别忘@好友哦</label>
+	</div>
+	<div class='fancy'>
+		<input type='text' id='pin-tags' class='tags' />
+		<label>最多5个标签，以空格隔开</label>
+	</div>
+	<div class='submit'>
+		<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+		<div id='menu-openness' class='menu-openness'>
+			<ul class='openness'>
+				<li><a href='javascript:;'><span>分享对所有人可见</span></a></li>
+				<li class='selected'><a href='javascript:;'><span>分享仅对被@好友可见</span></a></li>
+				<li><a href='javascript:;'><span>分享对自己可见</span></a></li>
+			</ul>
+		</div>
+	</div>
+</form>
+<div class='select-tags'>
+	<h3>常用标签，点击插入</h3>
+	<ul id='tag-list' class='tag-list'>
+		{loop $a_arr_tag $t}
+		<li><a id='{$t[tag_id]}' >{$t[tag_name]}</a></li>
+		{/loop}
+	</ul>
+	<p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p>
+</div>

@@ -1,0 +1,84 @@
+{template "content","events_header"}
+
+<!--Main Body-->
+<div class="main_body">
+<div class="index_banner_W960_02"> <script type="text/javascript">
+                    // <![CDATA[
+                    OA_show(72);
+                    // ]]>
+               </script>
+               <noscript>
+                    <a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a290a054'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=72&n=a290a054' /></a>
+               </noscript>
+</div>
+<!--Left-->
+<div class="body_webgame_left">
+	<div class="wholeevents_W650">
+		<div class="wholeevents_title_bg_650">
+			<h2 class="title_blue_big">赛事图片</h2>
+		</div>
+		<div class="clear"></div>
+		<div class="web_game_pic_list">
+			{pc:content action="lists" catid="$catid" num="40" order="id DESC" page="$page"}
+			<ul>
+				{loop $data $r}
+				<li>
+					<div class="web_game_hot_movie_block_01">
+						<span class="hot_movie_text"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 25)}</a></span>
+					</div>
+					<a title="{$r[title]}" target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{thumb($r[thumb],120,165)}" width="120" height="165" /></a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+			<div class="clear"></div>
+			<div class="fanye">
+				<div id="pages" class="text-c">{$pages}</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="clear"></div>
+</div>
+
+	<!-- 右列 -->
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250" style='margin-top: 8px;'>
+			<script type="text/javascript">
+			// <![CDATA[
+			OA_show(50);
+			// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a6657f4d'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=50&n=a6657f4d' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid={$siteid}&catid=9&other_catids=12|电影,13|音乐,14|游戏"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--//#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid={$siteid}"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid={$siteid}"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--热门图片 -->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=139&num=6"-->
+		<!--热门图片结束 -->
+	</div>
+	<!-- 右列结束 -->
+	<div class="clear"></div>
+</div>
+<!--Main Body End-->
+
+{template "content","footer"}

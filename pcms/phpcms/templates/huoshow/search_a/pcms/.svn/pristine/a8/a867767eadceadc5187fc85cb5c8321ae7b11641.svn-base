@@ -1,0 +1,50 @@
+{template "community","myshow_header"}
+
+<div id="wrapper" class='album-list'>
+	<div class='album-box'>
+		<ul id='album-title-list' class='album-title-list fn-clear'>
+			<li><a hidefocus='true' class='hot' href='/index.php?m=community&c=index&a=json_album_list&list=2'>热门</a><span></span></li>
+			<li class='selected'><a class='new' href='/index.php?m=community&c=index&a=json_album_list&list=1'>最新</a><span></span></li>
+			<li><em class='divide'>|</em></li>
+			{loop $classname $r}
+			<li><a hidefocus='true' href='/index.php?m=community&c=index&a=json_album_list&list=1&class_id={$r[id]}'>{$r[name]}</a><span></span></li>
+			{/loop}
+			<!--<li><a hidefocus='true' href='#'>明星<span></span></a></li>
+			<li><a hidefocus='true' href='#'>赛事<span></span></a></li>
+			<li><a hidefocus='true' href='#'>音乐<span></span></a></li>
+			<li><a hidefocus='true' href='#'>影视<span></span></a></li>
+			<li><a hidefocus='true' href='#'>游戏<span></span></a></li>
+			<li><a hidefocus='true' href='#'>情感<span></span></a></li>
+			<li><a hidefocus='true' href='#'>同城<span></span></a></li>
+			<li><a hidefocus='true' href='#'>家族<span></span></a></li>
+			<li><a hidefocus='true' href='#'>生活<span></span></a></li>
+			<li><a hidefocus='true' href='#'>休闲<span></span></a></li>
+			<li><a hidefocus='true' href='#'>体育<span></span></a></li>-->
+		</ul>
+		<!--div class='create-album'>
+			<a class='create-album-btn' href='#'>创建专辑</a>
+			<!-- >ul class='create-album-list fn-hide'>
+				<li><a class='create-img-album' href='#'>图片编辑</a></li>
+				<li><a class='create-music-album' href='#'>音乐专辑</a></li>
+				<li><a class='create-video-album' href='#'>视频编辑</a></li>
+			</ul>
+		</div-->
+		<ul class='album-content-list fn-clear'>
+			<li class='album-content-item'>
+			{loop $p_data_album $r}
+				<a target='_blank' href='/zj-{$r[classid]}.html' {if $r[recommend]==1}class="recommend"{/if}>{$r[name]}</a>
+			{/loop}
+			</li>
+	</div>
+</div>
+
+<div id="content">
+	<div id='canvas' class='album' data-url='/index.php?m=community&c=index&a=json_album_list&list=1'>
+	</div>
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

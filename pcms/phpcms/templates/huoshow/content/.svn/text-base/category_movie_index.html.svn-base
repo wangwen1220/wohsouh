@@ -1,0 +1,407 @@
+{template "content","movie_header"}
+<!--Main Body-->
+<div class="main_body">
+	<!--Left-->
+	<div class="body_left">
+		<div class="flash_movie_l fn_clear">
+	<!--Slide-->
+	<div class="music_banner">
+		<div class="common-roll-slide" id="huoshow_events_saishi_index_image">
+			<div class="common-roll-slide-body">
+				<div class="common-roll-slide-pages">
+                {pc:content  action="position" posid="69" catid="$catid" order="listorder DESC" num="5"}
+                	{loop $data $r}
+                	<div class="common-roll-slide-page">
+						<div> <a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],300,422)}" width='300' heiht='422' /></a> </div>
+						<div class="common-roll-slide-page-info" >
+							<div class="common-roll-slide-page-info-text">
+								<h3><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],80,'')}</a></h3>
+							</div>
+						</div>
+					</div>
+                    {/loop}
+				 {/pc}
+				</div>
+				<div class="common-roll-slide-nav">
+                <span class="common-roll-slide-nav-right">
+                <a href="#" class="common-roll-slide-prev">&nbsp;</a>
+                <a href="#" class="common-roll-slide-next">&nbsp;</a>
+                </span>
+                <span class="common-roll-slide-nav-links">
+                {pc:content  action="position" posid="69" catid="$catid" order="listorder DESC" num="5"}
+                {loop $data $r}
+                <a href="javascript:void(0);">{$n}</a>
+                {/loop}
+				{/pc}
+                 </span> </div>
+			</div>
+		</div>
+		<script>
+			window.slide_huoshow_events_saishi_index_image = make_pagebox('huoshow_events_saishi_index_image', {
+				links_selector: '.common-roll-slide-nav-links a',
+				pages_selector: '.common-roll-slide-page',
+				prev_selector: '.common-roll-slide-prev',
+				next_selector: '.common-roll-slide-next',
+				current_class: 'common-roll-slide-curr',
+				interval: 5,
+				effect: 1
+			});
+		</script>
+	</div>
+	<!--Slide End-->
+
+		<div class="top_news_right2">
+		<div class="right_title_bg">
+						<h2 class="title_blue">头条</h2>
+				</div>
+		<div class="top_news_list">
+         {pc:content  action="position" posid="51" catid="$catid" order="listorder DESC" num="5"}
+         		{loop $data $r}
+         		   {if $n==1}
+						<a href="{$r[url]}" target="_blank" title="{$r[title]}"><h3 class="top_news_txt_hl">{$r[title]}</h3></a>
+                   {else}
+						{if $n%2==0}<p>{/if} <a href="{$r[url]}" target="_blank" title="{$r[title]}"><strong class="text_gray">{str_cut($r[title],44,'')}</strong></a>{if ($n-1)%2==0}</p>{else}&nbsp;&nbsp;{/if}
+                   {/if}
+                 {/loop}
+          {/pc}
+
+		  {pc:content  action="position" posid="52" catid="$catid" order="listorder DESC" num="5"}
+         		{loop $data $r}
+         		   {if $n==1}
+						<a href="{$r[url]}" target="_blank" title="{$r[title]}"><h3 class="top_news_txt_hl">{$r[title]}</h3></a>
+                   {else}
+						{if $n%2==0}<p>{/if} <a href="{$r[url]}" target="_blank" title="{$r[title]}"><strong class="text_gray">{str_cut($r[title],44,'')}</strong></a>{if ($n-1)%2==0}</p>{else}&nbsp;&nbsp;{/if}
+                   {/if}
+                 {/loop}
+          {/pc}
+
+
+					<ul class="list">
+                    {pc:content  action="position" posid="53" catid="$catid" order="listorder DESC" num="10"}
+                    	{loop $data $r}
+						<li>[<a href="{$CATEGORYS[$r[catid]][url]}">{$CATEGORYS[$r[catid]][catname]}</a>]&nbsp;<a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],76,'')}</a></li>
+                        {/loop}
+					{/pc}
+					</ul>
+				</div>
+		</div>
+		</div>
+
+		<!--Top News-->
+		<div class="top_news">
+			<div class="top_news_left">
+				<div class="top_news_left_inner_bd">
+					<div class="left_title_bg">
+						<h2 class="title_blue">新片预告</h2>
+						<!-- <span class="more"><a href="{$CATEGORYS[70][url]}" class="more_bg" target="_blank">更多</a></span> -->
+					</div>
+					<div class="topic_first">
+                    {pc:content  action="position" posid="55" catid="$catid" order="listorder DESC" num="4"}
+						<ul class="top_video_list">
+                     {loop $data $r}
+					<li><span class="top_video_pic_bg"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],120,90)}" width="120" height="90" /></a></span><span class="top_video_text"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],30,'')}</a></span> </li>
+                     {/loop}
+					 
+						</ul>
+					{/pc}
+					</div>
+
+				</div>
+			</div>
+            <div class="top_news_right">
+				<div class="top_news_right_inner_bd">
+					<div class="right_title_bg">
+						<h2 class="title_blue">专访</h2>
+						<span class="more"><a href="{$CATEGORYS[135][url]}" class="more_bg"  target="_blank">更多</a></span>
+					</div>
+                    {pc:content  action="movie_exclusive_interview" num="10"}
+					<ul class="reviews_pic">
+                    {loop $data[img] $r}
+                    	<li><span class="reviews_pic_bd"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],100,100)}" width="100" height="100" /></a></span><span class="top_video_text"><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],24,'')}</a></span></li>
+                    {/loop}
+                    </ul>
+				  	<ul class="list pd10">
+                    {loop $data[news] $r}
+                    <li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],76,'')}</a></li>
+                    {/loop}
+				  </ul>
+
+
+                 {/pc}
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!--Top Video-->
+		<div class="top_video">
+			<div class="top_video_inner_bd">
+				<div class="cross_title_bg">
+					<h2 class="title_blue_big">华语电影</h2>
+					<span class="more"><a href="{$CATEGORYS[64][url]}" class="more_bg"  target="_blank">更多</a></span>
+				</div>
+				<div class="top_video_left">
+                {pc:content  action="position" posid="56" catid="$catid" order="listorder DESC" num="1"}
+				<dl class="picTextList fn_clear">
+                {loop $data $val}
+
+                			<dt><a href="{$val[url]}" target="_blank"><img src="{thumb($val[thumb],120,90)}" width="120" height="90" /></a></dt>
+							<dd class="topic_first_title r_width_2"><a href="{$val[url]}" title="{$val[title]}" target="_blank">{str_cut($val[title],28,'')}</a></dd>
+							<dd class="topic_first_briefing r_width_2"> {str_cut($val[description],100,'')} <a class='detail' href="{$val[url]}">[详细]</a></dd>
+                {/loop}
+                </dl>
+                {/pc}
+                {pc:content  action="position" posid="57" catid="$catid" order="listorder DESC" num="8"}
+					<ul class="list">
+                    {loop $data $val}
+						<li><a href="{$val[url]}" title="{$val[title]}">{str_cut($val[title],62,'')}</a></li>
+                    {/loop}
+					</ul>
+                 {/pc}
+				</div>
+				<div class="top_video_right">
+                 {pc:content  action="position" posid="58" catid="$catid" order="listorder DESC" num="11"}
+                 {loop $data $val}
+                     {if $n==1}
+                        <a href="{$val[url]}" title="{$val[title]}"><h3 class="top_news_txt_hl">{str_cut($val[title],74,'')}</h3></a>
+                        <ul class="list">
+                      {else}
+                        <li><a href="{$val[url]}" title="{$val[title]}">{str_cut($val[title],86,'')}</a></li>
+                      {/if}
+                  {/loop}
+                    </ul>
+                  {/pc}
+				</div>
+			</div>
+		</div>
+		<div class="top_video">
+			<div class="top_video_inner_bd">
+				<div class="cross_title_bg">
+					<h2 class="title_blue_big">欧美电影</h2>
+					<span class="more"><a href="{$CATEGORYS[65][url]}" class="more_bg"  target="_blank">更多</a></span>
+				</div>
+				<div class="top_video_left">
+                {pc:content  action="position" posid="59" catid="$catid" order="listorder DESC" num="1"}
+				<dl class="picTextList fn_clear">
+                {loop $data $val}
+
+                			<dt><a href="{$val[url]}" target="_blank"><img src="{thumb($val[thumb],120,90)}" width="120" height="90" /></a></dt>
+							<dd class="topic_first_title r_width_2"><a href="{$val[url]}" title="{$val[title]}" target="_blank">{str_cut($val[title],28,'')}</a></dd>
+							<dd class="topic_first_briefing r_width_2"> {str_cut($val[description],100,'')} <a class='detail' href="{$val[url]}">[详细]</a></dd>
+                {/loop}
+                </dl>
+                {/pc}
+                {pc:content  action="position" posid="60" catid="$catid" order="listorder DESC" num="8"}
+					<ul class="list">
+                    {loop $data $val}
+						<li><a href="{$val[url]}" title="{$val[title]}">{str_cut($val[title],62,'')}</a></li>
+                    {/loop}
+					</ul>
+                 {/pc}
+				</div>
+				<div class="top_video_right">
+                 {pc:content  action="position" posid="61" catid="$catid" order="listorder DESC" num="11"}
+                 {loop $data $val}
+                     {if $n==1}
+                        <a href="{$val[url]}" title="{$val[title]}"><h3 class="top_news_txt_hl">{str_cut($val[title],74,'')}</h3></a>
+                        <ul class="list">
+                      {else}
+                        <li><a href="{$val[url]}" title="{$val[title]}">{str_cut($val[title],86,'')}</a></li>
+                      {/if}
+                  {/loop}
+                    </ul>
+                  {/pc}
+				</div>
+			</div>
+		</div>
+		<div class="top_video">
+			<div class="top_video_inner_bd">
+				<div class="cross_title_bg">
+					<h2 class="title_blue_big">日韩电影</h2>
+					<span class="more"><a href="{$CATEGORYS[66][url]}" class="more_bg"  target="_blank">更多</a></span>
+				</div>
+				<div class="top_video_left">
+                {pc:content  action="position" posid="62" catid="$catid" order="listorder DESC" num="1"}
+				<dl class="picTextList fn_clear">
+                {loop $data $val}
+
+                			<dt><a href="{$val[url]}" target="_blank"><img src="{thumb($val[thumb],120,90)}" width="120" height="90" /></a></dt>
+							<dd class="topic_first_title r_width_2"><a href="{$val[url]}" title="{$val[title]}" target="_blank">{str_cut($val[title],28,'')}</a></dd>
+							<dd class="topic_first_briefing r_width_2"> {str_cut($val[description],100,'')} <a class='detail' href="{$val[url]}">[详细]</a></dd>
+                {/loop}
+                </dl>
+                {/pc}
+                {pc:content  action="position" posid="63" catid="$catid" order="listorder DESC" num="8"}
+					<ul class="list">
+                    {loop $data $val}
+						<li><a href="{$val[url]}" title="{$val[title]}">{str_cut($val[title],62,'')}</a></li>
+                    {/loop}
+					</ul>
+                 {/pc}
+				</div>
+				<div class="top_video_right">
+                 {pc:content  action="position" posid="64" catid="$catid" order="listorder DESC" num="11"}
+                 {loop $data $val}
+                     {if $n==1}
+                        <a href="{$val[url]}" title="{$val[title]}"><h3 class="top_news_txt_hl">{str_cut($val[title],74,'')}</h3></a>
+                        <ul class="list">
+                      {else}
+                        <li><a href="{$val[url]}" title="{$val[title]}">{str_cut($val[title],86,'')}</a></li>
+                      {/if}
+                  {/loop}
+                    </ul>
+                  {/pc}
+				</div>
+			</div>
+		</div>
+
+		<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="full_title_bg_l">
+				<span class="title_blue_big">剧照</span>
+				<span class="more"><a href="{$CATEGORYS[69][url]}" class="more_bg"  target="_blank">更多</a></span>
+			</div>
+			<div class="pic_list">
+				<ul class="fn_clear">
+				{pc:content  action="position" posid="344" thumb="1" catid="$catid" order="listorder DESC" num="9"}
+				{loop $data $r}
+					{if $n==1}
+					<li class="first"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],219,294)}" width="219" height="294" /></a><span class="pic_text_bg_first"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],70,'')}</a></span></li>
+					{else}
+					<li> <a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],105,140)}" width="105" height="140" /></a><span class="pic_txt_bg_red"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],80,'')}</a></span></li>
+					{/if}
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	</div>
+	<!--Left End-->
+	<!--Right-->
+	<div class="body_right">
+		<!--Hot Movie-->
+		<div class="hot_movie">
+			<div class="hot_movie_cate"><span class="hot_movie_cate_text">电影</span></div>
+            {pc:content  action="position" posid="54" catid="$catid" thumb=1 order="listorder DESC" num="4"}
+			<ul class="hot_movie_ul">
+            {loop $data $r}
+		        <li>
+					<div class="hot_movie_block"> <a href="{$r[url]}" title="{$r[title]}"><span class="hot_movie_text">{$r[title]}</span></a></div>
+		            <a href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],105,140)}" width="105" height="140" /></a>
+				</li>
+			{/loop}
+			</ul>
+            {/pc}
+		</div>
+		<!--Charts Movie-->
+		<div class="charts rh1">
+		<div class="charts_inner_border">
+			<div class="charts_title">
+					<h2 class="wenzi">电影专题</h2>
+				</div>
+			<div class="mv_zt_struct">
+            {pc:content  action="movie_index_topic" num="15"}
+			<ul class="mv_zt fn_clear">
+            {loop $data[img] $r}
+                    <li><span class="reviews_pic_bd"><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],65,65)}" width='65' heiht='65'></a></span><span class="top_video_text"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],15,'')}</a></span></li>
+             {/loop}
+		    </ul>
+			<p class="cloudtag">
+            {loop $data[news] $r}
+			<a href="{$r[url]}" title="{$r[title]}" target="_blank"><span class="ct1">{$r[title]}</span></a>
+            {/loop}
+			</p>
+            {/pc}
+			</div>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<!--Banner 250*250-->
+		<div class="banner_250_250">
+		
+		<script type="text/javascript">
+				// <![CDATA[
+				OA_show(40);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a6d113c8'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=40&n=a6d113c8' /></a>
+			</noscript>
+		
+		</div>
+		<!--Charts TV-->
+		<div class="charts rh2">
+			<div class="charts_inner_border">
+				<div class="charts_title">
+					<h2 class="wenzi">影评</h2>
+				</div>
+               {pc:content action="movie_index_auto_data" num="12" catid="68" lnum="3" rnum="9" tnum="20"}
+			<div class="picTextListPad">
+						{loop $data[img] $r}
+						<dl class="picTextList fn_clear">
+							<dt><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],100,75)}" width='100' heiht='75' /></a></dt>
+							<dd class="topic_first_title r_width"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],20,'')}</a></dd>
+							<dd class="topic_first_briefing r_width">{str_cut($r[description],40,'')} <a class='detail' href="{$r[url]}" title="{$r[title]}" target="_blank">[详细]</a></dd>
+						</dl>
+						{/loop}
+
+
+						<ul class="list2">
+                        {loop $data[news] $r}
+						<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],48,'')}</a></li>
+						{/loop}
+
+					</ul>
+
+
+				</div>
+				{/pc}
+            </div>
+		</div>
+		<div class="charts rh2">
+			<div class="charts_inner_border">
+				<div class="charts_title">
+					<h2 class="wenzi">热点排行</h2>
+				</div>
+			    
+				<div class="picTextListPad">
+					<!--{pc:content action="hits" catid="$catid" order="views DESC " num="19" }-->
+					{pc:content action="hits_movie" catids="64,65,66,67,68,71,72,135,136" newsnum="19" }
+					<ul class="list2">
+	                    {loop $data $r}
+						<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],48,'')}</a></li>
+						{/loop}
+					</ul>
+					{/pc}
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+
+	<!--Right End-->
+	<div class="clear"></div>
+
+	<!--Partners-->
+<div class="main_body">
+<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+{pc:link  action="type_list" typeid="55" siteid="$siteid" linktype="0" order="listorder asc" num="29"}
+<p class="layer_content_txt">
+{loop $data $r}
+<a href="{$r[url]}" target="_blank">{$r[name]}</a> {if $n<count($data)}|{/if}
+{/loop}
+</p>
+{/pc}
+</div>
+</div>
+</div>
+  <!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+	<!--Banner 960*90--><!--Body Bottom-->
+	<!--Other News--><!--Picture-->
+{template "content","footer"}

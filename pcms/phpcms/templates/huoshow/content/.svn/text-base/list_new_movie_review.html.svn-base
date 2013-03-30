@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>游戏列表页 - 火秀网</title>
+	<meta name='keywords' content='火秀网络游戏' />
+	<meta name='description' content='火秀网络游戏' />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-video-global.css' rel='stylesheet' />
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='interview'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'video_header'}
+
+	<div id='content' class='fn-clear'>
+		<!-- 主内容 -->
+		<div id='main'>
+			<div class='ui-position'>你当前所在的位置：<a href='#'>测试文字</a> &gt; <a href='#'>测试文字</a> &gt; 资讯</div>
+			<div class='ui-header ui-header-tab'>
+				<h2 class='title'>影评</h2>
+			</div>
+			<div class='ui-content'>
+                {pc:content action="lists" catid="388" order="id DESC" num="30" page="$page"}
+				    <ul class='ui-list ui-list-content'>
+                        {loop $data $key $val}
+                            <li class='ui-list-item'><a class='cnt' href='{url_change($val[url])}' target="_blank">{$val[title]}</a> <span class='date'>{$val[inputtime]}</span></li>
+                        {if ($n%5==0) && $n < count($data)}
+                   </ul>
+                    <ul class='ui-list ui-list-content'>
+                    {/if}
+                    {/loop}
+                    </ul>
+                    {/pc}
+			</div>
+			<div class='ui-pager'>{$pages}</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-ranking ui-box-side-top'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>点击排行</h2>
+				</div>
+				<ol class='ui-ranking ui-ranking-video'>
+                    {pc:content  action="rand_movie_hothits" catids="383" newsnum="10"}
+                    {loop $data $r}
+                    <li class='ui-ranking-item {if $n==1} ui-ranking-item-cur{/if}'>
+                        <a class='img' href='{url_change($r[url])}' target="_blank"><img src='{thumb($r[thumb],102,78)}' alt='' width='88' height='66' /></a>
+                        {if $n <3}
+                        <span class='num num-hot'>{$n}</span>
+                        {else}
+                        <span class='num'>{$n}</span>
+                        {/if}
+                        <h3 class='title'><a href='{url_change($r[url])}' target="_blank">{str_cut($r[title],32,'')}</a></h3>
+                        <!--<p class='status'>下载次敢死/1802P</p>-->
+                        <p class="cnt">{str_cut($r[description],186,'')}</p>
+                        <div class='btn btn-play'><a href='{url_change($r[url])}'>播放</a></div>
+                    </li>
+                    {/loop}
+                    {/pc}
+				</ol>
+			</div>
+
+			<div class='ui-box-side ui-box-side-pic'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>新片</h2>
+					<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+				</div>
+                {pc:content  action="position" posid="593" order="listorder DESC" num="4" }
+				<ul class='ui-pic-list fn-clear'>
+                    {loop $data $r}
+					<li class='ui-pic-list-item'>
+						<a class='img' href='{url_change($r[url])}' target="_blank"><img src='{thumb($r[thumb],102,78)}' width='124' height='93' /></a>
+						<a class='title-mark' href='{url_change($r[url])}'target="_blank">{$r[title]}</a>
+					</li>
+                    {/loop}
+				</ul>
+                {/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-side-pic'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>电影专题</h2>
+					<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+				</div>
+                {pc:special action="get_special_pos" posid="48" order="inputtime DESC" num="12"}
+				<ul class='ui-pic-list fn-clear'>
+                    {loop $data $key $val}
+					<li class='ui-pic-list-item'>
+						<a class='img' href='{url_change($val[url])}'target="_blank"><img src='{thumb($val[thumb],102,78)}' width='124' height='93' /></a>
+						<a class='title-mark' href='{url_change($val[url])}' target="_blank">{$val[special_name]}</a>
+					</li>
+                    {php if($n==2) break;}
+                    {/loop}
+				</ul>
+				<ul class='ui-list ui-list-float'>
+                    {loop $data $key $val}
+                    {if $n>2}
+					<li class='ui-list-item'><a href='{url_change($val[url])}' target="_blank">{$val['special_name']}</a></li>
+                    {/if}
+                    {/loop}
+				</ul>
+                {/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-side-pic'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>最新图集</h2>
+					<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+				</div>
+                {pc:content action="position" posid="596" order="listorder DESC" num="4"}
+				<ul class='ui-pic-list fn-clear'>
+                    {loop $data $key $val}
+					<li class='ui-pic-list-item'>
+						<a class='img' href='{url_change($val[url])}' target="_blank"><img src='{thumb($val[thumb],102,78)}' width='124' height='93' /></a>
+						<a class='title' href='{url_change($val[url])}' target="_blank">{$val[title]}</a>
+					</li>
+                    {/loop}
+                </ul>
+                {/pc}
+             </div>
+
+                <div class='ui-box-side ui-tab ui-tab-min'>
+                <div class='ui-header ui-header-side'>
+                    <h2 class='title'>票房排行榜</h2>
+                </div>
+                <div class='ui-tab-header fn-clear'>
+                    <ul class='ui-tab-nav fn-clear'>
+                        <li class='ui-tab-nav-item ui-tab-nav-item-cur'>北美</li>
+                        <li class='ui-tab-nav-item'>内地</li>
+                        <li class='ui-tab-nav-item'>日本</li>
+                        <li class='ui-tab-nav-item'>韩国</li>
+                    </ul>
+                </div>
+                <div class='ui-tab-cnt'>
+                {pc:content action="position" posid="591" order="listorder DESC" num="10"}
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-ranking ui-ranking-video'>
+                        {loop $data $key $val}
+                        <li class='ui-ranking-item {if $n == 1}ui-ranking-item-cur{/if}'>
+							<a class='img' href='{url_change($val[url])}'target="_blank"><img src='{thumb($val[thumb],102,78)}' alt='' width='88' height='66' /></a>
+                            {if $n < 4}
+                            <span class='num num-hot'>{$n}</span>
+                            {else}<span class='num'>{$n}</span>
+                            {/if}
+							<h3 class='title'><a href='{url_change($val[url])}'>{$val[title]}</a></h3>
+							<p class='star'>{str_cut($val[star],37,'')}</p>
+							<p class='cnt cnt-2line'>{str_cut($val[description],56,'')}<a class='more' href='{$val[url]}' target="_blank">[详情]</a></p>
+						</li>
+                        {/loop}
+					</ol>
+                    {/pc}
+
+                    {pc:content action="position" posid="629" order="listorder DESC" num="10"}
+					<ol class='ui-tab-cnt-item ui-ranking ui-ranking-video'>
+                        {loop $data $key $val}
+						<li class='ui-ranking-item {if $n ==1} ui-ranking-item-cur{/if}'>
+							<a class='img' href='{url_change($val[url])}' target="_blank"><img src='{thumb($val[thumb],102,78)}' alt='' width='88' height='66' /></a>
+                            {if $n < 4}
+                            <span class='num num-hot'>{$n}</span>
+                            {else}
+                            <span class='num'>{$n}</span>
+                            {/if}
+							<h3 class='title'><a href='{url_change($val[url])}' target="_blank">{$val[title]}</a></h3>
+							<p class='star'>{str_cut($val[star],37,'')}</p>
+							<p class='cnt cnt-2line'>{str_cut($val[description],56,'')}<a class='more' href='{$val[url]}' target="_blank">[详情]</a></p>
+						</li>
+                        {/loop}
+					</ol>
+                    {/pc}
+
+                    {pc:content action="position" posid="630" order="listorder DESC" num="10"}
+					<ol class='ui-tab-cnt-item ui-ranking ui-ranking-video'>
+                        {loop $data $key $val}
+						<li class='ui-ranking-item {if $n ==1} ui-ranking-item-cur{/if}'>
+							<a class='img' href='{url_change($val[url])}' target="_blank"><img src='{thumb($val[thumb],102,78)}' alt='' width='88' height='66' /></a>
+                            {if $n < 4}
+                            <span class='num num-hot'>{$n}</span>
+                            {else}
+                            <span class='num'>{$n}</span>
+                            {/if}
+							<h3 class='title'><a href='{url_change($val[url])}' target="_blank">{$val[title]}</a></h3>
+							<p class='star'>{str_cut($val[star],37,'')}</p>
+							<p class='cnt cnt-2line'>{str_cut($val[description],56,'')}<a class='more' href='{$val[url]}' target="_blank">[详情]</a></p>
+						</li>
+                        {/loop}
+					</ol>
+                    {/pc}
+
+                    {pc:content action="position" posid="631" order="listorder DESC" num="10"}
+					<ol class='ui-tab-cnt-item ui-ranking ui-ranking-video'>
+                        {loop $data $key $val}
+						<li class='ui-ranking-item {if $n ==1} ui-ranking-item-cur{/if}'>
+							<a class='img' href='{url_change($val[url])}' target="_blank"><img src='{thumb($val[thumb],102,78)}' alt='' width='88' height='66' /></a>
+                            {if $n < 4}
+                            <span class='num num-hot'>{$n}</span>
+                            {else}
+                            <span class='num'>{$n}</span>
+                            {/if}
+							<h3 class='title'><a href='{url_change($val[url])}'>{$val[title]}</a></h3>
+							<p class='star'>{str_cut($val[star],37,'')}</p>
+							<p class='cnt cnt-2line'>{str_cut($val[description],56,'')}<a class='more' href='{$val[url]}' target="_blank">[详情]</a></p>
+						</li>
+                        {/loop}
+					</ol>
+                    {/pc}
+				</div>
+			</div>
+
+			<div class='ui-box-side ui-box-side-art'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>精彩推荐</h2>
+				</div>
+                {pc:content action="position" posid="598" orde="listorder DESC" num="6"}
+                {loop $data $key $val}
+                {php if ($n==2)continue;}
+				<div class='ui-art fn-clear'>
+					<a class='img' href='{url_change($val[url])}' target="_blank"><img src='{thumb($val[thumb],102,78)}' alt='' width='124' height='93' /></a>
+					<h3 class='title'><a href='{url_change($val[url])}' target="_blank">{$val[title]}</a></h3>
+					<p class="cnt">{str_cut($val[description],68,'')}<a class='more' href='{url_change($val[url])}'target="_blank">[详情]</a></p>
+				</div>
+                {/loop}
+				<ul class='ui-list'>
+                    {loop $data $key $val}
+                        {if $n>1}
+					    <li class='ui-list-item'><a href='{url_change($val[url])}' target="_blank">{$val[title]}</a></li>
+                        {/if}
+                    {/loop}
+				</ul>
+                {/pc}
+			</div>
+		</div>
+	</div>
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-video'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

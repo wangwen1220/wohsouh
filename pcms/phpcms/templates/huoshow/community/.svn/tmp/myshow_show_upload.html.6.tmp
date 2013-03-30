@@ -1,0 +1,202 @@
+{template "community","myshow_header"}
+<div id="wrapper" class='pin-details fn-clear'>
+	<div id="aside">
+		<div class="album">
+			<h5>出自专辑</h5>
+			<h3>{$album_datas[0][album_name]}</h3>
+			<span class='pin-position'><em>{$first_r}</em>/{$total_r}</span>
+			<a class="link" href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$data[0][albumid]}">
+			{loop $thumb_data $r}
+			<img src='{$r[small]}' width='61' height='61' />
+			{/loop}
+			</a>
+			{if $user['uid'] != $data[0]['uid']}
+			{if $follow_r==1}
+			<a class='follow follow-album btn' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$data[0][albumid]}&action=cancel'>取消关注</a>
+			{else}
+			<a class='follow follow-album btn' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$data[0][albumid]}'>关注</a>
+			{/if}
+			{/if}
+		</div>
+		<div class='domain-pins'>
+			<h3>同出自</h3>
+			<div class='album-bar'>
+				{loop $same_data $r}
+				<a href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}"><span class='text'>{str_cut($r['album_name'],30)}</span><span class='stats'>{$r[file_count]}</span></a>
+				{/loop}
+			</div>
+		</div>
+	</div>
+
+	<div id="main" class='pin-upload'>
+		<div class='pin-show'>
+			<div id='pinner' class='pinner fn-clear' data-id='{$data[0][uid]}'>
+				<a class="pinner-photo" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$data[0][uid]}"><img src="{$avatar}" width='52' height='52' /></a>
+				<p class="pinner-date">{$data[0][input_time]}</p>
+				<p class="pinner-name"><a href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$data[0][uid]}">{$data[0][nickname]}</a></p>
+				<p class="pinner-from">发自专辑：<a href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$data[0][albumid]}">{$album_datas[0][album_name]}</a></p>
+			</div>
+			<!--属于商品详细页屏蔽这里-->
+			{if $data[0][file_type] !=3}
+			<div id='pin-actions' class='pin-actions fn-clear' data-id='{$share_id}'>
+				<ul class='pin-buttons'>
+					{if $user['uid'] != $data[0]['uid']}
+					<li class="btn repin"><a href="/index.php?m=community&c=index&a=ajax_transfer&share_id={$share_id}">转采</a></li>
+					{if $is_like ==0}
+					<li class="btn like"><a href='javascript:;'><strong>喜欢</strong> </a></li>
+					{else}
+					<li class="btn like"><a href='javascript:;'><strong>取消喜欢</strong> </a></li>
+					{/if}
+					{/if}
+					{if $user['uid'] == $data[0]['uid']}<!--<li class="btn edit"><a href=''><strong>编辑</strong></a></li>-->
+					<li class="btn del"><a class='del-tip' href='/index.php?m=community&c=myhuoshow&a=userdelshare&id={$data[0][id]}'><strong>删除</strong></a>
+					</li>{/if}
+				</ul>
+				<p class="pin-type">来源：{if $data[0][file_state] == 1}用户上传{elseif $data[0][file_state] == 2}网址采集{else}转藏{/if}</p>
+			</div>
+			{/if}
+			{if $data[0][file_type] ==3}
+			<!--商品详细页内容-->
+	<div class='pin-goods'>
+				<a class='goods-img' href='#'><img src='{$data[0][file_path]}' alt='' /></a>
+				<!--h2 class='goods-title'>{$data[0][file_name]}<span class='from taobao'></span></h2-->
+				{if $data[0][priceimg] != ""}
+					<a target="_blank" class='buy-btn' href='{$data[0][remote_url]}'><span class='price price-img'>{$data[0][priceimg]}</span></a>
+				{else}
+					<a target="_blank" class='buy-btn' href='{$data[0][remote_url]}'><span class='price'>￥{$data[0][price]}</span></a>
+				{/if}
+				<div id='pin-actions' class='pin-actions fn-clear' data-id='{$share_id}'>
+					<ul class='pin-buttons'>
+						{if $user['uid'] != $data[0]['uid']}
+						<li class="btn repin"><a href="/index.php?m=community&c=index&a=ajax_transfer&share_id={$data[0][id]}">转采</a></li>
+						{if $is_like ==0}
+						<li class="btn like"><a href='javascript:;'><strong>喜欢</strong> </a></li>
+						{else}
+						<li class="btn like"><a href='javascript:;'><strong>取消喜欢</strong> </a></li>
+						{/if}
+						{/if}
+						{if $user['uid'] == $data[0]['uid']}<li class="btn del"><a class='del-tip' href='/index.php?m=community&c=myhuoshow&a=userdelshare&id={$data[0][id]}'><strong>删除</strong></a></li>{/if}
+					</ul>
+				</div>
+				<div class="tags"><span class='tag-title'>标签：</span>{loop $tag_name $t}
+				<a class="tag-type" href='/index.php?m=community&c=index&a=tag_lists&tag_id={$t[id]}'>{$t[name]}</a>
+				{if $n!=0} | {/if}
+			{/loop}</div>
+			</div>
+
+	<!--商品详细页结束-->
+	{else}
+			<div id='pin-img' class='pin-img'>
+				{if $data[0][file_type] ==2}
+					<embed width="100%" height="450" align="middle" type="application/x-shockwave-flash" allowscriptaccess="always" allownetworking="all" quality="high" wmode="transparent" src="{$data[0][priceimg]}"></embed>
+				{else}
+					<a class='img-link'><img src='{$data[0][file_path]}' alt='' /></a>
+				<a id='zoom-view' target="_blank" class='zoom-view' href='{$data[0][file_path]}' title='查看原图'></a>
+				{/if}
+			</div>
+
+	{/if}
+			<!--属于商品详细页屏蔽这里-->
+			{if $data[0][file_type] !=3}
+			<div class="tags"><span class='tag-title'>标签：</span>
+			{loop $tag_name $t}
+				<a class="tag-type" href='/index.php?m=community&c=index&a=tag_lists&tag_id={$t[id]}'>{$t[name]}</a>
+				{if $n!=0} | {/if}
+			{/loop}
+			</div>
+			{/if}
+			<p class="desc">{$data[0][description]}</p>
+			<div class="stats">{if $data[0][file_state] == 2}<a href='/index.php?m=community&c=index&a=myshow_report&uid={$data[0]["uid"]}&report_type=2&share_id={$share_id} '>举报</a>
+		    {/if} <span class='comment'><em>{$data[0][be_reply_count]}</em> 评论</span> | <span class='like'><em>{$data[0][be_like_count]}</em> 喜欢</span> | <span class='repin'><em>{$data[0][be_collect_count]}</em> 转藏</span></div>
+		</div>
+		<div class="pin-comments fn-clear">
+			<div class="add-comment">
+				<div class='pin-input'>
+					<a class="img"  href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$user['uid']}"><img src="{$loginavatar}" width='50' height='50' /></a>
+					<form id='show-comment-form' method='post' action='?m=community&c=index&a=create_share_comment&share_id={$share_id}'>
+						<div class="input-container fancy"><textarea name="share_comment" id="pin-comment"></textarea><label>说点有营养的什么吧...</label></div>
+						<div id="add-comment-controls" class='add-comment-controls'>
+							<!--<a id='comment-face' class='comment-face' href='javascript:;'>表情</a>-->
+							<button class="sbtn" type='submit' id="post-comment">评论</button>
+							<!--<span class='sync_to_weibo'><input type='checkbox' name='sync_to_weibo' id='sync_to_weibo' /><label>同步到微博</label></span>-->
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--/***评论开始***/-->
+			<ul id='show-comment-list' class='comment-list'>
+			{loop $reply_info $r}
+			<li class='comment-item fn-clear'>
+				<a class="img fn-left" title="{$r[nickname]}" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}">
+				<img src="{$r[thumb]}" width='32' height='32' /></a>
+				<p class='meta fn-left'><a class="author" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}">{$r[nickname]}</a>
+				<span class="text">{$r[content]}</span></p>
+				<p class="stats fn-right"><span class='time'>{$r[reply_time]}</span></p>
+				<div class="actions fn-right">
+					{if $user['uid'] != $r[uid]}<a class="report" href='index.php?m=community&c=index&a=myshow_report&uid={$r[uid]}&report_type=3&reply_type=2&comment_id={$r[id]}' title="举报" data-url="/pins/10002993/comments/189741/">举报</a>{/if}
+					<!-- |
+					<a class="reply" href='javascript:;' title="回复" data-name="文王">回复</a> |-->
+					{if $user['uid'] == $r[uid]}<a class="del" href='/index.php?m=community&c=index&a=delete_share_comment&comment_id={$r[id]}&share_id={$share_id}' title="删除" data-url="/pins/10002993/comments/189741/">删除</a>{/if}
+				</div>
+			</li>
+			{/loop}
+			</ul>
+			<!--/***评论结束***/-->
+		</div>
+		<div class='pagination pagination-normal' id='pager'>{if $reply_num !=0}{$page_reply}{/if}</div>
+		{if $like_count}
+		<div class='ta ta-like'>
+			<!--a id='view-all-like' class='view-all' href='#'><strong>···</strong> 全部↓</a-->
+			<h3 class='title'>TA们喜欢 <span>({$like_count}人)</span></h3>
+			<ul class='ta-list'>
+				{if $like_count!=0}{loop $like_data $r}
+				<li class='ta-item'><a class='img' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'><img title="{$r[nickname][0][nickname]}" src='{$r[thumb]}' width='40' height='40' /></a></li>
+				{/loop}{/if}
+			</ul>
+		</div>
+		{/if}
+		{if $collect_count}
+		<div class='ta ta-repin'>
+			<!--a id='view-all-like' class='view-all' href='#'><strong>···</strong> 全部↓</a-->
+			<h3 class='title'>TA们转藏 <span>({$collect_count}次)</span></h3>
+			<ul class='repin-list'>
+				{loop $collect_data $r}
+				<li>
+					<a class="photo" href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'><img src='{$r[thumb]}' width='50' height='50' /></a>
+					<div class='meta'>
+						<p>被 <a class='name' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'>{$r[nickname]}</a> 转藏</p>
+					</div>
+					<div class='share'>
+						{loop $r[share_img] $v}
+						<a class="img" href='/index.php?m=community&c=index&a=show&share_id={$v[id]}'><img src='{$v[thumb]}' width='50' height='50' /></a>
+						{/loop}
+						<span class="share-bbtn"><strong>{$r[share_count][share]}</strong><em>分享</em></span>
+					</div>
+				</li>
+				{/loop}
+			</ul>
+		</div>
+		{/if}
+	</div>
+	<div id="pin-toolbar">
+		<div class="pin-nav">
+			{if $Previous}
+			<a class="prev disabled" title="上一张" href="/index.php?m=community&c=index&a=show&share_id={$Previous[0][id]}"></a>
+			{/if}
+			<a class="album" title="专辑列表" href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$data[0][albumid]}"></a>
+			{if $Next}
+			<a class="next" title="下一张" href="/index.php?m=community&c=index&a=show&share_id={$Next[0][id]}"></a>
+			{/if}
+		</div>
+		<div class='share'>
+			<h3 class='title'>分享到</h3>
+			<ul class='share-list' data-t='{$album_datas[0][album_name]}' data-s='{$data[0][description]}' data-p='{$data[0][file_path]}'>
+				<li class="weibo share-button" data-i='tsina'><span title="分享到新浪微博">微博</span></li>
+				<li class="douban share-button" data-i='douban'><span title="分享到豆瓣">豆瓣</span></li>
+				<li class="qzone share-button" data-i='qzone'><span title="分享到QQ空间">空间</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

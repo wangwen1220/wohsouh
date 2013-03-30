@@ -1,0 +1,24 @@
+{template "community","myshow_header"}
+<div id="wrapper" class='account'>
+	<h2 class='header'><span class='wrapper'>完善账号信息</span></h2>
+	<p class='welcome'>火生，欢迎你！</p>
+	<p class='welcome'>请完善您的信息，以后您也可以使用该邮箱和密码登录，如果您之前已经注册过火秀账号，请点此<a href='#'>绑定已有账号</a>。</p>
+	<form class='account-info fn-clear' method='post' action=''>
+		<a class="avatar" href='#'><img src="/statics/images/myshow/avatar_default.jpg" width='100' heght='100' /></a>
+		<div class="info">
+			<div><input type='text' class='input' /></div>
+			<div class='fancy'>
+				<input type='text' class='input' />
+				<label class='label'>登录邮箱地址</label>
+			</div>
+			<div class='fancy'>
+				<input type='password' class='input' />
+				<label class='label'>密码</label>
+			</div>
+			<p><input type='checkbox' checked='checked' class='checkbox' /> <label class='checkbox'>关注火秀的官方腾讯微博</label></p>
+			<button type='submit' class='sbtn lbtn'>注册</button>
+		</div>
+	</form>
+</div>
+</body>
+</html>

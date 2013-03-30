@@ -1,0 +1,17 @@
+<div class="wb-mine-nums">
+	<h3>我的微博</h3>
+	<ul>
+		<li><a href="/show.php?mod=huoshow&module=weibo&op=user_userfollow&roomid={$room_uid}"> <span
+				class="num">{if $user_info[0].followCount}{$user_info[0].followCount}{else}0{/if}</span> <span class="text"><span
+					class="ic1">关注</span></span>
+		</a></li>
+		<li><a href="/show.php?mod=huoshow&module=weibo&op=user_fans_list&roomid={$room_uid}"> <span
+				class="num">{if $user_info[0].beFollowCount}{$user_info[0].beFollowCount}{else}0{/if}</span> <span class="text"><span
+					class="ic2">我的粉丝</span></span>
+		</a></li>
+		<li><a href="/show.php?mod=huoshow&module=weibo&op=user&roomid={$room_uid}&list=1"> <span
+				class="num">{if $user_total}{$user_total}{else}0{/if}</span> <span class="text"><span
+					class="ic3">记录</span></span>
+		</a></li>
+	</ul>
+</div>

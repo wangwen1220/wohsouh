@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>火秀网</title>
+<meta name="keywords" content="{$SEO['keyword']}" />
+<meta name="description" content="{$SEO['description']}" />
+<meta name='author' content='火秀网' />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+<link href="{CSS_PATH}myshow.css" rel="stylesheet" />
+<script src="{JS_PATH}jquery-1.7.2.min.js"></script>
+<script src="{JS_PATH}jquery.cookie.js"></script>
+<script src="{JS_PATH}jquery.form.min.js"></script>
+<script src="{JS_PATH}jquery.animate-colors.min.js"></script>
+<script src="{JS_PATH}artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{JS_PATH}jtools.js"></script>
+<script src="{JS_PATH}myshow_jquery.js"></script>
+<!-- <script src="{JS_PATH}cssrefresh.js"></script>
+<script src="http://fbug.googlecode.com/svn/lite/branches/firebug1.4/content/firebug-lite-dev.js"></script> -->
+<link href='/favicon.ico' rel='icon' />
+<link href="/mybatchup/css/default.css" rel="stylesheet" />
+<script src="/mybatchup/swfupload/swfupload.js"></script>
+<script src="/mybatchup/js/swfupload.queue.js"></script>
+<script src="/mybatchup/js/fileprogress.js"></script>
+<script src="/mybatchup/js/handlers.js"></script>
+<script>
+var swfu;
+window.onload = function() {
+	var settings = {
+		flash_url: "/mybatchup/swfupload/swfupload.swf",
+		upload_url: "/mybatchup.php",	// Relative to the SWF file
+		post_params: {"PHPSESSID" : "<?php echo session_id(); ?>"},
+		file_size_limit: "2 MB",
+		file_types: "*.jpg;*.gif;*.png",
+		file_types_description: "图像或者flash文件",
+		file_upload_limit: 10,
+		file_queue_limit: 10,
+		custom_settings: {
+			progressTarget: "fsUploadProgress",
+			cancelButtonId: "btnCancel"
+		},
+		debug: false,
+
+		// Button settings
+		button_image_url: "/mybatchup/images/btn1.jpg",	//Relative to the Flash file
+		button_width: "250",
+		button_height: "45",
+		button_placeholder_id: "spanButtonPlaceHolder",
+		button_text: '',
+		button_text_style: "",
+		button_text_left_padding: 0,
+		button_text_top_padding: 0,
+
+		// The event handler functions are defined in handlers.js
+		file_queued_handler : fileQueued,
+		file_queue_error_handler : fileQueueError,
+		file_dialog_complete_handler : fileDialogComplete,
+		upload_start_handler : uploadStart,
+		upload_progress_handler : uploadProgress,
+		upload_error_handler : uploadError,
+		upload_success_handler : uploadSuccess,
+		upload_complete_handler : uploadComplete,
+		queue_complete_handler : queueComplete	// Queue plugin event
+	};
+
+	swfu = new SWFUpload(settings);
+
+	document.forms[0].reset(); // 刷新时重置表单
+};
+</script>
+</head>
+<body class='{if $user[uid]}logged {/if}welcome' data-id='http://{php global $SYSCONFIG;echo $SYSCONFIG["SpaceSiteRoot"]}/api/myshowlogin.php?jsoncallback=?'><!-- 登录后添加加类“logged” -->
+<!-- 上传采集弹窗 -->
+<div id='upload-pin-dialog' class="dialog collect-website-dialog upload-pin-batch-dialog">
+	<div class="header">
+		<h2 class='title'>上传采集</h2>
+		<a id='upload-dialog-closer' class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+
+	<div class="batch_up">
+		<div class="button1">
+			<span id="spanButtonPlaceHolder"></span>
+			<input id="btnUpload" type="button" value="" onclick="swfu.startUpload();" disabled="disabled" style="margin-left: 2px; width:121px; height: 25px; background:url(/mybatchup/images/btn2.gif) no-repeat; border:0;" />
+			<input id="btnCancel" type="button" value="" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; width:121px; height: 25px; background:url(/mybatchup/images/btn3.gif) no-repeat; border:0;" />
+			<!--span id="divStatus" class="status">0 个文件被上传</span-->
+		</div>
+		<div id='js-textads' class="textads">上传页面正在加载中，如果未出现选择上传按扭请捎等片刻...</div>
+	</div>
+
+	<div id="upload-output" class='select-pin fn-clear'>
+		<!-- 批量上传 -->
+		<!-- /***
+		<form id='pin-info-form' class='pin-info-form pin-info-form-batch' name='community' method='post' action="/index.php?m=community&c=myhuoshow&a=myupload&act_submit=yes&list=1">
+		***/-->
+		<form id="pin-info-form" class='pin-info-form pin-info-form-batch' action="/index.php?m=community&c=myhuoshow&a=add_batch_upload" name='pin_info_form' method="post" enctype="multipart/form-data">
+			<input type="hidden" name="album_id" class="inputselect" value='{if $getalbum_id==""}default_id{else}{$getalbum_id}{/if}' />
+			<input type='hidden' id='pin-tags-id' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+
+			<div id='pin-info-way-one' class='pin-info-way pin-info-way-one fn-clear fn-hide'>
+				<h3 class='pin-info-title'>方式一： 为照片添加统一的信息</h3>
+				<div class='pin-info-wrapper'>
+					<div class='pin-info-item pin-info-album'>
+						<label class='pint-info-label'>发布到：</label>
+						<div class='pin-info-input divselect'>
+							<cite class='selected'>{if $getalbum_id==""}我的专辑{else}{$getalbum_name}{/if}</cite>
+							<div class='options'>
+								<ul class='option-list'>
+									<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+									{loop $list_arr $r}
+									<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+									{/loop}
+								</ul>
+								<div class='create-album'>
+									<input name='create_album' type='text' value='创建新专辑' />
+									<a class='button disabled' href='javascript:;'>创建</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='pin-info-item pin-info-desc'>
+						<label class='pint-info-label'>描述：</label>
+						<div class='pin-info-input fancy'>
+							<textarea name='description' class='desc'></textarea>
+							<label>描述一下这个专辑...别忘@好友哦</label>
+						</div>
+					</div>
+					<div class='pin-info-item pin-info-tags'>
+						<label class='pint-info-label'>标签：</label>
+						<div class="pin-info-input fancy tags">
+							<span id='tag-container' class='tag-container'></span>
+							<input type='text' id='pin-tags' class='pin-tags' autocomplete='off' />
+							<label>最多5个标签，以空格隔开</label>
+						</div>
+					</div>
+				</div>
+				<div class='select-tags'>
+					<h3>常用标签，点击插入</h3>
+					<div class="tag-list-wrapper">
+						<div id="tag-list" class='tag-list'>
+							{loop $a_arr_tag $t}
+							{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+								<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+							{if ($n+1)%20==0}</ul>{/if}
+							{/loop}
+						</div>
+					</div>
+					<div class='tag-list-nav'>
+						<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+						<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+					</div>
+				</div>
+			</div>
+
+			<div id='pin-info-way-two' class='pin-info-way pin-info-way-two fn-hide'>
+				<h3 class='pin-info-title'>方式二： 为每张照片单独添加信息</h3>
+				<div class="fieldset flash" id="fsUploadProgress">
+					<span class="legend">上传队列</span>
+				</div>
+			</div>
+			<div id='js-submit' class='submit fn-hide'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>发 布</button>
+			</div>
+		</form>
+		<div id='notice-wrapper'>
+			<p class='notice'>注：支持以下：jpg、gif、png 格式。</p>
+			<p class='notice'>一次可上传 10 张，按住 <span class='icon-fn icon-ctrl'>Ctrl</span> 键或 <span class='icon-fn icon-shift'>Shift</span> 键可多选</p>
+		</div>
+	</div>
+</div>
+
+<!-- 遮罩层 -->
+<div id="page-overlay" class="overlay"></div>
+</body>
+</html>

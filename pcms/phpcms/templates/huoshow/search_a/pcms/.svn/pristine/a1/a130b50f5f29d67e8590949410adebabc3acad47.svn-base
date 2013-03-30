@@ -1,0 +1,70 @@
+<!-- Header Start -->
+<div id="header" class='fn-clear'>
+	<div class='title'>
+		<a class='logo' target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[246][url])}" title="火秀网"></a>
+		<h1>{if ($catid==250 || $parentid==250 || $top2_parentid==250)}<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[250][url])}">新游戏</a>
+			{elseif ($catid==247 || $parentid==247 || $top2_parentid==247)}<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[247][url])}">网络游戏</a>
+			{elseif ($catid==248 || $parentid==248 || $top2_parentid==248)}<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[248][url])}">网页游戏</a>
+			{elseif ($catid==249 || $parentid==249 || $top2_parentid==249 || $_GET[c]==search_yxk)}<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[249][url])}">单机游戏</a>
+			{elseif ($catid==251 || $parentid==251 || $top2_parentid==251)}<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[251][url])}">手机游戏</a>
+			{elseif ($catid==252 || $parentid==252 || $top2_parentid==252)}<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[252][url])}">游戏图库</a>
+			{/if}
+		</h1>
+		<!-- <h2><a target='_blank' href='{$CATEGORYS[246][url]}'>火秀游戏</a>  &gt; 
+			{if ($catid==250 || $parentid==250 || $top2_parentid==250)}新游戏
+			{elseif ($catid==247 || $parentid==247 || $top2_parentid==247)}网络游戏
+			{elseif ($catid==248 || $parentid==248 || $top2_parentid==248)}网页游戏
+			{elseif ($catid==249 || $parentid==249 || $top2_parentid==249)}单机游戏
+			{elseif ($catid==251 || $parentid==251 || $top2_parentid==251)}手机游戏
+			{elseif ($catid==252 || $parentid==252 || $top2_parentid==252)}游戏图库
+			{/if}</h2>-->
+			{if $_GET[c]==search_yxk}
+			<h2><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[249][url])}" target='_blank'>单击游戏</a>  &gt; <a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[282][url])}" target='_blank'>游戏库</a> &gt; 搜索 </h2>
+			{else}
+			<h2>{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',catpos($catid))}</h2>
+			{/if}
+			
+	</div>
+	<form id="search-form" class='search game-search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+		<input type="hidden" value="search" name="app" />
+		<input type="hidden" name="m" value="search" />
+		<input type="hidden" name="c" value="index" />
+		<input type="hidden" name="a" value="init" />
+		<input type="hidden" name="typeid" value="1" id="typeid" /><!-- 搜索类型 -->
+		<fieldset><input type='text' name='q' class='search-wd' value='搜索关键字游戏名' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+		{pc:content  action="position" posid="418" order="listorder DESC" num="3"}
+		<fieldset class='search-hotspot'>热点：{loop $data $r}<a target='_blank' href="{str_replace('www','game',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a> {/loop}</fieldset>
+		{/pc}
+	</form>
+	<ul id="nav" class='nav fn-cb fn-clear'>
+		<li class='nav-item'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[246][url])}">首页</a>
+			<!--/*** <div class='nav-item-subnav'><a href='#'>最新资讯</a> | <a href='#'>最新评测</a> | <a href='#'>最新游戏</a> | <a href='#'>最新攻略</a></div> ***/-->
+		</li>
+		<li class='nav-item {if $catid==250 || $parentid==250 || $top2_parentid==250}nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[250][url])}">新游首页</a>
+			<!--/*** <div class='nav-item-subnav'><a href='#'>新游资讯</a> | <a href='#'>新游评测</a> | <a href='#'>新游游戏</a> | <a href='#'>新游攻略</a></div> ***/-->
+		</li>
+		<li class='nav-item {if $catid==247 || $parentid==247 || $top2_parentid==247}nav-item-cur{/if}'>
+			<a class='nav-item-link' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[247][url])}">网络游戏</a>
+			<div class='nav-item-subnav'><!--{loop subcat(247,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a>|{/loop}--><a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[258][url])}">{getCatNameFromCatid(258)}</a>|<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[253][url])}">{getCatNameFromCatid(253)}</a>|<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[254][url])}">{getCatNameFromCatid(254)}</a>|<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[255][url])}">{getCatNameFromCatid(255)}</a>|<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[256][url])}">{getCatNameFromCatid(256)}</a>|<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[257][url])}">{getCatNameFromCatid(257)}</a>|<a target='_blank' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[259][url])}"'>{getCatNameFromCatid(259)}</a></div>
+		</li>
+		<li class='nav-item {if $catid==248 || $parentid==248 || $top2_parentid==248}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[248][url]}'>网页游戏</a>
+			<div class='nav-item-subnav'>{loop subcat(248,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a>|{/loop}</div>
+		</li>
+		<li class='nav-item {if $catid==249 || $parentid==249 || $top2_parentid==249 || $_GET[c]==search_yxk}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[249][url]}'>单机游戏</a>
+			<div class='nav-item-subnav'>{loop subcat(249,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a>|{/loop}</div>
+		</li>
+		<li class='nav-item {if $catid==251 || $parentid==251 || $top2_parentid==251}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[251][url]}'>手机游戏</a>
+			<div class='nav-item-subnav'>{loop subcat(251,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a>|{/loop}</div>
+		</li>
+		<li class='nav-item {if $catid==252 || $parentid==252 || $top2_parentid==252}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[252][url]}'>游戏图库</a>
+			<div class='nav-item-subnav'>{loop subcat(252,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a>|{/loop}</div>
+		</li>
+	</ul>
+</div>
+<!-- Header End -->

@@ -1,0 +1,76 @@
+{template "content","star_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">{getCatNameFromCatid($catid)}</h2>
+						<h3>
+						{loop subcat($catid,0,0,$siteid) $r}
+						{if ($r[catid]!=47 && $r[catid]!=51 && $r[catid]!=55 && $r[catid]!=60)}
+						<a href="{$r[url]}">{$r[catname]}</a> |
+						{/if} 
+						{/loop}
+						</h3>
+					</div>
+					<ul>
+						{pc:content action="lists" catid="$catid" num="70" order="id DESC" page="$page"}
+						{loop $data $r}
+						<li>
+							<span class="date_011"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],75,'')}</a></span>
+							<span class="date_01">{date($r['inputtime'])}</span>
+						</li>
+						{if $n%5==0 && $n<count($data)}
+					</ul>
+					<ul>
+						{/if}
+						{/loop}
+					</ul>
+					{/pc}
+					<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c">{$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(63);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a1606dcd'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=63&n=a1606dcd' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid={$siteid}&catid=11&other_catids=131,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+		
+		<!--热点视频-->
+		<!--//#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid={$siteid}"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid={$siteid}"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=62&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

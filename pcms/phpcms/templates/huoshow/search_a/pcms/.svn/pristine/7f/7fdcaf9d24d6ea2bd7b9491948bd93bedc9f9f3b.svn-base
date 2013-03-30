@@ -1,0 +1,624 @@
+{template "content","supermodel_header"}
+<!--Main Body-->
+<div class="main_body">
+		<div class="con_box_main">
+				<div class="con_box_1">
+
+		<!--Slide-->
+			<div class="music_banner">
+				<div class="common-roll-slide" id="huoshow_events_saishi_index_image">
+					<div class="common-roll-slide-body">
+
+						<div class="common-roll-slide-pages">
+						{pc:content  action="position" posid="71" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+						{loop $data $r}
+						<div class="common-roll-slide-page">
+			<div>
+			<a href="{$r['url']}" target="_blank"><img alt="{$r['title']}" src="{thumb($r[thumb],300,421)}"/></a>
+			</div>
+			<div class="common-roll-slide-page-info" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="{$r['url']}" target="_blank">{str_cut($r['title'],50,'')}</a></h3>
+			<!--<p><a href="{$r['url']}" target="_blank">{str_cut($r['description'],140,'..')}</a></p>-->
+			</div>
+			</div>
+			</div>
+			{/loop}
+			 {/pc}
+			</div>
+			<div class="common-roll-slide-nav">
+			<span class="common-roll-slide-nav-right">
+			<a href="#" class="common-roll-slide-prev">&nbsp;</a>
+			<a href="#" class="common-roll-slide-next">&nbsp;</a>
+			</span>
+			<span class="common-roll-slide-nav-links">
+			{pc:content  action="position" posid="71" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+			{loop $data $r}
+			<a href="javascript:void(0);">{$n}</a>
+			{/loop}
+			{/pc}
+			</span>
+			</div></div>
+		</div>
+			<script>
+window.slide_huoshow_events_saishi_index_image = make_pagebox('huoshow_events_saishi_index_image', {
+	links_selector: '.common-roll-slide-nav-links a',
+		pages_selector: '.common-roll-slide-page',
+		prev_selector: '.common-roll-slide-prev',
+		next_selector: '.common-roll-slide-next',
+		current_class: 'common-roll-slide-curr',
+		interval: 5,
+		effect: 1
+	});
+		</script>
+</div>
+	<!-- slide end -->
+
+	<!-- center content start -->
+		<div class='ui_content_center fn_left'>
+			<div class='ui_news ui_main_news'>
+			{pc:content  action="position" posid="40" order="listorder DESC" num="1" }
+			{loop $data $r}
+				<h1 class='ui_news_title'><a target="_blank" href='{$r['url']}'>{str_cut($r['title'],60,'')}</a></h1>
+				{/loop}
+				{/pc}
+				<ul class='ui_news_list'>
+
+					<li class='ui_news_list_item'>
+						<em></em>
+						{pc:content  action="position" posid="40" order="listorder DESC limit 1,2--"}
+						{loop $data $r}
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">[{str_cut($r['title'],30,'')}]</a>
+						{/loop}
+						{/pc}
+					</li>
+					{/pc}
+					<li class='ui_news_list_item'>
+						<em></em>
+						{pc:content  action="position" posid="40" order="listorder DESC limit 3,2--"}
+						{loop $data $r}
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">[{str_cut($r['title'],30,'')}]</a>
+						{/loop}
+						{/pc}
+					</li>
+				</ul>
+			</div>
+
+			<div class='ui_news ui_sub_news'>
+			{pc:content  action="position" posid="41" order="listorder DESC" num="1" }
+			{loop $data $r}
+				<h2 class='ui_news_title'><a target="_blank" href='{$r['url']}'>{str_cut($r['title'],66,'')}</a></h2>
+			{/loop}
+			{/pc}
+				<ul class='ui_news_list'>
+					<li class='ui_news_list_item'>
+						<em></em>
+						{pc:content  action="position" posid="41" order="listorder DESC limit 1,2--"}
+						{loop $data $r}
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">[{str_cut($r['title'],30,'')}]</a>
+						{/loop}
+						{/pc}
+					</li>
+					<li class='ui_news_list_item'>
+						<em></em>
+						{pc:content  action="position" posid="41" order="listorder DESC limit 3,2--"}
+						{loop $data $r}
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">[{str_cut($r['title'],30,'')}]</a>
+						{/loop}
+						{/pc}
+					</li>
+				</ul>
+			</div>
+
+			<div class='ui_news ui_list_news'>
+			{pc:content  action="position" posid="42" order="listorder DESC " num="1"}
+			{loop $data $r}
+				<h2 class='ui_news_title'><a target="_blank" href='{$r['url']}'>{str_cut($r['title'],66,'')}</a></h2>
+			{/loop}
+			{/pc}
+					<ul class='ui_news_list'>
+			{pc:content  action="position" posid="42" order="listorder DESC limit 1,7--"}
+			{loop $data $r}
+					<li class='ui_news_list_item'>
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">{str_cut($r['title'],80,'')}</a>
+					</li>
+			{/loop}
+			{/pc}
+				</ul>
+			</div>
+		</div>
+		<!-- center content end -->
+
+				<div class="flash_right">
+						<div class='model_focus'>
+				<h2 class='ui_title'>模界焦点</h2>
+				<ul class='ui_img_list'>
+				{pc:content  action="position" posid="36" order="listorder DESC" num="2"}
+				{loop $data $r}
+					<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='{$r['url']}' title="{$r[title]}"><img src='{thumb($r[thumb],109,83)}' width='109' height='83' alt='{$r['title']}' /></a>
+						<a class='ui_img_list_item_text' href='{$r['url']}' title="{$r[title]}">{str_cut($r['title'],28,'')}</a>
+					</li>
+					{/loop}
+					{/pc}
+				</ul>
+
+				<ul class='ui_list'>
+				{pc:content  action="position" posid="36" order="listorder DESC limit 2,10--" }
+				{loop $data $r}
+					<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='{$r['url']}' title="{$r[title]}">{str_cut($r['title'],55,'')}</a>
+					</li>
+					{/loop}
+					{/pc}
+				</ul>
+			</div>
+			</div>
+				<div class="clear"></div>
+
+				</div>
+				<div class="con_box_2">
+				</div>
+		</div>
+		<div class="main_p">
+
+				<div class="main_p_l">
+						<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_index_leftimages">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+		{pc:content  action="position" posid="72" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+		{loop $data $r}
+		<div class="common-roll-slide-page">
+			<div>
+			<a href="{$r['url']}" target="_blank"><img alt="" src="{thumb($r[thumb],298,250)}"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="{$r['url']}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+			<p><a href="{$r['url']}" target="_blank">{str_cut($r['description'],140,'..')}</a></p>
+			</div>
+			</div>
+			</div>
+			{/loop}
+			{/pc}
+			</div> </div>
+		</div>
+</div>
+						{pc:content  action="supermodel_video_review" catids="110" num="8"}
+						<div class="s_pic">
+
+							<ul>
+
+							 {loop $data[img] $r}
+							<li><span class="video_pic_bg" style="background:none;"><a href="{$r['url']}" title="{$r['title']}" target="_blank"><img src="{thumb($r[thumb],134,83)}" width="134" height="83" /></a></span><span class="video_text"><a href="{$r['url']}" title="{$r['title']}" target="_blank"> {str_cut($r['title'],30,'')}</a></span></li>
+							{/loop}
+
+														</ul>
+						</div>
+
+					   <ul class="main_ul">
+
+							{loop $data[news] $r}
+							   <li><a target="_blank" href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r['title'],64,'')}</a></li>
+							{/loop}
+
+
+						</ul>
+			<div class='ui_interview'>
+				<h3 class='ui_title'>名模专访</h3>
+				<div class='ui_interview_content'>
+				{pc:content  action="position" posid="79" order="listorder DESC" num="1" where="thumb!=''"}
+				{loop $data $r}
+					<a  target="_blank" href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='{$r['title']}' width='120' height='90' /></a>
+					<h4><a href="{$r[url]}" target="_blank">{str_cut($r['title'],30,'')}</a></h4>
+					<p><a target="_blank" href="{$r[url]}">{str_cut($r[description],80,'...')}</a><a class='more' target="_blank" href="{$r[url]}" title="{$r[description]}">[详细]</a></p>
+				{/loop}
+				{/pc}
+				</div>
+
+				<ul class='ui_list'>
+					{pc:content  action="supermodel_interview_review" catids="142" num="3"}
+					{loop $data[news] $r}
+					<li class='ui_list_item'><a target="_blank" href='{$r['url']}' title='{$r['title']}'>{str_cut($r['title'],64,'')}</a></li>
+					{/loop}
+					{/pc}
+				</ul>
+			</div>
+				</div>
+				{/pc}
+
+				<div class="text_box ui_news_wrapper">
+				<div class='ui_news ui_list_news model_contest'>
+				<h3 class='ui_news_title'>模特大赛 <em>Model contest</em></h3>
+				<div class='ui_intro'>
+				{pc:content action="position" posid="37" order="listorder DESC" num="1"}
+					{loop $data $r}
+					<a target="_blank" href="{$r[url]}"><img src='{thumb($r[thumb],106,95)}' width='106' height='95' alt='{$r['title']}' /></a>
+					<h4><a href="{$r[url]}" target="_blank">{str_cut($r[title],60,'')}</a></h4>
+					<p><a target="_blank" href="{$r[url]}">{str_cut($r[description],150,'...')}</a><a class='detail' target="_blank" href="{$r[url]}" title="{$r[description]}">[详细]</a></p>
+					{/loop}
+				{/pc}
+				</div>
+				<ul class='ui_news_list'>
+				{pc:content action="position" posid="37" order="listorder DESC limit 1,7--" }
+				{loop $data $r}
+					<li class='ui_news_list_item'>
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">{str_cut($r['title'],64,'')}</a>
+					</li>
+				{/loop}
+				</ul>
+			</div>
+
+			<div class='ui_news ui_list_news model_zone'>
+				<h3 class='ui_news_title'>名模专区 <em>Model zone</em></h3>
+				<ul class='ui_img_list'>
+				{pc:content  action="position" posid="38" order="listorder DESC" num="3"}
+				{loop $data $r}
+					<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='{$r['url']}' title="{$r[title]}"><img src='{thumb($r[thumb],110,90)}' width='110' height='90' alt='{$r['title']}' /></a>
+						<a class='ui_img_list_item_text' href='{$r['url']}' title="{$r[title]}">{str_cut($r['title'],20,'')}</a>
+					</li>
+					{/loop}
+					{/pc}
+				</ul>
+				<ul class='ui_news_list'>
+					{pc:content action="position" posid="38" order="listorder DESC limit 3,9--"}
+					{loop $data $r}
+					<li class='ui_news_list_item'>
+						<a target="_blank" href='{$r['url']}' title="{$r[title]}">{str_cut($r['title'],64,'')}</a>
+					</li>
+					{/loop}
+					{/pc}
+				</ul>
+			</div>
+				</div>
+
+				<div class="main_p_r">
+				<p class="p_img"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(56);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a57820c8'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=56&n=a57820c8' /></a>
+			</noscript></p>
+				<!--热点排行-->
+				{pc:content action="hits_all_supermodel" catids="110,111,137,138,113,140,142" newsnum="14"}
+						<div class="ui_fold_box ui_fold_box_redian_supermodel">
+							<h3 class='ui_fold_box_title'><span>热点排行</span></h3>
+							<ul class='ui_fold_box_content'>
+							{loop $data $r}
+								<li class='{if $n==1 && !empty($r[thumb])}ui_fold_box_content_selected{else}top_no{/if}'> <span {if $n==1 || $n==2 ||$n==3 }class='top_no'{/if}>{$n}</span>
+									<div> <a target="_blank" href="{$r[url]}"><img src='{thumb($r[thumb],106,82)}' width='106' height='82' /></a>
+										<h4><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],48,'')}</a></h4>
+										<!--<p>{str_cut($r[description],20,'..')}</p>-->
+									</div>
+								</li>
+							 {/loop}
+							</ul>
+						</div>
+				{/pc}
+		<!--热点排行结束-->
+
+			<div class='clear'></div>
+			</div>
+
+
+		  </div>
+			<div class='clear'></div>
+			 <div class="ad"><p class="p_img"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(58);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a81311c4'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=58&n=a81311c4' /></a>
+			</noscript></p></div>
+
+		<div class="con_box">
+				<div class="bar_box"><span class="ti_1"></span><a class="more_model"  target="_blank" href="{$CATEGORYS[111][url]}">更多</a></div>
+				<div class="clear"></div>
+				<div class="pic_box">
+				<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_motedasai_images">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+		{pc:content  action="position" posid="73" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+		{loop $data $r}
+		<div class="common-roll-slide-page">
+			<div>
+			<a href="{$r['url']}" target="_blank"><img alt="{$r['url']}" src="{thumb($r[thumb],298,250)}"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="{$r['url']}" target="_blank">{str_cut($r['title'],50,'')}</a></h3>
+			<p><a href="{$r['url']}" target="_blank">{str_cut($r['description'],140,'..')}</a></p>
+			</div>
+			</div>
+			</div>
+			{/loop}
+			{/pc}
+			</div> </div>
+		</div>
+</div>
+						<div class="s_pic">
+							<ul>
+							{pc:content action="supermodel_indexcatids_review" catids="111"}
+							{loop $data[news] $r}
+							<li><span class="video_pic_bg" style="background:none;"><a href="{$r['url']}" title="{$r['title']}" target="_blank"><img src="{thumb($r[thumb],134,83)}" width="134" height="83" /></a></span><span class="video_text"><a href="{$r['url']}" title="{$r['title']}" target="_blank"> {str_cut($r['title'],30,'')}</a></span></li>
+							{/loop}
+							{/pc}
+
+							 </ul>
+						</div>
+				</div>
+				<div class="text_box">
+				{pc:content  action="position" posid="39" order="listorder DESC" num="1"}
+				{loop $data $r}
+						<h3 class="color1"><a href="{$r['url']}" target="_blank"> {str_cut($r['title'],70,'')}</a></h3>{/loop}
+						{/pc}
+						{pc:content  action="position" posid="39" order="listorder DESC limit 1,2--" }
+						<div class="s_top_news">
+						{loop $data $r}
+<p><strong class="text_gray">独家：</strong><span>[<a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a>]</span></p>
+						{/loop}
+</div>					{/pc}
+						<ul class="con_ul">
+							<!--{pc:content  action="position" posid="39" order="listorder DESC limit 3,11--"}-->
+							{pc:content action="lists" catid="111" order="listorder DESC" num="12"}
+							{loop $data $r}
+							<li><a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a></li>
+							{/loop}
+							{/pc}
+
+						</ul>
+				</div>
+				<div class="ptext_box">
+						<div class="r_bar"><h4>精彩回顾</h4></div>
+						<ul class="p_text">
+						{pc:content  action="position" posid="288" thumb="1" order="listorder DESC" num="2"}
+						{loop $data $r}
+						<li><a href="{$r['url']}" title="{$r['title']}" target="_blank"><img src="{thumb($r[thumb],106,95)}" width="106" height="95" /></a>
+						<span><a target="_blank" href="{$r['url']}" title="{$r['title']}"> {str_cut($r['title'],20,'')}</a></span></li>
+						{/loop}
+						</ul>
+						{/pc}
+						 <div class="clear"></div>
+						 {pc:content  action="supermodel_splendid_review" catids="111" num="8"}
+						 <ul class="con_ul_r">
+						 {loop $data[news] $r}
+							 <li><a target="_blank" href="{$r['url']}">{str_cut($r['title'],44,'')} </a></li>
+						 {/loop}
+						{/pc}
+												 </ul>
+				</div>
+				<div class="clear"></div>
+		</div>
+
+		 <div class="con_box" id="mingmo">
+		 		<div class="bar_box"><span class="ti_2"></span><a class="more_model"  target="_blank" href="{$CATEGORYS[112][url]}">更多</a></div>
+				<div class="clear"></div>
+				<div class="pic_box">
+				<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_mingmozhuanqu">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+		{pc:content  action="position" posid="74" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+		{loop $data $r}
+		<div class="common-roll-slide-page">
+			<div>
+			<a href="{$r['url']}" target="_blank"><img alt="{$r['title']} " src="{thumb($r[thumb],298,250)}"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="{$r['url']}" target="_blank">{str_cut($r['title'],50,'')} </a></h3>
+			<p><a href="{$r['url']}" target="_blank">{str_cut($r['description'],140,'..')}</a></p>
+			</div>
+			</div>
+			</div>
+			{/loop}
+			{/pc}
+			</div> </div>
+		</div>
+</div>
+						<div class="s_pic">
+							<ul>
+							{pc:content action="supermodel_indexcatids_review" catids="137,138"}
+							{loop $data[news] $r}
+							<li class="sig_margin"><span class="video_pic_bg" style="background:none;"><a href="{$r['url']}" title="{$r['title']}" target="_blank"><img src="{thumb($r[thumb],134,83)}" width="134" height="83" /></a></span><span class="video_text"><a href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r['title'],30,'')}</a></span></li>
+							{/loop}
+							{/pc}
+
+														 </ul>
+						</div>
+				</div>
+				<div class="text_box">
+				{pc:content  action="position" posid="44" order="listorder DESC" num="1"}
+				{loop $data $r}
+						<h3 class="color2"><a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a></h3>
+				{/loop}
+				{/pc}
+						<div class="s_top_news">
+				{pc:content  action="position" posid="44" order="listorder DESC limit 1,2--" }
+				{loop $data $r}
+<p><strong class="text_gray">独家：</strong><span>[<a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a>]</span></p>
+				{/loop}
+                {/pc}
+</div>
+						<ul class="con_ul">
+							<!--{pc:content  action="position" posid="44" order="listorder DESC limit 3,11--" }-->
+							{pc:content action="lists" catid="112" order="listorder DESC" num="12"}
+							{loop $data $r}
+						   <li><a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a></li>
+						   {/loop}
+							{/pc}
+													</ul>
+				</div>
+				<div class="ptext_box" id="pbox2">
+						<div class="r_bar"><span href="javascript:;">国内名模</span><span href="javascript:;" class="r_bar_hover">国际名模</span></div>
+						<div class="charts_block">
+						
+						{pc:content  action="position" posid="287" thumb="1" order="listorder DESC" num="2"}
+		  				<ul class="p_text">
+						{loop $data $r}
+						<li><a target="_blank" href="{$r['url']}" title="{$r['title']}"><img alt="{$r['title']}" src="{thumb($r[thumb],106,95)}" width="106" height="95" /></a>
+						<span><a target="_blank" href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],20,'')}</a></span></li>
+						{/loop}
+						</ul>
+						{/pc}
+						{pc:content  action="supermodel_inland_review" catids="137" num="8"}
+						<ul class="con_ul_r">
+						{loop $data[inlandnews] $r}
+						<li><a target="_blank" href="{$r['url']}">{str_cut($r['title'],40,'')}</a></li>
+						{/loop}
+
+						</ul>
+						{/pc}
+	   					 </div>
+	   					 <div class="charts_block">
+						 {pc:content  action="position" posid="295" thumb="1" order="listorder DESC" num="2"}
+		 				 <ul class="p_text">
+						{loop $data $r}
+						 <li><a target="_blank" href="{$r['url']}" title="{$r['title']}"><img alt="{$r['title']}" src="{thumb($r[thumb],106,95)}" width="106" height="95" /></a>
+						<span><a target="_blank" href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],20,'')}</a></span></li>
+						{/loop}
+						</ul>
+						{/pc}
+						{pc:content  action="supermodel_inland_review" catids="138" num="8"}
+						<ul class="con_ul_r">
+						{loop $data[news] $r}
+						<li><a target="_blank" href="{$r['url']}">{str_cut($r['title'],40,'')}</a></li>
+						{/loop}
+						</ul>
+						{/pc}
+						</div>
+		<script>
+		  $(function(){
+			window.pbox1 = make_pagebox('pbox2', {
+			  links_selector: '.r_bar span',
+			  current_class: 'r_bar_hover',
+			  pages_selector: '.charts_block',
+			  event_type: 'mouseover'
+			});
+		  });
+
+		</script>
+
+				</div>
+
+				<div class="clear"></div>
+		</div>
+
+		 <div class="con_box" id="ttai">
+				 <div class="bar_box"><span class="ti_3"></span><a class="more_model"  target="_blank" href="{$CATEGORYS[113][url]}">更多</a></div>
+				<div class="clear"></div>
+				<div class="pic_box">
+				<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_ttaixiuchang_images">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+		{pc:content  action="position" posid="75" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+		{loop $data $r}
+		<div class="common-roll-slide-page">
+			<div>
+			<a href="{$r['url']}" target="_blank"><img alt="{thumb($r[thumb],298,250)}" src="{$r['thumb']}"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="{$r['url']}" target="_blank">{str_cut($r['title'],50,'')}</a></h3>
+			<p><a href="{$r['url']}" target="_blank">{str_cut($r['description'],140,'..')}</a></p>
+			</div>
+			</div>
+			</div>
+			{/loop}
+			{/pc}
+			</div> </div>
+		</div>
+</div>
+						<div class="s_pic">
+							<ul>
+							{pc:content action="supermodel_indexcatids_review" catids="113"}
+							{loop $data[news] $r}
+							<li class="sig_margin"><span class="video_pic_bg" style="background:none;"><a href="{$r['url']}" title="{$r['title']}" target="_blank"><img src="{thumb($r[thumb],134,83)}" width="134" height="83" /></a></span><span class="video_text"><a href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r[title],30,'')}</a></span></li>
+							{/loop}
+							{/pc}
+
+														</ul>
+						</div>
+				</div>
+				<div class="text_box">
+				{pc:content  action="position" posid="45" order="listorder DESC" num="1"}
+				{loop $data $r}
+						<h3 class="color3"><a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a></h3>
+				{/loop}
+				{/pc}
+						<div class="s_top_news">
+						{pc:content  action="position" posid="45" order="listorder DESC limit 1,2--"}
+						{loop $data $r}
+<p><strong class="text_gray">独家：</strong><span>[<a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a>]</span></p>
+						{/loop}
+						{/pc}
+</div>
+						<ul class="con_ul">
+						<!--{pc:content  action="position" posid="45" order="listorder DESC limit 3,11--"}-->
+						{pc:content action="lists" catid="113" order="listorder DESC" num="12"}
+						{loop $data $r}
+ <li><a href="{$r['url']}" target="_blank">{str_cut($r['title'],70,'')}</a></li>
+						{/loop}
+ 						{/pc}
+						</ul>
+				</div>
+				<div class="ptext_box">
+						<div class="r_bar"><h4>T台展示</h4></div>
+						<ul class="p_text">
+						{pc:content  action="position" posid="294" thumb="1" order="listorder DESC" num="6"}
+						{loop $data $r}
+						<li><a target="_blank" href="{$r['url']}" title=""><img src="{thumb($r[thumb],95,106)}" width="95" height="106" /></a>
+						<span><a target="_blank" href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],24,'')}</a></span></li>
+						{/loop}
+						{/pc}
+						</ul>
+						<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+	   		  </div>
+
+		<div class="con_box_pic">
+				<div class="bar_box"><span class="ti_4"></span><a class="more_model" target="_blank" href="{$CATEGORYS[114][url]}">更多</a><span class="pic_nav"><a target="_blank" href="{$CATEGORYS[115][url]}">时装模特</a> <a target="_blank" href="{$CATEGORYS[116][url]}">内衣大片</a><a target="_blank" href="{$CATEGORYS[117][url]}">车模靓影</a><a target="_blank" href="{$CATEGORYS[118][url]}">男模专区</a></span>
+				</div>
+				<div class="clear"></div>
+				<ul class="pic_set">
+				{pc:content  action="position" posid="46" order="listorder DESC" num="10"}
+				{loop $data $r}
+						<li><a target="_blank" href="{$r['url']}" title="{$r['title']}"><img src="{thumb($r[thumb],167,130)}" width="167" height="130" /></a>
+						<span><a target="_blank" href="{$r['url']}" title="{$r['title']}"> {str_cut($r['title'],30,'')}</a></span></li>
+				{/loop}
+				{/pc}
+											  <div class="clear"></div>
+				</ul>
+		</div>
+</div>
+
+<!--Partners-->
+<div class="main_body">
+<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+{pc:link  action="type_list" typeid="64" siteid="$siteid" linktype="0" order="listorder asc" num="29"}
+<p class="layer_content_txt">
+{loop $data $r}
+<a href="{$r[url]}" target="_blank">{$r[name]}</a> {if $n<count($data)}|{/if}
+{/loop}
+</p>
+{/pc}
+</div>
+</div>
+</div>
+  <!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+	<!--Banner 960*90--><!--Body Bottom-->
+	<!--Other News--><!--Picture-->
+{template "content","footer"}

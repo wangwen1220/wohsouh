@@ -1,0 +1,157 @@
+{template "community","myshow_header"}
+<div id="wrapper" class='square'>
+	<div class="popular-album">
+		<h2 class='title'>人气专辑</h2>
+		<ul id='ui-album-slider' class='ui-album-list'>
+			<li class='ui-album-list-item'>
+				{loop $dbarr $r}
+				<div class='ui-album'>
+					{if $r[front_cover] ==2}
+						<a target='_blank' class="img img-single" href="/zj-{$r[id]}.html">
+						<img width="165" height="165" src="{$r[img]}">
+						</a>
+					{elseif $r[front_cover] ==1}
+						<a target='_blank' class='img' href='/zj-{$r[id]}.html'>
+						{loop $r[img] $v}
+						<img src='{$v}' alt='' width='60' height='60' />
+						{/loop}
+						</a>
+					{else}
+						<a target='_blank' class="img img-single" href="/zj-{$r[id]}.html">
+						<img width="165" height="165" src="{$r[img]}">
+						</a>
+					</a>
+					{/if}
+					<div class="intro">
+						<h3><a target='_blank' href="/m{$r[uid]}.html">{$r[album_name]}</a></h3>
+						<p class="fn-hide">{$r[description]}</p>
+					</div>
+					<div class="action fn-hide">
+						{if $r[uid]!=$user['uid']}
+						{if $r[isfollow] ==0}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>关注</a>
+						{else}
+						<a class='follow follow-album followed' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=cancel'>取消关注</a>
+						{/if}
+						{/if}
+						<a class='share jt-share' href='javascript:;'>分享</a>
+					</div>
+					<div class="jt-box">
+						<h3 class='jt-box-title'>分享到</h3>
+						<ul class="jt-box-list">
+							<li><a class="jt-ico jt-ico-tsina" data-i='tsina' href='javascript:;'>新浪微博</a></li>
+							<li><a class="jt-ico jt-ico-tqq" data-i='tqq' href='javascript:;'>腾讯微博</a></li>
+							<li><a class="jt-ico jt-ico-qzone" data-i='qzone' href='javascript:;'>QQ空间</a></li>
+							<li><a class="jt-ico jt-ico-renren" data-i='renren' href='javascript:;'>人人网</a></li>
+							<li><a class="jt-ico jt-ico-douban" data-i='douban' href='javascript:;'>开心网</a></li>
+							<!--<li><a class="jt-ico jt-ico-jt" onclick="$CKE.center(this);return false;">查看更多</a></li>-->
+						</ul>
+						<div class="jt-box-footer"></div>
+					</div>
+				</div>
+				{php if($n==8) break;}
+				{/loop}
+			</li>
+			<li class='ui-album-list-item'>
+				{php $i=1}
+				{loop $dbarr $r}<!--###每次循环8个-->
+				{if $i>8}
+				<div class='ui-album'>
+					{if $r[front_cover] ==2}
+						<a target='_blank' class="img img-single" href="/zj-{$r[id]}.html">
+						<img width="165" height="165" src="{$r[img]}">
+						</a>
+					{elseif $r[front_cover] ==1}
+						<a target='_blank' class='img' href='/zj-{$r[id]}.html'>
+						{loop $r[img] $v}
+						<img src='{$v}' alt='' width='60' height='60' />
+						{/loop}
+						</a>
+					{else}
+						<a target='_blank' class="img img-single" href="/zj-{$r[id]}.html">
+						<img width="165" height="165" src="{$r[img]}">
+						</a>
+					</a>
+					{/if}
+					<div class="intro">
+						<h3><a target='_blank' href="/m{$r[uid]}.html">{$r[album_name]}</a></h3>
+						<p class="fn-hide">{$r[description]}</p>
+					</div>
+					<div class="action fn-hide">
+						{if $r[uid]!=$user['uid']}
+						{if $r[isfollow] ==0}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>关注</a>
+						{else}
+						<a class='follow follow-album followed' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=cancel'>取消关注</a>
+						{/if}
+						{/if}
+						<a class='share jt-share' href='javascript:;'>分享</a>
+					</div>
+					<div class="jt-box">
+						<h3 class='jt-box-title'>分享到</h3>
+						<ul class="jt-box-list">
+							<li><a class="jt-ico jt-ico-tsina" data-i='tsina' href='javascript:;'>新浪微博</a></li>
+							<li><a class="jt-ico jt-ico-tqq" data-i='tqq' href='javascript:;'>腾讯微博</a></li>
+							<li><a class="jt-ico jt-ico-qzone" data-i='qzone' href='javascript:;'>QQ空间</a></li>
+							<li><a class="jt-ico jt-ico-renren" data-i='renren' href='javascript:;'>人人网</a></li>
+							<li><a class="jt-ico jt-ico-douban" data-i='douban' href='javascript:;'>开心网</a></li>
+							<!--<li><a class="jt-ico jt-ico-jt" onclick="$CKE.center(this);return false;">查看更多</a></li>-->
+						</ul>
+						<div class="jt-box-footer"></div>
+					</div>
+				</div>
+				{/if}
+				{php $i++;}
+				{/loop}
+			</li>
+		</ul>
+	</div>
+
+	<div class="popular-tags">
+		<table>
+			<thead>
+				<tr>
+					<th>热门分类</th>
+					<th>最近分享用户</th>
+					<th>优秀专辑</th>
+					<th>活跃用户</th>
+				</tr>
+			</thead>
+			<tbody>
+				{loop $square_datas $r}
+				<tr>
+					<td><a target='_blank' class='tag new' href='/fl-{$r[id]}.html'>{$r[name]}</a></td>
+					<td>
+						{php $i=0}
+						{loop $r[user_arr][avatar] $v}
+						<span class='user'>
+							<a target='_blank' class='user-photo' href='/m{$r[user_arr][uid][$i]}.html'><img src='{$v}' alt='' width='40' height='40' /></a>
+						</span>
+						{$i++}
+						{/loop}
+					</td>
+					<td>
+						{php $i=0}
+						{loop $r[share_arr][img] $v}
+						<span class='user'>
+						<a target='_blank' class='user-photo' href='/show-{$r[share_arr][id][$i]}.html'><img src='{$v}' alt='' width='40' height='40' /></a>
+						</span>
+						{$i++}
+						{/loop}
+						<span class='share-btn'><strong>{$r[count]}</strong><em>专辑</em></span>
+					</td>
+					<td>
+						{php $i=0}
+						{loop $r[active_arr][avatar] $v}
+						<span class='user'><a target='_blank' class='user-photo' href='/m{$r[active_arr][uid][$i]}.html'><img src='{$v}' alt='' width='40' height='40' /></a></span>
+						{$i++}
+						{/loop}
+					</td>
+				</tr>
+				{/loop}
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

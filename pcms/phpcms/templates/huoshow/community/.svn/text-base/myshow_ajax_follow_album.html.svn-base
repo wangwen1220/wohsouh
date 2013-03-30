@@ -1,0 +1,36 @@
+{loop $f_album $r}
+			<div class='ui-album'>
+				<a class='img' href='/zj-{$r[id]}.html'>
+					{loop $r[thumb] $v}
+					<img src='{$v}' alt='' width='60' height='60' />
+					{/loop}
+				</a>
+				<div  class='intro'>
+					<h3><a target='_blank' href='/zj-{$r[id]}.html'>{$r[album_name]}</a></h3>
+					<p class='fn-hide'>{$r[description]}</p>
+				</div>
+				<div class='pinner'>
+					<a target='_blank' class='avatar' href='/m{$r[uid]}.html'><img src='{$r[avatar]}' alt='' width='28' height='28' /></a>
+					<a target='_blank' class='name' href='/m{$r[uid]}.html'>{$r[nickname]}</a>
+					<p class='stats'>创建于：{$r[input_time]}</p>
+				</div>
+				<div class='action fn-hide'>
+					{if (empty($user['uid']))}
+					<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>关注</a>
+					{else}
+					{if $user['uid'] == $m_user_uid}
+					<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>取消关注</a>
+					{elseif $user['uid'] != $m_user_uid}
+						{if (!empty($user['uid']) && ($r[isfollowalbum] == 0))}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>关注</a>
+						{/if}
+						{if (!empty($user['uid']) && ($r[isfollowalbum] == 1))}
+						<a  class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>取消关注</a>
+						{/if}
+					{/if}
+					{/if}	
+					<a class='share' href='#'>分享</a>
+				</div>
+			</div>
+			{/loop}
+			{$page_str_follow}

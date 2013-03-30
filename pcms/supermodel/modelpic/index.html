@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>模特_模特大赛_火秀超模_火秀网</title>
+	<meta name='keywords' content='人体模特,嫩模,车模,模特走秀,模特大赛,T台秀' />
+	<meta name='description' content='火秀超模频道提供丰富的模特资讯,包括人体模特、模特走秀、模特大赛、车模大赛和经典的嫩模图片,是众多模特爱好者的集中地。' />
+	<meta name='author' content='火秀' />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_supermodel.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<!--[if IE 6]>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/DD_belatedPNG.js"></script>
+	<script>
+		/* 示例 */
+		DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+		/* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+		/* 如果要直接插入png图片，在单引号内加入img即可。 */
+	</script>
+	<![endif]-->
+	<link rel='stylesheet' href='http://pnews.wwen.huoshow.com/statics/css/huoshow/main.css' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body class="body_bg">
+	<!--Site Header-->
+	<div class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common">
+						<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>
+					</div>
+				</div>
+
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+							$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--Site Header End--><!--Navigator-->
+	<div class="nav_body">
+	  <div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/supermodel/" title="火秀超模首页">火秀超模频道</a></h1>
+		<div id="sub_channel">
+		  <ul>
+		<li><a href="http://www.huoshow.com/supermodel/modelmes/">超模资讯</a></li>
+		<li><a href="http://www.huoshow.com/supermodel/modelevent/">模特大赛</a></li>
+		<li><a href="http://www.huoshow.com/supermodel/modelfam">名模专区</a></li>
+		<li><a href="http://www.huoshow.com/supermodel/modeltshow">T台秀</a></li>
+		<li><a href="http://www.huoshow.com/supermodel/modelpic">超模写真</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+	<!--Navigator End-->
+
+<div class="search">
+  <form method="get" name="search" id="search" action="/app/" target="_blank" onsubmit="return checkSForm()">
+	<input type="hidden" value="search" name="app"/>
+	<input type="hidden" value="index" name="controller"/>
+	<input type="hidden" value="search" name="action"/>
+
+	<input type="text" value="请输入关键字" id="search_wd" name="wd" onfocus="clearKeyword()" onblur="clearKeyword()"/>
+	<select name="type" id="search_type" >
+	  <option value="article">新闻</option>
+	  <option value="all">全站</option>
+	  <option value="picture">图片</option>
+	  <option value="video">视频</option>
+	</select>
+	<input type="submit" id="search_submit" value="搜 索"/>
+  </form>
+  <span class="search_text">
+
+  </span>
+</div>
+
+<script>
+  $(function(){
+	window.clearKeyword = function(){
+	  var search_wd = $.trim($("#search_wd").val());
+	  if(search_wd=='请输入关键字'){
+		$("#search_wd").val('');
+	  }
+	  if(search_wd==''){
+		$("#search_wd").val('请输入关键字');
+	  }
+	}
+	window.checkSForm = function()
+	{
+	  var search_wd = $.trim($("#search_wd").val());
+	  if(search_wd=='请输入关键字' || search_wd==''){
+		alert('请输入关键字');
+		return false;
+	  }
+	}
+  })
+</script>
+<!--Main Body-->
+<div class="main_body">
+   <div class="meitu">
+  	<div class="bar_box"><span class="ti_5"></span><a class="more_model">更多</a></div>
+	<dl>
+	<dt><a href="#"><img src="http://www.huoshow.com/upload/2011/0919/1316396607398.jpg" /></a></dt>
+	<dd><ul>
+				</ul>
+	</dd>
+	</dl>
+<div class="clear"></div>
+</div>
+<div class="meitu">
+  	<div class="bar_box"><span class="ti_6"></span><a class="more_model">更多</a></div>
+	<dl>
+	<dt><a href="#"><img src="http://www.huoshow.com/upload/2011/0919/1316396607398.jpg" /></a></dt>
+	<dd><ul>
+			<li><a href="http://pnews.trunk.huoshow.com/staticpage/2012/neiyidapian_0417/54142.html"><img src="http://pnews.wwen.huoshow.com/uploadfile/2012/0417/20120417025714637.jpg" /></a><span class='meitu_list_text'>嫩模于梓棋粉色</span></li>
+		<li><a href="http://pnews.trunk.huoshow.com/staticpage/2012/neiyidapian_0417/54140.html"><img src="http://pnews.wwen.huoshow.com/uploadfile/2012/0417/20120417031414714.jpg" /></a><span class='meitu_list_text'>嫩模于梓棋粉色写真 被称新生代百变教主</span></li>
+		<li><a href="http://pnews.ck.huoshow.com/2012/neiyidapian_0417/54139.html"><img src="http://pnews.wjy.huoshow.com/uploadfile/2012/0417/20120417023437724.jpg" /></a><span class='meitu_list_text'>嫩模于梓棋粉色写真 被称新生代百变教主</span></li>
+		<li><a href="http://pnews.ck.huoshow.com/2011/neiyidapian_1103/31272.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0416/20120416070241484.jpg" /></a><span class='meitu_list_text'>嫩模于梓棋粉色写真 被称新生代百变教主</span></li>
+			</ul>
+	</dd>
+	</dl>
+<div class="clear"></div>
+</div><div class="meitu">
+  	<div class="bar_box"><span class="ti_7"></span><a class="more_model">更多</a></div>
+	<dl>
+	<dt><a href="#"><img src="http://www.huoshow.com/upload/2011/0919/1316396607398.jpg" /></a></dt>
+	<dd><ul>
+				</ul>
+	</dd>
+	</dl>
+<div class="clear"></div>
+</div><div class="meitu">
+  	<div class="bar_box"><span class="ti_8"></span><a class="more_model">更多</a></div>
+	<dl>
+	<dt><a href="#"><img src="http://www.huoshow.com/upload/2011/0919/1316396607398.jpg" /></a></dt>
+	<dd><ul>
+				</ul>
+	</dd>
+	</dl>
+<div class="clear"></div>
+</div>
+</div>
+		<!--Partners-->
+		<div class="main_body">
+			<div class="partners">
+				<div class="layer_one"><a>友情链接</a></div>
+				<div class="layer_content">
+					<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+				</div>
+			</div>
+		</div>
+		<!--Body Bottom End-->
+	</div>
+	<div class="clear"></div>
+	<!--Main Body End-->
+
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

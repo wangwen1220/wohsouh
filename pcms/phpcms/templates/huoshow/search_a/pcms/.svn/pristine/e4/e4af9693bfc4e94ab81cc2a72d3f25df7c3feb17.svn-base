@@ -1,0 +1,11 @@
+	<div style="width:600px; white-space:nowrap;" id="css_select_content" overflow:auto;>
+	{loop $arr $r $v}
+		<div style="width:100px; min-height:100px; float:left; margin:5px; margin-right:10px; padding:3px; border:#999999 solid 1px;">
+		<div style="background-image:url({CSS_PATH}special/thumb/{$v[thumb]});width:100px; height:100px;">
+			<input type="radio" name="cssfile" value="{$v[css]}" {if $css_file==$v[css]} checked="checked"{/if}>
+		</div>
+		<div style="min-height:20px; text-align:center;">{$v[descript]}</div>
+		</div>
+		
+	{/loop}
+	</div>

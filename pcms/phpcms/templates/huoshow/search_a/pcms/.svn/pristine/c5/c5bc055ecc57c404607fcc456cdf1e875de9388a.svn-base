@@ -1,0 +1,41 @@
+{template "community","myshow_header"}
+<div id="wrapper" class='invite-friends create-album'>
+	<div class='header'>
+		<div class='wrapper'><span class='step left'>关注你可能感兴趣的人</span> <span class='step center'>查找&邀请好友</span> <span class='step right'>创建专辑</span></div>
+	</div>
+	<div class='next-step'>
+		<div class='wrapper'>
+			<p class='tips'>创建专辑<br />利用火秀网的采集工具，你可以轻松收藏网络上的图片、视频、及网页，并把他们分门别类放入你的专辑</p>
+			<!--<button class='wbtn'>下一步</button>-->
+		</div>
+	</div>
+
+	<div class='add-album fn-clear'>
+		<div class='ui-album'>
+			<a class='img'>
+				<img src='/statics/images/myshow/pin_demo1.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo2.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo3.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo4.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo5.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo6.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo7.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo8.jpg' alt='' width='60' height='60' />
+				<img src='/statics/images/myshow/pin_demo9.jpg' alt='' width='60' height='60' />
+			</a>
+			<div  class='intro'>
+				<h3><a>无法抗拒的美</a></h3>
+				<!--<p class='fn-hide'>我Hold不住了：剩下的都特么过儿童节了</p>-->
+			</div>
+		</div>
+
+		<form id='add-album-form' class='add-album-form' action='/index.php?m=community&c=firstlogshow&a=create_album&dosubmit=yes'>
+			<div class="new-album fancy"><input type='text' class="input" /><label class='label'>请输入专辑名称</label><!--<a class='close' href='javascript:;'>X</a>--></div>
+			<!--<div class="new-album fancy"><input type='text' class="input" /><label class='label'>请输入专辑名称</label><a class='close' href='javascript:;'>X</a></div>-->
+			<div id='action-add-album' class="action-add-album"><a hidefocus='true' href='javascript:;'>添加专辑</a></div>
+			<div class='ebtn'><button type='submit' class='sbtn submit'>保存 去下一步</button></div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

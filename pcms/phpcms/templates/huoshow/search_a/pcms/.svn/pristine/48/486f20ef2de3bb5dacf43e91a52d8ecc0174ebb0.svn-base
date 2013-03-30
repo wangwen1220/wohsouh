@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-web.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-web'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div class='ui-layout ad'><a target='_blank' href='#'><img src='http://pnews.huoshow.com/statics/images/common/middle_anner.png' width='960' height='60' /></a></div>
+
+	<!-- 游戏列表 -->
+	<div id='game-tab' class='ui-layout ui-layout-box ui-tab'>
+		<div class='ui-tab-header fn-clear'>
+			<ul class='ui-tab-nav fn-clear'>
+				<li class='ui-tab-nav-item ui-tab-nav-item-hot ui-tab-nav-item-cur'>热门游戏</li>
+				<li class='ui-tab-nav-item'>战争策略</li>
+				<li class='ui-tab-nav-item'>角色扮演</li>
+				<li class='ui-tab-nav-item'>模拟经营</li>
+				<li class='ui-tab-nav-item'>社区养成</li>
+				<li class='ui-tab-nav-item'>休闲竞技</li>
+				<li class='ui-tab-nav-item'>儿童游戏</li>
+				<li class='ui-tab-nav-item'>ABCD</li>
+				<li class='ui-tab-nav-item'>EFGH</li>
+				<li class='ui-tab-nav-item'>IJKL</li>
+				<li class='ui-tab-nav-item'>MNOP</li>
+				<li class='ui-tab-nav-item'>QRST</li>
+				<li class='ui-tab-nav-item'>WXYZ</li>
+			</ul>
+		</div>
+		<div class='ui-tab-cnt'>
+			<ul class='ui-tab-cnt-item ui-game-list ui-tab-cnt-item-cur'>
+			{pc:special action="get_special_pos" posid="3" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+			{pc:special action="get_special_pos" posid="4" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+			{pc:special action="get_special_pos" posid="5" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+			{pc:special action="get_special_pos" posid="6" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+			{pc:special action="get_special_pos" posid="7" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+			{pc:special action="get_special_pos" posid="8" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+			{pc:special action="get_special_pos" posid="9" order="inputtime DESC" num="50"}
+			{loop $data $r}
+			<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{$r[special_name]}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+			{pc:special action="get_see_letter_list" catid="$catid" worda="a" wordb="b" wordc="c" wordd="d" num="60"}
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				{loop $data $r}
+				<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{if $n%5==0}<em>{$r[title]}</em>{else}{$r[title]}{/if}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:special action="get_see_letter_list" catid="$catid" worda="e" wordb="f" wordc="g" wordd="h" num="60"}
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				{loop $data $r}
+				<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{if $n%5==0}<em>{$r[title]}</em>{else}{$r[title]}{/if}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:special action="get_see_letter_list" catid="$catid" worda="i" wordb="j" wordc="k" wordd="l" num="60"}
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				{loop $data $r}
+				<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{if $n%5==0}<em>{$r[title]}</em>{else}{$r[title]}{/if}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:special action="get_see_letter_list" catid="$catid" worda="m" wordb="n" wordc="o" wordd="p" num="60"}
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				{loop $data $r}
+				<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{if $n%5==0}<em>{$r[title]}</em>{else}{$r[title]}{/if}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:special action="get_see_letter_list" catid="$catid" worda="q" wordb="r" wordc="s" wordd="t" num="60"}
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				{loop $data $r}
+				<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{if $n%5==0}<em>{$r[title]}</em>{else}{$r[title]}{/if}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:special action="get_see_letter_list" catid="$catid" worda="w" wordb="x" wordc="y" wordd="z" num="60"}
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				{loop $data $r}
+				<li class='ui-game-list-item'><a href='{$r[url]}' target='_blank'>{if $n%5==0}<em>{$r[title]}</em>{else}{$r[title]}{/if}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+
+	<!-- 主内容 -->
+	<div id='content-main' class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-left'>
+			<div id='myfocus-games' class='ui-myfocus'>
+				<div class="loading"></div>
+				<div class="pic">
+					<ul>
+					{pc:content  action="position" posid="442" order="listorder DESC" num="5" }
+					{loop $data $r}
+						<li><a target='_blank' href="{$r[url]}"><img thumb='' src="{thumb($r[thumb],308,231)}" alt="{$r[title]}" width='308' height='231' /></a></li>
+					{/loop}
+					{/pc}
+					</ul>
+				</div>
+			</div>
+			<div class="ui-box">
+				<div class='ui-header'>
+					<h3 class='title'>新游戏</h3>
+				</div>
+				<div class="ui-tab ui-tab-lite">
+					<div class='ui-tab-header fn-clear'>
+						<ul class='ui-tab-nav fn-clear'>
+							<li class='ui-tab-nav-item ui-tab-nav-item-cur'>最新入库<span class='icon'></span></li>
+							<li class='ui-tab-nav-item'>试玩评测<span class='icon'></span></li>
+						</ul>
+					</div>
+
+					<div class='ui-tab-cnt'>
+						<div class='ui-tab-cnt-item ui-tab-cnt-item-cur fn-clear'>
+						{pc:special action="get_special_pos" posid="10" order="inputtime DESC" num="10"}
+						{loop $data $r}
+						{if $n<3}
+							{if $n==1}<ul class='ui-img-list'>{/if}
+								<li class='ui-img-list-item'>
+									<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],102,76)}' width='102' height='76'/></a>
+									<h4 class='title'><a target='_blank' href='{$r[url]}'>{$r[special_name]}</a></h4>
+								</li>
+							{if $n==2}</ul>{/if}
+							{else}
+							{if $n==3}<ul class='ui-list'>{/if}
+								{if $n==3}<li class='ui-list-item ui-list-item-title'><span class='text'>游戏名</span> <span class='time'>时间</span></li>{/if}
+								<li class='ui-list-item'><a target='_blank' class='text' href='{$r[url]}'>{$r[special_name]}</a> <span class='time'>  {date('m-d',$r['inputtime'])}</span></li>
+
+							{if $n==10}</ul>{/if}
+							{/if}
+						{/loop}
+						{/pc}
+						</div>
+						<div class='ui-tab-cnt-item fn-clear'>
+							{pc:special action="get_special_pos" posid="11" order="inputtime DESC" num="10"}
+						{loop $data $r}
+						{if $n<3}
+							{if $n==1}<ul class='ui-img-list'>{/if}
+								<li class='ui-img-list-item'>
+									<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],102,76)}' width='102' height='76'/></a>
+									<h4 class='title'><a target='_blank' href='{$r[url]}'>{$r[special_name]}</a></h4>
+								</li>
+							{if $n==2}</ul>{/if}
+							{else}
+							{if $n==3}<ul class='ui-list'>{/if}
+								{if $n==3}<li class='ui-list-item ui-list-item-title'><span class='text'>游戏名</span> <span class='time'>时间</span></li>{/if}
+								<li class='ui-list-item'><a target='_blank' class='text' href='{$r[url]}'>{$r[special_name]}</a> <span class='time'>{date('m-d',$r['inputtime'])}</span></li>
+
+							{if $n==10}</ul>{/if}
+							{/if}
+						{/loop}
+						{/pc}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='ui-box ui-box-hotgame'>
+				<div class='ui-header'>
+					<h3 class='title'>热门网游</h3>
+				</div>
+				<ul class='ui-img-list'>
+				{pc:content  action="position" posid="443" order="listorder DESC" num="2" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],138,102)}' width='138' height='102'/></a>
+						<h4 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h4>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-center'>
+		{pc:content  action="position" posid="437" order="listorder DESC" num="4" }
+   		{loop $data $r}
+		{if $n==1}
+			<h2 class='ui-newgame-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],54,'')}</a></h2>
+		{else}
+			{if $n==2}<div class='ui-newgame-link'>{/if}
+			<a target='_blank' href='{$r[url]}'>[{str_cut($r['title'],20,'')}]</a>
+			{if $n==4}</div>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+			{pc:content  action="position" posid="438" order="listorder DESC" num="4" }
+   		{loop $data $r}
+		{if $n==1}
+			<h2 class='ui-newgame-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],54,'')}</a></h2>
+		{else}
+			{if $n==2}<div class='ui-newgame-link'>{/if}
+			<a target='_blank' href='{$r[url]}'>[{str_cut($r['title'],20,'')}]</a>
+			{if $n==4}</div>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+			{pc:content  action="position" posid="439" order="listorder DESC" num="4" }
+   		{loop $data $r}
+		{if $n==1}
+			<h2 class='ui-newgame-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],54,'')}</a></h2>
+		{else}
+			{if $n==2}<div class='ui-newgame-link'>{/if}
+			<a target='_blank' href='{$r[url]}'>[{str_cut($r['title'],20,'')}]</a>
+			{if $n==4}</div>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+			<ul class='ui-list ui-list-main hr'>
+			{pc:content  action="position" posid="440" order="listorder DESC" num="7" }
+   			{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{getCatNameFromCatid($r[catid])}</a> | {if $n==1}<strong>{/if}<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</a>{if $n==1}</strong>{/if}</li>
+			{/loop}
+			{/pc}
+			</ul>
+
+			<h2 class='ui-newgame-title ui-newgame-title-recommend'>
+			{pc:content  action="position" posid="441" order="listorder DESC" num="1" }
+   			{loop $data $r}
+			<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],50,'')}</a>
+			{/loop}
+			{/pc}
+			</h2>
+
+			<ul class='ui-list ui-list-main'>
+			{pc:content  action="morecatids" catids="274,275,276,272,273" newsnum="14"}
+			{loop $data $r}
+				<li class='ui-list-item {if $n==1 || $n==8}bk{/if}'><a target='_blank' href='{$r[url]}'><!--[{date('d',$r['inputtime'])}号]-->{getCatNameFromCatid($r[catid])}</a> | {if $n==1 || $n==8}<strong>{/if}<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</a>{if $n==1 || $n==8}</strong>{/if}</li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-right'>
+			<div class='ad'><a target='_blank' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='240' height='240' /></a></div>
+
+			<div class='ui-box-lite ui-tab ui-tab-lite'>
+				<div class='ui-box-lite-header'>
+					<h3 class='title'>账号领取</h3>
+				</div>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'>激活码<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>新手卡<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>道具卡<span class='icon'></span></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ul class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-gamenum-list'>
+					{pc:special action="get_special_pos" posid="12" order="inputtime DESC" num="7"}
+					{loop $data $r}
+						<li class='ui-gamenum-list-item'><a target='_blank' class='text' href='{$r[url]}'>{$r[special_name]}</a> <a target='_blank' class='getnum' href='{$r[url]}'>领</a> <span class='status'>剩余：{$r[gamenum]}</span></li>
+					{/loop}
+					{/pc}
+					</ul>
+					<ul class='ui-tab-cnt-item ui-gamenum-list'>
+					{pc:special action="get_special_pos" posid="13" order="inputtime DESC" num="7"}
+					{loop $data $r}
+						<li class='ui-gamenum-list-item'><a target='_blank' class='text' href='{$r[url]}'>{$r[special_name]}</a> <a target='_blank' class='getnum' href='{$r[url]}'>领</a> <span class='status'>剩余：{$r[gamenum]}</span></li>
+					{/loop}
+					{/pc}
+					</ul>
+					<ul class='ui-tab-cnt-item ui-gamenum-list'>
+					{pc:special action="get_special_pos" posid="14" order="inputtime DESC" num="7"}
+					{loop $data $r}
+						<li class='ui-gamenum-list-item'><a target='_blank' class='text' href='{$r[url]}'>{$r[special_name]}</a> <a target='_blank' class='getnum' href='{$r[url]}'>领</a> <span class='status'>剩余：{$r[gamenum]}</span></li>
+					{/loop}
+					{/pc}
+					</ul>
+				</div>
+			</div>
+
+			<div class='ui-box-lite'>
+				<div class='ui-box-lite-header'>
+					<h3 class='title'>热点活动</h3>
+					<div class='link'><!--<a target='_blank' class='more' href='#'>更多&gt;&gt;</a>--></div>
+				</div>
+				{pc:content  action="position" posid="444" order="listorder DESC" num="5" }
+   				{loop $data $r}
+				{if $n<3}
+				{if $n==1}<ul class='ui-img-list'>{/if}
+					<li class='ui-img-list-item'>
+						<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],102,76)}' width='102' height='76'/></a>
+						<h4 class='title'><a target='_blank' href='{$r[url]}'> {str_cut($r['title'],20,'')}</a></h4>
+					</li>
+				{if $n==2}</ul>{/if}
+				{else}
+				{if $n==3}<ul class='ui-list'>{/if}
+					<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],50,'')} </a></li>
+				{if $n==5}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class='ui-layout ad'>
+		<a target='_blank' href='#'><img src='http://pnews.huoshow.com/statics/images/common/middle_anner.png' alt='' width='960' height='60' /></a>
+	</div>
+	<!-- 攻略专区 -->
+	<div id='content-glzq' class='ui-box fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>攻略专区</h2>
+			<div class='link'><!--<a target='_blank' href='#'>测试文字1</a> | <a target='_blank' href='#'>测试文字2</a> | <a target='_blank' href='#'>测试文字3</a> |--> <a target='_blank' class='more' href='{$CATEGORYS[195][url]}'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div class='ui-header'>
+				<h2 class='title'>重点推荐</h2>
+			</div>
+			<ul class='ui-art-list'>
+			{pc:content  action="position" posid="445" order="listorder DESC" num="3" }
+   			{loop $data $r}
+				<li class='ui-art-item'>
+					<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],90,66)}' alt='{$r[title]}' width='90' height='66' /></a>
+					<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></h3>
+					<p class="content">{str_cut($r['description'],120,'')} <a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<div class='ui-header'>
+				<h2 class='title'>热门游戏攻略区</h2>
+			</div>
+			<div class='ui-tab ui-tab-vertical fn-clear'>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+					{pc:content action="category" catid="270" num="10" siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+						<li class='ui-tab-nav-item {if $n==1}ui-tab-nav-item-cur{/if}'>{$r[catname]}<span class='icon'></span></li>
+					{/loop}
+					{/pc}
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<div class="ui-tab-cnt-item ui-tab-cnt-item-cur">
+					{pc:content  action="position" posid="447" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'> {str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+						{/if}
+						{/loop}
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="448" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="449" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="450" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="451" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="452" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="453" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="454" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="455" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="456" order="listorder DESC" num="9" }
+   					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],42,'')}</a></h3>
+							<p class="content">{str_cut($r['description'],70,'')}<a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class='ui-list ui-list-main'>{/if}
+							<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>最新攻略</h2>
+				<div class='link'><a target='_blank' class='more' href='{$CATEGORYS[195][url]}'>更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-img-list'>
+			{pc:content  action="position" posid="446" order="listorder DESC" num="2" }
+   			{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],102,76)}' width='102' height='76'/></a>
+					<h4 class='title'><a target='_blank' href='{$r[url]}'> {str_cut($r['title'],20,'')}</a></h4>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+			<ul class='ui-list hr'>
+			{pc:content action="lists" catid="273" order="id DESC" num="8"}
+			{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+	</div>
+
+
+
+	<!-- 页游八卦 -->
+	<div id='content-yybg' class='ui-box fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>页游八卦</h2>
+			<div class='link'><!--<a target='_blank' href='#'>测试文字1</a> | <a target='_blank' href='#'>测试文字2</a> | <a target='_blank' href='#'>测试文字3</a> | <a target='_blank' class='more' href='#'>更多&gt;&gt;</a>--></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-main'>
+			<div class='ui-header'>
+				<h2 class='title'>游戏美女</h2>
+				<div class='link'><!--<a target='_blank' class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			<div class="game-gril-box fn-clear">
+				<ul class='ui-img-list fn-clear'>
+				{pc:content  action="position" posid="457" order="listorder DESC" num="5" }
+   				{loop $data $r}
+					<li class='ui-img-list-item {if $n==1}ui-img-list-item-main{/if}'>
+					{if $n==1}
+						<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],218,216)}' width='218' height='216'/></a>
+					{else}
+						<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],102,76)}' width='102' height='76'/></a>
+						<h4 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h4>
+					{/if}
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+				<div class="ui-list-box">
+					<h3 class='header'>热点图片</h3>
+					<ul class='ui-list'>
+					{pc:content  action="rand_pic_hothits" catids="277,278,279" newsnum="7"}
+					{loop $data $r}
+						<li class='ui-list-item'><a target='_blank' href='{$r[url]}'> {str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}
+					</ul>
+				</div>
+			</div>
+
+			<div class='ui-header'>
+				<h2 class='title'>游戏图片</h2>
+				<div class='link'><!--<a target='_blank' class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			<ul class='ui-img-list'>
+			{pc:content  action="position" posid="458" order="listorder DESC" num="12" }
+   			{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],102,75)}' width='102' height='75' /></a>
+					<h4 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h4>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>游戏八卦</h2>
+				<div class='link'><!--<a target='_blank' class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			<ul class='ui-ranking'>
+			{pc:content  action="picmorecatids" catids="277,278,279" newsnum="13"}
+			{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></h3>
+					<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],104,78)}' alt='' width='104' height='78' /></a>
+					<p class="content"> {str_cut($r['description'],70,'')} <a target='_blank' class='more' href='{$r[url]}'>[详情]</a></p>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+	</div>
+
+	{template 'content', 'hs_footer'}
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+</body>
+</html>

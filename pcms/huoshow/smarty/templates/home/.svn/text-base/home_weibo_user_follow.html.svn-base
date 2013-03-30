@@ -1,0 +1,67 @@
+{include file="home/home_weibo_header.html"}
+<div class="conMidAtt">
+
+                            <div class="listPri">
+<div class="attFirst">
+                             <!--<div node-type="search" class="search">
+                                <input node-type="input" notice="输入用户名或火秀号" type="text" name="nicksearch" class="input   input_default" value="输入用户名或火秀号" onClick="this.value=''" onBlur="this.value='输入用户名或火秀号'"><a node-type="submit" href="#" class="btn"></a>
+                             </div>-->
+
+                        	 <p class="font18">我关注了<span>{if empty($user_countinfo[0].followCount)}0{else}{$user_countinfo[0].followCount}</span>{/if}人</p>
+                        </div>
+						<ul>
+                        <li class="divGroup clearfix"><div class="addAtt font14"><a onClick="showWindow('register', this.href)" href="/huoshow/module/home/home_weibo_creategroup.php?tab=creategroup">创建分组</a></div><div class="divGwidth"><a href="home.php?mod=huoshow&do=weibo_userfollow&id=0" {if $group_id==0}class="selected"{/if}>全部</a><a href="home.php?mod=huoshow&do=weibo_userfollow&id=-2" {if $group_id==-2}class="selected"{/if}>相互关注</a>{section name=bo loop=$group}<a href="home.php?mod=huoshow&do=weibo_userfollow&id={$group[bo].id}" {if $group_id==$group[bo].id}class="selected"{/if}>{$group[bo].group_name}</a>{/section}<a href="home.php?mod=huoshow&do=weibo_userfollow&id=-1" {if $group_id==-1}class="selected"{/if}>未分组</a> </div> </li>
+                        {if $group_id==0 || $group_id==-1 || $group_id==-2}<li class="orderGroup">排序方式： <a href="home.php?mod=huoshow&do=weibo_userfollow&roomid={$uid}&ordertype=1&id={$group_id}" {if $ordertype==1}class="selected"{/if}>关注时间</a> <span class="ddd">|</span> <a href="home.php?mod=huoshow&do=weibo_userfollow&roomid={$uid}&ordertype=2&id={$group_id}" {if $ordertype==2}class="selected"{/if}>最近更新</a><span class="ddd">|</span> <a href="home.php?mod=huoshow&do=weibo_userfollow&roomid={$uid}&ordertype=4&id={$group_id}" {if $ordertype==4}class="selected"{/if}>粉丝数</a></li>{else}
+						 <li class="orderGroup"><span class="font12">该分组共{$count}人：</span> <a href="/huoshow/module/home/home_weibo_savechangegroup.php?changegroup=change&id={$group_id}" onClick="showWindow('register', this.href)">修改分组名称</a> <span class="ddd">|</span><a href="home.php?mod=huoshow&do=weibo_userfollow&delgroup=del&id={$group_id}" onclick="return confirm('确定删除？此分组下的人不会被取消关注,归为未分组！');" >删掉该分组</a> <span class="ddd">|</span>{if $count!=0} <a href="/home.php?mod=huoshow&do=weibo_followgroupmsg&getgroupmsg=msg&id={$group_id}">浏览分组微博</a> {/if}<span class="ddd"></li>{/if}
+						 </ul>
+                        </div>
+						{if $count==0 && $group_id !=-1 && $group_id !=-2}<div><a onClick="showWindow('register', this.href)" href="/huoshow/module/home/home_weibo_nogroup.php?tab=nogroup&id={$group_id}">将关注人添加到分组</a></div>{/if}
+
+                            <article>
+
+                            <ul>
+							{section name=bo loop=$user_follow}
+                            <li class="itemAtt">
+                            <div class="attR2 font14">
+                              {if $user_follow[bo].each_other_follow == 1}<img src="/huoshow/img/weibo/coatt.gif" width="40" height="19">{/if}
+                              <a href="home.php?mod=huoshow&do=weibo_userfollow&tab=del&id={$group_id}&dst_uid={$user_follow[bo].uid}"
+                                onclick="return confirm('确定取消关注？');" class="font12 aBlock">取消关注</a>
+
+                            </div>
+                            <div class="attL"> <a href="{$space_url}{$user_follow[bo].uid}"><img src="{$user_follow[bo].head_img_url}" /></a> <a href="{$space_url}{$user_follow[bo].uid}" class="font14">{$user_follow[bo].nickname}</a>
+                              <p class="font12">粉丝：{$user_follow[bo].is_watched_count}</p>
+							  <span><a onClick="showWindow('register', this.href)" href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_send_message&dst_uid={$user_follow[bo].uid}&src_uid={$uid}" class="jsadd">发私信</a></span>
+                            </div>
+
+                            <div class="gro">
+                          <select name="select" id="select" onChange="location='home.php?mod=huoshow&do=weibo_userfollow&dst_uid={$user_follow[bo].uid}&id={$group_id}&isgroupid='+this.value">
+
+						       <option value="-1">末分组</option>
+							  {section name=i loop=$group}
+							  <option value="{$group[i].id}" {if $group[i].id==$userisgroup[bo]}selected{/if}>{$group[i].group_name}</option>
+							  <!--<option value="{$group[i].id}" {if $group[i].id==$is_group_id}selected{/if}>{$group[i].id}--{$group[i].group_name}</option>-->
+
+							  {/section}
+					        </select>
+
+
+                            </div>
+
+
+                            <div class="clear"></div>
+                            </li>
+          					{/section}
+             </ul>
+
+            </article>
+        <section>
+            {if $count!= 0}{$page_str}{/if}
+            </section>
+        </div>
+		<div class="conR">
+        	<!-- 微博统计信息 -->
+  			{include_php file="huoshow/module/home/home_weibo_user_info.php"}
+
+            {include_php file="huoshow/module/home/home_weibo_recommend.php"}
+            {include_php file="huoshow/module/home/home_weibo_hotrecommend.php"}
+        </div>

@@ -1,0 +1,18 @@
+<h3 class='ui_fold_box_title'>
+	<span>热点资讯排行</span>
+</h3>
+{pc:content action="hits" catid="$catid" num="10" order="views DESC " cache="3600"}
+<ul class='ui_fold_box_content'>
+	{loop $data $r}
+	<li class='{if $n==1}ui_fold_box_content_selected{/if}'><span class='top_no'>{$n}</span>
+		<div>
+			<img src='{thumb($r[thumb],106,82)}' width='106' height='82' />
+			<h4>
+				<a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],56,'')}</a>
+			</h4>
+			<p></p>
+		</div>
+	</li>
+	{/loop}
+</ul>
+{/pc}

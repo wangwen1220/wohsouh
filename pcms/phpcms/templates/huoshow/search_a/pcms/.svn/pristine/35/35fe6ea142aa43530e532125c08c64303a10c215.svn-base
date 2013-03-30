@@ -1,0 +1,69 @@
+{if $set['guestbook_status']}
+<div class="box boxsbg cboxs">
+<h5>我要留言  </h5>
+<div class="tag_a">
+<form action="{APP_PATH}index.php?m=guestbook&c=index&a=ly&siteid={SITEID}" method="post" name="myform" id="myform">
+<table cellspacing="1" cellpadding="0" class="table_form">
+<tbody>  
+<tr> 
+<th>标题</th>
+<td><input type="text" value="" id="title" name="ly[title]" class="input-text"></td>
+</tr>
+<tr> 
+<th>内容</th>
+<td> 
+<textarea name="ly[content]" id="content" cols="5" rows="8" value="" style="width:400px;"></textarea>
+</td>
+</tr>
+{if $set['enablecheckcode']==1}
+<tr> 
+<th>验证码：</th>
+<td> 
+<input name="code" type="text" id="code"/>{form::checkcode('code_img','4','14',110,30)}
+</td>
+</tr>
+{/if}
+<tr> 
+<th></th>
+<td><input type="submit" value="提交" name="dosubmit" class="button">
+ <input type="reset" value=" 取消" name="reset" class="button"> </td>
+</tr> 
+</tbody>
+</table> 
+</form>
+ </div> 
+</div>
+ <div style="height:5px;"></div>
+ {/if}
+
+
+<?php
+if(is_array($infos)){
+foreach($infos as $info){
+?>
+<div class="box boxsbg cboxs">
+<h5>{$info['title']}  </h5>
+<div class="tag_a">
+	 {$info['content']}
+	 <br><br>
+	 {if $info['reply']}<font color=red>回复内容：</font>
+<font style="color: #09F;">{$info['reply']}</font>{/if}
+ </div> 
+</div>
+ <div style="height:5px;"></div>
+ <p>
+   <?php 
+}}
+?>
+</p>
+ <p>&nbsp;</p>
+ <p>查看最新的微博</p>
+ {pc:guestbook action="get_sys_weibo" lastid="0"}
+ <table width="100%" height="27" border="1">
+ {loop $data $key $value}
+   <tr>
+     <td width="66" align="right">{$value[nicename]}</td>
+     <td width="118">{$value[msg]}</td>
+   </tr>
+ {/loop}
+</table>

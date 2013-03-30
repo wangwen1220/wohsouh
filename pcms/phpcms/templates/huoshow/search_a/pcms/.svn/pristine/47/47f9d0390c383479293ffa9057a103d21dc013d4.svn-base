@@ -1,0 +1,152 @@
+{template "content","star_header"}
+<!--Main Body-->
+<div class="main_body">
+	<!-- 时装模特 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_5">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/neidistarpic/">更多</a>
+		</div>
+		<dl>
+			{pc:content  action="position" posid="164" catid="$catid" order="listorder DESC" num="1"}
+			<dt>
+				{loop $data $r}
+				<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],284,342)}" alt="{$r[title]}" /></a>
+				{/loop}
+			</dt>
+			{/pc}
+			<dd>
+			{pc:content action="position" posid="164" catid="$catid" thumb="1" order="listorder DESC" num="1" return="info"}
+			{loop $info $v}
+				{pc:content action="lists" catid="62" num="10" id="$v[id]" order="id DESC" }
+				<ul>
+					{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt="{$r[title]}" /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r[title],25,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+				{/loop}
+				{/pc}
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 时装模特结束 -->
+
+	<!-- 内衣大片 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_6">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/gangtaistarpic/">更多</a>
+		</div>
+		<dl>
+			{pc:content  action="position" posid="165" catid="$catid" order="listorder DESC" num="1"}
+			<dt>
+				{loop $data $r}
+				<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],284,342)}" alt="{$r[title]}" /></a>
+				{/loop}
+			</dt>
+			{/pc}
+			<dd>
+			{pc:content action="position" posid="165" catid="$catid" thumb="1" order="listorder DESC" num="1" return="info"}
+			{loop $info $v}
+				{pc:content action="lists" catid="63" num="10" id="$v[id]" order="id DESC" }
+				<ul>
+					{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt="{$r[title]}" /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r[title],25,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+				{/loop}
+				{/pc}
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 内衣大片结束 -->
+
+	<!-- 车模靓影 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_7">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/rihanstarpic/">更多</a>
+		</div>
+		<dl>
+			{pc:content  action="position" posid="166" catid="$catid" order="listorder DESC" num="1"}
+			<dt>
+				{loop $data $r}
+				<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],284,342)}" alt="{$r[title]}" /></a>
+				{/loop}
+			</dt>
+			{/pc}
+			<dd>
+			{pc:content action="position" posid="166" catid="$catid" thumb="1" order="listorder DESC" num="1" return="info"}
+			{loop $info $v}
+				{pc:content action="lists" catid="185" num="10" id="$v[id]" order="id DESC" }
+				<ul>
+					{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt="{$r[title]}" /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r[title],25,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+				{/loop}
+				{/pc}
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 车模靓影结束 -->
+
+	<!-- 男模专区 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_8">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/oumeistarpic/">更多</a>
+		</div>
+		<dl>
+			{pc:content  action="position" posid="167" catid="$catid" order="listorder DESC" num="1"}
+			<dt>
+				{loop $data $r}
+				<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],284,342)}" alt="{$r[title]}" /></a>
+				{/loop}
+			</dt>
+			{/pc}
+			<dd>
+			{pc:content action="position" posid="167" catid="$catid" thumb="1" order="listorder DESC" num="1" return="info"}
+			{loop $info $v}
+				{pc:content action="lists" catid="186" num="10" id="$v[id]" order="id DESC" }
+				<ul>
+					{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,162)}" alt="{$r[title]}" /></a>
+						<a target="_blank" href="{$r[url]}" class='meitu_title'><span></span>{str_cut($r[title],25,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+				{/loop}
+				{/pc}
+			</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 男模专区结束 -->
+</div>
+{template "content","footer"}

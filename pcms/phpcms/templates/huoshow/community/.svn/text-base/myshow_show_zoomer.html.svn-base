@@ -1,0 +1,56 @@
+{template "community","myshow_header"}
+<script>
+	(function($){
+		$(function(){
+			$('#topbar, #header, #loginbar').css('z-index', 1);// 隐藏头部
+			//$('#topbar, #header, #loginbar').hide();// 隐藏头部
+		});
+	})(jQuery);
+</script>
+<div id='zoomer'>
+	<div id="zoomer-body" class='body'>
+		<img id="zoomer-img" src="{$bigimg}" width="{$bigimg_width}" height="{$bigimg_height}" alt="采集图片" />
+		<a title="返回" href="/index.php?m=community&c=index&a=show&share_id={$share_id}" id="zoomer-hide"></a>
+		<a id="zoomer-share" href='javascript:;' title='分享到新浪微博'></a>
+	</div>
+	<div id="zoomer-aside" class='aside'>
+		<div class="pinner hr fn-clear">
+			<a class='avatar' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$shareuid}'><img src="{$bigimgavatar}" width="40" height="40" /></a>
+			<h3 class='name'><a href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$shareuid}'>{$nickname}</a></h3>
+			<p>发布于{$input_time}</p>
+		</div>
+		<p class='desc hr'>{if $description!=""}{$description}{else}图片还没有任何描述{/if}{if $user[uid]==$shareuid && $user[uid]!=""}<a class='edit' title='编辑描述' href='/index.php?m=community&c=myhuoshow&a=myeditshare&share_id={$share_id}'></a>{/if}</p>
+		<div class='repin hr'><span>收藏</span> <strong>({$be_collect_count})</strong></div>
+		<div class='like hr'><span>喜欢</span> <strong>({$be_like_count})</strong></div>
+		{template "community","myshow_bigimg_comment"}
+		<!--<div class='comment hr'>
+			<div class='title'><span>评论</span> <strong>({$be_reply_count})</strong></div>
+			<ul class='comment-list'>
+				<li>
+					<a class='avatar' href='#'><img src="/statics/images/myshow/test1.jpg" width="30" height="30" /></a>
+					<p><a href='#'>共拉无村</a> 一花一世界，一叶一菩提。一曲一声叹，一生一场梦。</p>
+					<div class='meta'><span>20分钟前</span> <a href='#'>回复</a></div>
+				</li>
+				<li>
+					<a class='avatar' href='#'><img src="/statics/images/myshow/test1.jpg" width="30" height="30" /></a>
+					<p><a href='#'>共拉无的村</a> 一花一世界，一叶一菩提。一曲一声叹，一生一场梦。</p>
+					<div class='meta'><span>20分钟前</span> <a href='#'>回复</a> <a href='#'>举报</a></div>
+				</li>
+				<li>
+					<a class='avatar' href='#'><img src="/statics/images/myshow/test1.jpg" width="30" height="30" /></a>
+					<p><a href='#'>共拉在无村</a> 一花一世界，一叶一菩提。一曲一声叹，一生一场梦。</p>
+					<div class='meta'><span>20分钟前</span> <a href='#'>回复</a> <a href='#'>举报</a></div>
+				</li>
+			</ul>
+			<form method='post' action='/index.php?m=community&c=index&a=create_bigimg_share_comment&share_id={$share_id}'>
+				<a class='avatar' href='#'><img src="/statics/images/myshow/test1.jpg" width="30" height="30" /></a>
+				<textarea></textarea>
+				<a class='face' href='javascript:;'></a>
+				<button type='submit'>确定</button>
+			</form>
+		</div>-->
+	</div>
+	<p class='footer actions'>{if $user[uid]!=$shareuid && $user[uid]!=""}<a class='report' href='/index.php?m=community&c=index&a=myshow_report&uid={$shareuid}&report_type=2&share_id={$share_id}'>举报该图片</a>{/if} <strong>出自专辑：<a class='album' href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$album_id}'>{$album_name}</a></strong></p>
+</div>
+</body>
+</html>

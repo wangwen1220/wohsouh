@@ -1,0 +1,64 @@
+<!-- Header Start -->
+<div id="header" class='fn-clear'>
+	<div class='title'>
+		<a class='logo' href="{$CATEGORYS[246][url]}" title="火秀网"></a>
+		<h1><a target='_blank' href='{$CATEGORYS[300][url]}'>安卓Android</a></h1>
+		<h2>{catpos($catid)}</h2>
+	</div>
+
+	<form id="search-form" class='search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+		<input type="hidden" value="search" name="app" />
+		<input type="hidden" name="m" value="search" />
+		<input type="hidden" name="c" value="index" />
+		<input type="hidden" name="a" value="init" />
+		<input type="hidden" name="typeid" value="1" id="typeid" /><!-- 搜索类型 -->
+		<fieldset><input type='text' name='q' class='search-wd' value='搜索关键字' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+		{pc:content  action="position" posid="418" order="listorder DESC" num="3"}
+		<fieldset class='search-hotspot'>热点：{loop $data $r}<a target='_blank' href="{str_replace('www','game',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a> {/loop}</fieldset>
+		{/pc}
+	</form>
+
+	<ul id="nav" class='nav fn-cb fn-clear'>
+		<li class='nav-item {if $catid==300}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[300][url]}'>安卓首页</a>
+			<div class='nav-item-subnav'>
+				<dl class='nav-item-subnav-item fn-clear'>
+					<dt>安卓游戏</dt>
+					<dd>{loop subcat(346,0,0,$siteid) $r}<a href='{$r[url]}' target='_blank'>{$r[catname]}</a> | {/loop}</dd>
+				</dl>
+				<dl class='nav-item-subnav-item fn-clear'>
+					<dt>安卓软件</dt>
+					<dd>{loop subcat(347,0,0,$siteid) $r}<a href='{$r[url]}' target='_blank'>{$r[catname]}</a> | {/loop}</dd>
+				</dl>
+				<dl class='nav-item-subnav-item fn-clear'>
+					<dt>专题推荐</dt>
+					<dd><a href='#'>全部</a> | <a href='#'>益智游戏</a> | <a href='#'>手机游戏</a> | <a href='#'>手机游戏</a> | <a href='#'>手机攻略</a> | <a href='#'>手机游戏</a> | <a href='#'><em>手机游戏</em></a> | <a href='#'>益智游戏</a> | <a href='#'><em>手机游戏</em></a> | <a href='#'>益智游戏</a> | <a href='#'>益智游戏</a> | <a href='#'>益智游戏</a> | <a href='#'>益智游戏</a></dd>
+				</dl>
+			</div>
+		</li>
+		<li class='nav-item {if $catid==307}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[307][url]}' target='_blank'>游戏下载</a>
+		</li>
+		<li class='nav-item {if $catid==308}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[308][url]}' target='_blank'>软件下载</a>
+		</li>
+		<li class='nav-item {if $catid==309}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[309][url]}' target='_blank'>壁纸下载</a>
+		</li>
+		<li class='nav-item {if $catid==310}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[310][url]}' target='_blank'>安卓资讯</a>
+		</li>
+		<li class='nav-item {if $catid==335}nav-item-cur{/if}'>
+			<a class='nav-item-link' href='{$CATEGORYS[335][url]}' target='_blank'>安卓攻略</a>
+		</li>
+		<li class='drop-down'>
+			<h3><a href='{$CATEGORYS[300][url]}'>Android</a></h3>
+			<ul>
+				<li><a href='{$CATEGORYS[299][url]}' target='_blank'>iPhone</a></li>
+				<li><a href='{$CATEGORYS[300][url]}'>Android</a></li>
+				<li><a href='{$CATEGORYS[301][url]}' target='_blank'>WP/Win8</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<!-- Header End -->

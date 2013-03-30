@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>单机游戏资讯|最新单机游戏动态新闻 - 火秀游戏频道 - 火秀网</title>
+	<meta name="keywords" content="单机游戏新闻,单机游戏资讯,最新单机游戏动态">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='http://pnews.zyc.huoshow.com/statics/css/hs-game-global.css' rel='stylesheet' />
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-list'>
+	<!-- Topbar -->
+<div id='topbar' class="fn-clear">
+	<div class="nav"><a target="_blank" href="http://www.huoshow.com">首页</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/star/">明星</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/movie/">电影</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://pnews.zyc.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://myshow.huoshow.com">社区</a></div>
+	<div id="login-bar" class="login-bar" data-url='http://space.zyc.huoshow.com/api/login.php?jsoncallback=?'></div>
+</div>
+<!-- Topbar End -->	<!-- Header Start -->
+<div id="header" class='fn-clear'>
+	<div class='title'>
+		<a class='logo' target='_blank' href="http://pnews.trunk.huoshow.com/games/" title="火秀网"></a>
+		<h1><a target='_blank' href="http://game.huoshow.com/">单机游戏</a>
+					</h1>
+		<!-- <h2><a target='_blank' href='http://pnews.trunk.huoshow.com/games/'>火秀游戏</a>  &gt; 
+			单机游戏
+			</h2>-->
+						<h2><a href="http://pnews.trunk.huoshow.com/games/">火秀游戏</a> > <a href="http://game.huoshow.com/">单机游戏</a> > <a href="http://game.huoshow.com/">单机资讯</a></h2>
+						
+	</div>
+	<form id="search-form" class='search game-search' name="search" method="get" action="http://pnews.zyc.huoshow.com/index.php" target="_blank">
+		<input type="hidden" value="search" name="app" />
+		<input type="hidden" name="m" value="search" />
+		<input type="hidden" name="c" value="index" />
+		<input type="hidden" name="a" value="init" />
+		<input type="hidden" name="typeid" value="1" id="typeid" /><!-- 搜索类型 -->
+		<fieldset><input type='text' name='q' class='search-wd' value='请输入关键字' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+				<fieldset class='search-hotspot'>热点：</fieldset>
+			</form>
+	<ul id="nav" class='nav fn-cb fn-clear'>
+		<li class='nav-item'>
+			<a class='nav-item-link' href="http://pnews.trunk.huoshow.com/games/">首页</a>
+			<!--/*** <div class='nav-item-subnav'><a href='#'>最新资讯</a> | <a href='#'>最新评测</a> | <a href='#'>最新游戏</a> | <a href='#'>最新攻略</a></div> ***/-->
+		</li>
+		<li class='nav-item '>
+			<a class='nav-item-link' href="http://game.huoshow.com/">新游首页</a>
+			<!--/*** <div class='nav-item-subnav'><a href='#'>新游资讯</a> | <a href='#'>新游评测</a> | <a href='#'>新游游戏</a> | <a href='#'>新游攻略</a></div> ***/-->
+		</li>
+		<li class='nav-item '>
+			<a class='nav-item-link' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/">网络游戏</a>
+			<div class='nav-item-subnav'><!--<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/zixun/'>资讯</a>|<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/gonglue/'>攻略</a>|<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/daguan/'>大观</a>|<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/xinyoushipin/'>新游视频</a>|<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/ceshibiao/'>测试表</a>|<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/wangyouzhuanqu/'>网游专区</a>|<a target='_blank' href='http://pnews.trunk.huoshow.com/games/wangluoyouxi/wangyoupingce/'>网游评测</a>|--><a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/wangyouzhuanqu/">网游专区</a>|<a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/zixun/">资讯</a>|<a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/gonglue/">攻略</a>|<a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/daguan/">大观</a><!-- |<a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/xinyoushipin/">新游视频</a> -->|<a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/ceshibiao/">测试表</a>|<a target='_blank' href="http://pnews.trunk.huoshow.com/games/wangluoyouxi/wangyoupingce/">网游评测</a></div>
+		</li>
+		<li class='nav-item '>
+			<a class='nav-item-link' href="http://game.huoshow.com/">网页游戏</a>
+			<div class='nav-item-subnav'><a target='_blank' href="http://game.huoshow.com/">攻略专区</a>|<a target='_blank' href="http://game.huoshow.com/">页游八卦</a>|<a target='_blank' href="http://game.huoshow.com/">页游资讯</a>|<a target='_blank' href="http://game.huoshow.com/">页游评测</a>|</div>
+		</li>
+		<li class='nav-item nav-item-cur'>
+			<a class='nav-item-link' href="http://game.huoshow.com/">单机游戏</a>
+			<div class='nav-item-subnav'><a target='_blank' href="http://game.huoshow.com/">单机下载</a>|<a target='_blank' href="http://game.huoshow.com/">补丁下载</a>|<a target='_blank' href="http://game.huoshow.com/">游戏库</a>|<a target='_blank' href="http://game.huoshow.com/">单机图集</a>|<a target='_blank' href="http://game.huoshow.com/">单机攻略</a>|<a target='_blank' href="http://game.huoshow.com/">单机资讯</a>|<a target='_blank' href="http://game.huoshow.com/">单机评测</a>|</div>
+		</li>
+		<li class='nav-item '>
+			<a class='nav-item-link' href="http://game.huoshow.com/">手机游戏</a>
+			<div class='nav-item-subnav'><a target='_blank' href="http://game.huoshow.com/pingguo/" >苹果</a>|<a target='_blank' href="http://game.huoshow.com/" >安卓</a>|<a target='_blank' href="http://game.huoshow.com/" >wp</a>|</div>
+		</li>
+		<li class='nav-item '>
+			<a class='nav-item-link' href="http://pnews.trunk.huoshow.com/games/youxituku/">游戏图库</a>
+			<div class='nav-item-subnav'><a target='_blank' href="http://game.huoshow.com/" >网络红人</a>|<a target='_blank' href="http://game.huoshow.com/" >cosplay</a>|<a target='_blank' href="http://game.huoshow.com/" >游戏动漫</a>|<a target='_blank' href="http://game.huoshow.com/" >创意趣图</a>|<a target='_blank' href="http://game.huoshow.com/" >原画欣赏</a>|<a target='_blank' href="http://game.huoshow.com/" >囧图集</a>|<a target='_blank' href="http://game.huoshow.com/" >游戏壁纸</a>|<a target='_blank' href="http://pnews.trunk.huoshow.com/games/youxituku/youximeinv/" >游戏美女</a>|</div>
+		</li>
+	</ul>
+</div>
+<!-- Header End -->
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main'>
+			<div class='ui-content-header'>
+				<h2 class='title'>单机资讯列表</h2>
+                <div class='link'></div>
+				<!--<div class='link'><a target="_blank" class='cur' href='/index.php?m=content&c=index&a=lists&catid=217'>视频攻略</a> <a target="_blank" href='/index.php?m=content&c=index&a=lists&catid=218'>资讯</a> <a target="_blank" href='/index.php?m=content&c=index&a=lists&catid=223'>专题推荐</a></div>-->
+                <!--<div class='link'></div>-->
+			</div>
+			<div class='ui-content-list'>
+					     				<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=391352" ><img src='http://img1.gamersky.com/image2013/01/20130109p_9/gamersky_01small_02_201319219723.jpg' alt='《生化奇兵：无限》新截图萝莉爱学习大叔爱打架' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=391352" >《生化奇兵：无限》新截图萝莉爱学习大叔爱打架</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-11 09:07:14</div>
+					<p class='cnt'>拿奖神作《生化奇兵：无限》再次公布一组最新截图，其中包含早前VGA的伊丽莎白学生装，这是主角初遇萝莉，还有一些战斗截图和场景画面。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=391352" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390722" ><img src='http://pnews.huoshow.com/uploadfile/2013/0109/20130109040638911.jpg' alt='再战江湖《雨血前传：蜃楼》第二版试玩震撼发布' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390722" >再战江湖《雨血前传：蜃楼》第二版试玩震撼发布</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 16:05:49</div>
+					<p class='cnt'>再战江湖《雨血前传：蜃楼》第二版试玩震撼发布。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390722" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390330" ><img src='http://img1.gamersky.com/image2013/01/20130109p_1/gamersky_24small_48_201319038A68.jpg' alt='《古墓丽影9》多人/单人演示曝光' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390330" >《古墓丽影9》多人/单人演示曝光</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:35</div>
+					<p class='cnt'>《古墓丽影9》作为该系列的重启，不仅学习了徒弟&ldquo;神海&rdquo;，还破天荒第一次加入了多人模式，官方日前正式曝光了本作的竞技模式的演示，不是一群<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390330" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390329" ><img src='http://img1.gamersky.com/image2012/08/20120814p_9/gamersky_08small_16.jpg' alt='《勿忘我》全新实战预告公布 “盗梦”美女激战腹黑BOSS' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390329" >《勿忘我》全新实战预告公布 “盗梦”美女激战腹黑BOSS</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:35</div>
+					<p class='cnt'>法国游戏制造商Dontnod打造的&ldquo;盗梦空间&rdquo;风ACT巨制《勿忘我》今日曝光全新实战预告，游戏的面貌得以完美呈现，未来都市尤为壮观，还有业界鲜<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390329" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390325" ><img src='http://img1.gamersky.com/image2013/01/20130108_e7/gamersky_01small_02_201318152467C.jpg' alt='《侠盗猎车手5》全球宣传攻势展开 巨大广告牌现身波兰华沙' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390325" >《侠盗猎车手5》全球宣传攻势展开 巨大广告牌现身波兰华沙</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:30</div>
+					<p class='cnt'>《侠盗猎车手5》全球宣传攻势展开 巨大广告牌现身波兰华沙。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390325" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390324" ><img src='http://img1.gamersky.com/image2013/01/20130108_e4/gamersky_06small_12_2013181052A21.jpg' alt='《合金装备崛起：复仇》雷电手办登场 黑白双煞霸气无比' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390324" >《合金装备崛起：复仇》雷电手办登场 黑白双煞霸气无比</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:29</div>
+					<p class='cnt'>高端小雕像专家Play Arts揭露了一个细节极其丰富的雷电手办，这个手办将与Konami的游戏《合金装备崛起：复仇》同步上市。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390324" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390323" ><img src='http://img1.gamersky.com/image2013/01/20130108_e5/gamersky_02small_04_2013181211180.jpg' alt='《勿忘我》全新预告下周到来 新角色金牙恶男曝光' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390323" >《勿忘我》全新预告下周到来 新角色金牙恶男曝光</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:29</div>
+					<p class='cnt'>卡普空承诺将在下周为我们带来旗下未来风格动作游戏《勿忘我（Remember Me）》的全新预告片，届时将有一个全新的角色Kid Xmas登场。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390323" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390322" ><img src='http://img1.gamersky.com/image2013/01/20131008r_158/gamersky_01small_02_2013181210604.jpg' alt='玉影扶疏 《古剑奇谭2》主角倩影亮相 开启命名竞猜' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390322" >玉影扶疏 《古剑奇谭2》主角倩影亮相 开启命名竞猜</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:28</div>
+					<p class='cnt'>自古便盛传着&ldquo;犹抱琵琶半遮面&rdquo;之句。有些女子，也许无需照见其真容，只一个身影一个模糊侧面，就自然沁人心脾，引人无限遐想。光与影映照之<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390322" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390321" ><img src='http://img1.gamersky.com/image2012/08/20120803v_7/gamersky_01small_02.jpg' alt='《毁灭战士4》将登次世代？程序员微博泄露情报' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390321" >《毁灭战士4》将登次世代？程序员微博泄露情报</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:28</div>
+					<p class='cnt'>“现在正在家里照顾新出生的宝贝女儿，当我回去之后我要帮忙将一个大项目实施于几个最新的平台。”<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390321" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390320" ><img src='http://img1.gamersky.com/image2012/10/20120930t_1/gamersky_01small_02.jpg' alt='《古墓丽影9》被ESRB评为成人级' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390320" >《古墓丽影9》被ESRB评为成人级</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:26</div>
+					<p class='cnt'>美国娱乐软件分级委员会（ESRB，Entertainment Software Rating Board）刚刚公布了对《古墓丽影9》的评级决定，他们将《古墓丽影9》评定为<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390320" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390319" ><img src='http://img1.gamersky.com/image2013/01/20131008r_135/gamersky_01small_02_201318105338B.jpg' alt='华丽的科幻巨作！国产单机《太阳风暴》详解' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390319" >华丽的科幻巨作！国产单机《太阳风暴》详解</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:26</div>
+					<p class='cnt'>近年来我们国家的单机游戏可以摆上桌面的确实是少之又少，《仙剑5前传》下周就要开卖了，其他的国产单机游戏又会带给我们怎样的期待呢？<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390319" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390318" ><img src='http://img1.gamersky.com/image2013/01/20131008r_134/gamersky_01small_02_201318100B54.jpg' alt='原创单机大作《太阳风暴》多图曝光 PC游戏市场复活！' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390318" >原创单机大作《太阳风暴》多图曝光 PC游戏市场复活！</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:25</div>
+					<p class='cnt'>1月7日晚间，游戏蜗牛在苏州召开了新G元新游发布会，并在发布会上公开了游戏蜗牛2013年的发展路线与多款新游作品。其中网游产品《黑暗与光明：<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390318" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390317" ><img src='http://img1.gamersky.com/image2013/01/20130108u_4/gamersky_01small_02_2013181011D0C.jpg' alt='《刺客信条3》最新DLC“身经百战”公布 明天登陆' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390317" >《刺客信条3》最新DLC“身经百战”公布 明天登陆</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:25</div>
+					<p class='cnt'>育碧今天宣布《刺客信条3》的最新多人模式DLC“身经百战（Battle Hardened）”将于明天与广大玩家见面。同时，育碧给出了这部DLC的一些其他细节。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390317" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390316" ><img src='http://www.37cs.com/html/click/dot.gif' alt='《仙剑奇侠传5：前传》下周即将上市' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390316" >《仙剑奇侠传5：前传》下周即将上市</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:23</div>
+					<p class='cnt'>国产经典RPG&ldquo;仙剑系列&rdquo;最新作《仙剑奇侠传五-前传》（以下简称《仙剑5前传》）即将于2013年1月15日正式上市。据悉，其前作《仙剑奇侠传5》取<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390316" >[详细]</a></p>
+				</div>
+							<div class='ui-content-item'>
+					<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390315" ><img src='http://img1.gamersky.com/image2012/12/20121218p_1/gamersky_01small_02_201212182361B9.jpg' alt='《鬼泣5》再获媒体高分好评 9分待遇来之不易' width='138' height='103' /></a>
+					<h2 class='title'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390315" >《鬼泣5》再获媒体高分好评 9分待遇来之不易</a></h2>
+					<div class='info'><!-- <em>单机资讯</em> --> 发表时间：2013-01-09 08:39:23</div>
+					<p class='cnt'>《鬼泣5（DmC: Devil May Cry）》自推出以来在玩家中鲜有积极的评价，因此观看各大媒体对本作的打分也是一件相当有意思的事情。<a target="_blank" class='detail' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=390315" >[详细]</a></p>
+				</div>
+									</div>
+
+			<div id='pager' class="pager ui-pager"><a class="a1">102条</a> <a href="http:game.huoshow.com/3.shtml" class="a1">上一页</a> <a href="http:game.huoshow.com/index.shtml">1</a> <a href="http:game.huoshow.com/2.shtml">2</a> <a href="http:game.huoshow.com/3.shtml">3</a> <span class="current">4</span> <a href="http:game.huoshow.com/5.shtml">5</a> <a href="http:game.huoshow.com/6.shtml">6</a> <a href="http:game.huoshow.com/7.shtml">7</a> <a href="http:game.huoshow.com/5.shtml" class="a1">下一页</a><!--<span>1022条</span><span class="disabled">首页</span><span class="disabled">上一页</span><span class="num current">1</span><a target="_blank" class='num' href="#">2</a><a target="_blank" class='num' href="#">3</a><a target="_blank" class='num' href="#">4</a><span class='ellipsis'>...</span><a target="_blank" class='num' href="#">199</a><a target="_blank" href="#">下一页</a><a target="_blank" href="#">末页</a>--></div>
+
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-rdtj'>
+				<h2 class='ui-box-side-title'>热点推荐</h2>
+																<h3 class='subtitle'><a target="_blank" href="http://pnews.trunk.huoshow.com/games/2013/0121/393630.shtml" >删除测试①</a></h3>
+																<ul class='ui-list'>					<li class='ui-list-item'><a target="_blank" href="http://pnews.ck.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=393863" >制作诚意足 玩家评仙剑5前传的六大进步</a></li>
+																									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/games/2013/0129/393869.shtml" >九阴门派禁地受热捧 探秘武当紫霄地宫</a></li>
+																									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=393864" >单机资讯测试测试测试1034390</a></li>
+																									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=310&id=393836" >屌丝，；湿漉漉的斯拉夫两大弗雷德萨拉</a></li>
+																									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/games/2013/0124/393830.shtml" >网游专区测试测试测试</a></li>
+																				<h3 class='subtitle'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393625" >猎神OL封测版特色新玩法独家曝光</a></h3>
+																					<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/2013/0124/393834.shtml" >详情页面资讯测试二</a></li>
+																									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/games/2013/0124/393833.shtml" >详情页面资讯测试测试三</a></li>
+																			</div>
+
+			<div class='ad'><a target="_blank" href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='280' height='248' /></a></div>
+
+			<div class='ui-box-side ui-box-xyx'>
+				<h2 class='ui-box-side-title'>新游戏</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				   									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=265&id=393876" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0222/20130222105013835.jpg' width='73' height='73' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=265&id=393876" >热点推荐测试测试</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/games/2013/0124/393830.shtml" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0124/20130124085802397.jpg' width='73' height='73' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/games/2013/0124/393830.shtml" >网游专区测试测试测试</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393626" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0119/20130119102832986.jpg' width='73' height='73' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393626" >正式版发布Hibernate</a>
+					</li>
+												</ul>
+				<ul class='ui-list ui-list-float hr'>
+													<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/html/special/44/" >三国无双</a></li>
+									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/html/special/43/" >三国争霸</a></li>
+									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/html/special/42/" >仙剑奇侠</a></li>
+									<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/html/special/D/" >DOTA2</a></li>
+									<li class='ui-list-item'><a target="_blank" href="http://pnews.wjy.huoshow.com/html/special/J/" >剑灵</a></li>
+									<li class='ui-list-item'><a target="_blank" href="http://pnews.wjy.huoshow.com/html/special/gameblack/" >游戏专题黑色模版</a></li>
+												</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-sptj'>
+				<h2 class='ui-box-side-title'><!--视频推荐-->推荐新闻</h2>
+				   												<ul class='ui-img-list ui-img-list-plus'>					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=265&id=393876" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0222/20130222105013835.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=265&id=393876" >热点推荐测试测试</a>
+					</li>
+																									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=293&id=393867" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0126/20130126120728360.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=293&id=393867" >新游戏首页视频推荐测</a>
+					</li>
+				</ul>																<ul class='ui-list ui-list-float'>				<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=293&id=393866" >新游戏首页视频推荐测</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=256&id=393838" >视频推荐测试1001343</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393835" >视频推荐测试100013</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/games/2013/0124/393830.shtml" >网游专区测试测试测试</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393626" >正式版发布Hibernate</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393625" >猎神OL封测版特色新玩</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=258&id=393590" >利刃出鞘跑跑卡丁车：</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393250" >视频: 冷兵器时代《</a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393249" >行星边际2重温战火 </a></li>
+																								<li class='ui-list-item'><a target="_blank" href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393248" >视频:行星边际2第四大</a></li>
+				</ul>															</div>
+
+			<div class='ui-box-side ui-box-wydg'>
+				<h2 class='ui-box-side-title'>网游大观</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				   									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=265&id=393876" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0222/20130222105013835.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=265&id=393876" >热点推荐测试测试</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=293&id=393868" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0126/20130126121018195.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=293&id=393868" >新游戏首页网友大观测试1</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/games/2013/0124/393830.shtml" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0124/20130124085802397.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/games/2013/0124/393830.shtml" >网游专区测试测试测试</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393626" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0119/20130119102832986.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=264&id=393626" >正式版发布Hibernate Search 4.2 正式版发布</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393625" ><img src='http://pnews.trunk.huoshow.com/uploadfile/2013/0119/20130119102235441.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393625" >猎神OL封测版特色新玩法独家曝光</a>
+					</li>
+									<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="http://www.huoshow.com/2013/0117/393592.shtml" ><img src='http://pnews.huoshow.com/uploadfile/2013/0117/20130117034449146.jpg' width='122' height='91' /></a>
+						<a target="_blank" class='title' href="http://www.huoshow.com/2013/0117/393592.shtml" >李小璐产后极速瘦身 晒新照被赞少女味十足</a>
+					</li>
+												</ul>
+			</div>
+			<div class='ui-box-side ui-box-zxphb'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<ol class='ui-list-plus'>
+															<li class='ui-list-plus-item'><span class='num num-hot'>1</span><a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393625" >猎神OL封测版特色新玩法独家曝光</a></li>
+											<li class='ui-list-plus-item'><span class='num num-hot'>2</span><a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=310&id=393836" >屌丝，；湿漉漉的斯拉夫两大弗雷德萨拉</a></li>
+											<li class='ui-list-plus-item'><span class='num num-hot'>3</span><a target="_blank" class='title' href="http://pnews.ck.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=393863" >制作诚意足 玩家评仙剑5前传的六大进步</a></li>
+											<li class='ui-list-plus-item'><span class='num num-hot'>4</span><a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=286&id=393864" >单机资讯测试测试测试1034390</a></li>
+											<li class='ui-list-plus-item'><span class='num num-hot'>5</span><a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=263&id=393835" >视频推荐测试100013</a></li>
+											<li class='ui-list-plus-item'><span class='num num-hot'>6</span><a target="_blank" class='title' href="http://pnews.trunk.huoshow.com/index.php?m=content&c=index&a=show&catid=311&id=393837" >《石器时代》 来我家头东西吧 ！！！@@weibo</a></li>
+													</ol>
+			</div>
+		</div>
+	</div>
+
+	<script src='http://pnews.zyc.huoshow.com/statics/js/seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+		<!-- 友情链接 -->
+		<!-- 友情链接结束 -->
+
+	<!-- Footer -->
+	<div id="footer">
+		<p>
+								<a href="http://pnews.trunk.huoshow.com/html/about/aboutus/" target="_blank">关于火秀</a> |						<a href="http://pnews.trunk.huoshow.com/html/about/contact/" target="_blank">联系我们</a> |						<a href="http://pnews.trunk.huoshow.com/html/about/advertising/" target="_blank">广告服务</a> |						<a href="http://pnews.trunk.huoshow.com/html/about/joinus/" target="_blank">诚聘英才</a> |						<a href="http://pnews.trunk.huoshow.com/html/about/partners/" target="_blank">合作伙伴</a>							</p>
+		<p>HuoShow Copyright &copy; 1998 - 2013 All Rights Reserved.</p>
+		<p>粤 ICP 备 06087881 号</p>
+	</div>
+	<!-- Footer End -->
+
+	<script>
+		// 设置谷歌统计
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function(window) {
+			var document = window.document;
+			window.onload = function() {
+				// 加载谷歌统计代码
+				var ga = document.createElement('script'),
+					head = document.getElementsByTagName('head')[0];
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				head.appendChild(ga);
+
+				// 加载 CNZZ 统计代码
+				var cnzz = document.createElement('script');
+				cnzz.src = 'http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090';
+				//cnzz.style.display = 'none';
+				head.appendChild(cnzz);
+
+				// 加载百度统计代码
+				/*var bd = document.createElement('script');
+				bd.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +  bai('hm.baidu.com/h.js%3F82b22a65dfbeae6f241edda7d3f322af');
+				head.appendChild(bd);*/
+			};
+		})(window);
+	</script>
+	<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F82b22a65dfbeae6f241edda7d3f322af' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<!-- <div style='display:none;'><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div> --></body>
+</html>

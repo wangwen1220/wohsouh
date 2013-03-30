@@ -1,0 +1,724 @@
+{template "content","music_header"}
+<!--Main Body-->
+<div class="main_body"> 
+	<!--Left-->
+	<div class="body_left">
+		<!--Top News-->
+		<div class="top_news">
+			<div class="slide">
+				<div class="common-roll-slide" id="huoshow_music_index_scroll_image_288_406">
+					{pc:content  action="position" posid="81" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+					<div class="common-roll-slide-body">
+						{loop $data $r}
+						<div class="common-roll-slide-pages">
+							<div class="common-roll-slide-page">
+								<div><a href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],288,408)}"/></a> </div>
+								<div class="common-roll-slide-page-info" >
+									<div class="common-roll-slide-page-info-text">
+										<h3><a href="{$r[url]}" target="_blank">{str_cut($r[title],70,'')}</a></h3>
+										<p><a href="{$r[url]}" target="_blank"></a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/loop}
+						<div class="common-roll-slide-nav">
+						<span class="common-roll-slide-nav-right">
+						<a href="#" class="common-roll-slide-prev">&nbsp;</a> 
+						<a href="#" class="common-roll-slide-next">&nbsp;</a> 
+						</span>
+						<span class="common-roll-slide-nav-links">
+						{loop $data $r}
+						<a href="{$url}">{$n}</a>
+						{/loop} 
+						</span> </div>
+					</div>
+					{/pc}
+				</div>
+				<script>
+					window.slide_huoshow_music_index_scroll_image_288_406 = make_pagebox('huoshow_music_index_scroll_image_288_406', {
+						links_selector: '.common-roll-slide-nav-links a',
+						pages_selector: '.common-roll-slide-page',
+						prev_selector: '.common-roll-slide-prev',
+						next_selector: '.common-roll-slide-next',
+						current_class: 'common-roll-slide-curr',
+						interval: 5,
+						effect: 1
+					});
+				</script>
+			</div>
+			<div class="biankuang_w394">
+				<div class="biankuang_w394_01">
+					<div class="right_title_bg">
+						<h2 class="title_Black">头条</h2>
+						<!--  <span class="more"><a href="" class="more_bg">更多</a></span>-->
+					</div>
+					<div class="music_toutiao_newslist">
+						{pc:content  action="position" posid="82"  order="listorder DESC" num="1"}
+						{loop $data $r}
+						<h3 class="sexi_lan"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 70,'')}</a></h3>
+						{/loop}
+						{/pc}
+						{pc:content  action="position" posid="85"  order="listorder DESC" num="3"}
+						<p>
+						{loop $data $r}
+						<a title="{$r[title]}" target="_blank" href="{$r[url]}">[{str_cut($r[title],25,'')}]</a>
+						{/loop}
+						</p>
+						{/pc}
+						{pc:content  action="position" posid="83" order="listorder DESC" num="1"}
+						{loop $data $r}
+						<h3 class="sexi_lan"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 70,'')}</a></h3>
+						{/loop}
+						{/pc}
+						{pc:content  action="position" posid="86"  order="listorder DESC" num="3"}
+						<p>
+						{loop $data $r}
+						<a title="{$r[title]}" target="_blank" href="{$r[url]}">[{str_cut($r[title],25,'')}]</a>
+						{/loop}
+						</p>
+						{/pc}
+						{pc:content  action="position" posid="84"  order="listorder DESC" num="1"}
+						{loop $data $r}
+						<h3 class="sexi_lan"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 70,'')}</a></h3>
+						{/loop}
+						{/pc}
+						{pc:content  action="position" posid="87"  order="listorder DESC" num="3"}
+						<p>
+						{loop $data $r}
+						<a title="{$r[title]}" target="_blank" href="{$r[url]}">[{str_cut($r[title],25,'')}]</a>
+						{/loop}
+						</p>
+						{/pc}
+
+					</div>
+
+					<div class="newslist">
+					{pc:content  action="position" posid="88" catid="$catid" order="listorder DESC" num="7"}
+						<ul>
+							{loop $data $r}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],70,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top_news">
+			<div class="top_news_left">
+				<div class="top_news_left_inner_bd">
+					<div class="yingshi_dujia">
+						<div class="left_title_bg">
+							<h2 class="title_Black">专题</h2>
+							<span class="more"><a href="/music/music_zt/" class="more_bg">更多</a></span>
+						</div>
+						<div class="list">
+							<div class="yingren_pic_01">
+							{pc:content  action="lists" catid="154" order="updatetime DESC" thumb="1" num="2"}
+								<ul>
+									{loop $data $r}
+									<li><img alt="{$r[title]}" src="{thumb($r[thumb],126,84)}" width="126" height="84" /><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],30,'')}</a></li>
+									{/loop}
+								</ul>
+							{/pc}
+							</div>
+							<div class="ndi_Center_t_03">
+							{pc:content  action="lists" catid="154" order="updatetime DESC" num="5"}
+								<ul>
+									{loop $data $r}
+									<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],58,'')}</a></li>
+									{/loop}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top_news_right">
+				<div class="top_news_right_inner_bd">
+					<div class="yingshi_tuotiao">
+						<div class="right_title_bg">
+							<h2 class="title_Black">音乐人</h2>
+							<span class="more"><a target="_blank" href="/music/yinyueren/" class="more_bg">更多</a></span> </div>
+						{pc:content  action="position" posid="91" catid="$catid" order="listorder DESC" num="1"}
+						<div class="item_02">
+							{loop $data $r}
+							<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],64,'')}</a></h3>
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],126,84)}" width="126" height="84"></a>
+							<p class='ui_break'>{str_cut($r[description],200,'')} <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细]</a></p>
+							{/loop}
+						</div>
+						{/pc}
+						<div class="ndi_Center_t_01">
+						{pc:content action="lists" catid="80" order="updatetime DESC" num="5"}
+							<ul>
+								{loop $data $r}
+								<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],78,'')}</a></li>
+								{/loop}
+							</ul>
+						{/pc}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top_news">
+			<div class="xianchang">
+				<!--Banner 300*100-->
+				<div class="banner_300_100">
+					<script type="text/javascript">
+						// <![CDATA[
+						OA_show(73);
+						// ]]>
+					</script>
+					<noscript>
+					<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=ad015702'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=73&n=ad015702' /></a>
+					</noscript>
+				</div>
+				<div class="biankuang_w300">
+					<div class="biankuang_w300_01 music_box_small">
+						<div class="yingshi_dujia">
+							<div class="left_title_bg">
+								<h2 class="title_Black">现场</h2>
+								<span class="more"><a target="_blank" href="/music/live/" class="more_bg">更多</a></span> </div>
+								{pc:content  action="position" posid="92" catid="$catid" order="listorder DESC" num="1"}
+								<div class="item_02">
+									{loop $data $r}
+									<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],78,78)}" width="78" height="78"></a>
+									<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],34,'')}</a></h3>
+									<span>{str_cut($r[description],104,'')} <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细] </a></span>
+									{/loop}
+								</div>
+								{/pc}
+							<div class="list">
+								<div class="ndi_Center_t_03">
+									{pc:content action="lists" catid="82" order="updatetime DESC" num="3"}
+									<ul>
+										{loop $data $r}
+										<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a></li>
+										{/loop}
+									</ul>
+									{/pc}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top_news_right_2">
+				<div class="top_news_right_2_inner_bd">
+					<div class="yingshi_tuotiao">
+						<div class="right_title_bg">
+							<h2 class="title_Black">音乐评论</h2>
+							<span class="more"><a target="_blank" href="/music/yueping/" class="more_bg">更多</a></span> </div>
+							<div class="list">
+							{pc:content  action="position" posid="93" catid="$catid" order="listorder DESC" num="1"}
+							<div class="item_02">
+								{loop $data $r}
+								<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],96,112)}" width="96" height="112"></a>
+								<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],46,'')}</a></h3>
+								<span class='ui_break'>{str_cut($r[description],200,'')} <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细] </a></span>
+								{/loop}
+							</div>
+							{/pc}
+							<div class="ndi_Center_t_02">
+							{pc:content action="lists" catid="79" order="updatetime DESC" num="6"}
+								<ul>
+									{loop $data $r}
+									<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],78,'')}</a></li>
+									{/loop}
+								</ul>
+							{/pc}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Left End-->
+	<!--Right-->
+	<div class="body_right">
+		<!--Hot Movie-->
+		<div class="diebao">
+			<div class="diebao_bt">
+				<h2 class="baise">碟报</h2>
+			</div>
+			{pc:content action="position" posid="89" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+			<div class="diebao_text">
+				{loop $data $r}
+				<div class="diebao_text_wenzi">
+					<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover"><img alt="{$r[title]}" src="{thumb($r[thumb],90,90)}"/></a>
+					<div class="diebao_info">
+						<p class="diebao_text_1">专辑名：<a title="{$r[title]}" target="_blank" href="{$r[url]}"><span class="lse">{str_cut($r[title],20,'')}</span></a></p>
+						<p class="diebao_text_1">歌手：<span class="lse"> {if $r[musicname] != ''}{str_cut($r[musicname],20,'')}{else}{str_cut($r[copyfrom],20,'')}{/if}</span></p>
+					</div>
+					<div class="diebao_text_wenzi_xx">{str_cut($r[description],80)} <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细]</a> </div>
+				</div>
+				{if $n==1}
+				<div class="hr"></div>
+				{/if}
+				{/loop}
+			</div>
+			{/pc}
+			<div class='listen_online'>
+				<h2>在线试听</h2>
+				{pc:content action="position" posid="90" catid="$catid" order="listorder DESC" num="4"}
+				<ul>
+					{loop $data $r}
+					<li><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],40,'')}</a></li>
+					{/loop}
+				</ul>
+				{/pc}
+				<a class="more" href="/music/mp3/" title="">更多</a>
+			</div>
+		</div>
+		<!-- 音乐演出 -->
+		<div class="top_news_right_2 music_box_small yanchu">
+			<div class="top_news_right_2_inner_bd">
+				<div class="yingshi_tuotiao">
+					<div class="right_title_bg">
+						<h2 class="title_Black">音乐演出</h2>
+						<span class="more"><a target="_blank" href="/music/musicshow/" class="more_bg">更多</a></span> </div>
+						<div class="list">
+						{pc:content action="lists" catid="171" thumb="1" order="updatetime DESC" num="1"}
+						<div class="item_02">
+							{loop $data $r}
+							<a title="{$r[title]}" href="http://www.huoshow.com/2012/0217/113751.shtml" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],94,78)}" width="94" height="78"></a>
+							<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></h3>
+							<span>{str_cut($r[description],60)} <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细]</a></span>
+							{/loop}
+						</div>
+						{/pc}
+						<div class="ndi_Center_t_02">
+						{pc:content action="lists" catid="171"  order="updatetime DESC" num="7"}
+							<ul>
+								{loop $data $r}
+								<li><a title="{$r[url]}" target="_blank" href="{$r[url]}">{str_cut($r[title],44,'')}</a></li>
+								{/loop}
+							</ul>
+						{/pc}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 音乐演出结束 -->
+		<!-- 产业资讯 -->
+		<div class="top_news_right_2 music_box_small chanyezixun">
+			<div class="top_news_right_2_inner_bd">
+				<div class="yingshi_tuotiao">
+					<div class="right_title_bg">
+						<h2 class="title_Black">产业资讯</h2>
+						<span class="more"><a target="_blank" href="/music/musicproduct/" class="more_bg">更多</a></span> </div>
+						<div class="list">
+						{pc:content action="lists" catid="172" thumb="1" order="updatetime DESC" num="1"}
+						<div class="item_02">
+							{loop $data $r}
+							<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],94,78)}" width="94" height="78"></a>
+							<h3 class="sexi_lan line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></h3>
+							<span>{str_cut($r[description],70,'')} <a title="{$r[title]}" target="_blank" href="{$r[url]}" class="Text_color_a">[详细]</a></span>
+							{/loop}
+						</div>
+						{/pc}
+						<div class="ndi_Center_t_02">
+						{pc:content action="lists" catid="172"  order="updatetime DESC" num="7"}
+							<ul>
+								{loop $data $r}
+								<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],44,'')}</a></li>
+								{/loop}
+							</ul>
+						{/pc}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 产业资讯结束 -->
+	</div>
+	<!--Top Video-->
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="full_title_bg">
+				<h2 class="title_Black">MV</h2>
+				<span class="more"><a target="_blank" href="/music/mv/" class="more_bg">更多</a></span> </div>
+			<div class="mv" id="pbox1"> <a href="#">
+				<div class="mv_left"></div>
+				</a> <a href="#">
+				<div class="mv_right"></div>
+				</a>
+				{pc:content action="position" posid="94" catid="$catid" order="listorder DESC" num="10"}
+				<ul class="top_video">
+					{loop $data $r}
+					<li>
+						<span class="top_video_pic_bg"><a title="{$r[title]}" target="_blank" href="{$r[url]}">
+							<img alt="{$r[title]}" src="{thumb($r[thumb],134,83)}" width="134" height="83" /></a>
+						</span>
+						<span class="top_video_text">
+							<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],30,'')}</a>
+						</span>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+			<script>
+          $(function(){
+          window.pbox1 = make_pagebox('pbox1', {
+          pages_selector: '.top_video',
+          prev_selector: '.mv_left',
+          next_selector: '.mv_right',
+          effect: 1
+          });
+          });
+        </script>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!--Region-->
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt">
+				<h2 class="title_black_24">内地</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic">
+						<div class="ndi_left_tuwen">
+						{pc:content action="position" posid="95" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+							<ul class="ndi_left_tuwenlist">
+								{loop $data $r}
+								<li>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1"><img alt="{$r[title]}" src="{thumb($r[thumb],90,90)}" width="90" height="90" /></a><br>
+									<strong><a title="{$r[title]}" target="_blank" href="{$r[url]}">{if $r[musicname] != ''}{str_cut($r[musicname],20,'')}{else}{str_cut($r[copyfrom],20,'')}{/if}</a></strong><br>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a>
+								</li>
+								{/loop}
+							</ul>
+						{/pc}
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+					{pc:content action="lists" catid="162"  order="updatetime DESC" num="4"}
+						<ul>
+							{loop $data $r}
+							<li class='first'>
+								<a class='singer' title="{$r[title]}" target="_blank" href="{$r[url]}">{$r[musicname]}</a>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_Center">
+					{pc:content action="position" posid="96" catid="$catid" order="listorder DESC" num="1"}
+					<div class="ndi_Center_newslist">
+						{loop $data $r}
+						<h3 class="sexi_hong line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></h3>
+						{/loop}
+					</div>
+					{/pc}
+					<div class="ndi_Center_t">
+					{pc:content action="lists" catid="74" order="updatetime DESC" num="11"}
+						<ul class="ndi_Center_t_text">
+							{loop $data $r}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],70,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_right">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">内地音乐推荐</h2>
+					</div>
+					<div class="charts_others">
+					{pc:content action="lists" catid="166" order="updatetime DESC" num="10"}
+						<ul>
+							{loop $data $r}
+							<li>
+								<a href="{$r[url]}"><span class="rank_down airphone"></span></a>
+								<span class="charts_number"><a href="{$r[url]}">{str_cut($r[musicname],12,'')}</a> </span><a href="{$r[url]}" target="_blank">{str_cut($r[title],30,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt">
+				<h2 class="title_black_24">港台</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic_01">
+						<div class="ndi_left_tuwen">
+						{pc:content action="position" posid="97" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+							<ul class="ndi_left_tuwenlist">
+								{loop $data $r}
+								<li>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1">
+									<img alt="{$r[title]}" src="{thumb($r[thumb],90,90)}" width="90" height="90" /></a><br>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}">{if $r[musicname] != ''}{str_cut($r[musicname],20,'')}{else}{str_cut($r[copyfrom],20,'')}{/if}</a><br>
+									{str_cut($r[title],20,'')}
+								</li>
+								{/loop}
+							</ul>
+						{/pc}
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+					{pc:content action="lists" catid="163" order="updatetime DESC" num="4"}
+						<ul>
+							{loop $data $r}
+							<li class='first'>
+								<a class='singer' title="{$r[title]}" target="_blank" href="{$r[url]}">{$r[musicname]}</a>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_Center">
+					{pc:content action="position" posid="98" catid="$catid" order="listorder DESC" num="1"}
+					<div class="ndi_Center_newslist">
+						{loop $data $r}
+						<h3 class="sexi_huang line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></h3>
+						{/loop}
+					</div>
+					{/pc}
+					<div class="ndi_Center_t">
+					{pc:content action="lists" catid="75" order="updatetime DESC" num="11"}
+						<ul class="ndi_Center_t_text_01">
+							{loop $data $r}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],70,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_right_01">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">港台音乐推荐</h2>
+					</div>
+					<div class="charts_others">
+					{pc:content action="lists" catid="167" order="updatetime DESC" num="10"}
+						<ul>
+							{loop $data $r}
+							<li><a href="{$r[url]}"><span class="rank_retain airphone"></span></a><span class="charts_number"><a href="{$r[url]}">{str_cut($r[musicname],12,'')}</a></span><a href="{$r[url]}" target="_blank">{str_cut($r[title],30,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt">
+				<h2 class="title_black_24">日韩</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic_02">
+						<div class="ndi_left_tuwen">
+							{pc:content action="position" posid="99" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+							<ul class="ndi_left_tuwenlist">
+								{loop $data $r}
+								<li>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1">
+									<img alt="{$r[title]}" src="{thumb($r[thumb],90,90)}" width="90" height="90" /></a><br>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}">{if $r[musicname] != ''}{str_cut($r[musicname],20,'')}{else}{str_cut($r[copyfrom],20,'')}{/if}</a><br>
+									{str_cut($r[title],20,'')}
+								</li>
+								{/loop}
+							</ul>
+							{/pc}
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+					{pc:content action="lists" catid="164" order="updatetime DESC" num="4"}
+						<ul>
+							{loop $data $r}
+							<li class='first'>
+								<a class='singer' title="{$r[title]}" target="_blank" href="{$r[url]}">{$r[musicname]}</a>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],50,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_Center">
+					{pc:content action="position" posid="100" catid="$catid" order="listorder DESC" num="1"}
+					<div class="ndi_Center_newslist">
+						{loop $data $r}
+						<h3 class="sexi_huang line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></h3>
+						{/loop}
+					</div>
+					{/pc}
+					<div class="ndi_Center_t">
+					{pc:content action="lists" catid="77" order="updatetime DESC" num="11"}
+						<ul class="ndi_Center_t_text_02">
+							{loop $data $r}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],70,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_right_02">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">日韩音乐推荐</h2>
+					</div>
+					<div class="charts_others">
+					{pc:content action="lists" catid="168" order="updatetime DESC" num="10"}
+						<ul>
+							{loop $data $r}
+							<li>
+								<a href="{$r[url]}"><span class="rank_retain airphone"></span></a>
+								<span class="charts_number"><a href="{$r[url]}">{str_cut($r[musicname],12,'')}</a></span>
+								<a href="{$r[url]}" target="_blank">{str_cut($r[title],30,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="ndi-bt">
+				<h2 class="title_black_24">欧美</h2>
+			</div>
+			<div class="ndi">
+				<div class="ndi_left">
+					<div class="ndi_left_pic_03">
+						<div class="ndi_left_tuwen">
+							{pc:content action="position" posid="101" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+							<ul class="ndi_left_tuwenlist">
+								{loop $data $r}
+								<li>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}" class="cover1">
+									<img alt="{$r[title]}" src="{thumb($r[thumb],90,90)}" width="90" height="90" /></a><br>
+									<a title="{$r[title]}" target="_blank" href="{$r[url]}">{if $r[musicname] != ''}{str_cut($r[musicname],20,'')}{else}{str_cut($r[copyfrom],20,'')}{/if}</a><br>
+									{str_cut($r[title],20,'')}
+								</li>
+								{/loop}
+							</ul>
+							{/pc}
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="ndi_left_news">
+					{pc:content action="lists" catid="165" order="updatetime DESC" num="4"}
+						<ul>
+							{loop $data $r}
+							<li class='first'>
+								<a class='singer' title="{$r[title]}" target="_blank" href="{$r[url]}">{$r[musicname]}</a>
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],40,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_Center">
+					{pc:content action="position" posid="102" catid="$catid" order="listorder DESC" num="1"}
+					<div class="ndi_Center_newslist">
+						{loop $data $r}
+						<h3 class="sexi_huang line_height"><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],60,'')}</a></h3>
+						{/loop}
+					</div>
+					{/pc}
+					<div class="ndi_Center_t">
+					{pc:content action="lists" catid="76" order="updatetime DESC" num="11"}
+						<ul class="ndi_Center_t_text_03">
+							{loop $data $r}
+							<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title],70,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+				<div class="ndi_right_03">
+					<div class="ndi_right_bt">
+						<h2 class="ndi_right_heise">欧美音乐推荐</h2>
+					</div>
+					<div class="charts_others">
+					{pc:content action="lists" catid="169" order="updatetime DESC" num="10"}
+						<ul>
+							{loop $data $r}
+							<li>
+								<a href="{$r[url]}"><span class="rank_retain airphone"></span></a>
+								<span class="charts_number"><a href="{$r[url]}">{str_cut($r[musicname],12,'')}</a></span>
+								<a href="{$r[url]}" target="_blank">{str_cut($r[title],30,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="full_title_bg">
+				<h2 class="title_Black">音乐美图</h2>
+				<span class="more"><a href="/music/musicpic/" class="more_bg">更多</a></span>
+			</div>
+			<div class='music_gallery'>
+				{pc:content action="position" posid="103" catid="$catid" order="listorder DESC" num="1"}
+				<div>
+					{loop $data $r}
+					<a href="{$r[url]}"><img src="{thumb($r[thumb],254,340)}" alt="{$r[title]}" width="254" height="340" /></a>
+					<span><a target="_blank" href="{$r[url]}">{str_cut($r[title],64,'')}</a></span><em></em>
+					{/loop}
+				</div>
+				{/pc}
+				{pc:content action="lists" catid="173" order="updatetime DESC" num="10"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a href="{$r[url]}"><img src="{thumb($r[thumb],122,162)}" alt="{$r[title]}" width="122" height="162" /></a>
+						<span>{str_cut($r[title],26,'')}</span><em></em>
+					</li>
+					{/loop}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!--Partners-->
+	<div class="main_body">
+		<div class="partners">
+			<div class="layer_one"><a>友情链接</a></div>
+			<div class="layer_content">
+				<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+			</div>
+		</div>
+	</div>
+	<!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+{template "content","footer"}

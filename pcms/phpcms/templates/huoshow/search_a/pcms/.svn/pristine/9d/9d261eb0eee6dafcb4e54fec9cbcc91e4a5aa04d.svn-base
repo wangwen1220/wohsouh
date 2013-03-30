@@ -1,0 +1,423 @@
+{template "content","game_header"}
+<!-- Top AD -->
+<div class='ad ad_online'>
+	<ul class='ad_list'>
+	{pc:content  action="position" posid="226" order="listorder DESC" num="6" }
+   	{loop $data $r}
+		<li {if $n==1}class='first'{/if}><a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],153,115)}" alt="{$r[title]}" width='153' height='115' /></a></li>
+	{/loop}
+	{/pc}
+	</ul>
+</div>
+<!-- Top AD End -->
+
+<!-- Top Content -->
+<div class='ui_content top_content fn_clear'>
+	<div class="ui_content_left fn_left">
+		<div class="pic_slide_wrapper">
+			<!-- slide start -->
+			<div class="pic_slide">
+				{pc:content  action="position" posid="227" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],290,250)}" alt="{$r[title]}" width='290' height='250' /></a>
+						<h3>{str_cut($r[title],50,'')}</h3>
+					</li>
+					{/loop}
+				</ul>
+				<ol>
+					{loop $data $r}
+					<li class='num'><span>{$n}</span></li>
+					{/loop}
+					<li class='next'><span>Next</span></li>
+					<li class='prev'><span>Prev</span></li>
+				</ol>
+				{/pc}
+			</div>
+		</div>
+		<!-- slide end -->
+
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>热门网游推荐</h3>
+			{pc:content  action="position" posid="228" order="listorder DESC" num="5" }
+   			{loop $data $r}
+			{if $n>0 && $n<3}
+			{if $n==1}<ul class='ui_img_list'>{/if}
+				<li>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],125,94)}" alt="{$r[title]}" width='125' height='94' /></a>
+					<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+				</li>
+			{if $n==2}</ul>{/if}
+			{else}
+			{if $n==3}<ul class='ui_text_list'>{/if}
+				<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],66,'')}</a></li>
+			{if $n==5}</ul>{/if}
+			{/if}
+			{/loop}
+			{/pc}
+			<!--<a class='more' href="{$CATEGORYS[88][url]}" >更多&gt;&gt;</a>-->
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		{pc:content  action="position" posid="229" order="listorder DESC" num="3" }
+   		{loop $data $r}
+		{if $n==1}
+		<h2 class='ui_title'><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></h2>
+		{else}
+		{if $n==2}<ul class='ui_title_list'>{/if}
+			<li>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a>]</li>
+		{if $n==3}</ul>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+		{pc:content  action="position" posid="230" order="listorder DESC" num="3" }
+   		{loop $data $r}
+		{if $n==1}
+		<h2 class='ui_title'><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></h2>
+		{else}
+		{if $n==2}<ul class='ui_title_list'>{/if}
+			<li>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a>]</li>
+		{if $n==3}</ul>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+
+		{pc:content  action="position" posid="231" order="listorder DESC" num="3" }
+   		{loop $data $r}
+		{if $n==1}
+		<h2 class='ui_title'><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></h2>
+		{else}
+		{if $n==2}<ul class='ui_title_list'>{/if}
+			<li>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a>]</li>
+		{if $n==3}</ul>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+
+		<ul class='ui_news_list'>
+		{pc:content  action="position" posid="240" order="listorder DESC" num="10" }
+   		{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">[{$CATEGORYS[$r[catid]][catname]}]{str_cut($r['title'],60,'')}</a></li>
+		{/loop}
+		{/pc}
+		</ul>
+	</div>
+
+	<div class='ui_content_right fn_right'>
+		<div class='ad_aside'><script type="text/javascript">
+                    // <![CDATA[
+                    OA_show(68);
+                    // ]]>
+               </script>
+               <noscript>
+                    <a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a8f2d9a1'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=68&n=a8f2d9a1' /></a>
+               </noscript></div>
+
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>精彩视频</h3>
+			<ul class='ui_img_list'>
+			{pc:content  action="position" posid="232" order="listorder DESC" num="4" }
+   			{loop $data $r}
+				<li>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],100,70)}" alt="{$r[title]}" width='100' height='70' /></a>
+					<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],20,'')}</a></h4>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+			<a class='more' target="_blank" href="{$CATEGORYS[217][url]}" >更多&gt;&gt;</a>
+		</div>
+	</div>
+</div>
+<!-- Top Content End -->
+
+<!-- 新网游专区 -->
+<div class='ui_content ui_content_box content_zhuanqu fn_clear'>
+	<h2 class='ui_content_title'>新网游专区</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>新游入库</h3>
+			{pc:content action="lists" catid="216" order="id DESC" num="7"}
+			{loop $data $r}
+			{if $n>0 && $n<3}
+			{if $n==1}<ul class='ui_img_list'>{/if}
+				<li>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],125,94)}" alt="{$r[title]}" width='125' height='94' /></a>
+					<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+				</li>
+			{if $n==2}</ul>{/if}
+			{else}
+			{if $n==3}<ul class='ui_text_list'>{/if}
+				<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></li>
+			{if $n==7}</ul>{/if}
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		{pc:content  action="position" posid="233" order="listorder DESC" num="3" }
+   		{loop $data $r}
+		{if $n==1}
+		<h2 class='ui_title'><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></h2>
+		{else}
+		{if $n==2}<ul class='ui_title_list'>{/if}
+			<li>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a>]</li>
+		{if $n==3}</ul>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+		<ul class='ui_news_list'>
+		{pc:content action="lists" catid="214" order="id DESC" num="9"}
+		{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}" title="{$r[url]}">[{getCatNameFromCatid($catid)}]{str_cut($r['title'],60,'')}</a></li>
+		{/loop}
+		{/pc}
+		</ul>
+	</div>
+
+	<div class="ui_content_right fn_right">
+		<div class='ui_img_box'>
+			<h3>新网游评测</h3>
+			<dl>
+			{pc:content  action="position" posid="234" order="listorder DESC" num="2" }
+   			{loop $data $r}
+				<dt>
+					<h4><span>{$n}</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],20,'')}</a></h4>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],108,75)}" alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<ul>
+						<li>类型：<em><a target="_blank" href="{$r[url]}">{str_cut($r[gametype],16,'')}</a></em></li>
+						<li>特征：<em><a target="_blank" href="{$r[url]}">{str_cut($r[gamefeature],16,'')}</a></em></li>
+						<li>画面：<em><a target="_blank" href="{$r[url]}">{str_cut($r[gamespy],16,'')}</a></em></li>
+						<li>研发：<em><a target="_blank" href="{$r[url]}">{str_cut($r[gamedeveloper],16,'')}</a></em></li>
+						<li>运营：<em><a target="_blank" href="{$r[url]}">{str_cut($r[gameoperation],16,'')}</a></em></li>
+					</ul>
+				</dd>
+			{/loop}
+			{/pc}
+
+			</dl>
+		</div>
+	</div>
+	<a class='ui_content_more' target="_blank" href="{$CATEGORYS[213][url]}" >更多&gt;&gt;</a>
+</div>
+<!-- 新网游专区结束 -->
+
+<!-- 新游图集 -->
+<div class='ui_content ui_content_box content_tuji' id='js_game_tab'>
+	<h2 class='ui_content_title content_tuji_title show'><a hidefocus='true' href='#' title=''>新游图集</a></h2>
+	<ul class='ui_img_list show'>
+	{pc:content  action="position" posid="235" order="listorder DESC" num="6" }
+   	{loop $data $r}
+		<li>
+			<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],125,94)}" alt='' width='125' height='94' /></a>
+			<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+		</li>
+	{/loop}
+	{/pc}
+	</ul>
+
+	<h2 class='ui_content_title content_shipin_title'><a hidefocus='true' href='#' title=''>新游视频</a></h2>
+	<ul class='ui_img_list'>
+	{pc:content  action="position" posid="236" order="listorder DESC" num="6" }
+   	{loop $data $r}
+		<li>
+			<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img class='video_img' src="{thumb($r[thumb],125,94)}" alt="{$r[title]}" width='125' height='94' /></a>
+			<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+		</li>
+	{/loop}
+	{/pc}
+	</ul>
+</div>
+<!-- 新游图集结束 -->
+
+<!-- 网游攻略专区 -->
+<div class='ui_content ui_content_box content_gonglue fn_clear'>
+	<h2 class='ui_content_title'>网游攻略专区</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>视频攻略</h3>
+			{pc:content action="lists" catid="217" order="id DESC" num="6"}
+   			{loop $data $r}
+			{if $n>0 && $n<3}
+			{if $n==1}<ul class='ui_video_list'>{/if}
+				<li>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img class='video_img' src="{thumb($r[thumb],120,90)}" alt="{$r[title]}" width='120' height='90' /></a>
+					<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+				</li>
+
+			{if $n==2}</ul>{/if}
+			{else}
+			{if $n==3}<ul class='ui_text_list'>{/if}
+				<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a></li>
+			{if $n==6}</ul>{/if}
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		{pc:content  action="position" posid="237" order="listorder DESC" num="3" }
+    	{loop $data $r}
+		{if $n==1}
+		<h2 class='ui_title'><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></h2>
+		{else}
+		{if $n==2}<ul class='ui_title_list'>{/if}
+			<li>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a>]</li>
+
+		{if $n==3}</ul>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+		<ul class='ui_news_list'>
+		{pc:content action="lists" catid="218" order="id DESC" num="9"}
+		{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">[{getCatNameFromCatid($catid)}]{str_cut($r['title'],60,'')}</a></li>
+		{/loop}
+		{/pc}
+		</ul>
+	</div>
+
+	<div class="ui_content_right fn_right">
+		<div class='ui_img_box'>
+			<h3>专题推荐</h3>
+			{pc:content action="lists" catid="223" order="id DESC" num="7"}
+			{loop $data $r}
+			{if $n==1}
+			<dl>
+				<dt>
+					<h4><span>1</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],20,'')}</a></h4>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],108,75)}" alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<!--<ul>-->
+						<!--<li>类型：<em>{str_cut($r[gametype],10,'')}</em></li>
+						<li>特征：<em>{str_cut($r[gamefeature],10,'')}</em></li>
+						<li>画面：<em>{str_cut($r[gamespy],10,'')}</em></li>
+						<li>研发：<em>{str_cut($r[gamedeveloper],10,'')}</em></li>
+						<li>运营：<em>{str_cut($r[gameoperation],10,'')}</em></li>-->
+						<p><a href="{$r[url]}">{str_cut($r['description'],80,'...')}</a></p>
+					<!--</ul>-->
+				</dd>
+			</dl>
+			{else}
+			{if $n==2}<ul class='ui_text_list'>{/if}
+				<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],50,'')}</a></li>
+			{if $n==7}</ul>{/if}
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+	</div>
+	<a class='ui_content_more' target="_blank" href="{$CATEGORYS[90][url]}" >更多&gt;&gt;</a>
+</div>
+<!-- 网游攻略专区结束 -->
+
+<!-- 网游业界动态 -->
+<div class='ui_content ui_content_box content_dongtai fn_clear'>
+	<h2 class='ui_content_title'>网游业界动态</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>人物专访</h3>
+			{pc:content action="lists" catid="219" order="id DESC" num="6"}
+   			{loop $data $r}
+			{if $n==1}
+			<ul class='ui_artical_list'>
+				<li>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img class='video_img' src="{thumb($r[thumb],120,90)}" alt="{$r[title]}" width='120' height='90' /></a>
+					<p><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></p>
+					<p><a class='content_link' target="_blank" href="{$r[url]}">{str_cut($r['description'],100,'..')}</a> <a target="_blank" href="{$r[url]}" title="{$r[title]}">详细&gt;&gt;</a></p>
+				</li>
+			</ul>
+			{else}
+			{if $n==2}<ul class='ui_text_list'>{/if}
+				<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></li>
+			{if $n==6}</ul>{/if}
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		{pc:content  action="position" posid="238" order="listorder DESC" num="3" }
+   		{loop $data $r}
+		{if $n==1}
+		<h2 class='ui_title'><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],60,'')}</a></h2>
+		{else}
+		{if $n==2}<ul class='ui_title_list'>{/if}
+			<li>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],70,'')}</a>]</li>
+		{if $n==3}</ul>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+		<ul class='ui_news_list'>
+		{pc:content action="lists" catid="221" order="id DESC" num="9"}
+		{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">[{getCatNameFromCatid($catid)}]{str_cut($r['title'],60,'')}</a></li>
+		{/loop}
+		{/pc}
+		</ul>
+	</div>
+
+	<div class="ui_content_right fn_right">
+		<div class='ui_img_box'>
+			<h3>业界评论</h3>
+			{pc:content action="lists" catid="220" order="id DESC" num="7"}
+			{loop $data $r}
+			{if $n==1}
+			<dl>
+				<dt>
+					<h4><span>1</span><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],108,75)}" alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<!--<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>-->
+					<p>{str_cut($r['description'],80,'...')}</p>
+				</dd>
+			</dl>
+			{else}
+			{if $n==2}<ul class='ui_text_list'>{/if}
+				<li><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],50,'')}</a></li>
+				
+			{if $n==7}</ul>{/if}
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+	</div>
+	<a class='ui_content_more' href="{$CATEGORYS[89][url]}" >更多&gt;&gt;</a>
+</div>
+<!-- 网游业界动态结束 -->
+
+<!-- 网游图集 -->
+<div class='ui_content ui_content_box content_gallery fn_clear'>
+	<h2 class='ui_content_title'>网游图集</h2>
+	{pc:content action="lists" catid="222" order="id DESC" num="9"}
+	{loop $data $r}
+	{if $n==1}
+	<div class='img_poster'>
+		<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],312,264)}" alt="{$r[title]}" width='312' height='264' /></a>
+		<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],74,'')}</a></h4>
+	</div>
+	{else}
+	{if $n==2}<ul class='ui_img_list'>{/if}
+		<li>
+			<a target="_blank" href="{$r[url]}" title="{$r[title]}"><img src="{thumb($r[thumb],125,94)}" alt="{$r[title]}" width='125' height='94' /></a>
+			<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r['title'],30,'')}</a></h4>
+		</li>
+
+	{if $n==9}</ul>{/if}
+	{/if}
+	{/loop}
+	{/pc}
+	<a class='ui_content_more' target="_blank" href="{$CATEGORYS[222][url]}">更多&gt;&gt;</a>
+</div>
+<!-- 网游图集结束 -->
+{template "content","footer"}

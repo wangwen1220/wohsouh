@@ -1,0 +1,114 @@
+/** Main Layout **/
+.jcarousel-skin-movie .jcarousel-container {
+	margin: 10px 0 20px;
+	_width: 890px;/* for ie6 */
+	padding: 0 35px;
+	background: #fff;
+}
+.jcarousel-skin-movie .jcarousel-clip {
+	margin: 0 8px;
+	_width: 874px;/* for ie6 */
+	overflow: hidden;
+}
+.jcarousel-skin-movie .jcarousel-item {
+	_display: inline;/* for ie6 */
+	width: 155px;
+	margin: 0 10px;
+	text-align: center;
+}
+.jcarousel-skin-movie .jcarousel-item .img {
+	position: relative;
+	display: block;
+	outline: none;
+	text-decoration: none;
+	*zoom: 1;
+}
+.jcarousel-skin-movie .jcarousel-item img {
+	display: block;
+}
+.jcarousel-skin-movie .jcarousel-item .img .tips {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0 5px;
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	background-color: rgba(0,0,0,.5);
+	background-color: #000\9;
+	opacity: 0.58\9;
+	filter: alpha(opacity=58);
+	cursor: pointer;
+	_padding: 0;
+	_width: 100%;
+}
+.jcarousel-skin-movie .jcarousel-item .title {
+	margin-top: 5px;
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+	color: #333;
+	font-size: 14px;
+}
+.jcarousel-skin-movie .jcarousel-item .title a {
+	color: #333;
+}
+.jcarousel-skin-movie .jcarousel-item .cnt {
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+	color: #666;
+}
+.jcarousel-skin-movie .jcarousel-item .btn {
+	display: inline-block;
+	margin-top: 4px;
+	padding: 0 10px;
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+	color: #666;
+	background: #DFDFDF;
+	border-radius: 3px;
+}
+
+/* Nav Buttons */
+.jcarousel-skin-movie .jcarousel-next,
+.jcarousel-skin-movie .jcarousel-prev {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 35px;
+	height: 162px;
+	cursor: pointer;
+	background: url(btn-next.png) no-repeat;
+}
+.jcarousel-skin-movie .jcarousel-prev {
+	right: auto;
+	left: 0;
+	background-image: url(btn-prev.png);
+}
+.jcarousel-skin-movie .jcarousel-next:hover,
+.jcarousel-skin-movie .jcarousel-next:focus,
+.jcarousel-skin-movie .jcarousel-prev:hover,
+.jcarousel-skin-movie .jcarousel-prev:focus {
+	background-position: -35px 0;
+}
+.jcarousel-skin-movie .jcarousel-next:active,
+.jcarousel-skin-movie .jcarousel-prev:active {
+	background-position: -70px 0;
+}
+.jcarousel-skin-movie .jcarousel-next-disabled,
+.jcarousel-skin-movie .jcarousel-next-disabled:hover,
+.jcarousel-skin-movie .jcarousel-next-disabled:focus,
+.jcarousel-skin-movie .jcarousel-next-disabled:active,
+.jcarousel-skin-movie .jcarousel-prev-disabled,
+.jcarousel-skin-movie .jcarousel-prev-disabled:hover,
+.jcarousel-skin-movie .jcarousel-prev-disabled:focus,
+.jcarousel-skin-movie .jcarousel-prev-disabled:active {
+	cursor: default;
+	background-position: -105px 0;
+}

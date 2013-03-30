@@ -1,0 +1,10 @@
+<h3 class='related_article_title'><span>相关阅读</span></h3>
+{pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="10" keywords="$keywords"}
+<ul class='related_article_list'>
+{if $data}
+	{loop $data $r}
+	<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></li>
+	{/loop}
+{/if}
+</ul>
+{/pc}

@@ -1,0 +1,352 @@
+{template "content","tv_header"}
+<!-- Page Banner -->
+<div class='page_banner'>
+	<!-- 轮换大图 -->
+	<div class="star_flash">
+		<div class="slide" id="pbox3">
+
+			{pc:content action="position" posid="104" order="listorder DESC" num="5"}
+			{loop $data $r}
+			<div class="slide-page">
+				<img src="{thumb($r[thumb],660,346)}" width="660" height="346" />
+				<div class="slide-page-info">
+					<h3><a title="{$r[title]}" href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></h3>
+				</div>
+			</div>
+			{/loop}
+			{/pc}
+			<div class="slide-links-wrap"><span class="slide-links">
+				{pc:content	action="position" posid="104" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				{loop $data $r}
+				<a hidefocus='true' href="javascript:void(0);"></a>
+				{/loop}
+				{/pc}
+			</span></div>
+			<script>
+				$(function(){
+					window.pbox3 = make_pagebox('pbox3', {
+						links_selector: '.slide-links a',
+						current_class: 'slide-current',
+						pages_selector: '.slide-page',
+						prev_selector: '.slide-prev',
+						next_selector: '.slide-next',
+						interval: 4,
+						effect: 1
+					});
+					make_pagebox('p1_r', {
+						links_selector: '.bar_text li',
+						current_class: 'hover_sta',
+						pages_selector: '.p1_r-page'
+					});
+				});
+			</script>
+		</div>
+	</div>
+	<!-- 轮换大图结束 -->
+	<!-- Page News -->
+	<div class='page_news'>
+		<h2>龅牙哥杀进游戏圈啦</h2>
+		<p><em>话题：</em><a href="">龅牙哥杀进</a> | <a href="">龅牙杀进</a> | <a href="">龅牙哥杀进</a> | <a href="">龅牙哥杀进</a> | <a href="">龅牙进</a></p>
+		<p><a href="">[龅牙哥杀进]</a> <a href="">[龅牙哥进杀进进进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅杀进]</a> <a href="">[龅进牙哥杀进]</a></p>
+
+		<h2>龅牙哥杀进游戏圈啦</h2>
+		<p><em>相关：</em><a href="">[龅牙哥杀进]</a> <a href="">[龅牙哥进杀进]</a>  <a href="">[龅牙哥进杀进]</a> <a href="">[龅牙哥进杀进]</a><a href="">[龅杀进]</a> <a href="">[龅进牙哥杀进]</a></p>
+
+		<h2>龅牙哥杀进游戏圈啦</h2>
+		<p><a href="">[龅牙哥杀进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅杀进]</a> <a href="">[龅进牙哥杀进]</a></p>
+
+		<h2>龅牙哥杀进游戏圈啦</h2>
+		<p><a href="">[龅牙哥杀进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅牙哥进杀进]</a> <a href="">[龅杀进]</a> <a href="">[龅进牙哥杀进]</a></p>
+	</div>
+	<!-- Page News End -->
+</div>
+<!-- Page Banner End -->
+<!-- 荧屏热播 -->
+<div class='ui_slide'>
+	<h2>荧屏热播</h2>
+	<div class='ui_slide_content'>
+		<ul>
+			<li>
+				<a class='img' href=""><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='120' height='90' /></a>
+				<h4><a href='#'>英国性感女星露</a></h4>
+			</li>
+			<li>
+				<a class='img' href=""><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='120' height='90' /></a>
+				<h4><a href='#'>英国性感女星露</a></h4>
+			</li>
+			<li>
+				<a class='img' href=""><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='120' height='90' /></a>
+				<h4><a href='#'>英国性感女星露</a></h4>
+			</li>
+			<li>
+				<a class='img' href=""><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='120' height='90' /></a>
+				<h4><a href='#'>英国性感女星露</a></h4>
+			</li>
+			<li>
+				<a class='img' href=""><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='120' height='90' /></a>
+				<h4><a href='#'>英国性感女星露</a></h4>
+			</li>
+			<li>
+				<a class='img' href=""><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='120' height='90' /></a>
+				<h4><a href='#'>英国性感女星露</a></h4>
+			</li>
+		</ul>
+	</div>
+	<div class='ui_slide_nav'>
+		<a class='prev' href="">Prev</a>
+		<a class='next' href="">Next</a>
+		<a class='more' href="">更多&gt;&gt;</a>
+	</div>
+</div>
+<!-- 荧屏热播结束 -->
+
+<!-- 电视主内容 -->
+<div class='tv_content fn_clear'>
+	<!-- 主内容 -->
+	<div class='main_content fn_left'>
+		<div id="mainland_tv_news" class='tv_news'>
+			<h2>内地剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+				</ul>
+				<p><em>热播：</em><a href="#">后泰勒</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">利杂</a> | <a href="#">孝利杂</a> | <a href="#">星杉原百张</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">日本性感女</a> | <a href="#">李孝利杂</a> | <a href="#">莫文蔚纱照</a> | <a href="#">李利杂</a> | <a href="#">不见新郎白马</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a></p>
+			</div>
+			<div class='tv_news_text'>
+				<h3><a href='#'>内裤外穿！龅牙哥杀进游戏圈啦</a></h3>
+				<h4><a href="#">[性感天后李孝利杂志写]</a> <a href="#">[乡村小天后威夫特镂空裙]</a></h4>
+				<ul>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空威夫特镂裙 威夫特镂空</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特威夫特镂空威夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫裙</a></li>
+				</ul>
+			</div>
+			<a class="more">更多&gt;&gt;</a>
+		</div>
+
+		<div id="hktw_tv_news" class='tv_news'>
+			<h2>港台剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+				</ul>
+				<p><em>热播：</em><a href="#">后泰勒</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">利杂</a> | <a href="#">孝利杂</a> | <a href="#">星杉原百张</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">日本性感女</a> | <a href="#">李孝利杂</a> | <a href="#">莫文蔚纱照</a> | <a href="#">李利杂</a> | <a href="#">不见新郎白马</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a></p>
+			</div>
+			<div class='tv_news_text'>
+				<h3><a href='#'>内裤外穿！龅牙哥杀进游戏圈啦</a></h3>
+				<h4><a href="#">[性感天后李孝利杂志写]</a> <a href="#">[乡村小天后威夫特镂空裙]</a></h4>
+				<ul>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空威夫特镂裙 威夫特镂空</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特威夫特镂空威夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫裙</a></li>
+				</ul>
+			</div>
+			<a class="more">更多&gt;&gt;</a>
+		</div>
+
+		<div id="jpkr_tv_news" class='tv_news'>
+			<h2>日韩剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+				</ul>
+				<p><em>热播：</em><a href="#">后泰勒</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">利杂</a> | <a href="#">孝利杂</a> | <a href="#">星杉原百张</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">日本性感女</a> | <a href="#">李孝利杂</a> | <a href="#">莫文蔚纱照</a> | <a href="#">李利杂</a> | <a href="#">不见新郎白马</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a></p>
+			</div>
+			<div class='tv_news_text'>
+				<h3><a href='#'>内裤外穿！龅牙哥杀进游戏圈啦</a></h3>
+				<h4><a href="#">[性感天后李孝利杂志写]</a> <a href="#">[乡村小天后威夫特镂空裙]</a></h4>
+				<ul>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空威夫特镂裙 威夫特镂空</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特威夫特镂空威夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫裙</a></li>
+				</ul>
+			</div>
+			<a class="more">更多&gt;&gt;</a>
+		</div>
+
+		<div id="eu_tv_news" class='tv_news'>
+			<h2>欧美剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+				</ul>
+				<p><em>热播：</em><a href="#">后泰勒</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">利杂</a> | <a href="#">孝利杂</a> | <a href="#">星杉原百张</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">日本性感女</a> | <a href="#">李孝利杂</a> | <a href="#">莫文蔚纱照</a> | <a href="#">李利杂</a> | <a href="#">不见新郎白马</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a></p>
+			</div>
+			<div class='tv_news_text'>
+				<h3><a href='#'>内裤外穿！龅牙哥杀进游戏圈啦</a></h3>
+				<h4><a href="#">[性感天后李孝利杂志写]</a> <a href="#">[乡村小天后威夫特镂空裙]</a></h4>
+				<ul>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空威夫特镂裙 威夫特镂空</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特威夫特镂空威夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫裙</a></li>
+				</ul>
+			</div>
+			<a class="more">更多&gt;&gt;</a>
+		</div>
+
+		<div id="popular_tv_news" class='tv_news'>
+			<h2>热门综艺</h2>
+			<div class='tv_news_video'>
+				<ul>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+					<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+				</ul>
+				<p><em>热播：</em><a href="#">后泰勒</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">利杂</a> | <a href="#">孝利杂</a> | <a href="#">星杉原百张</a> | <a href="#">李孝杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">日本性感女</a> | <a href="#">李孝利杂</a> | <a href="#">莫文蔚纱照</a> | <a href="#">李利杂</a> | <a href="#">不见新郎白马</a> | <a href="#">李孝利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a> | <a href="#">李孝利杂</a> | <a href="#">李利杂</a></p>
+			</div>
+			<div class='tv_news_text'>
+				<h3><a href='#'>内裤外穿！龅牙哥杀进游戏圈啦</a></h3>
+				<h4><a href="#">[性感天后李孝利杂志写]</a> <a href="#">[乡村小天后威夫特镂空裙]</a></h4>
+				<ul>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空威夫特镂裙 威夫特镂空</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特威夫特镂空威夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威夫特镂空空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫威夫特镂空夫特镂空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫特镂空夫特空裙</a></li>
+					<li><a href="#">乡村小天后泰勒.斯威威夫特镂空威夫裙</a></li>
+				</ul>
+			</div>
+			<a class="more">更多&gt;&gt;</a>
+		</div>
+	</div>
+	<!-- 主内容结束 -->
+	<!-- 次要内容 -->
+	<div class='sub_content fn_right'>
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+			</ul>
+			<p><a href="#">陈翔</a> <a href="#"><strong>日本性感</strong></a> <a href="#">拍大片</a> <a href="#">郎白马</a> <a href="#"><strong>原杏璃百张</strong></a> <a href="#">婚纱照曝光</a> <a href="#">莫文蔚</a> <a href="#"><em>谭维维</em></a> <a href="#">皮德尔</a> <a href="#">内裤外穿</a> <a href="#"><em>日本性感</em></a> <a href="#"><em>内裤外穿</em></a> <a href="#">杉原杏璃</a> <a href="#"><em>小天后泰勒</em></a> <a href="#">性感天后</a></p>
+		</div>
+		<div class="ad_aside"><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='244' height='254' /></a></div>
+
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+			</ul>
+			<p><a href="#">陈翔</a> <a href="#"><strong>日本性感</strong></a> <a href="#">拍大片</a> <a href="#">郎白马</a> <a href="#"><strong>原杏璃百张</strong></a> <a href="#">婚纱照曝光</a> <a href="#">莫文蔚</a> <a href="#"><em>谭维维</em></a> <a href="#">皮德尔</a> <a href="#">内裤外穿</a> <a href="#"><em>日本性感</em></a> <a href="#"><em>内裤外穿</em></a> <a href="#">杉原杏璃</a> <a href="#"><em>小天后泰勒</em></a> <a href="#">性感天后</a></p>
+		</div>
+
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+			</ul>
+			<p><a href="#">陈翔</a> <a href="#"><strong>日本性感</strong></a> <a href="#">拍大片</a> <a href="#">郎白马</a> <a href="#"><strong>原杏璃百张</strong></a> <a href="#">婚纱照曝光</a> <a href="#">莫文蔚</a> <a href="#"><em>谭维维</em></a> <a href="#">皮德尔</a> <a href="#">内裤外穿</a> <a href="#"><em>日本性感</em></a> <a href="#"><em>内裤外穿</em></a> <a href="#">杉原杏璃</a> <a href="#"><em>小天后泰勒</em></a> <a href="#">性感天后</a></p>
+		</div>
+
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+			</ul>
+			<p><a href="#">陈翔</a> <a href="#"><strong>日本性感</strong></a> <a href="#">拍大片</a> <a href="#">郎白马</a> <a href="#"><strong>原杏璃百张</strong></a> <a href="#">婚纱照曝光</a> <a href="#">莫文蔚</a> <a href="#"><em>谭维维</em></a> <a href="#">皮德尔</a> <a href="#">内裤外穿</a> <a href="#"><em>日本性感</em></a> <a href="#"><em>内裤外穿</em></a> <a href="#">杉原杏璃</a> <a href="#"><em>小天后泰勒</em></a> <a href="#">性感天后</a></p>
+		</div>
+
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+			</ul>
+			<p><a href="#">陈翔</a> <a href="#"><strong>日本性感</strong></a> <a href="#">拍大片</a> <a href="#">郎白马</a> <a href="#"><strong>原杏璃百张</strong></a> <a href="#">婚纱照曝光</a> <a href="#">莫文蔚</a> <a href="#"><em>谭维维</em></a> <a href="#">皮德尔</a> <a href="#">内裤外穿</a> <a href="#"><em>日本性感</em></a> <a href="#"><em>内裤外穿</em></a> <a href="#">杉原杏璃</a> <a href="#"><em>小天后泰勒</em></a> <a href="#">性感天后</a></p>
+		</div>
+
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+				<li><a href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='70' height='70' /></a><h4><a href='#'>英国性感女星露</a></h4></li>
+			</ul>
+			<p><a href="#">陈翔</a> <a href="#"><strong>日本性感</strong></a> <a href="#">拍大片</a> <a href="#">郎白马</a> <a href="#"><strong>原杏璃百张</strong></a> <a href="#">婚纱照曝光</a> <a href="#">莫文蔚</a> <a href="#"><em>谭维维</em></a> <a href="#">皮德尔</a> <a href="#">内裤外穿</a> <a href="#"><em>日本性感</em></a> <a href="#"><em>内裤外穿</em></a> <a href="#">杉原杏璃</a> <a href="#"><em>小天后泰勒</em></a> <a href="#">性感天后</a></p>
+		</div>
+	</div>
+	<!-- 次要内容结束 -->
+</div>
+<!-- 电视主内容结束 -->
+
+<!-- 精彩片花 -->
+<div class="tv_pianhua">
+	<h2>精彩片花</h2>
+	<ul>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+		<li><a class='img' href="#"><img src="http://www.huoshow.com/upload/2012/0303/1330750663537.jpg" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em>10:11</em><h4><a href='#'>英国性感女星露</a></h4></li>
+	</ul>
+</div>
+<!-- 精彩片花结束 -->
+
+<!-- 高清剧照 -->
+<div class="tv_juzhao">
+	<h2>高清剧照</h2>
+
+</div>
+<!-- 高清剧照结束 -->
+
+<!-- Partners -->
+<div class="partners">
+	<h5 class="layer_one"><a>友情链接</a></h5>
+	<div class="layer_content">
+		<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+	</div>
+</div>
+<div class="clear"></div>
+<!-- Partners End -->
+
+{template "content","footer"}

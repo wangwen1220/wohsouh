@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+.TabbedPanels {
+	border:1px solid #dedcdd;
+	float: left;
+	clear: none;
+	width: 700px; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+	_width:697px; height:336px; _height:352px
+}
+
+
+.TabbedPanelsTabGroup { padding:0 170px; border-bottom:2px solid #d4d4d4; height:40px}
+
+
+
+.TabbedPanelsTab {
+	 width:88px; height:40px; border-left:1px solid #d4d4d4;  font-weight:bold; color:#8a8a8a; line-height:40px; text-align:center;
+	position: relative;
+	float: left;
+	
+	
+	
+	background-color: #fff;
+	list-style: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+}
+.TabbedPanelsTab2{width:88px; height:40px; border-left:1px solid #d4d4d4;  border-right:1px solid #d4d4d4; font-weight:bold; color:#8a8a8a; line-height:40px; text-align:center;
+	position: relative;
+	float: left;
+	
+	
+	
+	background-color: #fff;
+	list-style: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;}
+
+.TabbedPanelsTabHover, .TabbedPanelsTabSelected {
+	background-color: #d71061;
+	color:#fff;
+	
+	
+}
+
+.TabbedPanelsContent {
+	padding: 10px;
+	}
+
+
+.TabbedPanelsContentVisible {
+}
+
+
+.VTabbedPanels .TabbedPanelsTabGroup {
+	float: left;
+	width: 10em;
+	height: 20em;
+	background-color: #EEE;
+	position: relative;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+
+
+.VTabbedPanels .TabbedPanelsTab {
+	float: none;
+	margin: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+
+.VTabbedPanels .TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: solid 1px #999;
+}
+
+
+.VTabbedPanels .TabbedPanelsContentGroup {
+	clear: none;
+	float: left;
+	padding: 0px;
+	width: 30em;
+	height: 20em;
+}
+

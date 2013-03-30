@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-global.css' rel='stylesheet' />
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-list'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main'>
+			<div class='ui-content-header'>
+				<h2 class='title'>{$CATEGORYS[$catid][catname]}</h2>
+				<!--<div class='link'><a class='cur' href='/index.php?m=content&c=index&a=lists&catid=217'>视频攻略</a> <a href='/index.php?m=content&c=index&a=lists&catid=218'>资讯</a> <a href='/index.php?m=content&c=index&a=lists&catid=223'>专题推荐</a></div>--><div class='link'>{loop subcat($catid,0,0,$siteid) $r}<a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}">{$r[catname]}</a> {/loop}</div>
+			</div>
+			<div class='ui-content-list'>
+			{pc:content action="lists" catid="$catid" num="15" order="id DESC" page="$page"}
+		     {loop $data $r}
+				<div class='ui-content-item'>
+					<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],138,103)}' alt='{$r[title]}' width='138' height='103' /></a>
+					<h2 class='title'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{$r[title]}</a></h2>
+					<div class='info'><em>{getCatNameFromCatid($r[catid])}</em> 发表时间：{date($r['inputtime'])}</div>
+					<p class='cnt'>{$r['description']}<a class='detail' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>[详细]</a></p>
+				</div>
+			{/loop}
+			{/pc}
+			</div>
+			<div id='pager' class="pager ui-pager">{$pages}<!--<span>1022条</span><span class="disabled">首页</span><span class="disabled">上一页</span><span class="num current">1</span><a class='num' href="#">2</a><a class='num' href="#">3</a><a class='num' href="#">4</a><span class='ellipsis'>...</span><a class='num' href="#">199</a><a href="#">下一页</a><a href="#">末页</a>--></div>
+
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-rdtj'>
+				<h2 class='ui-box-side-title'>热点推荐</h2>
+				{pc:content  action="rand_news_hothits" "260,263,272,286,304,310,316" newsnum="12"}
+				{loop $data $r}
+				{if $n==1 || $n==7}
+				<h3 class='subtitle'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],70,'')}</a></h3>
+				{else}
+				{if $n==2}<ul class='ui-list'>{/if}
+					<li class='ui-list-item'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],70,'')}</a></li>
+				{if $n==12}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+
+			<div class='ad'><a href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='280' height='248' /></a></div>
+
+			<div class='ui-box-side ui-box-xyx'>
+				<h2 class='ui-box-side-title'>新游戏</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="483" order="listorder DESC" num="3" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],73,73)}' width='73' height='73' /></a>
+						<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+				<ul class='ui-list ui-list-float hr'>
+				{pc:special action="get_special_pos" posid="15" order="inputtime DESC" limit="24"}
+				{loop $data $r}
+					<li class='ui-list-item'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{$r[special_name]}</a></li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-sptj'>
+				<h2 class='ui-box-side-title'>视频推荐</h2>
+				{pc:content  action="position" posid="484" order="listorder DESC" num="12" }
+   				{loop $data $r}
+				{if $n<3}
+				{if $n==1}<ul class='ui-img-list ui-img-list-plus'>{/if}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+						<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{if $n==2}</ul>{/if}
+				{else}
+				{if $n==3}<ul class='ui-list ui-list-float'>{/if}
+				<li class='ui-list-item'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],30,'')}</a></li>
+				{if $n==12}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-wydg'>
+				<h2 class='ui-box-side-title'>网游大观</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="485" order="listorder DESC" num="6" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+						<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

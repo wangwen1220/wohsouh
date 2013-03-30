@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>模特_模特大赛_火秀超模_火秀网</title>
+	<meta name='keywords' content='人体模特,嫩模,车模,模特走秀,模特大赛,T台秀' />
+	<meta name='description' content='火秀超模频道提供丰富的模特资讯,包括人体模特、模特走秀、模特大赛、车模大赛和经典的嫩模图片,是众多模特爱好者的集中地。' />
+	<meta name='author' content='火秀' />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_supermodel.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<!--<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.kandytabs.js"></script>-->
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<!--[if IE 6]>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/DD_belatedPNG.js"></script>
+	<script>
+		/* 示例 */
+		DD_belatedPNG.fix('img,.meili_paixing,.meili_anniu a,.yingshi_reying_zi a:hover,.yingshi_reying_zi a.dianying_moren,#nav2 ul li a:hover,#nav2 ul li .nav_moren');
+		/* 将单引号中的内容修改为你使用了png图片的样式，与css中文件一样即可 */
+		/* 如果要直接插入png图片，在单引号内加入img即可。 */
+	</script>
+	<![endif]-->
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body class="body_bg">
+	<!--Site Header-->
+	<div class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common">
+						<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>
+					</div>
+				</div>
+
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+							$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--Site Header End-->
+	<!--Navigator-->
+	<div class="nav_body">
+		<div class="nav_bg">
+		<h1 class="channel_logo"><a href="/index.php?m=content&c=index&a=lists&catid=109" title="火秀超模首页">火秀超模频道</a></h1>
+		<div id="sub_channel">
+			<ul>
+		<li><a href="/index.php?m=content&c=index&a=lists&catid=110">超模资讯</a></li>
+		<li><a href="/index.php?m=content&c=index&a=lists&catid=111">模特大赛</a></li>
+		<li><a href="/index.php?m=content&c=index&a=lists&catid=112">名模专区</a></li>
+		<li><a href="/index.php?m=content&c=index&a=lists&catid=113">T台秀</a></li>
+		<li><a href="/index.php?m=content&c=index&a=lists&catid=114">超模写真</a></li>
+			</ul>
+		</div>
+		</div>
+	</div>
+	<!--Navigator End-->
+
+<div class="search">
+	<form method="get" name="search" id="search" action="/app/" target="_blank" onSubmit="return checkSForm()">
+	<input type="hidden" value="search" name="app"/>
+	<input type="hidden" value="index" name="controller"/>
+	<input type="hidden" value="search" name="action"/>
+
+	<input type="text" value="请输入关键字" id="search_wd" name="wd" onFocus="clearKeyword()" onBlur="clearKeyword()"/>
+	<select name="type" id="search_type" >
+		<option value="article">新闻</option>
+		<option value="all">全站</option>
+		<option value="picture">图片</option>
+		<option value="video">视频</option>
+	</select>
+	<input type="submit" id="search_submit" value="搜 索"/>
+	</form>
+	<span class="search_text">
+
+	</span>
+</div>
+
+<script>
+	$(function(){
+	window.clearKeyword = function(){
+		var search_wd = $.trim($("#search_wd").val());
+		if(search_wd=='请输入关键字'){
+		$("#search_wd").val('');
+		}
+		if(search_wd==''){
+		$("#search_wd").val('请输入关键字');
+		}
+	}
+	window.checkSForm = function()
+	{
+		var search_wd = $.trim($("#search_wd").val());
+		if(search_wd=='请输入关键字' || search_wd==''){
+		alert('请输入关键字');
+		return false;
+		}
+	}
+	})
+</script><!--Main Body-->
+<div class="main_body">
+		<div class="con_box_main">
+				<div class="con_box_1">
+
+		<!--Slide-->
+			<div class="music_banner">
+				<div class="common-roll-slide" id="huoshow_events_saishi_index_image">
+					<div class="common-roll-slide-body">
+
+						<div class="common-roll-slide-pages">
+																		<div class="common-roll-slide-page">
+			<div>
+			<a href="/2012/0210/54015.shtml" target="_blank"><img alt="Angelababy发声明否认结婚 保留追究权利" src="http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg"/></a>
+			</div>
+			<div class="common-roll-slide-page-info" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="/2012/0210/54015.shtml" target="_blank">Angelababy发声明否认结婚 保留追究权利</a></h3>
+			<p><a href="/2012/0210/54015.shtml" target="_blank">黄晓明与杨颖(Angelababy)近日被港媒传已秘密登记结婚，所谓的两人在内地注册婚书也随之曝光。今日有一份疑似杨颖经纪公司的声明在微博上曝光，该声明代替杨颖否认与黄晓明婚讯，在声</a></p>
+			</div>
+			</div>
+			</div>
+									<div class="common-roll-slide-page">
+			<div>
+			<a href="/2012/0209/53702.shtml" target="_blank"><img alt="嫩模诸葛梓岐将嫁富二代与“宿敌”陈法拉成妯娌" src="http://pnews.wjy.huoshow.com/uploadfile/2012/0423/20120423023437748.jpg"/></a>
+			</div>
+			<div class="common-roll-slide-page-info" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="/2012/0209/53702.shtml" target="_blank">嫩模诸葛梓岐将嫁富二代与&ldquo;宿敌&rdquo;</a></h3>
+			<p><a href="/2012/0209/53702.shtml" target="_blank">据微博&ldquo;HKChannel&rdquo;援引港媒的消息，名模诸葛梓岐将于3月20日嫁Neway二公子薛嘉麟(中星集团控股有限公司主席)，届时会在会展Grand Hall筵开138席举行盛大喜宴，掷800万打造世纪婚宴</a></p>
+			</div>
+			</div>
+			</div>
+						 			</div>
+			<div class="common-roll-slide-nav">
+			<span class="common-roll-slide-nav-right">
+			<a href="#" class="common-roll-slide-prev">&nbsp;</a>
+			<a href="#" class="common-roll-slide-next">&nbsp;</a>
+			</span>
+			<span class="common-roll-slide-nav-links">
+						<a href="#">1</a>
+						<a href="#">1</a>
+						</span>
+			</div></div>
+		</div>
+			<script>
+window.slide_huoshow_events_saishi_index_image = make_pagebox('huoshow_events_saishi_index_image', {
+	links_selector: '.common-roll-slide-nav-links a',
+		pages_selector: '.common-roll-slide-page',
+		prev_selector: '.common-roll-slide-prev',
+		next_selector: '.common-roll-slide-next',
+		current_class: 'common-roll-slide-curr',
+		interval: 5,
+		effect: 1
+	});
+		</script>
+</div>
+	<!-- slide end -->
+
+	<!-- center content start -->
+		<div class='ui_content_center fn_left'>
+			<div class='ui_news ui_main_news'>
+										<h1 class='ui_news_title'>Angelababy发声明否认结婚 保留追究权利</h1>
+												<ul class='ui_news_list'>
+
+					<li class='ui_news_list_item'>
+						<em>赛事：</em>
+																		<a href='/2012/0209/53702.shtml' title='mytitle'>[嫩模诸葛梓岐将嫁富二]</a>
+												<a href='http://pnews.trunk.huoshow.com/2012/0209/53694.shtml' title='mytitle'>[女模狂吃不胖 0.5米]</a>
+																	</li>
+										<li class='ui_news_list_item'>
+						<em>助阵：</em>
+																		<a href='http://pnews.trunk.huoshow.com/2012/0209/53688.shtml' title='mytitle'>[米兰达&middot;可儿与罗西&middot;]</a>
+												<a href='http://pnews.trunk.huoshow.com/2012/0209/53684.shtml' title='mytitle'>[维多利亚的秘密超模预]</a>
+																	</li>
+				</ul>
+			</div>
+
+			<div class='ui_news ui_sub_news'>
+										<h2 class='ui_news_title'>Angelababy发声明否认结婚 保留追究权利</h2>
+										<ul class='ui_news_list'>
+					<li class='ui_news_list_item'>
+						<em>赛事：</em>
+																		<a href='/2012/0209/53702.shtml' title='mytitle'>[嫩模诸葛梓岐将嫁富二]</a>
+												<a href='http://pnews.trunk.huoshow.com/2012/0209/53694.shtml' title='mytitle'>[女模狂吃不胖 0.5米]</a>
+																	</li>
+					<li class='ui_news_list_item'>
+						<em>助阵：</em>
+																		<a href='http://pnews.trunk.huoshow.com/2012/0209/53688.shtml' title='mytitle'>[米兰达&middot;可儿与罗西&middot;]</a>
+												<a href='http://pnews.trunk.huoshow.com/2012/0209/53684.shtml' title='mytitle'>[维多利亚的秘密超模预]</a>
+																	</li>
+				</ul>
+			</div>
+
+			<div class='ui_news ui_list_news'>
+										<h2 class='ui_news_title'>Angelababy发声明否认结婚 保留追究权利</h2>
+											<ul class='ui_news_list'>
+											<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53694.shtml' title='mytitle'>女模狂吃不胖 0.5米蛮腰被称"人类沙漏"</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53688.shtml' title='mytitle'>米兰达·可儿与罗西·汉丁顿素颜青涩照曝光</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53684.shtml' title='mytitle'>维多利亚的秘密超模预热情人节 阿德瑞娜狂挤乳沟</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53664.shtml' title='mytitle'>巨乳乔丹夜店狂欢 与神秘男车内豪放调情</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0130/51001.shtml' title='mytitle'>张馨予2011大赚八位数 狂置豪宅不靠吴卓羲</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0129/50713.shtml' title='mytitle'>许颖率师妹性感拜年 露沟许愿“爆索弹”</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0129/50666.shtml' title='mytitle'>嫩模Jessica C.前男友搭新欢 夜店当中玩激吻</a>
+					</li>
+								<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/' title='mytitle'>盘点2011靠曝床照艳照爆红的十大嫩模</a>
+					</li>
+										</ul>
+			</div>
+		</div>
+		<!-- center content end -->
+
+				<div class="flash_right">
+						<div class='model_focus'>
+				<h2 class='ui_title'>模界焦点</h2>
+				<ul class='ui_img_list'>
+													<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='http://pnews.trunk.huoshow.com/staticpage/2011/beauty_1214/54143.html' title='mytitle'><img src='http://pnews.wjy.huoshow.com/uploadfile/2012/0417/20120417023437895.jpg' width='109' height='83' alt='myalt' /></a>
+						<a class='ui_img_list_item_text' href='http://pnews.trunk.huoshow.com/staticpage/2011/beauty_1214/54143.html' title='mytitle'>嫩模于梓棋粉</a>
+					</li>
+										<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='/2012/0210/54004.shtml' title='mytitle'><img src='http://pnews.wjy.huoshow.com/uploadfile/2012/0417/20120417023437724.jpg' width='109' height='83' alt='myalt' /></a>
+						<a class='ui_img_list_item_text' href='/2012/0210/54004.shtml' title='mytitle'>Angelababy发</a>
+					</li>
+														</ul>
+
+				<ul class='ui_list'>
+													<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>视频：张馨予沙滩玩纯情 白衫湿身</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>22岁嫩模靠爆乳发财 出道两年5千</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>陈燃变身时尚小魔女 粗眉短发灵气</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>裸模汤加丽曾得体操金牌 张筱雨人</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>世界超模北京选手&ldquo;低龄化&rdquo;最小14</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>宅男女神张馨予领衔女星&quot;裸体彩绘&quot;</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>全球小姐们的那些尴尬事：英国小姐</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>白俄罗斯总统称美女是&quot;战略资源&quot; </a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>熊黛林言好想有人送钻戒 疑似想结</a>
+					</li>
+										<li class='ui_list_item'>
+						<a class='ui_list_item_link' href='http://pnews.trunk.huoshow.com/' title='mytitle'>名模凯莉推特被疑山寨 愤怒发裸照</a>
+					</li>
+														</ul>
+			</div>
+			</div>
+				<div class="clear"></div>
+
+				</div>
+				<div class="con_box_2">
+				</div>
+		</div>
+		<div class="main_p">
+
+				<div class="main_p_l">
+						<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_index_leftimages">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+						<div class="common-roll-slide-page">
+			<div>
+			<a href="/2012/0210/54015.shtml" target="_blank"><img alt="" src="http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="/2012/0210/54015.shtml" target="_blank">Angelababy发声明否认结婚 </a></h3>
+			<p><a href="/2012/0210/54015.shtml" target="_blank"></a></p>
+			</div>
+			</div>
+			</div>
+									</div> </div>
+		</div>
+</div>
+												<div class="s_pic">
+
+							<ul>
+
+							 							<li><span class="video_pic_bg"><a href="http://pnews.trunk.huoshow.com/2011/0922/24681.shtml" title="选美大赛20强专访 杜倩文:一切尽心 顺其自然" target="_blank"><img src="http://pnews.wjy.huoshow.com/uploadfile/2012/0419/20120419033821512.jpg" width="134" height="83" /></a></span><span class="video_text"><a href="http://pnews.trunk.huoshow.com/2011/0922/24681.shtml" title="选美大赛20强专访 杜倩文:一切尽心 顺其自然" target="_blank"> 选美大赛20强</a></span></li>
+														<li><span class="video_pic_bg"><a href="http://pnews.trunk.huoshow.com/" title="模特歌手林小小 手机用出时尚大牌范儿" target="_blank"><img src="2011/1107/1320650763378.jpg" width="134" height="83" /></a></span><span class="video_text"><a href="http://pnews.trunk.huoshow.com/" title="模特歌手林小小 手机用出时尚大牌范儿" target="_blank"> 模特歌手林小</a></span></li>
+							
+														</ul>
+						</div>
+
+					   <ul class="main_ul">
+
+														   <li><a href="http://pnews.trunk.huoshow.com/" title="Jena Theo秀场模特不慎露点 沉着应付" target="_blank">Jena Theo秀场模特不慎露点 沉着应付</a></li>
+														   <li><a href="http://pnews.trunk.huoshow.com/" title="车模彭梦：每位模特都应该自信的展现自我" target="_blank">车模彭梦：每位模特都应该自信的展现自我</a></li>
+														   <li><a href="http://pnews.trunk.huoshow.com/" title="视频: 2011春韩国车展车模秀" target="_blank">视频: 2011春韩国车展车模秀</a></li>
+														   <li><a href="http://pnews.trunk.huoshow.com/" title="视频: 2011韩国车展克尔维特跑车模特" target="_blank">视频: 2011韩国车展克尔维特跑车模特</a></li>
+														   <li><a href="http://pnews.trunk.huoshow.com/" title="视频:实拍超性感模特惹火装惊艳车展引围观" target="_blank">视频:实拍超性感模特惹火装惊艳车展引围观</a></li>
+														   <li><a href="http://pnews.trunk.huoshow.com/" title="视频: 国际胸模Lucy Pinder私密写真" target="_blank">视频: 国际胸模Lucy Pinder私密写真</a></li>
+							
+
+						</ul>
+			<div class='ui_interview'>
+				<h3 class='ui_title'>名模专访</h3>
+				<div class='ui_interview_content'>
+					<img src='http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg' alt='myalt' width='120' height='90' />
+					<h4>爱情不是魔鬼</h4>
+					<p>近日，演员杨童舒做客网易娱乐，分享了自己对爱情的看法。<a href='#' title='点击查看详细内容'>[详细]</a></p>
+				</div>
+
+				<ul class='ui_list'>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出街携女出街时尚依旧</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出街携女出街携女出街时尚依旧</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出尚依旧</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出携女出街街时尚依旧</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>新面孔模特大赛</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出街携女出街时尚依旧</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出街携女携女出街时尚依旧</a></li>
+					<li class='ui_list_item'><a href='#' title='mytitle'>超模携女出街携女出街时尚依旧</a></li>
+				</ul>
+			</div>
+				</div>
+				
+				<div class="text_box ui_news_wrapper">
+				<div class='ui_news ui_list_news model_contest'>
+				<h3 class='ui_news_title'>模特大赛 <em>Model contest</em></h3>
+				<div class='ui_intro'>
+														<img src='http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg' width='106' height='95' alt='myalt' />
+					<h4>Angelababy发声明否认结婚 保留追究权利</h4>
+					<p>黄晓明与杨颖(Angelababy)近日被港媒传已秘密登记结婚，所谓的两人在内地注册婚书也随之曝光。今日有一份疑<a href='/2012/0210/54015.shtml' title='Angelababy发声明否认结婚 保留追究权利'>[详细]</a></p>
+													</div>
+				<ul class='ui_news_list'>
+													<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53694.shtml' title='mytitle'>女模狂吃不胖 0.5米蛮腰被称"人类沙漏"</a>
+					</li>
+									<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/html/staticpage/2012/gangtairedian_0209/53691.html' title='mytitle'>嫩模诸葛梓岐将嫁富二代与“宿敌”陈法拉成妯娌</a>
+					</li>
+									<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53688.shtml' title='mytitle'>米兰达·可儿与罗西·汉丁顿素颜青涩照曝光</a>
+					</li>
+									<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53684.shtml' title='mytitle'>维多利亚的秘密超模预热情人节 阿德瑞娜狂挤乳沟</a>
+					</li>
+									<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53664.shtml' title='mytitle'>巨乳乔丹夜店狂欢 与神秘男车内豪放调情</a>
+					</li>
+									<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0130/51001.shtml' title='mytitle'>张馨予2011大赚八位数 狂置豪宅不靠吴卓羲</a>
+					</li>
+									<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0129/50713.shtml' title='mytitle'>许颖率师妹性感拜年 露沟许愿“爆索弹”</a>
+					</li>
+								</ul>
+			</div>
+
+			<div class='ui_news ui_list_news model_zone'>
+				<h3 class='ui_news_title'>名模专区 <em>Model zone</em></h3>
+				<ul class='ui_img_list'>
+													<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='http://pnews.trunk.huoshow.com/staticpage/2011/beauty_1214/54143.html' title='mytitle'><img src='http://pnews.wjy.huoshow.com/uploadfile/2012/0417/20120417023437895.jpg' width='110' height='90' alt='myalt' /></a>
+						<a class='ui_img_list_item_text' href='http://pnews.trunk.huoshow.com/staticpage/2011/beauty_1214/54143.html' title='mytitle'>嫩模于梓棋粉</a>
+					</li>
+										<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='/2012/0210/54004.shtml' title='mytitle'><img src='http://pnews.wjy.huoshow.com/uploadfile/2012/0417/20120417023437724.jpg' width='110' height='90' alt='myalt' /></a>
+						<a class='ui_img_list_item_text' href='/2012/0210/54004.shtml' title='mytitle'>Angelababy发</a>
+					</li>
+										<li class='ui_img_list_item'>
+						<a class='ui_img_list_item_img' href='http://pnews.trunk.huoshow.com/' title='mytitle'><img src='' width='110' height='90' alt='myalt' /></a>
+						<a class='ui_img_list_item_text' href='http://pnews.trunk.huoshow.com/' title='mytitle'>第22届世界超</a>
+					</li>
+														</ul>
+				<ul class='ui_news_list'>
+															<li class='ui_news_list_item'>
+						<a href='/2012/0210/54015.shtml' title='mytitle'>Angelababy发声明否认结婚 保留追究权利</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='/2012/0209/53702.shtml' title='mytitle'>嫩模诸葛梓岐将嫁富二代与“宿敌”陈法拉成妯娌</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53694.shtml' title='mytitle'>女模狂吃不胖 0.5米蛮腰被称"人类沙漏"</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53688.shtml' title='mytitle'>米兰达·可儿与罗西·汉丁顿素颜青涩照曝光</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53684.shtml' title='mytitle'>维多利亚的秘密超模预热情人节 阿德瑞娜狂挤乳沟</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0209/53664.shtml' title='mytitle'>巨乳乔丹夜店狂欢 与神秘男车内豪放调情</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0130/51001.shtml' title='mytitle'>张馨予2011大赚八位数 狂置豪宅不靠吴卓羲</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0129/50713.shtml' title='mytitle'>许颖率师妹性感拜年 露沟许愿“爆索弹”</a>
+					</li>
+										<li class='ui_news_list_item'>
+						<a href='http://pnews.trunk.huoshow.com/2012/0129/50666.shtml' title='mytitle'>嫩模Jessica C.前男友搭新欢 夜店当中玩激吻</a>
+					</li>
+														</ul>
+			</div>
+				</div>
+
+				<div class="main_p_r">
+				<p class="p_img"><script language="javascript" src="http://pnews.wwen.huoshow.com/index.php?m=poster&c=index&a=show_poster&id=11"></script></p>
+				<!--include virtual="/api.php?op=supermodel&p=get_supermodel_index_hot_news_rand&siteid=1"-->
+				<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+				<!--<div class='ranking'>
+				<h2 class='ui_title'>热点排行</h2>
+
+				<ul class='ui_list'>
+					<li class='ui_list_item ui_list_item1'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模哪些的全局设置</a>
+					</li>
+					<li class='ui_list_item ui_list_item2'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块局设置</a>
+					</li>
+					<li class='ui_list_item ui_list_item3'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块局设置</a>
+					</li>
+					<li class='ui_list_item ui_list_item4'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块全局设置</a>
+					</li>
+					<li class='ui_list_item ui_list_item5'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块的的全局设置</a>
+					</li>
+					<li class='ui_list_item ui_list_item7'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块的有全局设置</a>
+					</li>
+					</li>
+					<li class='ui_list_item ui_list_item8'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块的有哪的全局设置</a>
+					</li>
+					</li>
+					<li class='ui_list_item ui_list_item9'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块的有局设置</a>
+					</li>
+					<li class='ui_list_item ui_list_item10'>
+						<a class='ui_list_item_link' href='#' title='mytitle'>可以使用 模块的有哪些的全局设置</a>
+					</li>
+				</ul>
+			</div>-->
+
+			<div class='clear'></div>
+			</div>
+
+
+		  </div>
+			 <div class="ad">				<p class="p_img"><script language="javascript" src="http://pnews.wwen.huoshow.com/index.php?m=poster&c=index&a=show_poster&id=12"></script></p>				</div>
+
+		<div class="con_box">
+				<div class="bar_box"><span class="ti_1"></span><a class="more_model"  target="_blank" href="http://www.huoshow.com/supermodel/modelevent/">更多</a></div>
+				<div class="clear"></div>
+				<div class="pic_box">
+				<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_motedasai_images">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+						<div class="common-roll-slide-page">
+			<div>
+			<a href="/2012/0210/54015.shtml" target="_blank"><img alt="/2012/0210/54015.shtml" src="http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="/2012/0210/54015.shtml" target="_blank">Angelababy发声明否认结婚 保留追究权利</a></h3>
+			<p><a href="/2012/0210/54015.shtml" target="_blank">黄晓明与杨颖(Angelababy)近日被港媒传已秘密登记结婚，所谓的两人在内地注册婚书也随之曝光。今日有一份疑似杨颖经纪公司的声明在微博上曝光，该声明代替杨颖否认与黄晓明婚讯，在声</a></p>
+			</div>
+			</div>
+			</div>
+									</div> </div>
+		</div>
+</div>
+						<div class="s_pic">
+							<ul>
+																					
+							 </ul>
+						</div>
+				</div>
+				<div class="text_box">
+														<h3 class="color1"><a href="/2012/0210/54015.shtml" target="_blank"> Angelababy发声明否认结婚 保留追究权利</a></h3>																		<div class="s_top_news">
+						<p><strong class="text_gray">独家：</strong><span>[<a href="http://pnews.trunk.huoshow.com/2012/0209/53694.shtml" target="_blank">女模狂吃不胖 0.5米蛮腰被称"人类沙漏"</a>]</span></p>
+						<p><strong class="text_gray">独家：</strong><span>[<a href="http://pnews.trunk.huoshow.com/2012/0209/53688.shtml" target="_blank">米兰达·可儿与罗西·汉丁顿素颜青涩照曝光</a>]</span></p>
+						</div>											<ul class="con_ul">
+																					<li><a href="http://pnews.trunk.huoshow.com/2012/0209/53684.shtml" target="_blank">维多利亚的秘密超模预热情人节 阿德瑞娜狂挤乳沟</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/2012/0209/53664.shtml" target="_blank">巨乳乔丹夜店狂欢 与神秘男车内豪放调情</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/2012/0130/51001.shtml" target="_blank">张馨予2011大赚八位数 狂置豪宅不靠吴卓羲</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/2012/0129/50713.shtml" target="_blank">许颖率师妹性感拜年 露沟许愿“爆索弹”</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/2012/0129/50666.shtml" target="_blank">嫩模Jessica C.前男友搭新欢 夜店当中玩激吻</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/" target="_blank">盘点2011靠曝床照艳照爆红的十大嫩模</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/" target="_blank">“英伦第一美胸”凯莉·布鲁克秀圣诞变爆乳女</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/" target="_blank">嫩模何佩瑜当众被撕烂衬衫露内衣</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/" target="_blank">全球最性感女富豪坐拥21亿美元曾当名模赚零钱</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/" target="_blank">因绯闻上位走红 提携台湾嫩模周董功不可没</a></li>
+														<li><a href="http://pnews.trunk.huoshow.com/" target="_blank">最高水准超级名模PK 谁是最完美的“星女郎”？</a></li>
+														
+						</ul>
+				</div>
+				<div class="ptext_box">
+						<div class="r_bar"><h4>精彩回顾</h4></div>
+						<ul class="p_text">
+						 												<li><a href="http://pnews.trunk.huoshow.com/2012/0111/48313.shtml" title="第十九届世界顶尖超级模特大赛北京总决赛" target="_blank"><img src="http://pnews.wjy.huoshow.com/uploadfile/2012/0422/20120422060624377.jpg" width="106" height="95" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0111/48313.shtml" title="第十九届世界顶尖超级模特大赛北京总决赛"> 第十九届世界</a></span></li>
+												<li><a href="http://pnews.trunk.huoshow.com/" title="亚姐决赛场面香艳 佳丽被评“是非精”“伪人奖”即黑脸" target="_blank"><img src="2012/0105/1325752923374.jpg" width="106" height="95" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="亚姐决赛场面香艳 佳丽被评“是非精”“伪人奖”即黑脸"> 亚姐决赛场面</a></span></li>
+						
+
+											   </ul>
+						 <div class="clear"></div>
+						 <ul class="con_ul_r">
+						 							 <li><a href="http://pnews.trunk.huoshow.com/">亚姐佳丽决赛前夕又泄春光  </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">亚姐候选佳丽决赛遭冷箭 被 </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">亚洲先生总决赛 台湾型男邱 </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">新丝路模特总决赛收官 &ldquo;超 </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">揭秘亚姐们淫乱的坎坷人生： </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">亚姐着短裙亮相否认被迫剃毛 </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">盘点世界美人榜 美臀最性感 </a></li>
+
+													 <li><a href="http://pnews.trunk.huoshow.com/">亚洲新人模特选拔大赛中国区 </a></li>
+
+																								 </ul>
+				</div>
+				<div class="clear"></div>
+		</div>
+
+		 <div class="con_box" id="mingmo">
+		 		<div class="bar_box"><span class="ti_2"></span><a class="more_model"  target="_blank" href="http://www.huoshow.com/supermodel/modelfam">更多</a></div>
+				<div class="clear"></div>
+				<div class="pic_box">
+				<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_mingmozhuanqu">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+						<div class="common-roll-slide-page">
+			<div>
+			<a href="/2012/0210/54015.shtml" target="_blank"><img alt="Angelababy发声明否认结婚 保留追究权利 " src="http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="/2012/0210/54015.shtml" target="_blank">Angelababy发声明否认结婚 保留追究权利 </a></h3>
+			<p><a href="/2012/0210/54015.shtml" target="_blank"></a></p>
+			</div>
+			</div>
+			</div>
+									</div> </div>
+		</div>
+</div>
+						<div class="s_pic">
+							<ul>
+																					
+														 </ul>
+						</div>
+				</div>
+				<div class="text_box">
+														<h3 class="color2"><a href="http://pnews.trunk.huoshow.com/" target="_blank">第22届世界超模中国总决赛 洛阳姑娘赵婉秋摘冠</a></h3>
+														<div class="s_top_news">
+								<p><strong class="text_gray">独家：</strong><span>[<a href="http://pnews.trunk.huoshow.com/" target="_blank">22岁嫩模靠爆乳发财 出道两年5千万买两房</a>]</span></p>
+				<p><strong class="text_gray">独家：</strong><span>[<a href="http://pnews.trunk.huoshow.com/" target="_blank">陈燃变身时尚小魔女 粗眉短发灵气逼人</a>]</span></p>
+				                </div>
+						<ul class="con_ul">
+																				   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">裸模汤加丽曾得体操金牌 张筱雨人体写真最大胆</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">世界超模北京选手“低龄化”最小14岁令人忧虑</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">宅男女神张馨予领衔女星"裸体彩绘"艳妆</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">全球小姐们的那些尴尬事：英国小姐恐毁英超</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">白俄罗斯总统称美女是"战略资源" 限制出境当模特</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">熊黛林言好想有人送钻戒 疑似想结婚郭富城不肯</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">名模凯莉推特被疑山寨 愤怒发裸照验明正身</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">熊黛林称爱情事业同在 男方必须要有经济实力</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">嫩模谢芷蕙拍写真离奇作呕 称不排除去验身</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">艳照嫩模Jessica C代言内衣 性感黑色蕾丝惹火</a></li>
+						   						   <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">“小眼睛”国际脸超模组合纪莉莉李振同走秀</a></li>
+						   																				</ul>
+				</div>
+				<div class="ptext_box" id="pbox2">
+						<div class="r_bar"><span href="javascript:;">国内名模</span><span href="javascript:;" class="r_bar_hover">国际名模</span></div>
+						<div class="charts_block">
+								  				<ul class="p_text">
+
+												<li><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0209/53702.shtml" title="嫩模诸葛梓岐将嫁富二代与“宿敌”陈法拉成妯娌"><img alt="嫩模诸葛梓岐将嫁富二代与“宿敌”陈法拉成妯娌" src="http://pnews.wjy.huoshow.com/uploadfile/2012/0422/20120422060629922.jpg" width="106" height="95" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0209/53702.shtml" title="嫩模诸葛梓岐将嫁富二代与“宿敌”陈法拉成妯娌">嫩模诸葛梓岐</a></span></li>
+												<li><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0209/53694.shtml" title="女模狂吃不胖 0.5米蛮腰被称"人类沙漏""><img alt="女模狂吃不胖 0.5米蛮腰被称"人类沙漏"" src="2012/0209/1328777048234.jpg" width="106" height="95" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0209/53694.shtml" title="女模狂吃不胖 0.5米蛮腰被称"人类沙漏"">女模狂吃不胖</a></span></li>
+						
+						</ul>
+						<ul class="con_ul_r">
+
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0209/53688.shtml">米兰达&middot;可儿与罗西&middot;汉丁顿</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0209/53684.shtml">维多利亚的秘密超模预热情人</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0209/53664.shtml">巨乳乔丹夜店狂欢 与神秘男</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0130/51001.shtml">张馨予2011大赚八位数 狂置</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0129/50713.shtml">许颖率师妹性感拜年 露沟许</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0129/50666.shtml">嫩模Jessica C.前男友搭新</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">盘点2011靠曝床照艳照爆红的</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">&ldquo;英伦第一美胸&rdquo;凯莉&middot;布鲁</a></li>
+						
+						</ul>
+							   					 </div>
+	   					 <div class="charts_block">
+						 		 				 <ul class="p_text">
+
+												 <li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="视频：张馨予沙滩玩纯情 白衫湿身爆乳诱惑"><img alt="视频：张馨予沙滩玩纯情 白衫湿身爆乳诱惑" src="2011/1208/1323326661947.jpg" width="106" height="95" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="视频：张馨予沙滩玩纯情 白衫湿身爆乳诱惑">视频：张馨予</a></span></li>
+												 <li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="22岁嫩模靠爆乳发财 出道两年5千万买两房"><img alt="22岁嫩模靠爆乳发财 出道两年5千万买两房" src="2011/1208/1323326407231.jpg" width="106" height="95" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="22岁嫩模靠爆乳发财 出道两年5千万买两房">22岁嫩模靠爆</a></span></li>
+												</ul>
+
+						<ul class="con_ul_r">
+												<li><a href="http://pnews.trunk.huoshow.com/">22岁嫩模靠爆乳发财 出道两</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">陈燃变身时尚小魔女 粗眉短</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">裸模汤加丽曾得体操金牌 张</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">世界超模北京选手&ldquo;低龄化&rdquo;</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">宅男女神张馨予领衔女星&quot;裸</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">全球小姐们的那些尴尬事：英</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">白俄罗斯总统称美女是&quot;战略</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/">熊黛林言好想有人送钻戒 疑</a></li>
+												</ul>
+												</div>
+		<script>
+		  $(function(){
+			window.pbox1 = make_pagebox('pbox2', {
+			  links_selector: '.r_bar span',
+			  current_class: 'r_bar_hover',
+			  pages_selector: '.charts_block',
+			  event_type: 'mouseover'
+			});
+		  });
+
+		</script>
+
+				</div>
+
+				<div class="clear"></div>
+		</div>
+
+		 <div class="con_box" id="ttai">
+				 <div class="bar_box"><span class="ti_3"></span><a class="more_model"  target="_blank" href="http://www.huoshow.com/supermodel/modeltshow">更多</a></div>
+				<div class="clear"></div>
+				<div class="pic_box">
+				<div class="channel_slide">
+<div class="common-roll-slide" id="huoshow_supermodel_ttaixiuchang_images">
+		<div class="common-roll-slide-body">
+		<div class="common-roll-slide-pages">
+						<div class="common-roll-slide-page">
+			<div>
+			<a href="/2012/0210/54015.shtml" target="_blank"><img alt="Angelababy发声明否认结婚 保留追究权利" src="http://pnews.wjy.huoshow.com/uploadfile/2012/0420/20120420041914235.jpg"/></a>
+			</div>
+			<div class="common-roll-slide-page-info"  style="padding-bottom:0;" >
+			<div class="common-roll-slide-page-info-text">
+			<h3><a href="/2012/0210/54015.shtml" target="_blank">Angelababy发声明否认结婚 保留追究权利</a></h3>
+			<p><a href="/2012/0210/54015.shtml" target="_blank">黄晓明与杨颖(Angelababy)近日被港媒传已秘密登记结婚，所谓的两人在内地注册婚书也随之曝光。今日有一份疑似杨颖经纪公司的声明在微博上曝光，该声明代替杨颖否认与黄晓明婚讯，在声</a></p>
+			</div>
+			</div>
+			</div>
+									</div> </div>
+		</div>
+</div>
+						<div class="s_pic">
+							<ul>
+																					
+														</ul>
+						</div>
+				</div>
+				<div class="text_box">
+														<h3 class="color3"><a href="http://pnews.trunk.huoshow.com/" target="_blank">第22届世界超模中国总决赛 洛阳姑娘赵婉秋摘冠</a></h3>
+														<div class="s_top_news">
+												<p><strong class="text_gray">独家：</strong><span>[<a href="http://pnews.trunk.huoshow.com/" target="_blank">22岁嫩模靠爆乳发财 出道两年5千万买两房</a>]</span></p>
+						<p><strong class="text_gray">独家：</strong><span>[<a href="http://pnews.trunk.huoshow.com/" target="_blank">陈燃变身时尚小魔女 粗眉短发灵气逼人</a>]</span></p>
+												</div>
+						<ul class="con_ul">
+												 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">裸模汤加丽曾得体操金牌 张筱雨人体写真最大胆</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">世界超模北京选手“低龄化”最小14岁令人忧虑</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">宅男女神张馨予领衔女星"裸体彩绘"艳妆</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">全球小姐们的那些尴尬事：英国小姐恐毁英超</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">白俄罗斯总统称美女是"战略资源" 限制出境当模特</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">熊黛林言好想有人送钻戒 疑似想结婚郭富城不肯</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">名模凯莉推特被疑山寨 愤怒发裸照验明正身</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">熊黛林称爱情事业同在 男方必须要有经济实力</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">嫩模谢芷蕙拍写真离奇作呕 称不排除去验身</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">艳照嫩模Jessica C代言内衣 性感黑色蕾丝惹火</a></li>
+						 <li><a href="http://pnews.trunk.huoshow.com/" target="_blank">“小眼睛”国际脸超模组合纪莉莉李振同走秀</a></li>
+						 												</ul>
+				</div>
+				<div class="ptext_box">
+						<div class="r_bar"><h4>T台展示</h4></div>
+						<ul class="p_text">
+																		<li><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0202/51915.shtml" title=""><img src="2012/0202/1328175348866.jpg" width="95" height="106" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0202/51915.shtml" title="高提耶2012春夏高定秀致敬已故歌手艾米引争议">高提耶2012春</a></span></li>						                        						<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title=""><img src="2011/1221/1324455929416.jpg" width="95" height="106" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="丑闻新闻 盘点2011年震惊时尚圈的20大事">丑闻新闻 盘</a></span></li>						                        						<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title=""><img src="2011/1221/1324440384295.jpg" width="95" height="106" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="千奇百怪时装秀 地铁长城变T台 模特火烧留须">千奇百怪时装</a></span></li>						                        						<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title=""><img src="2011/1107/1320650205552.jpg" width="95" height="106" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="中国国际时装周众星云集 巩俐梁朝伟现身">中国国际时装</a></span></li>						                        						<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title=""><img src="2011/1107/1320650175247.jpg" width="95" height="106" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="第15届时装设计金顶奖 马青获最佳职业时装模特">第15届时装设</a></span></li>						                        						
+
+						</ul>
+						<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+	   		  </div>
+
+		<div class="con_box_pic">
+				<div class="bar_box"><span class="ti_4"></span><a class="more_model" target="_blank" href="http://www.huoshow.com/supermodel/modelpic">更多</a><span class="pic_nav"><a target="_blank" href="http://www.huoshow.com/supermodel/modelpic/shizhuangmote/index.shtml">时装模特</a> <a target="_blank" href="http://www.huoshow.com/supermodel/modelpic/neiyidapian/index.shtml">内衣大片</a><a target="_blank" href="http://www.huoshow.com/supermodel/modelpic/chemoliangying/index.shtml">车模靓影</a><a target="_blank" href="http://www.huoshow.com/supermodel/modelpic/nanmozhuanqu/index.shtml">男模专区</a></span>
+				</div>
+				<div class="clear"></div>
+				<ul class="pic_set">
+														<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="第22届世界超模中国总决赛 洛阳姑娘赵婉秋摘冠"><img src="" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="第22届世界超模中国总决赛 洛阳姑娘赵婉秋摘冠"> 第22届世界超模中国总</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="视频：张馨予沙滩玩纯情 白衫湿身爆乳诱惑"><img src="2011/1208/1323326661947.jpg" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="视频：张馨予沙滩玩纯情 白衫湿身爆乳诱惑"> 视频：张馨予沙滩玩纯</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="22岁嫩模靠爆乳发财 出道两年5千万买两房"><img src="2011/1208/1323326407231.jpg" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="22岁嫩模靠爆乳发财 出道两年5千万买两房"> 22岁嫩模靠爆乳发财 </a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="陈燃变身时尚小魔女 粗眉短发灵气逼人"><img src="" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="陈燃变身时尚小魔女 粗眉短发灵气逼人"> 陈燃变身时尚小魔女 </a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="裸模汤加丽曾得体操金牌 张筱雨人体写真最大胆"><img src="" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="裸模汤加丽曾得体操金牌 张筱雨人体写真最大胆"> 裸模汤加丽曾得体操金</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="世界超模北京选手“低龄化”最小14岁令人忧虑"><img src="2011/1206/1323168324298.jpg" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="世界超模北京选手“低龄化”最小14岁令人忧虑"> 世界超模北京选手&ldquo;低</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="宅男女神张馨予领衔女星"裸体彩绘"艳妆"><img src="2011/1203/1322880215810.jpg" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="宅男女神张馨予领衔女星"裸体彩绘"艳妆"> 宅男女神张馨予领衔女</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="全球小姐们的那些尴尬事：英国小姐恐毁英超"><img src="2011/1202/1322813739658.jpg" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="全球小姐们的那些尴尬事：英国小姐恐毁英超"> 全球小姐们的那些尴尬</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="白俄罗斯总统称美女是"战略资源" 限制出境当模特"><img src="2011/1130/1322636181847.jpg" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="白俄罗斯总统称美女是"战略资源" 限制出境当模特"> 白俄罗斯总统称美女是</a></span></li>
+										<li><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="熊黛林言好想有人送钻戒 疑似想结婚郭富城不肯"><img src="" width="167" height="130" /></a>
+						<span><a target="_blank" href="http://pnews.trunk.huoshow.com/" title="熊黛林言好想有人送钻戒 疑似想结婚郭富城不肯"> 熊黛林言好想有人送钻</a></span></li>
+																			  <div class="clear"></div>
+				</ul>
+		</div>
+</div>
+
+<!--Partners-->
+<div class="main_body">
+<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+</div>
+</div>
+</div>
+  <!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+	<!--Banner 960*90--><!--Body Bottom-->
+	<!--Other News--><!--Picture-->
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

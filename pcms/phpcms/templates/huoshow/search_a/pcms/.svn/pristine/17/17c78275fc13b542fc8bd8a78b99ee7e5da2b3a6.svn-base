@@ -1,0 +1,18 @@
+<h3 class='related_article_title'><span>热点推荐</span></h3>
+{pc:content  action="position" posid="$posidimg" catid="$catid" thumb="1" order="listorder DESC" num="4" cache=60}
+<ul class='related_image_list'>
+	{loop $data $r}
+	<li>
+		<a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],120,90)}" width='120' height='90' /></a>
+		<span><a href="{$r[url]}" title="{$r[title]}" target="_blank" style="border:none;">{str_cut($r[title],24,'')}</a></span>
+	</li>
+	{/loop}
+</ul>
+{/pc}
+{pc:content  action="position" posid="$posid" catid="$catid" order="listorder DESC" num="5" cache=60}
+<ul class='related_article_list related_article_sublist'>
+	{loop $data $r}
+	<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></li>
+	{/loop}
+</ul>
+{/pc}

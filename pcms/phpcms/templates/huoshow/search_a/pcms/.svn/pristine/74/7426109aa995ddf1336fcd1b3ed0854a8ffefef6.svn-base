@@ -1,0 +1,11 @@
+{loop $reply_info $r}
+<li class='comment-item'>
+	<a target='_blank' class='avatar' href="/m{$logouser}.html"><img src="{$r[reply_avatar]}" width='30' height='30' /></a>
+	<p class='comment'><span class='user'><a class="name" href="/m{$logouser}.html">{$r[nickname]}</a> <!--|| <a class="name" href='#'>@牙买加</a>--></span> {$r[reply_content]}<span class="time">{$r[reply_time]}</span>{if $logouser==$r[uid]}<a class='del' href='/index.php?m=community&c=index&a=delete_album_comment&comment_id={$r[id]}&album_id={$album_id}'>删除</a>{/if}</p>
+</li>
+{/loop}
+<li class='fn-clear'>
+	<!--<ul id='comment-pager' class='comment-pager'>-->
+		<div id='pagination' class="pagination">{if $reply_num !=0}{$page_reply}{/if}</div>
+	<!--</ul>-->
+</li>

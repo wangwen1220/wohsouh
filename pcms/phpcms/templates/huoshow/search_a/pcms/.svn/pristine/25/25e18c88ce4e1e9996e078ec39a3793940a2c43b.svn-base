@@ -1,0 +1,237 @@
+{template 'special', 'game_header'}
+<!-- Content -->
+<div id="content" class='fn-clear'>
+	<!-- Main -->
+	<div id="main">
+		{php $blockid = 'special_'.$specialid.'_1';}
+		{pc:block pos="$blockid"}
+		{/pc}
+		<!-- 开始 -->
+		<div class="ui-box ui-box-article fn-clear">
+			<div id="my-focus" class='my-focus'><!--焦点图盒子-->
+				<div class="loading"></div><!--载入画面(可删除)-->
+				<div class="pic"><!--内容列表(li数目可随意增减)-->
+					<ul>
+					{pc:special  action="content_list" typeid="106" specialid="26" thumb="1" num="5"}
+					{loop $data $r}
+						<li><a target='_blank' href="{$r[url]}"><img src="{thumb($r['thumb'],320,240)}" alt="{$r[title]}" width='320' height='240' /></a></li>
+					{/loop}
+					{/pc}
+					</ul>
+				</div>
+			</div>
+			<!--/***
+			<div class="desc">
+			{pc:special  action="content_list" typeid="106" specialid="26"  listorder="5" num="5"}
+			{loop $data $r}
+				<div class="desc-item {if $n==1}desc-item-current{/if}">
+					<h3 class="desc-item-title">&gt;&gt; <a href='{$r[url]}'>{$r[title]}</a></h3>
+					<ul class="desc-item-list">
+						<li>画面：{$r[gamespy]}</li>
+						<li>类型：{$r[gametype]}</li>
+						<li>特征：{$r[gamefeature]}</li>
+						<li>官网：<a href='{$r[islink]}'>点此进入</a></li>
+						<li>研发：{$r[gamedeveloper]}</li>
+						<li>运营：{$r[gameoperation]}</li>
+					</ul>
+				</div>
+			{/loop}
+			{/pc}
+			</div>		
+			***/-->
+			
+			{pc:special action="get_special_news" specialid="$id" limit="12"}
+			{loop $data $r}
+			{if $n<4}
+			{if $n==1}<h2 class='article-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></h2>
+			<div class='article-link'>{else}
+				<p>[<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],80,'')}</a>]</p>
+			{if $n==3}</div>{/if}
+			{/if}
+			{/if}
+			{/loop}
+			{/pc}
+			
+			{pc:special action="get_special_news" specialid="$id" limit="12"}
+			{loop $data $r}
+			{if $n>3 && $n<7}
+			{if $n==4}<h2 class='article-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></h2>
+			<div class='article-link'>{else}
+				<p>[<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],80,'')}</a>]</p>
+			{if $n==6}</div>{/if}
+			{/if}
+			{/if}
+			{/loop}
+			{/pc}
+			
+			{pc:special action="get_special_news" specialid="$id" limit="12"}
+			{loop $data $r}
+			{if $n>6 && $n<10}
+			{if $n==7}<h2 class='article-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></h2>
+			<div class='article-link'>{else}
+				<p>[<a target='_blank' href='{$r[url]}'>{str_cut($r['title'],80,'')}</a>]</p>
+			{if $n==9}</div>{/if}
+			{/if}
+			{/if}
+			{/loop}
+			{/pc}
+			
+			
+		</div>
+		<!-- end -->
+		<div class="ui-box ui-box-list">
+				<div class="ui-box-header">
+					<h2 class='title'>最新消息<!--{$t['name']}--></h2>
+					<div class="more"><!--<a target='_blank' href='{$t['url']}'>更多&gt;&gt;</a>--></div>
+				</div>
+				<ul class="ui-list fn-clear">
+				<!--{pc:special  action="content_list" typeid="95" specialid="24" num="10"}-->
+				{pc:special  action="content_list"  specialid="$id" listorder="5" num="8"}
+	 				{loop $data $r}
+					<li class="ui-list-item"><a target='_blank' href='{$r[url]}'>{str_cut($r[title],50,'')}</a> <span>[{date('m-d',time($r[inputtime]))}]</span></li>
+					{/loop}
+				{/pc}
+				</ul>
+			</div>
+			
+		{php $j=0}
+		{loop $types $n $t}
+			{php $j++;}
+			{if $j==1}
+			<div class="ui-box ui-box-img">
+				<div class="ui-box-header">
+					<h2 class='title'>{$t['name']}</h2>
+					<div class="more"><a href="{$t[url]}" target='_blank'>更多&gt;&gt;</a></div>
+				</div>
+				<ul class="ui-img-list fn-clear">
+				{pc:special  action="content_list" typeid="$t[typeid]" specialid="$id" listorder="3" num="8"}
+					{loop $data $r}
+					<li class="ui-img-list-item">
+						<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],135,100)}' width='135' height='100' /><span class='icon'></span></a>
+						<h3 class='title'><a target='_blank' href='{$r[url]}'>{str_cut($r[title],70,'')}</a></h3>
+					</li>
+					{/loop}
+				{/pc}
+				</ul>
+			</div>
+			{/if}
+		
+ 			{if $j>=2}
+			<div class="ui-box ui-box-img">
+				<div class="ui-box-header">
+					<h2 class='title'>{$t['name']}</h2>
+					<div class="more"><a href="{$t[url]}" target='_blank'>更多&gt;&gt;</a></div>
+				</div>
+				<ul class="ui-img-list fn-clear">
+				{pc:special  action="content_list" typeid="$t[typeid]" specialid="$id" listorder="3" num="4"}
+				{loop $data $r}
+					<li class="ui-img-list-item">
+						<a class='img' href="{$r[url]}" target='_blank'><img src="{thumb($r[thumb],135,100)}" width='135' height='100' /></a>
+						<h3 class='title'><a href="{$r[url]}" target='_blank'>{str_cut($r[title],70,'')}</a></h3>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+			{/if}
+		{/loop}
+	</div>
+	<!-- Main End -->
+	<!-- Side -->
+	<div id="side">
+		<div class="ad">
+		{php $blockid = 'special_'.$specialid.'_2';}
+		{pc:block pos="$blockid"}
+		{/pc}
+		</div>
+		<div class="game-score fn-clear">
+			<div class="game-score-box">
+				<div class='game-score-title'>网友综合评分</div>
+				<div class='game-score-box-num'>81</div>
+			</div>
+			<div class='game-score-status'><em>评价：</em><span class='star star2'></span> 一般</div>
+			<a class='game-score-btn' href='javascript:;'>提交分数</a>
+		</div>
+		<form id='game-search' class='game-search' method="post" action="/index.php?m=community&c=index&a=search" target="_blank"><input type="text" class="search-wd" name="q" value='输入查询的游戏名称' /><button type="submit" class="search-submit">查找</button></form>
+
+		{php $blockid = 'special_'.$specialid.'_3';}
+		{pc:block pos="$blockid"}
+		{/pc}
+
+		<div class="ui-side-box game-recommend">
+			<h2 class='ui-side-box-header'>同风格游戏推荐</h2>
+			<div class="content">
+			{pc:special action="get_thesame_gamestyle" specialid="$id"}
+			{loop $data $r}
+				<div class="game-box {if $n==4}game-box-last{/if}fn-clear">
+					<a target='_blank' class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,80)}' width='120' height='80' /></a>
+					<h3 class='game-title'><a target='_blank' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+					<ul class='game-info'>
+						<li><em>风格：</em>{$r[game_style]}</li>
+						<li><em>画面：</em>{$r[game_menu]}</li>
+						<li><em>类型：</em>{$r[game_type]}</li>
+					</ul>
+				</div>
+			{/loop}
+			{/pc}
+			</div>
+		</div>
+	</div>
+	<!-- Side End -->
+</div>
+<!-- Content End -->
+
+<!-- Footer -->
+	<div id="footer">
+		<p>
+		{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<a href="{$r[url]}" target="_blank">{$r[catname]}</a>{if $n<count($data)} |{/if}
+			{/loop}
+		{/pc}
+		</p>
+		<p>HuoShow Copyright &copy; 1998 - 2012 All Rights Reserved.</p>
+		<p>粤 ICP 备 06087881 号</p>
+	</div>
+	<!-- Footer End -->
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function(window) {
+			var document = window.document;
+			window.onload = function() {
+				// 加载谷歌统计代码
+				var ga = document.createElement('script'),
+					head = document.getElementsByTagName('head')[0];
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				head.appendChild(ga);
+
+				// 加载 CNZZ 统计代码
+				var cnzz = document.createElement('script');
+				cnzz.src = 'http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090';
+				//cnzz.style.display = 'none';
+				head.appendChild(cnzz);
+			};
+		})(window);
+	</script>
+	<!-- <div style='display:none;'><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div> -->
+</body>
+</html>

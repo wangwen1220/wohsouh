@@ -1,0 +1,45 @@
+{template "community","myshow_header"}
+
+<div id="content">
+	<div id='canvas' data-url='/index.php?m=community&c=index&a=json_share_list&list=1&class_id={$class_id}'>
+		<div class='pin category ks-waterfall ks-waterfall-fixed-left'>
+			<div class="cats cats-hot">
+				<h3 class='cats-header'>热门分类</h3>
+				<ul class='cats-list fn-clear'>
+					<li><a class="selected all" title="全部" href="/">全部</a></li>
+					{loop $list_class_data $r}
+					{if $class_id != $r[id]}
+					<li {if $r[id] == $_GET[classid]}class="selected"{/if}><a target='_blank' title="" href="/fl-{$r[id]}.html">{$r[name]}</a></li>
+					{/if}
+					{/loop}
+					<li class="selected"><a target='_blank' title="{$class_name}" href="">{$class_name}</a></li>
+				</ul>
+				<div class='cats-more-btn'><a id='cats-more-btn' href='javascript:;'>更多&gt;&gt;</a></div>
+			</div>
+			<div id='cats-more' class='cats-more fn-hide fn-clear'>
+				<div class='cats-more-list'>
+					<a class='cats-more-list-item cats-more-list-item-all' href='/index.php?m=community&c=index&a=index'>全部</a>
+					{loop $list_class_data1 $r}
+					<a target='_blank' {if $r[id] == $_GET[classid]}style="background-color: #D6383B; color: #FFFFFF;"{/if} class='cats-more-list-item' href='/fl-{$r[id]}.html'>{$r[name]}</a>
+					{if $n%15==0}</div><div class='cats-more-list'>{/if}
+					{/loop}
+				</div>
+			</div>
+			<div class="cats cats-last">
+				<!-- <h2 class='cats-title'>{$class_name} <a id='cats-more-btn' class='cats-more-btn' href='javascript:;'>更多&gt;&gt;</a></h2> -->
+				<h3 class='cats-meta'>相关标签：<span id='cats-nav' class='cats-nav'><a class='hot selected' href="/index.php?m=community&c=index&a=json_share_list&list=2&class_id={$class_id}">人气</a> <a class='new' href="/index.php?m=community&c=index&a=json_share_list&list=1&class_id={$class_id}">最新</a></span></h3>
+				<ul class='cats-list fn-clear'>
+					{loop $datas $r}
+					<li {if $n==1}class='selected'{/if}><a target='_blank' class="home" title="{$r[tag_name]}" href="/tag-{$r[tag_id]}.html">{$r[tag_name]}</a></li>
+					{/loop}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

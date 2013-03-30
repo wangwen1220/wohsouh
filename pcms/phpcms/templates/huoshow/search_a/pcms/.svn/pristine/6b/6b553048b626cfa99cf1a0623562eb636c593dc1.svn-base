@@ -1,0 +1,158 @@
+{template "community","myshow_header"}
+<div id="wrapper" class='pin-details fn-clear'>
+	<div id="aside">
+		<div class="album">
+			<h5>出自专辑</h5>
+			<h3>{$album_datas[0][album_name]}</h3>
+			<span class='pin-position'><em>{$first_r}</em>/{$total_r}</span>
+			<a class="link" href='/zj-{$share_info[albumid]}.html'>
+			{loop $thumb_data $r}
+			<img src='{$r[thumb]}' width='61' height='61' />
+			{/loop}
+			</a>
+			<a class='btn' href='#'>取消关注</a>
+		</div>
+		<div class='domain-pins'>
+			<h3>同出自</h3>
+			<div class='album-bar'>
+				{loop $same_data $r}
+				<a href='#'><span class='text'>{$r[album_name]}</span><span class='stats'>{$r[file_count]}</span></a>
+				{/loop}
+			</div>
+		</div>
+	</div>
+	<div id="main" class='goods'>
+		<div class='pin-show'>
+
+			<div class='pinner fn-clear'>
+				<a class="pinner-photo" href="/wangwen1220/"><img src="{$share_info[owner_avatar]}" width='52' height='52' /></a>
+				<p class="pinner-date">{$share_info[input_time]}</p>
+				<p class="pinner-name"><a href="/wangwen1220/">{$share_info[nickname]}</a></p>
+				<p class="pinner-from">首发自专辑：<a href="/wangwen1220/">{$share_info[album_name]}</a></p>
+			</div>
+			<div class='pin-goods'>
+				<a class='goods-img' href='#'><img src='{$share_info[file_path]}' alt='' /></a>
+				<h2 class='goods-title'>{$share_info[file_name]}<span class='from taobao'></span></h2>
+				<a class='buy-btn' href='#'><span class='price'>￥{$share_info[price]}</span></a>
+				<div class='pin-actions'>
+					<ul class='pin-buttons'>
+						<li class="btn repin"><a href="#">转采</a></li>
+						<li class="btn like"><a href="#">喜欢 <span>250</span></a></li>
+					</ul>
+				</div>
+				<div class="tags"><span class='tag-title'>标签：</span><a class="tag-type" href='#'>图片</a> | <a class='tag' href='#'>#风景</a> <a class='tag' href='#'>#摄影</a> <a class='tag' href='#'>#美女</a> <a class='tag' href='#'>#尤物</a></div>
+			</div>
+			<p class="desc">{$share_info[description]}</p>
+			<div class="stats"><a href='#'>举报</a> <span class='comment'><em>27</em> 评论</span> | <span class='like'><em>500</em> 喜欢</span> | <span class='repin'><em>4</em> 转藏</span></div>
+
+		</div>
+		<!--/***评论开始***/-->
+		{template "community","myshow_comment"}
+		<!--/***评论结束***/-->
+		<div class='ta ta-like'>
+			<a id='view-all-like' class='view-all' href='#'><strong>···</strong> 全部↓</a>
+			<h3 class='title'>TA们喜欢 <span>(18人)</span></h3>
+			<ul class='ta-list'>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+				<li class='ta-item'><a class='img' href='#'><img src='/statics/images/myshow/avatar.jpg' width='40' height='40' /></a></li>
+			</ul>
+		</div>
+		<div class='ta ta-repin'>
+			<a id='view-all-like' class='view-all' href='#'><strong>···</strong> 全部↓</a>
+			<h3 class='title'>TA们转藏 <span>(18次)</span></h3>
+			<ul class='repin-list'>
+				<li>
+					<a class="photo" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+					<div class='meta'>
+						<p><a class='name' href='#'>莫桑</a> 采集到<a class='album' href='#'>《力宏》</a>专辑</p>
+						<p class='text'>并给该分享添加了 <a href='#'>#love</a> <a href='#'>#you</a> 标签</p>
+					</div>
+					<div class='share'>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<span class="share-bbtn"><strong>134</strong><em>分享</em></span>
+					</div>
+				</li>
+				<li>
+					<a class="photo" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+					<div class='meta'>
+						<p><a class='name' href='#'>莫桑</a> 采集到<a class='album' href='#'>《力宏》</a>专辑</p>
+						<p class='text'>并给该分享添加了 <a href='#'>#love</a> <a href='#'>#you</a> 标签</p>
+					</div>
+					<div class='share'>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<span class="share-bbtn"><strong>134</strong><em>分享</em></span>
+					</div>
+				</li>
+				<li>
+					<a class="photo" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+					<div class='meta'>
+						<p><a class='name' href='#'>莫桑</a> 采集到<a class='album' href='#'>《力宏》</a>专辑</p>
+						<p class='text'>并给该分享添加了 <a href='#'>#love</a> <a href='#'>#you</a> 标签</p>
+					</div>
+					<div class='share'>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<span class="share-bbtn"><strong>134</strong><em>分享</em></span>
+					</div>
+				</li>
+				<li>
+					<a class="photo" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+					<div class='meta'>
+						<p><a class='name' href='#'>莫桑</a> 采集到<a class='album' href='#'>《力宏》</a>专辑</p>
+						<p class='text'>并给该分享添加了 <a href='#'>#love</a> <a href='#'>#you</a> 标签</p>
+					</div>
+					<div class='share'>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<span class="share-bbtn"><strong>134</strong><em>分享</em></span>
+					</div>
+				</li>
+				<li>
+					<a class="photo" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+					<div class='meta'>
+						<p class='author'><a class='name' href='#'>莫桑</a> 采集到<a class='album' href='#'>《力宏》</a>专辑</p>
+						<p class='text'>并给该分享添加了 <a href='#'>#love</a> <a href='#'>#you</a> 标签</p>
+					</div>
+					<div class='share'>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<a class="img" href='#'><img src='/statics/images/myshow/avatar.jpg' width='50' height='50' /></a>
+						<span class="share-bbtn"><strong>134</strong><em>分享</em></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="pin-toolbar">
+		<div class="pin-nav"><a class="prev disabled" title="上一张" href="/pins/10006484/"></a> <a class="album" title="上一张" href="/pins/10006484/"></a> <a class="next" title="下一张" href="/pins/9960401/"></a></div>
+		<div class='share'>
+			<h3 class='title'>分享到</h3>
+			<ul class='share-list'>
+				<li class="weibo share-button"><span title="新浪微博">微博</span></li>
+				<li class="douban share-button"><span title="腾讯微博">豆瓣</span></li>
+				<li class="qzone share-button"><span title="QQ空间">空间</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

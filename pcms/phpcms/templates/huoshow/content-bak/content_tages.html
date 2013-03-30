@@ -1,0 +1,9 @@
+{pc:get sql="SELECT tag,hits FROM v9_tags order by hits desc" cache="3600" num="28" }
+<ul>
+	{loop $data $r}
+	<li>
+		<a href="/index.php?m=search&c=index&a=init&siteid=1&q={urlencode($r['tag'])}&typeid=1" target="_blank">{str_cut($r[tag],10,'')}</a>
+	</li>
+	{/loop}
+</ul>
+{/pc}

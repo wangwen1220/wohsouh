@@ -1,0 +1,37 @@
+ 1. 类文件需要以.class.php为后缀，例如http.class.php。
+	1. 函数文件需要以.func.php为后缀，例如mail.func.php。
+	2. 类名和文件名一致，例phpcmsapp类的文件命名是phpcmsapp.class.php。
+	3. 数据模型需要以“数据表名称_model.class.php”为形式，类名称与文件名必须相同
+	4. 模块标签需要在modules/模块名/classes/模块名_tag.class.php,其中{pc:modules action中action的值就是类中的成员方法名
+ 2. 在phpcms/libs/functions/extention.func.php中增加需要的全局函数
+ 3. 如果需要对某个控制器做二次开发,在其相同目录下用MY_*.php的形式，系统会自动调用
+	1. 比如要对/module/mood/index.php进行修改，则新增文件/module/mood/MY_index.php
+	<?php 
+　　class MY_index extends index{
+ 　　　　function __construct() {
+ 　　　　　　parent::__construct();
+ 　　　　}
+  
+　　　　……your code
+    } 
+	?>
+ 4. 任何php文件的第一行一定是 defined('IN_PHPCMS') or exit('No permission resources.');
+ 5. 控制器读取模块的配置信息有两种方式
+	1. 缓存文件存储文件位于：/caches/caches_commons/caches_data/模块名.cache.php 
+	2. 数据库存储于：module表(模块表) 中对应模块记录
+ 6. (重要)火秀自己的控制器全部用hs开头，避免升级后与系统新增控制器冲突
+ 7. 写完模块需要在module表中添加数据，然后在模块管理中更新缓存，否则访问模块时候（后台），系统会检查caches/caches_commons/caches_data/modules.cache.php中有无模块信息
+    可能可以通过在模块目录中定义安装信息，通过安装模块可以解决此问题
+ 8. （重要）标签避免使用{pc:get}sql标签，尽量把sql语句全部封装model中，然后自己写标签,用pc:module来调用数据，尽量让所有SQL语句都只能在model中出现。也尽量避免sql语句存储与数据库中。
+    {pc:json}、{pc:xml}应尽量避免获取远程URL的内容，对远程URL的数据获尽量放在客户端做。避免延缓整个页面的加载。对本地域的访问则不受限制。
+    {pc:block}调用碎片数据{pc:block pos="index"}{/pc} pos是碎片位置标识
+	{php $blockid = 'special_'.$specialid.'_1';}
+			{pc:block pos="$blockid"}
+			{/pc}
+	在上面的例子中，实现了在同一个模版中调用不同碎片的功能(同一个模版,根据专题的不同而调用不同碎片)
+ 9. 标签是数据获取方式，返回的是数据；碎片返回的是展示，因此碎片可以有HTML，碎片可以包含标签，并对标签内容进行展示
+ 10. pcms调huoshow的东西，可以参考module/guestbook/classes/guestbook_tag.class.php中的get_sys_weibo，在phpcms中可以直接引用huoshow框架中的类。如果希望在huoshow中调用phpcms，则可以通过数据源来做。
+
+
+
+

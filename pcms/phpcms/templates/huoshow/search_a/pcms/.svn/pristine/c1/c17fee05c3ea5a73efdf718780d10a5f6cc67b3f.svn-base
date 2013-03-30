@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-global.css' rel='stylesheet' />
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-piclist'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main'>
+			<ul class='ui-img-list ui-img-list-plus'>
+			{pc:content action="lists" catid="$catid" num="40" order="id DESC" page="$page"}
+			{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],150,112)}' width='150' height='112' /></a>
+					<a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],48,'')}</a>
+
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+
+			<div id='pager' class="pager ui-pager">{$pages}</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-rdtj'>
+				<h2 class='ui-box-side-title'>热点推荐</h2>
+				{pc:content  action="rand_news_hothits" catids="260,263,272,286,304,310,316" newsnum="12"}
+				{loop $data $r}
+				{if $n==1 || $n==7}
+				<h3 class='subtitle'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],70,'')}</a></h3>
+				{else}
+				{if $n==2}<ul class='ui-list'>{/if}
+					<li class='ui-list-item'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],70,'')}</a></li>
+				{if $n==12}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>美图推荐 <!-- <span class='link'><a href='#'>美女</a> | <a href='#'>周边</a> | <a href='#'>COSPLAY</a></span> --></h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="566" order="listorder DESC" num="4" }
+  			    {loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+						<a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-sptj'>
+				<h2 class='ui-box-side-title'><!--视频推荐-->推荐新闻</h2>
+				{pc:content  action="position" posid="567" order="listorder DESC" num="12" }
+  			    {loop $data $r}
+				{if $n<3}
+				{if $n==1}<ul class='ui-img-list ui-img-list-plus'>{/if}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /><span class='icon-play'></span></a>
+						<a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],40,'')}</a>
+					</li>
+				{if $n==2}</ul>{/if}
+				{else}
+				{if $n==3}<ul class='ui-list ui-list-float'>{/if}
+					<!--<li class='ui-list-item'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],30,'')}</a></li>-->
+                    <li class='ui-list-item'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],70,'')}</a></li>
+				{if $n==12}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-tab ui-tab-lite'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'>本周<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>本月<span class='icon'></span></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-list-plus'>
+					{pc:content action="rand_news_hothits" catids="246,247,253,260,261,262,254,263,264,256,257,258,259,248,270,274,275,276,339,340,341,342,343,344,345,272,273,249,284,285,291,292,364,286,287,250,293,294,295,297,251,304,305,360,361,362,310,311,301,312,313,316,317,318,315,336" newsnum="10" newsorder="weekviews" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],60,'')}</a></li>
+					 {/loop}
+					{/pc}
+					</ol>
+					<ol class='ui-tab-cnt-item ui-list-plus'>
+					{pc:content action="rand_news_hothits" catids="246,247,253,260,261,262,254,263,264,256,257,258,259,248,270,274,275,276,339,340,341,342,343,344,345,272,273,249,284,285,291,292,364,286,287,250,293,294,295,297,251,304,305,360,361,362,310,311,301,312,313,316,317,318,315,336" newsnum="10" newsorder="monthviews" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],60,'')}</a></li>
+					 {/loop}
+					{/pc}
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

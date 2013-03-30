@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>安卓 - 火秀网</title>
+	<meta name='keywords' content='火秀网络游戏' />
+	<meta name='description' content='火秀网络游戏' />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-android.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-android'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_android'}
+
+	<!-- 主内容 -->
+	<div id='content-android-main' class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-left'>
+			<div id='myfocus-games' class='ui-myfocus'>
+				<div class="loading"></div>
+				{pc:content action="position" posid="549" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				<div class="pic"><!--图片列表-->
+					<ul>
+						{loop $data $r}
+						<li><a href="{$r[url]}"><img src="{thumb($r[thumb],308,231)}" thumb="" alt="{$r[title]}" width='308' height='231' /></a></li>
+						{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-center'>
+			{pc:content action="position" posid="550" catid="$catid" order="listorder DESC" num="5"}
+			{loop $data $r}
+			{if $n==1}
+			<h2 class='ui-newgame-title'><a href='{$r[url]}'>{str_cut($r[title], 60,'')}</a></h2>
+			{/if}
+			{/loop}
+			<div class='ui-newgame-link'>
+			{loop $data $r}
+			{if $n>1}
+			<a href='{$r[url]}'>[{str_cut($r[title], 15,'')}]</a>
+			{/if} 
+			{/loop}
+			</div>
+			{/pc}
+			{pc:content action="position" posid="551" catid="$catid" order="listorder DESC" num="10"}
+			<ul class='ui-list ui-list-main hr'>
+				{loop $data $r}
+				<li class='ui-list-item'>
+				{if $n==1 || $n==6}
+					<strong><a href='{$r[url]}'>{str_cut($r[title], 60,'')}</a></strong>
+				{else}
+					<a href='{$r[url]}'>{str_cut($r[title], 70,'')}</a>
+				{/if}
+				</li>
+				{if $n%5==0}<br>{/if}
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-right'>
+			<div class='ui-box'>
+				<div class='ui-header'>
+					<h3 class='title'>新手入门</h3>
+				</div>
+				<dl class='ui-step'>
+					<dt>第一步：了解Android</dt>
+					{pc:content action="position" posid="552" catid="$catid" order="listorder DESC" num="4"}
+					<dd>
+					{loop $data $r}
+					<a href='{$r[url]}'>{str_cut($r[title], 20,'')}</a> 
+					{/loop}
+					</dd>
+					{/pc}
+					<dt>第二步：使用Android</dt>
+					{pc:content action="position" posid="553" catid="$catid" order="listorder DESC" num="10"}
+					<dd>
+					{loop $data $r}
+					<a href='{$r[url]}'>{str_cut($r[title], 20,'')}</a> 
+					{/loop}
+					</dd>
+					{/pc}
+
+					<dt>第三步：玩转Android</dt>
+					{pc:content action="position" posid="554" catid="$catid" order="listorder DESC" num="6"}
+					<dd>
+					{loop $data $r}
+					<a href='{$r[url]}'>{str_cut($r[title], 20,'')}</a> 
+					{/loop}
+					</dd>
+					{/pc}
+				</dl>
+			</div>
+		</div>
+	</div>
+
+	<!-- 安卓游戏 -->
+	<div id='content-android-game' class='ui-box ui-box-android-app fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>安卓游戏</h2>
+			<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item-main'>
+			<ul class='filter-list'>
+				<li class='filter-list-item'><a class='cur' href='#'>热门推荐</a> | <a href='#'>最近更新</a> | <a href='#'>益智游戏</a> | <a href='#'>最近更新</a> | <a href='#'>最近更新</a> | <a href='#'>动作冒险</a> | <a href='#'>最近更新</a> | <a href='#'>射击游戏</a></li>
+				<li class='filter-list-item'><a href='#'>最近更新</a> | <a href='#'>最近更新</a> | <a href='#'>棋牌游戏</a> | <a href='#'>休闲游戏</a> | <a href='#'>搞笑系列</a>  <a class='more' href='#'>[查看更多]</a></li>
+			</ul>
+			{pc:content  action="position" posid="555" catid="$catid" thumb="1" order="listorder DESC" num="12"}
+			<ul class='ui-art-list ui-art-list-game fn-clear'>
+				{loop $data $r}
+				<li class='ui-art-item'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /></a>
+					<h3 class='title'><a href='{$r[url]}'>{str_cut($r[title], 20,'')}</a></h3>
+					<div class="content">
+						<p>{$CATEGORYS[$r[catid]][catname]}</p>
+					</div>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>游戏下载排行</h2>
+			</div>
+			{pc:content action="hits" catid="289" num="10" order="monthviews DESC" cache="3600"}
+			<ol class='ui-ranking ui-ranking-game'>
+				{loop $data $r}
+				<li class='ui-ranking-item ui-ranking-item-cur'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a href='{$r[url]}'>{str_cut($r[title], 30,'')}</a></h3>
+					<p class="content">{str_cut($r[description], 50,'')}</p>
+					<a class='button' href='{$r[url]}'>下载</a>
+				</li>
+				{/loop}
+			</ol>
+			{/pc}
+		</div>
+	</div>
+
+	<!-- 安卓软件 -->
+	<div id='content-android-software' class='ui-box ui-box-android-app fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>安卓软件</h2>
+			<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item-main'>
+			<ul class='filter-list'>
+				<li class='filter-list-item'><a class='cur' href='#'>热门推荐</a> | <a href='#'>最近更新</a> | <a href='#'>益智游戏</a> | <a href='#'>最近更新</a> | <a href='#'>最近更新</a> | <a href='#'>动作冒险</a> | <a href='#'>最近更新</a> | <a href='#'>射击游戏</a></li>
+				<li class='filter-list-item'><a href='#'>最近更新</a> | <a href='#'>最近更新</a> | <a href='#'>棋牌游戏</a> | <a href='#'>休闲游戏</a> | <a href='#'>搞笑系列</a>  <a class='more' href='#'>[查看更多]</a></li>
+			</ul>
+			{pc:content  action="position" posid="556" catid="$catid" thumb="1" order="listorder DESC" num="12"}
+			<ul class='ui-art-list ui-art-list-game fn-clear'>
+				{loop $data $r}
+				<li class='ui-art-item'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /></a>
+					<h3 class='title'><a href='{$r[url]}'>{str_cut($r[title], 20,'')}</a></h3>
+					<div class="content">
+						<p>{$CATEGORYS[$r[catid]][catname]}</p>
+					</div>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>应用下载排行</h2>
+			</div>
+			{pc:content action="hits" catid="290" num="10" order="monthviews DESC" cache="3600"}
+			<ol class='ui-ranking ui-ranking-game'>
+				{loop $data $r}
+				<li class='ui-ranking-item ui-ranking-item-cur'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a href='{$r[url]}'>{str_cut($r[title], 30,'')}</a></h3>
+					<p class="content">{str_cut($r[description], 50,'')}</p>
+					<a class='button' href='{$r[url]}'>下载</a>
+				</li>
+				{/loop}
+			</ol>
+			{/pc}
+		</div>
+	</div>
+
+	<!-- 手机壁纸 -->
+	<div id='content-android-wallpaper' class='ui-box fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>手机壁纸</h2>
+			<div class='link'><a href='#'>全部</a> | <a href='#'>软件</a> | <a href='#'>专题</a> | <a href='#'>攻略</a> | <a href='#'>视频</a> | <a class='more' href='#'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-main'>
+			{pc:content action="lists" catid="212" thumb="1" num="8" order="id DESC"}
+			<ul class='ui-img-list ui-img-list-plus'>
+				{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],126,190)}' width='126' height='190' /></a>
+					<a class='title' href='{$r[url]}'>{str_cut($r[title], 15,'')}</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>主题推荐</h2>
+			</div>
+			{pc:content  action="position" posid="557" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+			<ul class='ui-img-list ui-img-list-plus'>
+				{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],216,68)}' width='216' height='68' /></a>
+					<a class='title' href='{$r[url]}'>{str_cut($r[title], 50,'')}</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+
+	<!-- 此脚本最好放底部，不然在 IE6 中可能会有兼容问题 -->
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

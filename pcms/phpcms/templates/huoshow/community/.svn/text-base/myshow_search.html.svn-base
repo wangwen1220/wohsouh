@@ -1,0 +1,75 @@
+{template "community","myshow_header"}
+
+<div id="wrapper" class='pinner-page search'>
+	<div class="header">
+		<h2 id='search-nav'>
+			<a class='current' href='/index.php?m=community&c=index&a=json_search&list=1&q={$keyword}' data-tpl='tpl'>{$total[file_num]} 分享</a>
+			<a href='/index.php?m=community&c=index&a=json_search&list=2&q={$keyword}' data-tpl='albumtpl'>{$total[album_num]} 专辑</a>
+			<a href='/index.php?m=community&c=index&a=json_search&list=3&q={$keyword}' data-tpl='pinnertpl'>{$total[user_num]} 用户</a>
+			<span class='divider'>－</span>
+			<strong>搜索结果：{$keyword}</strong>
+		</h2>
+	</div>
+</div>
+
+<div id="content">
+	<div id='canvas' class='pinner-page search' data-url='/index.php?m=community&c=index&a=json_search&list=1&q={$keyword}'>
+		<!--<div class="pin pinner ks-waterfall">
+			<div class="pinner-info">
+				<a class="avatar" title="" href=""><img src="/statics/images/myshow/avatar2.jpg" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="">夺士大夫</a></h3>
+				<div class='action-btns fn-clear'>
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>关注Ta</a>
+					<a class='send-msg btn' href='#'>发私信</a>
+				</div>
+			</div>
+		</div>
+		<div class="pin pinner ks-waterfall">
+			<div class="pinner-info">
+				<a class="avatar" title="" href=""><img src="/statics/images/myshow/avatar2.jpg" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="">夺士大夫</a></h3>
+				<div class='action-btns fn-clear'>
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>关注Ta</a>
+					<a class='send-msg btn' href='#'>发私信</a>
+				</div>
+			</div>
+		</div>
+		<div class="pin pinner ks-waterfall">
+			<div class="pinner-info">
+				<a class="avatar" title="" href=""><img src="/statics/images/myshow/avatar2.jpg" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="">夺士大夫</a></h3>
+				<div class='action-btns fn-clear'>
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>关注Ta</a>
+					<a class='send-msg btn' href='#'>发私信</a>
+				</div>
+			</div>
+		</div>
+		<div class="pin pinner ks-waterfall">
+			<div class="pinner-info">
+				<a class="avatar" title="" href=""><img src="/statics/images/myshow/avatar2.jpg" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="">夺士大夫</a></h3>
+				<div class='action-btns fn-clear'>
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>关注Ta</a>
+					<a class='send-msg btn' href='#'>发私信</a>
+				</div>
+			</div>
+		</div>
+		<div class="pin pinner ks-waterfall">
+			<div class="pinner-info">
+				<a class="avatar" title="" href=""><img src="/statics/images/myshow/avatar2.jpg" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="">夺士大夫</a></h3>
+				<div class='action-btns fn-clear'>
+					<span class='follow-user disabled btn'>关注Ta</span>
+					<span class='send-msg disabled btn'>发私信</span>
+				</div>
+			</div>
+		</div>-->
+	</div>
+
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

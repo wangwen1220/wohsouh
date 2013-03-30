@@ -1,0 +1,56 @@
+{include file="admin/admin_weibo_head.html"}
+ <form name="form1" method="post" action="">
+ <div>
+    <select name="filter_type" id="filter_type">
+      <option value="username">用户名</option>
+      <option value="uid">用户ID</option>
+    </select>
+    <input name="filtervalue" type="text" id="filtervalue">
+    <input type="submit" name="Submit" value="提交">
+ </div>
+</form>
+<br>
+<table>
+	<tr>
+		<th>用户ID</th>
+		<th>用户名</th>
+		<th>动态数</th>
+		<th>回复数</th>
+		<th>转发数</th>
+		<th>粉丝数</th>
+		<th>图片附件数</th>
+		<th>视频附件数</th>
+		<th>音频附件数</th>
+		
+	</tr>
+	{section name=a loop=$arr}
+	<tr>
+		<td><a href="?action=huoshow&operation=weibo&tab=realtimedymic&uid={$arr[a].uid}">{$arr[a].uid}</a></td>
+		<td>{$arr[a].username}</td>
+		<td>{$arr[a].dymic_count}</td>
+		<td>{$arr[a].reply_count}</td>
+		<td>{$arr[a].transmit_count}</td>
+		<td>{$arr[a].is_watch_count}</td>
+		<td>{$arr[a].img_attachment_count}</td>
+		<td>{$arr[a].vedio_attachment_count}</td>
+		<td>{$arr[a].music_attachment_count}</td>
+		
+	</tr>
+	{/section}
+	
+	<tr>
+    	<td colspan="10">{$page_str}</td>
+  	</tr>
+</table>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定删除？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+</script>
+{/literal}

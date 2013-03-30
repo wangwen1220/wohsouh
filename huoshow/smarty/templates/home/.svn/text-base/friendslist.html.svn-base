@@ -1,0 +1,47 @@
+<link href="/huoshow/css/zhibo/master.css" rel="stylesheet" type="text/css" />
+<form action="" method="POST" name="form">
+  <div class="suc_block">
+    
+    {if $friendslist}
+    <div class="slide_recom">
+      <ul id="friends">
+        {section name=f loop=$friendslist}
+        <li>
+        <span class="sel_pnt"><img src="{$friendslist[f].smallimg}" width="50" height="50"/>
+          <input name="friendslist[]" type="checkbox" value="{$friendslist[f].uid}" /></span>
+        <span class="blue">{$friendslist[f].username}</span>
+        </li>
+        {/section}
+      </ul>
+      <Div class="clear"></Div>
+    </div>
+    <p class="send_input" style="padding-top:10px;">
+    <script>
+      {literal}
+      function selectAll(nodeid, value) {
+        var parentNode = document.getElementById(nodeid);
+        var inputs = parentNode.getElementsByTagName('input');
+        for(var i=0,l=inputs.length; i<l; i++){
+          var input = inputs[i];
+          if(input.type == 'checkbox'){
+            if(value){
+              input.checked = true;
+            }else{
+              input.checked = false;
+            }
+          }
+        }
+
+      }
+      {/literal}
+    </script>
+    <input type="checkbox" name="checkbox" id="checkbox" onclick="selectAll('friends', this.checked);" />
+    <label for="checkbox"></label>
+    <input name="subject" type="text" class="wid" value="请填写要对邀请好友说的话.."/>
+    <input name="submit" type="submit" value="" class="xyb2 send"/>
+    </p>
+     {else}
+    <p class="ms18"> 恭喜！抱歉没找到您的好友，马上去<span class="pink decor"><a href="home.php?mod=space&do=friend">交好友</a></span>来玩吧！</p>
+    {/if}
+  </div>
+</form>

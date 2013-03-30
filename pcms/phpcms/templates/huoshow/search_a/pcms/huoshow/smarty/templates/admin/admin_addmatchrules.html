@@ -1,0 +1,22 @@
+<div style="clear:both; background:#DEEFFB; padding-left:5px; height:28px; line-height:28px; font-size:14px; font-weight:bold;">
+	<a href="?action=huoshow&operation=eventsadmin">赛事管理</a> >> 赛事规则管理 >> 添加赛事规则管理
+</div>
+<form action="" method="POST">
+<table>
+	<tr>
+		<td>规则ID（名称）：
+			<select name="regular_id" style="width:200px;">
+				{section name=r loop=$rules_name}
+				<option value="{$rules_name[r].id}">{$rules_name[r].regular_descript}</option>
+				{/section}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>所占百分比：<input type="text" name="precent" value="{$rules.precent}" /></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="submit" value="提交" /></td>
+	</tr>
+</table>
+</form>

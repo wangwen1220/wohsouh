@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']} - 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-global.css' rel='stylesheet' />
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-test'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<div id='main'>
+			<!-- <div class='header'>
+				<h2 class='title'>测试文字测试文字测试文字1</h2>
+				<div class='nav'>
+					<a href='#'>11 月</a>
+					<a class='cur' href='#''>9月</a>
+				</div>
+			</div> -->
+			<table class='table-game-test'>
+				<thead>
+					<tr>
+						<th>测试日期</th>
+						<th>游戏名称</th>
+						<th>测试状态</th>
+						<th>游戏类型</th>
+						<th>开发公司</th>
+						<th>运营公司</th>
+						<th>火秀发号</th>
+					</tr>
+				</thead>
+				<tbody>
+					{pc:special action="get_special_pos" posid="39" order="inputtime DESC" num="50"}
+					{loop $data $r}
+					<tr>
+						<td>{date('Y-m-d',$r[inputtime])}</td>
+						<td><a class='name' target="_blank" href='{$r[url]}'>{$r[special_name]}</a></td>
+						<td>{$r[tmp][0][game_state]}</td>
+						<td>{$r[tmp][0][game_type]}</td>
+						<td>{$r[tmp][0][developers]}</td>
+						<td>{$r[tmp][0][operators]}</td>
+						<td><a class='num' target="_blank" href='{$r[url]}'>抢号</a></td>
+					</tr>
+					{/loop}
+					{/pc}
+				</tbody>
+			</table>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-rdtj'>
+				<h2 class='ui-box-side-title'>热点推荐</h2>
+				{pc:content  action="rand_news_hothits" catids="260,261,262,263" newsnum="12"}
+				{loop $data $r}
+				{if $n==1 || $n==7}
+				<h3 class='subtitle'><a href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></h3>
+				{else}
+				{if $n==2}<ul class='ui-list'>{/if}
+					<li class='ui-list-item'><a href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+				{if $n==12}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+
+			<div class='ad'><a href='#'><img src='http://pnews.wwen.huoshow.com/statics/images/common/ad7.jpg' alt='' width='280' height='248' /></a></div>
+
+			<div class='ui-box-side ui-box-xyx'>
+				<h2 class='ui-box-side-title'>新游戏</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="483" order="listorder DESC" num="3" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],73,73)}' width='73' height='73' /></a>
+						<a class='title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+				<ul class='ui-list ui-list-inline hr'>
+				{pc:special action="get_special_pos" posid="15" order="inputtime DESC" limit="24"}
+				{loop $data $r}
+					<li class='ui-list-item'><a href='{$r[url]}'>{$r[special_name]}</a></li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-sptj'>
+				<h2 class='ui-box-side-title'>视频推荐</h2>
+				{pc:content  action="position" posid="484" order="listorder DESC" num="12" }
+   				{loop $data $r}
+				{if $n<3}
+				{if $n==1}<ul class='ui-img-list ui-img-list-plus'>{/if}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+						<a class='title' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{if $n==2}</ul>{/if}
+				{else}
+				{if $n==3}<ul class='ui-list ui-list-inline'>{/if}
+				<li class='ui-list-item'><a href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></li>
+				{if $n==12}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-wydg'>
+				<h2 class='ui-box-side-title'>网游大观</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+					{pc:content  action="position" posid="485" order="listorder DESC" num="6" }
+	   				{loop $data $r}
+						<li class='ui-img-list-item'>
+							<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+							<a class='title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+						</li>
+					{/loop}
+					{/pc}	
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

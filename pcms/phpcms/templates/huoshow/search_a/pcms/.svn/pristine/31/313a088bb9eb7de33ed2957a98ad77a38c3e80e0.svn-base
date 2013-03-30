@@ -1,0 +1,329 @@
+@import "../hs-game-global.css";
+@charset "utf-8";
+
+/*
+名称：火秀游戏专题经典样式表
+简介：火秀游戏专题经典样式表
+维护：王文 wangwen1220#139.com
+日期：2013-1-14
+*/
+
+/* TPL
+----------------------------------------------------------------------------- */
+/*
+ * @name: .ui-header-classic
+ * @overview: 标题样式
+ * @require: .ui-header
+ */
+.ui-header-classic {
+	padding-left: 15px;
+	border-top: 1px solid #035CAD;
+	background: #F0F0F0;
+}
+.ui-header-classic .title {
+	color: #000;
+	font-family: '微软雅黑','黑体','宋体',arial;
+	font-size: 18px;
+}
+.ui-header-classic .link,
+.ui-header-classic .link a {
+	color: #999;
+}
+
+/*
+ * @name: .ui-pic-list
+ * @overview: 图片列表样式
+ * @require: null
+ */
+.ui-pic-list {
+	margin: 20px -30px 10px 0;
+}
+.ui-pic-list-item {
+	float: left;
+	margin: 0 30px 10px 0;
+	width: 136px;
+	overflow: hidden;
+}
+.ui-pic-list-item .img {
+	position: relative;
+	display: block;
+	padding: 1px;
+	border: 1px solid #DFDFDF;
+	background: #fff;
+}
+.ui-pic-list-item img {
+	display: block;
+}
+.ui-pic-list-item .img .icon-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 37px;
+	height: 37px;
+	margin-left: -18px;
+	margin-top: -18px;
+	background: url(../../images/game/icon-play.png) no-repeat 0 0;
+}
+.ui-pic-list-item .img:hover .icon-play {
+	background: url(../../images/game/icon-play-hover.png) no-repeat 0 0;
+}
+.ui-pic-list-item .title {
+	display: block;
+	margin-top: 3px;
+	height: 16px;
+	line-height: 16px;
+	overflow: hidden;
+	color: #666;
+}
+.ui-pic-list-item .time {
+	color: #999;
+}
+
+/*
+ * @name: .ui-pic-list-gallery
+ * @overview: 图片列表样式
+ * @require: .ui-pic-list
+ */
+.ui-pic-list-gallery {
+	margin-right: -14px;
+}
+.ui-pic-list-gallery .ui-pic-list-item {
+	margin-right: 14px;
+	padding: 8px 12px 14px 8px;
+	width: 132px;
+	height: 163px;
+	background: url(../../images/game/bg-pic-list-item-gallery.png) no-repeat 0 0;
+}
+.ui-pic-list-gallery .ui-pic-list-item .img {
+	padding: 0;
+	border: none;
+}
+.ui-pic-list-gallery .ui-pic-list-item .info {
+	position: relative;
+	z-index: 1;
+	margin-top: -20px;
+	padding: 0 5px;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .6);
+	background: #000\9;
+	opacity: 0.75\9;
+	filter: alpha(opacity=75);
+}
+.ui-pic-list-gallery .ui-pic-list-item .date {
+	float: right;
+}
+.ui-pic-list-gallery .ui-pic-list-item .title {
+	height: 36px;
+	line-height: 18px;
+}
+
+/*
+ * @name: .ui-comment-list
+ * @overview: 评论列表样式
+ * @require: null
+ */
+.ui-comment-list {}
+.ui-comment-list-item {
+	position: relative;
+	padding: 20px 0;
+	border-bottom: 1px dotted #DFDFDF;
+}
+.ui-comment-list-item .img {
+	float: left;
+	border: 1px solid #E5E5E5;
+}
+.ui-comment-list-item .img img {
+	display: block;
+}
+.ui-comment-list-item .title,
+.ui-comment-list-item .cnt {
+	margin-left: 60px;
+}
+.ui-comment-list-item .title {
+	margin-right: 150px;
+	color: #999;
+}
+.ui-comment-list-item .title a {
+	color: #045DAD;
+}
+.ui-comment-list-item .cnt {
+	margin-top: 5px;
+	line-height: 1.8;
+	font-size: 14px;
+	color: #333;
+}
+.ui-comment-list-item .info {
+	position: absolute;
+	right: 0;
+	top: 20px;
+	color: #999;
+}
+
+/* Global
+----------------------------------------------------------------------------- */
+/** Header **/
+#header {
+	*position: relative;
+	*z-index: 5;
+}
+#nav {
+	height: 32px;
+	background: #707070 url(../images/game/bg-nav-gray.png) repeat-x;
+}
+#nav .drop-down {
+	border-color: #9C9C9C;
+}
+#nav .drop-down h3 a {
+	background-image: url(../images/game/icon-ipad-white.png);
+}
+#nav .drop-down ul {
+	border: 3px solid rgba(0, 0, 0, 0.5);
+	border: 3px solid #7F7F7F\9;
+	border-top: none;
+}
+#nav .drop-down ul li {
+	border-left: 1px solid #282828;
+	border-right: 1px solid #282828;
+}
+
+/** Side **/
+#side .ui-hotgame-list-item .title {
+	width: 178px;
+}
+/* TODO */
+#side .ui-box-gallery .ui-img-list-plus {
+	left: 28px;
+	margin-left: -28px;
+}
+#side .ui-box-gallery .ui-img-list-item {
+	margin-right: 28px;
+}
+
+/* Manin */
+body.game-zlk #main .article-gallery .ui-img-list-plus {
+	left: 28px;
+	margin-left: -28px;
+}
+body.game-zlk #main .article-gallery .ui-img-list-item {
+	margin: 5px 28px 13px 0;
+}
+body.game-zlk #main .article-gallery .ui-img-list-item .img {
+	border: none;
+}
+
+/* Layout
+----------------------------------------------------------------------------- */
+/** 资料库 **/
+/* main */
+body.game-zlk #main {
+	width: 670px;
+	padding-right: 10px;
+	border-right: 1px solid #E6E6E6;
+}
+body.game-zlk #main .article-news .ui-list-content {
+	border: none;
+}
+body.game-zlk #main .article-gallery .ui-pic-list {
+	margin-left: 18px;
+}
+body.game-zlk #main .article-gallery .ui-pic-list-gallery {
+	margin-left: 10px;
+}
+body.game-zlk #main .article-comment .ui-header .link em {
+	color: #CF0716;
+}
+body.game-zlk #main .article-comment .ui-header-comment {
+	margin: 10px 0 0;
+	padding: 0 0 5px;
+	border-bottom: 1px solid #E6E6E6;
+	background: none;
+}
+body.game-zlk #main .article-comment .ui-header-comment .title {
+	font-family: '微软雅黑','黑体','宋体',arial;
+	font-size: 17px;
+	color: #666;
+}
+body.game-zlk #main .article-comment .ui-header-comment .title .status {
+	font-size: 12px;
+	font-family: '宋体',arial;
+	color: #999;
+}
+body.game-zlk #main .article-comment .ui-header-comment .title .status em {
+	margin: 0 .2em;
+	color: #CF0716;
+	font-weight: bold;
+}
+body.game-zlk #main .article-comment .ui-header-comment .link {
+	right: 0;
+	color: #999;
+}
+body.game-zlk #main .article-pager a,
+body.game-zlk #main .article-pager span {
+	padding: 0 7px;
+	height: 20px;
+	line-height: 20px;
+}
+body.game-zlk #main .article-pager .current {
+	border-color: #035CAD;
+	background: #035CAD;
+}
+body.game-zlk #main .comment-form {
+	border: 1px solid #E6E6E6;
+	background-color: #F2F2F2;
+	padding: 0 20px;
+}
+body.game-zlk #main .comment-form .title {
+	height: 40px;
+	padding-left: 25px;
+	font: 16px/40px '微软雅黑','黑体','宋体',arial;
+	color: #666;
+	background: url(../../images/game/icon-comment-title.png) no-repeat 0 50%;
+}
+body.game-zlk #main .comment-form textarea {
+	padding: 4px 0;
+	width: 100%;
+	height: 146px;
+	border: 1px solid #E6E6E6;
+	color: #444;
+	resize: vertical;
+	background: #fff url(../../images/game/bg-comment.png) no-repeat center center;
+}
+body.game-zlk #main .comment-form textarea:focus {
+	border: 1px solid #aaa;
+	box-shadow: 0 0 3px rgba(255, 0, 0, .3);
+}
+body.game-zlk #main .comment-form button {
+	float: right;
+	margin: 10px 0;
+	border: none;
+	height: 24px;
+	width: 60px;
+	text-indent: -9999px;
+	color: #fff;
+	background: url(../../images/game/btn-comment-submit-red.png) no-repeat;
+}
+body.game-zlk #main .comment-form .login {
+	margin: 10px 0;
+	line-height: 24px;
+	color: #045DAD;
+}
+body.game-zlk #main .comment-form .login a {
+	color: #045DAD;
+}
+
+/* side */
+body.game-zlk #side {
+	padding-left: 10px;
+	width: 269px;
+}
+body.game-zlk #side .ui-box-side {
+	border: none;
+}
+
+
+
+

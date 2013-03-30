@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-mobile.css' rel='stylesheet' />
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-mobile'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+
+	<div class='ui-layout ad'><a target='_blank' href='#'><img src='http://pnews.huoshow.com/statics/images/common/middle_anner.png' width='960' height='60' /></a></div>
+	<!-- 主内容 -->
+	<div id='content-main' class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-left'>
+			<div id='myfocus-games' class='ui-myfocus'><!--焦点图盒子-->
+				<div class="loading"></div><!--载入画面(可删除)-->
+				{pc:content action="position" posid="494" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				<div class="pic"><!--图片列表-->
+					<ul>
+						{loop $data $r}
+						<li><a href="{str_replace('www','game',$r[url])}" target='_blank'><img src="{thumb($r[thumb],308,231)}" thumb="" alt="{$r[title]}" width='308' height='231' /></a></li>
+						{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-center'>
+			{pc:content action="position" posid="495" catid="$catid" order="listorder DESC" num="10"}
+			{loop $data $r}
+				{if $n==1}
+					<h2 class='ui-newgame-title'><a target='_blank' href="{str_replace('www','game',$r[url])}" title='{$r[title]}'>{str_cut($r[title], 60,'')}</a></h2>
+				{/if}
+			{/loop}
+			<div class='ui-newgame-link'>
+			{loop $data $r}
+				{if $n!=1}
+					<a target='_blank' href="{str_replace('www','game',$r[url])}" title='{$r[title]}'>[{str_cut($r[title], 15,'')}]</a>
+				{/if}
+				{php if($n==5) break;}
+			{/loop}
+			</div>
+			{loop $data $r}
+				{if $n==6}
+					<h2 class='ui-newgame-title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a></h2>
+				{/if}
+			{/loop}
+			<div class='ui-newgame-link'>
+			{loop $data $r}
+				{if $n>6}
+					<a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">[{str_cut($r[title], 15,'')}]</a>
+				{/if}
+			{/loop}
+			</div>
+			{/pc}
+			{pc:content action="position" posid="496" catid="$catid" order="listorder DESC" num="7"}
+			<ul class='ui-list ui-list-main hr'>
+				{loop $data $r}
+					<li class='ui-list-item'><!--a href='{$r[url]}'>{$CATEGORYS[$r[catid]][catname]}</a> |  -->
+					{if $n==1}
+						<strong><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a></strong>
+					{else}
+						<a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a>
+					{/if}
+					</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-right'>
+			<div class='ui-box'>
+				<div class='ui-header'>
+					<h3 class='title'>壁纸下载</h3>
+				</div>
+				<div class='ui-tab ui-tab-lite'>
+					<div class='ui-tab-header fn-clear'>
+						<ul class='ui-tab-nav fn-clear'>
+							<li class='ui-tab-nav-item ui-tab-nav-item-cur'>苹果<span class='icon'></span></li>
+							<li class='ui-tab-nav-item'>安卓<span class='icon'></span></li>
+							<li class='ui-tab-nav-item'>WP<span class='icon'></span></li>
+						</ul>
+					</div>
+					<div class='ui-tab-cnt'>
+						{pc:content action="position" posid="497" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+						<ul class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-img-list ui-img-list-plus'>
+							{loop $data $r}
+							<li class='ui-img-list-item'>
+								<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],102,76)}' width='102' height='76' /><!--<span class='icon-play'></span> --></a>
+								<a target='_blank' title='{$r[title]}' class='title' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+						{pc:content action="position" posid="498" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+						<ul class='ui-tab-cnt-item ui-img-list ui-img-list-plus'>
+							{loop $data $r}
+							<li class='ui-img-list-item'>
+								<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],102,76)}' width='102' height='76' /><!--<span class='icon-play'></span> --></a>
+								<a target='_blank' title='{$r[title]}' class='title' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+						{pc:content action="position" posid="499" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+						<ul class='ui-tab-cnt-item ui-img-list ui-img-list-plus'>
+							{loop $data $r}
+							<li class='ui-img-list-item'>
+								<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],102,76)}' width='102' height='76' /><!--<span class='icon-play'></span> --></a>
+								<a target='_blank' title='{$r[title]}' class='title' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='ui-layout ad'><a target='_blank' href='#'><img src='http://pnews.huoshow.com/statics/images/common/middle_anner.png' width='960' height='60' /></a></div>
+
+	<!-- 苹果游戏 -->
+	<div id='content-iphone' class='ui-box ui-box-game fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>苹果游戏</h2>
+			<div class='link'>{loop subcat(299,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a> | {/loop}<a target='_blank' class='more' href='{$CATEGORYS[299][url]}'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div class='ui-header'>
+				<h2 class='title'>iPhone 新手入门</h2>
+				<!-- <div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div> -->
+			</div>
+			{pc:content action="position" posid="500" catid="$catid" order="listorder DESC" num="15"}
+			<div class="box-list hr-bottom">
+				{loop $data $r}
+				<a target='_blank' title='{$r[title]}' class='box-list-item' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 15,'')}</a>
+				{/loop}
+			</div>
+			{/pc}
+			<div class='ui-header'>
+				<h2 class='title'>iPhone 越狱解锁</h2>
+				<!-- <div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div> -->
+			</div>
+			{pc:content action="position" posid="501" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+			<div class='ui-art fn-clear'>
+				{loop $data $r}
+				<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],90,68)}' alt='' width='90' height='68' /></a>
+				<h3 class='title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+				<p class="content">{str_cut($r[description],100)} <a target='_blank' class='more' href="{str_replace('www','game',$r[url])}">[详情]</a></p>
+				{php if($n==1) break;}
+				{/loop}
+			</div>
+			{/pc}
+			{pc:content action="position" posid="501" catid="$catid" order="listorder DESC" num="5"}
+			<ul class='ui-list'>
+				{loop $data $r}
+				{if $n>1}
+				<li class='ui-list-item'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a></li>
+				{/if}
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<div class='ui-header'>
+				<h2 class='title'>iPhone 最新游戏</h2>
+			</div>
+			{pc:content action="lists" catid="333" thumb="1" num="16" order="id DESC"}
+			<ul class='ui-img-list ui-img-list-plus'>
+				{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a target='_blank' class='img img-game img-mgame' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],75,75)}' width='75' height='75' /><span class='mark-img'></span></a>
+					<a target='_blank' title='{$r[title]}' class='title' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>iPhone 游戏排行</h2>
+			</div>
+			{pc:content action="hits" catid="333" num="12" order="monthviews DESC" cache="3600"}
+			<ul class='ui-ranking ui-ranking-game'>
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target='_blank' class='img img-mgame' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /><span class='mark-img'></span></a>
+					{if $n<4}
+					<span class='num num-hot'>{$n}</span>
+					{else}
+					<span class='num'>{$n}</span>
+					{/if}
+					<h3 class='title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+					<p class="content"><em>下载次数：</em>{$r[views]}次</p>
+					<div class='star star3'></div>
+					<a target='_blank' class='button' href="{str_replace('www','game',$r[url])}">下载</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class='ui-box ui-box-slider'>
+		<div class='ui-header'>
+			<h2 class='title'>iPhone 必备软件推荐</h2>
+		</div>
+		{pc:content action="position" posid="502" catid="$catid" thumb="1" order="listorder DESC" num="20"}
+		<ul class="jcarousel-skin-game">
+			{loop $data $r}
+			<li><a class='img-mgame' target='_blank' href="{str_replace('www','game',$r[url])}"><img src="{thumb($r[thumb],75,75)}" width="75" height="75" alt="" /><em class='mark-img'></em><span>{str_cut($r[title], 30,'')}</span></a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+
+	<!-- 安卓游戏 -->
+	<div id='content-android' class='ui-box ui-box-game fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>安卓游戏</h2>
+			<div class='link'>{loop subcat(300,0,0,$siteid) $r}<a target='_blank' href='{$r[url]}'>{$r[catname]}</a> | {/loop}<a target='_blank' class='more' href='{$CATEGORYS[300][url]}'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div class='ui-header'>
+				<h2 class='title'>安卓游戏攻略</h2>
+				<div class='link'><a target='_blank' class='more' href='{$CATEGORYS[335][url]}'>更多&gt;&gt;</a></div>
+			</div>
+			{pc:content action="lists" catid="335" thumb="1" num="6" order="id DESC"}
+			<ul class='ui-list hr-bottom'>
+				{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 96,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+			<div class='ui-header'>
+				<h2 class='title'>安卓应用合辑</h2>
+				<!-- <div class='link'><a target='_blank' class='more' href='#'>更多&gt;&gt;</a></div> -->
+			</div>
+
+			{pc:content action="position" posid="503" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+			<div class='ui-art fn-clear'>
+				{loop $data $r}
+				<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],90,68)}' alt='' width='90' height='68' /></a>
+				<h3 class='title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+				<p class="content">{str_cut($r[description],100)} <a target='_blank' class='more' href="{str_replace('www','game',$r[url])}">[详情]</a></p>
+				{php if($n==1) break;}
+				{/loop}
+			</div>
+			{/pc}
+			{pc:content action="position" posid="503" catid="$catid" order="listorder DESC" num="5"}
+			<ul class='ui-list'>
+				{loop $data $r}
+				{if $n>1}
+				<li class='ui-list-item'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 96,'')}</a></li>
+				{/if}
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<div class='ui-header'>
+				<h2 class='title'>安卓最新游戏</h2>
+			</div>
+			{pc:content action="lists" catid="334" thumb="1" num="16" order="id DESC"}
+			<ul class='ui-img-list ui-img-list-plus'>
+				{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a target='_blank' class='img img-game img-mgame' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],75,75)}' width='75' height='75' /><span class='mark-img'></span></a>
+					<a target='_blank' title='{$r[title]}' class='title' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>安卓游戏排行</h2>
+			</div>
+			{pc:content action="hits" catid="334" num="12" order="monthviews DESC" cache="3600"}
+			<ul class='ui-ranking ui-ranking-game'>
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target='_blank' class='img img-mgame' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /><span class='mark-img'></span></a>
+					{if $n<4}
+					<span class='num num-hot'>{$n}</span>
+					{else}
+					<span class='num '>{$n}</span>
+					{/if}
+					<h3 class='title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+					<p class="content"><em>下载次数：</em>{$r[views]}次</p>
+					<div class='star star3'></div>
+					<a target='_blank' class='button' href="{str_replace('www','game',$r[url])}">下载</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class='ui-box ui-box-slider'>
+		<div class='ui-header'>
+			<h2 class='title'>安卓必备软件推荐</h2>
+		</div>
+		{pc:content action="position" posid="504" catid="$catid" thumb="1" order="listorder DESC" num="20"}
+		<ul class="jcarousel-skin-game">
+			{loop $data $r}
+			<li><a class='img-mgame' target='_blank' href="{str_replace('www','game',$r[url])}"><img src="{thumb($r[thumb],75,75)}" width="75" height="75" alt="" /><em class='mark-img'></em><span>{str_cut($r[title], 30,'')}</span></a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+
+
+	<!-- WP 游戏 -->
+	<div id='content-wp' class='ui-box ui-box-game fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>Windows Phone</h2>
+			<div class='link'>{loop subcat(301,0,0,$siteid) $r}<a target='_blank' href="{str_replace('www','game',$r[url])}">{$r[catname]}</a> | {/loop}<a target='_blank' class='more' href='{$CATEGORYS[301][url]}'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div class='ui-header'>
+				<h2 class='title'>WP新手入门</h2>
+				<!-- <div class='link'><a target='_blank' class='more' href='#'>更多&gt;&gt;</a></div> -->
+			</div>
+			{pc:content action="lists" catid="315" num="6" order="id DESC"}
+			<ul class='ui-list hr-bottom'>
+				{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 96,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+
+			<div class='ui-header'>
+				<h2 class='title'>WP最新刷机</h2>
+				 <div class='link'><a target='_blank' class='more' href='{$CATEGORYS[336][url]}'>更多&gt;&gt;</a></div>
+			</div>
+			{pc:content action="lists" catid="336" thumb="1" num="4" order="id DESC"}
+			<div class='ui-art fn-clear'>
+				{loop $data $r}
+				<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],90,68)}' alt='' width='90' height='68' /></a>
+				<h3 class='title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 48,'')}</a></h3>
+				<p class="content">{str_cut($r[description],100)} <a target='_blank' class='more' href="{str_replace('www','game',$r[url])}">[详情]</a></p>
+				{php if($n==1) break;}
+				{/loop}
+			</div>
+			{/pc}
+			{pc:content action="lists" catid="336" num="5" order="id DESC"}
+			<ul class='ui-list'>
+				{loop $data $r}
+				{if $n>1}
+				<li class='ui-list-item'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 96,'')}</a></li>
+				{/if}
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<div class='ui-header'>
+				<h2 class='title'>WP最新游戏</h2>
+			</div>
+			{pc:content action="lists" catid="337" thumb="1" num="16" order="id DESC"}
+			<ul class='ui-img-list ui-img-list-plus'>
+				{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a target='_blank' class='img img-game img-mgame' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],75,75)}' width='75' height='75' /><span class='mark-img'></span></a>
+					<a target='_blank' title='{$r[title]}' class='title' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>WP游戏排行</h2>
+			</div>
+			{pc:content action="hits" catid="337" num="12" order="monthviews DESC" cache="3600"}
+			<ul class='ui-ranking ui-ranking-game'>
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target='_blank' class='img img-mgame' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /><span class='mark-img'></span></a>
+					{if $n<4}
+					<span class='num num-hot'>{$n}</span>
+					{else}
+					<span class='num '>{$n}</span>
+					{/if}
+					<h3 class='title'><a target='_blank' title='{$r[title]}' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+					<p class="content"><em>下载次数：</em>{$r[views]}次</p>
+					<div class='star star3'></div>
+					<a target='_blank' class='button' href="{str_replace('www','game',$r[url])}">下载</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class='ui-box ui-box-slider'>
+		<div class='ui-header'>
+			<h2 class='title'>WP 必备软件推荐</h2>
+		</div>
+		{pc:content action="position" posid="505" catid="$catid" thumb="1" order="listorder DESC" num="20"}
+		<ul class="jcarousel-skin-game">
+			{loop $data $r}
+			<li><a class='img-mgame' target='_blank' href="{str_replace('www','game',$r[url])}"><img src="{thumb($r[thumb],75,75)}" width="75" height="75" alt="" /><em class='mark-img'></em><span>{str_cut($r[title], 30,'')}</span></a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+
+	<!-- 热门资讯 -->
+	<div id='content-rmzx' class='ui-box fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>热门资讯</h2>
+			<!-- div class='link'><a target='_blank' class='more' href='#'>更多&gt;&gt;</a></div> -->
+		</div>
+		<div class='mobile-news mobile-news-iphone'>
+			<h2 class='header'><a target='_blank' href='{$CATEGORYS[299][url]}'>苹果 iPhone</a></h2>
+			{pc:content action="position" posid="506" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+			<div class='ui-art'>
+				{loop $data $r}
+				<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],288,98)}' alt='' width='288' height='98' /></a>
+				<h3 class='title'><a target='_blank' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+				<p class="content">{str_cut($r[description],100)} <a target='_blank' class='more' href="{str_replace('www','game',$r[url])}">[详情]</a></p>
+				{/loop}
+			</div>
+			{/pc}
+			{pc:content action="lists" catid="304" num="6" order="id DESC"}
+			<ul class='ui-list'>
+				{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class='mobile-news mobile-news-android'>
+			<h2 class='header'><a target='_blank' href='{$CATEGORYS[300][url]}'>安卓 Android</a></h2>
+			{pc:content action="position" posid="507" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+			<div class='ui-art'>
+				{loop $data $r}
+				<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],288,98)}' alt='' width='288' height='98' /></a>
+				<h3 class='title'><a target='_blank' href="{str_replace('www','game',$r[url])}" title='{$r[title]}'>{str_cut($r[title], 30,'')}</a></h3>
+				<p class="content">{str_cut($r[description],100)} <a target='_blank' class='more' href="{str_replace('www','game',$r[url])}">[详情]</a></p>
+				{/loop}
+			</div>
+			{/pc}
+			{pc:content action="lists" catid="310" num="6" order="id DESC"}
+			<ul class='ui-list'>
+				{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class='mobile-news mobile-news-wp'>
+			<h2 class='header'><a target='_blank' href='{$CATEGORYS[301][url]}'>Windows Phone</a></h2>
+			{pc:content action="position" posid="508" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+			<div class='ui-art'>
+				{loop $data $r}
+				<a target='_blank' class='img' href="{str_replace('www','game',$r[url])}"><img src='{thumb($r[thumb],288,98)}' alt='' width='288' height='98' /></a>
+				<h3 class='title'><a target='_blank' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 30,'')}</a></h3>
+				<p class="content">{str_cut($r[description],100)} <a target='_blank' class='more' href="{str_replace('www','game',$r[url])}">[详情]</a></p>
+				{/loop}
+			</div>
+			{/pc}
+			{pc:content action="lists" catid="313" num="6" order="id DESC"}
+			<ul class='ui-list'>
+				{loop $data $r}
+				<li class='ui-list-item'><a target='_blank' href="{str_replace('www','game',$r[url])}">{str_cut($r[title], 60,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

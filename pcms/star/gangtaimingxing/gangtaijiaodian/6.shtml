@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>港台热点 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">港台热点</h2>
+						<h3><a href='#'>内地焦点</a> | <a href='#'>明星动态</a> | <a href='#'>街拍</a></h3>
+					</div>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="昆凌皮衣性感出席公司年会 否认造型抄袭蔡依林" href="http://pnews.trunk.huoshow.com/2012/0110/92983.shtml" target="_blank">昆凌皮衣性感出席公司年会 否认造型抄袭蔡依林</a></span>
+							<span class="date_01">2012-01-10 10:43:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="陈冠希为追嫩模戒烟 互传自拍短片分享经验(图)" href="http://pnews.trunk.huoshow.com/2012/0110/92979.shtml" target="_blank">陈冠希为追嫩模戒烟 互传自拍短片分享经验(图)</a></span>
+							<span class="date_01">2012-01-10 10:42:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="郭富城将与英女王长孙同台 欲请教养马心得（图）" href="http://pnews.trunk.huoshow.com/2012/0110/92971.shtml" target="_blank">郭富城将与英女王长孙同台 欲请教养马心得（图）</a></span>
+							<span class="date_01">2012-01-10 10:25:19</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="诸葛紫岐暗指陈法拉多嘴 两人曾多次传出不和" href="http://pnews.trunk.huoshow.com/2012/0110/92905.shtml" target="_blank">诸葛紫岐暗指陈法拉多嘴 两人曾多次传出不和</a></span>
+							<span class="date_01">2012-01-10 10:21:10</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="胡杏儿为婆婆贺寿 与黄宗泽龙年结婚被看好" href="http://pnews.trunk.huoshow.com/2012/0110/92903.shtml" target="_blank">胡杏儿为婆婆贺寿 与黄宗泽龙年结婚被看好</a></span>
+							<span class="date_01">2012-01-10 10:18:08</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="港媒曝陈冠希网上撒网钓女 成功秘交文咏珊(图)" href="http://pnews.trunk.huoshow.com/2012/0109/92713.shtml" target="_blank">港媒曝陈冠希网上撒网钓女 成功秘交文咏珊(图)</a></span>
+							<span class="date_01">2012-01-09 16:43:21</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="梁朝伟：打算只再拍五部电影 以后只接喜剧" href="http://pnews.trunk.huoshow.com/2012/0109/92589.shtml" target="_blank">梁朝伟：打算只再拍五部电影 以后只接喜剧</a></span>
+							<span class="date_01">2012-01-09 16:16:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="林海峰栋笃笑恶搞改歌词 频现金句观众受乐" href="http://pnews.trunk.huoshow.com/2012/0109/92529.shtml" target="_blank">林海峰栋笃笑恶搞改歌词 频现金句观众受乐</a></span>
+							<span class="date_01">2012-01-09 15:46:27</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="洪金宝60大寿十分开心 子女回港举行神秘派对" href="http://pnews.trunk.huoshow.com/2012/0109/92507.shtml" target="_blank">洪金宝60大寿十分开心 子女回港举行神秘派对</a></span>
+							<span class="date_01">2012-01-09 15:03:02</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="阮经天晒许玮宁私照示爱 粉碎恋情陷僵局传闻" href="http://pnews.trunk.huoshow.com/2012/0109/92289.shtml" target="_blank">阮经天晒许玮宁私照示爱 粉碎恋情陷僵局传闻</a></span>
+							<span class="date_01">2012-01-09 11:10:50</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="霍启刚被曝将迎娶郭晶晶 花千万两地摆喜酒" href="http://pnews.trunk.huoshow.com/2012/0109/92019.shtml" target="_blank">霍启刚被曝将迎娶郭晶晶 花千万两地摆喜酒</a></span>
+							<span class="date_01">2012-01-09 10:07:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="任容萱拍戏投保近千万 盼Selina早日领证(图)" href="http://pnews.trunk.huoshow.com/2012/0109/92015.shtml" target="_blank">任容萱拍戏投保近千万 盼Selina早日领证(图)</a></span>
+							<span class="date_01">2012-01-09 10:07:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="梁朝伟自曝刘嘉玲从未夸过其浪漫(图)" href="http://pnews.trunk.huoshow.com/2012/0109/92011.shtml" target="_blank">梁朝伟自曝刘嘉玲从未夸过其浪漫(图)</a></span>
+							<span class="date_01">2012-01-09 10:07:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="成龙隔20年来台拍戏 老婆林凤娇陪吃坐镇（图）" href="http://pnews.trunk.huoshow.com/2012/0109/91999.shtml" target="_blank">成龙隔20年来台拍戏 老婆林凤娇陪吃坐镇（图）</a></span>
+							<span class="date_01">2012-01-09 10:07:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="张柏芝成毒药票房三连跌 新片首日每场收902元" href="http://pnews.trunk.huoshow.com/2012/0107/91783.shtml" target="_blank">张柏芝成毒药票房三连跌 新片首日每场收902元</a></span>
+							<span class="date_01">2012-01-07 10:56:03</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="梁朝伟推掉王家卫补戏要求 履行合约拍广告" href="http://pnews.trunk.huoshow.com/2012/0107/91775.shtml" target="_blank">梁朝伟推掉王家卫补戏要求 履行合约拍广告</a></span>
+							<span class="date_01">2012-01-07 10:51:07</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="痴情春卷哑忍花心李思捷 被私藏禁止幕前演出" href="http://pnews.trunk.huoshow.com/2012/0107/91769.shtml" target="_blank">痴情春卷哑忍花心李思捷 被私藏禁止幕前演出</a></span>
+							<span class="date_01">2012-01-07 10:47:13</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="黄宗泽曝胡杏儿爱发如命 护发素用量是其三倍" href="http://pnews.trunk.huoshow.com/2012/0107/91765.shtml" target="_blank">黄宗泽曝胡杏儿爱发如命 护发素用量是其三倍</a></span>
+							<span class="date_01">2012-01-07 10:43:26</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="乐基儿被曝去年年底流产 一脸憔悴探班黎明个唱" href="http://pnews.trunk.huoshow.com/2012/0107/91507.shtml" target="_blank">乐基儿被曝去年年底流产 一脸憔悴探班黎明个唱</a></span>
+							<span class="date_01">2012-01-07 09:54:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="张庭台湾剖腹产子 全力恢复拟二月复出" href="http://pnews.trunk.huoshow.com/2012/0107/91505.shtml" target="_blank">张庭台湾剖腹产子 全力恢复拟二月复出</a></span>
+							<span class="date_01">2012-01-07 09:54:43</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="李思捷撇女友夜店泡妞 街头又搂又抱上下其手" href="http://pnews.trunk.huoshow.com/2012/0107/91503.shtml" target="_blank">李思捷撇女友夜店泡妞 街头又搂又抱上下其手</a></span>
+							<span class="date_01">2012-01-07 09:54:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="崔建邦将箍颈复出 恩师陈志云明日赴美游学" href="http://pnews.trunk.huoshow.com/2012/0107/91501.shtml" target="_blank">崔建邦将箍颈复出 恩师陈志云明日赴美游学</a></span>
+							<span class="date_01">2012-01-07 09:54:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="王阳明冷对跟杨丞琳绯闻 与萧亚轩拍吻戏传复合" href="http://pnews.trunk.huoshow.com/2012/0107/91499.shtml" target="_blank">王阳明冷对跟杨丞琳绯闻 与萧亚轩拍吻戏传复合</a></span>
+							<span class="date_01">2012-01-07 09:54:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="王菲微博否认怀孕传闻：内谁总怀孕谁管管(图)" href="http://pnews.trunk.huoshow.com/2012/0106/91399.shtml" target="_blank">王菲微博否认怀孕传闻：内谁总怀孕谁管管(图)</a></span>
+							<span class="date_01">2012-01-06 17:39:05</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="萧亚轩疯狂变脸面目全非 成翻版Angelababy" href="http://pnews.trunk.huoshow.com/2012/0106/91225.shtml" target="_blank">萧亚轩疯狂变脸面目全非 成翻版Angelababy</a></span>
+							<span class="date_01">2012-01-06 16:11:29</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="梁洛施秘密回港与徐克会面 7月复出接拍古装片" href="http://pnews.trunk.huoshow.com/2012/0106/91221.shtml" target="_blank">梁洛施秘密回港与徐克会面 7月复出接拍古装片</a></span>
+							<span class="date_01">2012-01-06 16:07:12</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="专访梁朝伟：前半生够了 往后的日子不再害羞" href="http://pnews.trunk.huoshow.com/2012/0106/91153.shtml" target="_blank">专访梁朝伟：前半生够了 往后的日子不再害羞</a></span>
+							<span class="date_01">2012-01-06 15:44:20</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="叶世荣娘家摆婚宴 摇滚英雄温柔“约定”" href="http://pnews.trunk.huoshow.com/2012/0106/90941.shtml" target="_blank">叶世荣娘家摆婚宴 摇滚英雄温柔“约定”</a></span>
+							<span class="date_01">2012-01-06 15:24:27</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="胡杏儿坦言看事情较悲观 谈婚姻称不会太快(图)" href="http://pnews.trunk.huoshow.com/2012/0106/90919.shtml" target="_blank">胡杏儿坦言看事情较悲观 谈婚姻称不会太快(图)</a></span>
+							<span class="date_01">2012-01-06 14:45:10</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="朱玲玲承认与郭晶晶家长已见面 赞斯文打一百分" href="http://pnews.trunk.huoshow.com/2012/0106/90865.shtml" target="_blank">朱玲玲承认与郭晶晶家长已见面 赞斯文打一百分</a></span>
+							<span class="date_01">2012-01-06 10:41:44</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="传周杰伦承认昆凌女友身份 马来甜蜜约会(图)" href="http://pnews.trunk.huoshow.com/2012/0106/90845.shtml" target="_blank">传周杰伦承认昆凌女友身份 马来甜蜜约会(图)</a></span>
+							<span class="date_01">2012-01-06 10:10:35</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="乐基儿大肚照曝光 传黎明买天价安胎屋(图)" href="http://pnews.trunk.huoshow.com/2012/0106/90843.shtml" target="_blank">乐基儿大肚照曝光 传黎明买天价安胎屋(图)</a></span>
+							<span class="date_01">2012-01-06 10:08:35</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="梁朝伟携刘嘉玲甜蜜亮相 透露想生龙宝宝（图）" href="http://pnews.trunk.huoshow.com/2012/0106/90841.shtml" target="_blank">梁朝伟携刘嘉玲甜蜜亮相 透露想生龙宝宝（图）</a></span>
+							<span class="date_01">2012-01-06 10:05:49</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传张柏芝布局锋芝重逢 谢霆锋不领情避前妻" href="http://pnews.trunk.huoshow.com/2012/0106/90657.shtml" target="_blank">传张柏芝布局锋芝重逢 谢霆锋不领情避前妻</a></span>
+							<span class="date_01">2012-01-06 09:27:40</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="吴彦祖妻子暗示曾遭林熙蕾“插足” 约会被偷拍" href="http://pnews.trunk.huoshow.com/2012/0106/90655.shtml" target="_blank">吴彦祖妻子暗示曾遭林熙蕾“插足” 约会被偷拍</a></span>
+							<span class="date_01">2012-01-06 09:29:55</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="Beyond翻脸内幕曝光 叶世荣被指借组合名号走穴" href="http://pnews.trunk.huoshow.com/2012/0106/90653.shtml" target="_blank">Beyond翻脸内幕曝光 叶世荣被指借组合名号走穴</a></span>
+							<span class="date_01">2012-01-06 09:29:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="周丽淇新剧创收视预期 承诺庆功拒穿三点式" href="http://pnews.trunk.huoshow.com/2012/0105/90587.shtml" target="_blank">周丽淇新剧创收视预期 承诺庆功拒穿三点式</a></span>
+							<span class="date_01">2012-01-05 17:42:01</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="郑秀文不会游泳 拍广告担心溺水要求猛男拯救" href="http://pnews.trunk.huoshow.com/2012/0105/90485.shtml" target="_blank">郑秀文不会游泳 拍广告担心溺水要求猛男拯救</a></span>
+							<span class="date_01">2012-01-05 16:07:16</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="阿Sa获钦点央视春晚表演 经纪人感难得表期待" href="http://pnews.trunk.huoshow.com/2012/0105/90483.shtml" target="_blank">阿Sa获钦点央视春晚表演 经纪人感难得表期待</a></span>
+							<span class="date_01">2012-01-05 16:00:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="袁咏仪抹胸小礼服优雅亮相 皮草加身显干练(图)" href="http://pnews.trunk.huoshow.com/2012/0105/90481.shtml" target="_blank">袁咏仪抹胸小礼服优雅亮相 皮草加身显干练(图)</a></span>
+							<span class="date_01">2012-01-05 15:56:37</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="丁子高曝杨千嬅怀孕怕烦闷 曾出逃找不到人" href="http://pnews.trunk.huoshow.com/2012/0105/90169.shtml" target="_blank">丁子高曝杨千嬅怀孕怕烦闷 曾出逃找不到人</a></span>
+							<span class="date_01">2012-01-05 14:29:41</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="谢霆锋撒娇回应与张柏芝复婚传闻：乖 别闹了" href="http://pnews.trunk.huoshow.com/2012/0105/90157.shtml" target="_blank">谢霆锋撒娇回应与张柏芝复婚传闻：乖 别闹了</a></span>
+							<span class="date_01">2012-01-05 14:21:51</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="Ella自曝已觅得真命天子 欲回屏东老家办婚宴" href="http://pnews.trunk.huoshow.com/2012/0105/90155.shtml" target="_blank">Ella自曝已觅得真命天子 欲回屏东老家办婚宴</a></span>
+							<span class="date_01">2012-01-05 14:21:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="徐伟栋否认与陈嘉桓绯闻 称对其没意思(图)" href="http://pnews.trunk.huoshow.com/2012/0105/90069.shtml" target="_blank">徐伟栋否认与陈嘉桓绯闻 称对其没意思(图)</a></span>
+							<span class="date_01">2012-01-05 11:56:11</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="港媒曝吴彦祖老婆已怀孕 因未满三月不对外宣布" href="http://pnews.trunk.huoshow.com/2012/0105/89833.shtml" target="_blank">港媒曝吴彦祖老婆已怀孕 因未满三月不对外宣布</a></span>
+							<span class="date_01">2012-01-05 09:45:40</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="大S豪宅风水被指不利求子 S妈：不相信别人说的" href="http://pnews.trunk.huoshow.com/2012/0105/89831.shtml" target="_blank">大S豪宅风水被指不利求子 S妈：不相信别人说的</a></span>
+							<span class="date_01">2012-01-05 09:45:40</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="蔡依林努力在外赚钱 绯闻男友锦荣与辣妹过节" href="http://pnews.trunk.huoshow.com/2012/0105/89829.shtml" target="_blank">蔡依林努力在外赚钱 绯闻男友锦荣与辣妹过节</a></span>
+							<span class="date_01">2012-01-05 10:01:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="吴镇宇否认脾气暴躁 对太太面包铺受辱绝不妥协" href="http://pnews.trunk.huoshow.com/2012/0105/89827.shtml" target="_blank">吴镇宇否认脾气暴躁 对太太面包铺受辱绝不妥协</a></span>
+							<span class="date_01">2012-01-05 09:45:41</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="刘德华证实朱丽倩已怀胎四月 留港拍戏陪妻待产" href="http://pnews.trunk.huoshow.com/2012/0105/89825.shtml" target="_blank">刘德华证实朱丽倩已怀胎四月 留港拍戏陪妻待产</a></span>
+							<span class="date_01">2012-01-05 09:45:41</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="丁子高称杨千嬅下周公开露面 夫妇皆渴望生女" href="http://pnews.trunk.huoshow.com/2012/0105/89823.shtml" target="_blank">丁子高称杨千嬅下周公开露面 夫妇皆渴望生女</a></span>
+							<span class="date_01">2012-01-05 09:45:41</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="徐子珊否认坐拥豪宅 赚钱买房不依靠男友" href="http://pnews.trunk.huoshow.com/2012/0105/89821.shtml" target="_blank">徐子珊否认坐拥豪宅 赚钱买房不依靠男友</a></span>
+							<span class="date_01">2012-01-05 10:01:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="郭富城意外自三公尺台坠落 受轻伤熊黛林急慰问" href="http://pnews.trunk.huoshow.com/2012/0105/89817.shtml" target="_blank">郭富城意外自三公尺台坠落 受轻伤熊黛林急慰问</a></span>
+							<span class="date_01">2012-01-05 09:45:41</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="王菲加盟央视春晚 与陈奕迅合唱《因为爱情》" href="http://pnews.trunk.huoshow.com/2012/0104/89357.shtml" target="_blank">王菲加盟央视春晚 与陈奕迅合唱《因为爱情》</a></span>
+							<span class="date_01">2012-01-04 15:22:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="吴镇宇认真听教夺影帝 预计新作票房过千万" href="http://pnews.trunk.huoshow.com/2012/0104/89217.shtml" target="_blank">吴镇宇认真听教夺影帝 预计新作票房过千万</a></span>
+							<span class="date_01">2012-01-04 14:18:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="赌王儿子何猷君牵洋女友 家人支持与洋妞相恋" href="http://pnews.trunk.huoshow.com/2012/0104/89215.shtml" target="_blank">赌王儿子何猷君牵洋女友 家人支持与洋妞相恋</a></span>
+							<span class="date_01">2012-01-04 14:18:25</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="谢霆锋疑不愿复合 与张柏芝拍合照半推半就(图)" href="http://pnews.trunk.huoshow.com/2012/0104/89199.shtml" target="_blank">谢霆锋疑不愿复合 与张柏芝拍合照半推半就(图)</a></span>
+							<span class="date_01">2012-01-04 12:02:16</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="蒋丽莎微博劝陈浩民戒酒 带女儿扫货贺满月(图)" href="http://pnews.trunk.huoshow.com/2012/0104/89197.shtml" target="_blank">蒋丽莎微博劝陈浩民戒酒 带女儿扫货贺满月(图)</a></span>
+							<span class="date_01">2012-01-04 12:00:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="拍拖看郭富城演唱会 阿Sa陪陈伟霆偷师(图)" href="http://pnews.trunk.huoshow.com/2012/0104/89193.shtml" target="_blank">拍拖看郭富城演唱会 阿Sa陪陈伟霆偷师(图)</a></span>
+							<span class="date_01">2012-01-04 11:55:02</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="炎亚纶被曝遭飞轮海成员排挤 上海同志夜店寻欢" href="http://pnews.trunk.huoshow.com/2012/0104/89031.shtml" target="_blank">炎亚纶被曝遭飞轮海成员排挤 上海同志夜店寻欢</a></span>
+							<span class="date_01">2012-01-04 10:46:20</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="港媒曝Lisa S怀龙年宝宝 吴彦祖停工半年陪产" href="http://pnews.trunk.huoshow.com/2012/0104/89023.shtml" target="_blank">港媒曝Lisa S怀龙年宝宝 吴彦祖停工半年陪产</a></span>
+							<span class="date_01">2012-01-04 10:44:11</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="言承旭奖学金被指以貌取人 粉丝:媒体断章取义" href="http://pnews.trunk.huoshow.com/2012/0104/88765.shtml" target="_blank">言承旭奖学金被指以貌取人 粉丝:媒体断章取义</a></span>
+							<span class="date_01">2012-01-04 16:07:19</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="港媒曝张柏芝为复合摆桃花 儿子成软化霆锋关键" href="http://pnews.trunk.huoshow.com/2012/0104/88743.shtml" target="_blank">港媒曝张柏芝为复合摆桃花 儿子成软化霆锋关键</a></span>
+							<span class="date_01">2012-01-04 09:45:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="陈嘉桓被传内地拍戏主动勾引男性 导演帮忙平反" href="http://pnews.trunk.huoshow.com/2012/0104/88739.shtml" target="_blank">陈嘉桓被传内地拍戏主动勾引男性 导演帮忙平反</a></span>
+							<span class="date_01">2012-01-04 09:45:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="商天娥强吻胡枫碎不和传言 滕丽名不知被删戏" href="http://pnews.trunk.huoshow.com/2012/0104/88723.shtml" target="_blank">商天娥强吻胡枫碎不和传言 滕丽名不知被删戏</a></span>
+							<span class="date_01">2012-01-04 09:28:10</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="萧亚轩自曝将跨行当董事长 将自创品牌开公司" href="http://pnews.trunk.huoshow.com/2012/0104/88721.shtml" target="_blank">萧亚轩自曝将跨行当董事长 将自创品牌开公司</a></span>
+							<span class="date_01">2012-01-04 09:27:40</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="Twins难抵甜品诱惑 陈建州享受与美女合作" href="http://pnews.trunk.huoshow.com/2012/0104/88719.shtml" target="_blank">Twins难抵甜品诱惑 陈建州享受与美女合作</a></span>
+							<span class="date_01">2012-01-04 09:27:40</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="言承旭35岁生日粉丝争行善 自言以粉丝为傲" href="http://pnews.trunk.huoshow.com/2012/0104/88695.shtml" target="_blank">言承旭35岁生日粉丝争行善 自言以粉丝为傲</a></span>
+							<span class="date_01">2012-01-04 16:05:49</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="方大同称将私下约薛凯琪吃饭庆祝叱咤大赢" href="http://pnews.trunk.huoshow.com/2012/0103/88649.shtml" target="_blank">方大同称将私下约薛凯琪吃饭庆祝叱咤大赢</a></span>
+							<span class="date_01">2012-01-03 11:43:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="舒淇王力宏同地发微博 被曝同游巴厘岛" href="http://pnews.trunk.huoshow.com/2012/0103/88647.shtml" target="_blank">舒淇王力宏同地发微博 被曝同游巴厘岛</a></span>
+							<span class="date_01">2012-01-03 11:30:49</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="Ella与男友密会马来西亚见家长 被传好事将近" href="http://pnews.trunk.huoshow.com/2012/0103/88645.shtml" target="_blank">Ella与男友密会马来西亚见家长 被传好事将近</a></span>
+							<span class="date_01">2012-01-03 11:30:49</span>
+						</li>
+																	</ul>
+										<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c"><a class="a1">1374条</a> <a href="/star/gangtaimingxing/gangtaijiaodian/5.shtml" class="a1">上一页</a> <a href="/star/gangtaimingxing/gangtaijiaodian/index.shtml">1</a> <a href="/star/gangtaimingxing/gangtaijiaodian/2.shtml">2</a> <a href="/star/gangtaimingxing/gangtaijiaodian/3.shtml">3</a> <a href="/star/gangtaimingxing/gangtaijiaodian/4.shtml">4</a> <a href="/star/gangtaimingxing/gangtaijiaodian/5.shtml">5</a> <span>6</span> <a href="/star/gangtaimingxing/gangtaijiaodian/7.shtml">7</a> <a href="/star/gangtaimingxing/gangtaijiaodian/8.shtml">8</a> <a href="/star/gangtaimingxing/gangtaijiaodian/9.shtml">9</a> <a href="/star/gangtaimingxing/gangtaijiaodian/10.shtml">10</a> <span>..</span><a href="/star/gangtaimingxing/gangtaijiaodian/20.shtml">20</a> <a href="/star/gangtaimingxing/gangtaijiaodian/7.shtml" class="a1">下一页</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=1&catid=12&other_catids=131,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=1"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=62&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

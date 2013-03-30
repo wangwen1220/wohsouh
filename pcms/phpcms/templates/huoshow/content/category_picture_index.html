@@ -1,0 +1,828 @@
+{template "content","picture_header"}
+<div class="guide">
+	<ul>
+		<li><a href="#">随便看看</a></li>
+		<li><a href="#pic_star" onclick="sTo(this);return false;">明星写真</a></li>
+		<li><a href="#event_pic" onclick="sTo(this);return false;">赛事图集</a></li>
+		<li><a href="#games_pic" onclick="sTo(this);return false;">游戏图集</a></li>
+		<li><a href="#movie_pic" onclick="sTo(this);return false;">影视美图</a></li>
+		<li><a href="#tv_pic" onclick="sTo(this);return false;">电视剧照</a></li>
+		<li><a href="#music_pic" onclick="sTo(this);return false;">音乐图集</a></li>
+		<li><a href="#cy_pic" onclick="sTo(this);return false;">创意图集</a></li>
+		<li><a href="#supermodel_pic" onclick="sTo(this);return false;">超模写真</a></li>
+		<li><a href="#wl_pic" onclick="sTo(this);return false;">网络美女</a></li>
+		<li><a href="#fj_pic" onclick="sTo(this);return false;">风景名胜</a></li>
+		<li><a href="#top" onclick="sTo(this);return false;">Top<img src="http://www.huoshow.com/img/templates/huoshow02/images/totop.jpg" align="absmiddle" /></a></li>
+	</ul>
+</div>
+<div class="p1">
+	<div class="star_flash">
+		<div class="slide" id="pbox3" style="border:0px; padding:0px;">
+			<!-- 轮换大图片 -->
+			{pc:content  action="position" posid="104" order="listorder DESC" num="5" }
+			{loop $data $r}
+			<div class="slide-page"> <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],700,324)}" width="700" height="324" /></a>
+				<div class="slide-page-info">
+					<h3><a title="{$r[title]}" href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></h3>
+				</div>
+			</div>
+			{/loop}
+			{/pc}
+			<div class="slide-links-wrap"><span class="slide-links">
+			{pc:content  action="position" posid="104" thumb="1" order="listorder DESC" num="5"}
+			{loop $data $r}
+			<a href="javascript:void(0);"></a>
+			{/loop}
+			{/pc}
+			</span></div>
+			<script>
+        $(function(){
+          window.pbox3 = make_pagebox('pbox3', {
+            links_selector: '.slide-links a',
+            current_class: 'slide-current',
+            pages_selector: '.slide-page',
+            prev_selector: '.slide-prev',
+            next_selector: '.slide-next',
+            interval: 4,
+            effect: 1
+          });
+          make_pagebox('p1_r', {
+            links_selector: '.bar_text li',
+            current_class: 'hover_sta',
+            pages_selector: '.p1_r-page'
+          });
+
+        });
+      </script>
+		</div>
+	</div>
+	<div class="p1_r" id="p1_r">
+		<div class="bar_text">
+			<ul>
+				<li class="hover_sta">点击排行</li>
+				<li class="nohover_sta">热点推荐</li>
+			</ul>
+		</div>
+		<div class="sb p1_r-page">
+		 {pc:content action="hits_all_picture" catids="27,28,29,30,31,32,156,157,158,159" newsnum="8" cache="3600"}
+           {loop $data $r}
+		   {if $n==1}
+			<div class="pic_word">
+				<div class="sb">
+					<dl>
+						<dt><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],100,90)}" width="100px" height="90" /></a></dt>
+						<dd>{str_cut($r[title],50,'..')}<a title="{$r[title]}" href="{$r[url]}" target="_blank">[详细]</a></dd>
+					</dl>
+				</div>
+			</div>
+			{else}
+			<ul>
+				<li><span>·</span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],46,'')}</a></li>
+
+			</ul>
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+		<div class="sb p1_r-page">
+		{pc:content  action="position" posid="105" order="listorder DESC" num="8"}
+		{loop $data $r}
+		{if $n==1}
+			<div class="pic_word">
+				<div class="sb">
+					<dl>
+						<dt><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],100,90)}" width="100px" height="90"/></a></dt>
+						<dd>{str_cut($r['title'],50,'...')}<a title="{$r[title]}" href="{$r[url]}" target="_blank">[详细]</a></dd>
+					</dl>
+				</div>
+			</div>
+			{else}
+			<ul>
+				<li><span>·</span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],46,'')}</a></li>
+			</ul>
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="meitu_rec" id="scrollbox2">
+	<h2>最新推荐</h2>
+	<a class="click_skip_left" ></a><a class="click_skip_right" ></a>
+	<ul>
+	{pc:content  action="position" posid="106" order="listorder DESC" num="20" }
+	{loop $data $r}
+		<li ><a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],130,130)}" /></a> <a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></li>
+	{/loop}
+	{/pc}
+	</ul>
+	<script>
+		var scrollbox2 = make_scrollbox('scrollbox2', {
+			item: 'li',
+			prev: '.click_skip_left',
+			next: '.click_skip_right',
+			interval: 3
+		});
+	</script>
+</div>
+<div class='ad'><script type="text/javascript">
+				// <![CDATA[
+				OA_show(51);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=af082534'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=51&n=af082534' /></a>
+			</noscript></div>
+<!-- 明星写真 -->
+<div class='pic_gallery pic_star' id='pic_star'>
+	<div class='pic_title'>
+		<h2>明星写真 <span>Star</span></h2>
+		<ul>
+			<li><a target="_blank" href="{$CATEGORYS[62][url]}">内地明星</a></li>
+			<li><a target="_blank" href="{$CATEGORYS[63][url]}">港台明星</a></li>
+			<li><a target="_blank" href="{$CATEGORYS[185][url]}">日韩明星</a></li>
+			<li><a target="_blank" href="{$CATEGORYS[186][url]}">欧美明星 </a></li>
+		</ul>
+		<a class='more' href="{$CATEGORYS[38][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+		<ul>
+		{pc:content  action="position" posid="107" order="listorder DESC" num="5" }
+		{loop $data $r}
+			<li>
+				<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+				<h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+			</li>
+		{/loop}
+		{/pc}	
+		</ul>
+
+		<ol>
+		{pc:content  action="position" posid="107" thumb="1" order="listorder DESC" num="5"}
+		{loop $data $r}
+		<li class='num'><span>{$n}</span></li>
+ 		{/loop}
+ 		{/pc}
+		<li class='next'><span>Next</span></li>
+		<li class='prev'><span>Prev</span></li>
+		</ol>
+	</div>
+	</div>
+
+	<ul class='pic_list'>
+		<!--{pc:content  action="picture_indexcatids_img" catids="62,63,185,186" num="6"}-->
+		{pc:content  action="position" posid="332" order="listorder DESC" num="6" }
+		{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt='' width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></span><em></em></li>
+		{/loop}
+		{/pc}
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+			{pc:content action="hits_all_picture" catids="62,63,185,186" newsnum="8"}
+			{loop $data $r}
+			{if $n==1}
+				<li class='first'>
+					<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+					<p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+				</li>
+				{else}
+				<li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+				{/if}
+				{/loop}
+				{/pc}
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 明星写真结束 -->
+
+<!-- 赛事图集 -->
+<div class='pic_gallery pic_event' id='event_pic'>
+	<div class='pic_title'>
+		<h2>赛事图集 <span>Event</span></h2>
+		<a class='more' href="{$CATEGORYS[139][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="108" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="108" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="139" num="6"}-->
+	{pc:content  action="position" posid="333" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[title]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			 <ul>
+               {pc:content action="hits_all_picture" catids="139" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 赛事图集结束 -->
+
+<!-- 游戏美图 -->
+<div class='pic_gallery pic_games' id='games_pic'>
+	<div class='pic_title'>
+		<h2>游戏美图 <span>Games</span></h2>
+		<ul>
+			{loop subcat(177,0,0,$siteid) $r}
+				{php $num++}
+				<li><a target="_blank" href="{$r[url]}">{$r[catname]}</a></li>
+				{/loop}
+		</ul>
+		<a class='more' href="{$CATEGORYS[177][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="109" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="109" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="178,179,180,181" num="6"}-->
+	{pc:content  action="position" posid="334" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[url]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],20,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="178,179,180,181" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 游戏美图结束 -->
+
+<!-- 影视美图 -->
+<div class='pic_gallery pic_movie' id='movie_pic'>
+	<div class='pic_title'>
+		<h2>影视美图 <span>Movie</span></h2>
+		<a class='more' href="{$CATEGORYS[69][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="110" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="110" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="69" num="6"}-->
+	{pc:content  action="position" posid="335" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[title]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+				<ul>
+               {pc:content action="hits_all_picture" catids="69" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 影视美图结束 -->
+
+<!-- 电视剧照 -->
+<div class='pic_gallery pic_tv' id='tv_pic'>
+	<div class='pic_title'>
+		<h2>电视剧照 <span>TV</span></h2>
+		<a class='more' href="{$CATEGORYS[149][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="111" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="111" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="149,150" num="6"}-->
+	{pc:content  action="position" posid="336" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt='' width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="149,150" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 电视剧照结束 -->
+
+
+<!-- 音乐图集 -->
+<div class='pic_gallery pic_music' id='music_pic'>
+	<div class='pic_title'>
+		<h2>音乐图集 <span>MUSIC</span></h2>
+		<a class='more' href="{$CATEGORYS[173][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="342" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="342" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	{pc:content  action="position" posid="341" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt='' width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="173" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 音乐图集结束 -->
+
+<!-- 创意图集 -->
+<div class='pic_gallery pic_creative' id="cy_pic">
+	<div class='pic_title'>
+		<h2>创意图集 <span>Creative</span></h2>
+		<a class='more' href="{$CATEGORYS[157][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="112" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="112" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="157" num="6"}-->
+	{pc:content  action="position" posid="337" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[title]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],18,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="157" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 创意图集结束 -->
+
+<!-- 超模写真 -->
+<div class='pic_gallery' id="supermodel_pic">
+	<div class='pic_title'>
+		<h2>超模写真 <span>Supermodel</span></h2>
+		<ul>
+		<li><a target="_blank" href="{$CATEGORYS[115][url]}">时装模特</a></li>
+		<li><a target="_blank" href="{$CATEGORYS[116][url]}">内衣大片</a></li>
+		<li><a target="_blank" href="{$CATEGORYS[117][url]}">车模靓影</a></li>
+		<li><a target="_blank" href="{$CATEGORYS[118][url]}">男模专区</a></li>	
+		</ul>
+		<a class='more' href="{$CATEGORYS[114][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="113" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],20,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="113" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="115,116,117,118" num="6"}-->
+	{pc:content  action="position" posid="338" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[title]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="115,116,117,118" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 超模写真结束 -->
+
+<!-- 网络美女 -->
+<div class='pic_gallery' id="wl_pic">
+	<div class='pic_title'>
+		<h2>网络美女 <span>Online beauty</span></h2>
+		<ul>
+			<li><a target="_blank" href="{$CATEGORYS[182][url]}">清纯</a></li>
+			<li><a target="_blank" href="{$CATEGORYS[183][url]}">性感</a></li>
+			<li><a target="_blank" href="{$CATEGORYS[184][url]}">丝袜</a></li>
+		</ul>
+		<a class='more' href="{$CATEGORYS[159][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="114" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="114" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="182,183,184" num="6"}-->
+	{pc:content  action="position" posid="339" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[title]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="159" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 网络美女结束 -->
+
+<!-- 风景名胜 -->
+<div class='pic_gallery' id="fj_pic">
+	<div class='pic_title'>
+		<h2>风景名胜 <span>Scenic</span></h2>
+		<a class='more' href="{$CATEGORYS[27][url]}" target="_blank">更多</a>
+	</div>
+
+	<div class="pic_slide_wrapper">
+	<div class="pic_slide">
+          <ul>
+          {pc:content  action="position" posid="115" order="listorder DESC" num="5" }
+          {loop $data $r}
+               <li>
+                    <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],258,348)}" alt="{$r[title]}" width='258' height='348' /></a>
+                    <h3><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r['title'],40,'')}</a></h3>
+               </li>
+          {/loop}
+          {/pc}     
+          </ul>
+
+          <ol>
+          {pc:content  action="position" posid="115" thumb="1" order="listorder DESC" num="5"}
+          {loop $data $r}
+          <li class='num'><span>{$n}</span></li>
+          {/loop}
+          {/pc}
+          <li class='next'><span>Next</span></li>
+          <li class='prev'><span>Prev</span></li>
+          </ol>
+     </div>
+	</div>
+
+	<ul class='pic_list'>
+	<!--{pc:content  action="picture_indexcatids_img" catids="27" num="6"}-->
+	{pc:content  action="position" posid="340" order="listorder DESC" num="6" }
+	{loop $data $r}
+		<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,167)}" alt="{$r[title]}" width='122' height='167' /></a><span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],20,'')}</a></span><em></em></li>
+	{/loop}
+	{/pc}	
+	</ul>
+
+	<div class="ndi_right">
+		<div class="ndi_right_bt">
+			<h2 class="ndi_right_heise">排行榜TOP</h2>
+		</div>
+		<div class="charts_others">
+			<ul>
+               {pc:content action="hits_all_picture" catids="27" newsnum="8"}
+               {loop $data $r}
+               {if $n==1}
+                    <li class='first'>
+                         <a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],94,70)}" alt="{$r[title]}" width='94' height='70' /></a>
+                         <p><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+                    </li>
+                    {else}
+                    <li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></li>
+                    {/if}
+                    {/loop}
+                    {/pc}
+               </ul>
+		</div>
+	</div>
+</div>
+<!-- 风景名胜结束 -->
+
+<!--Partners-->
+<div class="main_body">
+	<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+{pc:link  action="type_list" typeid="65" siteid="$siteid" linktype="0" order="listorder asc" num="29"}
+<p class="layer_content_txt">
+{loop $data $r}
+<a href="{$r[url]}" target="_blank">{$r[name]}</a> {if $n<count($data)}|{/if}
+{/loop}
+</p>
+{/pc}
+</div>
+</div>
+</div>
+<!-- Partners End -->
+{template "content","footer"}

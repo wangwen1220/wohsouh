@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>欧美焦点 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">欧美焦点</h2>
+						<h3><a href='#'>内地焦点</a> | <a href='#'>明星动态</a> | <a href='#'>街拍</a></h3>
+					</div>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="杰克逊摄影师出庭作证 因担心MJ被莫里训斥" href="http://pnews.trunk.huoshow.com/2011/0928/34277.shtml" target="_blank">杰克逊摄影师出庭作证 因担心MJ被莫里训斥</a></span>
+							<span class="date_01">2011-09-28 16:02:04</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="温丝莱特恋上贵公子？ 传新欢是有妇之夫" href="http://pnews.trunk.huoshow.com/2011/0928/34237.shtml" target="_blank">温丝莱特恋上贵公子？ 传新欢是有妇之夫</a></span>
+							<span class="date_01">2011-09-28 15:30:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="查理辛与华纳兄弟达成协议 传将获巨额补偿" href="http://pnews.trunk.huoshow.com/2011/0928/34157.shtml" target="_blank">查理辛与华纳兄弟达成协议 传将获巨额补偿</a></span>
+							<span class="date_01">2011-09-28 11:53:18</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="杰克逊遗体照及生前最后录音曝光" href="http://pnews.trunk.huoshow.com/2011/0928/34035.shtml" target="_blank">杰克逊遗体照及生前最后录音曝光</a></span>
+							<span class="date_01">2011-09-28 09:57:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="泰勒带走惊天秘密 杰克逊被传向主治医师投毒" href="http://pnews.trunk.huoshow.com/2011/0927/33635.shtml" target="_blank">泰勒带走惊天秘密 杰克逊被传向主治医师投毒</a></span>
+							<span class="date_01">2011-09-27 10:48:12</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="乔丹与相恋多年名模女友订婚 将迎来第二段婚姻" href="http://pnews.trunk.huoshow.com/2011/0927/33579.shtml" target="_blank">乔丹与相恋多年名模女友订婚 将迎来第二段婚姻</a></span>
+							<span class="date_01">2011-09-27 09:34:01</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="杰克逊死因案开庭陈述将举行 下月有望裁决" href="http://pnews.trunk.huoshow.com/2011/0926/33145.shtml" target="_blank">杰克逊死因案开庭陈述将举行 下月有望裁决</a></span>
+							<span class="date_01">2011-09-26 11:22:44</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="皮特强调没有贬损前妻 仍视安妮斯顿为“密友”" href="http://pnews.trunk.huoshow.com/2011/0923/32545.shtml" target="_blank">皮特强调没有贬损前妻 仍视安妮斯顿为“密友”</a></span>
+							<span class="date_01">2011-09-23 16:21:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="皮特赞前妻大方风趣惹恼朱莉 公开活动朱莉缺席" href="http://pnews.trunk.huoshow.com/2011/0923/32525.shtml" target="_blank">皮特赞前妻大方风趣惹恼朱莉 公开活动朱莉缺席</a></span>
+							<span class="date_01">2011-09-23 16:11:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩人气情景喜剧系列3将播 尹继尚等主演" href="http://pnews.trunk.huoshow.com/2011/0923/32491.shtml" target="_blank">韩人气情景喜剧系列3将播 尹继尚等主演</a></span>
+							<span class="date_01">2011-09-23 15:55:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="韩星元斌抵京 低调现身机场只露半边脸" href="http://pnews.trunk.huoshow.com/2011/0923/32487.shtml" target="_blank">韩星元斌抵京 低调现身机场只露半边脸</a></span>
+							<span class="date_01">2011-09-23 15:50:54</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="莱昂纳多澳大利亚买珠宝被误认为劫匪" href="http://pnews.trunk.huoshow.com/2011/0923/32397.shtml" target="_blank">莱昂纳多澳大利亚买珠宝被误认为劫匪</a></span>
+							<span class="date_01">2011-09-23 15:02:46</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="斯嘉丽·约翰逊裸照泄露 巨乳裸背任人看" href="http://pnews.trunk.huoshow.com/2011/0923/32389.shtml" target="_blank">斯嘉丽·约翰逊裸照泄露 巨乳裸背任人看</a></span>
+							<span class="date_01">2011-09-23 14:58:04</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="乔治·克鲁尼威尼斯走红地毯 粉丝热情追捧" href="http://pnews.trunk.huoshow.com/2011/0923/32381.shtml" target="_blank">乔治·克鲁尼威尼斯走红地毯 粉丝热情追捧</a></span>
+							<span class="date_01">2011-09-23 14:56:28</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="布拉德·皮特：领衔《点球成金》" href="http://pnews.trunk.huoshow.com/2011/0923/32363.shtml" target="_blank">布拉德·皮特：领衔《点球成金》</a></span>
+							<span class="date_01">2011-09-23 14:49:44</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="英高龄女星全裸出镜 抗议影视圈年龄歧视" href="http://pnews.trunk.huoshow.com/2011/0922/31535.shtml" target="_blank">英高龄女星全裸出镜 抗议影视圈年龄歧视</a></span>
+							<span class="date_01">2011-09-22 09:37:25</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="好莱坞编剧教父来华讲课 国内一线编剧纷纷报名" href="http://pnews.trunk.huoshow.com/2011/0922/31523.shtml" target="_blank">好莱坞编剧教父来华讲课 国内一线编剧纷纷报名</a></span>
+							<span class="date_01">2011-09-22 09:23:59</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="尼古拉斯凯奇现身广州 汤唯美丽并智慧地生活着" href="http://pnews.trunk.huoshow.com/2011/0921/31301.shtml" target="_blank">尼古拉斯凯奇现身广州 汤唯美丽并智慧地生活着</a></span>
+							<span class="date_01">2011-09-21 15:48:49</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="贝克汉姆透露想再添孩子 瞄准礼物欲送爱妻" href="http://pnews.trunk.huoshow.com/2011/0921/31079.shtml" target="_blank">贝克汉姆透露想再添孩子 瞄准礼物欲送爱妻</a></span>
+							<span class="date_01">2011-09-21 11:38:15</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="杰克逊死亡原因再曝新解释 异丙酚成瘾或致死" href="http://pnews.trunk.huoshow.com/2011/0920/30845.shtml" target="_blank">杰克逊死亡原因再曝新解释 异丙酚成瘾或致死</a></span>
+							<span class="date_01">2011-09-20 17:36:58</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="凯奇被称“吸血活尸” 与1870年男子酷似" href="http://pnews.trunk.huoshow.com/2011/0920/30323.shtml" target="_blank">凯奇被称“吸血活尸” 与1870年男子酷似</a></span>
+							<span class="date_01">2011-09-20 09:49:59</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂丝老公被爆有私生子 Jay·Z发言人否认传闻" href="http://pnews.trunk.huoshow.com/2011/0919/30199.shtml" target="_blank">碧昂丝老公被爆有私生子 Jay·Z发言人否认传闻</a></span>
+							<span class="date_01">2011-09-19 17:23:32</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="第63届美国黄金档电视艾美奖获奖名单" href="http://pnews.trunk.huoshow.com/2011/0919/29873.shtml" target="_blank">第63届美国黄金档电视艾美奖获奖名单</a></span>
+							<span class="date_01">2011-09-19 11:51:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="皮特莱昂纳多冲奥呼声高 两大明星成影帝热门" href="http://pnews.trunk.huoshow.com/2011/0916/29375.shtml" target="_blank">皮特莱昂纳多冲奥呼声高 两大明星成影帝热门</a></span>
+							<span class="date_01">2011-09-16 17:25:20</span>
+						</li>
+																	</ul>
+										<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c"><a class="a1">94条</a> <a href="/star/oumeimingxing/oumeijiaodian/index.shtml" class="a1">上一页</a> <a href="/star/oumeimingxing/oumeijiaodian/index.shtml">1</a> <span>2</span> <a href="/star/oumeimingxing/oumeijiaodian/2.shtml" class="a1">下一页</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=1&catid=12&other_catids=131,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=1"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=62&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

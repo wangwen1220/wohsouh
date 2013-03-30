@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>欧美明星 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">欧美明星</h2>
+					</div>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="珍妮弗·安妮斯顿被曝“造人成功” 已怀孕6月" href="http://pnews.trunk.huoshow.com/2012/0119/98601.shtml" target="_blank">珍妮弗·安妮斯顿被曝“造人成功” 已怀孕6月</a></span>
+							<span class="date_01">2012-01-19 09:52:09</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="揭秘德普感情世界 曾与凯特·摩斯吵架砸酒店" href="http://pnews.trunk.huoshow.com/2012/0119/98599.shtml" target="_blank">揭秘德普感情世界 曾与凯特·摩斯吵架砸酒店</a></span>
+							<span class="date_01">2012-01-19 09:52:45</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂斯生女太招摇 “死对头”电脑合成女儿丑照" href="http://pnews.trunk.huoshow.com/2012/0119/98597.shtml" target="_blank">碧昂斯生女太招摇 “死对头”电脑合成女儿丑照</a></span>
+							<span class="date_01">2012-01-19 09:54:01</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂斯巧克力皮肤变白皙 疑秘密肤色漂白" href="http://pnews.trunk.huoshow.com/2012/0119/98595.shtml" target="_blank">碧昂斯巧克力皮肤变白皙 疑秘密肤色漂白</a></span>
+							<span class="date_01">2012-01-19 09:48:09</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="泰勒·斯韦福特登杂志封面 金发碧眼宛如仙女" href="http://pnews.trunk.huoshow.com/2012/0119/98559.shtml" target="_blank">泰勒·斯韦福特登杂志封面 金发碧眼宛如仙女</a></span>
+							<span class="date_01">2012-01-19 09:43:08</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="佩内洛普·克鲁兹和老公贾维尔牵手秀甜蜜" href="http://pnews.trunk.huoshow.com/2012/0119/98557.shtml" target="_blank">佩内洛普·克鲁兹和老公贾维尔牵手秀甜蜜</a></span>
+							<span class="date_01">2012-01-19 09:43:53</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="蕾哈娜海边玩“豪放” 镂空泳衣不理大麻传闻" href="http://pnews.trunk.huoshow.com/2012/0119/98555.shtml" target="_blank">蕾哈娜海边玩“豪放” 镂空泳衣不理大麻传闻</a></span>
+							<span class="date_01">2012-01-19 09:44:44</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="Prada邀众星走T台 奥斯卡影帝hold住全场" href="http://pnews.trunk.huoshow.com/2012/0119/98541.shtml" target="_blank">Prada邀众星走T台 奥斯卡影帝hold住全场</a></span>
+							<span class="date_01">2012-01-19 11:51:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="艾薇儿恋爱两年分手 称无法平衡好时间" href="http://pnews.trunk.huoshow.com/2012/0119/98535.shtml" target="_blank">艾薇儿恋爱两年分手 称无法平衡好时间</a></span>
+							<span class="date_01">2012-01-19 11:40:08</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="美国人气歌唱组合美声绅士3月北京开唱" href="http://pnews.trunk.huoshow.com/2012/0119/98533.shtml" target="_blank">美国人气歌唱组合美声绅士3月北京开唱</a></span>
+							<span class="date_01">2012-01-19 10:04:24</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="艾薇儿与男友布罗迪拍拖两年被曝分手" href="http://pnews.trunk.huoshow.com/2012/0119/98531.shtml" target="_blank">艾薇儿与男友布罗迪拍拖两年被曝分手</a></span>
+							<span class="date_01">2012-01-19 09:58:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="杰克逊女儿球场上演“月球漫步” 极酷似爸爸" href="http://pnews.trunk.huoshow.com/2012/0118/98377.shtml" target="_blank">杰克逊女儿球场上演“月球漫步” 极酷似爸爸</a></span>
+							<span class="date_01">2012-01-18 14:05:48</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传碧昂斯假怀孕 找代理孕母生女" href="http://pnews.trunk.huoshow.com/2012/0118/98375.shtml" target="_blank">传碧昂斯假怀孕 找代理孕母生女</a></span>
+							<span class="date_01">2012-01-18 16:02:47</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="意大利时装周知名品牌普拉达请众星走T台" href="http://pnews.trunk.huoshow.com/2012/0118/98367.shtml" target="_blank">意大利时装周知名品牌普拉达请众星走T台</a></span>
+							<span class="date_01">2012-01-18 16:01:50</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="麦当娜明褒暗贬Lady gaga 指其抄袭自己歌曲" href="http://pnews.trunk.huoshow.com/2012/0118/98231.shtml" target="_blank">麦当娜明褒暗贬Lady gaga 指其抄袭自己歌曲</a></span>
+							<span class="date_01">2012-01-18 14:01:52</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="林赛·罗韩将演泰勒 生活经历相似外形差距大" href="http://pnews.trunk.huoshow.com/2012/0118/98223.shtml" target="_blank">林赛·罗韩将演泰勒 生活经历相似外形差距大</a></span>
+							<span class="date_01">2012-01-18 14:02:37</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="蕾哈娜再引争议 度假期间吸食大麻照片曝光" href="http://pnews.trunk.huoshow.com/2012/0118/98221.shtml" target="_blank">蕾哈娜再引争议 度假期间吸食大麻照片曝光</a></span>
+							<span class="date_01">2012-01-18 14:03:16</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="艾薇儿与男友分手 因无法平衡好各自工作时间" href="http://pnews.trunk.huoshow.com/2012/0118/98211.shtml" target="_blank">艾薇儿与男友分手 因无法平衡好各自工作时间</a></span>
+							<span class="date_01">2012-01-18 14:07:07</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="美国著名乐手吉米·卡斯特逝世 终年64岁" href="http://pnews.trunk.huoshow.com/2012/0118/98209.shtml" target="_blank">美国著名乐手吉米·卡斯特逝世 终年64岁</a></span>
+							<span class="date_01">2012-01-18 14:07:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="凯莉·布鲁克：如果专心演戏 绝不输给温丝莱特" href="http://pnews.trunk.huoshow.com/2012/0118/98207.shtml" target="_blank">凯莉·布鲁克：如果专心演戏 绝不输给温丝莱特</a></span>
+							<span class="date_01">2012-01-18 14:08:27</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="格林特和艾玛登顶五年内票房收入最高银幕情侣" href="http://pnews.trunk.huoshow.com/2012/0117/97371.shtml" target="_blank">格林特和艾玛登顶五年内票房收入最高银幕情侣</a></span>
+							<span class="date_01">2012-01-17 17:07:26</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="英国1岁婴儿成合影帝 与130位好莱坞巨星见面" href="http://pnews.trunk.huoshow.com/2012/0117/97367.shtml" target="_blank">英国1岁婴儿成合影帝 与130位好莱坞巨星见面</a></span>
+							<span class="date_01">2012-01-17 16:59:39</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传碧昂斯假怀孕找代理孕母生女 JAY·Z出面否认" href="http://pnews.trunk.huoshow.com/2012/0117/97357.shtml" target="_blank">传碧昂斯假怀孕找代理孕母生女 JAY·Z出面否认</a></span>
+							<span class="date_01">2012-01-17 16:56:11</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="洛佩兹与前夫离婚后合体“抢钱” 遭前夫抚肚" href="http://pnews.trunk.huoshow.com/2012/0117/97355.shtml" target="_blank">洛佩兹与前夫离婚后合体“抢钱” 遭前夫抚肚</a></span>
+							<span class="date_01">2012-01-17 16:58:31</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="安吉丽娜·朱莉儿时唱歌片段公开 被指歌艺差劲" href="http://pnews.trunk.huoshow.com/2012/0117/97353.shtml" target="_blank">安吉丽娜·朱莉儿时唱歌片段公开 被指歌艺差劲</a></span>
+							<span class="date_01">2012-01-17 16:57:37</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="离婚后合体抢钱 洛佩兹遭前夫摸手抚肚表情僵硬" href="http://pnews.trunk.huoshow.com/2012/0116/97251.shtml" target="_blank">离婚后合体抢钱 洛佩兹遭前夫摸手抚肚表情僵硬</a></span>
+							<span class="date_01">2012-01-16 17:55:06</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="唐尼偷加鞋垫 克鲁尼耍心机:都是高攀惹的祸" href="http://pnews.trunk.huoshow.com/2012/0116/97249.shtml" target="_blank">唐尼偷加鞋垫 克鲁尼耍心机:都是高攀惹的祸</a></span>
+							<span class="date_01">2012-01-16 18:00:27</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="众星齐聚金球盛典 艾格伦亮相优雅甜美" href="http://pnews.trunk.huoshow.com/2012/0116/97247.shtml" target="_blank">众星齐聚金球盛典 艾格伦亮相优雅甜美</a></span>
+							<span class="date_01">2012-01-16 17:57:10</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="麦莉·赛勒斯深V透视装亮相 大玩性感(图)" href="http://pnews.trunk.huoshow.com/2012/0116/96779.shtml" target="_blank">麦莉·赛勒斯深V透视装亮相 大玩性感(图)</a></span>
+							<span class="date_01">2012-01-16 11:46:48</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="奥兰多当奶爸携子出行 娇妻米兰达相伴身旁" href="http://pnews.trunk.huoshow.com/2012/0116/96777.shtml" target="_blank">奥兰多当奶爸携子出行 娇妻米兰达相伴身旁</a></span>
+							<span class="date_01">2012-01-16 11:47:54</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="黛米·洛瓦托抹胸爆乳亮相 性感可比柳岩" href="http://pnews.trunk.huoshow.com/2012/0116/96775.shtml" target="_blank">黛米·洛瓦托抹胸爆乳亮相 性感可比柳岩</a></span>
+							<span class="date_01">2012-01-16 12:11:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="皮特和塞隆登杂志封面 被誉最佳表演者(图)" href="http://pnews.trunk.huoshow.com/2012/0116/96773.shtml" target="_blank">皮特和塞隆登杂志封面 被誉最佳表演者(图)</a></span>
+							<span class="date_01">2012-01-16 14:35:02</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="达科塔-范宁登时尚杂志上演萝莉变熟女" href="http://pnews.trunk.huoshow.com/2012/0116/96765.shtml" target="_blank">达科塔-范宁登时尚杂志上演萝莉变熟女</a></span>
+							<span class="date_01">2012-01-16 16:53:53</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="嫩模强闯巴黎博物馆 突然脱衣穿内衣拍广告" href="http://pnews.trunk.huoshow.com/2012/0116/96555.shtml" target="_blank">嫩模强闯巴黎博物馆 突然脱衣穿内衣拍广告</a></span>
+							<span class="date_01">2012-01-16 09:56:18</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="乔伊丝·乔纳森穿黑丝镂空装 加盟春晚苦练中文" href="http://pnews.trunk.huoshow.com/2012/0116/96507.shtml" target="_blank">乔伊丝·乔纳森穿黑丝镂空装 加盟春晚苦练中文</a></span>
+							<span class="date_01">2012-01-16 09:43:51</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="埃文·蕾切尔·伍德拍脱衣舞娘写真(图)" href="http://pnews.trunk.huoshow.com/2012/0116/96505.shtml" target="_blank">埃文·蕾切尔·伍德拍脱衣舞娘写真(图)</a></span>
+							<span class="date_01">2012-01-16 10:27:41</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="凯蒂佩里离婚传闻后首亮相 与粉丝合影笑容清甜" href="http://pnews.trunk.huoshow.com/2012/0116/96493.shtml" target="_blank">凯蒂佩里离婚传闻后首亮相 与粉丝合影笑容清甜</a></span>
+							<span class="date_01">2012-01-16 14:35:57</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="艾梅丽桑德获全英乐评人选择奖 新碟2月发行" href="http://pnews.trunk.huoshow.com/2012/0116/96491.shtml" target="_blank">艾梅丽桑德获全英乐评人选择奖 新碟2月发行</a></span>
+							<span class="date_01">2012-01-16 16:00:33</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="Jay-Z为女儿创作新歌登上公告牌 创造新纪录" href="http://pnews.trunk.huoshow.com/2012/0116/96489.shtml" target="_blank">Jay-Z为女儿创作新歌登上公告牌 创造新纪录</a></span>
+							<span class="date_01">2012-01-16 16:01:11</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂丝纽约剖腹产女 130万美元包下医院禁拍照" href="http://pnews.trunk.huoshow.com/2012/0114/96269.shtml" target="_blank">碧昂丝纽约剖腹产女 130万美元包下医院禁拍照</a></span>
+							<span class="date_01">2012-01-14 09:46:04</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="碧昂斯产女取名蓝藤 众好友道贺" href="http://pnews.trunk.huoshow.com/2012/0114/96265.shtml" target="_blank">碧昂斯产女取名蓝藤 众好友道贺</a></span>
+							<span class="date_01">2012-01-14 09:45:13</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="英1岁婴儿成合影帝 与130位好莱坞巨星合影(图)" href="http://pnews.trunk.huoshow.com/2012/0114/96261.shtml" target="_blank">英1岁婴儿成合影帝 与130位好莱坞巨星合影(图)</a></span>
+							<span class="date_01">2012-01-14 09:40:42</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="贾斯汀-比伯接受杂志专访：我不再是个孩子了" href="http://pnews.trunk.huoshow.com/2012/0113/95969.shtml" target="_blank">贾斯汀-比伯接受杂志专访：我不再是个孩子了</a></span>
+							<span class="date_01">2012-01-13 16:26:47</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传约翰尼-德普14年情玩完 发言人暂无回应" href="http://pnews.trunk.huoshow.com/2012/0113/95967.shtml" target="_blank">传约翰尼-德普14年情玩完 发言人暂无回应</a></span>
+							<span class="date_01">2012-01-13 16:28:09</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="麦当娜冒寒风露事业线 贾斯汀比伯玩机器人" href="http://pnews.trunk.huoshow.com/2012/0113/95965.shtml" target="_blank">麦当娜冒寒风露事业线 贾斯汀比伯玩机器人</a></span>
+							<span class="date_01">2012-01-13 16:25:45</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="第38届美国人民选择奖揭晓 凯蒂佩里缺席仍大赢" href="http://pnews.trunk.huoshow.com/2012/0113/95961.shtml" target="_blank">第38届美国人民选择奖揭晓 凯蒂佩里缺席仍大赢</a></span>
+							<span class="date_01">2012-01-13 16:22:24</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="美国网民投票人民选择奖 德普斯通最受欢迎" href="http://pnews.trunk.huoshow.com/2012/0113/95959.shtml" target="_blank">美国网民投票人民选择奖 德普斯通最受欢迎</a></span>
+							<span class="date_01">2012-01-13 16:21:40</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="哈莉·贝瑞无名指戴戒指 传与男友订婚梅开三度" href="http://pnews.trunk.huoshow.com/2012/0113/95947.shtml" target="_blank">哈莉·贝瑞无名指戴戒指 传与男友订婚梅开三度</a></span>
+							<span class="date_01">2012-01-13 16:05:15</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="史泰龙迁就李连杰到港拍戏 申请内地取景未通过" href="http://pnews.trunk.huoshow.com/2012/0113/95945.shtml" target="_blank">史泰龙迁就李连杰到港拍戏 申请内地取景未通过</a></span>
+							<span class="date_01">2012-01-13 16:05:51</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传碧昂丝化名住院 找代理孕母生女儿" href="http://pnews.trunk.huoshow.com/2012/0113/95943.shtml" target="_blank">传碧昂丝化名住院 找代理孕母生女儿</a></span>
+							<span class="date_01">2012-01-13 16:06:35</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="麦当娜出席新片首映礼 冒寒风露事业线(图)" href="http://pnews.trunk.huoshow.com/2012/0113/95941.shtml" target="_blank">麦当娜出席新片首映礼 冒寒风露事业线(图)</a></span>
+							<span class="date_01">2012-01-13 16:07:05</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="贾斯汀·比伯童心未泯 展览会上玩机械人" href="http://pnews.trunk.huoshow.com/2012/0113/95939.shtml" target="_blank">贾斯汀·比伯童心未泯 展览会上玩机械人</a></span>
+							<span class="date_01">2012-01-13 16:08:13</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="瑞秋·麦克亚当斯变粉嫩“教主” 性感登封面" href="http://pnews.trunk.huoshow.com/2012/0112/94689.shtml" target="_blank">瑞秋·麦克亚当斯变粉嫩“教主” 性感登封面</a></span>
+							<span class="date_01">2012-01-12 11:01:18</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="凯特·温丝莱特最新写真变知性OL 展优雅高贵" href="http://pnews.trunk.huoshow.com/2012/0112/94687.shtml" target="_blank">凯特·温丝莱特最新写真变知性OL 展优雅高贵</a></span>
+							<span class="date_01">2012-01-12 11:30:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="《变3》女主角比基尼照曝光 上围缩水(图)" href="http://pnews.trunk.huoshow.com/2012/0112/94685.shtml" target="_blank">《变3》女主角比基尼照曝光 上围缩水(图)</a></span>
+							<span class="date_01">2012-01-12 16:22:25</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="巴里摩尔3度做新娘 知情人爆料其渴望结婚生子" href="http://pnews.trunk.huoshow.com/2012/0112/94675.shtml" target="_blank">巴里摩尔3度做新娘 知情人爆料其渴望结婚生子</a></span>
+							<span class="date_01">2012-01-12 16:18:32</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="布拉德拄拐杖出席颁奖礼 朱莉项链更迷人" href="http://pnews.trunk.huoshow.com/2012/0112/94661.shtml" target="_blank">布拉德拄拐杖出席颁奖礼 朱莉项链更迷人</a></span>
+							<span class="date_01">2012-01-12 11:48:14</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂斯派保镖护女 医院当家引其他父母不满" href="http://pnews.trunk.huoshow.com/2012/0112/94657.shtml" target="_blank">碧昂斯派保镖护女 医院当家引其他父母不满</a></span>
+							<span class="date_01">2012-01-12 11:37:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="凯特低调庆30岁生日 网友期盼龙宝宝诞生" href="http://pnews.trunk.huoshow.com/2012/0112/94647.shtml" target="_blank">凯特低调庆30岁生日 网友期盼龙宝宝诞生</a></span>
+							<span class="date_01">2012-01-12 11:41:24</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="约翰尼·德普恋情告急 与女友频吵架已接触律师" href="http://pnews.trunk.huoshow.com/2012/0112/94545.shtml" target="_blank">约翰尼·德普恋情告急 与女友频吵架已接触律师</a></span>
+							<span class="date_01">2012-01-12 11:10:05</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="阿汤嫂代言珠宝广告 古铜肌肤秀性感美背" href="http://pnews.trunk.huoshow.com/2012/0112/94543.shtml" target="_blank">阿汤嫂代言珠宝广告 古铜肌肤秀性感美背</a></span>
+							<span class="date_01">2012-01-12 11:31:29</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="绯闻女孩布莱克当街煲电话粥 喜笑颜开情绵绵" href="http://pnews.trunk.huoshow.com/2012/0112/94541.shtml" target="_blank">绯闻女孩布莱克当街煲电话粥 喜笑颜开情绵绵</a></span>
+							<span class="date_01">2012-01-12 11:29:28</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂斯造人经历曝光 一度流产否认借腹生子" href="http://pnews.trunk.huoshow.com/2012/0112/94539.shtml" target="_blank">碧昂斯造人经历曝光 一度流产否认借腹生子</a></span>
+							<span class="date_01">2012-01-12 11:28:32</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="蕾切尔·伍德戴钻戒 疑已与男友贝尔订婚" href="http://pnews.trunk.huoshow.com/2012/0112/94351.shtml" target="_blank">蕾切尔·伍德戴钻戒 疑已与男友贝尔订婚</a></span>
+							<span class="date_01">2012-01-12 11:03:53</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="新蜘蛛侠与艾玛·斯通假戏真做 当街热吻" href="http://pnews.trunk.huoshow.com/2012/0112/94349.shtml" target="_blank">新蜘蛛侠与艾玛·斯通假戏真做 当街热吻</a></span>
+							<span class="date_01">2012-01-12 11:07:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="阿什丽·格林尼代言DKNY 海报秀大女人风" href="http://pnews.trunk.huoshow.com/2012/0111/93699.shtml" target="_blank">阿什丽·格林尼代言DKNY 海报秀大女人风</a></span>
+							<span class="date_01">2012-01-11 14:08:05</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="帕丽斯·希尔顿写真秀美腿 透明衣极具诱惑" href="http://pnews.trunk.huoshow.com/2012/0111/93697.shtml" target="_blank">帕丽斯·希尔顿写真秀美腿 透明衣极具诱惑</a></span>
+							<span class="date_01">2012-01-11 14:22:43</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="艾玛沃特森交到新男友 现身街头亲密逛街" href="http://pnews.trunk.huoshow.com/2012/0111/93495.shtml" target="_blank">艾玛沃特森交到新男友 现身街头亲密逛街</a></span>
+							<span class="date_01">2012-01-11 10:10:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="麦当娜纽约出街 24岁小男友全程陪同" href="http://pnews.trunk.huoshow.com/2012/0111/93491.shtml" target="_blank">麦当娜纽约出街 24岁小男友全程陪同</a></span>
+							<span class="date_01">2012-01-11 10:09:15</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="碧昂斯剖腹生下“真命天女” Jay-Z为女儿写歌" href="http://pnews.trunk.huoshow.com/2012/0111/93489.shtml" target="_blank">碧昂斯剖腹生下“真命天女” Jay-Z为女儿写歌</a></span>
+							<span class="date_01">2012-01-11 10:06:06</span>
+						</li>
+																	</ul>
+										<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c"><a class="a1">1152条</a> <a href="/star/oumeimingxing/2.shtml" class="a1">上一页</a> <a href="/star/oumeimingxing/index.shtml">1</a> <a href="/star/oumeimingxing/2.shtml">2</a> <span>3</span> <a href="/star/oumeimingxing/4.shtml">4</a> <a href="/star/oumeimingxing/5.shtml">5</a> <a href="/star/oumeimingxing/6.shtml">6</a> <a href="/star/oumeimingxing/7.shtml">7</a> <a href="/star/oumeimingxing/8.shtml">8</a> <a href="/star/oumeimingxing/9.shtml">9</a> <a href="/star/oumeimingxing/10.shtml">10</a> <span>..</span><a href="/star/oumeimingxing/17.shtml">17</a> <a href="/star/oumeimingxing/4.shtml" class="a1">下一页</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=1&catid=11&other_catids=131,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=1"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=38&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

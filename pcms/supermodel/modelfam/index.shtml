@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>名模专区 - 火秀新闻</title>
+	<meta name='keywords' content='火秀 新闻 娱乐' />
+	<meta name='description' content='火秀 新闻 娱乐' />
+	<meta name='author' content='火秀' />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_supermodel.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=2'></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body class="body_bg">
+	<!--Site Header-->
+	<div class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common">
+						<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>
+					</div>
+				</div>
+
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+							$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--Site Header End-->
+	<!--Navigator-->
+	<div class="nav_body">
+		<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://pnews.trunk.huoshow.com/supermodel/" title="火秀超模首页">火秀超模频道</a></h1>
+		<div id="sub_channel">
+			<ul>
+				<li><a href="http://pnews.trunk.huoshow.com/supermodel/">超模首页</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/modelmes/">资讯</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/modelevent/">模特大赛</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/modelfam/">名模专区</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/modeltshow/">T台秀</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/modelpic/">写真</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/supermodelvideo/">视频</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/supermodel/zhuanfang/">专访</a></li>
+							</ul>
+		</div>
+		</div>
+	</div>
+	<!--Navigator End-->
+
+<div class="search">
+	<form action="http://pnews.wwen.huoshow.com/index.php" id="search" method="get" target="_blank" onSubmit="return checkSForm()">
+	<input type="hidden" name="m" value="search" />
+	<input type="hidden" name="c" value="index" />
+	<input type="hidden" name="a" value="init" />
+	<input type="hidden" name="siteid" value="1" id="siteid" />
+	<input type="text" class="text" name="q" id="q" value="请输入关键字" onFocus="clearKeyword()" onBlur="clearKeyword()"/>
+			<select name="typeid" id="search_type">
+		<option value="1">新闻</option>
+		<option value="3">图片</option>
+	</select>
+	<input type="submit" id="search_submit" value="搜 索" />
+</form>
+<script>
+	$(function(){
+		window.clearKeyword = function(){
+			var search_wd = $.trim($("#q").val());
+			if(search_wd=='请输入关键字'){
+				$("#q").val('');
+			}
+			if(search_wd==''){
+				$("#q").val('请输入关键字');
+			}
+		}
+		window.checkSForm = function()
+		{
+			var search_wd = $.trim($("#q").val());
+			if(search_wd=='请输入关键字' || search_wd==''){
+				alert('请输入关键字');
+				return false;
+			}
+		}
+	})
+</script>
+	<span class="search_text">
+		您现在的位置: <a href="http://pnews.trunk.huoshow.com">首页</a><span> &gt; </span>
+					<a href="http://pnews.trunk.huoshow.com/supermodel/">火秀超模</a> > <a href="http://pnews.trunk.huoshow.com/supermodel/modelfam/">名模专区</a>  &gt; 列表			</span>
+</div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="m_event">
+												<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1101/47267.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1101/47267.shtml">台湾名模林嘉绮10月完婚 赞新郎够自信敢追</a><br />伊林名模林嘉绮与夫婿黄麟书相恋两年，终于10月28日互许终生，席开30桌宴请亲朋好友。婚礼伴娘由同门名模蔡淑臻、王尹平、穆熙妍担任。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1101/47267.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47373.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47373.shtml">中国国际时装周揭秘四大看点好戏不断</a><br />今年，中国国际时装周得到了品牌赞助商冠名，正式的全称为“梅赛德斯-奔驰中国国际时装周”，这是中国国际时装周由发展步入成熟的标志。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47373.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47381.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47381.shtml">2011中国新面孔模特大赛北京赛区决出三甲</a><br />2011中国模特新面孔选拔大赛北京赛区落下帷幕，经过激烈的角逐28号选手李玲获得冠军，97号选手韩嘉丹和19号选手宁碧雪分获二三名。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47381.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47463.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47463.shtml">人类已经无法阻止模特迈向服装表演专业</a><br />我国高等院校服装表演专业的录取原则为&amp;ldquo;专业课为主，文化课为辅&amp;rdquo;，文化课分数要求不高，再加上服表专业毕业就业前景广阔等因素，吸引了越来越多的考生报考服装表演专业。然而，如何<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47463.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47477.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47477.shtml">台湾名模柯佳青亮相名品开幕 低胸秒杀现场</a><br />近日，台湾名模柯佳青受邀出席Alexander mcqueen的在北京的开幕发布秀，柯佳青难得低胸爆乳亮相秒杀现场，据悉，柯佳青这次来京，除参加Alexander mcqueen的开幕发布会;还出席包括j<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47477.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47565.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47565.shtml">“小眼睛”国际脸超模组合纪莉莉李振同走秀</a><br />近日，同样有着丹凤眼尖下巴“国际脸”的火石经纪超模纪莉莉、李振同时出现在中国时装周为某品牌演出，纪莉莉作为高级礼服开场秀，李振则一身清凉半裸造型出现，夺人眼球。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1103/47565.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1110/54177.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1110/54177.shtml">艳照嫩模Jessica C代言内衣 性感黑色蕾丝惹火</a><br />香港混血嫩模Jessica C.(JC)高挑身材完美比例，拍摄过不少写真照，也是内衣广告热门代言人。最近，曝光一段她拍摄内衣广告的幕后花絮，她表示最喜欢深色内衣，给人玩味又调皮的感觉。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1110/54177.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1112/55521.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1112/55521.shtml">嫩模谢芷蕙拍写真离奇作呕 称不排除去验身</a><br />近日，谢芷蕙被曝拍月历写真时，离奇作呕，拍摄前已趴在沙发上大吐，她表示是因自己发烧，连走路都有困难。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1112/55521.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1115/56839.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1115/56839.shtml">熊黛林称爱情事业同在 男方必须要有经济实力</a><br />熊黛林日前受访时表示，做天王的女人当真不容易，即使与郭富城结婚也可能会保密。此外，她还曝光了很多与郭富城不为人知的故事。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1115/56839.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1117/58483.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1117/58483.shtml">名模凯莉推特被疑山寨 愤怒发裸照验明正身</a><br />许多名人及艺人纷纷在社群网站上建立帐户，但时常发生名字遭到冒用的状况，让人搞不清楚是本尊还是分身。英国辣模凯莉&amp;middot;布鲁克(Kelly Brook)在推特(Twitter)申请帐号后，却遭网友怀<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1117/58483.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1117/58495.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1117/58495.shtml">熊黛林言好想有人送钻戒 疑似想结婚郭富城不肯</a><br />熊黛林昨日出席某珠宝品牌活动，坦言好想收到有人送漂亮的钻戒给她，还称作为女孩不管如何想结婚，都要和对方达成共识才能成事，疑似暗指她想结婚，而郭富城还不肯。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1117/58495.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1130/67191.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1130/67191.shtml">白俄罗斯总统称美女是&quot;战略资源&quot; 限制出境当模特</a><br />白俄罗斯盛产美女，当地女子个个白皙高挑、长相美艳，各国模特经纪公司纷纷到此发掘漂亮女子，也因白俄罗斯美女身材高挑、长相美艳，因此成为许多品牌爱用的模特，但白俄罗斯总统卢卡<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1130/67191.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1202/68955.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1202/68955.shtml">全球小姐们的那些尴尬事：英国小姐恐毁英超</a><br />能被选为全球小姐的人，都是要身材有身材，要脸蛋有脸蛋的美女。只是看着外表那么光鲜亮丽，妖娆魅惑的，提起她们的尴尬事，有些真让人觉得正常人确实干不出，比如，英国小姐就成了英<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1202/68955.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1203/69333.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1203/69333.shtml">宅男女神张馨予领衔女星&quot;裸体彩绘&quot;艳妆</a><br />在娱乐圈，有不少明星赶潮流，大胆拍摄彩绘写真，似裸非裸的彩绘，即能让明星免于被指责色情，又能展现明星的完美身段。裸体彩绘，游走在性感与神秘边缘，让人看后眼热心跳、情难自控<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1203/69333.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1206/71311.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1206/71311.shtml">世界超模北京选手“低龄化”最小14岁令人忧虑</a><br />如今模特“低龄化”现象日趋加剧，2012世界超模大赛中国冠军赛北京赛区初赛于2011年12月3日在北京举办，60多位佳丽大多都是90后，其中最小的仅14岁。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1206/71311.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1207/72173.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1207/72173.shtml">裸模汤加丽曾得体操金牌 张筱雨人体写真最大胆</a><br />悉尼奥运会平衡木金牌得主刘璇进军娱乐界的事情广为人知，而鲜为人知的是以人体艺术写真出名的娇娃汤加丽也曾经是两枚体操金牌的主人。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1207/72173.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72559.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72559.shtml">陈燃变身时尚小魔女 粗眉短发灵气逼人</a><br />近日，“IT GIRL”陈燃出席某知名品牌举行的时尚活动，一改往日的淑女风，选择当下最流行的粗眉妆亮相，让在场的时尚人士和媒体眼前一亮，赞叹不已。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72559.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72623.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72623.shtml">22岁嫩模靠爆乳发财 出道两年5千万买两房</a><br />22岁嫩模Jeana靠爆乳发财，出道两年5千万买两房。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72623.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72735.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72735.shtml">视频：张馨予沙滩玩纯情 白衫湿身爆乳诱惑</a><br />宅男女神张馨予沙滩玩纯情，白衫湿身爆乳吹气，诱惑旁人，被香港媒体称之为“国产乳牛”。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1208/72735.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+								<dl>
+						<dt><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1213/75309.shtml"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1213/75309.shtml">第22届世界超模中国总决赛 洛阳姑娘赵婉秋摘冠</a><br />12月11日，由保利（香港）投资有限公司与世界模特组织机构主办的第二十二届世界超级模特环球大赛中国区总决赛在花都保利花城完美落下帷幕，来自全国20多个省市的28位超级模特同台竞艳。<span><a target="_blank" href="http://pnews.trunk.huoshow.com/2011/1213/75309.shtml">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+												
+						<div class="fanye">
+						<div id="fanye_01"><a class="a1">22条</a> <a href="/supermodel/modelfam/index.shtml" class="a1">上一页</a> <span>1</span> <a href="/supermodel/modelfam/2.shtml">2</a> <a href="/supermodel/modelfam/2.shtml" class="a1">下一页</a><div class="clear"></div>
+						</div>
+	</div>
+ </div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=1&catid=109&other_catids=12|电影,13|音乐,14|游戏"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=1"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=115,116,117,118&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

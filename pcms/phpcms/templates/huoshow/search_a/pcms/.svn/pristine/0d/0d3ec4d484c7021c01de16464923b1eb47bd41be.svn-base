@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-apple.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script> -->
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<!-- <script src='{JS_PATH}live.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-apple game-apple-download switchable'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_apple'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main' class='article-box'>
+			<div class='article-related article-download fn-clear'>
+				<div class='aside'>
+					<a class='img' href='#'><img src='{$thumb}' alt='' width='146' height='146' /></a>
+					<h3 class='title'>适用于iPhone、iPad</h3>
+					<!-- <a class='btn btn-download' title='iTunes下载' href='#'></a>
+					<a class='img-qrcode' href='#'><img src='/statics/images/game/qrcode.png' alt='' width='111' height='111' /></a>
+					<a class='btn btn-qrcode' title='扫描二维码直接下载' href='#'></a> -->
+				</div>
+				<div class='article'>
+					<h2 class='title'>{$title} </h2>
+					<ul class='info'>
+						<!--<li><span class='dt'>游戏制作：</span><span class='dd'><em>{$game_make}</em></span></li>
+						<li><span class='dt'>最新版本：</span><span class='dd'>{$version}</span></li>
+						<li><span class='dt'>分类：</span><span class='dd'>{$classtype}</span></li>
+						<li><span class='dt'>软件语言：</span><span class='dd'>{$language}</span></li>
+						<li><span class='dt'>大小：</span><span class='dd'>{$filesize}</span></li>
+						<li><span class='dt'>评分等级：</span><span class='dd'><em>{$stars}</em></span></li>
+						<li><span class='dt'>系统：</span><span class='dd'>{$systems}</span></li>
+						<li><span class='dt'>更新时间：</span><span class='dd'>{$inputtime}</span></li>
+						<li class='long'><span class='dt'>下载地址：</span>
+						<span class='dd'>{loop $downfiles $r}
+						{$r}
+						{/loop}</span>
+						</li>
+						<li class='long'><span class='dt'>游戏关键字：</span><span class='dd'>{loop $keywords $keyword}<a href='#'><em>{$keyword}</em></a> | {/loop}</span></li>-->
+						<li><span class='dt'>游戏大小：</span><span class='dd'><em>{$gamesize}</em></span></li>
+						<li><span class='dt'>开发商：</span><span class='dd'><em>{$developers}</em></span></li>
+						<li><span class='dt'>游戏类型：</span><span class='dd'><em>{$gametype}</em></span></li>
+						<li><span class='dt'>发布日期：</span><span class='dd'><em>{$releasedate}</em></span></li>
+						<li><span class='dt'>收费模式：</span><span class='dd'><em>{$chargingmode}</em></span></li>
+						{if !empty($price)}<li><span class='dt'>价格：</span><span class='dd'><em>{$price}</em></span></li>{/if}
+						<li class='long'><span class='dt'>下载地址：</span>
+						<span class='dd'>{loop $downfiles $r}
+						{$r}
+						{/loop}</span>
+						</li>
+					</ul>
+
+					<div class='article-related article-actions'>
+						<!-- JiaThis Button BEGIN -->
+						<span id='jiathis' class="jiathis_style jiathis">
+							<span class="jiathis_txt">分享到：</span>
+							<a class="jiathis_button_qzone"></a>
+							<a class="jiathis_button_tsina"></a>
+							<a class="jiathis_button_tqq"></a>
+							<a class="jiathis_button_renren"></a>
+							<a class="jiathis_button_tsohu"></a>
+							<a class="jiathis_button_kaixin001"></a>
+							<a class="jiathis_button_douban"></a>
+							<a class="jiathis_button_t163"></a>
+							<a class="jiathis_button_tieba"></a>
+							<a class="jiathis_button_taobao"></a>
+							<a class="jiathis_button_tianya"></a>
+							<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1349664104558770" charset="utf-8"></script>
+						</span>
+						<!-- JiaThis Button END -->
+					</div>
+
+					<div class='article-explain'>
+						<h3>使用说明</h3>
+						<p>火秀苹果专区(http://www.huoshow.com)下载说明:<br />本站提供的所有破解应用版权均属于原开发公司或开发者，破解应用仅供学习交流，请在24小时内删除。如果确实喜欢某款应用，请购买正版！本文文字版权属于火秀游戏所有，转载请保留此信息。</p>
+					</div>
+				</div>
+			</div>
+			<div class='article-related article-detail'>
+				<div class='header-news'>
+					<h2 class='title'>详细介绍</h2>
+				</div>
+				<p>{$content}</p>
+			</div>
+
+			<div class='article-related article-slider'>
+				<div class='header-news'>
+					<h2 class='title'>游戏截图</h2>
+					<!-- div class='link'><a href='#'>查看原图</a> | <a href='#'>大图模式</a></div> -->
+				</div>
+				<div id='myslider' class='myslider'>
+					<ul class='slider-cnt'>
+						{loop $pictureurls $pic_k $r}
+						<li class='slider-cnt-item fn-clear'>
+							<img src='{thumb($r[url], 216, 385, 0)}' alt='' width='216' height='385' />
+							<h3 class='title'>{$r[alt]}</h3>
+							<!-- <span class='num'>{$n}</span> -->
+						</li>
+						{/loop}
+					</ul>
+					<div class="slider-nav">
+						<a class='slider-nav-prev slider-nav-prev-disabled' href='javascript:;'>Prev</a>
+						<a class='slider-nav-next' href='javascript:;'>Next</a>
+					</div>
+				</div>
+			</div>
+
+			<div class='article-related article-gallery'>
+				<div class='header-news'>
+					<h2 class='title'>相关推荐</h2>
+				</div>
+				{pc:content action="position" posid="546" order="listorder DESC" num="12"}
+				<ul class='ui-img-list ui-img-list-plus'>
+					{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],75,75)}' width='75' height='75' /></a>
+						<a class='title' href='{$r[url]}'>{str_cut($r[title], 15,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+			{if $allow_comment && module_exists('comment')}
+		   <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+			{/if}
+			
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-hotgame ui-box-side-top'>
+				<h2 class='ui-box-side-title'>IPhone游戏推荐</h2>
+				{pc:content action="position" posid="547"  order="listorder DESC" num="5"}
+				<ul class='ui-hotgame-list'>
+					{loop $data $r}
+					<li class='ui-hotgame-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],50,50)}' alt='' width='50' height='50' /></a>
+						<h3 class='title'><a href='{$r[url]}'>{str_cut($r[title], 30,'')}</a></h3>
+						<!-- span class='num'>{$r[stars]}</span> -->
+						<div class="content" style="width: 180px;">
+							<p>{str_cut($r[description],80,'')}</p>
+						</div>
+						<a class='button' href='{$r[url]}'></a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-hotgame'>
+				<h2 class='ui-box-side-title'>IPhone软件推荐</h2>
+				{pc:content action="position" posid="548"  order="listorder DESC" num="5"}
+				<ul class='ui-hotgame-list'>
+					{loop $data $r}
+					<li class='ui-hotgame-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],50,50)}' alt='' width='50' height='50' /></a>
+						<h3 class='title'><a href='{$r[url]}'>{str_cut($r[title], 30,'')}</a></h3>
+						<!-- span class='num'>{$r[stars]}</span> -->
+						<div class="content" style="width: 180px;">
+							<p>{str_cut($r[description],80,'')}</p>
+						</div>
+						<a class='button' href='{$r[url]}'></a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-gallery'>
+				<h2 class='ui-box-side-title'>iPhone 推荐壁纸</h2>
+				{pc:content action="lists" catid="306" num="4" order="inputtime DESC"}
+				<ul class='ui-img-list ui-img-list-plus'>
+					{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href='{$r[url]}'><img src='{thumb($r[thumb],110,162)}' width='110' height='162' /></a>
+						<a class='title' href='{$r[url]}'>{str_cut($r[title], 30,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+		</div>
+	</div>
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

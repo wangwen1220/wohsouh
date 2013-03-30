@@ -1,0 +1,127 @@
+<script src="static/js/calendar.js" type="text/javascript"></script>
+
+搜索：<br>
+<table width="998" border="0" align="center">
+    <form name="form1" action="" method="post">
+    <tr>
+      <th width="242" height="20">UID</th>
+      <td width="756" bgcolor="#FFFFFF"><input type="text" name="uid" size="30"  maxlength="50" value="{$uid}"/></td>
+      </tr>
+       <tr><th>用户名</th>
+		   <td bgcolor="#FFFFFF"><input type="text" name="username" size="30"  maxlength="50" value="{$username}"/></td>
+       </tr>
+	   
+       <tr>
+        <th>时间范围</th>
+        <td bgcolor="#FFFFFF"><input type="text" size=30 name="dateline1" onclick="showcalendar(event, this)" value="{$dateline1}"/>
+-
+         <input type="text" name="dateline2" size=30 onclick="showcalendar(event, this)" value="{$dateline2}" /></td>
+       </tr>
+       <tr>
+         <td colspan="2" bgcolor="#FFFFFF"><div align="center">
+           <input type="submit" name="submit" value="搜索" />
+           <input name="submit_post" type="hidden" id="submit_post" value="yes" />
+           <input name="particulars_search" type="hidden" id="particulars_search" value="{$particulars_search}" />
+           <input name="checkstate" type="hidden" id="checkstate" value="{$checkstate}" />
+         </div></td>
+       </tr>
+	</form>
+</table>
+{if $submit_post=="yes"}
+<table width="998" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#CCCCCC">
+	  <tr>
+		<td bgcolor="#FFFFFF"><table width="210" height="28" border="0" cellpadding="0" cellspacing="0">
+		  <tr>
+			<form name="form_4" id="form_4" action="?page={$page}" method="post">
+			<td align="center" {if $particulars_search=="yes"} bgcolor="#CCCCCC"{/if}><a href="######" onclick="document.getElementById('form_4').submit();">详细交易查询</a>
+			<input name="uid" type="hidden" id="uid" value="{$uid}" />
+		 		 <input name="username" type="hidden" id="username" value="{$username}" />
+		  			<input name="dateline1" type="hidden" id="dateline1" value="{$dateline1}" />
+		 		 <input name="dateline2" type="hidden" id="dateline2" value="{$dateline2}" />
+		 		 <input name="submit_post" type="hidden" id="submit_post" value="yes" />
+				 <input name="particulars_search" type="hidden" id="particulars_search" value="yes" />
+			</td>
+			</form>
+			<form name="form_5" id="form_5" action="?page={$page}" method="post">
+			<td align="center" {if $particulars_search=="no"} bgcolor="#CCCCCC"{/if}><a href="######" onclick="document.getElementById('form_5').submit();">总体交易查询</a>
+			<input name="uid" type="hidden" id="uid" value="{$uid}" />
+		 		 <input name="username" type="hidden" id="username" value="{$username}" />
+		  			<input name="dateline1" type="hidden" id="dateline1" value="{$dateline1}" />
+		 		 <input name="dateline2" type="hidden" id="dateline2" value="{$dateline2}" />
+		 		 <input name="submit_post" type="hidden" id="submit_post" value="yes" />
+				 <input name="particulars_search" type="hidden" id="particulars_search" value="yes" />
+			
+			</td>
+			</form>
+		  </tr>
+		</table></td>
+	  </tr>
+	  <tr>
+		<td bgcolor="#FFFFFF">
+		
+		{if $particulars_search=="yes"}
+			<table width="986" height="41" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+		  <tr>
+			<td width="94" height="20" align="center" bgcolor="#FFFFFF"><span class="STYLE2">UID</span></td>
+			<td width="166" align="center" bgcolor="#FFFFFF"><span class="STYLE2">用户名</span></td>
+			<td width="161" align="center" bgcolor="#FFFFFF"><span class="STYLE2">查询选项</span></td>
+			<td width="106" align="center" bgcolor="#FFFFFF"><span class="STYLE2">记录</span></td>
+			<td width="179" align="center" bgcolor="#FFFFFF"><span class="STYLE2">时间</span></td>
+			<td width="273" align="center" bgcolor="#FFFFFF">备注</td>
+		  </tr>
+		  
+		  {section name=a loop=$showcoin_rs_arr}
+		  <tr>
+			<td height="20" align="center" bgcolor="#FFFFFF"><?php echo  $showcoin_rs["uid"];?></td>
+			<td align="center" bgcolor="#FFFFFF"><?php echo  $showcoin_rs["username"];?></td>
+			
+			<td align="center" bgcolor="#FFFFFF">
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="58%" align="center">
+                  {$showcoin_rs_arr[a].showcoin}</td>
+				  <form name="form{$showcoin_rs_arr[a].uid}" id="form{$showcoin_rs_arr[a].uid}" action="?page={$page}" method="post">
+                  <td width="42%">
+                  <select name="checkstate" id="checkstate" onchange="document.getElementById('form<?php echo  $showcoin_rs["uid"];?>').submit();">
+                    <option value="showcoin" {if $checkstate=="showcoin" && $check_uid==$showcoin_rs_arr[a].uid}selected="selected"{/if}>余额</option>
+					<option value="in" {if $checkstate=="in" && $check_uid==$showcoin_rs_arr[a].uid}selected="selected"{/if}>收入</option>
+					<option value="out" {if $checkstate=="out" && $check_uid==$showcoin_rs_arr[a].uid}selected="selected"{/if}>送出</option>
+					<option value="buy" {if $checkstate=="buy" && $check_uid==$showcoin_rs_arr[a].uid}selected="selected"{/if}>兑换</option>
+                  </select>                  
+				  </td>
+				  <input name="uid" type="hidden" id="uid" value="{$uid}" />
+		 		 <input name="username" type="hidden" id="username" value="{$username}" />
+		  			<input name="dateline1" type="hidden" id="dateline1" value="{$dateline1_str}" />
+		 		 <input name="dateline2" type="hidden" id="dateline2" value="{$dateline2_str}" />
+				 <input name="check_uid" type="hidden" id="check_uid" value="{$showcoin_rs_arr[a].uid}" />
+		 		 <input name="submit_post" type="hidden" id="submit_post" value="yes" />
+			  </form>
+                </tr>
+              </table>			  </td>
+			<td colspan="3" align="left" valign="top" bgcolor="#FFFFFF">
+			<table width="560" border="0" cellspacing="0" cellpadding="0">
+			
+              <tr>
+                <td width="108" height="25" align="center" >
+				-		</td>
+                <td width="181" align="center" >-</td>
+                <td width="271" align="center" >-</td>
+              </tr>
+
+            </table>
+			
+			</td>
+		  </tr>
+		  {/section}
+		  
+		</table>
+		{else if $particulars_search=="no"}
+			{include_php file="huoshow/module/admin/admin_no_particulars_search.php"}
+		{/if}
+		</td>
+	  </tr>
+	  <tr><td>
+
+	  </td></tr>
+	</table>
+{/if}

@@ -1,0 +1,28 @@
+<table border="0" class="tb tb2">
+	<tr class="header">
+		<th>排序</th>
+		<th>来源</th>
+		<th>类型</th>
+		<th>内容</th>
+		<th>操作</th>
+	</tr>
+	{section name=m loop=$msg_arr}
+	<tr class="hover">
+		<td>{$msg_arr[m].id}</td>
+		<td>{$msg_arr[m].src_username}</td>
+		<td>
+			{if $msg_arr[m].msg_state == 1}用户申请免费成功
+			{elseif $msg_arr[m].msg_state == 2}用户购买多功能房成功
+			{elseif $msg_arr[m].msg_state == 3}用户多功能房间到期提示
+			{elseif $msg_arr[m].msg_state == 4}用户多功能房间离到期只有一个星期提示
+			{else}用户多功能房间升级提示
+			{/if}
+		</td>
+		<td>{$msg_arr[m].msg}</td>
+		<td><a href="?action=huoshow&operation=multisitemsg&tab=del&id={$msg_arr[m].id}" onclick="return confirm('确定删除此信息？注意：此操作不可恢复，请谨慎操作！')">删除</a></td>
+	</tr>
+	{/section}
+	<tr>
+		<td colspan="5">{$page_str}</td>
+	</tr>
+</table>

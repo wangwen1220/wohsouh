@@ -1,0 +1,464 @@
+{template "content","game_header"}
+<!-- Top AD -->
+<div class='ad ad_online'>
+	<ul class='ad_list'>
+		<li class='first'><a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a></li>
+		<li><a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a></li>
+		<li><a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a></li>
+		<li><a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a></li>
+		<li><a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a></li>
+		<li><a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a></li>
+	</ul>
+</div>
+<!-- Top AD End -->
+
+<!-- Top Content -->
+<div class='ui_content top_content fn_clear'>
+	<div class="ui_content_left fn_left">
+		<div class="pic_slide_wrapper">
+			<!-- slide start -->
+			<div class="pic_slide">
+				{pc:content  action="position" posid="119" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a href="{$r[url]}"><img src="{thumb($r[thumb],290,250)}" alt="{$r[title]}" width='290' height='250' /></a>
+						<h3>{str_cut($r[title],50,'')}</h3>
+					</li>
+					{/loop}
+				</ul>
+				<ol>
+					{loop $data $r}
+					<li class='num'><span>{$n}</span></li>
+					{/loop}
+					<li class='next'><span>Next</span></li>
+					<li class='prev'><span>Prev</span></li>
+				</ol>
+				{/pc}
+			</div>
+		</div>
+		<!-- slide end -->
+
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>热门网游推荐</h3>
+			<ul class='ui_img_list'>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+			</ul>
+
+			<ul class='ui_text_list'>
+				<li><a href='#' title=''>位前端大牛的博客,有时候一个知识记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有时候记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+			</ul>
+			<a class='more' href='#' title=''>更多&gt;&gt;</a>
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的认然的认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<ul class='ui_news_list'>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想当然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很很想当然当很很想当然当很很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很想当然然的认</a></li>
+		</ul>
+	</div>
+
+	<div class='ui_content_right fn_right'>
+		<div class='ad_aside'><img src='/statics/images/tv/test.gif' alt='' width='248' height='258' /></div>
+
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>精彩视频</h3>
+			<ul class='ui_img_list'>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='100' height='70' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='100' height='70' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='100' height='70' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='100' height='70' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+			</ul>
+			<a class='more' href='#' title=''>更多&gt;&gt;</a>
+		</div>
+	</div>
+</div>
+<!-- Top Content End -->
+
+<!-- 新网游专区 -->
+<div class='ui_content ui_content_box content_zhuanqu fn_clear'>
+	<h2 class='ui_content_title'>新网游专区</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>新游入库</h3>
+			<ul class='ui_img_list'>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+			</ul>
+
+			<ul class='ui_text_list'>
+				<li><a href='#' title=''>位前端大牛的博客,有时候一个知识记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有时候记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<ul class='ui_news_list'>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想当然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很很想当然当很很想当然当很很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+		</ul>
+	</div>
+
+	<div class="ui_content_right fn_right">
+		<div class='ui_img_box'>
+			<h3>新网游评测</h3>
+			<dl>
+				<dt>
+					<h4><span>1</span><a href='#' title=''>天龙八部</a></h4>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<ul>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+					</ul>
+				</dd>
+				<dt>
+					<h4><span>2</span><a href='#' title=''>天龙八部</a></h4>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<ul>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 新网游专区结束 -->
+
+<!-- 新游图集 -->
+<div class='ui_content ui_content_box content_tuji' id='js_game_tab'>
+	<h2 class='ui_content_title content_tuji_title show'><a hidefocus='true' href='#' title=''>新游图集</a></h2>
+	<ul class='ui_img_list show'>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+	</ul>
+
+	<h2 class='ui_content_title content_shipin_title'><a hidefocus='true' href='#' title=''>新游视频</a></h2>
+	<ul class='ui_img_list'>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+	</ul>
+</div>
+<!-- 新游图集结束 -->
+
+<!-- 网游攻略专区 -->
+<div class='ui_content ui_content_box content_gonglue fn_clear'>
+	<h2 class='ui_content_title'>网游攻略专区</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>视频攻略</h3>
+			<ul class='ui_video_list'>
+				<li>
+					<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='120' height='90' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='120' height='90' /></a>
+					<h4><a href='#' title=''>天龙八部</a></h4>
+				</li>
+			</ul>
+
+			<ul class='ui_text_list'>
+				<li><a href='#' title=''>位前端大牛的博客,有时候一个知识记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有时候记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<ul class='ui_news_list'>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想当然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很很想当然当很很想当然当很很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+		</ul>
+	</div>
+
+	<div class="ui_content_right fn_right">
+		<div class='ui_img_box'>
+			<h3>专题推荐</h3>
+			<dl>
+				<dt>
+					<h4><span>1</span><a href='#' title=''>天龙八部</a></h4>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<ul>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+						<li>类型：<em>角色扮演</em></li>
+					</ul>
+				</dd>
+			</dl>
+
+			<ul class='ui_text_list'>
+				<li><a href='#' title=''>位前端大牛的博客,有时候一个知识记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有时候记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+			</ul>
+		</div>
+	</div>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 网游攻略专区结束 -->
+
+<!-- 网游业界动态 -->
+<div class='ui_content ui_content_box content_dongtai fn_clear'>
+	<h2 class='ui_content_title'>网游业界动态</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>人物专访</h3>
+			<ul class='ui_artical_list'>
+				<li>
+					<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='120' height='90' /></a>
+					<p>牛的博客,有个知位前候大牛的博客,有时候一候大牛候大牛个知识点忘记了在哪里 <a href='#' title=''>详细&gt;&gt;</a></p>
+				</li>
+			</ul>
+
+			<ul class='ui_text_list'>
+				<li><a href='#' title=''>位前端大牛的博客,有时候一个知识记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有时候记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<ul class='ui_news_list'>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当很想当然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很很想当然当很很想当然当很很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然想当然当很当当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当想当然然的认</a></li>
+		</ul>
+	</div>
+
+	<div class="ui_content_right fn_right">
+		<div class='ui_img_box'>
+			<h3>业界评论</h3>
+			<dl>
+				<dt>
+					<h4><span>1</span><a href='#' title=''>天龙八部</a></h4>
+					<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='108' height='75' /></a>
+				</dt>
+				<dd>
+					<h4>大牛的博客</h4>
+					<p>位前端大牛的博客,有时候一个知识记了在哪里看...</p>
+				</dd>
+			</dl>
+
+			<ul class='ui_text_list'>
+				<li><a href='#' title=''>位前端大牛的博客,有时候一个知识记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有时候记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+				<li><a href='#' title=''>位前端大牛的博客,有个知位前候大牛的博客,有时候一个知识点忘记了在哪里看</a></li>
+			</ul>
+		</div>
+	</div>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 网游业界动态结束 -->
+
+<!-- 网游图集 -->
+<div class='ui_content ui_content_box content_gallery fn_clear'>
+	<h2 class='ui_content_title'>网游图集</h2>
+	<div class='img_poster'>
+		<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+		<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空裙</a></h4>
+	</div>
+	<ul class='ui_img_list'>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>威夫特镂空威夫特镂裙 威夫特镂空威夫特镂空威夫特镂裙</a></h4>
+		</li>
+	</ul>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 网游图集结束 -->
+{template "content","footer"}

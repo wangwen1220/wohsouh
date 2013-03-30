@@ -1,0 +1,61 @@
+{template "community","myshow_header"}
+<div id="edit-album" class='edit-page'>
+	<h2>修改专辑</h2>
+	<form id='edit-album-form' class="album-form fn-clear" action="/index.php?m=community&c=index&a=myshow_modify_album&album_id={$album_id}" method="post">
+		<ul class='form-list'>
+			<li class='form-list-item'><label for='album-name'>专辑名称：</label><input name='album_name' type='text' id='album-name' value="{$album_name}" /><a id='del-album-btn' class='button del-tip' href="/index.php?m=community&c=myhuoshow&a=userdelalbum&id={$album_id}">删除专辑</a></li>
+			<li class='form-list-item'>
+				<strong>分类：</strong>
+				<div class='divselect'>
+					<cite class='selected'>{$album_class}</cite>
+					<ul class='options'>
+					{loop $all_calss $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r[id]}">{$r[name]}</a></li>
+					{/loop}
+					</ul>
+				</div>
+				<input name="typeid" class="inputselect" type="hidden" value="{$album_class_id}" />
+				<input name="album_id" type="hidden" id="album_id" value="{$album_id}" />
+				<input name="url" type="hidden" id="url" value="{$url}" />
+			</li>
+			<li class='form-list-item'><label for='album-desc'>补充描述：</label><textarea id='album-desc' name='pin_description'>{$album_description}</textarea></li>
+			<li class='form-list-item last'><span class='esbtn'><button type='submit' class='sbtn'>保存设置</button></span></li>
+		</ul>
+		<div class="album-cover">
+			<div class="ui-album-box">
+				<div class="ui-album">
+					<div class="img multi-img">
+						<img src="http://www.huoshow.com/myshowpic/13503738988_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503738757_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503738496_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503738305_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503738074_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503737883_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503737672_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503737391_small.jpg" width="60" height="60" />
+						<img src="http://www.huoshow.com/myshowpic/13503737391_small.jpg" width="60" height="60" />
+					</div>
+					<div class="img single-img">
+						<img src="" width="188" height="188" />
+						<input type='hidden' name='imgid' id='img-id' />
+					</div>
+				</div>
+			</div>
+			<div id='set-album-cover' class='set-album-cover'>
+				<input type='radio' name='cover' checked='checked' class='multi' value='1' /> <label>九宫格封面</label>
+				<input type='radio' name='cover' class='single' value='2' /> <label>自定义单图封面</label>
+			</div>
+		</div>
+	</form>
+	<div id='select-cover-dialog' class='ui-img-dialog'>
+		<h3 class='header'>选择封面照片</h3>
+		<div class="body">
+			{loop $share_arr $r}
+			<a class='img' href='javascript:;'><img src='{$r[shareimg]}' data-id="{$r[id]}" /><span class="mark"></span></a>
+			{/loop}
+		</div>
+		<div class="footer">点击照片即可选择封面</div>
+		<a class="closer" href='javascript:;'>关闭</a>
+	</div>
+</body>
+</html>

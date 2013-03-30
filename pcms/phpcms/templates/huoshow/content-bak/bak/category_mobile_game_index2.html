@@ -1,0 +1,392 @@
+{template "content","game_header"}
+<div id='wrapper'>
+<!-- Top Content -->
+<div class='ui_content top_content top_content_mobile fn_clear'>
+	<div class="ui_content_left fn_left">
+		<div class="pic_slide_wrapper">
+			<!-- slide start -->
+			<div class="pic_slide">
+				{pc:content  action="position" posid="119" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a href="{$r[url]}"><img src="{thumb($r[thumb],290,250)}" alt="{$r[title]}" width='290' height='250' /></a>
+						<h3>{str_cut($r[title],50,'')}</h3>
+					</li>
+					{/loop}
+				</ul>
+				<ol>
+					{loop $data $r}
+					<li class='num'><span>{$n}</span></li>
+					{/loop}
+					<li class='next'><span>Next</span></li>
+					<li class='prev'><span>Prev</span></li>
+				</ol>
+				{/pc}
+			</div>
+		</div>
+		<!-- slide end -->
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的认然的认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的认为用户体验</a></h2>
+		<ul class='ui_news_list'>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] 我们都很想很想当然当想当然当很很想当然然的认</a></li>
+			<li><a href='#' title=''>[国内] w我们wwww都很想很想当然当想当然当很很想当然然的认</a></li>
+		</ul>
+	</div>
+</div>
+<!-- Top Content End -->
+
+<!-- 视频攻略 -->
+<div class='ui_box ui_box_video'>
+	<h2 class='ui_box_title'>视频攻略</h2>
+	<ul class='ui_img_list'>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img class='video_img' src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>天龙八部</a></h4>
+		</li>
+	</ul>
+	<a class='more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 视频攻略结束 -->
+
+<!-- 智能手机 -->
+<div class='ui_content ui_content_box ui_content_mobile fn_clear'>
+	<h2 class='ui_content_title'>智能手机</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>手机游戏下载</h3>
+			<ul class='ui_game_img_list'>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>音悦台</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>你拍我猜</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>音悦台</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>你拍我猜</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>音悦台</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>你拍我猜</a></h4>
+				</li>
+			</ul>
+
+			<ul class='ui_game_text_list'>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_game_list'>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+		</ul>
+	</div>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 智能手机结束 -->
+
+<!-- 掌机专区 -->
+<div class='ui_content ui_content_box ui_content_mobile fn_clear'>
+	<h2 class='ui_content_title'>掌机专区</h2>
+	<div class="ui_content_left fn_left">
+		<div class='ui_box'>
+			<h3 class='ui_box_title'>掌机下载</h3>
+			<h4 class='ui_box_nav'><a href='#' title=''>PSP</a> <a href='#' title=''>PSV</a> <a href='#' title=''>3DS</a> <a href='#' title=''>NDS</a></h4>
+			<ul class='ui_game_img_list'>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>音悦台</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>你拍我猜</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>音悦台</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>你拍我猜</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>音悦台</a></h4>
+				</li>
+				<li>
+					<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+					<h4><a href='#' title=''>你拍我猜</a></h4>
+				</li>
+			</ul>
+
+			<ul class='ui_game_text_list'>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>91农场</a></li>
+				<li><a href='#' title=''>德州扑克</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+				<li><a href='#' title=''>宝石矿工</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class='ui_content_center fn_left'>
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_title_list'>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们想想当然的认</a>] [<a href='#' title=''>我想当们的认</a>]</li>
+			<li>[<a href='#' title=''>我们都很想当然的然认</a>] [<a href='#' title=''>我们都很想当然的认</a>] [<a href='#' title=''>我们都很的认</a>]</li>
+		</ul>
+
+		<h2 class='ui_title'><a href='#' title=''>我们都很想当然的然的认然的认认为用户体验</a></h2>
+		<ul class='ui_game_list'>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+			<li><a class='ui_game_link' href='#' title=''>[国内] 热舞派对Ⅱ“舞转星移”4月26日即将上线</a> <span class='ui_game_date'>[03-13]</span></li>
+		</ul>
+	</div>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 掌机专区结束 -->
+
+<!-- 苹果专区 -->
+<div class='ui_box ui_box_aside'>
+	<h2 class='ui_box_title'>苹果专区</h2>
+	<ul class='ui_game_artical_list'>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+	</ul>
+	<a class='more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 苹果专区结束 -->
+
+	<div class='ui_aside ad_aside'><img src='/statics/images/tv/test.gif' alt='' width='248' height='258' /></div>
+
+<!-- 安卓专区 -->
+<div class='ui_box ui_box_aside'>
+	<h2 class='ui_box_title'>安卓专区</h2>
+	<ul class='ui_game_artical_list'>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/game/test.png' alt='' width='75' height='75' /></a>
+			<h4><a href='#' title=''>宝石矿工</a></h4>
+			<p>该作已经于前不久上市，IGN今天给出了8.5分的好评，尤其耐玩性...</p>
+		</li>
+	</ul>
+	<a class='more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 安卓专区结束 -->
+
+<!-- 壁纸下载 -->
+<div class='ui_content ui_content_box ui_content_gallery ui_content_gallery_mobile'>
+	<h2 class='ui_content_title'>壁纸下载</h2>
+	<ul class='ui_img_list'>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>妙龄少女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>妙龄少女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>妙龄少女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>妙龄少女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>妙龄少女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>妙龄少女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+		<li>
+			<a href='#' title=''><img src='/statics/images/tv/test.gif' alt='' width='125' height='94' /></a>
+			<h4><a href='#' title=''>韩国美女</a></h4>
+		</li>
+	</ul>
+	<a class='ui_content_more' href='#' title=''>更多&gt;&gt;</a>
+</div>
+<!-- 壁纸下载结束 -->
+</div>
+{template "content","footer"}

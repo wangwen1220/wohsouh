@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>内地明星 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">内地明星</h2>
+					</div>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="柳岩真空透视抢镜 春光“侧露”酥胸隐现" href="http://pnews.trunk.huoshow.com/2011/1026/44351.shtml" target="_blank">柳岩真空透视抢镜 春光“侧露”酥胸隐现</a></span>
+							<span class="date_01">2011-10-26 17:33:44</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="韩雯雯成时尚品牌新宠 盛装出席时尚晚宴" href="http://pnews.trunk.huoshow.com/2011/1026/44337.shtml" target="_blank">韩雯雯成时尚品牌新宠 盛装出席时尚晚宴</a></span>
+							<span class="date_01">2011-10-26 17:14:05</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="（图）殷桃变身模特T台走秀 尽显“御姐”风范" href="http://pnews.trunk.huoshow.com/2011/1026/44333.shtml" target="_blank">（图）殷桃变身模特T台走秀 尽显“御姐”风范</a></span>
+							<span class="date_01">2011-10-26 17:11:12</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="柳岩被传嫁京城三公子之一 其身家不逊于杨子" href="http://pnews.trunk.huoshow.com/2011/1026/44181.shtml" target="_blank">柳岩被传嫁京城三公子之一 其身家不逊于杨子</a></span>
+							<span class="date_01">2011-10-26 15:29:02</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="甄子丹有音乐天分 苦练吉它已练到登台水平" href="http://pnews.trunk.huoshow.com/2011/1026/44115.shtml" target="_blank">甄子丹有音乐天分 苦练吉它已练到登台水平</a></span>
+							<span class="date_01">2011-10-26 14:46:11</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="杨紫琼欲参加马来西亚大选 女儿从政母亲不过问" href="http://pnews.trunk.huoshow.com/2011/1026/44089.shtml" target="_blank">杨紫琼欲参加马来西亚大选 女儿从政母亲不过问</a></span>
+							<span class="date_01">2011-10-26 14:32:56</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="周刊发声明向周迅道歉 裸照事件子虚乌有(图)" href="http://pnews.trunk.huoshow.com/2011/1026/44005.shtml" target="_blank">周刊发声明向周迅道歉 裸照事件子虚乌有(图)</a></span>
+							<span class="date_01">2011-10-26 11:11:10</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="张杰与谢娜补办婚宴 爷爷：再大的明星也是我孙" href="http://pnews.trunk.huoshow.com/2011/1026/43961.shtml" target="_blank">张杰与谢娜补办婚宴 爷爷：再大的明星也是我孙</a></span>
+							<span class="date_01">2011-10-26 10:47:44</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="谢娜上传杜海涛学生照 调侃岁月是把“杀猪刀”" href="http://pnews.trunk.huoshow.com/2011/1026/43955.shtml" target="_blank">谢娜上传杜海涛学生照 调侃岁月是把“杀猪刀”</a></span>
+							<span class="date_01">2011-10-26 10:42:29</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="巩俐：女王气势来自于对工作的敬业 用好作品赢得尊重" href="http://pnews.trunk.huoshow.com/2011/1026/43951.shtml" target="_blank">巩俐：女王气势来自于对工作的敬业 用好作品赢得尊重</a></span>
+							<span class="date_01">2011-10-26 10:40:40</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="赵薇做导演：舍不得孩子拍不出片子" href="http://pnews.trunk.huoshow.com/2011/1026/43935.shtml" target="_blank">赵薇做导演：舍不得孩子拍不出片子</a></span>
+							<span class="date_01">2011-10-26 10:21:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="秦岚晒钻戒被指好事将近 陆川否认向其求婚" href="http://pnews.trunk.huoshow.com/2011/1026/43917.shtml" target="_blank">秦岚晒钻戒被指好事将近 陆川否认向其求婚</a></span>
+							<span class="date_01">2011-10-26 10:06:56</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕公开与杨溢恋情 否认是小三希望得到祝福" href="http://pnews.trunk.huoshow.com/2011/1026/43915.shtml" target="_blank">霍思燕公开与杨溢恋情 否认是小三希望得到祝福</a></span>
+							<span class="date_01">2011-10-26 10:01:17</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="黄圣依被怀孕闪婚 杨子辟谣：是我惹的祸" href="http://pnews.trunk.huoshow.com/2011/1026/43877.shtml" target="_blank">黄圣依被怀孕闪婚 杨子辟谣：是我惹的祸</a></span>
+							<span class="date_01">2011-10-26 09:34:23</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕受访否认是小三 称：认识对方时已是单身" href="http://pnews.trunk.huoshow.com/2011/1025/43725.shtml" target="_blank">霍思燕受访否认是小三 称：认识对方时已是单身</a></span>
+							<span class="date_01">2011-10-25 16:21:42</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="揭秘黄奕霍思燕三角情债 娱乐圈女星恩怨不休" href="http://pnews.trunk.huoshow.com/2011/1025/43711.shtml" target="_blank">揭秘黄奕霍思燕三角情债 娱乐圈女星恩怨不休</a></span>
+							<span class="date_01">2011-10-25 16:14:40</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="余思潞《男人装》限度写真 大胆谈性说爱不尴尬" href="http://pnews.trunk.huoshow.com/2011/1025/43697.shtml" target="_blank">余思潞《男人装》限度写真 大胆谈性说爱不尴尬</a></span>
+							<span class="date_01">2011-10-25 16:00:37</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕黄奕骂战背后男主角 某地产公司执行董事杨溢" href="http://pnews.trunk.huoshow.com/2011/1025/43509.shtml" target="_blank">霍思燕黄奕骂战背后男主角 某地产公司执行董事杨溢</a></span>
+							<span class="date_01">2011-10-25 11:31:15</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李阳妻子欲诉讼离婚 曾试图协议离婚被拒绝" href="http://pnews.trunk.huoshow.com/2011/1025/43477.shtml" target="_blank">李阳妻子欲诉讼离婚 曾试图协议离婚被拒绝</a></span>
+							<span class="date_01">2011-10-25 11:10:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="柳岩：我一点也不满意我的胸 随时都想嫁出去" href="http://pnews.trunk.huoshow.com/2011/1025/43459.shtml" target="_blank">柳岩：我一点也不满意我的胸 随时都想嫁出去</a></span>
+							<span class="date_01">2011-10-25 10:40:07</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="（图）邓紫衣拍摄色彩大片 时尚气息脱颖而出" href="http://pnews.trunk.huoshow.com/2011/1024/43273.shtml" target="_blank">（图）邓紫衣拍摄色彩大片 时尚气息脱颖而出</a></span>
+							<span class="date_01">2011-10-24 17:15:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="汤晓菲助阵明星乒乓球俱乐部 为公益倾情献唱" href="http://pnews.trunk.huoshow.com/2011/1024/43187.shtml" target="_blank">汤晓菲助阵明星乒乓球俱乐部 为公益倾情献唱</a></span>
+							<span class="date_01">2011-10-24 16:12:01</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="影帝孙淳与孙菲菲后台牵手热聊 孙菲菲竟潸然泪下" href="http://pnews.trunk.huoshow.com/2011/1024/43151.shtml" target="_blank">影帝孙淳与孙菲菲后台牵手热聊 孙菲菲竟潸然泪下</a></span>
+							<span class="date_01">2011-10-24 15:30:37</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李冰冰新片演剩女 渴望被“才华男”征服" href="http://pnews.trunk.huoshow.com/2011/1024/43109.shtml" target="_blank">李冰冰新片演剩女 渴望被“才华男”征服</a></span>
+							<span class="date_01">2011-10-24 14:52:18</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="迟帅坦言已觅心动女孩 称与冯绍峰没有不和" href="http://pnews.trunk.huoshow.com/2011/1024/43101.shtml" target="_blank">迟帅坦言已觅心动女孩 称与冯绍峰没有不和</a></span>
+							<span class="date_01">2011-10-24 14:46:32</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="曝卢庚戌与张辛怡是夫妻 两人4年前已经结婚" href="http://pnews.trunk.huoshow.com/2011/1024/43059.shtml" target="_blank">曝卢庚戌与张辛怡是夫妻 两人4年前已经结婚</a></span>
+							<span class="date_01">2011-10-24 14:13:55</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="黄梓琪未探望邓建国 微博宣布两人已分手" href="http://pnews.trunk.huoshow.com/2011/1024/43011.shtml" target="_blank">黄梓琪未探望邓建国 微博宣布两人已分手</a></span>
+							<span class="date_01">2011-10-24 11:57:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="陈数赵胤胤婚后首度亮相 不度蜜月忙作公益" href="http://pnews.trunk.huoshow.com/2011/1024/42989.shtml" target="_blank">陈数赵胤胤婚后首度亮相 不度蜜月忙作公益</a></span>
+							<span class="date_01">2011-10-24 11:35:52</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="知名杂志专访冯绍峰：限量版偶像" href="http://pnews.trunk.huoshow.com/2011/1024/42969.shtml" target="_blank">知名杂志专访冯绍峰：限量版偶像</a></span>
+							<span class="date_01">2011-10-24 11:17:29</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="女模直播自杀被指炒作 删除微博为其行为道歉" href="http://pnews.trunk.huoshow.com/2011/1024/42915.shtml" target="_blank">女模直播自杀被指炒作 删除微博为其行为道歉</a></span>
+							<span class="date_01">2011-10-24 10:35:31</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="（图）马伊琍做美容爱车被困 交涉未果怒斥保安" href="http://pnews.trunk.huoshow.com/2011/1024/42909.shtml" target="_blank">（图）马伊琍做美容爱车被困 交涉未果怒斥保安</a></span>
+							<span class="date_01">2011-10-24 10:29:23</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="张咪白衣亮相皮肤显黑 助阵好友郭峰画展" href="http://pnews.trunk.huoshow.com/2011/1022/42753.shtml" target="_blank">张咪白衣亮相皮肤显黑 助阵好友郭峰画展</a></span>
+							<span class="date_01">2011-10-22 11:28:40</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传朱迅婚姻生变 网友冒名称“再也回不去了”" href="http://pnews.trunk.huoshow.com/2011/1022/42525.shtml" target="_blank">传朱迅婚姻生变 网友冒名称“再也回不去了”</a></span>
+							<span class="date_01">2011-10-22 09:24:02</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="汤唯坦言成为邦女郎机会不大 不屑进军好莱坞" href="http://pnews.trunk.huoshow.com/2011/1021/42451.shtml" target="_blank">汤唯坦言成为邦女郎机会不大 不屑进军好莱坞</a></span>
+							<span class="date_01">2011-10-21 17:37:35</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="（图）姚舒颜拍摄时尚性感大片 被赞天生模特" href="http://pnews.trunk.huoshow.com/2011/1021/42397.shtml" target="_blank">（图）姚舒颜拍摄时尚性感大片 被赞天生模特</a></span>
+							<span class="date_01">2011-10-21 17:11:39</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="杨澜老公收购日本体育娱乐品牌 藤原纪香曾代言" href="http://pnews.trunk.huoshow.com/2011/1021/42303.shtml" target="_blank">杨澜老公收购日本体育娱乐品牌 藤原纪香曾代言</a></span>
+							<span class="date_01">2011-10-21 16:18:23</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="郭美美驾玛莎拉蒂被撞 状告中粮索赔45万" href="http://pnews.trunk.huoshow.com/2011/1021/42289.shtml" target="_blank">郭美美驾玛莎拉蒂被撞 状告中粮索赔45万</a></span>
+							<span class="date_01">2011-10-21 16:09:34</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="秦海璐中空现身抢镜 称不会跟潮流闪婚" href="http://pnews.trunk.huoshow.com/2011/1021/42279.shtml" target="_blank">秦海璐中空现身抢镜 称不会跟潮流闪婚</a></span>
+							<span class="date_01">2011-10-21 16:02:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="小悦悦今晨离世 李冰冰应采儿等呼吁拒绝冷漠" href="http://pnews.trunk.huoshow.com/2011/1021/42205.shtml" target="_blank">小悦悦今晨离世 李冰冰应采儿等呼吁拒绝冷漠</a></span>
+							<span class="date_01">2011-10-21 15:23:45</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="“白发”黄奕很开心：完全不受霍思燕干扰" href="http://pnews.trunk.huoshow.com/2011/1021/42193.shtml" target="_blank">“白发”黄奕很开心：完全不受霍思燕干扰</a></span>
+							<span class="date_01">2011-10-21 15:12:05</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="包贝尔澄清偷瞄美胸传闻 称柳岩性格惹人爱" href="http://pnews.trunk.huoshow.com/2011/1021/42165.shtml" target="_blank">包贝尔澄清偷瞄美胸传闻 称柳岩性格惹人爱</a></span>
+							<span class="date_01">2011-10-21 14:53:51</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="传朱迅与王志婚变已分居 携神秘帅哥亲密回京" href="http://pnews.trunk.huoshow.com/2011/1021/42163.shtml" target="_blank">传朱迅与王志婚变已分居 携神秘帅哥亲密回京</a></span>
+							<span class="date_01">2011-10-21 14:49:54</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="刘诗诗亮相时装周否认整容 称与杨幂永远是朋友" href="http://pnews.trunk.huoshow.com/2011/1021/42097.shtml" target="_blank">刘诗诗亮相时装周否认整容 称与杨幂永远是朋友</a></span>
+							<span class="date_01">2011-10-21 11:30:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="姚笛回应与“长发壮男”深夜牵手：只是好朋友" href="http://pnews.trunk.huoshow.com/2011/1021/41953.shtml" target="_blank">姚笛回应与“长发壮男”深夜牵手：只是好朋友</a></span>
+							<span class="date_01">2011-10-21 09:46:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李阳称家暴后事业更火 金星怒骂自私龌龊" href="http://pnews.trunk.huoshow.com/2011/1021/41911.shtml" target="_blank">李阳称家暴后事业更火 金星怒骂自私龌龊</a></span>
+							<span class="date_01">2011-10-21 09:16:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="林熙蕾曝女儿可爱睡颜 称人生终于完整" href="http://pnews.trunk.huoshow.com/2011/1020/41893.shtml" target="_blank">林熙蕾曝女儿可爱睡颜 称人生终于完整</a></span>
+							<span class="date_01">2011-10-20 18:07:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="（组图）海清穿张柏芝旧衫 大牌控叫板超模" href="http://pnews.trunk.huoshow.com/2011/1020/41891.shtml" target="_blank">（组图）海清穿张柏芝旧衫 大牌控叫板超模</a></span>
+							<span class="date_01">2011-10-20 18:04:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="陶红现身包头“傻迷”相随 为关注女性健康宣传" href="http://pnews.trunk.huoshow.com/2011/1020/41861.shtml" target="_blank">陶红现身包头“傻迷”相随 为关注女性健康宣传</a></span>
+							<span class="date_01">2011-10-20 17:20:53</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕再战黄奕不具坐牢 前夫劝架" href="http://pnews.trunk.huoshow.com/2011/1020/41799.shtml" target="_blank">霍思燕再战黄奕不具坐牢 前夫劝架</a></span>
+							<span class="date_01">2011-10-20 16:38:49</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="羊城晚报：女星骂战 一场王八对绿豆的搞笑角力" href="http://pnews.trunk.huoshow.com/2011/1020/41747.shtml" target="_blank">羊城晚报：女星骂战 一场王八对绿豆的搞笑角力</a></span>
+							<span class="date_01">2011-10-20 16:20:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="曝黄奕霍思燕升级 前男友现男友前夫互骂开始" href="http://pnews.trunk.huoshow.com/2011/1020/41721.shtml" target="_blank">曝黄奕霍思燕升级 前男友现男友前夫互骂开始</a></span>
+							<span class="date_01">2011-10-20 16:04:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李彬跨界招募设计师 为柳岩打造性感礼服" href="http://pnews.trunk.huoshow.com/2011/1020/41671.shtml" target="_blank">李彬跨界招募设计师 为柳岩打造性感礼服</a></span>
+							<span class="date_01">2011-10-20 15:45:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="兰玉：我为谢娜做嫁衣 穿上她就哭了" href="http://pnews.trunk.huoshow.com/2011/1020/41653.shtml" target="_blank">兰玉：我为谢娜做嫁衣 穿上她就哭了</a></span>
+							<span class="date_01">2011-10-20 15:38:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="黄奕工作室称已请律师 表示生活工作受到影响" href="http://pnews.trunk.huoshow.com/2011/1020/41581.shtml" target="_blank">黄奕工作室称已请律师 表示生活工作受到影响</a></span>
+							<span class="date_01">2011-10-20 15:09:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="李阳毫无悔意口出狂言：“家暴门”让事业更火" href="http://pnews.trunk.huoshow.com/2011/1020/41505.shtml" target="_blank">李阳毫无悔意口出狂言：“家暴门”让事业更火</a></span>
+							<span class="date_01">2011-10-20 11:56:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="李阳再为家暴争辩：处理愤怒方式需改进而已" href="http://pnews.trunk.huoshow.com/2011/1020/41501.shtml" target="_blank">李阳再为家暴争辩：处理愤怒方式需改进而已</a></span>
+							<span class="date_01">2011-10-20 11:52:33</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕黄奕骂战继续 知情人曝光三大“男主角”" href="http://pnews.trunk.huoshow.com/2011/1020/41453.shtml" target="_blank">霍思燕黄奕骂战继续 知情人曝光三大“男主角”</a></span>
+							<span class="date_01">2011-10-20 11:08:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="姜昆炮轰郭德纲后再发言：不少人捧下三滥艺术" href="http://pnews.trunk.huoshow.com/2011/1020/41441.shtml" target="_blank">姜昆炮轰郭德纲后再发言：不少人捧下三滥艺术</a></span>
+							<span class="date_01">2011-10-20 11:01:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="微博骂战黄奕是非缠身 霍思燕无惧坐牢" href="http://pnews.trunk.huoshow.com/2011/1020/41415.shtml" target="_blank">微博骂战黄奕是非缠身 霍思燕无惧坐牢</a></span>
+							<span class="date_01">2011-10-20 10:39:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕黄奕骂声大动作小 未采取实质性法律行动" href="http://pnews.trunk.huoshow.com/2011/1020/41401.shtml" target="_blank">霍思燕黄奕骂声大动作小 未采取实质性法律行动</a></span>
+							<span class="date_01">2011-10-20 10:27:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="黄霍骂战男一号并非姜凯 双方团队公关策略迥异" href="http://pnews.trunk.huoshow.com/2011/1020/41395.shtml" target="_blank">黄霍骂战男一号并非姜凯 双方团队公关策略迥异</a></span>
+							<span class="date_01">2011-10-20 10:20:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕遭诋毁大骂黄奕 骂战升级" href="http://pnews.trunk.huoshow.com/2011/1019/41257.shtml" target="_blank">霍思燕遭诋毁大骂黄奕 骂战升级</a></span>
+							<span class="date_01">2011-10-19 16:58:09</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="金鸡百花首日现场混乱 赵薇现身化解尴尬道歉" href="http://pnews.trunk.huoshow.com/2011/1019/41249.shtml" target="_blank">金鸡百花首日现场混乱 赵薇现身化解尴尬道歉</a></span>
+							<span class="date_01">2011-10-19 16:51:58</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="小娇妻怀疑自己被邓建国利用 只摆酒没领证" href="http://pnews.trunk.huoshow.com/2011/1019/41119.shtml" target="_blank">小娇妻怀疑自己被邓建国利用 只摆酒没领证</a></span>
+							<span class="date_01">2011-10-19 15:38:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="邓建国19岁娇妻黄梓琪：嫁他我真后悔了(图)" href="http://pnews.trunk.huoshow.com/2011/1019/41089.shtml" target="_blank">邓建国19岁娇妻黄梓琪：嫁他我真后悔了(图)</a></span>
+							<span class="date_01">2011-10-19 15:25:00</span>
+						</li>
+											</ul>
+					<ul>
+																		<li>
+							<span class="date_011"><a title="霍思燕：怨妇黑我是小三 点名开骂拉黄奕晒太阳" href="http://pnews.trunk.huoshow.com/2011/1019/41065.shtml" target="_blank">霍思燕：怨妇黑我是小三 点名开骂拉黄奕晒太阳</a></span>
+							<span class="date_01">2011-10-19 15:14:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="富二代搅乱两大女星 黄奕发律师函要告霍思燕" href="http://pnews.trunk.huoshow.com/2011/1019/41055.shtml" target="_blank">富二代搅乱两大女星 黄奕发律师函要告霍思燕</a></span>
+							<span class="date_01">2011-10-19 15:06:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="谢娜婚后复工与张杰同台 被问造人尴尬大笑" href="http://pnews.trunk.huoshow.com/2011/1019/40945.shtml" target="_blank">谢娜婚后复工与张杰同台 被问造人尴尬大笑</a></span>
+							<span class="date_01">2011-10-19 11:36:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="赵薇晒与林心如《还珠》时合影 称两人像发小" href="http://pnews.trunk.huoshow.com/2011/1019/40875.shtml" target="_blank">赵薇晒与林心如《还珠》时合影 称两人像发小</a></span>
+							<span class="date_01">2011-10-19 10:37:00</span>
+						</li>
+																		<li>
+							<span class="date_011"><a title="霍思燕与黄奕“暗战”一年 微博“过招”回顾" href="http://pnews.trunk.huoshow.com/2011/1019/40861.shtml" target="_blank">霍思燕与黄奕“暗战”一年 微博“过招”回顾</a></span>
+							<span class="date_01">2011-10-19 10:31:00</span>
+						</li>
+																	</ul>
+										<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c"><a class="a1">1519条</a> <a href="/star/neidimingxing/17.shtml" class="a1">上一页</a> <a href="/star/neidimingxing/index.shtml">1</a><span>..</span> <a href="/star/neidimingxing/13.shtml">13</a> <a href="/star/neidimingxing/14.shtml">14</a> <a href="/star/neidimingxing/15.shtml">15</a> <a href="/star/neidimingxing/16.shtml">16</a> <a href="/star/neidimingxing/17.shtml">17</a> <span>18</span> <a href="/star/neidimingxing/19.shtml">19</a> <a href="/star/neidimingxing/20.shtml">20</a> <a href="/star/neidimingxing/21.shtml">21</a> <a href="/star/neidimingxing/22.shtml">22</a> <a href="/star/neidimingxing/19.shtml" class="a1">下一页</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=1&catid=11&other_catids=131,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=1"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=1"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=38&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

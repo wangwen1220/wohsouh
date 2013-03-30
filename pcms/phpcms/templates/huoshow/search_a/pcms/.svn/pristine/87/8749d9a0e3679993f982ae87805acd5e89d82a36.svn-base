@@ -1,0 +1,31 @@
+<!-- Header Start -->
+<div id="header" class='fn-clear'>
+	<div class='title'>
+		<a class='logo' href="{$CATEGORYS[246][url]}" title="火秀网" target='_blank'></a>
+		<h1><a href='{$CATEGORYS[250][url]}' target='_blank'>新游戏</a></h1>
+		<h2><a href='{$CATEGORYS[246][url]}' target='_blank'>火秀游戏</a> &gt; 新游戏</h2>
+	</div>
+
+	<form id="search-form" class='search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+		<input type="hidden" value="search" name="app" />
+		<input type="hidden" name="m" value="search" />
+		<input type="hidden" name="c" value="index" />
+		<input type="hidden" name="a" value="init" />
+		<input type="hidden" name="typeid" value="1" id="typeid" /><!-- 搜索类型 -->
+		<fieldset><input type='text' name='q' class='search-wd' value='搜索关键字游戏名' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+		{pc:content  action="position" posid="418" order="listorder DESC" num="3"}
+		<fieldset class='search-hotspot'>热点：{loop $data $r}<a target='_blank' href="{str_replace('www','game',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a> {/loop}</fieldset>
+		{/pc}
+	</form>
+
+	<ul id="nav" class='nav fn-cb fn-clear'>
+		<li class='nav-item {if $catid==250} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[250][url]}'>新游首页</a></li>
+		<li class='nav-item {if $catid==293} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[293][url]}'>网络游戏</a></li>
+		<li class='nav-item {if $catid==295} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[295][url]}'>网页游戏</a></li>
+		<li class='nav-item {if $catid==294} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[294][url]}'>单机游戏</a></li>
+		<li class='nav-item {if $catid==298} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[298][url]}'>手机游戏</a></li>
+		<li class='nav-item {if $catid==296} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[296][url]}'>游戏图库</a></li>
+		<li class='nav-item {if $catid==297} nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$CATEGORYS[297][url]}'>评测</a></li>
+	</ul>
+</div>
+<!-- Header End -->

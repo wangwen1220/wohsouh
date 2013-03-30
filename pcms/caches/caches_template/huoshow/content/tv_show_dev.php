@@ -1,0 +1,533 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>游戏列表页 - 火秀网</title>
+	<meta name='keywords' content='火秀网络游戏' />
+	<meta name='description' content='火秀网络游戏' />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='<?php echo CSS_PATH;?>hs-video-global.css' rel='stylesheet' />
+	<!-- <script src='<?php echo JS_PATH;?>cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='show'>
+	<?php include template('content', 'hs_topbar'); ?>
+	<?php include template('content', 'video_header_dev'); ?>
+
+	<div id='content'>
+		<div class='v-show'>
+			<h2 class='v-title fn-clear'><span class='name'>乡村爱情</span> <span class='lang'>英语</span> <span class='tips'>全33集</span></h2>
+			<div class='v-poster'>
+				<a class='img' href='#'><img src='http://p6.qhimg.com/t01227f75b7933b50cb.jpg' alt='' width='230' height='304' /></a>
+				<div class='jt-share'>
+					<a class='jt-ico jt-ico-tsina' data-i='tsina' href='javascript:;'>新浪微博</a>
+					<a class='jt-ico jt-ico-renren' data-i='renren' href='javascript:;'>人人网</a>
+					<a class='jt-ico jt-ico-kaixin' data-i='kaixin' href='javascript:;'>开心网</a>
+				</div>
+				<div class='other-info'>
+					<p>其它信息</p>
+					<p>地区：大陆</p>
+					<p>语言：汉语</p>
+					<p>时长：88分钟</p>
+				</div>
+			</div>
+			<ul class='v-info'>
+				<li class='v-info-item'><span class='dt'>主演：</span><a href='#'>赵本山</a> <a href='#'>小沈阳</a> <a href='#'>毕畅</a> <a href='#'>贺树峰</a> | <span class='dt'>类别：</span>古装</li>
+				<li class='v-info-item'><span class='dt'>看点：</span><a class='btn' href='#'>小沈阳</a> <a class='btn' href='#'>古装</a> <a class='btn' href='#'>赵本山</a></li>
+				<li class='v-info-item v-info-item-intro fn-clear'>
+					<span class='dt'>简介：</span>
+					<p class='intro part-intro'>《乡村爱情变奏曲》将继续沿承诙谐、幽默、轻松、自然的轻喜剧特点，用真实、本色的表演讲述那些在象牙山村里发生的大事小情、家长里短、恩恩怨怨、是是非非。刘能、赵四、长贵、谢广坤、王老七这几位庄户地里的“能人”在成功的抱上了第三代以后，又因为面子、攀比、小气、人情产生了很多故事；那些不让爹妈省心的年轻人王小蒙、谢永强、刘英、赵玉田、王天来、苏玉红事业已经越做越大，但关于恋爱、婚姻、生...<a class='unfold' href='javascript:;'>展开</a></p>
+					<p class='intro full-intro'>《乡村爱情变奏曲》将继续沿承诙谐、幽默、轻松、自然的轻喜剧特点，用真实、本色的表演讲述那些在象牙山村里发生的大事小情、家长里短、恩恩怨怨、是是非非。刘能、赵四、长贵、谢广坤、王老七这几位庄户地里的“能人”在成功的抱上了第三代以后，又因为面子、攀比、小气、人情产生了很多故事；那些不让爹妈省心的年轻人王小蒙、谢永强、刘英、赵玉田、王天来、苏玉红事业已经越做越大，但关于恋爱、婚姻、生娃等让观众啼笑皆非的矛盾仍然存在；再婚的谢大脚、王云还要直面“婚姻的危机”；刘大脑袋的象牙山庄又一次扩大规模并且要把王大拿排挤在外，因此王大拿想了很多有意思的办法……各种故事每天在上演。<a class='fold' href='javascript:;'>收起</a></p>
+				</li>
+			</ul>
+			<div class='v-play ui-tab-tv'>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'><a class='icon-letv' href='javascript:;' hidefocus='true'>乐视</a></li>
+						<li class='ui-tab-nav-item'><a class='icon-qiyi' href='javascript:;' hidefocus='true'>奇艺</a></li>
+						<li class='ui-tab-nav-item'><a class='icon-youku' href='javascript:;' hidefocus='true'>优酷</a></li>
+						<li class='ui-tab-nav-item'><a class='icon-tudou' href='javascript:;' hidefocus='true'>土豆</a></li>
+						<li class='ui-tab-nav-item'><a class='icon-pps' href='javascript:;' hidefocus='true'>PPS</a></li>
+						<li class='ui-tab-nav-item'><a class='icon-xunlei' href='javascript:;' hidefocus='true'>迅雷看看</a></li>
+						<li class='ui-tab-nav-item'><a class='icon-sohu' href='javascript:;' hidefocus='true'>搜狐</a></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-tvlist fn-clear' data-tvid='jt111'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+						<li class='ui-tvlist-item'><a href='#'>22</a></li>
+						<li class='ui-tvlist-item'><a href='#'>23</a></li>
+						<li class='ui-tvlist-item'><a href='#'>24</a></li>
+						<li class='ui-tvlist-item'><a href='#'>25</a></li>
+					</ol>
+					<ol class='ui-tab-cnt-item ui-tvlist fn-clear'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+					</ol>
+					<ol class='ui-tab-cnt-item ui-tvlist fn-clear'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+						<li class='ui-tvlist-item'><a href='#'>22</a></li>
+						<li class='ui-tvlist-item'><a href='#'>23</a></li>
+						<li class='ui-tvlist-item'><a href='#'>24</a></li>
+						<li class='ui-tvlist-item'><a href='#'>25</a></li>
+					</ol>
+					<ol class='ui-tab-cnt-item ui-tvlist fn-clear'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+						<li class='ui-tvlist-item'><a href='#'>22</a></li>
+						<li class='ui-tvlist-item'><a href='#'>23</a></li>
+						<li class='ui-tvlist-item'><a href='#'>24</a></li>
+						<li class='ui-tvlist-item'><a href='#'>25</a></li>
+					</ol>
+					<ol class='ui-tab-cnt-item ui-tvlist fn-clear'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+						<li class='ui-tvlist-item'><a href='#'>22</a></li>
+						<li class='ui-tvlist-item'><a href='#'>23</a></li>
+						<li class='ui-tvlist-item'><a href='#'>24</a></li>
+						<li class='ui-tvlist-item'><a href='#'>25</a></li>
+					</ol>
+					<ol class='ui-tab-cnt-item ui-tvlist fn-clear'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+						<li class='ui-tvlist-item'><a href='#'>22</a></li>
+						<li class='ui-tvlist-item'><a href='#'>23</a></li>
+						<li class='ui-tvlist-item'><a href='#'>24</a></li>
+						<li class='ui-tvlist-item'><a href='#'>25</a></li>
+					</ol>
+					<ol class='ui-tab-cnt-item ui-tvlist fn-clear'>
+						<li class='ui-tvlist-item'><a href='#'>1</a></li>
+						<li class='ui-tvlist-item'><a href='#'>2</a></li>
+						<li class='ui-tvlist-item'><a href='#'>3</a></li>
+						<li class='ui-tvlist-item'><a href='#'>4</a></li>
+						<li class='ui-tvlist-item'><a href='#'>5</a></li>
+						<li class='ui-tvlist-item'><a href='#'>6</a></li>
+						<li class='ui-tvlist-item'><a href='#'>7</a></li>
+						<li class='ui-tvlist-item'><a href='#'>8</a></li>
+						<li class='ui-tvlist-item'><a href='#'>9</a></li>
+						<li class='ui-tvlist-item'><a href='#'>10</a></li>
+						<li class='ui-tvlist-item'><a href='#'>11</a></li>
+						<li class='ui-tvlist-item'><a href='#'>12</a></li>
+						<li class='ui-tvlist-item'><a href='#'>13</a></li>
+						<li class='ui-tvlist-item'><a href='#'>14</a></li>
+						<li class='ui-tvlist-item'><a href='#'>15</a></li>
+						<li class='ui-tvlist-item'><a href='#'>16</a></li>
+						<li class='ui-tvlist-item'><a href='#'>17</a></li>
+						<li class='ui-tvlist-item'><a href='#'>18</a></li>
+						<li class='ui-tvlist-item'><a href='#'>19</a></li>
+						<li class='ui-tvlist-item'><a href='#'>20</a></li>
+						<li class='ui-tvlist-item'><a href='#'>21</a></li>
+						<li class='ui-tvlist-item'><a href='#'>22</a></li>
+						<li class='ui-tvlist-item'><a href='#'>23</a></li>
+						<li class='ui-tvlist-item'><a href='#'>24</a></li>
+						<li class='ui-tvlist-item'><a href='#'>25</a></li>
+					</ol>
+				</div>
+			</div>
+			<div class='v-related ui-tab-related'>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'><a href='javascript:;'>猜你喜欢</a></li>
+						<li class='ui-tab-nav-item'><span>|</span> <a href='javascript:;'>该片主演作品</a></li>
+						<li class='ui-tab-nav-item'><span>|</span> <a href='javascript:;'>该片导演作品</a></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ul class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-gallery-list ui-gallery-list-poster fn-clear'>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon tudou' href='#'>土豆</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon tudou' href='#'>土豆</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+					</ul>
+					<ul class='ui-tab-cnt-item ui-gallery-list ui-gallery-list-poster fn-clear'>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发2</p>
+							<p class='info'><a class='icon tudou' href='#'>土豆</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon tudou' href='#'>土豆</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+					</ul>
+					<ul class='ui-tab-cnt-item ui-gallery-list ui-gallery-list-poster fn-clear'>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发3</p>
+							<p class='info'><a class='icon tudou' href='#'>土豆</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon tudou' href='#'>土豆</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+						<li class='ui-gallery-list-item'>
+							<a class='img' href='#'><img src='http://img14.meitudata.com/5060600dc41128585.jpg!thumb235' width='105' height='140' /></a>
+							<h3 class='title'><a href='#'>大话西战歌大话西战歌</a></h3>
+							<p class='info'>周润发 小发发</p>
+							<p class='info'><a class='icon letv' href='#'>乐视</a></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class='v-related ui-tab-related'>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'><a href='javascript:;'>分集剧情</a></li>
+						<li class='ui-tab-nav-item'><span>|</span> <a href='javascript:;'>相关新闻</a></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<div class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-drama'>
+						<ul class='ui-drama-nav'>
+							<li>
+								<a class='cur' href=''>01-05集</a>
+								<span>|</span>
+							</li>
+							<li>
+								<a href=''>06-10集</a>
+								<span>|</span>
+							</li>
+							<li>
+								<a href=''>11-15集</a>
+								<span>|</span>
+							</li>
+							<li>
+								<a href=''>16-20集(大结局)</a>
+							</li>
+						</ul>
+						<ul class='ui-drama-cnt'>
+							<li>
+								<h3>第1集 - 王小蒙流产了 流产了</h3>
+								<p>电视剧新版笑傲由金庸武的电视剧新版《笑傲江建华霸气献声 由金庸武侠侠曝光 霍建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲江建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲湖》即将于2月建华霸南卫视,腾讯视频将独家同步播映。6日,该剧首度曝光...</p>
+							</li>
+							<li>
+								<h3>测试文字测试文字测试文字1</h3>
+								<p>新笑傲江湖》片头MV首曝光 霍建华霸气献声 由金庸武侠巨著改编的电视剧新版《的电视剧新版《笑傲江建华霸气献声 由金庸武侠笑傲江建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲湖》即将于2月建华霸南卫视,腾讯视频将独家同步播映。6日,该剧首度曝光...</p>
+							</li>
+							<li>
+								<h3>测试文字测试文字测试文字1</h3>
+								<p>首曝光 霍建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲江建华霸气献声 由金庸武的电视剧新版《笑傲江建华霸气献声 由金庸武侠侠巨著改编的电视剧新版《笑傲湖》即将于2月建华霸南卫视,腾讯视频将独家同步播映。6日,该剧首度曝光...</p>
+							</li>
+							<li>
+								<h3>测试文字测试文字测试文字1</h3>
+								<p>片头MV首曝光 霍建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲江建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲湖》即将于2月建华霸南卫视,腾讯视频将独家同步播映。6日,该剧首度曝光...</p>
+							</li>
+							<li>
+								<h3>测试文字测试文字测试文字1</h3>
+								<p>傲江MV首曝光 霍建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲江建华霸气献声 由金庸武侠巨著改编的电视剧新版《笑傲湖》即将于2月建华霸南卫视,腾讯视频将独家同步播映。6日,该剧首度曝光...</p>
+							</li>
+						</ul>
+					</div>
+					<div class='ui-tab-cnt-item'>
+						<ul class='ui-list ui-list-content'>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+						</ul>
+						<ul class='ui-list ui-list-content'>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+						</ul>
+						<ul class='ui-list ui-list-content'>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+						</ul>
+						<ul class='ui-list ui-list-content'>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+						</ul>
+						<ul class='ui-list ui-list-content'>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+							<li class='ui-list-item'><a class='cnt' href='#'>你绝对想不到!国产游戏进韩雷国韩雷国韩雷国军韩雷国的雷囧译名(图)</a> <span class='date'>2012-11-23 10:22</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id='select' class='ui-layout ui-select ui-select-lite'>
+			<div class='ui-select-filter'>
+				<div class='header fn-clear'>
+					<h2 class='title'><span>筛选电影</span></h2>
+					<div class='action'>共找到 <em>1698</em> 个视频 <a class='reset' href='#'>重新筛选</a></div>
+				</div>
+				<ul class='filter-list fn-clear'>
+					<li class='filter-list-item filter-list-item-type'>
+						<h3 class='lable'>类型</h3>
+						<p class='filters'>
+							<a href='#'>全部</a>
+							<a href='#'>角色</a>
+							<a href='#'>格斗</a>
+							<a href='#'>射击</a>
+							<a href='#'>角色</a>
+							<a href='#'>格斗</a>
+							<a href='#'>射击</a>
+							<span class='cur'>天朝</span>
+							<a href='#'>格斗</a>
+							<a href='#'>测试文</a>
+							<a href='#'>角色</a>
+							<a href='#'>格斗</a>
+							<a href='#'>格斗</a>
+							<a href='#'>格斗</a>
+							<a href='#'>格斗</a>
+							<a href='#'>格斗</a>
+							<a href='#'>格斗测试</a>
+							<a href='#'>其它</a>
+						</p>
+					</li>
+					<li class='filter-list-item filter-list-item-area'>
+						<h3 class='lable'>地区</h3>
+						<p class='filters'>
+							<a href='#'>美国</a>
+							<a href='#'>中国</a>
+							<a href='#'>格斗</a>
+							<a href='#'>射击</a>
+							<a href='#'>角色</a>
+							<a href='#'>格斗</a>
+							<a href='#'>射击</a>
+							<span class='cur'>格测试</span>
+							<a href='#'>格斗</a>
+							<a href='#'>测试文</a>
+							<a href='#'>角色</a>
+							<a href='#'>格斗</a>
+							<a href='#'>格斗</a>
+							<a href='#'>其它</a>
+						</p>
+					</li>
+					<li class='filter-list-item filter-list-item-years'>
+						<h3 class='lable'>年代</h3>
+						<p class='filters'>
+							<a href='#'>2012</a>
+							<a href='#'>2011</a>
+							<a href='#'>2010</a>
+							<a href='#'>2009</a>
+							<a href='#'>2009</a>
+							<a href='#'>2009</a>
+							<a href='#'>2009</a>
+							<span class='cur'>2009</span>
+							<a href='#'>2009</a>
+							<a href='#'>2009</a>
+							<a href='#'>2002</a>
+							<a href='#'>更早</a>
+						</p>
+					</li>
+					<li class='filter-list-item filter-list-item-star'>
+						<h3 class='lable'>主演名星</h3>
+						<p class='filters'>
+							<a href='#'>周星驰</a>
+							<a href='#'>角色</a>
+							<a href='#'>方力测</a>
+							<a href='#'>射击</a>
+							<a href='#'>角色</a>
+							<a href='#'>格斗</a>
+							<a href='#'>射击</a>
+							<span class='cur'>格斗测试</span>
+							<a href='#'>格斗</a>
+							<a href='#'>测试文</a>
+							<a href='#'>格斗测试</a>
+							<a href='#'>更多</a>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src='<?php echo JS_PATH;?>seajs/sea.js' id='seajsnode' data-main='hs-video'></script>
+	<?php include template('content', 'hs_footer'); ?>
+</body>
+</html>

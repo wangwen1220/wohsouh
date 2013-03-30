@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-video-global.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='tv home'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'video_header'}
+
+	<div class='ui-layout ui-layout-main fn-clear'>
+		<div class='myslider'>
+			<ul class='sliders'>
+			{pc:content  action="position" posid="608" order="listorder DESC" num="6" }
+   			{loop $data $r}
+				<li class='sliders-item'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],465,300)}' alt='' width='465' height='300' /></a>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'> {str_cut($r['title'],20,'')}</a></h3>
+				</li>
+			{/loop}
+			{/pc}	
+			</ul>
+			<ul class='triggers'>
+			{pc:content  action="position" posid="608" order="listorder DESC" num="6" }
+   			{loop $data $r}
+				<li class='triggers-item'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],36,36)}' alt='' width='36' height='36' /></a>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')}</a></h3>
+					<p class='cnt'>{str_cut($r['title'],30,'')}</p>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+
+		<div class='v-news'>
+		{pc:content  action="position" posid="609" order="listorder DESC" num="3" }
+   		
+			<div class='v-news-item'>
+			{loop $data $r}
+			{if $n==1}
+				<h2>{str_cut($r['title'],54,'')}</h2>
+			{/if}
+			{/loop}
+				<p>
+				{loop $data $r}
+				{if $n>=2}
+				<a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],21,'')}</a> | 
+				{/if}
+				{/loop}
+			</p></div>
+		{/pc}
+		{pc:content  action="position" posid="610" order="listorder DESC" num="3" }
+   		<div class='v-news-item'>
+			{loop $data $r}
+			{if $n==1}
+				<h2>{str_cut($r['title'],54,'')}</h2>
+			{/if}
+			{/loop}
+				<p>
+				{loop $data $r}
+				{if $n>=2}
+				<a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],21,'')}</a> | 
+				{/if}
+				{/loop}
+			</p></div>
+		{/pc}
+		{pc:content  action="position" posid="611" order="listorder DESC" num="3" }
+   		
+			<div class='v-news-item'>
+			{loop $data $r}
+			{if $n==1}
+				<h2>{str_cut($r['title'],54,'')}</h2>
+			{/if}
+			{/loop}
+				<p>
+				{loop $data $r}
+				{if $n>=2}
+				<a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],21,'')}</a> | 
+				{/if}
+				{/loop}
+			</p></div>
+		{/pc}
+		{pc:content  action="position" posid="612" order="listorder DESC" num="3" }
+   		
+			<div class='v-news-item'>
+			{loop $data $r}
+			{if $n==1}
+				<h2>{str_cut($r['title'],54,'')}</h2>
+			{/if}
+			{/loop}
+				<p>
+				{loop $data $r}
+				{if $n>=2}
+				<a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],21,'')}</a> | 
+				{/if}
+				{/loop}
+			</p></div>
+		{/pc}
+		</div>
+	</div>
+
+	<div id='content' class='fn-clear'>
+		<div id='main' class='wide'>
+			<div class='ui-gallery'>
+				<div class='ui-header ui-header-lite'>
+						<h2 class='title'>最新更新</h2>
+						<form class='link search' name='' method='post' action=''>
+							<fieldset><input type='text' name='q' class='search-wd' value='请输入关键字' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+						</form>
+					</div>
+
+				<ul class='ui-gallery-list ui-gallery-list-poster fn-clear'>
+				{pc:content  action="position" posid="613" order="listorder DESC" num="10" }
+   				{loop $data $r}
+					<li class='ui-gallery-list-item'>
+						<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],105,140)}' width='105' height='140' /><span class='update'>更新至17集</span></a>
+						<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],20,'')}</a></h3>
+						<p class='info'>主演：<em>{$r['protagonist']}</em></p>
+						<p class='info'>{str_cut($r['description'],30,'')}</p>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+			<div class='ui-gallery ui-gallery-zongyi'>
+				<div class='ui-header ui-header-lite'>
+						<h2 class='title'>热门综艺</h2>
+						<div class='link'><!--<a target="_blank" class='more' href='#'>更多&gt;&gt;</a>--></div>
+					</div>
+
+				<ul class='ui-gallery-list ui-gallery-list-poster fn-clear'>
+				{pc:content  action="position" posid="613" order="listorder DESC" num="8" }
+   				{loop $data $r}
+					<li class='ui-gallery-list-item'>
+						<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],136,102)}' width='136' height='102' /></a>
+						<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],20,'')}</a></h3>
+						<p class='info'>{str_cut($r['description'],30,'')}</p>
+						<!--<p class='info'>13月50日月球上映</p>-->
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+
+		<div id='side' class='hasborder'>
+			<div class='ui-box-side ui-box-side-ranking'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>热剧排行</h2>
+					<div class='link'><a target="_blank" href="{$CATEGORYS[382][url]}">动作片</a> | <a target="_blank" href="{$CATEGORYS[394][url]}">爱情片</a> | <a target="_blank" class='more' href="{$CATEGORYS[381][url]}">更多&gt;&gt;</a></div>
+				</div>
+				<ol class='ui-ranking ui-ranking-video'>
+				{pc:content  action="tv_area_hits" catids="381" newsnum="10"}
+				{loop $data $r}
+					<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+						<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+						<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+						<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')}</a></h3>
+						<p class='status'>{str_cut($r['description'],30,'')}</p>
+						<p class="cnt">{str_cut($r['description'],30,'')}</p>
+						<div class='btn btn-play'><a target="_blank" href='{url_change($r[url])}'>播放次数：{$r['views']}</a></div>
+					</li>
+				{/loop}
+				{/pc}
+				</ol>
+			</div>
+
+			<div class='ui-box-side ui-box-side-pic'>
+				<div class='ui-header ui-header-side'>
+					<h2 class='title'>精彩片花</h2>
+					<div class='link'><!--<a target="_blank" class='more' href='#'>更多&gt;&gt;</a>--></div>
+				</div>
+				<ul class='ui-pic-list fn-clear'>
+				{pc:content  action="position" posid="615" order="listorder DESC" num="10" }
+   				{loop $data $r}
+					<li class='ui-pic-list-item'>
+						<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],124,93)}' width='124' height='93' /></a>
+						<a target="_blank" class='title-mark' href='{url_change($r[url])}'>{str_cut($r['title'],20,'')} </a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-aside'>
+			<div class='ui-header ui-header-aside'>
+				<h2 class='title'>内地专题</h2>
+				<div class='link'><!--<a class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			{pc:special action="get_special_pos" posid="44" order="inputtime DESC" num="5"}
+             
+			
+			<ul class='ui-pic-list fn-clear'>
+			{loop $data $r}
+			{if $n<3}
+				<li class='ui-pic-list-item'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],132,99)}' width='132' height='99' /></a>
+					<a target="_blank" class='title' href='{url_change($r[url])}'>{str_cut($r[special_name],20,'')}</a>
+				</li>
+			{/if}
+			{/loop}
+			</ul>
+			
+			<ul class='ui-list'>
+				{loop $data $r}
+				{if $n>=3}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r[special_name],120,'')}</a></li>
+				{/if}
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class='ui-layout-item ui-layout-item-news'>
+			<div class='ui-header ui-header-lite'>
+				<h2 class='title'>内地新闻</h2>
+				<div class='link'><!--<a class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			<ul class='ui-list'>
+			{pc:content  action="position" posid="41" order="listorder DESC" num="8" }
+   			{loop $data $r}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'> {str_cut($r['title'],120,'')}</a></li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+		<div class='ui-layout-item ui-layout-item-side ui-box-side ui-box-side-ranking'>
+			<div class='ui-header ui-header-side'>
+				<h2 class='title'>内地收视排行</h2>
+			</div>
+			<ol class='ui-ranking ui-ranking-video'>
+			{pc:content  action="tv_area_hits" catids="382" area="1" newsnum="6"}
+			{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')} </a></h3>
+					<p class='status'>{str_cut($r['description'],30,'')}</p>
+					<p class="cnt">{str_cut($r['description'],30,'')}</p>
+					<div class='btn btn-play'><a target="_blank" href="{url_change($r[url])}">播放次数：{$r['views']}</a></div>
+				</li>
+			{/loop}
+			{/pc}
+			</ol>
+		</div>
+	</div>
+	<div class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-aside'>
+			<div class='ui-header ui-header-aside'>
+				<h2 class='title'>港台专题</h2>
+				<div class='link'><!--<a class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			{pc:special action="get_special_pos" posid="45" order="inputtime DESC" num="5"}
+            
+			<ul class='ui-pic-list fn-clear'>
+			 {loop $data $r}
+			 {if $n<3}
+				<li class='ui-pic-list-item'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],132,99)}' width='132' height='99' /></a>
+					<a target="_blank" class='title' href='{url_change($r[url])}'>{str_cut($r[special_name],20,'')}</a>
+				</li>
+			{/if}
+			{/loop}
+			</ul>
+            <ul class='ui-list'>
+			{loop $data $r}
+			{if $n>=3}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r[special_name],120,'')}</a></li>
+			{/if}
+			{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class='ui-layout-item ui-layout-item-news'>
+			<div class='ui-header ui-header-lite'>
+				<h2 class='title'>港台新闻</h2>
+				<div class='link'><a target="_blank" class='more' href="{$CATEGORYS[374][url]}">更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-list'>
+			{pc:content action="lists" catid="80" order="id DESC" num="5"}
+			{loop $data $r}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],120,'')}</a></li>
+			{/loop}
+			{/pc}	
+			</ul>
+		</div>
+		<div class='ui-layout-item ui-layout-item-side ui-box-side ui-tab ui-tab-min'>
+			<div class='ui-header ui-header-side'>
+				<h2 class='title'>港台收视排行</h2>
+			</div>
+			<div class='ui-tab-header fn-clear'>
+				<ul class='ui-tab-nav fn-clear'>
+					<li class='ui-tab-nav-item ui-tab-nav-item-cur'>香港</li>
+					<li class='ui-tab-nav-item'>台湾</li>
+				</ul>
+			</div>
+			<div class='ui-tab-cnt'>
+				<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-ranking ui-ranking-video'>
+				{pc:content  action="tv_area_hits" catids="382" area="3" newsnum="6"}
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')} </a></h3>
+					<p class='status'>{str_cut($r['description'],30,'')}</p>
+					<p class="cnt">{str_cut($r['description'],30,'')}</p>
+					<div class='btn btn-play'><a target="_blank" href="{url_change($r[url])}">播放次数：{$r['views']}</a></div>
+				</li>
+				{/loop}
+				{/pc}
+				</ol>
+				<ol class='ui-tab-cnt-item ui-ranking ui-ranking-video'>
+				{pc:content  action="tv_area_hits" catids="382" area="2" newsnum="6"}
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')} </a></h3>
+					<p class='status'>{str_cut($r['description'],30,'')}</p>
+					<p class="cnt">{str_cut($r['description'],30,'')}</p>
+					<div class='btn btn-play'><a target="_blank" href="{url_change($r[url])}">播放次数：{$r['views']}</a></div>
+				</li>
+				{/loop}
+				{/pc}
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-aside'>
+			<div class='ui-header ui-header-aside'>
+				<h2 class='title'>日韩专题</h2>
+				<div class='link'><!--<a class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			{pc:special action="get_special_pos" posid="46" order="inputtime DESC" num="5"}
+             <ul class='ui-pic-list fn-clear'>
+			 {loop $data $r}
+			 {if $n<3}
+				<li class='ui-pic-list-item'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],132,99)}' width='132' height='99' /></a>
+					<a target="_blank" class='title' href='{url_change($r[url])}'>{str_cut($r[special_name],20,'')}</a>
+				</li>
+			{/if}
+			{/loop}
+			</ul>
+            <ul class='ui-list'>
+			{loop $data $r}
+			{if $n>=3}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r[special_name],120,'')}</a></li>
+			{/if}
+			{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class='ui-layout-item ui-layout-item-news'>
+			<div class='ui-header ui-header-lite'>
+				<h2 class='title'>日韩新闻</h2>
+				<div class='link'><a target="_blank" class='more' href="{$CATEGORYS[375][url]}">更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-list'>
+			{pc:content action="lists" catid="375" order="id DESC" num="8"}
+   			{loop $data $r}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],120,'')} </a></li>
+			{/loop}
+			{/pc}	
+			</ul>
+		</div>
+		<div class='ui-layout-item ui-layout-item-side ui-box-side ui-tab ui-tab-min'>
+			<div class='ui-header ui-header-side'>
+				<h2 class='title'>日韩收视排行</h2>
+			</div>
+			<div class='ui-tab-header fn-clear'>
+				<ul class='ui-tab-nav fn-clear'>
+					<li class='ui-tab-nav-item ui-tab-nav-item-cur'>日本</li>
+					<li class='ui-tab-nav-item'>韩国</li>
+				</ul>
+			</div>
+			<div class='ui-tab-cnt'>
+				<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-ranking ui-ranking-video'>
+				{pc:content  action="tv_area_hits" catids="382" area="8" newsnum="6"}
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')} </a></h3>
+					<p class='status'>{str_cut($r['description'],30,'')}</p>
+					<p class="cnt">{str_cut($r['description'],30,'')}</p>
+					<div class='btn btn-play'><a target="_blank" href="{url_change($r[url])}">播放次数：{$r['views']}</a></div>
+				</li>
+				{/loop}
+				{/pc}
+				</ol>
+				<ol class='ui-tab-cnt-item ui-ranking ui-ranking-video'>
+				{pc:content  action="tv_area_hits" catids="382" area="4" newsnum="6"}
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')} </a></h3>
+					<p class='status'>{str_cut($r['description'],30,'')}</p>
+					<p class="cnt">{str_cut($r['description'],30,'')}</p>
+					<div class='btn btn-play'><a target="_blank" href="{url_change($r[url])}">播放次数：{$r['views']}</a></div>
+				</li>
+				{/loop}
+				{/pc}
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-aside'>
+			<div class='ui-header ui-header-aside'>
+				<h2 class='title'>欧美专题</h2>
+				<div class='link'><!--<a class='more' href='#'>更多&gt;&gt;</a>--></div>
+			</div>
+			{pc:special action="get_special_pos" posid="47" order="inputtime DESC" num="5"}
+             <ul class='ui-pic-list fn-clear'>
+			 {loop $data $r}
+			 {if $n<3}
+				<li class='ui-pic-list-item'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],132,99)}' width='132' height='99' /></a>
+					<a target="_blank" class='title' href='{url_change($r[url])}'>{str_cut($r[special_name],20,'')}</a>
+				</li>
+			{/if}
+			{/loop}
+			</ul>
+            <ul class='ui-list'>
+			{loop $data $r}
+			{if $n>=3}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r[special_name],120,'')}</a></li>
+			{/if}
+			{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class='ui-layout-item ui-layout-item-news'>
+			<div class='ui-header ui-header-lite'>
+				<h2 class='title'>欧美新闻</h2>
+				<div class='link'><a target="_blank" class='more' href="{$CATEGORYS[376][url]}">更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-list'>
+			{pc:content action="lists" catid="376" order="id DESC" num="8"}
+			{loop $data $r}
+				<li class='ui-list-item'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],120,'')} </a></li>
+			{/loop}
+			{/pc}	
+			</ul>
+		</div>
+		<div class='ui-layout-item ui-layout-item-side ui-box-side ui-box-side-ranking'>
+			<div class='ui-header ui-header-side'>
+				<h2 class='title'>欧美收视排行</h2>
+			</div>
+			<ol class='ui-ranking ui-ranking-video'>
+				{pc:content  action="tv_area_hits" catids="382" area="6" newsnum="6"}
+				{loop $data $r}
+				<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+					<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],88,66)}' alt='' width='88' height='66' /></a>
+					<span class='num {if $n<4}num-hot{/if}'>{$n}</span>
+					<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],30,'')} </a></h3>
+					<p class='status'>{str_cut($r['description'],30,'')}</p>
+					<p class="cnt">{str_cut($r['description'],30,'')}</p>
+					<div class='btn btn-play'><a target="_blank" href="{url_change($r[url])}">播放次数：{$r['views']}</a></div>
+				</li>
+				{/loop}
+				{/pc}
+				</ol>
+		</div>
+	</div>
+
+	<div class='ui-gallery ui-gallery-layout'>
+		<div class='ui-header'>
+			<h2 class='title'>电视剧照</h2>
+			<div class='link'><!--<a class='more' href='#'>更多&gt;&gt;</a>--></div>
+		</div>
+
+		<ul class='ui-gallery-list ui-gallery-list-poster fn-clear'>
+		{pc:content  action="position" posid="621" order="listorder DESC" num="9" }
+   		{loop $data $r}
+		{if $n==1}
+			<li class='ui-gallery-list-item'>
+				<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],306,238)}' width='306' height='238' /></a>
+				<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],20,'')}</a></h3>
+			</li>
+		{else}
+			<li class='ui-gallery-list-item'>
+				<a target="_blank" class='img' href='{url_change($r[url])}'><img src='{thumb($r[thumb],148,101)}' width='148' height='101' /></a>
+				<h3 class='title'><a target="_blank" href='{url_change($r[url])}'>{str_cut($r['title'],20,'')}</a></h3>
+			</li>
+		{/if}
+		{/loop}
+		{/pc}	
+		</ul>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-video'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

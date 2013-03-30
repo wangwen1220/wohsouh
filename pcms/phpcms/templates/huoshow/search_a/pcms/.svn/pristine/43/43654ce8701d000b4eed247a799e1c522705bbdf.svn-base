@@ -1,0 +1,59 @@
+{template "content","game_header"}
+<ul class='small_game_nav'>
+	{loop subcat(87,0,0,$siteid) $r}
+	<li class='a{$n}'><a target="_blank" href='{$r[url]}' title='{$r[catname]}'>{$r[catname]}</a></li>
+	{/loop}
+</ul>
+
+<!-- 推荐小游戏 -->
+<div id='js_small_game_slide' class='ui_content_box ui_content_slide ui_content_game home_small_game'>
+	<h2 class='ui_content_title'>推荐小游戏</h2>
+	<div class='ui_game_img_container slide_container'>
+		{pc:content action="position" posid="241" catid="$catid" thumb="1" order="listorder DESC" num="24"}
+		<div class='ui_game_img_list slide_list'>
+			<ul class='slide_list_item'>
+				{loop $data $r}
+				<li>
+					<a target="_blank" href='{$r[url]}' title='{$r[title]}'><img src='{thumb($r[thumb],64,64)}' alt='{$r[title]}' width='64' height='46' /></a>
+					<h4><a target="_blank" href='{$r[url]}' title='{$r[title]}'>{str_cut($r[title],20)}</a></h4>
+				</li>
+				{if $n%24==0}</ul><ul class='slide_list_item'>{/if}
+				{/loop}
+			</ul>
+		</div>
+		{/pc}
+	</div>
+	<div class='ui_content_slide_nav'><span class='prev_btn' title=''>Prev</span> <span class='next_btn' title=''>Next</span></div>
+	<!--a class='more' href='#' title=''>更多&gt;&gt;</a-->
+</div>
+<!-- 推荐小游戏结束 -->
+
+<!-- 动作小游戏 -->
+{loop subcat($catid,0,0,$siteid) $r}
+<div id='action_game' class='ui_content_box ui_content_game fn_clear'>
+	<h2 class='ui_content_title'>{$r[catname]}</h2>
+	{pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="14" return="info"}
+	<ul class='ui_game_img_list fn_left'>
+		{loop $info $v}
+		<li>
+			<a target="_blank" href='{$v[url]}' title='{$v[title]}'><img src="{thumb($v[thumb],72,72)}" alt="{$v[title]}" width="72" height="72"/></a>
+			<h4><a target="_blank" href='{$v[url]}' title='{$v[title]}'>{str_cut($v[title],20)}</a></h4>
+		</li>
+		{/loop}
+	</ul>
+	{/pc}
+	<div class='ui_img_box fn_right'>
+		<h3>{$r[catname]}排行</h3>
+		{pc:content action="hits" catid="$r[catid]" num="7" order="views DESC" }
+		<ul class='ui_text_list list_style_arrow'>
+			{loop $data $k}
+			<li><a target="_blank" href='{$k[url]}' title='{$k[title]}'>{str_cut($k['title'],50)}</a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+	<a class='more' href='{$r[url]}'>更多&gt;&gt;</a>
+</div>
+{/loop}
+<!-- 动作小游戏结束 -->
+{template "content","footer"}

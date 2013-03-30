@@ -1,0 +1,155 @@
+{template "community","myshow_header"}
+
+<div id="wrapper" class='pinner-page pinner-album'>
+	<div class="header">
+		{if $user['uid'] ==$myshowuid}
+		<h2 id='pinner-nav'>
+			<a  class='the-pin' href='/index.php?m=community&c=myhuoshow&a=myshare&list=1&myuid={$m_user_uid}' hidefocus='true'>我的分享</a>
+			<a class='the-pin' href='/index.php?m=community&c=myhuoshow&a=mylike&list=1&myuid={$m_user_uid}' hidefocus='true'>我的喜欢</a>
+			<a class='current' href='/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}' hidefocus='true'>我的专辑</a>
+		</h2>
+		{else}
+		<h2 id='pinner-nav'>
+			<a class='the-pin' href='/index.php?m=community&c=myhuoshow&a=myshare&list=1&myuid={$m_user_uid}' hidefocus='true'>Ta的分享</a>
+			<a class='the-pin' href='/index.php?m=community&c=myhuoshow&a=mylike&list=1&myuid={$m_user_uid}' hidefocus='true'>Ta的喜欢</a>
+			<a class='current' href='/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}' hidefocus='true'>Ta的专辑</a>
+		</h2>
+		{/if}
+	</div>
+</div>
+
+<div id="content">
+	<div id='canvas' class='pinner-page pinner-album fn-clear'>
+		<div class="pin  pinner ks-waterfall ks-waterfall-fixed-left">
+			<div class="pinner-info">
+				<a class="avatar" title="" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$m_user_uid}"><img src="{$big_avatar}" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$m_user_uid}">{$user_info[0][nickname]}</a></h3>
+				<p class='signature'><strong>签名档：</strong>{$signa}<span class='arr'></span></p>
+				<div class='stats'>
+					<span class='share first'>分享 <a href="/index.php?m=community&c=myhuoshow&a=myshare&myuid={$m_user_uid}"><em>{if $user['uid'] ==$myshowuid}{$user_share_num}{else}{if $users_total[share]}{$users_total[share]}{else}0{/if}{/if}</em></a></span>
+					<span class='fans new'>专辑<a href="/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}"><em>{if $users_total[album]}{$users_total[album]}{else}0{/if}</em></a></span>
+					<span class='follow new'>关注<a href="/index.php?m=community&c=myhuoshow&a=myfollow&myuid={$m_user_uid}"><em>{if $users_total[follow]}{$users_total[follow]}{else}0{/if}</em></a></span>
+					<span class='like last'>粉丝<a href="/index.php?m=community&c=myhuoshow&a=myfans&myuid={$m_user_uid}"> <em>{if $users_total[fans]}{$users_total[fans]}{else}0{/if}</em></a></span>
+				</div>
+				{if $user['uid'] != $myshowuid}
+				<div class='action-btns fn-clear'>
+					{if $is_follow==0}
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>关注Ta</a>
+					{else}
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>取消关注Ta</a>
+					{/if}
+					<a class='send-msg btn' href='#'>发私信</a>
+				</div>
+				{/if}
+			</div>
+			<div class="follower">
+				<h3>关注<span>(共{if $users_total[follow]}{$users_total[follow]}{else}0{/if}人，<a class="view-all" href='/index.php?m=community&c=myhuoshow&a=myfollow&myuid={$m_user_uid}'>查看全部</a>)</span></h3>
+				<div class="follower-list">
+					{loop $user_follow $r}
+					<a href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}"><img src="{$r[head_img_url]}" width='32' height='32' /></a>
+					{/loop}
+				</div>
+			</div>
+			<ul class='links'>
+				<li><a href='/index.php?m=community&c=myhuoshow&a=myfans&myuid={$m_user_uid}'>粉丝 <span>{if $users_total[fans]}{$users_total[fans]}{else}0{/if}</span></a></li>
+				<li><a href='/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}'>专辑 <span>{if $users_total[album]}{$users_total[album]}{else}0{/if}</span></a></li>
+			</ul>
+		</div>
+
+		<div id='js-album-list' class="album-list">
+			<div class='title'>
+				{if $user['uid'] ==$myshowuid}<h2>我创建的专辑</h2>{else}<h2>Ta创建的专辑</h2>{/if}
+				<!--div class='create-album'>
+					<a class='create-album-btn' href='#'>创建专辑</a>
+					<ul class='create-album-list fn-hide'>
+						<li><a class='create-img-album' href='#'>图片编辑</a></li>
+						<li><a class='create-music-album' href='#'>音乐专辑</a></li>
+						<li><a class='create-video-album' href='#'>视频编辑</a></li>
+					</ul>
+				</div-->
+			</div>
+			{loop $m_album $r}
+			<div class='ui-album'>
+				<a class='img' href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>
+					{loop $r[thumb] $v}
+					<img src='{$v}' alt='' width='60' height='60' />
+					{/loop}
+				</a>
+				<div  class='intro'>
+					<h3><a href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>{$r[album_name]}</a></h3>
+					<p class='fn-hide'>{$r[description]}</p>
+				</div>
+				<div class='pinner'>
+					<a class='avatar' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'><img src='{$r[avatar]}' alt='' width='28' height='28' /></a>
+					<a class='name' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'>{$r[nickname]}</a>
+					<p class='stats'>创建于：{$r[input_time]}</p>
+				</div>
+				<div class='action fn-hide'>
+					{if (empty($user['uid']))}
+					<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=follow'>关注</a>
+					{else}
+					{if (($user['uid'] == $myshowuid))}
+					<a class='edit edit-album' href='/index.php?m=community&c=index&a=myshow_modify_album&album_id={$r[id]}'>编辑</a>
+					{elseif (!empty($user['uid']) && $r[isfollowalbum] == 0)}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=follow'>关注</a>
+					{elseif (!empty($user['uid']) && ($r[isfollowalbum] == 1) && ($user['uid'] != $myshowuid))}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=cancel'>取消关注</a>
+					{/if}
+					{/if}
+					<a class='share' href='#'>分享</a>
+					{if $user['uid'] ==$myshowuid}<a class='del-album del-tip' href='/index.php?m=community&c=myhuoshow&a=userdelalbum&id={$r[id]}'>删除</a>{/if}
+				</div>
+			</div>
+			{/loop}
+			{if $users_total[album]!=0}{$page_str}{/if}
+			<div class='title subtitle'>
+				{if $user['uid'] ==$myshowuid}<h2>我关注的专辑</h2>{else}<h2>Ta关注的专辑</h2>{/if}
+				<!--<a class='link' href='#'>查看{$user_info[0][nickname]}全部专辑&gt;&gt;</a>-->
+			</div>
+			{if $f_album[0]['numfollow']!=0}
+			{loop $f_album $r}
+			<div class='ui-album'>
+				<a class='img' href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>
+					{loop $r[thumb] $v}
+					<img src='{$v}' alt='' width='60' height='60' />
+					{/loop}
+				</a>
+				<div  class='intro'>
+					<h3><a href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>{$r[album_name]}</a></h3>
+					<p class='fn-hide'>{$r[description]}</p>
+				</div>
+				<div class='pinner'>
+					<a class='avatar' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'><img src='{$r[avatar]}' alt='' width='28' height='28' /></a>
+					<a class='name' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'>{$r[nickname]}</a>
+					<p class='stats'>创建于：{$r[input_time]}</p>
+				</div>
+				<div class='action fn-hide'>
+					{if (empty($user['uid']))}
+					<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=follow'>关注</a>
+					{else}
+					{if $user['uid'] == $m_user_uid}
+					<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=cancel'>取消关注</a>
+					{elseif $user['uid'] != $m_user_uid}
+						{if (!empty($user['uid']) && ($r[isfollowalbum] == 0))}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=follow'>关注</a>
+						{/if}
+						{if (!empty($user['uid']) && ($r[isfollowalbum] == 1))}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}&action=cancel'>取消关注</a>
+						{/if}
+					{/if}
+					{/if}
+					<a class='share' href='#'>分享</a>
+				</div>
+			</div>
+			{/loop}
+			{/if}
+			{if $f_album[0]['numfollow']!=0}{$page_str_follow}{/if}
+		</div>
+	</div>
+
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

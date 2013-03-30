@@ -1,0 +1,17 @@
+<!--网友热议-->
+{pc:content action="weibo_hit_dynamic" num="10" cache=60}
+		<div class="ui_fold_box ui_fold_box_reyi">
+			<h3 class='ui_fold_box_title'><span>网友热议</span></h3>
+			<ul class='ui_fold_box_content'>
+            {loop $data $r}
+				<li class='{if $n==1}ui_fold_box_content_selected{else}top_no{/if}'> <span class='top_no'>{$n}</span>
+					<div> <a href="http://space.huoshow.com/{$r[uid]}" title="去他的微博首页"><img src='{$r[head_img_url]}'  width='50' height='50' /></a>
+						<h4><a href="http://space.huoshow.com/{$r[uid]}" title="去他的微博首页">{$r[nicename]}:</a>{str_cut($r[msg],38,'..')}</h4>
+						<p>{$r[msg]}</p>
+					</div>
+				</li>
+             {/loop}   
+				
+			</ul>
+		</div>
+		<!--网友热议结束-->

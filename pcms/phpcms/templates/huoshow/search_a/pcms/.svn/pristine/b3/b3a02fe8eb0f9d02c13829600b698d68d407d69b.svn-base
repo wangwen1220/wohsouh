@@ -1,0 +1,535 @@
+{template "content","events_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="body_left">
+		<div class="top_news">
+			<div class="bk_w300">
+				<div class="music_banner">
+					<div class="common-roll-slide" id="huoshow_events_saishi_index_image">
+						{pc:content  action="position" posid="14" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+						<div class="common-roll-slide-body">
+							<div class="common-roll-slide-pages">
+								{loop $data $r}
+								<div class="common-roll-slide-page">
+									<div>
+										<a href="{$r[url]}" target="_blank">
+										<img alt="{$r[title]}" src="{thumb($r[thumb],300,421)}" /></a>
+									</div>
+									<div class="common-roll-slide-page-info">
+										<div class="common-roll-slide-page-info-text">
+											<h3>
+												<a href="{$r[url]}" target="_blank">{$r[title]}</a>
+											</h3>
+											<p>
+												<a href="{$r[url]}" target="_blank"></a>
+											</p>
+										</div>
+									</div>
+								</div>
+								{/loop}
+							</div>
+							<div class="common-roll-slide-nav">
+								<span class="common-roll-slide-nav-right">
+									<a href="#"	class="common-roll-slide-prev">&nbsp;</a>
+									<a href="#" class="common-roll-slide-next">&nbsp;</a>
+								</span>
+								<span class="common-roll-slide-nav-links">
+									{loop $data $r}
+									<a href="{$r[url]}">{$n}</a>
+									{/loop}
+								</span>
+							</div>
+						</div>
+						{/pc}
+					</div>
+					<script>
+						window.slide_huoshow_events_saishi_index_image = make_pagebox(
+								'huoshow_events_saishi_index_image',
+								{
+									links_selector : '.common-roll-slide-nav-links a',
+									pages_selector : '.common-roll-slide-page',
+									prev_selector : '.common-roll-slide-prev',
+									next_selector : '.common-roll-slide-next',
+									current_class : 'common-roll-slide-curr',
+									interval : 5,
+									effect : 1
+								});
+					</script>
+				</div>
+				<div class="events_W300">
+					<div class="events_title_300">
+						<span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">魅力之星专区</h2>
+					</div>
+					<div class="Happy_girl_list">
+						{pc:content action="position" posid="21" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+						<div class="Happy_girl_list_tw">
+							{loop $data $r}
+							<a target="_blank" href="{$r[url]}" title="{$r[title]}">
+								<img alt="{$r[title]}" src="{thumb($r[thumb],120,85)}" width="120" height="85" />
+							</a>
+							<div class="intro">
+								<h4><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 34,'')}</a></h4>
+								<p>{str_cut($r[description],150,'')}</p>
+							</div>
+							{/loop}
+						</div>
+						{/pc}
+						<div class="clear"></div>
+						<div class="Happy_girl_newslist">
+							{pc:content action="position" posid="22" catid="$catid" order="listorder DESC" num="6"}
+							<ul>
+								{loop $data $r}
+								<li>
+									<span class="Point"><a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 54,'')}</a></span>
+								</li>
+								{/loop}
+							</ul>
+							{/pc}
+						</div>
+					</div>
+				</div>
+				<div class="events_W300">
+					<div class="events_title_300">
+						<span class="game_right_title_bz"></span>
+						<h2 class="Purple_Black">达人秀专区</h2>
+					</div>
+					<div class="Happy_girl_list">
+						{pc:content action="position" posid="24" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+						<div class="Happy_girl_list_tw">
+							{loop $data $r}
+							<a target="_blank" href="{$r[url]}" title="{$r[title]}">
+							<img alt="{$r[title]}" src="{thumb($r[thumb],120,85)}" width="120" height="85" /></a>
+							<p class="Happy_girl_list_wenzi">
+								<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 34,'')}</a>
+							</p>
+							<p>{str_cut($r[description],110,'')}</p>
+							{/loop}
+						</div>
+						{/pc}
+						<div class="clear"></div>
+						<div class="Happy_girl_newslist">
+							{pc:content action="position" posid="25" catid="$catid" order="listorder DESC" num="6"}
+							<ul>
+								{loop $data $r}
+								<li><span class="Point"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 58,'')}</a></span>
+								</li>
+								{/loop}
+							</ul>
+							{/pc}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="biankuang_w394">
+				<div class="hot"></div>
+				{pc:content action="position" posid="15" catid="$catid" order="listorder DESC" num="1"}
+				<h3 class="Purple">
+					{loop $data $r}
+					<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 64,'')}</a>
+					{/loop}
+				</h3>
+				{/pc}
+				<div class="clear"></div>
+				{pc:content action="position" posid="16" catid="$catid" order="listorder DESC" num="2"}
+				<div class="s_top_news">
+					{loop $data $r}
+					<p>
+						<strong class="text_gray">独家：</strong>
+						<span>[<a target="_blank" href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 80,'')} </a>]</span>
+					</p>
+					{/loop}
+				</div>
+				{/pc}
+				<div class="newslist">
+					{pc:content action="position" posid="17" catid="$catid" order="listorder DESC" num="9"}
+					<ul class="liston">
+						{loop $data $r}
+						<li>
+							<span class="Purple_icon">
+							<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 80,'')}</a>
+							</span>
+						</li>
+						{/loop}
+					</ul>
+					{/pc}
+				</div>
+				<div class="nd_newslist">
+					<div class="nd_newslist_bt">
+						<span class="Purple_icon_01"></span><span class="Purple_wenzi">内地赛事</span><span
+							class="xixian"></span>
+					</div>
+					{pc:content action="position" posid="18" catid="$catid" order="listorder DESC" num="7"}
+					<ul>
+						{loop $data $r}
+						<li>
+							<span class="Purple_icon">
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 80,'')}</a>
+							</span>
+						</li>
+						{/loop}
+					</ul>
+					{/pc}
+				</div>
+				<div class="nd_newslist">
+					<div class="nd_newslist_bt">
+						<span class="Purple_icon_01"></span><span class="Purple_wenzi">港台赛事</span><span
+							class="xixian"></span>
+					</div>
+					{pc:content action="position" posid="19" catid="$catid" order="listorder DESC" num="7"}
+					<ul>
+						{loop $data $r}
+						<li>
+							<span class="Purple_icon">
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 80,'')}</a>
+							</span>
+						</li>
+						{/loop}
+					</ul>
+					{/pc}
+				</div>
+				<div class="nd_newslist">
+					<div class="nd_newslist_bt">
+						<span class="Purple_icon_01"></span><span class="Purple_wenzi">海外赛事</span><span
+							class="xixian"></span>
+					</div>
+					{pc:content action="position" posid="20" catid="$catid" order="listorder DESC" num="7"}
+					<ul>
+						{loop $data $r}
+						<li>
+							<span class="Purple_icon">
+								<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 80,'')}</a>
+							</span>
+						</li>
+						{/loop}
+					</ul>
+					{/pc}
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--Right-->
+	<div class="body_right">
+		<div class="clear"></div>
+
+		<!--赛事专题开始-->
+<div class="top10_news">
+	<div class="events_title_250">
+		<span class="game_right_title_bz"></span>
+		<h2 class="Purple_Black">赛事专题</h2>
+	</div>
+	<div class="top10_news_list">
+		{pc:content action="position" posid="23" catid="$catid" order="listorder DESC" num="2"}
+		<ul class='ui_img_list'>
+			{loop $data $r}
+			<li class='ui_img_list_item'>
+				<a class='ui_img_list_item_img' href='{$r[url]}' title="{$r[title]}"><img src='{thumb($r[thumb],109,83)}' width='109' height='83' alt='myalt' /></a>
+				<a class='ui_img_list_item_text' href='{$r[url]}' title="{$r[title]}">{str_cut($r[title],28,'')}</a>
+			</li>
+			{/loop}
+		</ul>
+		{/pc}
+		{pc:content action="position" posid="30" catid="$catid" order="listorder DESC" num="6"}
+		<ul class='ui_list'>
+			{loop $data $r}
+			<li class='ui_list_item'><a class='ui_list_item_link' href='{$r[url]}' title="{$r[title]}">{str_cut($r[title], 52,'')}</a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+</div>
+<!--赛事专题结束-->
+
+		<div class="clear"></div>
+		<div class="right_events_W250">
+			<div class="events_title_250">
+				<span class="canjia"><a target="_blank"
+					href="http://space.huoshow.com/show.php"><img alt=""
+						src="http://www.huoshow.com/img/templates/huoshow02/images/events/canjia.jpg"
+						width="63" height="21" /></a></span> <span class="game_right_title_bz"></span>
+				<h2 class="Purple_Black">火热进行中</h2>
+			</div>
+			<div class="Small_games_pic_01">
+				{pc:content action="position" posid="31" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a title="{$r[title]}" target="_blank" href="{$r[url]}">
+							<img alt="{$r[title]}" src="{thumb($r[thumb],101,106)}" width="101" height="106" />
+							{str_cut($r[title], 26,'')}
+						</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="showrc">
+			<div class="showrqi">
+				<p class="showtext2">
+					{date(m)}<br>月
+				</p>
+				<p class="showtext1">{date(d)}</p>
+			</div>
+			<div id="showrqinr">
+				{pc:content action="position" posid="80" catid="$catid" order="listorder DESC" num="15"}
+				{loop $data $r}
+				<div class="showrqinrkuang">
+					<!--<div class="showrqinrtext1">{date('Y-m-d 星期N',$r[inputtime])}&nbsp;</div>-->
+					{if ($n+1)%2==0}<div class="showrqinrtext1"><a target="_blank" href="{$r[url]}">{str_cut($r[title], 44,'')}</a></div>{else}
+					<div class="showrqinrtext1">
+						<a target="_blank" href="{$r[url]}"><strong>{str_cut($r[title], 44,'')}</strong></a>
+					</div>{/if}
+				</div>
+				{/loop}
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="index_banner_W960_02">
+		<script type="text/javascript">
+				// <![CDATA[
+				OA_show(44);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a0255ec9'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=44&n=a0255ec9' /></a>
+			</noscript>
+	</div>
+	<div class="clear"></div>
+
+	<!--赛事推荐开始-->
+<div class="events_W960" id="tiny_game_tabview1">
+	<div class="events_title_960">
+		<span class="game_right_title_bz"></span>
+		<span class="Purple_Black_dong">
+			<a class="Purple_Black_hover" href="javascript:;" title="推荐赛事">推荐赛事</a>
+			<a href="javascript:;" title="内地赛事">内地赛事</a>
+			<a href="javascript:;" title="港台赛事">港台赛事</a>
+			<a href="javascript:;" title="海外赛事">海外赛事</a>
+		</span>
+	</div>
+	<div id="box_tuijian" class="events_zt_list_pic_01 ">
+		<div id="box_1">
+			<div class="events_zt_list_left"></div>
+			<div class="events_zt_list_right"></div>
+			<div class="scrollbox-items-wrap scrollbox-items-current">
+				{pc:content action="position" posid="32" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+				<div class="scrollbox-items-wrap-body">
+					<ul>
+					{loop $data $r}
+						<li>
+							<a class='scrollbox-items-img' href="{$r[url]}"	target="_blank">
+							<img width="120" height="160" src="{thumb($r[thumb],120,160)}" alt="{$r[title]}"></a>
+							<a class='scrollbox-items-title' href="{$r[url]}" target="_blank">{str_cut($r[title], 36,'')}</a>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+
+			<div class="scrollbox-items-wrap">
+				{pc:content action="position" posid="33" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+				<div class="scrollbox-items-wrap-body">
+					<ul>
+					{loop $data $r}
+						<li>
+							<a class='scrollbox-items-img' href="{$r[url]}"	target="_blank">
+							<img width="120" height="160" src="{thumb($r[thumb],120,160)}" alt="{$r[title]}"></a>
+							<a class='scrollbox-items-title' href="{$r[url]}" target="_blank">{str_cut($r[title], 36,'')}</a>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+
+			<div class="scrollbox-items-wrap">
+				{pc:content action="position" posid="34" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+				<div class="scrollbox-items-wrap-body">
+					<ul>
+					{loop $data $r}
+						<li>
+							<a class='scrollbox-items-img' href="{$r[url]}"	target="_blank">
+							<img width="120" height="160" src="{thumb($r[thumb],120,160)}" alt="{$r[title]}"></a>
+							<a class='scrollbox-items-title' href="{$r[url]}" target="_blank">{str_cut($r[title], 36,'')}</a>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+
+			<div class="scrollbox-items-wrap">
+				{pc:content action="position" posid="35" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+				<div class="scrollbox-items-wrap-body">
+					<ul>
+					{loop $data $r}
+						<li>
+							<a class='scrollbox-items-img' href="{$r[url]}"	target="_blank">
+							<img width="120" height="160" src="{thumb($r[thumb],120,160)}" alt="{$r[title]}"></a>
+							<a class='scrollbox-items-title' href="{$r[url]}" target="_blank">{str_cut($r[title], 36,'')}</a>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+		</div>
+	</div>
+</div>
+<!--赛事推荐结束-->
+<div class="clear"></div>
+
+	<!--Top Video-->
+	<div class="top_video">
+		<div class="top_video_inner_bd">
+			<div class="cross_title_bg">
+				<h2 class="title_blue_big">精彩视频</h2>
+				<span class="more"><a href="/events/jingcaishipin/" class="more_bg">更多</a></span>
+			</div>
+			{pc:content action="position" posid="26" catid="$catid" thumb="1" order="listorder DESC" num="8"}
+			<ul class="top_video_list">
+				{loop $data $r}
+				<li>
+					<span class="top_video_pic_bg">
+						<a title="{$r[title]}" 	target="_blank" href="{$r[url]}">
+							<img alt="{$r[title]}" src="{thumb($r[thumb],134,83)}" width="134" height="83" />
+						</a>
+					</span>
+					<span class="top_video_text">
+						<a title="{$r[title]}" target="_blank" href="{$r[url]}">{str_cut($r[title], 36,'')}</a>
+					</span>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class="events_W250_02">
+		<div class="events_title_250_02">
+			<span class="game_right_title_bz"></span>
+			<h2 class="title_blue_big">精彩回顾</h2>
+		</div>
+		<div class="Small_games_pic_01">
+			{pc:content action="position" posid="27" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+			<ul>
+				{loop $data $r}
+				<li><a title="{$r[title]}" target="_blank" href="{$r[url]}">
+					<img alt="{$r[title]}" src="{thumb($r[thumb],101,106)}" width="101" height="106" />{str_cut($r[title], 26,'')}</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class="events_W250_03">
+		<div class="events_title_250_03">
+			<span class="game_right_title_bz"></span>
+			<h2 class="title_blue_big">赛事论坛</h2>
+		</div>
+		<div class="Happy_girl_list">
+			{pc:content action="get_events_bbs" img="1" }
+			<div class="Happy_girl_list_tw">
+				{loop $data $r}
+				<a title="{$r[subject]}" target="_blank" href="{$r[url]}">
+				<img alt="{$r[subject]}" src="{thumb($r[img],120,85)}" width="120" height="85" /></a>
+				<p class="Happy_girl_list_wenzi">{str_cut($r['subject'],70,'')}</p>
+				{/loop}
+			</div>
+			{/pc}
+			<div class="clear"></div>
+			<div class="Happy_girl_newslist">
+				{pc:content action="get_events_bbs" img="0"}
+				<ul>
+					{loop $data $r}
+					<li><span class="Point">
+						<a title="{$r[subject]}" target="_blank" href="{$r[url]}">{str_cut($r['subject'],58,'')}</a></span>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="events_W250_04">
+		<div class="events_title_250_04">
+			<span class="game_right_title_bz"></span>
+			<h2 class="title_blue_big">赛事群组</h2>
+		</div>
+		<div class="events_quenzu">
+			{pc:content action="get_events_group" }
+			<ul>
+				{loop $data $r}
+				<li>
+					<span class="events_quenzu_pic">
+					<img src="{thumb($r[img],48,48)}"
+						onerror="this.onerror=null;this.src='http://space.huoshow.com/static/image/common/groupicon.gif'"
+						width="48" height="48" />
+					</span>
+					<span class="events_quenzu_wz">
+						<span class="events_quenzu_wz_c">
+						<a href="{$r[url]}" target="_blank">{$r[name]}</a>
+						</span><br>
+						{str_cut($r[description],50)}
+					</span>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class="events_banner_250">
+		<script type="text/javascript">
+				// <![CDATA[
+				OA_show(45);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a6268908'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=45&n=a6268908' /></a>
+			</noscript>
+	</div>
+	<div class="clear"></div>
+	<div class="events_tuj">
+		<div class="pic_list">
+			<ul>
+				{pc:content action="position" posid="28" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+				{loop $data $r}
+				<li class="first"><a title="{$r[title]}" href="{$r[url]}" target="_blank">
+					<img alt="{$r[title]}" src="{thumb($r[thumb],232,354)}" width="232" height="354" /></a>
+					<span class="pic_text_bg_first"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title], 44,'')}</a>
+					</span>
+				</li>
+				{/loop}
+				{/pc}
+				{pc:content action="position" posid="29" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+				{loop $data $r}
+				<li>
+					<a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" alt="{$r[title]}" src="{thumb($r[thumb],119,160)}" width="119" height="160" /></a>
+		 			<span class="pic_txt_bg_red">
+					<a title="{$r[title]}" href="{$r[url]}">{str_cut($r[title], 28,'')}</a></span>
+				</li>
+				{/loop}
+				{/pc}
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+
+<!--Partners-->
+<div class="main_body">
+<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+{template "content","footer"}

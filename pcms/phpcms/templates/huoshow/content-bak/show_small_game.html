@@ -1,0 +1,129 @@
+{template "content","game_header"}
+<!-- 游戏操作 -->
+<ul class='small_game_nav'>
+	{loop subcat(87,0,0,$siteid) $r}
+	<li class='a{$n}'><a target="_blank" href='{$r[url]}' title='{$r[catname]}'>{$r[catname]}</a></li>
+	{/loop}
+</ul>
+<div class='ui_game_play fn_clear'>
+	<h2 class='ui_game_play_title'>{$title}</h2>
+	<div class='ui_game_box fn_left'>
+		<div class='game_play_box'>
+			<div class='game_wrapper'>
+				{loop $swf $r}	
+				<object id="game_swf" type="application/x-shockwave-flash" data="{$r[url]}" width="600" height="400">
+					<param name="quality" value="high" />
+					<param name="wmode" value="transparent">
+					<param name="src" value="{$r[url]}" />
+				</object>
+				{/loop}
+			</div>
+			<!--ul class='game_controls_list'>
+				<li><a id="replay" class='replay' href="javascript:;">重玩</a></li>
+				<li><a id="zoom_out" class='zoom_out' href="javascript:;">放大</a></li>
+				<li><a id="zoom_in" class='zoom_in' href="javascript:;">缩小</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">大屏</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">小屏</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">原始</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">下载</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">发给好友</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">收藏</a></li>
+				<li><a id="replay" class='replay' href="javascript:;">全屏游戏</a></li>
+			</ul-->
+		</div>
+		<div class='game_help_link'>
+			<div class="bshare-custom game_share">分享到：<a title="分享到QQ空间" class="bshare-qzone" href="javascript:void(0);"></a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到人人网" class="bshare-renren" href="javascript:void(0);"></a><a title="分享到腾讯微博" class="bshare-qqmb" href="javascript:void(0);"></a><a title="分享到豆瓣" class="bshare-douban" href="javascript:void(0);"></a><a title="分享到开心网" class="bshare-kaixin001" href="javascript:void(0);"></a><a title="分享到网易微博" class="bshare-neteasemb" href="javascript:void(0);"></a><a title="分享到搜狐微博" class="bshare-sohuminiblog" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style='display:none;'>0</span></div>
+			<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+			<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+			<!--div class='ui_mark'>
+				<strong>我要打分：</strong>
+				<a id='rate_star1' class='rate_star rate_star_status1' href='#'></a>
+				<a id='rate_star2' class='rate_star rate_star_status1' href='#'></a>
+				<a id='rate_star3' class='rate_star rate_star_status0' href='#'></a>
+				<a id='rate_star4' class='rate_star rate_star_status0' href='#'></a>
+				<a id='rate_star5' class='rate_star rate_star_status0' href='#'></a>
+				<em>滑动鼠标打分</em>
+			</div-->
+		</div>
+	</div>
+
+	<!-- 相关小游戏 -->
+	<div class='ui_box ui_game_ib'>
+		<h2 class='ui_box_title'>相关小游戏</h2>
+		{pc:content action="position" posid="239" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+		<ul class='ui_game_artical_list'>
+			{loop $data $r}
+			<li>
+				<a href='{$r[url]}' title='{$r[title]}'><img src='{thumb($r[thumb],75,75)}' alt='{$r[title]}' width='75' height='75' /></a>
+				<h4><a href='{$r[url]}' title='{$r[title]}'>{str_cut($r[title],20,'')}</a></h4>
+				<p>{str_cut($r[description],80)}</p>
+			</li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+	<!-- 相关小游戏结束 -->
+
+	<!-- 游戏简介 -->
+	<div id='js_game_info' class='ui_game_info'>
+		<h3 class='ui_game_info_title'>游戏简介</h3>
+		<dl class='game_info_box'>
+			<dt>操作说明</dt>
+			<dd class='game_key'>{$operationsguide}</dd>
+			<dt>如何开始</dt>
+			<dd>{$getstarted}</dd>
+			<dt>游戏目标</dt>
+			<dd>{$target}</dd>
+		</dl>
+	</div>
+	<!-- 游戏简介结束 -->
+
+	<!-- 推荐小游戏 -->
+	<div id='js_small_game_slide' class='ui_content ui_content_box ui_content_slide fn_clear'>
+		<h2 class='ui_content_title'>{getCatNameFromCatid($catid)}</h2>
+		<div class='ui_game_img_container slide_container'>
+			{pc:content action="hits" catid="$catid" num="42" order="views DESC " }
+			<div class='ui_game_img_list slide_list'>
+				<ul class='slide_list_item'>
+					{loop $data $r}
+					<li>
+						<a href='{$r[url]}' title='{$r[title]}'><img src='{thumb($r[thumb],75,75)}' alt='{$r[title]}' width='75' height='75' /></a>
+						<h4><a href='{$r[url]}' title=''>{str_cut($r[title],20,'')}</a></h4>
+					</li>
+					{if $n%14==0}</ul><ul class='slide_list_item'>{/if}
+					{/loop}
+				</ul>
+			</div>
+			{/pc}
+		</div>
+		<!--<div class='ui_game_img_container slide_container'>
+			{pc:content action="hits" catid="$catid" num="20" order="views DESC " }
+			<ul class='ui_game_img_list slide_list'>
+				{loop $data $r}
+				<li>
+					<a href='{$r[url]}' title='{$r[title]}'><img src='{thumb($r[thumb],75,75)}' alt='{$r[title]}' width='75' height='75' /></a>
+					<h4><a href='{$r[url]}' title=''>{str_cut($r[title],20,'')}</a></h4>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>-->
+		<div class='ui_content_slide_nav'><span class='prev_btn' title=''>Prev</span> <span class='next_btn' title=''>Next</span></div>
+	</div>
+	<!-- 推荐小游戏结束 -->
+
+	<!-- 评论正文 -->
+	<div class="Subpage_left">
+		<!-- 评论 -->
+		<div id='to_comment' class="comment" style="margin-top:10px;">
+			{if $allow_comment && module_exists('comment')}
+      		<iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no">
+      		</iframe>
+      		{/if}
+		</div>
+		<!-- 评论结束语 -->
+	</div>
+	<!-- 评论正文结束 -->
+</div>
+<!-- 游戏操作结束 -->
+{template "content","footer"}

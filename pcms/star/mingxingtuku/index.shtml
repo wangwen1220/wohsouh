@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>明星图库 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<!-- 时装模特 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_5">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/neidistarpic/">更多</a>
+		</div>
+		<dl>
+						<dt>
+								<a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0508/300026.shtml"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0505/20120505101519170.jpg" alt="方舟子对韩寒质疑从代笔至身高 推测其仅1.64米" /></a>
+							</dt>
+						<dd>
+								<ul>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0919/29991.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="图：纯爱教主郭静上海首唱会纯净打动乐迷" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0919/29991.html" class='meitu_title'><span></span>图：纯爱教主...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0919/29999.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="可爱长筒蕾丝袜性感小美眉内衣写真组图" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0919/29999.html" class='meitu_title'><span></span>可爱长筒蕾丝...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0508/300026.shtml"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0505/20120505101519170.jpg" alt="方舟子对韩寒质疑从代笔至身高 推测其仅1.64米" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/2012/0508/300026.shtml" class='meitu_title'><span></span>方舟子对韩寒...</a>
+					</li>
+									</ul>
+							</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 时装模特结束 -->
+
+	<!-- 内衣大片 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_6">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/gangtaistarpic/">更多</a>
+		</div>
+		<dl>
+						<dt>
+								<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29377.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0507/20120507023458772.jpg" alt="美女浴室湿身诱惑" /></a>
+							</dt>
+						<dd>
+								<ul>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29377.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0507/20120507023458772.jpg" alt="美女浴室湿身诱惑" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29377.html" class='meitu_title'><span></span>美女浴室湿身诱惑</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29399.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="巩新亮疑走光频整胸前衣衫 林鹏玩混搭" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29399.html" class='meitu_title'><span></span>巩新亮疑走光...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29405.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="美轮美奂的风景图片 堪称人间天堂" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29405.html" class='meitu_title'><span></span>美轮美奂的风...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29411.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="蔡依林变装“神奇女侠”庆生抢眼 微博豪言" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29411.html" class='meitu_title'><span></span>蔡依林变装&ldquo;...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29423.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="图：韩人气组合KARA紧身装性感现身首唱会" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29423.html" class='meitu_title'><span></span>图：韩人气组...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29427.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="谢楠半裸登《男人装》 知性主播性感绽放" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29427.html" class='meitu_title'><span></span>谢楠半裸登《...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29431.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="前巴西小姐波尔图性感透视内衣写真" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29431.html" class='meitu_title'><span></span>前巴西小姐波...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0917/29447.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="周末福利倩女大集结" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0917/29447.html" class='meitu_title'><span></span>周末福利倩女...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0917/29471.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="图：快女总决赛段林希夺冠 苏醒魏晨刘心助唱" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0917/29471.html" class='meitu_title'><span></span>图：快女总决...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0917/29527.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="陈数赵胤胤巴厘岛完婚 奢华婚礼高清组图" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0917/29527.html" class='meitu_title'><span></span>陈数赵胤胤巴...</a>
+					</li>
+									</ul>
+							</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 内衣大片结束 -->
+
+	<!-- 车模靓影 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_7">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/rihanstarpic/">更多</a>
+		</div>
+		<dl>
+						<dt>
+								<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28697.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0419/20120419065253950.jpg" alt="洋妞玩起来很敬业 超逼真COS媲美游戏画面" /></a>
+							</dt>
+						<dd>
+								<ul>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28697.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0419/20120419065253950.jpg" alt="洋妞玩起来很敬业 超逼真COS媲美游戏画面" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28697.html" class='meitu_title'><span></span>洋妞玩起来很...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28713.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="郭美美爆性感写真" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28713.html" class='meitu_title'><span></span>郭美美爆性感写真</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28715.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="屁股也性感 摄影师镜头下的绝美女性" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28715.html" class='meitu_title'><span></span>屁股也性感 ...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28719.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="星野亚希 童颜爆乳" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28719.html" class='meitu_title'><span></span>星野亚希 童颜爆乳</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28849.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="叶熙祺一改清纯 俏皮搞怪黑白写真" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28849.html" class='meitu_title'><span></span>叶熙祺一改清...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28893.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="周笔畅华丽变身“中国歌姬”拍时装大片" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28893.html" class='meitu_title'><span></span>周笔畅华丽变...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28917.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="大尺度色情诱惑 日本美少女限制级Cos图集3" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28917.html" class='meitu_title'><span></span>大尺度色情诱...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28943.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="戚薇变身“宅男杀手”曝光靓丽甜美写真" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28943.html" class='meitu_title'><span></span>戚薇变身&ldquo;宅...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28945.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="“暗黑公主”陈珊妮化身萌系公主宣传新专辑" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28945.html" class='meitu_title'><span></span>&ldquo;暗黑公主&rdquo;...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29043.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="公会美眉私密性感照 连体泳装眼神撩人诱惑" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0916/29043.html" class='meitu_title'><span></span>公会美眉私密...</a>
+					</li>
+									</ul>
+							</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 车模靓影结束 -->
+
+	<!-- 男模专区 -->
+	<div class="meitu">
+		<div class="bar_box">
+			<span class="ti_8">
+			</span>
+			<a class="more_model" target="_blank" href="/star/mingxingtuku/oumeistarpic/">更多</a>
+		</div>
+		<dl>
+						<dt>
+								<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0913/28089.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0419/20120419065248317.jpg" alt="图：少女时代台湾开唱 粉丝粉红海洋回报" /></a>
+							</dt>
+						<dd>
+								<ul>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0913/28089.html"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0419/20120419065248317.jpg" alt="图：少女时代台湾开唱 粉丝粉红海洋回报" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0913/28089.html" class='meitu_title'><span></span>图：少女时代...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28157.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="国内惊现《暗黑5》实体版 山寨行为遭外媒调侃" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28157.html" class='meitu_title'><span></span>国内惊现《暗...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28169.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="白皙性感的真人版芭比娃娃COS欣赏" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28169.html" class='meitu_title'><span></span>白皙性感的真...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28211.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="当下是乳神当道 胸气逼人的美女写真合集" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28211.html" class='meitu_title'><span></span>当下是乳神当...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28215.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="性感撩人 CCJOY电粉挥洒COS风情" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28215.html" class='meitu_title'><span></span>性感撩人 CCJ...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28219.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="神似刘亦菲  Showgirl李淑洁清纯写真" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28219.html" class='meitu_title'><span></span>神似刘亦菲 ...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28291.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="兔牙超模杰西卡·哈特内衣写真半裸上阵" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28291.html" class='meitu_title'><span></span>兔牙超模杰西...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28325.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="福利壁纸大放送！诱人性感美少女欣赏" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28325.html" class='meitu_title'><span></span>福利壁纸大放...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28361.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="DOTA2现有英雄高清截图 独特造型彰显魅力" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28361.html" class='meitu_title'><span></span>DOTA2现有英雄...</a>
+					</li>
+										<li>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28369.html"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" alt="叶梓萱最新性感诱惑写真" /></a>
+						<a target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28369.html" class='meitu_title'><span></span>叶梓萱最新性...</a>
+					</li>
+									</ul>
+							</dd>
+		</dl>
+		<div class="clear">
+		</div>
+	</div>
+	<!-- 男模专区结束 -->
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

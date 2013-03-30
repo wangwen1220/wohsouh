@@ -1,0 +1,136 @@
+<link href="/huoshow/css/weibo/style_weibo.css" rel="stylesheet" type="text/css" />
+<div id="wbCon">
+	<div class="conL">
+		<div class="userPhoto">
+			{if $user.uid == $room_uid}
+			<span><img src="{$user_info_arr[0].head_img_url}" /></span>
+			{else}
+			<span><img src="{$user_info_arr[0].head_img_url}" /></span>
+			{/if}
+		</div>
+		<ul class="userMenu">
+			{if $user.uid == $room_uid}
+			<li><span><a href="/home.php?mod=huoshow&do=weibo_userfollow">关注({if $info_count[0].followCount}{$info_count[0].followCount}{else}0{/if})</a></span></li>
+			<li><span><a href="/home.php?mod=huoshow&do=weibo_user_fans">粉丝({if $info_count[0].beFollowCount}{$info_count[0].beFollowCount}{else}0{/if})</a></span></li>
+			{else}
+			<li><span><a href="/show.php?mod=huoshow&module=weibo&op=user_userfollow&roomid={$room_uid}">关注({if $info_count[0].followCount}{$info_count[0].followCount}{else}0{/if})</a></span></li>
+			<li><span><a href="/show.php?mod=huoshow&module=weibo&op=user_fans_list&roomid={$room_uid}">粉丝({if $info_count[0].beFollowCount}{$info_count[0].beFollowCount}{else}0{/if})</a></span></li>
+			{/if}
+		</ul>
+	</div>
+	<div class="conM">
+		<div style="height:30px;line-height:30px;">
+			<span style="float:left;font-size:16px;font-weight:bold;">{$user_info_arr[0].nickname} 的粉丝</span>
+			<span style="float:right;">
+				{if $user.uid != $room_uid} {if $is_att !=1}
+			<a class="user"
+				href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_follow&dst_uid={$user_info_arr[0].uid}"
+				onclick="{if $user.uid}showWindow('register', this.href)
+						{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+				加关注</a> {/if} {/if}
+			</span>
+		</div>
+		<article>
+			<span class="userBar2">{$user_info_arr[0].nickname}的粉丝{if $info_count[0].beFollowCount} {$info_count[0].beFollowCount}{else}0{/if} 人</span>
+			<ul>
+				{section name=f loop=$my_fans}
+				<li class="itemAtt">
+				{if $user.uid == $room_uid}
+					{if $my_fans[f].each_other !=1}
+						<div class="attR_closed font14">
+							<a
+								onClick="add('home.php?mod=huoshow&do=weibo_user_fans&tab=add_fans&dst_uid={$my_fans[f].uid}');return false;"
+								href="javascript:;" class="font12">加关注</a>
+							<div class="disNone">
+								<a
+									onClick="delError('home.php?mod=huoshow&do=weibo_user_fans&tab=del_fans&src_uid={$my_fans[f].uid}');return false;"
+									href="javascript:;" class="font12">移除粉丝</a>
+							</div>
+						</div>
+					{else}
+						<div class="attR font14">
+							<a
+								onClick="delError('home.php?mod=huoshow&do=weibo_user_fans&tab=del_fans&src_uid={$my_fans[f].uid}');return false;"
+								href="javascript:;" class="font12">移除粉丝</a>
+						</div>
+					{/if}
+				{else}
+					{if $my_fans[f].isfollow !=1}
+					<div class="attR_closed font14">
+							<a class="font12"
+				href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_follow&dst_uid={$my_fans[f].uid}"
+				onclick="{if $user.uid}showWindow('register', this.href)
+						{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+				加关注</a></div>
+					{/if}
+				{/if}
+					<div class="attL">
+						<a href="{$space_url}{$my_fans[f].uid}"><img src="{$my_fans[f].head_img_url}" /></a> <a href="{$space_url}{$my_fans[f].uid}"
+							class="font14">{$my_fans[f].nickname}</a>
+						<p class="font12">
+							关注：{$my_fans[f].watch_count} <span class="ddd">|</span>
+							粉丝：{$my_fans[f].is_watched_count} <span
+								class="ddd">|</span> 微博：{$my_fans[f].total}
+						</p>
+					</div>
+					<div class="clear"></div>
+				</li>
+				{/section}
+			</ul>
+
+		</article>
+
+		<div class="W_pages">
+			{if $fans_count}{$page_str}{/if}
+		</div>
+
+	</div>
+	<aside>
+		<div class="conR">
+			{if $user.uid == $room_uid}
+			<!-- 微博统计信息 -->
+	  		{include_php file="huoshow/module/home/home_weibo_user_info.php"}
+			{else}
+			<!-- 微博统计信息 -->
+	  		{include_php file="huoshow/module/weibo/weibo_user_info.php"}
+			{/if}
+
+			<!-- 可能感兴趣的人 -->
+			{include_php file="huoshow/module/home/home_weibo_recommend.php"}
+			<!-- 人气用户推荐 -->
+			{include_php file="huoshow/module/home/home_weibo_hotrecommend.php"}
+		</div>
+	</aside>
+	<div class="clear"></div>
+</div>
+{literal}
+<script type="text/javascript">
+function delError(href)
+{
+	if (!confirm("确定移除粉丝？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+
+function add(href)
+{
+	if (!confirm("确定关注？")) {
+		return false;
+	}else{
+		window.location.href= href;
+	}
+}
+
+(function($){
+  $(function(){
+    var $dialog = $('.fwin_register');
+    var $dialog_width = $dialog.width();
+    var $dialog_height = $dialog.height();
+    $iframe = $("<iframe frameborder='0' src='javascript:false' style='position: absolute; z-index: -1; width:" + $dialog_width + "px; height: " + $dialog_height + "px; top: 0; left: 0;'></iframe>");
+//$dialog.append($iframe);
+  });
+})(jQuery);
+</script>
+{/literal}

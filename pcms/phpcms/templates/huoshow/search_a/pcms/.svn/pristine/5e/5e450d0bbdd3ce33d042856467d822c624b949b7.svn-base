@@ -1,0 +1,18 @@
+<div id='comment'>
+		{loop $reply_info $r}
+		<li class='comment-item fn-clear'>
+			<a target='_blank' class="img fn-left" title="{$r[nickname]}" href="/m{$r[uid]}.html">
+			<img src="{$r[thumb]}" width='32' height='32' /></a>
+			<p class='meta fn-left'><a target='_blank' class="author" href="/m{$r[uid]}.html">{$r[nickname]}</a>
+			<span class="text">{$r[content]}</span></p>
+			<p class="stats fn-right"><span class='time'>{$r[reply_time]}</span></p>
+			<div class="actions fn-right" id="comment-actions">
+				{if $uid != $r[uid]}<a class='report' href='index.php?m=community&c=index&a=myshow_report&uid=$uid&report_type=3&reply_type=2&comment_id={$r[id]}'  data-url=''>举报</a>{/if}{if $uid == $r[uid]}<a class='del' href='/index.php?m=community&c=index&a=delete_share_comment&share_id={$share_id}&comment_id={$r[id]}'  data-url='/pins/10002993/comments/189741/'>删除</a> {/if}
+				<!-- |
+				<a class="reply" href='javascript:;' title="回复" data-name="文王">回复</a> |-->
+				<!--<a class="del" href='javascript:;' title="删除" 	data-url="/pins/10002993/comments/189741/">删除</a>-->
+			</div>
+		</li>
+		{/loop}
+		</div>
+		<div class='pagination pagination-normal' id='pager'>{if $reply_num !=0}{$page_reply}{/if}</div>

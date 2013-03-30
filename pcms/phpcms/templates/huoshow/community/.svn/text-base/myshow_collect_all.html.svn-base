@@ -1,0 +1,683 @@
+<!-- 采集弹窗 -->
+<div id='collect-dialog' class="dialog collect-dialog">
+	<div class="header">
+		<h2 class='title'>采集</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<p class="pin-it fn-hide">使用书签小工具在浏览其它网站时直接采集上面的图片<a href="/about/goodies/">点击这里</a>添加书签工具</p>
+	<div class="actions">
+		<a id="open_scrape_pin" class="cell scrape" href='javascript:;'><div class="icon"></div><span>网址采集</span></a>
+		<a id="open_upload_pin" class="cell upload" href='/index.php?m=community&c=myhuoshow&a=batch_upload&album_id={$getalbum_id}'><div class="icon"></div><span>上传采集</span></a>
+		<a id="open_create_album" class="cell album" href='javascript:;'><div class="icon"></div><span>新建专辑</span></a>
+	</div>
+</div>
+
+<!-- 综合采集弹窗 -->
+<div id='collect-all-pin' class="dialog collect-all-dialog">
+	<div class="header">
+		<h2 class='title title-tab'><a class="img selected" href='javascript:;' hidefocus='true'>图片采集</a> <a class="video" href='javascript:;' hidefocus='true'>视频采集</a> <a class="goods" href='javascript:;' hidefocus='true'>商品采集</a></h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<div class='body body-img'>
+		<form class="search-pin-form" data-id='collect-img-pin' name='search_pin' method='post' action="/index.php?m=community&c=index&a=myshow_get_img_api&s_url="><div class='fancy'><input type='text' name='search_pin' class='search-pin' /><label class='label'>http://</label><button type='submit' name='search_pin_submit' class='btn'>查找</button></div></form>
+		<p class="search-tips">注：请在地址栏输入jpg、gif、png、bmp图片网络地址或图片所在页面网址</p>
+	</div>
+	<div class='body body-video fn-hide'>
+		<form class="search-pin-form" data-id='collect-video-pin' name='search_pin' method='post' action=""><div class='fancy'><input class="search-pin" type="text" name="url" /><label class='label'>http://</label><button id="submit" type="submit" class='btn' name='search_pin_submit'>查找</button></div></form>
+		<p class="search-tips">注：支持粘贴<strong><a target="_blank" href='http://www.ku6.com/'>酷6</a>/<a target="_blank" href='http://www.youku.com/'>优酷</a>/<a target="_blank" href='http://v.qq.com/index.html'>QQ视频</a>/<a target="_blank" href='http://www.tudou.com/'>土豆</a>/<a target="_blank" href='http://video.sina.com.cn/'>新浪</a></strong>的视频网址采集发布</p>
+	</div>
+	<div class='body body-goods fn-hide'>
+		<form class="search-pin-form" data-id='collect-goods-pin' name='search_pin' method='post' action=""><div class='fancy'><input type='text' name='search_pin' class='search-pin' /><label class='label'>http://</label><button type='submit' name='search_pin_submit' class='btn'>查找</button></div></form>
+		<p class="search-tips">注：已支持以下购物网站<!--（ <strong><a href="#" >商家申请加入</a></strong>）-->：
+		<br />
+		<br />
+		<a class='shop taobao' href='http://www.taobao.com' target="_blank">淘宝</a> <a target="_blank" class='shop taomao' href='http://www.tmall.com'>天猫</a><a target="_blank" class='shop paipai' href='http://www.paipai.com'>拍拍</a><a target="_blank" class='shop jingdong' href='http://www.360buy.com'>京东</a><!-- <a class='shop dangdang' href='javascript:;'>当当</a> <a class='shop fanke' href='javascript:;'>凡客</a> <a class='shop caomeipai' href='javascript:;'>草莓派</a>--></p>
+	</div>
+</div>
+
+<!-- 采集图片弹窗 -->
+<div id='collect-img-pin' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>网址采集－图片</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id="search-img-form" class="search-pin-form" name='search_pin' method='post' action="/index.php?m=community&c=index&a=myshow_get_img_api&s_url=">
+		<div class='fancy'><input type='text' name='search_pin' class='search-pin' /><label class='label'>请输入要采集图片的网址，如 http://www.qq.com</label><button type='submit' name='search_pin_submit' class='btn'>查找</button></div>
+	</form>
+
+	<div class='select-pin fn-clear'>
+		<div class='pin-img'>
+			<ul id='pin-img-list' class="img-list"></ul>
+			<div class='img-nav'><a class='prev disabled' href='javascript:;' hidefocus='true'>←上一张</a> <a class='next disabled' href='javascript:;' hidefocus='true'>下一张→</a></div>
+		</div>
+		<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=index&a=myshow_collect_img&act_submit=yes">
+			<input type="hidden" name="thumb" id='img-src' />
+			<input type="hidden" name="local_path" id='search-url' />
+			<input type="hidden" name="album" class="inputselect"  value="{if $getalbum_id==""}default_id{else}{$getalbum_id}{/if}"/>
+			<input type='hidden' id='pin-tags-id' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>{if $getalbum_id==""}我的专辑{else}{$getalbum_name}{/if}</cite>
+				<div class='options'>
+					<ul class='option-list'>
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+						{loop $list_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{str_cut($r['album_name'],30)}</a></li>
+						{/loop}
+					</ul>
+					<div class='create-album'>
+						<input name='create_album' type='text' value='创建新专辑' />
+						<a class='button disabled' href='javascript:;'>创建</a>
+					</div>
+				</div>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc' class='desc'></textarea>
+				<label>描述一下这个分享...</label>
+			</div>
+			<div class="fancy tags">
+				<span id='tag-container' class='tag-container'></span>
+				<input type='text' id='pin-tags' class='pin-tags' autocomplete='off' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+				<!--div id='menu-openness' class='menu-openness'>
+					<ul class='openness'>
+						<li><a href='javascript:;' hidefocus='true'><span>分享对所有人可见</span></a></li>
+						<li class='selected'><a href='javascript:;' hidefocus='true'><span>分享仅对被@好友可见</span></a></li>
+						<li><a href='javascript:;' hidefocus='true'><span>分享对自己可见</span></a></li>
+					</ul>
+				</div-->
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<div class="tag-list-wrapper">
+				<div id="tag-list" class='tag-list'>
+				{loop $a_arr_tag $t}
+					{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+						<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+					{if ($n+1)%20==0}</ul>{/if}
+				{/loop}
+					<!--<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>-->
+				</div>
+			</div>
+			<div class='tag-list-nav'>
+				<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+				<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+			</div>
+			<!--<ul id='tag-list' class='tag-list'>
+				{loop $a_arr_tag $t}
+				<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+				{/loop}
+			</ul>-->
+			<!--p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p-->
+		</div>
+	</div>
+</div>
+
+<!-- 采集视频弹窗 -->
+<div id='collect-video-pin' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>网址采集－视频</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id="search-video-form" class='search-pin-form fancy' method='post' action='/api/collectionvideo/server.php'><input class="search-pin" type="text" id="url" name="url" value="" /><label class='label'>支持优酷、土豆、酷六、56、乐视、搜狐</label><button id="submit" type="submit" class='btn' name='search_pin_submit'>查找</button></form>
+	<div class='select-pin fn-clear'>
+		<div id="result" class='pin-img'></div>
+		<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=index&a=myshow_collect_video&act_submit=yes">
+			<input type="hidden" name="url" id='video-url' value="" />
+			<input type="hidden" name="swf" id='video-swf' value="" />
+			<input type="hidden" name="title" id='video-title' value="" />
+			<input type="hidden" name="thumb" id='video-img' value="" />
+			<input type="hidden" name="local_path" id='search-url' value="" />
+			<input type="hidden" name="album" class="inputselect" value="{if $getalbum_id==""}default_id{else}{$getalbum_id}{/if}" />
+			<input type='hidden' id='pin-tags-id' value='' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>{if $getalbum_id==""}我的专辑{else}{$getalbum_name}{/if}</cite>
+				<div class='options'>
+					<ul class='option-list'>
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+						{loop $list_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{str_cut($r['album_name'],30)}</a></li>
+						{/loop}
+					</ul>
+					<div class='create-album'>
+						<input name='create_album' type='text' value='创建新专辑' />
+						<a class='button disabled' href='javascript:;'>创建</a>
+					</div>
+				</div>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc' class='desc'></textarea>
+				<label>描述一下这个分享...</label>
+			</div>
+			<div class="fancy tags">
+				<span id='tag-container' class='tag-container'></span>
+				<input type='text' id='pin-tags' class='pin-tags' autocomplete='off' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+				<!--div id='menu-openness' class='menu-openness'>
+					<ul class='openness'>
+						<li><a href='javascript:;' hidefocus='true'><span>分享对所有人可见</span></a></li>
+						<li class='selected'><a href='javascript:;' hidefocus='true'><span>分享仅对被@好友可见</span></a></li>
+						<li><a href='javascript:;' hidefocus='true'><span>分享对自己可见</span></a></li>
+					</ul>
+				</div-->
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<div class="tag-list-wrapper">
+				<div id="tag-list" class='tag-list'>
+				{loop $a_arr_tag $t}
+					{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+						<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+					{if ($n+1)%20==0}</ul>{/if}
+				{/loop}
+					<!--<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>-->
+				</div>
+			</div>
+			<div class='tag-list-nav'>
+				<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+				<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+			</div>
+			<!--<ul id='tag-list' class='tag-list'>
+				{loop $a_arr_tag $t}
+				<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+				{/loop}
+			</ul>-->
+			<!--p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p-->
+		</div>
+	</div>
+</div>
+
+<!-- 采集商品弹窗 -->
+<div id='collect-goods-pin' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>网址采集－商品</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id="search-goods-form" class="search-pin-form" name='search_pin' method='post' action="/index.php?m=community&c=index&a=myshow_collect_commodity">
+		<div class='fancy'><input type='text' name='search_pin' class='search-pin' /><label class='label'>请输入要采集商品的网址</label><button type='submit' name='search_pin_submit' class='btn'>查找</button></div>
+	</form>
+
+	<div class='select-pin fn-clear'>
+		<div id='goods-img' class='pin-img'><a class='img' href='#'><img src='' /></a><span class='price'></span><em class='tips fn-hide'>暂不支持该地址</em></div>
+		<form id='pin-info-form' class='pin-info-form' name='pin_info' method='post' action="/index.php?m=community&c=index&a=myshow_collect_goods">
+			<input type="hidden" name="i" id='goods-imgsrc' />
+			<input type="hidden" name="p" id='goods-price' />
+			<input type="hidden" name="local_path" id='search-url' />
+			<input type='hidden' id='pin-tags-id' />
+			<input type="hidden" value="{if $getalbum_id==""}default_id{else}{$getalbum_id}{/if}" class="inputselect" name="album" />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>{if $getalbum_id==""}我的专辑{else}{$getalbum_name}{/if}</cite>
+				<div class='options'>
+					<ul class='option-list'>
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+						{loop $list_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{str_cut($r['album_name'],30)}</a></li>
+						{/loop}
+					</ul>
+					<div class='create-album'>
+						<input name='create_album' type='text' value='创建新专辑' />
+						<a class='button disabled' href='javascript:;'>创建</a>
+					</div>
+				</div>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc' class='desc' id='goods-desc'></textarea>
+				<label>描述一下这个商品分享...</label>
+			</div>
+			<div class="fancy tags">
+				<span id='tag-container' class='tag-container'></span>
+				<input type='text' id='pin-tags' class='pin-tags' autocomplete='off' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+			<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+				<!--div id='menu-openness' class='menu-openness'>
+					<ul class='openness'>
+						<li><a href='javascript:;' hidefocus='true'><span>分享对所有人可见</span></a></li>
+						<li class='selected'><a href='javascript:;' hidefocus='true'><span>分享仅对被@好友可见</span></a></li>
+						<li><a href='javascript:;' hidefocus='true'><span>分享对自己可见</span></a></li>
+					</ul>
+				</div-->
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<div class="tag-list-wrapper">
+				<div id="tag-list" class='tag-list'>
+				{loop $a_arr_tag $t}
+					{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+						<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+					{if ($n+1)%20==0}</ul>{/if}
+				{/loop}
+					<!--<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>-->
+				</div>
+			</div>
+			<div class='tag-list-nav'>
+				<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+				<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+			</div>
+			<!--<ul id='tag-list' class='tag-list'>
+				{loop $a_arr_tag $t}
+				<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+				{/loop}
+			</ul>-->
+			<!--p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p-->
+		</div>
+	</div>
+</div>
+
+<!-- 采集成功弹窗 -->
+<!--<div id='repin-success-dialog' class="dialog">
+	<div class="header">
+		<h2 class='title'>转藏成功</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<div class="repin-success">
+		<h3><span>恭喜，你已经成功转藏到 <a href="#" target="_blank">{$s_info[0][file_name]}</a></span></h3>
+		<div class="pin-operations"><a href="#" class="view-pin">查看该分享</a></div>
+		<div class="pin-share-description">
+			<p>据说发现好东西是要分享给好友的</p>
+			<textarea>鸡肉煮好，焖五分钟后捞出，放入保鲜袋用擀面杖或者其他东西捶松（这样比直接用手撕鸡丝，要来的更方便，鸡丝也相对更完整。处理好的黄瓜胡萝卜和鸡丝一起放入碗中。放入一茶匙盐抓匀备用。蒜加炸干松的辣椒和花椒适量一起捣成蒜泥。（适量的意思就是根据自己喜好。花椒和辣椒炸的松脆，和蒜泥一起放入一茶匙盐抓匀备用。蒜加炸干松的辣椒和花椒适量一起捣成蒜泥。</textarea>
+		</div>
+		<div class="pin-share-btn"><a class="sbtn" href="#">分享</a></div>
+		<div class='pin-bshare'><div class="bshare-custom">分享到更多圈子：<a title="分享到QQ空间" class="bshare-qzone" href="javascript:void(0);"></a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到人人网" class="bshare-renren" href="javascript:void(0);"></a><a title="分享到腾讯微博" class="bshare-qqmb" href="javascript:void(0);"></a><a title="分享到豆瓣" class="bshare-douban" href="javascript:void(0);"></a><a title="分享到开心网" class="bshare-kaixin001" href="javascript:void(0);"></a><a title="分享到网易微博" class="bshare-neteasemb" href="javascript:void(0);"></a><a title="分享到搜狐微博" class="bshare-sohuminiblog" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style='display:none;'>0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script></div>
+	</div>
+</div>-->
+
+<!-- 上传采集弹窗 --w>
+<div id='upload-pin-dialog' class="dialog">
+	<div class="header">
+		<h2 class='title'>上传采集</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id='upload-pin-form' class="upload-pin" method='post' action='/index.php?m=community&c=myhuoshow&a=ajaxmyupload' enctype="multipart/form-data">
+		<!w--w<input type='file' name='file' class="file" id="upload-file" onchange="text.value=this.value" />
+		<input type='text' name='text' class="text" id="upload-text" />
+		<button type='button' class="btn" id="upload-button" onclick="file.disabled=false;file.click();file.value=browse.value;file.disabled=true">选择文件</button>-w->
+		<div class="btn fbtn" id="upload-button"><input type='file' name='image' class="file" id="upload-file" />选择文件</div>
+	</form>
+	<div id="output">
+		<p class='notice'>注：jpg、gif、png或bmp格式。单张图片不超过2MB，图片分辨率要大于200*100像素</p>
+		<p class='notice'>支持swf、avi、mp4、rmvb等常见视频格式文件，单个视频文件最大不超过15MB</p>
+	</div>
+</div>-->
+
+<!-- 上传采集弹窗 -->
+<!-- <div id='upload-pin-dialog' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>上传采集</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id='upload-pin-form' class="upload-pin" method='post' action='/index.php?m=community&c=myhuoshow&a=ajaxmyupload&album_id={$getalbum_id}' enctype="multipart/form-data">
+		<div class="btn fbtn">
+			<div id="upload-btn" class='upload-btn'><input type='file' name='image' class="upload-file" />选择图片文件</div>
+			<div id='upload-select-dialog' class='upload-select-dialog'>
+				<a class='upload-file-btn upload-simple' href='javascript:;'><input type='file' exts="png|jpg|bmp" name='image' class="upload-file" />简单上传</a>
+				<a class='upload-file-btn upload-splice' href='/index.php?m=community&c=myhuoshow&a=batch_upload&album_id={$getalbum_id}'>批量上传</a>
+				<a class='upload-closer' href='javascript:;'>关闭</a>
+				<span class='arrow'></span>
+				<span class='fuck'></span>
+			</div>
+		</div>
+	</form>
+	<div id="upload-output" class='select-pin fn-clear'>
+		<p class='notice'>注：支持以下：jpg、gif、png 格式。</p>
+		<p class='notice'>批量上传一次可上传 10 张，按住 <span class='icon-fn icon-ctrl'>Ctrl</span> 键或 <span class='icon-fn icon-shift'>Shift</span> 键可多选</p>
+	</div>
+</div> -->
+
+<!-- 上传采集弹窗 -->
+<div id='upload-pin-dialog' class="dialog collect-website-dialog upload-pin-batch-dialog">
+	<div class="header">
+		<h2 class='title'>上传采集</h2>
+		<!-- <a id='upload-dialog-closer' class="close" href='javascript:;'><strong>Close</strong></a> -->
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+
+	<div class="batch_up">
+		<div class="button1">
+			<span id="spanButtonPlaceHolder"></span>
+			<input id="btnUpload" type="button" value="" onclick="swfu.startUpload();" disabled="disabled" style="margin-left: 2px; width:121px; height: 25px; background:url(/mybatchup/images/btn2.gif) no-repeat; border:0;" />
+			<input id="btnCancel" type="button" value="" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; width:121px; height: 25px; background:url(/mybatchup/images/btn3.gif) no-repeat; border:0;" />
+			<!--span id="divStatus" class="status">0 个文件被上传</span-->
+		</div>
+		<div id='js-textads' class="textads">如果未出现选择上传按扭请捎等片刻...</div>
+	</div>
+
+	<div id="upload-output" class='select-pin fn-clear'>
+		<!-- 批量上传 -->
+		<!-- /***
+		<form id='pin-info-form' class='pin-info-form pin-info-form-batch' name='community' method='post' action="/index.php?m=community&c=myhuoshow&a=myupload&act_submit=yes&list=1">
+		***/-->
+		<form id="pin-info-form" class='pin-info-form pin-info-form-batch' action="/index.php?m=community&c=myhuoshow&a=add_batch_upload" name='pin_info_form' method="post" enctype="multipart/form-data">
+			<!-- <input type="hidden" name="thumb" value="{$thumb}" id='img-src' /> -->
+			<!-- <input type="hidden" name="small" value="{$small}" /> -->
+			<!-- <input type="hidden" name="original_pic" value="{$image}" /> -->
+			<!-- <input type="hidden" name="remote_url" id='search-url' /> -->
+			<input type="hidden" name="album_id" class="inputselect" value='{if $getalbum_id==""}default_id{else}{$getalbum_id}{/if}' />
+			<input type='hidden' id='pin-tags-id' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+
+			<div id='pin-info-way-one' class='pin-info-way pin-info-way-one fn-clear fn-hide'>
+				<h3 class='pin-info-title'>方式一： 为照片添加统一的信息</h3>
+				<div class='pin-info-wrapper'>
+					<div class='pin-info-item pin-info-album'>
+						<label class='pint-info-label'>发布到：</label>
+						<div class='pin-info-input divselect'>
+							<cite class='selected'>{if $getalbum_id==""}我的专辑{else}{$getalbum_name}{/if}</cite>
+							<div class='options'>
+								<ul class='option-list'>
+									<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+									{loop $list_arr $r}
+									<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+									{/loop}
+								</ul>
+								<div class='create-album'>
+									<input name='create_album' type='text' value='创建新专辑' />
+									<a class='button disabled' href='javascript:;'>创建</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class='pin-info-item pin-info-desc'>
+						<label class='pint-info-label'>描述：</label>
+						<div class='pin-info-input fancy'>
+							<textarea name='description' class='desc'></textarea>
+							<label>描述一下这个专辑...别忘@好友哦</label>
+						</div>
+					</div>
+					<div class='pin-info-item pin-info-tags'>
+						<label class='pint-info-label'>标签：</label>
+						<div class="pin-info-input fancy tags">
+							<span id='tag-container' class='tag-container'></span>
+							<input type='text' id='pin-tags' class='pin-tags' autocomplete='off' />
+							<label>最多5个标签，以空格隔开</label>
+						</div>
+					</div>
+				</div>
+				<div class='select-tags'>
+					<h3>常用标签，点击插入</h3>
+					<div class="tag-list-wrapper">
+						<div id="tag-list" class='tag-list'>
+							{loop $a_arr_tag $t}
+							{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+								<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+							{if ($n+1)%20==0}</ul>{/if}
+							{/loop}
+						</div>
+					</div>
+					<div class='tag-list-nav'>
+						<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+						<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+					</div>
+				</div>
+			</div>
+
+			<div id='pin-info-way-two' class='pin-info-way pin-info-way-two fn-hide'>
+				<h3 class='pin-info-title'>方式二： 为每张照片单独添加信息</h3>
+				<!--/***
+				<div class='pin-item fn-clear'>
+					<div class='pin-item-img'>
+						<input type='hidden' name='img' />
+						<a class='img' href='javascript:;'><img src='{$thumb}' /><span class='status'>上传成功</span></a>
+						<div class='set-cover'><input type='radio' name='setcover' /> <label>设为封面</span></div>
+					</div>
+					<div class='pin-item-info'>
+						<div class='pin-info-item pin-info-desc'>
+							<label class='pint-info-label'>描述：</label>
+							<div class='pin-info-input fancy'>
+								<textarea name='description' class='desc'></textarea>
+								<label>描述一下这个专辑...别忘@好友哦</label>
+							</div>
+						</div>
+						<div class='pin-info-item pin-info-tags'>
+							<label class='pint-info-label'>标签：</label>
+							<div class='pin-info-input fancy'>
+								<input type='text' class='tags' />
+								<label>最多5个标签，以空格隔开</label>
+								<div class='select-tags'>
+									<h3>常用标签</h3>
+									<div class="tag-list-wrapper">
+										<div class='tag-list'>
+											<ul class="tag-list-item fn-clear">
+												<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class='tags-nav tag-list-nav'>
+										<a class='tags-prev tag-list-prev disabled' href='javascript:;' hidefocus='true'>上一组</a>
+										<a class='tags-next tag-list-next' href='javascript:;' hidefocus='true'>下一组</a>
+										<a class='tags-close' href='javascript:;' hidefocus='true'>关闭</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a class='del-pin' href='javascript:;' title='删除'>删除</a>
+				</div>***/-->
+				<div class="fieldset flash" id="fsUploadProgress">
+					<span class="legend">上传队列</span>
+				</div>
+			</div>
+			<div id='js-submit' class='submit fn-hide'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>发 布</button>
+			</div>
+		</form>
+		<div id='notice-wrapper'>
+			<p class='notice'>注：支持以下：jpg、gif、png 格式。</p>
+			<p class='notice'>一次可上传 10 张，按住 <span class='icon-fn icon-ctrl'>Ctrl</span> 键或 <span class='icon-fn icon-shift'>Shift</span> 键可多选</p>
+		</div>
+	</div>
+</div>
+
+<!-- 创建专辑弹窗 -->
+<div id='create-album-dialog' class="dialog">
+	<div class="header">
+		<h2 class='title'>创建专辑</h2>
+		<a class="close" href='javascript:;'><strong>Close</strong></a>
+	</div>
+	<form id='create-album-form' class="create-album-form" action="index.php?m=community&c=index&a=myshow_create_album" method="post">
+		<ul class='create-album-list'>
+			<li class='create-album-item'><label for='create-album-name'>专辑名称：</label><input type='text' name='album_name' id='create-album-name' /><span class='tips'></span></li>
+			<li class='create-album-item'>
+				<label>分类：</label>
+				<input type="hidden" name="typeid" class="inputselect" value="1" />
+				<div class='divselect'>
+					<cite class='selected'>请选择分类</cite>
+					<ul class='options'>
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">请选择分类</a></li>
+						<!--<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$c_arr[0]['id']}">{$c_arr[0]['name']}</a></li>-->
+						{loop $c_arr_class $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{str_cut($r['name'],30)}</a></li>
+						{/loop}
+					</ul>
+				</div>
+			</li>
+			<li class='create-album-item'><label for='album-desc'>补充描述：</label><textarea id='album-desc' name='album_description'>搞笑图片...</textarea></li>
+			<li class='create-album-item'><button class='sbtn' type='submit'>创建</button></li>
+		</ul>
+	</form>
+</div>

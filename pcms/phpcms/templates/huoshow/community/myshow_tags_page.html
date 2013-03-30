@@ -1,0 +1,25 @@
+{template "community","myshow_header"}
+
+<div id="content">
+	<div id='canvas' data-url='/index.php?m=community&c=index&a=json_tag_list&tag_id={$tag_id}'>
+		<!-- if !page.boards && page.filter.indexOf(':category') -->
+		<div id='pin-category' class='pin category ks-waterfall ks-waterfall-fixed-left'>
+			<div class="cats cats-last">
+				<h2 class='cats-tag'>#{$tag_name[0][tag_name]} <span class='cats-filter'><input type='checkbox' id='cats-filter-goods' value='/index.php?m=community&c=index&a=json_tag_list&list=2&tag_id={$tag_id}' /> <label for='cats-filter-goods'>只看商品</label></span></h2>
+				<h3 class='cats-meta'>相关标签：<span id='cats-nav' class='cats-nav'><a class='hot selected' href="/index.php?m=community&c=index&a=json_tag_list&list=1&tag_id={$tag_id}">人气</a> <a class='new' href="/index.php?m=community&c=index&a=json_tag_list&list=3&tag_id={$tag_id}">最新</a></span></h3>
+				<ul class='cats-list fn-clear'>
+					{loop $datas $r}
+					<li {if $n==1}class='selected'{/if}><a title="{$r[tag_name]}" href="/tag-{$r[id]}.html">{$r[tag_name]}</a></li>
+					{/loop}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

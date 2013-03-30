@@ -1,0 +1,10 @@
+{loop $dbarr $r $v}
+<em>{$v[list_name]}：</em>
+<select name="property_{$r}">
+	<option selected="" value="">请选择</option>
+	{loop $v[data] $k}
+	<option value="{$k[data_name]}" >{$k[data_name]}</option>
+	{/loop}
+</select>&nbsp;&nbsp;
+{if $r==4}<br><br>{/if}
+{/loop}

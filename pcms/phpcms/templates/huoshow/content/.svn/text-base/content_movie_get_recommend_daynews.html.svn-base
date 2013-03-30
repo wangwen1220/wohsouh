@@ -1,0 +1,20 @@
+<!--今日推荐-->
+		<div class="ui_tab_box">
+			<h3 class='ui_tab_box_title'>今日推荐</h3>
+			<dl id='kandyTabs' class='kandyTabs'>
+            {loop $cat_arr $cat}
+				<dt>{$cat[cat_name]}</dt>
+				<dd>
+					<ul class='ui_tab_box_content'>
+                    {pc:content action="lists" catid="$cat[cat_id]" num="10" order="inputtime DESC" cache="3600"}
+                    	{loop $data $r}
+						<li><span{if $n<=3} class='top_no'{/if}>{$n}</span><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],56,'')}</a></li>
+                        {/loop}
+                     {/pc}
+					</ul>
+				</dd>
+             {/loop}  
+				
+			</dl>
+		</div>
+		<!--今日推荐结束-->

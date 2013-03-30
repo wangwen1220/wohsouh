@@ -1,0 +1,68 @@
+{template "content","music_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left" style='border: none'>
+		<!-- 精彩视频 -->
+		<div class='ui_video'>
+			<h2  class='ui_video_title'>{getCatNameFromCatid($catid)}</h2>
+			{pc:content action="lists" catid="$catid" num="40" order="id DESC" page="$page"}
+			<ul class='ui_video_list'>
+				{loop $data $r}
+				<li>
+					<a class='ui_video_list_img' title="{$r[title]}" href="{$r[url]}"><img alt="{$r[title]}" src="{thumb($r[thumb],120,165)}" width="120" height="165" /></a>
+					<a class='ui_video_list_title' title="{$r[title]}" href="{$r[url]}">{str_cut($r[title], 20)}</a>
+					
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div class="clear"></div>
+		<div class="fanye">
+			<div id="pages" class="text-c">{$pages}</div>
+		</div>
+
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(31);
+				// ]]></script>
+			<noscript>
+			<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=c11d76c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=31&n=c11d76c' /></a>
+			</noscript>
+		</div>
+
+		<!-- 赛事焦点 -->
+		<div class="ui_fold_box ui_ranking_box top_comment">
+			<h3 class='ui_fold_box_title'><span>音乐焦点</span></h3>
+			{pc:content  action="position" posid="116" catid="13" thumb="1" order="listorder DESC" num="10"}
+			<ol class='ui_fold_box_content'>
+				{loop $data $r}
+				<li class='ui_fold_box_content_selected'>
+					<span class='top_no'>{$n}</span>
+					<h4><a href="{$r[url]}" title="mytitle">{str_cut($r[title], 60)}</a></h4>
+				</li>
+				{/loop}
+			</ol>
+			{/pc}
+		</div>
+		<!-- 赛事焦点结束 -->
+
+		<!--热点视频-->
+		<!--//#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid={$siteid}"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid={$siteid}"-->
+		<!--热点排行结束-->
+
+		<!--热门图片 -->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=82&num=6"-->
+		<!--热门图片结束 -->
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

@@ -1,0 +1,319 @@
+﻿/* global */
+.body_bg { background-color: #f6f6f6; background-image: url(../images/music_body_bg.png); background-repeat: repeat-x;}
+
+/* nav */
+.nav_body {margin:0 auto; width:960px; height:75px;}
+.nav_bg {background:url(../images/music_logo.jpg) no-repeat; position:relative; left:-192px; height:75px;}
+.channel_logo a {width: 200px; height: 72px; display: block; text-indent: -999em; margin: 1px; float: left; position:relative; left:192px;}
+
+#sub_channel { width:740px; height:35px; float:right; display:inline; position:relative; left:192px;}
+#sub_channel ul { width:auto;height:35px; display:inline; overflow:hidden; margin-top:39px; float:right;}
+#sub_channel ul li { float:left;}
+#sub_channel ul li a {width:62px; height:35px; color:#FFF; font-size:16px; background:url(../images/hover_bj.jpg) right 396px;text-align:center;display:inline-block; line-height:35px; margin-left:1px;}
+#sub_channel ul li a:hover{width:62px; height:35px;color:#60e0fc; font-size:16px; background:url(../images/hover_bj.jpg) 138px 396px; text-align:center; display:inline-block;line-height:35px;}
+
+/* 轮显图片 start */
+.slide {width:288px; height:408px; float:left; border:1px solid #dfddde; background: #fff; padding:5px;}
+.slide_nav {width:288px; height:20px; float:left; background: #000;}
+
+.music_games_slide{}
+.music-games-slide-nav{padding:2px;}
+.music-games-slide-nav a{display:inline-block; padding:2px 7px; margin-right:2px; color:#fff;}
+.music-games-slide-nav-links a{background:#3d3d3d; color:#fff;}
+.music-games-slide-nav-links a:hover, .music-games-slide-curr{background:#f90!important;color:#000!important;}
+.music-games-slide-nav-right{float:right; font-weight:bold;}
+.music-games-slide-nav-right a:hover {color:#f90;}
+.music-games-slide .prev-disabled{color:#555;}
+.music-games-slide .next-disabled{color:#555;}
+.music-games-slide-body{background:#000; overflow:hidden;}
+.music-games-slide-page{position:relative;}
+.music-games-slide-page-info{position:absolute; bottom:0; width:100%; overflow:hidden;background-color:rgba(0, 0, 0, 0.5); filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#80000000, endcolorstr=#80000000, gradientType=1);}
+.music-games-slide-page-info-bg{position:absolute; background:#000; filter:alpha(opacity=50); opacity:0.5; width:1000px; height:1000px;}
+.music-games-slide-page-info-text{position:relative; padding:5px; color:#fff;}
+.music-games-slide-page-info-text a{color:#fff;}
+.music-games-slide-page-info-text h3{font-size:16px;}
+.music-games-slide-page-info-text p{padding-top:5px;}
+
+#music_games_slide5 { background: #fff;}
+#music_games_slide5 .pagebox_pages_wrap,
+#music_games_slide5 .music-games-slide-pages{position:relative; height:389px; overflow:hidden;}
+#music_games_slide5 .music-games-slide-page img{width:288px; height:389px;}
+#music_games_slide5 .pagebox_pages_wrap_body{width:9999em;}
+#music_games_slide5 .pagebox_page{width:288px; height:389px; float:left; overflow:hidden;}
+/* 轮显图片 end */
+
+/* footer */
+#footer_bg {background-color:#1e1e1e; margin-top:20px;}
+#footer {width:960px; height:100px;  margin:0 auto; background-color:#1e1e1e;}
+.footer_txt {width:700px; color:#b6b6b6; line-height:16px; padding-top:26px;}
+.footer_txt a {color:#b6b6b6; }
+.footer_logo {background:url(../images/hover_bj.jpg) left 130px; width:90px; height:60px; float:left; margin-right:15px;}
+
+/* more */
+.more {float:right; height:28px; line-height:28px; margin-right:10px;vertical-align:middle;}
+.more a {padding-right:10px; color:#8a8a8a;}
+.more_bg {background:url(../images/more_gary.gif) no-repeat; background-position:95% 52%;}
+
+.music_banner{ float:left;}
+
+/* banner */
+.banner_250_250 {width:250px; height:250px; margin-top:8px; margin-bottom:8px; display:inline; float:left;}
+
+/* global end */
+
+/* index page */
+
+
+
+
+/* title */
+.title_blue {font-size:16px; font-family:"微软雅黑","黑体"; color:#365795; padding-left:10px; float:left; line-height:30px;}
+.title_Black{background: url("../images/music_bt.jpg") repeat scroll left 687px transparent; width:100px; font-size:16px; font-family:"微软雅黑","黑体"; color:#414141; padding-left:33px;margin:1px 0 0 7px; line-height:24px; float:left;}
+.title_blue_big {font-size:16px; font-family:"微软雅黑","黑体"; color:#365795; padding-left:10px; float:left; line-height:35px;}
+.title_black_24{font-size:24px; font-family:"微软雅黑","黑体"; color:#414141; padding-left:5px; line-height:30px; float:left;}
+
+/* title background */
+.left_title_bg {width:296px; height:31px; background:url(../images/bg.jpg) left 328px;}
+.right_title_bg {width:390px; height:31px; background:url(../images/bg.jpg) left 328px;}
+.cross_title_bg {width:698px; height:37px; background:url(../images/bg.jpg) left 42px; margin:0 auto;}
+.full_title_bg {width:956px; height:31px; background:url(../images/bg.jpg) left 36px; margin:0 auto;}
+.vote {
+	background: url("../images/music_bt.jpg") repeat scroll left 756px transparent;
+	font-size:14px;
+	font-family:"微软雅黑","黑体";
+	color:#414141;
+	padding-left:33px;
+	margin:7px 0 0 0px;
+	line-height:40px;
+	float:left;
+	width:193px;
+	border-bottom: double 1px #ebebeb;
+	display: block;
+}
+
+
+/*内容文字色系*/
+.Text_color{
+	font-weight:bold;
+	line-height:22px;
+	color:#000;
+}
+.Text_color_01{ font-weight:bold; line-height:18px; color:#000;}
+.Text_color_a{ color:#6acfff; line-height:20px;}
+.sexi_hong,.sexi_huang,.sexi_lan,.sexi_zise{ font-size:16px;font-family:"微软雅黑","黑体"; color:#30b6f8; font-weight:bold; line-height:26px;}
+.sexi_hong{ color:#e4334b;}
+.sexi_hong a{color:#e4334b;}
+.sexi_huang{ color:#c49916;}
+.sexi_huang a{color:#c49916;}
+.sexi_lan{ color:#30b6f8;}
+.sexi_lan a{ color:#30b6f8;}
+.sexi_zise{ color:#8d6c98;}
+.sexi_zise a{color:#8d6c98;}
+.line_height { line-height:40px; }
+
+/* text */
+.text_gray {color:#8a8a8a; font-size:12px;font-weight:normal;}
+
+
+/* body left */
+.body_left { width:702px; height:auto; float:left;}
+
+
+/* top news */
+.top_news {width:702px; float: left;}
+
+.top_news_left {width:298px; height:320px; border:1px solid #dedcdd; margin-top:8px; background:#f9f9f9;  display:inline; float:left;}
+.top_news_left_inner_bd {width:296px; height:318px; border:1px solid #fff; float:left;}
+
+.top_news_right {width:392px; height:320px; border:1px solid #dedcdd; margin-top:8px; background:#f9f9f9;  display:inline; float:right;}
+.top_news_right_inner_bd {width:390px; height:318px; border:1px solid #fff; float:left;}
+
+.top_news_right_2 {width:392px; height:323px; border:1px solid #dedcdd; margin-top:8px; background:#f9f9f9;  display:inline; float:right;}
+.top_news_right_2_inner_bd {width:390px; height:321px; border:1px solid #fff; float:left;}
+
+/*专题 */
+.yingren_pic_01{ width: 290px; margin: 0 auto; height:112px; padding:10px 0 ; color:#414141; border-bottom:1px solid #e3e0e2;}
+.yingren_pic_01 li{ float: left; width:135px; height:112px; overflow:hidden; padding: 0 5px; text-align: center; }
+.yingren_pic_01 img{display:block; border: 1px solid #DBDCDC; padding: 2px; margin-bottom:8px; }
+
+/*音乐人*/
+.item_02{ line-height:22px; padding: 5px 10px 0 18px; float:left; width:362px; }
+.item_02 img {
+	border: 1px solid #DBDCDC;
+	float: left;
+	line-height: 21px;
+	margin: 3px 8px 0 0;
+	padding: 2px;
+
+}
+.item_02 p { }
+.item_wenzi{ margin-bottom:7px;}
+.des_02 { font-size:12px; color:#8a8a8a; line-height:18px; }
+
+
+.music_W250{width:248px;border:1px solid #dedcdd; background:#f9f9f9; float:left; display:inline; height:285px; }
+.music_W250_01{
+	width:226px;
+	height:283px;
+	border:1px solid #fff;
+	padding: 0 10px 0 10px;
+}
+.biankuang_w394{width:392px; height:418px;border:1px solid #dedcdd; background:#f9f9f9; display:inline; float:right;}
+.biankuang_w394_01{ width:390px; height:416px; border:1px solid #fff; float:right;}
+.biankuang_w300{width:298px; height:215px;border:1px solid #dedcdd; background:#f9f9f9; margin-top:8px; display:inline; float:left;}
+.biankuang_w300_01{ width:296px; height:213px; border:1px solid #fff; float:left;}
+.yingshi_dujia {
+	/* [disabled]width:290px; */
+	float:left;
+}
+
+.body_right { width:250px; height:auto; float:right; }
+
+/* other news */
+.full_block {width:958px;border:1px solid #dedcdd; background:#f9f9f9; float:left; display:inline; margin-top:8px; }
+.full_block_inner_bd {width:956px;  border:1px solid #fff; float:left; }
+
+/* parners */
+.partners {width:960px; margin-top:8px; background:#fafafa;}
+.layer_one {float:left; width:70px; border:1px solid #e0dedf; height:30px; border-right: none; position: absolute; z-index:1;background:#fafafa;}
+.layer_two {float:left; width:70px; margin-top:30px; position: absolute;}
+.layer_one a,.layer_two a {font-size:14px;  line-height:30px; padding-left:5px; color:#414141; font-family:"微软雅黑";}
+.layer_content {float:right; width:888px; border:1px solid #e0dedf; height:80px; position:relative; z-index:0; left:0px;background:#fafafa}
+.layer_content_txt {margin:10px  0 0 20px; line-height:22px; color:#8a8a8a;}
+
+/* index page end */
+
+/* list page */
+
+.xianchang{ width:300px; height:auto; float:left;}
+
+/*音乐头条 */
+.music_toutiao_newslist{ margin: 5px 10px 0 18px; line-height:22px;}
+.Color{ color:#8a8a8a; font-weight: normal;}
+.music_toutiao_newslist_01{width:355px; margin-left:15px; padding-top:14px; line-height:22px; margin-top:10px; border-bottom:1px solid #e1e1e1; padding-bottom:10px;}
+.newslist { margin:16px 0 0 18px; display:inline; float:left;}
+.newslist li {background: url("../images/music_bt.jpg") repeat scroll left 324px transparent; font-size: 14px; height: 26px; line-height: 26px; padding-left: 17px; overflow:hidden;}
+.newslist_text { height:26px;font-size:14px; padding-left:12px; background:url(../images/music_bt.jpg) left 252px; line-height:26px;}
+.tuotiao_bt_yuan{background:url(../images/music_bt.jpg) left 687px; width:26px; height:26px; display:inline-block; float:left; margin:2px 5px 0 5px;}
+
+/*投票*/
+.music_W250_tuopiao_bt{}
+.music_W250_tuopiao_text{
+	margin:10px 0;
+	color:#8a8a8a;
+	display: block;
+}
+.music_W250_tuopiao_text_list{ }
+.music_W250_tuopiao_text_list ul li{ line-height:26px; height:26px;}
+.music_toutiao_anniu{ margin:20px 0 22px 40px;}
+
+/* 碟报*/
+.diebao{ width:250px; height:530px; background:#2e2f30; display:inline; float:left; overflow:hidden;}
+.diebao_bt{ width:250px; height:34px; background:url(../images/music_bt.jpg) left 904px;} 
+.baise{ font-size:16px;font-family:"微软雅黑","黑体"; color:#fff; line-height:34px; padding-left:14px;}
+.diebao_text{ background:url(../images/Music-three.gif) no-repeat bottom; padding:10px 10px 0 10px ;}
+.diebao_text .hr {
+	height:2px;
+	margin-bottom:10px;
+	background: url(../images/music_bt.jpg);
+	background-position: 0 48px;
+	overflow:hidden;
+}
+.diebao_text_wenzi{
+	margin-bottom:8px;
+}
+.cover{ background: url(../images/music_bt.jpg) 524px 633px;	display: block;	width: 92px; height: 92px; padding:1px 0 0 7px;	float: left; }
+.cover1{ background: url(../images/music_bt.jpg) 524px 633px;	display: block;	width: 92px; height: 92px; padding:1px 0 0 6px;	float: left; }
+.diebao_text_wenzi img{ float: left; margin-right:10px; width:90px; height:90px;}
+.diebao_info { margin-left:10px; float:left; }
+.diebao_text_1{	color:#8a8a8a; line-height:20px; }
+.diebao_text_2{	margin-top:10px; color:#656565; line-height:18px; }
+.diebao_text_3{	color:#656565; line-height:18px; }
+.biebao_huise{ line-height:60px; color:#656565;}
+.lse{ color:#acef2a; }
+.baise{ color:#FFF; font-size:12px; font-weight: normal;}
+.diebao_text_wenzi_xx{ margin-top:10px; line-height:20px; color:#b6b6b6; }
+
+/* MV */
+.mv{ width:956px; height:315px; float:left;}
+.mv_left{ background:url(../images/music_bt.jpg) left 643px; width:52px; height:141px; float:left; margin-top:80px; margin-right:15px;}
+.mv_right{ background:url(../images/music_bt.jpg) left 493px; width:52px; height:141px; float:right; margin-top:80px;}
+.top_video{}
+.top_video li{ float:left; width:150px; height:150px; text-align:center; padding-right:15px; overflow:hidden;}
+.top_video_pic_bg{width:148px; height:107px;background:url(../images/bg.jpg) left 287px; display:inline-block; padding-top:5px; }
+.top_video_text{ width:138px;text-align:center; line-height:22px;}
+.mv .pagebox_pages_wrap{width:820px; height:315px; overflow:hidden;}
+.mv .pagebox_pages_wrap_body{width:9999em; padding-top:15px;}
+.mv .pagebox_page{width:831px; height:300px; float:left;}
+
+
+/*内地 */
+.ndi{ width:935px; margin:10px 10px 0 10px; float:left; display:inline; height:338px;}
+.ndi{ _overflow:hidden; } /* for IE6 */
+.ndi-bt{ width:900px; height:37px; background:url(../images/music_bt.jpg) left 200px;}
+.ndi_left{ width:270px; float:left; background:#f0f0f0; border:1px solid #dedcdd; padding:5px 5px 10px;}
+.ndi_left_pic,.ndi_left_pic_01,.ndi_left_pic_02,.ndi_left_pic_03{ width:270px; height:199px; background:url(../images/Music-sekuai_01.jpg) no-repeat; overflow:hidden;}
+.ndi_left_pic_01{ background:url(../images/Music-sekuai_02.jpg) no-repeat;}
+.ndi_left_pic_02{ background:url(../images/Music-sekuai_05.jpg) no-repeat;}
+.ndi_left_pic_03{ background:url(../images/Music-sekuai_04.jpg) no-repeat;}
+.ndi_left_tuwen{ width:260px; padding:50px 0 0 22px; float:left;}
+.ndi_left_tuwenlist{ width:260px;}
+.ndi_left_tuwenlist li{ width:99px; text-align:center; color:#FFF;  float:left; margin-right:28px;}
+.ndi_left_tuwenlist li a{ color:#FFF; line-height:24px;}
+.ndi_left_news{ width:273px; display:inline; float:left;}
+.ndi_left_news ul{ width:259px; padding:5px 5px 0; }
+.ndi_left_news ul li{ width:255px; border-bottom:1px dashed #8a8a8a; background:url(../images/music_bt.jpg) left 228px; padding-left:10px;}
+.ndi_left_news ul li a{  line-height:26px; font-size:12px;}
+.ndi_left_news_mingzi{color:#8a8a8a; margin-left:100px; font-size:12px;}
+
+.ndi_Center{ width:378px; float:left;}
+.ndi_Center_newslist{ width:365px; margin-left:15px; padding-top:5px; line-height:22px;}
+.ndi_Center_newslist_01{width:329px; margin-left:15px; padding-top:14px; line-height:22px; border-bottom:1px dashed #e1e1e1; padding-bottom:15px;}
+.ndi_Center_t{ margin:15px 0 0 0; width:359px; float:left;}
+.ndi_Center_t_01{ width:auto; float:left; margin-top:5px; padding: 0 0 0 18px;}
+.ndi_Center_t_01 li { background: url("../images/music_bt.jpg") repeat scroll left 87px transparent; font-size: 14px; height: 26px; line-height: 26px; padding-left: 17px; }
+.ndi_Center_t_02{ padding: 0 0 0 18px; margin-top:5px;width:359px; float:left;}
+.ndi_Center_t_02 li { background:url(../images/music_bt.jpg) left 344px; font-size: 14px; height: 26px; line-height: 26px; padding-left: 17px; }
+.ndi_Center_t_text,.ndi_Center_t_text_03,.ndi_Center_t_text_02,.ndi_Center_t_text_01,.ndi_Center_t_text_04,.ndi_Center_t_text_05{ height:26px;font-size:14px; padding-left:17px; line-height:26px;}
+.ndi_Center_t_text li { background:url(../images/music_bt.jpg) left 324px; padding-left:17px; overflow:hidden; height:26px;}
+.ndi_Center_t_text_01 li{ background:url(../images/music_bt.jpg) left 303px; padding-left:17px;}
+.ndi_Center_t_text_02 li{ background:url(../images/music_bt.jpg) left 258px; padding-left:17px;}
+.ndi_Center_t_text_03 li{ background:url(../images/music_bt.jpg) left 279px; padding-left:17px;}
+.ndi_Center_t_text_04 li{ background:url(../images/music_bt.jpg) left 339px; padding-left:17px;}
+.ndi_Center_t_text_05 li{ background:url(../images/music_bt.jpg) left 352px; padding-left:17px;}
+.ndi_Center_t_03{
+	width:auto;
+	float:left;
+	margin-top:8px;
+	padding: 0 0 0 12px;
+	overflow:hidden;
+}
+.ndi_Center_t_03 li { background: url("../images/music_bt.jpg") repeat scroll left 87px transparent; font-size: 14px; overflow:hidden; height: 26px; line-height: 26px; padding-left: 17px; }
+
+.ndi_right,.ndi_right_01,.ndi_right_02,.ndi_right_03{width:267px; height:354px;  float:right; overflow:hidden;position:relative; top:-25px;}
+.ndi_right {  background:url(../images/zhangji_sekuai.jpg) right 943px; }
+.ndi_right_01{ background:url(../images/zhangji_sekuai.jpg) 549px 942px;}
+.ndi_right_02{ background:url(../images/zhangji_sekuai.jpg) 549px 574px;}
+.ndi_right_03{ background:url(../images/zhangji_sekuai.jpg) right 573px;}
+.ndi_right_bt{ width:260px; height:38px;}
+.ndi_right_heise{font-size:16px; font-family:"微软雅黑","黑体"; color:#414141; text-indent:40px;line-height:40px;}
+.charts_others {padding:0 0 0 40px;}
+.charts_others li{height:31px; line-height:31px; width:215px;}
+.charts_text{ width:140px;  float:left; height:31px;} 
+.charts_number{float:right; width:50px; color:#b6b6b6;}
+.rank_up{float:right; margin-top:11px; width:7px; height:7px; background:url(../images/music_bt.jpg); background-position:523px 509px;}
+.rank_down{float:right; margin-top:11px; width:7px; height:7px; background:url(../images/music_bt.jpg); background-position:523px 484px;}
+.rank_retain{float:right; margin-top:11px; width:7px; height:7px; background:url(../images/music_bt.jpg); background-position:523px 457px;}
+/*投票*/
+.vote_options { height: 80px; margin: 0 auto; overflow: hidden; width: 216px;}
+.vote_button { height: 33px; margin: 4px auto; width: 134px;}
+.vote_options li { height: 20px; line-height: 20px;}	
+
+
+
+
+#huoshow_music_index_scroll_image_288_406,
+#huoshow_music_index_scroll_image_288_406 .pagebox_pages_wrap,
+#huoshow_music_index_scroll_image_288_406 .common-roll-slide-page,
+#huoshow_music_index_scroll_image_288_406 .common-roll-slide-body,
+#huoshow_music_index_scroll_image_288_406 img{width:288px; height:408px; overflow:hidden;}

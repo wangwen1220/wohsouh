@@ -1,0 +1,19 @@
+<div id='zoomer-comment' class='comment hr'>
+			<div class='title'><span>评论</span> <strong>(<span id='zoomer-comment-count'>{$be_reply_count}</span>)</strong></div>
+			<ul id='zoomer-comment-list' class='comment-list'>
+			{loop $reply_info $r}
+				<li>
+					<a target='_blank' class='avatar' href='/m{$r[uid]}.html'><img src="{$r[thumb]}" width="30" height="30" /></a>
+					<p><a target='_blank' href='/m{$r[uid]}.html'>{$r[nickname]}</a> {$r[content]}</p>
+					<div class='meta'><span>{$r[reply_time]}</span> <!--<a href='#'>删除</a>-->{if $uid == $r[uid]}<a class='del' href='/index.php?m=community&c=index&a=delete_bigimgshare_comment&share_id={$share_id}&comment_id={$r[id]}'  data-url='/pins/10002993/comments/189741/'>删除</a>{/if}</div>
+				</li>
+			{/loop}
+			</ul>
+			<div id='pagination' class="pagination">{if $reply_num !=0}{$page_reply}{/if}</div>
+			<form method='post' action='/index.php?m=community&c=index&a=create_bigimg_share_comment&share_id={$share_id}'>
+				<a class='avatar' href='#'><img src="{if empty($user[uid])}{$morenavatar}{else}{$avatar}{/if}" width="30" height="30" /></a>
+				<textarea></textarea>
+				<!--<a class='face' href='javascript:;'></a>-->
+				<button type='submit'>确定</button>
+			</form>
+		</div>

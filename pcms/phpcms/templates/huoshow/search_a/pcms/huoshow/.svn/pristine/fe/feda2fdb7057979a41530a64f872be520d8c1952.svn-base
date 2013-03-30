@@ -1,0 +1,88 @@
+{include file="home/home_weibo_header.html"}
+<div id="wbCon">
+	<div class="conL">
+		<div class="userPhoto">
+			<span><img src="{$roomidimg[0].head_img_url}" /></span>
+		</div>
+		<ul class="userMenu">
+			{if $roomid == $user.uid}
+			<li><span><a
+					href="/home.php?mod=huoshow&do=weibo_userfollow">关注{if
+						empty($user_countinfo[0].followCount)}(0){else}({$user_countinfo[0].followCount}){/if}</a></span></li>
+			<li><span><a
+					href="/home.php?mod=huoshow&do=weibo_user_fans">粉丝{if
+						empty($user_countinfo[0].beFollowCount)}(0){else}({$user_countinfo[0].beFollowCount}){/if}</a></span></li>
+
+			{else}
+			<li><span><a
+					href="/show.php?mod=huoshow&module=weibo&op=user_userfollow&roomid={$roomid}">关注{if
+						empty($user_countinfo[0].followCount)}(0){else}({$user_countinfo[0].followCount}){/if}</a></span></li>
+			<li><span><a
+					href="/show.php?mod=huoshow&module=weibo&op=user_fans_list&roomid={$roomid}">粉丝{if
+						empty($user_countinfo[0].beFollowCount)}(0){else}({$user_countinfo[0].beFollowCount}){/if}</a></span></li>
+
+			{/if}
+		</ul>
+	</div>
+	<div class="conM">
+		<div style="height:30px;line-height:30px;">
+			<span style="float:left;font-size:16px;font-weight:bold;">{$roomname} 的关注</span>
+			<span style="float:right;">
+				{if $user.uid != $roomid} {if $roomis_att !=1}
+			<a class="user"
+				href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_follow&dst_uid={$roomid}"
+				onclick="{if $user.uid}showWindow('register', this.href)
+						{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+				加关注</a> {/if} {/if}
+			</span>
+		</div>
+		<article>
+			<span class="userBar2">{$roomname}关注了{if
+				empty($user_countinfo[0].followCount)}0{else}{$user_countinfo[0].followCount}{/if}人</span>
+			<ul>
+				{section name=n loop=$user_follow}
+				<li class="itemAtt">
+				{if $user.uid != $roomid}
+					{if $user_follow[n].is_att !=1}
+					{if $user.uid != $user_follow[n].uid}
+					<div class="attR_closed font14">
+						<!--<a href="#" class="font12">加关注</a>-->
+
+						<a class="font12"
+							href="/huoshow/module/weibo/ajax/weibo_user_dynamic_ajax.php?tab=ajax_user_follow&dst_uid={$user_follow[n].uid}"
+							onclick="{if $user.uid}showWindow('register', this.href)
+{else}showWindow('login', 'member.php?mod=logging&action=login');{/if}">
+							加关注</a>
+						<!--<div class="disNone"><a href="#">移除粉丝</a><a href="#">发私信</a></div>-->
+					</div> 
+					{/if}
+					{/if}
+				{/if}
+					<div class="attL">
+						<a href="{$space_url}{$user_follow[n].uid}"><img
+							src="{$user_follow[n].head_img_url}" /></a> <a
+							href="{$space_url}{$user_follow[n].uid}" class="font14">{$user_follow[n].nickname}</a>
+						<a href="#" class="font12 aaa"></a>
+						<p class="font12">粉丝：{$user_follow[n].is_watched_count}</p>
+					</div>
+					<div class="clear"></div>
+				</li> {/section}
+			</ul>
+		</article>
+		<div>{if $count}{$page_str}{/if}</div>
+	</div>
+	<aside>
+		<div class="conR">
+			{if $user.uid == $roomid}
+			<!-- 微博统计信息 -->
+			{include_php file="huoshow/module/home/home_weibo_user_info.php"}
+			{else}
+			<!-- 微博统计信息 -->
+			{include_php file="huoshow/module/weibo/weibo_user_info.php"} {/if}
+
+			{include_php file="huoshow/module/home/home_weibo_recommend.php"}
+			{include_php file="huoshow/module/home/home_weibo_hotrecommend.php"}
+		</div>
+	</aside>
+	<div class="clear"></div>
+</div>

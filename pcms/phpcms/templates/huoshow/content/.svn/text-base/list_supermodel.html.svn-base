@@ -1,0 +1,55 @@
+{template "content","supermodel_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="m_event">
+				{pc:content action="lists" catid="$catid" num="20" order="id DESC" page="$page"}
+				{loop $data $r}
+				<dl>
+						<dt><a target="_blank" href="{$r['url']}"><img src="{thumb($r[thumb],120,90)}" width="120" height="90"/></a></dt>
+						<dd><a target="_blank" href="{$r['url']}">{str_cut($r[title],75,'')}</a><br />{str_cut($r['description'],300,'...')}<span><a target="_blank" href="{$r['url']}">详细>></a></span>
+</dd>
+				</dl>
+				<div class="clear"></div>
+				{/loop}
+				{/pc}				
+						<div class="fanye">
+						<div id="fanye_01">{$pages}<div class="clear"></div>
+						</div>
+	</div>
+ </div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(57);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a48f1356'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=57&n=a48f1356' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid={$siteid}&catid=109&other_catids=12|电影,13|音乐,14|游戏"-->
+		<!--今日推荐结束-->
+
+		<!--热点视频-->
+		<!--//#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid={$siteid}"-->
+		<!--热点视频结束-->
+
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid={$siteid}"-->
+		<!--热点排行结束-->
+
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+
+		<!--频道热门图片-->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=115,116,117,118&num=6"-->
+		<!--频道热门图片结束-->
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

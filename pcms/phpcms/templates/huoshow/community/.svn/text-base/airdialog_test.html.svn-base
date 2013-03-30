@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>artDialog test</title>
+	<meta charset='utf-8' />
+	<meta name='author' content='火秀－王文' />
+	<!-- <script src="{JS_PATH}jquery-1.7.2.min.js"></script> -->
+	<!-- <script src="{JS_PATH}artDialog/jquery.artDialog.js?skin=default"></script> -->
+	<script src="{JS_PATH}artDialog/artDialog.js?skin=default"></script>
+	<link href='/favicon.ico' rel='icon' />
+</head>
+<body style='height: 1000px; text-align: center;'>
+	<h1>一个简单的测试文件</h1>
+	<script>
+		window.onload = function(){
+			art.dialog({
+				title: 'artDialog test',
+				content: '这是一个简单的测试文件， 2 秒后跳到新页面',
+				id: 'test1',
+				time: 2,
+				left: '50%',
+				top: '20%',
+				fixed: true,
+				close: function(){
+					//window.location.replace('/index.php?m=community&c=index&a=show&share_id=233');
+					window.location = '/index.php?m=community&c=index&a=show&share_id=233';
+				}
+				//ok: function(){alert('yes');},
+				//cancelVal: '关闭'
+			});
+		}
+	</script>
+</body>
+</html>

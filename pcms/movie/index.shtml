@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>火秀影视 - 火秀新闻</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_movie.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=2'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body class="body_bg">
+	<!--Site Header-->
+	<div class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common">
+						<a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>
+					</div>
+				</div>
+
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+//							$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$.getJSON('http://space.wwen.huoshow.com/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!--Site Header End-->
+    <!--Navigator-->
+    <div class="nav_body">
+      <div class="nav_bg">
+        <h1 class="channel_logo"><a href="http://www.huoshow.com/movie/" title="火秀影视首页">火秀影视频道</a></h1>
+        <div id="sub_channel">
+                  				        	<ul class="nav-site">
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/huayu/">华语</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/oumei/">欧美</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/rihan/">日韩</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/yingren/">影人</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/yingping/">影评</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/juzhao/">剧照</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/pianhua/">片花</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/zhuanfang/">专访</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/chanye/">产业</a></li>
+						<li><a id="ch_huayu" href="http://pnews.trunk.huoshow.com/movie/xinpianyugao/">新片预告</a></li>
+			            </ul>
+                </div>
+      </div>
+    </div>
+    <!--Navigator End-->
+
+<div class="search">
+<form action="http://pnews.wwen.huoshow.com/index.php" id="search" method="get" target="_blank" onSubmit="return checkSForm()">
+	<input type="hidden" name="m" value="search" />
+	<input type="hidden" name="c" value="index" />
+	<input type="hidden" name="a" value="init" />
+	<input type="hidden" name="siteid" value="1" id="siteid" />
+	<input type="text" class="text" name="q" id="q" value="请输入关键字" onFocus="clearKeyword()" onBlur="clearKeyword()"/>
+			<select name="typeid" id="search_type">
+		<option value="1">新闻</option>
+		<option value="3">图片</option>
+	</select>
+	<input type="submit" id="search_submit" value="搜 索" />
+</form>
+<script>
+	$(function(){
+		window.clearKeyword = function(){
+			var search_wd = $.trim($("#q").val());
+			if(search_wd=='请输入关键字'){
+				$("#q").val('');
+			}
+			if(search_wd==''){
+				$("#q").val('请输入关键字');
+			}
+		}
+		window.checkSForm = function()
+		{
+			var search_wd = $.trim($("#q").val());
+			if(search_wd=='请输入关键字' || search_wd==''){
+				alert('请输入关键字');
+				return false;
+			}
+		}
+	})
+</script>
+
+  <span class="search_text">
+		您现在的位置: <a href="http://pnews.trunk.huoshow.com">首页</a><span> &gt; </span>
+					<a href="http://pnews.trunk.huoshow.com/movie/">火秀影视</a>			</span>
+</div>
+<!--Navigator End-->
+<!--Main Body-->
+<div class="main_body">
+	<!--Left-->
+	<div class="body_left">
+		<div class="flash_movie_l clearfix">
+	<!--Slide-->
+	<div class="music_banner">
+		<div class="common-roll-slide" id="huoshow_events_saishi_index_image">
+			<div class="common-roll-slide-body">
+				<div class="common-roll-slide-pages">
+                                	                	<div class="common-roll-slide-page">
+						<div> <a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0516/20120516105004697.jpg" width='300' heiht='421' /></a> </div>
+						<div class="common-roll-slide-page-info" >
+							<div class="common-roll-slide-page-info-text">
+								<h3><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;" target="_blank">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></h3>
+								<p><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" target="_blank"></a></p>
+							</div>
+						</div>
+					</div>
+                                    	<div class="common-roll-slide-page">
+						<div> <a href="http://pnews.trunk.huoshow.com/staticpage/2011/other_1103/48479.html" title="评论：《悬崖》—特工男女的第三类情感" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0420/20120420074022841.jpg" width='300' heiht='421' /></a> </div>
+						<div class="common-roll-slide-page-info" >
+							<div class="common-roll-slide-page-info-text">
+								<h3><a href="http://pnews.trunk.huoshow.com/staticpage/2011/other_1103/48479.html" title="评论：《悬崖》—特工男女的第三类情感" target="_blank">评论：《悬崖》&mdash;特工男女的第三类</a></h3>
+								<p><a href="http://pnews.trunk.huoshow.com/staticpage/2011/other_1103/48479.html" target="_blank"></a></p>
+							</div>
+						</div>
+					</div>
+                                    	<div class="common-roll-slide-page">
+						<div> <a href="" title="《北爱》挑战《奋斗》 陈思成叫板赵宝刚" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0421/20120421111441881.jpg" width='300' heiht='421' /></a> </div>
+						<div class="common-roll-slide-page-info" >
+							<div class="common-roll-slide-page-info-text">
+								<h3><a href="" title="《北爱》挑战《奋斗》 陈思成叫板赵宝刚" target="_blank">《北爱》挑战《奋斗》 陈思成叫板</a></h3>
+								<p><a href="" target="_blank"></a></p>
+							</div>
+						</div>
+					</div>
+                    				 				</div>
+				<div class="common-roll-slide-nav">
+                <span class="common-roll-slide-nav-right">
+                <a href="#" class="common-roll-slide-prev">&nbsp;</a>
+                <a href="#" class="common-roll-slide-next">&nbsp;</a>
+                </span>
+                <span class="common-roll-slide-nav-links">
+                                                <a href="javascript:void(0);">1</a>
+                                <a href="javascript:void(0);">2</a>
+                                <a href="javascript:void(0);">3</a>
+                				                 </span> </div>
+			</div>
+		</div>
+		<script>
+			window.slide_huoshow_events_saishi_index_image = make_pagebox('huoshow_events_saishi_index_image', {
+				links_selector: '.common-roll-slide-nav-links a',
+				pages_selector: '.common-roll-slide-page',
+				prev_selector: '.common-roll-slide-prev',
+				next_selector: '.common-roll-slide-next',
+				current_class: 'common-roll-slide-curr',
+				interval: 5,
+				effect: 1
+			});
+		</script>
+	</div>
+	<!--Slide End-->
+
+		<div class="top_news_right2">
+		<div class="right_title_bg">
+						<h2 class="title_blue">头条</h2>
+				</div>
+		<div class="top_news_list">
+                  		         		   						<a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" target="_blank" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;"><h3 class="top_news_txt_hl">&lt;sdfsf&gt;&quot;sdfsdf&quot;</h3></a>
+                                             		   						<p> <a href="http://pnews.trunk.huoshow.com/2011/1110/53821.shtml" target="_blank" title="专访《我愿意》段奕宏"><strong class="text_gray">专访《我愿意》段奕宏</strong></a>&nbsp;&nbsp;                                             		   						 <a href="" target="_blank" title="专访《我愿意》李冰冰"><strong class="text_gray">专访《我愿意》李冰冰</strong></a></p>                                             		   						<p> <a href="" target="_blank" title="专访《高海拔Ⅱ》杜琪峰"><strong class="text_gray">专访《高海拔Ⅱ》杜琪</strong></a>&nbsp;&nbsp;                                             		   						 <a href="" target="_blank" title="《海归，海归》热拍"><strong class="text_gray">《海归，海归》热拍</strong></a></p>                                              
+		           		         		   						<a href="http://pnews.trunk.huoshow.com/2011/1110/53821.shtml" target="_blank" title="专访《我愿意》段奕宏：冰冰对自己要求特别高"><h3 class="top_news_txt_hl">专访《我愿意》段奕宏：冰冰对自己要求特别高</h3></a>
+                                             		   						<p> <a href="" target="_blank" title="专访《我愿意》李冰冰:我们绝不是剩下的剩"><strong class="text_gray">专访《我愿意》李冰冰</strong></a>&nbsp;&nbsp;                                             		   						 <a href="" target="_blank" title="专访《高海拔Ⅱ》杜琪峰：我不用教郑秀文演戏"><strong class="text_gray">专访《高海拔Ⅱ》杜琪</strong></a></p>                                              
+
+					<ul class="list">
+                                        							<li>[<a href="http://pnews.trunk.huoshow.com/movie/zhuanfang/">专访</a>]&nbsp;<a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></li>
+                        						<li>[<a href="http://pnews.trunk.huoshow.com/movie/yingren/">影人</a>]&nbsp;<a href="http://pnews.trunk.huoshow.com/2011/1110/53821.shtml" title="专访《我愿意》段奕宏：冰冰对自己要求特别高">专访《我愿意》段奕宏：冰冰对自己要求特别高</a></li>
+                        						<li>[<a href="http://pnews.trunk.huoshow.com/movie/yingren/">影人</a>]&nbsp;<a href="" title="专访《我愿意》李冰冰:我们绝不是剩下的剩">专访《我愿意》李冰冰:我们绝不是剩下的剩</a></li>
+                        						<li>[<a href="http://pnews.trunk.huoshow.com/movie/yingren/">影人</a>]&nbsp;<a href="" title="专访《高海拔Ⅱ》杜琪峰：我不用教郑秀文演戏">专访《高海拔Ⅱ》杜琪峰：我不用教郑秀文演戏</a></li>
+                        						<li>[<a href="http://pnews.trunk.huoshow.com/movie/yingren/">影人</a>]&nbsp;<a href="" title="《海归，海归》热拍 童蕾罗晋出演IT杰新贵">《海归，海归》热拍 童蕾罗晋出演IT杰新贵</a></li>
+                        						<li>[<a href="http://pnews.trunk.huoshow.com/movie/yingren/">影人</a>]&nbsp;<a href="" title="新《西游记》初八上星 聂远:唐僧不仅是“硬汉”">新《西游记》初八上星 聂远:唐僧不仅是“硬汉”</a></li>
+                        										</ul>
+				</div>
+		</div>
+		</div>
+
+		<!--Top News-->
+		<div class="top_news">
+			<div class="top_news_left">
+				<div class="top_news_left_inner_bd">
+					<div class="left_title_bg">
+						<h2 class="title_blue">新片预告</h2>
+						<span class="more"><a href="http://pnews.trunk.huoshow.com/movie/xinpianyugao/" class="more_bg" target="_blank">更多</a></span>
+					</div>
+					<div class="topic_first">
+                    						<ul class="top_video_list">
+                     					<li><span class="top_video_pic_bg"><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0516/20120516105004697.jpg" width="120" height="90" /></a></span><span class="top_video_text"><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;" target="_blank">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></span> </li>
+                     					<li><span class="top_video_pic_bg"><a href="http://pnews.trunk.huoshow.com/2012/0605/54117.shtml" title="《我愿意》温情上映 主演张俪闪耀大荧屏" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0420/20120420033804749.jpg" width="120" height="90" /></a></span><span class="top_video_text"><a href="http://pnews.trunk.huoshow.com/2012/0605/54117.shtml" title="《我愿意》温情上映 主演张俪闪耀大荧屏" target="_blank">《我愿意》温情上映 </a></span> </li>
+                     					 
+						</ul>
+										</div>
+
+				</div>
+			</div>
+            <div class="top_news_right">
+				<div class="top_news_right_inner_bd">
+					<div class="right_title_bg">
+						<h2 class="title_blue">专访</h2>
+						<span class="more"><a href="http://pnews.trunk.huoshow.com/movie/zhuanfang/" class="more_bg"  target="_blank">更多</a></span>
+					</div>
+                    
+					<ul class="reviews_pic">
+                                        	<li><span class="reviews_pic_bd"><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0516/20120516105004697.jpg" width="100" height="100" /></a></span><span class="top_video_text"><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" target="_blank" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></span></li>
+                    
+                    </ul>
+				  	<ul class="list pd10">
+                                        <li><a href="http://pnews.trunk.huoshow.com/2012/0611/300224.shtml" title="受伤狐狸与小猫成密友 演绎跨越物种友谊 2" target="_blank">受伤狐狸与小猫成密友 演绎跨越物种友谊 2</a></li>
+
+                                        <li><a href="http://pnews.trunk.huoshow.com/2012/0516/300180.shtml" title="aaaa&quot;sdfsdf&quot;&lt;sdfsdfsf&gt;" target="_blank">aaaa&quot;sdfsdf&quot;&lt;sdfsdfsf&gt;</a></li>
+
+                                        <li><a href="http://pnews.trunk.huoshow.com/2012/0211/109973.shtml" title="选秀节目收视差 赛门考尔大屠杀" target="_blank">选秀节目收视差 赛门考尔大屠杀</a></li>
+
+                                        <li><a href="http://pnews.trunk.huoshow.com/2012/0211/109973.shtml" title="选秀节目收视差 赛门考尔大屠杀" target="_blank">选秀节目收视差 赛门考尔大屠杀</a></li>
+
+                                        <li><a href="http://pnews.trunk.huoshow.com/2012/0211/109969.shtml" title="韩国选秀《The Voice》将播 安七炫任评委" target="_blank">韩国选秀《The Voice》将播 安七炫任评委</a></li>
+
+                    				  </ul>
+
+
+                 				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!--Top Video-->
+		<div class="top_video">
+			<div class="top_video_inner_bd">
+				<div class="cross_title_bg">
+					<h2 class="title_blue_big">华语电影</h2>
+					<span class="more"><a href="http://pnews.trunk.huoshow.com/movie/huayu/" class="more_bg"  target="_blank">更多</a></span>
+				</div>
+				<div class="top_video_left">
+                				<dl class="picTextList clearfix">
+                
+                			<dt><a href="" target="_blank"><img src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="120" height="90" /></a></dt>
+							<dd class="topic_first_title r_width_2"><a href="" title="的飞洒该死的啊噶人饿啊和" target="_blank">的飞洒该死的啊噶人</a></dd>
+							<dd class="topic_first_briefing r_width_2"> 大厦  <a class='detail' href="">[详细]</a></dd>
+                                </dl>
+                                					<ul class="list">
+                    						<li><a href="" title="大厦噶和供热和瑞特后台威后天我和瑞特我果然噶该大厦该%&gt;">大厦噶和供热和瑞特后台威后天我和瑞特我果</a></li>
+                    						<li><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></li>
+                    						<li><a href="" title="哈尔滨冰雪电影节邀业内专家学者高峰论剑">哈尔滨冰雪电影节邀业内专家学者高峰论剑</a></li>
+                    					</ul>
+                 				</div>
+				<div class="top_video_right">
+                                                                               <a href="" title="大厦噶和供热和瑞特后台威后天我和瑞特我果然噶该大厦该%&gt;"><h3 class="top_news_txt_hl">大厦噶和供热和瑞特后台威后天我和瑞特我果然噶..</h3></a>
+                        <ul class="list">
+                                                                                     <li><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></li>
+                                                                                     <li><a href="" title="《非诚》迎青年企业家 择偶条件苛刻失败离场">《非诚》迎青年企业家 择偶条件苛刻失败离场</a></li>
+                                                                                     <li><a href="" title="《非诚》北漂男讲述&amp;quot;家的呼唤&amp;quot; 刘翔对手来相亲">《非诚》北漂男讲述&quot;家的呼唤&quot; 刘翔对手来相亲..</a></li>
+                                                                                     <li><a href="http://pnews.trunk.huoshow.com/2012/0605/54145.shtml" title="李威滥情《大冒险》PK文章纯情《真心话》">李威滥情《大冒险》PK文章纯情《真心话》</a></li>
+                                                                                     <li><a href="http://pnews.trunk.huoshow.com/2012/0605/54143.shtml" title="《倭寇的踪迹》点映 宋洋领衔真打实斗看点足">《倭寇的踪迹》点映 宋洋领衔真打实斗看点足</a></li>
+                                                                                     <li><a href="http://pnews.trunk.huoshow.com/2011/1110/54125.shtml" title="《刁蛮俏御医》近尾声 盘点高昊的女星搭档">《刁蛮俏御医》近尾声 盘点高昊的女星搭档</a></li>
+                                                                                     <li><a href="http://pnews.trunk.huoshow.com/2012/0605/54121.shtml" title="《绣花鞋》主创聊趣事 叶熙祺爆料让林心如脸红">《绣花鞋》主创聊趣事 叶熙祺爆料让林心如脸红</a></li>
+                                                                                     <li><a href="" title="电影《关于爱情和那些魔鬼》入围纽约影展">电影《关于爱情和那些魔鬼》入围纽约影展</a></li>
+                                                                                     <li><a href="" title="《高举爱》3月上映 杜汶泽江若琳演“大小恋”">《高举爱》3月上映 杜汶泽江若琳演“大小恋”</a></li>
+                                                            </ul>
+                  				</div>
+			</div>
+		</div>
+		<div class="top_video">
+			<div class="top_video_inner_bd">
+				<div class="cross_title_bg">
+					<h2 class="title_blue_big">欧美电影</h2>
+					<span class="more"><a href="http://pnews.trunk.huoshow.com/movie/oumei/" class="more_bg"  target="_blank">更多</a></span>
+				</div>
+				<div class="top_video_left">
+                				<dl class="picTextList clearfix">
+                
+                			<dt><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" target="_blank"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0516/20120516105004697.jpg" width="120" height="90" /></a></dt>
+							<dd class="topic_first_title r_width_2"><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;" target="_blank">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></dd>
+							<dd class="topic_first_briefing r_width_2"> &quot;sdfsdf&quot; <a class='detail' href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml">[详细]</a></dd>
+                                </dl>
+                                					<ul class="list">
+                    						<li><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></li>
+                    						<li><a href="" title="娜奥米沃茨取代查斯坦 主演戴妃传记片">娜奥米沃茨取代查斯坦 主演戴妃传记片</a></li>
+                    					</ul>
+                 				</div>
+				<div class="top_video_right">
+                                                                               <a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;"><h3 class="top_news_txt_hl">&lt;sdfsf&gt;&quot;sdfsdf&quot;</h3></a>
+                        <ul class="list">
+                                                                                     <li><a href="" title="娜奥米沃茨取代查斯坦 主演戴妃传记片">娜奥米沃茨取代查斯坦 主演戴妃传记片</a></li>
+                                                            </ul>
+                  				</div>
+			</div>
+		</div>
+		<div class="top_video">
+			<div class="top_video_inner_bd">
+				<div class="cross_title_bg">
+					<h2 class="title_blue_big">日韩电影</h2>
+					<span class="more"><a href="http://pnews.trunk.huoshow.com/movie/rihan/" class="more_bg"  target="_blank">更多</a></span>
+				</div>
+				<div class="top_video_left">
+                				<dl class="picTextList clearfix">
+                
+                			<dt><a href="" target="_blank"><img src="http://pnews.trunk.huoshow.com/uploadfile/2012/0602/20120602100009490.gif" width="120" height="90" /></a></dt>
+							<dd class="topic_first_title r_width_2"><a href="" title="啊范甘迪杀过人而且后入天4额后体位发达是合肥市涸鲋得水" target="_blank">啊范甘迪杀过人而且</a></dd>
+							<dd class="topic_first_briefing r_width_2"> 打发恒天然五交化他ej65euj675eu打发恒天然五交化他ej6.. <a class='detail' href="">[详细]</a></dd>
+                                </dl>
+                                					<ul class="list">
+                    						<li><a href="" title="的飞洒该死的啊噶人饿啊和">的飞洒该死的啊噶人饿啊和</a></li>
+                    						<li><a href="" title="鬼附身就额叫英特额苦于燃料库i冉太阳神恒天然是">鬼附身就额叫英特额苦于燃料库i冉太阳神恒</a></li>
+                    						<li><a href="" title="范德萨恒天然我恒天然我今天如蜗角蝇头额叫英特叫英特就">范德萨恒天然我恒天然我今天如蜗角蝇头额叫</a></li>
+                    						<li><a href="" title="是和天热舞好几天如我金河田人我今天有如为何物恒天然我">是和天热舞好几天如我金河田人我今天有如为</a></li>
+                    						<li><a href="" title="他撒花天我和他去迎合如恒天然吴俊余 我今天有如我发的是">他撒花天我和他去迎合如恒天然吴俊余 我今</a></li>
+                    						<li><a href="" title="范德萨恒天然我今天有耳机一二级库有二级库有额苦于过分">范德萨恒天然我今天有耳机一二级库有二级库</a></li>
+                    					</ul>
+                 				</div>
+				<div class="top_video_right">
+                                                                               <a href="" title="鬼附身就额叫英特额苦于燃料库i冉太阳神恒天然是"><h3 class="top_news_txt_hl">鬼附身就额叫英特额苦于燃料库i冉太阳神恒天然是</h3></a>
+                        <ul class="list">
+                                                                                     <li><a href="" title="范德萨恒天然我恒天然我今天如蜗角蝇头额叫英特叫英特就">范德萨恒天然我恒天然我今天如蜗角蝇头额叫英特叫英特就</a></li>
+                                                                                     <li><a href="" title="是和天热舞好几天如我金河田人我今天有如为何物恒天然我">是和天热舞好几天如我金河田人我今天有如为何物恒天然我</a></li>
+                                                                                     <li><a href="" title="他撒花天我和他去迎合如恒天然吴俊余 我今天有如我发的是">他撒花天我和他去迎合如恒天然吴俊余 我今天有如我发的是</a></li>
+                                                                                     <li><a href="" title="撒GFD AGF AHT WHTR WHTR WHJTRW">撒GFD AGF AHT WHTR WHTR WHJTRW</a></li>
+                                                                                     <li><a href="" title="等我区供热恒天然我金河田人唯洁雅特价有耳机一ekj7uy6入库">等我区供热恒天然我金河田人唯洁雅特价有耳机一ekj7uy6入库</a></li>
+                                                                                     <li><a href="" title="i太阳光iuoguiog">i太阳光iuoguiog</a></li>
+                                                                                     <li><a href="" title="河间府河间府ififth">河间府河间府ififth</a></li>
+                                                                                     <li><a href="" title="的法国发达更发达更发达">的法国发达更发达更发达</a></li>
+                                                                                     <li><a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;">&lt;sdfsf&gt;&quot;sdfsdf&quot;</a></li>
+                                                            </ul>
+                  				</div>
+			</div>
+		</div>
+
+		<div class="full_block">
+		<div class="full_block_inner_bd">
+			<div class="full_title_bg_l">
+				<span class="title_blue_big">剧照</span>
+				<span class="more"><a href="http://pnews.trunk.huoshow.com/movie/juzhao/" class="more_bg"  target="_blank">更多</a></span>
+			</div>
+			<div class="pic_list">
+				<ul class="clearfix">
+																		<li class="first"><a href="http://pnews.trunk.huoshow.com/2012/0611/300799.shtml" title="的；；；的" target="_blank"><img src="http://pnews.trunk.huoshow.com/uploadfile/2012/0611/20120611060338624.gif" width="219" height="294" /></a><span class="pic_text_bg_first"><a href="http://pnews.trunk.huoshow.com/2012/0611/300799.shtml" title="的；；；的" target="_blank">的；；；的</a></span></li>
+																			<li> <a href="http://pnews.trunk.huoshow.com/2012/0202/103411.shtml" title="《我的青春在延安》曝剧照 红色偶像引人注目" target="_blank"><img src="http://pnews.zyc.huoshow.com/uploadfile/2012/0618/20120618120015304.jpg" width="105" height="140" /></a><span class="pic_txt_bg_red"><a href="http://pnews.trunk.huoshow.com/2012/0202/103411.shtml" title="《我的青春在延安》曝剧照 红色偶像引人注目" target="_blank">《我的青春在延安》曝剧照 红色偶像引人注目</a></span></li>
+																	</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	</div>
+	<!--Left End-->
+	<!--Right-->
+	<div class="body_right">
+		<!--Hot Movie-->
+		<div class="hot_movie">
+			<div class="hot_movie_cate"><span class="hot_movie_cate_text">电影</span></div>
+            			<ul class="hot_movie_ul">
+            		        <li>
+					<div class="hot_movie_block"> <a href="http://pnews.trunk.huoshow.com/2011/1028/45369.shtml" title="那些年，我们一起追的女孩"><span class="hot_movie_text">那些年，我们一起追的女孩</span></a></div>
+		            <a href="http://pnews.trunk.huoshow.com/2011/1028/45369.shtml" title="那些年，我们一起追的女孩"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0420/20120420025035504.jpg" width="105" height="140" /></a>
+				</li>
+					        <li>
+					<div class="hot_movie_block"> <a href="" title="《三丁目3》"><span class="hot_movie_text">《三丁目3》</span></a></div>
+		            <a href="" title="《三丁目3》"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0420/20120420025445254.jpg" width="105" height="140" /></a>
+				</li>
+					        <li>
+					<div class="hot_movie_block"> <a href="" title="摩根·弗里曼新作演《遗忘》 联手汤姆·克鲁斯"><span class="hot_movie_text">摩根·弗里曼新作演《遗忘》 联手汤姆·克鲁斯</span></a></div>
+		            <a href="" title="摩根·弗里曼新作演《遗忘》 联手汤姆·克鲁斯"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0420/20120420025738751.jpg" width="105" height="140" /></a>
+				</li>
+					        <li>
+					<div class="hot_movie_block"> <a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;"><span class="hot_movie_text">&lt;sdfsf&gt;&quot;sdfsdf&quot;</span></a></div>
+		            <a href="http://pnews.trunk.huoshow.com/2012/0516/300191.shtml" title="&lt;sdfsf&gt;&quot;sdfsdf&quot;"><img src="http://pnews.ck.huoshow.com/uploadfile/2012/0516/20120516105004697.jpg" width="105" height="140" /></a>
+				</li>
+						</ul>
+            		</div>
+		<!--Charts Movie-->
+		<div class="charts rh1">
+		<div class="charts_inner_border">
+			<div class="charts_title">
+					<h2 class="wenzi">电影专题</h2>
+				</div>
+			<div class="mv_zt_struct">
+            			<ul class="mv_zt clearfix">
+            		    </ul>
+			<p class="cloudtag">
+            			<a href="http://pnews.trunk.huoshow.com/2012/0516/300180.shtml" title="aaaa&quot;sdfsdf&quot;&lt;sdfsdfsf&gt;" target="_blank"><span class="ct1">aaaa&quot;sdfsdf&quot;&lt;sdfsdfsf&gt;</span></a>
+            			</p>
+            			</div>
+		</div>
+		</div>
+		<div class="clear"></div>
+		<!--Banner 250*250-->
+		<div class="banner_250_250">
+		
+		<script type="text/javascript">
+				// <![CDATA[
+				OA_show(40);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a6d113c8'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=40&n=a6d113c8' /></a>
+			</noscript>
+		
+		</div>
+		<!--Charts TV-->
+		<div class="charts rh2">
+			<div class="charts_inner_border">
+				<div class="charts_title">
+					<h2 class="wenzi">影评</h2>
+				</div>
+               			<div class="picTextListPad">
+						
+
+						<ul class="list2">
+                        						<li><a href="http://pnews.trunk.huoshow.com/2012/0516/300180.shtml" title="aaaa&quot;sdfsdf&quot;&lt;sdfsdfsf&gt;" target="_blank">aaaa&quot;sdfsdf&quot;&lt;sdfsdfsf&gt;</a></li>
+						
+					</ul>
+
+
+				</div>
+				            </div>
+		</div>
+		<div class="charts rh2">
+			<div class="charts_inner_border">
+				<div class="charts_title">
+					<h2 class="wenzi">热点排行</h2>
+				</div>
+			    
+				<div class="picTextListPad">
+										<ul class="list2">
+	                    						<li><a href="http://pnews.trunk.huoshow.com/2012/0608/300756.shtml" title="sdsssdfsdf" target="_blank">sdsssdfsdf</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0611/300761.shtml" title="bbbbbbbbbbb" target="_blank">bbbbbbbbbbb</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0611/300759.shtml" title="bbbbbb" target="_blank">bbbbbb</a></li>
+												<li><a href="http://pnews.trunk.huoshow.com/2012/0211/109973.shtml" title="选秀节目收视差 赛门考尔大屠杀" target="_blank">选秀节目收视差 赛门考尔大屠杀</a></li>
+											</ul>
+									</div>
+			</div>
+		</div>
+	</div>
+    </div>
+
+	<!--Right End-->
+	<div class="clear"></div>
+
+	<!--Partners-->
+<div class="main_body">
+<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+<p class="layer_content_txt">
+<a href="http://www.huoshow.com/" target="_blank">中影集团</a> |<a href="http://www.huoshow.com/" target="_blank">保利博纳</a> </p>
+</div>
+</div>
+</div>
+  <!--Body Bottom End-->
+</div>
+<div class="clear"></div>
+<!--Main Body End-->
+	<!--Banner 960*90--><!--Body Bottom-->
+	<!--Other News--><!--Picture-->
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

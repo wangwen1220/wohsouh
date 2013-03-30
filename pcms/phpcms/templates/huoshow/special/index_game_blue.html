@@ -1,0 +1,244 @@
+{template 'special', 'game_header'}
+
+	<!-- Content -->
+	<div id="content" class='fn-clear'>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="ui-box ui-box-download fn-clear">
+				<!--/***>div class="header fn-clear">
+					<h2 class="site-nav"><a href='##'>火秀游戏</a> <span class='bk'>＞</span> <a href='##'>火秀游戏2</a> <span class='bk'>＞</span> <a href='##'>火秀游戏3</a></h2>
+					<a class='game-news' href='#'>2011-08-11 小游戏公测</a>
+				</div ***/-->
+
+				<div class="download">
+				{php $blockid = 'special_'.$specialid.'_1';}
+				{pc:block pos="$blockid"}
+				{/pc}
+					<!--<div class="download-btn">
+						<div class="download-link"><a href='#'>注册游戏账号</a> <span class='bk'>|</span> <a href='#'>进入官网</a></div>
+					</div>
+					<div class="game-vote">新游戏期待榜 <span class='game-vote-num'>987787票 <a href='javascript:;' class='game-vote-btn'>投票</a></span></div>-->
+				</div>
+
+				<div class="intro">
+				<!--{php $blockid = 'special_'.$specialid.'_2';}
+				{pc:block pos="$blockid"}
+				{/pc}-->
+					<h3 class='intro-title'>{$title}</h3>
+					<ul class='intro-list fn-clear'>
+					{pc:special action="get_special_info" specialid="$id" }
+					{loop $data $r}
+						<li class='intro-list-item'><em>游戏类型：</em>{$r[game_type]}</li>
+						<li class='intro-list-item'><em>游戏风格：</em>{$r[game_style]}</li>
+						<li class='intro-list-item'><em>游戏分类：</em>{$r[cat_name]}</li>
+						<li class='intro-list-item'><em>测试状态：</em>{$r[game_state]}</li>
+						<li class='intro-list-item'><em>游戏地区：</em>{$r[game_area]}</li>
+						<li class='intro-list-item'><em>游戏画面：</em>{$r[game_menu]}</li>
+						<li class='intro-list-item'><em>开发商：</em>{$r[developers]}</li>
+						<li class='intro-list-item'><em>运营商：</em>{$r[operators]}</li>
+						<li class='intro-list-item'><em>官方网站：</em><a target='_blank' href="{$r[official]}">点击进入</a></li>
+					{/loop}
+					{/pc}
+					</ul>
+				
+					<div class="game-num"><!--/***<a class='game-num-btn' href='#'>领号</a> ***/ --></div>
+				</div>
+			</div>
+			<div class="ui-box ui-box-article fn-clear">
+			<!--{php $blockid = 'special_'.$specialid.'_3';}
+			{pc:block pos="$blockid"}
+			{/pc}-->
+			{pc:special action="get_special_info" specialid="$id" }
+				{loop $data $r}
+				<a class='article-img' target='_blank'><img src='{thumb($r['thumb'],320,240)}' width='320' height='240' /></a>
+				<p class='article-content'><em>{$r['description']}</p>
+				<!--/*** <h3 class='article-link'><a href='/index.php?m=special&c=index&specialid={$id}'>进入专区</a> / <a href='#'>详细介绍</a></h3>***/-->
+			{/loop}
+			{/pc}
+			</div>
+			
+			<div class="ui-box ui-box-list">
+					<div class="ui-box-header">
+						<h2 class='title'>最新消息<!--{$t['name']}--></h2>
+						<div class="more"><!--<a href='{$t['url']}' target='_blank'>更多&gt;&gt;</a>--></div>
+					</div>
+					<ul class="ui-list fn-clear">
+					<!--{pc:special  action="content_list" typeid="95" specialid="24" num="10"}-->
+					{pc:special  action="content_list"  specialid="$id" listorder="5" num="8"}
+		 				{loop $data $r}
+						<li class="ui-list-item"><a href='{url_change($r[url])}' target='_blank'>{str_cut($r[title],50,'')}</a> <span>[{date('m-d',$r[inputtime])}]</span></li>
+						{/loop}
+					{/pc}
+					</ul>
+				</div>
+				
+			{php $j=0}
+			{loop $types $n $t}
+				{php $j++;}
+				{if $j==1}
+				<div class="ui-box ui-box-img">
+					<div class="ui-box-header">
+						<h2 class='title'>{$t['name']}</h2>
+						<div class="more"><a href="{$t[url]}" target='_blank'>更多&gt;&gt;</a></div>
+					</div>
+					<ul class="ui-img-list fn-clear">
+					{pc:special  action="content_list" typeid="$t[typeid]" specialid="$id" listorder="3" num="8"}
+						{loop $data $r}
+						<li class="ui-img-list-item">
+							<a class='img' href='{url_change($r[url])}' target='_blank'><img src='{thumb($r[thumb],135,100)}' width='135' height='100' /><span class='icon'></span></a>
+							<h3 class='title'><a href='{url_change($r[url])}' target='_blank'>{str_cut($r[title],70,'')}</a></h3>
+						</li>
+						{/loop}
+					{/pc}
+					</ul>
+				</div>
+				{/if}
+			
+	 			{if $j>=2}
+				<div class="ui-box ui-box-img">
+					<div class="ui-box-header">
+						<h2 class='title'>{$t['name']}</h2>
+						<div class="more"><a href="{$t[url]}"><a href='{$t[url]}' target='_blank'>更多&gt;&gt;</a></div>
+					</div>
+					<ul class="ui-img-list fn-clear">
+					{pc:special  action="content_list" typeid="$t[typeid]" specialid="$id" listorder="3" num="4"}
+					{loop $data $r}
+						<li class="ui-img-list-item">
+							<a class='img' href="{url_change($r[url])}" target='_blank'><img src="{thumb($r[thumb],135,100)}" width='135' height='100' /></a>
+							<h3 class='title'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r[title],70,'')}</a></h3>
+						</li>
+					{/loop}
+					{/pc}
+					</ul>
+				</div>
+				{/if}
+			
+			{/loop}
+		</div>
+		<!-- Main End -->
+
+		<!-- Side -->
+		<div id="side">
+			<div class="ad">
+			{php $blockid = 'special_'.$specialid.'_4';}
+			{pc:block pos="$blockid"}
+			{/pc}
+			<!--<a href='#'><img src='/statics/images/special/index-game-blue/test1.png' width='320' height='300' /></a>-->
+			</div>
+			<div class="game-score fn-clear">
+				<div class="game-score-box">
+					<div class='game-score-title'>网友综合评分</div>
+					<div class='game-score-box-num'>81</div>
+				</div>
+				<div class='game-score-status'><em>评价：</em><span class='star star2'></span> 一般</div>
+				<a class='game-score-btn' href='javascript:;'>提交分数</a>
+			</div>
+			
+			<form id="game-search" class='game-search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+			        <input type="hidden" value="search" name="app" />
+					<input type="hidden" value="index" name="controller" />
+					<input type="hidden" value="search" name="action" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="typeid" value="1" id="typeid" />
+				    <input style="width: 238px;" type="text" class="search-wd" name="q" value='请输入游戏名称...' />
+				    <button type="submit" class="search-submit">查找</button>
+			</form>
+			<div class="ui-side-box game-desc">
+			{php $blockid = 'special_'.$specialid.'_5';}
+			{pc:block pos="$blockid"}
+			{/pc}
+
+			</div>
+			<div class="ui-side-box game-download">
+			{php $blockid = 'special_'.$specialid.'_6';}
+			{pc:block pos="$blockid"}
+			{/pc}
+
+			</div>
+			<div class="ui-side-box config-info">
+			{php $blockid = 'special_'.$specialid.'_7';}
+			{pc:block pos="$blockid"}
+			{/pc}
+			</div>
+			<div class="ui-side-box game-recommend">
+			<!--{php $blockid = 'special_'.$specialid.'_8';}
+			{pc:block pos="$blockid"}
+			{/pc}-->
+			<h2 class='ui-side-box-header'>同风格游戏推荐</h2>
+				<div class="content">
+				{pc:special action="get_thesame_gamestyle" specialid="$id"}
+				{loop $data $r}
+					<div class="game-box {if $n==4}game-box-last{/if}fn-clear">
+						<a class='img' href='{url_change($r[url])}' target='_blank'><img src='{thumb($r[thumb],120,80)}' width='120' height='80' /></a>
+						<h3 class='game-title'><a href='{url_change($r[url])}' target='_blank'>{str_cut($r['title'],20,'')}</a></h3>
+						<ul class='game-info'>
+							<li><em>风格：</em>{$r[game_style]}</li>
+							<li><em>画面：</em>{$r[game_menu]}</li>
+							<li><em>类型：</em>{$r[game_type]}</li>
+						</ul>
+					</div>
+				{/loop}
+				{/pc}
+			</div>
+		</div>
+		<!-- Side End -->
+
+	</div>
+	<!-- Content End -->
+	<!-- Footer -->
+	<div id="footer">
+		<p>
+		{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<a href="{url_change($r[url])}" target="_blank">{$r[catname]}</a>{if $n<count($data)} |{/if}
+			{/loop}
+		{/pc}
+		</p>
+		<p>HuoShow Copyright &copy; 1998 - 2012 All Rights Reserved.</p>
+		<p>粤 ICP 备 06087881 号</p>
+	</div>
+	<!-- Footer End -->
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function(window) {
+			var document = window.document;
+			window.onload = function() {
+				// 加载谷歌统计代码
+				var ga = document.createElement('script'),
+					head = document.getElementsByTagName('head')[0];
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				head.appendChild(ga);
+
+				// 加载 CNZZ 统计代码
+				var cnzz = document.createElement('script');
+				cnzz.src = 'http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090';
+				//cnzz.style.display = 'none';
+				head.appendChild(cnzz);
+			};
+		})(window);
+	</script>
+	<!-- <div style='display:none;'><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div> -->
+</body>
+</html>

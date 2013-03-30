@@ -1,0 +1,122 @@
+{template "community","myshow_header"}
+
+<div id='navbar' class="fn-clear">
+	<ul class="nav">
+		<li><a class='shopping shopping-info' hidefocus='true' title="最新商品" href="/index.php?m=community&c=index&a=myshow_shopping_api&filter=new-goods">最新商品</a></li>
+		<li class='selected'><a class='shopping shopping-info' hidefocus='true' title="24小时热卖" href="/index.php?m=community&c=index&a=myshow_shopping_api&filter=hot-24-hour">24小时热卖</a></li>
+		<li><a class='shopping shopping-info' hidefocus='true' title="30天热卖" href="/index.php?m=community&c=index&a=myshow_shopping_api&filter=hot-30-hour">30天热卖</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id='canvas' data-url='/index.php?m=community&c=index&a=myshow_shopping_api'>
+		<div class='pin category ks-waterfall ks-waterfall-fixed-left'>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-women'>时尚女装</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On1[0][name] !=""}
+				{loop $p_data_On1 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+				{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-men'>品牌男装</h2>
+				<ul class='cats-list fn-clear'>
+					{if $p_data_On2[0][name] !=""}
+					{loop $p_data_On2 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+					{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-accessories'>鞋包配饰</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On3[0][name] !=""}
+					{loop $p_data_On3 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+				{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-beauty'>美容护肤</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On4[0][name] !=""}
+					{loop $p_data_On4 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-digital'>家电数码</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On5[0][name] !=""}
+					{loop $p_data_On5 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-household'>家居日用</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On6[0][name] !=""}
+					{loop $p_data_On6 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-baby'>母婴用品</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On7[0][name] !=""}
+					{loop $p_data_On7 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-health'>美食保健</h2>
+				<ul class='cats-list fn-clear'>
+				{if $p_data_On8[0][name] !=""}
+					{loop $p_data_On8 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				{/if}
+				</ul>
+			</div>
+			<div class="cats cats-shopping">
+				<h2 class='cats-title cats-title-sports'>文体用品</h2>
+				<ul class='cats-list fn-clear'>
+					{loop $p_data_On9 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				</ul>
+			</div>
+			<div class="cats cats-last cats-shopping">
+				<h2 class='cats-title cats-title-virtual'>虚拟物品</h2>
+				<ul class='cats-list fn-clear'>
+					{loop $p_data_On10 $r}
+					<li><a target='_blank' title="" href="/tag-{$r[classid]}.html">{$r[name]}</a></li>
+					{/loop}
+				</ul>
+			</div>
+			<form id='cats-search' class='search cats-search' name='cats-search' method='post' action='/index.php?m=community&c=index&a=search' target="_blank">
+				<div class='fancy'><input type='text' name="q" class='search-wd' /><label class='label'>搜索</label><button type='submit'></button></div>
+			</form>
+		</div>
+	</div>
+
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

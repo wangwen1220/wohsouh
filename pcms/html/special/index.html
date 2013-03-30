@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>火秀网</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_home.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.lazyload.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=2'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body class="lazyload">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页2</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事2</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">电影</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+				(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/game" title="火秀游戏频道首页">火秀游戏频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li class='first'><a href="http://www.huoshow.com/star/huoshowmingxing">网络游戏</a></li>
+				<li class='current'><a href="http://www.huoshow.com/star/neidimingxingjuhe">网页游戏</a></li>
+				<li><a href="http://www.huoshow.com/star/gangtaimingxingjuhe">手机掌机</a></li>
+				<li><a href="http://www.huoshow.com/star/rihanmingxingjuhe">单机游戏</a></li>
+				<li><a href="http://www.huoshow.com/star/rihanmingxingjuhe">小游戏</a></li>
+				<li><a href="http://www.huoshow.com/star/rihanmingxingjuhe">游戏图库</a></li>
+				<li class='last'><a href="http://www.huoshow.com/pic/photo">游戏产业</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="search">
+	<form method="get" name="search" id="search" action="/app/" target="_blank" onSubmit="return checkSForm()">
+		<input type="hidden" value="search" name="app"/>
+		<input type="hidden" value="index" name="controller"/>
+		<input type="hidden" value="search" name="action"/>
+		<input type="text" value="请输入关键字" id="search_wd" name="wd" onFocus="clearKeyword()" onBlur="clearKeyword()"/>
+		<select name="type" id="search_type" >
+			<option value="article">新闻</option>
+			<option value="all">全站</option>
+			<option value="picture">图片</option>
+			<option value="video">视频</option>
+		</select>
+		<input type="submit" id="search_submit" value="搜 索"/>
+	</form>
+	<dl class='hot_game_nav'>
+		<dt><h2>热门游戏</h2></dt>
+		<dd><a href='#' title=''>梦幻西游</a> | <a href='#' title=''>梦幻西游</a> | <a href='#' title=''>梦幻西游</a> | <a href='#' title=''>梦幻西游</a> | <a href='#' title=''>梦幻西游</a> | <a href='#' title=''>梦幻西游</a> | <a href='#' title=''>梦幻西游</a> | <a href='#' title=''>更多&gt;&gt;</a></dd>
+	</dl>
+	<script>
+		$(function(){
+			window.clearKeyword = function(){
+				var search_wd = $.trim($("#search_wd").val());
+				if(search_wd=='请输入关键字'){
+					$("#search_wd").val('');
+				}
+				if(search_wd==''){
+					$("#search_wd").val('请输入关键字');
+				}
+			}
+			window.checkSForm = function()
+			{
+				var search_wd = $.trim($("#search_wd").val());
+				if(search_wd=='请输入关键字' || search_wd==''){
+					alert('请输入关键字');
+					return false;
+				}
+			}
+		});
+	</script>
+</div>
+<div class="clear"></div>
+<!--main-->
+<div class="main special-channel">
+	<div class="col-left">
+        <div class="box-hots">
+            <div class="icon"></div>
+            <div class="content">
+            	<div class="special-slide">
+				                    <div class="changeDiv">
+					                    </div>
+				                    <div class="change">
+                        <i class="cur">1</i>
+                        <i>2</i>
+                    </div>
+                </div>
+<script type="text/javascript"> 
+$(function(){
+	new slide(".special-slide","cur",674,126);
+})
+</script>
+<div class=" bk30 hr"></div>
+<ul class="list row-2 f14 lh24">
+	</ul>
+</div>
+        </div>
+        <div class="bk10"></div>
+        <div class="box">
+        		<h5>专题</h5>
+<div class="pad-lr-10">
+    <ul class="list row-2 f14 lh24">
+			<li>·<a href="http://pnews.wjy.huoshow.com/index.php?m=special&c=index&specialid=24" target="_blank">游戏专题蓝色模版</a></li>
+
+			<li>·<a href="http://pnews.wwen.huoshow.com/index.php?m=special&c=index&specialid=23" target="_blank">模板开发</a></li>
+
+			<li>·<a href="http://pnews.wjy.huoshow.com/html/special/wjy/" target="_blank">wjy</a></li>
+
+			<li>·<a href="http://pnews.zyc.huoshow.com/index.php?m=special&c=index&specialid=21" target="_blank">专题测试</a></li>
+
+			<li>·<a href="http://pnews.ck.huoshow.com/index.php?m=special&c=index&specialid=10" target="_blank">魔兽世界</a></li>
+
+	    </ul>
+</div>
+        </div>
+    </div>
+<div class="col-auto">
+
+    <div class="box">
+            <h5 class="title-2">一周点击排行</h5>
+			            <ul class="content digg">
+				                <li><a href="http://pnews.wjy.huoshow.com/html/special/2012/1102/137.html" target="_blank">wwwww</a></li>
+                            <li><a href="http://pnews.wjy.huoshow.com/html/special/2012/1106/138.html" target="_blank">sdfdsfdf</a></li>
+                        </ul>
+			    </div>
+    <div class="bk10"></div>
+    <div class="box">
+            <h5 class="title-2">一周评论排行</h5>
+			            <ul class="content digg">
+				                <li><a href="http://pnews.zyc.huoshow.com/index.php?m=content&c=index&a=show&catid=68&id=9718" target="_blank">《雪花那个飘》情怀未完美 仍然有看头</a></li>
+                            <li><a href="http://pnews.ck.huoshow.com/index.php?m=content&c=index&a=show&catid=69&id=101933" target="_blank">aaaa</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0614/300819.shtml" target="_blank">发达光和热过热器热范德萨</a></li>
+                            <li><a href="http://pnews.zyc.huoshow.com/index.php?m=content&c=index&a=lists&catid=25/2012/0211/54081.shtml" target="_blank">传前港姐梁小冰出轨 与王志海微博传情</a></li>
+                            <li><a href="http://pnews.ck.huoshow.com/index.php?m=content&c=index&a=lists&catid=17/2012/0118/49994.shtml" target="_blank">杰克逊模仿者安澜人民大会堂向女友唱出心声</a></li>
+                            <li><a href="http://pnews.wjy.huoshow.com/index.php?m=content&c=index&a=lists&catid=110/2012/0210/109661.shtml" target="_blank">Angelababy发声明否认结婚 保留追究权利</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0525/300485.shtml" target="_blank">fda g agfd g</a></li>
+                            <li><a href="http://pnews.zyc.huoshow.com/index.php?m=content&c=index&a=lists&catid=139/2012/0423/101928.shtml" target="_blank">图:巨乳女神刘雨欣性感写真集锦</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0517/300258.shtml" target="_blank">宋小宝喜获龙凤胎 将亮相辽视《劳动最光荣》gfdw htrw ht 23y452</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0529/300594.shtml" target="_blank">DSADF GR EQGREQ GRE QGR</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0530/300600.shtml" target="_blank">好我和他我是和天热舞建议我今天如威后天热舞该入土去的11</a></li>
+                            <li><a href="http://pnews.wjy.huoshow.com/html/special/wjy/" target="_blank">wjy</a></li>
+                            <li><a href="http://pnews.wjy.huoshow.com/index.php?m=content&c=index&a=lists&catid=110/2012/0210/54015.shtml" target="_blank">Angelababy发声明否认结婚 保留追究权利</a></li>
+                            <li><a href="http://pnews.ck.huoshow.com/index.php?m=content&c=index&a=show&catid=67&id=50613" target="_blank">新《西游记》初八上星 聂远:唐僧不仅是“硬汉”</a></li>
+                            <li><a href="http://pnews.wjy.huoshow.com/index.php?m=content&c=index&a=lists&catid=26/2012/0210/53842.shtml" target="_blank">2012国际中华小姐出席金至尊加冕仪式(图)</a></li>
+                            <li><a href="http://pnews.zyc.huoshow.com/index.php?m=content&c=index&a=lists&catid=26/2012/0211/54139.shtml" target="_blank">选秀节目收视差 赛门考尔大屠杀</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0320/98749.shtml" target="_blank">超模时尚撞出糖果色 撞出一个甜美春夏</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0521/300316.shtml" target="_blank">果果消消看</a></li>
+                            <li><a href="http://pnews.ck.huoshow.com/index.php?m=special&c=index&specialid=10" target="_blank">魔兽世界</a></li>
+                            <li><a href="http://pnews.trunk.huoshow.com/2012/0529/300589.shtml" target="_blank">放个大和过分啊很热染发规划法更发达桂丰大厦更发达国的ss</a></li>
+                        </ul>
+			    </div>
+</div>
+
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+												<a href="http://pnews.trunk.huoshow.com/html/about/aboutus/" target="_blank">关于火秀</a> |  
+								<a href="http://pnews.trunk.huoshow.com/html/about/contact/" target="_blank">联系我们</a> |  
+								<a href="http://pnews.trunk.huoshow.com/html/about/advertising/" target="_blank">广告服务</a> |  
+								<a href="http://pnews.trunk.huoshow.com/html/about/joinus/" target="_blank">诚聘英才</a> |  
+								<a href="http://pnews.trunk.huoshow.com/html/about/partners/" target="_blank">合作伙伴</a> |  
+												<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

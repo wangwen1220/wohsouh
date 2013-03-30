@@ -1,0 +1,337 @@
+/*html {
+	font: 12px/1.4em Helvetica, Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	color: black;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+
+body {
+	font: 12px/1.4em Helvetica, Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	color: black;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+
+ol {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+img {
+	border: 0px currentColor;
+}
+
+input[disabled] {
+	border: 1px solid rgb(204, 204, 204);
+}
+
+a {
+	color: rgb(56, 94, 162);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}*/
+
+#upload-pin-dialog {
+	position: absolute;
+	top: 20%;
+}
+
+#upload-pin-dialog #header {
+	margin: 5px auto 0px;
+	width: 950px;
+	height: 110px;
+	overflow: hidden;
+}
+
+#upload-pin-dialog #content {
+	margin: 5px auto 0px;
+	width: 610px;
+	height: 600px;
+	overflow: hidden;
+}
+
+#upload-pin-dialog #content #cleft {
+	width: 160px;
+	height: 600px;
+	float: left;
+}
+
+#upload-pin-dialog #content #cmain {
+	width: 630px;
+	height: 460px;
+	float: left;
+}
+
+#upload-pin-dialog #content #cright {
+	width: 160px;
+	height: 600px;
+	float: left;
+}
+
+#upload-pin-dialog #content #cmain #uploadform {
+	margin: 0px 46px;
+	width: 522px;
+	overflow: hidden;
+	clear: both;
+}
+
+#upload-pin-dialog #content #cmain #cmainbottom {
+	margin: 0px 23px;
+	width: 540px;
+	height: 126px;
+}
+
+#upload-pin-dialog #footer {
+	margin: 5px auto;
+	width: 950px;
+	height: 115px;
+	overflow: hidden;
+}
+
+#upload-pin-dialog #footer1 {
+	margin: 5px auto;
+	width: 950px;
+	height: 40px;
+	text-align: center;
+	overflow: hidden;
+}
+
+#upload-pin-dialog #imglist {
+	width: 520px;
+	height: 90px;
+	border:1px solid #6CF;
+	overflow-y:scroll;
+	margin:0px 20px;
+}
+
+#upload-pin-dialog div.button1 {
+	line-height: 25px;
+	margin-top: 5px;
+	padding-left:220px;
+}
+
+#upload-pin-dialog span.status {
+	line-height: 25px;
+	margin-left: 15px;
+}
+
+#upload-pin-dialog .batch_up {
+	padding:10px;
+	height:60px;
+}
+
+#upload-pin-dialog div.textads {
+	margin-top: 8px;
+	background-color: rgb(204, 204, 204);
+	height:30px;
+	line-height:30px;
+}
+
+#upload-pin-dialog div.flash {
+	border-color: rgb(217, 228, 255);
+	margin: 0px;
+	/**height: 300px;**/
+	overflow: auto;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+
+#upload-pin-dialog div.fieldset {
+	margin: 10px 0px;
+	padding: 10px;
+	border: 1px solid rgb(175, 225, 76);
+	background-color: #fff;
+}
+
+#upload-pin-dialog div.fieldset span.legend {
+	font: 700 14px/normal Arial, Helvetica, sans-serif;
+	padding: 3px;
+	top: 0px;
+	color: rgb(115, 179, 4);
+	position: relative;
+	font-size-adjust: none;
+	font-stretch: normal;
+	background-color: rgb(255, 255, 255);
+}
+
+#upload-pin-dialog .progressWrapper {
+	width: 650px;
+	overflow: hidden;
+}
+
+#upload-pin-dialog .progressContainer {
+	margin: 5px;
+	padding: 4px;
+	border: 1px solid rgb(232, 232, 232);
+	background-color: rgb(247, 247, 247);
+	/**
+	overflow: hidden;
+
+	**/
+}
+
+#upload-pin-dialog .message {
+	margin: 1em 0px;
+	padding: 10px 20px;
+	border: 1px solid rgb(255, 221, 153);
+	overflow: hidden;
+	background-color: rgb(255, 255, 204);
+}
+
+#upload-pin-dialog .red {
+	border: 1px solid rgb(181, 0, 0);
+	background-color: rgb(255, 235, 235);
+}
+
+#upload-pin-dialog .green {
+	border: 1px solid rgb(221, 240, 221);
+	background-color: rgb(235, 255, 235);
+}
+
+#upload-pin-dialog .blue {
+/**
+	border: 1px solid rgb(206, 226, 242);
+	background-color: rgb(240, 245, 255);
+	**/
+}
+
+#upload-pin-dialog .progressName {
+	width: 323px;
+	height: 14px;
+	text-align: left;
+	color: rgb(85, 85, 85);
+	overflow: hidden;
+	font-size: 9pt;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+#upload-pin-dialog .progressBarInProgress {
+	width: 0%;
+	height: 2px;
+	font-size: 0px;
+	margin-top: 2px;
+	background-color: blue;
+}
+
+#upload-pin-dialog .progressBarComplete {
+	width: 0%;
+	height: 2px;
+	font-size: 0px;
+	margin-top: 2px;
+	background-color: blue;
+}
+
+#upload-pin-dialog .progressBarError {
+	width: 0%;
+	height: 2px;
+	font-size: 0px;
+	margin-top: 2px;
+	background-color: blue;
+}
+
+#upload-pin-dialog .progressBarComplete {
+	width: 100%;
+	visibility: hidden;
+	background-color: green;
+}
+
+#upload-pin-dialog .progressBarError {
+	width: 100%;
+	visibility: hidden;
+	background-color: red;
+}
+
+#upload-pin-dialog .progressBarStatus {
+	/**width: 337px;**/
+	text-align: left;
+	font-family: Arial;
+	font-size: 9pt;
+	margin-top: 2px;
+	white-space: nowrap;
+}
+
+#upload-pin-dialog a.progressCancel {
+	background-position: -14px 0px;
+	width: 14px;
+	height: 14px;
+	font-size: 0px;
+	float: right;
+	display: block;
+	background-image: url("../images/cancelbutton.gif");
+	background-repeat: no-repeat;
+}
+
+#upload-pin-dialog a.progressCancel:hover {
+
+}
+
+#upload-pin-dialog .swfupload {
+	vertical-align: top;
+}
+
+/* 页面自定义 */
+#upload-pin-dialog .progressWrapper, div.flash {
+	overflow: visible;
+	background-color: #fff;
+	*zoom: 1;
+}
+#upload-pin-dialog .progressContainer {
+	background-color: #fbfbfb;
+	*zoom: 1;
+}
+#upload-pin-dialog .button1 input {
+	display: none;
+}
+#upload-pin-dialog span.status {
+	display: inline-block;
+	height: 45px;
+	line-height: 45px;
+}
+#upload-pin-dialog div.textads {
+	padding: 0 10px;
+	background-color: #e9e9e9;
+	display: none;
+}
+#upload-pin-dialog div.fieldset span.legend {
+	padding: 3px 5px;
+}
+#upload-pin-dialog #SWFUpload_0 {
+	position: static;
+}
+#upload-pin-dialog #SWFUpload_0:focus {
+	outline: none;
+}

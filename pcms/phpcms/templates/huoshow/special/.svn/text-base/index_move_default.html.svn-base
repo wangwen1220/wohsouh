@@ -1,0 +1,181 @@
+{template 'special', 'header'}
+<div class="main_body">
+	<!--Left-->
+	<div class="body_left">
+		<div class="left_w300">
+			<div class="banner_300x250">
+            	<div class="FocusPic">
+	            {pc:special  action="content_list" specialid="10" thumb="1" num="5"}
+	            	<div class="content" id="main-slide">
+	                    <div class="changeDiv">  
+	                    {loop $data $r}
+	                        <a href="{$r['url']}" title="{str_cut($r['title'],30)}"><img src="{thumb($r['thumb'],300,250)}" alt="{$r['title']}" width="300" height="250" /></a>
+	                    {/loop}
+	                    </div>
+	                </div>
+	            {/pc}
+	            </div>
+			</div>
+			<div class="banner_300x100">
+				<img src="{IMG_PATH}special/move/defualt1/Music_banner_01.jpg" width="300" height="100">
+			</div>
+			<div class="Space_8px"></div>
+			<div class="White_box_300">
+				<div class="White_box_300_01">
+					<div class="right_300_bt">
+						<span class="right_250_wz">精彩预告</span>
+					</div>
+					<div class="clear"></div>
+					<div class="left_300_Video">
+						{php $blockid = 'special_'.$specialid.'_1';}
+						{pc:block pos="$blockid"}
+						{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="White_box">
+			{pc:special  action="content_list" specialid="$specialid" listorder="4" num="17"}
+			<div class="White_box_01">
+				{loop $data $r}
+				<div class="Center_bt">
+					<h3 class="Color_red">
+						<span class="Center_bt_tb"></span>{str_cut($r['title'], 60, '')}
+					</h3>
+					<p class="Color_Gray"><a href="{$r['url']}" target="_blank">{str_cut($r[description],150)}</a></p>
+				</div>
+				{php if($n==3) break;}
+				{/loop}
+				<div class="Center_news">
+					<ul class="Center_newslist">
+						{loop $data $r}
+						{if $n>3}
+						<li>
+						<span class="Center_newslist_dian"></span><a href="{$r['url']}">{str_cut($r['title'], 70, '')}</a>
+						</li>
+						{/if}
+						{/loop}
+					</ul>
+				</div>
+			</div>
+			{/pc}
+		</div>
+	</div>
+	<!--Right-->
+	<div class="body_right">
+		<div class="White_box_250">
+			<div class="White_box_250_01">
+				<div class="right_250_bt">
+					<span class="right_250_wz">《{$title}》简介</span>
+				</div>
+				{php $blockid = 'special_'.$specialid.'_2';}
+				{pc:block pos="$blockid"}
+				{/pc}
+			</div>
+		</div>
+		<div class="Space_8px"></div>
+		<div class="White_box_250">
+			<div class="White_box_250_01">
+				<div class="right_250_bt">
+					<span class="right_250_wz">《{$title}》调查</span>
+				</div>
+				<div class="clear"></div>
+				{php $blockid = 'special_'.$specialid.'_3';}
+				{pc:block pos="$blockid"}
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">
+				<span class="nr_960_wz">主演风采</span>
+			</div>
+			<div class="zhuyan_pic">
+				{php $blockid = 'special_'.$specialid.'_4';}
+				{pc:block pos="$blockid"}
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="Space_8px"></div>
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">
+				<span class="nr_960_wz">拍摄进程</span>
+			</div>
+			<div class="paishe_pic">
+				{php $blockid = 'special_'.$specialid.'_5';}
+				{pc:block pos="$blockid"}
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="Space_8px"></div>
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">
+				<span class="nr_960_wz">精彩视频</span>
+			</div>
+			<div class="zt_video_nr">
+			{php $blockid = 'special_'.$specialid.'_6';}
+			{pc:block pos="$blockid"}
+			{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="Space_8px"></div>
+
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">
+				<span class="nr_960_wz">幕后花絮</span>
+			</div>
+			<div class="muhou_pic">
+				{php $blockid = 'special_'.$specialid.'_7';}
+				{pc:block pos="$blockid"}
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="Space_8px"></div>
+	{loop $types $t}
+	<div class="White_box_960">
+		<div class="White_box_960_01">
+			<div class="nr_960_bt">
+				<span class="zt_more"><a href="{$t['url']}"><< 更多</a></span> <span class="nr_960_wz">{$t['name']}</span>
+			</div>
+			<div class="Center_news_01">
+				{pc:special  action="content_list" typeid="$t[typeid]" specialid="$id" listorder="3" num="40"}
+				<ul class="Center_newslist_01">
+				{loop $data $r}
+                	<li>·<a href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r['title'], 90)}</a></li>
+					{if $n%20==0}
+					</ul><ul class="Center_newslist_01">
+					{/if}
+            	{/loop}
+            	{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="bk10"></div>
+	{/loop}
+	<div class="Comments">
+		{if module_exists('comment')}
+      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("special",$id,$siteid)}&iframe=1" width="100%" height="40%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+	  {/if}
+	  <script language='javascript' src='{APP_PATH}index.php?m=formguide&c=index&a=show&formid=48&action=js'></script>
+	</div>
+	<div class="Space_8px"></div>
+
+</div>
+<script type="text/javascript"> 
+<!--
+$(function(){
+	new slide("#main-slide","cur",300,250,1);//焦点图
+	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+})
+//-->
+</script>
+<div style="clear:both;"></div>
+{template 'content', 'footer'}

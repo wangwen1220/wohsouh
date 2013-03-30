@@ -1,0 +1,5 @@
+{include file="home/home_weibo_header.html"}
+{if $user_uid == $r_user_uid}
+{include_php file="huoshow/module/weibo/weibo_user_send_dynamic.php"}
+{/if}
+{include file="weibo/weibo_user_dynamic.html"}

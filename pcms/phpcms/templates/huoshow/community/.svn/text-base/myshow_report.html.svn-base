@@ -1,0 +1,25 @@
+<div id='report-dialog' class="dialog report-dialog">
+	<div class="header">
+		<h2 class='title'>举报不良信息</h2>
+		<a class="close" href="#"><strong>Close</strong></a>
+	</div>
+	<form action='/index.php?m=community&c=index&a=addmyshow_report' method='post' name="report" class='body' id="report">
+		<p class='tips'>不良信息是指含有各类卖家店铺、商品广告、虚假中奖信息或其它骚扰你的内容</p>
+		<h3>你要举报的是 <a href='#'>{$user_info[0][nickname]}</a> 的{if $report_type == 1}用户{elseif $report_type == 2}分享{elseif $report_type == 3}评论{elseif $report_type == 4}私信{/if}：</h3>
+		<div class='report-pin'>
+			<a class='avatar'><img src='{$user_info[0][head_img_url]}' alt='' width='52' height='52' /></a>
+			<p>{$share_file_name}</p>
+		</div>
+		<div class='report-type'><em>举报类型：</em> <label><input name="is_content" type='radio' value="1" />
+		虚假广告(商品)</label> <label><input name="is_content" type='radio' value="2" />
+		虚假中奖信息</label> <label><input name="is_content" type='radio' value="3" />
+		其它</label></div>
+		<div class='detail'><label>补充说明<span>(选填)</span>：</label> <textarea name="other_explain" class='input' id="other_explain"></textarea>
+			<input name="uid" type="hidden" value="{$uid}" />
+			<input name="url" type="hidden" value="{$url}" />
+			<input name="report_type" type="hidden" value="{$report_type}" />
+			<input name="reply_type" type="hidden" value="{$reply_type}" />
+		</div>
+		<div class='submit'><span class='esbtn'><button type='submit' class='sbtn'>确认举报</button></span> <p>请放心，我们会尽快处理，你的隐私将会得到保护</p></div>
+	</form>
+</div>

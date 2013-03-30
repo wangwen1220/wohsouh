@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>火秀游戏_火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="{CSS_PATH}huoshow_game.css" rel="stylesheet" />
+	<script src="{JS_PATH}jquery.min.js"></script>
+	<script src="{JS_PATH}jquery.cookie.js"></script>
+	<script src="{JS_PATH}huoshow_basic.js"></script>
+	<script src="{JS_PATH}huoshow_config.js"></script>
+	<script src="{JS_PATH}huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=2'></script>
+	<link rel='icon' href='/favicon.ico' />
+	{if !$id}
+		{if $catid != 177 && $catid != 178 && $catid != 179 && $catid != 180 && $catid != 181}
+			<base target=\"_blank\">
+		{/if}
+	{/if}
+</head>
+
+<body class="game lazyload">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+				(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="{$CATEGORYS[14][url]}" title="火秀游戏频道首页">火秀游戏频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				{loop subcat(14,0,0,$siteid) $r}
+				{php $num++}
+				<li {if ($r[catid] == $catid)}class="current"{/if}><a href="{$r[url]}">{$r[catname]}</a></li>
+				{php if($num==6) break;}
+				{/loop}
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid={$siteid}"-->
+	<span class="hot_game_nav">
+		您现在的位置: <a href="{siteurl($siteid)}">首页</a><span> &gt; </span>
+		{if $catid == 14}
+			{catpos($catid)}
+		{else}
+			{catpos($catid)}
+			{if !empty($id)}
+				&gt; 正文
+			{else}
+				{if $commentid}
+					评论列表
+				{else}
+					{if $catid !=83 && $catid !=84 && $catid !=85 && $catid !=86} &gt; 列表{/if}
+				{/if}
+			{/if}
+		{/if}
+	</span>
+</div>

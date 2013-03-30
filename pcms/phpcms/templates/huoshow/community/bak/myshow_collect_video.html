@@ -1,0 +1,101 @@
+{template "community","myshow_header"}
+<script>
+(function($){
+	$(function(){
+		var $result = $('#result');
+		$('#submit').click(function(){
+			var url = $('#url').val();
+			if(!url){
+				$result.html("<font color=red>请输入视频地址</font>");
+				return false;
+			}
+			$result.html("<font color=green>视频加载中...</font>");
+			$('#search-url').val(url);
+			$('.open_vedio').live('click', function(){
+				$(this).hide();
+				$(this).next('.vedio').show();
+			});
+			$('.close_vedio').live('click', function(){
+				$(this).parent().parent().hide();
+				$(this).parent().parent().prev('.open_vedio').show();
+			});
+			$.ajax({
+				url: '/api/collectionvideo/server.php',
+				data: {url: url},
+				dataType: 'json',
+				type: 'POST',
+				success: function(json){
+					if(!json.status){
+						$result.html("<font color=red>暂不支持该视频地址</font>");
+						return false;
+					}else{
+						var html = "<a class='img' alt='"+json.data.title+"' href='"+json.data.url+"'>"+"<img src='"+json.data.img+"'>"+"</a>";
+						$result.html(html);
+						$('#video-url').val(json.data.url);
+						$('#video-title').val(json.data.title);
+						$('#video-img').val(json.data.img);
+						return false;
+					}
+				}
+			});
+		});
+	});
+})(jQuery);
+</script>
+<div id='collect-video-pin' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>网址采集－视频</h2>
+		<a class="close" href="#"><strong>Close</strong></a>
+	</div>
+	<div class="search-pin-form fancy"><input class="search-pin" type="text" id="url" name="url" value="" /><label class='label'>支持优酷、土豆、酷六、56、乐视、搜狐</label><button id="submit" type="submit" class='btn' name='search_pin_submit'>查找</button></div>
+	<div class='select-pin fn-clear'>
+		<div id="result" class='pin-img'></div>
+		<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=index&a=myshow_collect_video&act_submit=yes">
+			<input type="hidden" name="url" id='video-url' value="" />
+			<input type="hidden" name="title" id='video-title' value="" />
+			<input type="hidden" name="thumb" id='video-img' value="" />
+			<input type="hidden" name="local_path" id='search-url' value="" />
+			<input type="hidden" name="album" class="inputselect" value="default_id" />
+			<input type='hidden' name='tags_id' id='pin-tags-id' value='' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>我的专辑</cite>
+				<ul class='options'>
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+					{loop $a_arr $r}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+					{/loop}
+					{loop $list_arr $r}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+					{/loop}
+				</ul>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc'></textarea>
+				<label>描述一下这个专辑...别忘@好友哦</label>
+			</div>
+			<div class='fancy'>
+				<input type='text' name='tags' id='pin-tags' class='tags' value='' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+				<div id='menu-openness' class='menu-openness'>
+					<ul class='openness'>
+						<li><a href='javascript:;'><span>分享对所有人可见</span></a></li>
+						<li class='selected'><a href='javascript:;'><span>分享仅对被@好友可见</span></a></li>
+						<li><a href='javascript:;'><span>分享对自己可见</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<ul id='tag-list' class='tag-list'>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="overlay"></div>
+</body>
+</html>

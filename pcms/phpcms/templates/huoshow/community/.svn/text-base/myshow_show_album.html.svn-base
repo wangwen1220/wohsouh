@@ -1,0 +1,100 @@
+{template "community","myshow_header"}
+
+<div id="wrapper" class='user-album'>
+	<div class="nav-bar">
+		<h2>{$album_info[album_name]}<span class="stats">(含<span class="count">{$album_info[file_count]}</span>个分享)</span></h2>
+		<div class="album-actions fn-clear">
+			<div id='jt-share-list' class="share dbtn" data-t="{$album_info[album_name]}">
+				<a class='title' href='javascript:;'>分享到<span>▼</span></a>
+				<ul class="fn-hide">
+					<li><a href='javascript:;' class='jt-share tsina' data-i='tsina' hidefocus='true'>微博</a></li>
+					<li><a href='javascript:;' class='jt-share tqq' data-i='tqq' hidefocus='true'>微博</a></li>
+					<li><a href='javascript:;' class='jt-share qzone' data-i='qzone' hidefocus='true'>空间</a></li>
+					<li><a href='javascript:;' class='jt-share douban' data-i='douban' hidefocus='true'>豆瓣</a></li>
+				</ul>
+			</div>
+			<!--<a class="follow dbtn" href="#"><strong>关注该专辑</strong></a>-->
+			{if (empty($logouser))}
+					<!--<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$uid}&action=follow'>关注该专辑</a>-->
+					<a class="follow follow-album dbtn" href="/index.php?m=community&c=index&a=create_watchAlbum&album_id={$album_id}&action=follow"><strong>关注该专辑</strong></a>
+					{else}
+					{if (($logouser == $album_info['uid']))}
+					<!--<a class='edit edit-album' href='/index.php?m=community&c=index&a=myshow_modify_album&album_id={$uid}'>编辑该专辑</a>-->
+					<a class="follow dbtn" href="/index.php?m=community&c=index&a=myshow_modify_album&album_id={$album_id}"><strong>编辑该专辑</strong></a>
+					{elseif (!empty($logouser) && $isfollowalbum == 0)}
+						<!--<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$uid}&action=follow'>关注该专辑</a>-->
+						<a class="follow follow-album dbtn" href="/index.php?m=community&c=index&a=create_watchAlbum&album_id={$album_id}&action=follow"><strong>关注该专辑</strong></a>
+					{elseif (!empty($logouser) && $isfollowalbum == 1) && ($logouser != $album_info['uid'])}
+						<!--<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$uid}&action=cancel'>取消关注该专辑</a>-->
+						<a class="follow follow-album dbtn" href="/index.php?m=community&c=index&a=create_watchAlbum&album_id={$album_id}&action=cancel"><strong>取消关注</strong></a>
+					{/if}
+					{/if}
+		</div>
+	</div>
+</div>
+
+<div id="content">
+	<div id='canvas' class='user-album' data-url='/index.php?m=community&c=index&a=json_myshow_show_album&album_id={$album_id}' data-id='{$album_id}'>
+	{if $logouser==$uid && $logouser!=""}<div class='pin pin-empty ks-waterfall ks-waterfall-fixed-left'></div>{/if}
+	{if $album_info[file_count]==0 && $isalbum==1}
+	<div class='pin-tips'></div>
+	{/if}
+		<div class="pin album-meta ks-waterfall ks-waterfall-fixed-right">
+			<div class="album-user">
+				<h3 class="title">创建者</h3>
+				<a class="avatar"  href="/m{$album_info[uid]}.html"><img src="{$album_info[owner_avatar]}" width='60' height='60' /></a>
+				<a class="name" class="x"  href="/m{$album_info[uid]}.html">{$album_info[nickname]}</a>
+				<p class='stats'>
+				<span class='share'>分享 <em>{if $user[uid]==$album_info['uid']}{$user_share_num}{else}{$share_num}{/if}</em></span>
+				<span class='album'>专辑 <em>{if $album_num}{$album_num}{else}0{/if}</em></span>
+				<span class='fans'>粉丝 <em>{if $fans_num}{$fans_num}{else}0{/if}</em></span>
+				</p>
+			</div>
+			<div class="album-category">
+				<h3>所属分类</h3>
+				<a class="name" href="/fl-{$class_id}.html">{$class_name}</a>
+			</div>
+			<div class="album-desc">
+				<h3>专辑描述</h3>
+				<p>{$album_info[description]}</p>
+			</div>
+			<div class="follower">
+				<h3>关注者<span>(共{$follow_count}人，<a class="view-all" href='/gz{$album_info[uid]}.html'>查看全部</a>)</span></h3>
+				<div class="follower-list">
+				{loop $user_follow $r}
+					<a href="/gz{$r[uid]}.html"><img src="{$r['follow_avatar']}" width='30' height='30' /></a>
+				{/loop}
+				</div>
+			</div>
+			<form id='js-comment-form' class='add-comment fn-clear' method='post' action='?m=community&c=index&a=create_album_comment&album_id={$album_id}'>
+				<div class="fancy">
+					<textarea name="album_comment" id="album_comment"></textarea>
+					<label>添加你的评论...</label>
+				</div>
+				<!--a class='face' href='javascript:;'>表情</a-->
+				<button type='submit'></button>
+			</form>
+			<div id='js-comments' class="comments">
+				<h4>评论(<span id='comment-num'>{$reply_num}</span>)</h4>
+				<ul id='js-comment-list' class='comment-list'>
+					{template "community","myshow_album_comment"}
+				</ul>
+			</div>
+			<div class='other-album'>
+				<h3>作者其它专辑</h3>
+				<div class='album-bar'>
+				{loop $otheralbum $r}
+					<a href='index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'><span class='text'>{$r[album_name]}</span><span class='stats'>{$r[file_count]}</span></a>
+				{/loop}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /><span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

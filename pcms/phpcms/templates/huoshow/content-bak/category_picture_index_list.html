@@ -1,0 +1,36 @@
+{template "content","picture_header"}
+<!--Main Body-->
+<div class="main_body">
+    <div class="subpage_pic">
+        <div class="subpage_pic_01">
+            <div class="subpage_pic_list">
+            	<div class="subpage_pic_bt"><h2>{getCatNameFromCatid($catid)}</h2><span class="sub_nav">
+				<!--<a target="_blank" href="{$CATEGORYS[182][url]}">清纯</a>
+				<a target="_blank" href="{$CATEGORYS[183][url]}">性感</a>
+				<a target="_blank" href="{$CATEGORYS[184][url]}">丝袜</a>-->
+				{loop subcat($catid,0,0,$siteid) $r}
+						<a target="_blank" href="{$r[url]}">{$r[catname]}</a> 
+						{/loop}
+				</span></div>
+            	<ul >
+				{pc:content  action="lists" catid="$catid" order="id DESC" num="20" page="$page"}
+				{loop $data $r}
+				<li>
+					<a title="{$r['title']}" target="_blank" href="{$r['url']}"><img alt="{$r['title']}" src="{thumb($r[thumb],158,118)}" width="158" height="118">
+					<span >{str_cut($r['title'],20,'')}</span></a>
+				</li>
+   				{/loop}
+				{/pc}
+   </ul>
+                <div class="clear"></div>
+                <div class="fanye pic_fanye">
+        				<div id="fanye_01">
+{$pages}
+</div>
+</div>
+        	</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{template "content","footer"}

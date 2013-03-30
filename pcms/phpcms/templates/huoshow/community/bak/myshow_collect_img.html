@@ -1,0 +1,89 @@
+{template "community","myshow_header"}
+<div id='collect-img-pin' class="dialog collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>网址采集－图片</h2>
+		<a class="close" href="#"><strong>Close</strong></a>
+	</div>
+	<form id="search-img-form" class="search-pin-form" name='search_pin' method='post' action="/index.php?m=community&c=index&a=myshow_get_img_api&s_url=">
+		<div class='fancy'><input type='text' name='search_pin' class='search-pin' /><label class='label'>请输入要采集图片的网址，如 http://www.qq.com</label><button type='submit' name='search_pin_submit' class='btn'>查找</button></div>
+	</form>
+
+	<div class='select-pin fn-clear'>
+		<div class='pin-img'>
+			<ul id='pin-img-list' class="img-list"></ul>
+			<div class='img-nav'><a class='prev disabled' href='#'>←上一张</a> <a class='next disabled' href='#'>下一张→</a></div>
+		</div>
+		<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=index&a=myshow_collect_img&act_submit=yes">
+			<input type="hidden" name="thumb" id='img-src' value="" />
+			<input type="hidden" name="local_path" id='search-url' value="" />
+			<input type="hidden" name="album" class="inputselect"  value="default_id"/>
+			<input type='hidden' name='tags_id' id='pin-tags-id' value='' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>我的专辑</cite>
+				<ul class='options'>
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+					{loop $a_arr $r}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+					{/loop}
+					{loop $list_arr $r}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+					{/loop}
+				</ul>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc'></textarea>
+				<label>描述一下这个专辑...别忘@好友哦</label>
+			</div>
+			<div class='fancy'>
+				<input type='text' name='tags' id='pin-tags' class='tags' value='' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+				<div id='menu-openness' class='menu-openness'>
+					<ul class='openness'>
+						<li><a href='javascript:;'><span>分享对所有人可见</span></a></li>
+						<li class='selected'><a href='javascript:;'><span>分享仅对被@好友可见</span></a></li>
+						<li><a href='javascript:;'><span>分享对自己可见</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<ul id='tag-list' class='tag-list'>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag2' href='#'>美容</a></li>
+				<li><a id='tag3' href='#'>美食</a></li>
+				<li><a id='tag4' href='#'>旅行</a></li>
+				<li><a id='tag5' href='#'>汽车</a></li>
+				<li><a id='tag6' href='#'>汽车</a></li>
+				<li><a id='tag7' href='#'>汽车</a></li>
+				<li><a id='tag8' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>美女</a></li>
+				<li><a id='tag1' href='#'>美女</a></li>
+				<li><a id='tag1' href='#'>美女</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+			</ul>
+			<p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p>
+		</div>
+	</div>
+</div>
+<div class="overlay"></div>
+</body>
+</html>

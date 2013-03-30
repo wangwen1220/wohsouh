@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if $info[name] !=""}{$title}_{$info[name]}{else}{$top_title}{/if}_火秀游戏库</title>
+	<meta name="keywords" content="{$keyword}" />
+	<meta name="description" content="{$description}" />
+	<meta name='author' content='Steven' />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+	 <link href="{CSS_PATH}special/{$css_file}" rel="stylesheet" /> 
+	<script src="{JS_PATH}jquery-1.7.2.min.js"></script>
+	<script src="{JS_PATH}myfocus-2.0.4.min.js"></script>
+	<script src="{JS_PATH}jtools.js"></script>
+	<script id='mainjs' src="{JS_PATH}special/index-game.js"></script>
+	<!-- <script src="{JS_PATH}cssrefresh.js"></script> -->
+	<!-- <script src="http://fbug.googlecode.com/svn/lite/branches/firebug1.4/content/firebug-lite-dev.js"></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<!-- <body id='special-channel-black' class="special-channel"> -->
+<body class="index-game"> <!-- 列表页添加类 page-list | 列表页添加类 index-game -->
+	{template 'content', 'hs_topbar'}
+
+	<!-- Header -->
+	<div id="header">
+		<div class='wrapper fn-clear'>
+			<h1 class='logo'><a target='_blank' href='http://game.huoshow.com/' title='火秀' hidefocus='true'>火秀</a></h1>
+
+			<form id="search" class='search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+			        <input type="hidden" value="search" name="app" />
+					<input type="hidden" value="index" name="controller" />
+					<input type="hidden" value="search" name="action" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="typeid" value="1" id="typeid" />
+				    <input type="text" class="search-wd" name="q" value='请输入游戏名称...' />
+					<!--<label for='search-wd'>站内搜索</label>
+					<div id='jselect' class='jselect'>
+						<cite class='selected'>全部</cite>
+						{php $search_model = getcache('search_model_'.$siteid,'search');}
+						<ul class='options'>
+							<li><a class='option' hidefocus='true' href="javascript:;" selectid="1">全部</a></li>
+							{loop $search_model $k=>$v}
+							<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$v['typeid']}">{$v['name']}</a></li>
+							{/loop}
+						</ul>
+					</div><input type="text" id="search-wd" name="q" />-->
+				<button type="submit" id="search-submit">搜 索</button>
+				<!-- <button type='button' class="search-advance">高级搜索</button> -->
+			</form>
+		</div>
+	</div>
+	<!-- Header End -->
+
+	<!-- Nav -->
+	{if count($nav_arr)>0}
+	<!-- 导航 -->
+	<div id="nav">
+	<ul class='nav-list fn-clear'>
+	{loop $nav_arr $r $v}
+	<li class='nav-list-item{if $NAV[id] == id} nav-list-item-current{/if}'><a href='{$v[url]}' target='_blank' hidefocus='true'>{$v[name]}</a></li>
+	{/loop}
+	</ul>
+	</div>
+	{/if}
+	<!-- Nav End -->

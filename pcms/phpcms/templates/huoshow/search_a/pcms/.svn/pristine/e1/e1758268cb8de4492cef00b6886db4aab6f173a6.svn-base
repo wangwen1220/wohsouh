@@ -1,0 +1,15 @@
+{pc:content action="site_all_hot_vedio"}
+<div class="right_news_jiaodian">
+			<div class="right_news_jiaodian_01">
+				<div class="right_news_jiaodian_bt  ui_list_box_title"><span class="wenzi">热点视频</span><!--<span class="yingshi_dujia_more"></span>--></div>
+				<div class="zixun_pic">
+					<ul>
+					{loop $data $r}
+						<li><a href="{$r[url]}" target="_blank" title="{$r[title]}"><img alt="{$r[title]}" src="{thumb($r[thumb],120,90)}" width="120" height="90" "/></a><a href="{$r[url]}" target="_blank" title="{$r[title]}">{str_cut($r[title],30,'')}</a></li>
+					{/loop}
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+{/pc}

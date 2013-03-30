@@ -1,0 +1,43 @@
+{template "content","huoshow_header"}
+<div id="hs_login" class='reg_login'>
+	<h2 class='title'>快速登录</h2>
+	<div class="body fn_clear">
+		<form id='login_form' class="login_form fn_left" method="post" action="">
+			<div><label for='login_email'>邮箱：</label><input type="text" autofocus='true' value="用户名/邮箱" name="login_email" class='text login_email' id="login_email" /></div>
+			<div><label for='login_password'>密码：</label><input type="password" name="login_password" class='text login_password' id="login_password" /></div>
+			<div><input type="checkbox" name="login_remember" class='ckbox login_remember' id="login_remember" /><label for='login_remember' class='login_remember'>记住我</label></div>
+			<div><button type="submit" name="login_submit" class="login_submit">登录</button></div>
+		</form>
+		<div class="helps fn_left">
+			<h3>已是火秀用户？<a href='#'>直接登录</a></h3>
+			<h4>使用合作网站帐号登录</h4>
+			<div id='login_connect'class="login_connect fn_clear"><a class="renren logo_connect" href="#" title='人人'>人人</a> <a class="weibo logo_connect" href="#" title='新浪微博'>新浪微博</a> <a class="qqweibo logo_connect" href="#" title='QQ微博'>QQ微博</a> <a class="qq logo_connect" href="#" title='QQ'>QQ</a> <a class="douban logo_connect" href="#" title='豆瓣'>豆瓣</a></div>
+		</div>
+	</div>
+</div>
+
+<div id='overlay'></div>
+<div id='bind_account'>
+	<h3>QQ账号登录成功，请绑定你的火秀账号 <a href='javascript:;' hidefocus='true' id='close_bind_box'>X</a></h3>
+	<dl>
+		<dt class='bind_account selected'>我有火秀账号</dt>
+		<dd>
+			<form id='bind_account_form' class="bind_account_form" method="post" action="">
+				<div><label for='account_email'>Email：</label><input type="text" name="account_email" class='account_email' id="account_email" /></div>
+				<div><label for='account_psw'>密码：</label><input type="password" name="account_psw" class='text account_psw' id="account_psw" /></div>
+				<div><button type="submit" name="bind_account_submit" class="bind_account_submit">立即绑定</button></div>
+				<p>绑定火秀已有账号，即可同时使用你的第三方网站账号登录火秀网<p>
+			</form>
+		</dd>
+		<dt class='bind_new_account'>创建火秀账号</dt>
+		<dd class='fn_hide'>
+			<form id='bind_new_account_form' class="bind_new_account_form" method="post" action="">
+				<div><label for='new_account_email'>Email：</label><input type="text" name="new_account_email" class='new_account_email' id="new_account_email" /></div>
+				<div><label for='new_account_psw'>密码：</label><input type="password" name="new_account_psw" class='text new_account_psw' id="new_account_psw" /></div>
+				<div><button type="submit" name="bind_new_account_submit" class="bind_new_account_submit">立即绑定</button></div>
+				<div class='bind_agree'><input type="checkbox" checked='ckecked'name="bind_agree" class='ckbox bind_agree' id="bind_agree" /><label for='bind_agree' class='bind_agree'>我已阅读并同意火秀网注册协议及版权声明</label></div>
+				<p>绑定火秀已有账号，即可同时使用你的第三方网站账号登录火秀网<p>
+			</form>
+		</dd>
+</div>
+{template "content","huoshow_footer"}

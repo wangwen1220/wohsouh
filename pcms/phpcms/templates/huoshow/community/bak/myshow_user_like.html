@@ -1,0 +1,222 @@
+{template "community","myshow_header"}
+
+<div id="wrapper" class='pinner-page'>
+	<div class="header">
+		{if $user['uid'] ==$myshowuid}
+		<h2><a href='/index.php?m=community&c=myhuoshow&a=myshare&myuid={$m_user_uid}' hidefocus='true'>我的分享</a> <a class='current' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$m_user_uid}' hidefocus='true'>我的喜欢</a> <a href='/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}' hidefocus='true'>我的专辑</a></h2>
+		{else}
+		<h2><a href='/index.php?m=community&c=myhuoshow&a=myshare&myuid={$m_user_uid}' hidefocus='true'>Ta的分享</a> <a class='current' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$m_user_uid}' hidefocus='true'>Ta的喜欢</a> <a href='/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}' hidefocus='true'>Ta的专辑</a></h2>
+		{/if}
+	</div>
+</div>
+
+<div id="content">
+	<div id='canvas' class='pinner-page' data-url='/index.php?m=community&c=myhuoshow&a=mylike&list=1&myuid={$m_user_uid}'>
+		<div class="pin pinner ks-waterfall ks-waterfall-fixed-left">
+			<div class="pinner-info">
+				<a class="avatar" title="" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$m_user_uid}"><img src="{$user_info[0][head_img_url]}" width='208' height='208' /></a>
+				<h3 class="name"><a title="" href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$m_user_uid}">{$user_info[0][nickname]}</a></h3>
+				<p class='signature'><strong>签名档：</strong>在华盛顿州的哥伦比亚盆地被发现，死于俄勒冈州野生动物园。<span class='arr'></span></p>
+				<div class='stats'>
+					<span class='share first'>分享 <em>{$users_total[0][share_count]}</em></span>
+					<span class='fans new'>专辑<em>{$users_total[0][album_count]}</em></span>
+					<span class='follow new'>关注<em>{$users_total[1][followCount]}</em></span>
+					<span class='like last'>粉丝 <em>{$users_total[1][beFollowCount]}</em></span>
+				</div>
+				<div class='action-btns fn-clear'>
+					<a class='follow-user btn' href='#'>关注Ta</a>
+					<a class='send-msg btn' href='#'>发私信</a>
+				</div>
+			</div>
+			<div class="follower">
+				<h3>关注<span>(共438人，<a class="view-all" href='#'>查看全部</a>)</span></h3>
+				<div class="follower-list">
+					{loop $user_follow $r}
+					<a href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}"><img src="{$r[head_img_url]}" width='32' height='32' /></a>
+					{/loop}
+				</div>
+			</div>
+			<ul class='links'>
+				<li><a href='/index.php?m=community&c=myhuoshow&a=myfans&myuid={$m_user_uid}'>粉丝 <span>{$users_total[1][beFollowCount]}</span></a></li>
+				<li><a href='/index.php?m=community&c=myhuoshow&a=myalbum&myuid={$m_user_uid}'>专辑 <span>{$users_total[0][album_count]}</span></a></li>
+			</ul>
+		</div>
+
+		<!--<div class='pin ks-waterfall' data-id=''>
+			<a class='image' href='#'><img src='/statics/images/myshow/test1.jpg' alt='' width='208' height='295' /><span class='meta price'>￥18</span></a>
+			<div class='tag'><a href='#'>#日食</a> <a href='#'>#美少女</a> <a href='#'>#明星</a> <a href='#'>#真相</a></div>
+			<div class='user fn-clear'>
+				<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='28' height='28' /></a>
+				<a class='user-name' href='#'>爱美丽</a>
+				<p class='user-msg'>发布于专辑<a href='#'>《图片墙中》</a></p>
+				<div class='user-info'>
+					<div class='user-details'>
+						<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='60' height='60' /></a>
+						<a class='user-name' href='#'>爱美丽</a>
+						<span class='user-msg'>分享 <em>3215</em> 粉丝 <em>325</em> 喜欢 <strong>555</strong></span>
+						<p class='user-signature'>签名：等待就是浪费青春！</p>
+					</div>
+					<div class='follow-bar fn-clear'>
+						<a class='send-msg btn' href='#'>发私信</a>
+						<a class='follow-user btn' href='#'>关注Ta</a>
+					</div>
+				</div>
+			</div>
+			<p class='description'>小时候，总想睡在靠近窗台边，每天一睡醒来就能看到很美的景色...</p>
+			<div class='actions notlogged'>
+				<div class='actions-wrapper'>
+					<a class='like' href='#'><span>喜欢</span><strong>22</strong></a>
+					<a class='repin' href='#'><span>转藏</span><strong>222</strong></a>
+					<a class='comment' href='javascript:void(0)'><span>评论</span><strong>122</strong></a>
+				</div>
+			</div>
+			<form class='comment-form fn-hide' name='comment' method='post' action=''>
+				<textarea></textarea>
+				<button type="submit" name="comment-submit"></button>
+			</form>
+		</div>
+
+		<div class='pin ks-waterfall' data-id=''>
+			<a class='image' href='#'><img src='/statics/images/myshow/test2.jpg' alt='' width='208' height='300' /><span class='meta price'>￥18</span></a>
+			<div class='tag tag_shopping'><a href='#'>#日食</a> <a href='#'>#美少女</a> <a href='#'>#明星</a> <a href='#'>#真相</a></div>
+			<div class='user fn-clear'>
+				<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='28' height='28' /></a>
+				<a class='user-name' href='#'>爱美丽1</a>
+				<p class='user-msg'>发布于专辑<a href='#'>《图片墙中》</a></p>
+				<div class='user-info'>
+					<div class='user-details'>
+						<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='60' height='60' /></a>
+						<a class='user-name' href='#'>爱美丽</a>
+						<span class='user-msg'>分享 <em>3215</em> 粉丝 <em>325</em> 喜欢 <strong>555</strong></span>
+						<p class='user-signature'>签名：等待就是浪费青春！</p>
+					</div>
+					<div class='follow-bar fn-clear'>
+						<a class='send-msg btn' href='#'>发私信</a>
+						<a class='follow-user btn' href='#'>关注Ta</a>
+					</div>
+				</div>
+			</div>
+			<p class='description'>小时候，总想睡在靠近窗台边，每天一睡醒来就能看到很美的景色...</p>
+			<div class='actions'>
+				<div class='actions-wrapper'>
+					<a class='like' href='#'><span>喜欢</span><strong>22</strong></a>
+					<a class='repin' href='#'><span>转藏</span><strong>222</strong></a>
+					<a class='comment' href='javascript:void(0)'><span>评论</span><strong>122</strong></a>
+				</div>
+			</div>
+			<form class='comment-form fn-hide' name='comment' method='post' action=''>
+				<textarea></textarea>
+				<button type="submit" name="comment-submit"></button>
+			</form>
+		</div>
+
+		<div class='pin ks-waterfall' data-id=''>
+			<a class='image' href='#'><img src='/statics/images/myshow/test3.jpg' alt='' width='208' height='278' /><span class='meta music'></span></a>
+			<div class='tag'><a href='#'>#日食</a> <a href='#'>#美少女</a> <a href='#'>#明星</a> <a href='#'>#真相</a></div>
+			<div class='user fn-clear'>
+				<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='28' height='28' /></a>
+				<a class='user-name' href='#'>爱美丽2</a>
+				<p class='user-msg'>发布于专辑<a href='#'>《图片墙中》</a></p>
+				<div class='user-info'>
+					<div class='user-details'>
+						<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='60' height='60' /></a>
+						<a class='user-name' href='#'>爱美丽</a>
+						<span class='user-msg'>分享 <em>3215</em> 粉丝 <em>325</em> 喜欢 <strong>555</strong></span>
+						<p class='user-signature'>签名：等待就是浪费青春！</p>
+					</div>
+					<div class='follow-bar fn-clear'>
+						<a class='send-msg btn' href='#'>发私信</a>
+						<a class='follow-user btn' href='#'>关注Ta</a>
+					</div>
+				</div>
+			</div>
+			<p class='description'>小时候，总想睡在靠近窗台边，每天一睡醒来就能看到很美的景色...</p>
+			<div class='actions'>
+				<div class='actions-wrapper'>
+					<a class='like' href='#'><span>喜欢</span><strong>22</strong></a>
+					<a class='repin' href='#'><span>转藏</span><strong>222</strong></a>
+					<a class='comment' href='javascript:void(0)'><span>评论</span><strong>122</strong></a>
+				</div>
+			</div>
+			<form class='comment-form fn-hide' name='comment' method='post' action=''>
+				<textarea></textarea>
+				<button type="submit" name="comment-submit"></button>
+			</form>
+		</div>
+
+		<div class='pin ks-waterfall' data-id=''>
+			<a class='image' href='#'><img src='/statics/images/myshow/test4.jpg' alt='' width='208' height='400' /><span class='meta video'></span></a>
+			<div class='tag'><a href='#'>#日食</a> <a href='#'>#美少女</a> <a href='#'>#明星</a> <a href='#'>#真相</a></div>
+			<div class='user fn-clear'>
+				<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='28' height='28' /></a>
+				<a class='user-name' href='#'>爱美丽3</a>
+				<p class='user-msg'>发布于专辑<a href='#'>《图片墙中》</a></p>
+				<div class='user-info'>
+					<div class='user-details'>
+						<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='60' height='60' /></a>
+						<a class='user-name' href='#'>爱美丽</a>
+						<span class='user-msg'>分享 <em>3215</em> 粉丝 <em>325</em> 喜欢 <strong>555</strong></span>
+						<p class='user-signature'>签名：等待就是浪费青春！</p>
+					</div>
+					<div class='follow-bar fn-clear'>
+						<a class='send-msg btn' href='#'>发私信</a>
+						<a class='follow-user btn' href='#'>关注Ta</a>
+					</div>
+				</div>
+			</div>
+			<p class='description'>小时候，总想睡在靠近窗台边，每天一睡醒来就能看到很美的景色...</p>
+			<div class='actions'>
+				<div class='actions-wrapper'>
+					<a class='like' href='#'><span>喜欢</span><strong>22</strong></a>
+					<a class='repin' href='#'><span>转藏</span><strong>222</strong></a>
+					<a class='comment' href='javascript:void(0)'><span>评论</span><strong>122</strong></a>
+				</div>
+			</div>
+			<form class='comment-form fn-hide' name='comment' method='post' action=''>
+				<textarea></textarea>
+				<button type="submit" name="comment-submit"></button>
+			</form>
+		</div>
+
+		<div class='pin ks-waterfall' data-id=''>
+			<a class='image' href='#'><img src='/statics/images/myshow/test8.jpg' alt='' width='208' height='5233' /><span class='meta video'></span><span class='image-overlay'></span></a>
+			<div class='tag'><a href='#'>#日食</a> <a href='#'>#美少女</a> <a href='#'>#明星</a> <a href='#'>#真相</a></div>
+			<div class='user fn-clear'>
+				<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='28' height='28' /></a>
+				<a class='user-name' href='#'>爱美丽8</a>
+				<p class='user-msg'>发布于专辑<a href='#'>《图片墙中》</a></p>
+				<div class='user-info'>
+					<div class='user-details'>
+						<a class='user-photo' href='#'><img src='/statics/images/myshow/user1.jpg' alt='' width='60' height='60' /></a>
+						<a class='user-name' href='#'>爱美丽</a>
+						<span class='user-msg'>分享 <em>3215</em> 粉丝 <em>325</em> 喜欢 <strong>555</strong></span>
+						<p class='user-signature'>签名：等待就是浪费青春！</p>
+					</div>
+					<div class='follow-bar fn-clear'>
+						<a class='send-msg btn' href='#'>发私信</a>
+						<a class='follow-user btn' href='#'>关注Ta</a>
+					</div>
+				</div>
+			</div>
+			<p class='description'>小时候，总想睡在靠近窗台边，每天一睡醒来就能看到很美的景色...</p>
+			<div class='actions'>
+				<div class='actions-wrapper'>
+					<a class='like' href='#'><span>喜欢</span><strong>22</strong></a>
+					<a class='repin' href='#'><span>转藏</span><strong>222</strong></a>
+					<a class='comment' href='javascript:void(0)'><span>评论</span><strong>122</strong></a>
+				</div>
+			</div>
+			<form class='comment-form fn-hide' name='comment' method='post' action=''>
+				<textarea></textarea>
+				<button type="submit" name="comment-submit"></button>
+			</form>
+		</div>-->
+	</div>
+
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

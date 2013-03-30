@@ -1,0 +1,20 @@
+<div id="top2banner">
+{pc:content action="lists" catid="242" num="6" order="id DESC" cache="300"}
+	{loop $data $r}
+<div class="top2banner-item" >
+<div class="thumb">
+<a href="{$r[url]}" target="_blank"><img src="{thumb($r[thumb],630,250)}" alt="{$r[url]}" width="630" height="250" /></a>
+</div>
+<div class="top2banner-item-title">
+<a href="{$r[url]}" target="_blank">{$r[title]}</a>
+<span class="top2banner-item-title-bg"> </span>
+</div>
+</div>
+{/loop}
+<div class="top2banner-nav">
+{loop $data $r}
+<a href="" target="_blank">{$n}</a>           
+{/loop}
+{/pc}   
+</div>
+</div>

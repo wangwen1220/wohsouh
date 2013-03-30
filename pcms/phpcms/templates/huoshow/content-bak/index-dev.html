@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>火秀网 - 中国娱乐门户,我秀我火!我火我秀!</title>
+	<meta name="keywords" content="娱乐网站,娱乐门户,娱乐新闻,赛事直播,明星八卦,音乐网站,游戏,火秀网" />
+	<meta name="description" content="火秀网致力打造国内最专业娱乐门户网站,以报道时下最 新内地、港台、日韩、欧美娱乐新闻和游戏资讯,涵盖电影、电视、音乐、游戏、视频、图片、明星、演 艺、原创及翻唱集中展示、个人博客、论坛等娱乐相关领域,结合多种娱乐与互动为主题的功能与应用,结 合线上线下活动,是年轻时尚的各类达人在线互动的娱乐门户平台。" />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+	<link href="{CSS_PATH}hs-index-bak.css" rel="stylesheet" />
+	<script src="{JS_PATH}jquery-1.7.2.min.js"></script>
+	<script src="{JS_PATH}jquery.tabs.js"></script>
+	<script src="{JS_PATH}hs-index.js"></script>
+	<!-- <script src="{JS_PATH}cssrefresh.js"></script> -->
+	<!-- <script src="http://fbug.googlecode.com/svn/lite/branches/firebug1.4/content/firebug-lite-dev.js"></script> -->
+	<link href='/favicon.ico' rel='icon' />
+	{php if($index_page==1) echo "<base target='_blank' />";}
+</head>
+
+<body class="home">
+	<!-- Topbar -->
+	<!--<div id='topbar'>
+		<div class="wrapper fn-clear">
+			<form id="login" method='post' action=''><label>账号</label> <input type='text' class='account' name='account' /> <label>密码</label> <input type='text' class='password' name='password' /> <button type='submit' class='submit'>登录</button> <a class='login-community' href='##'>登录社区</a> <a class='register' href='javascript:;'>注册</a></form>
+			<div class='helps'><a id='set-home' class='set-home' href="javascript:;">设为首页</a> | <a class='help' href='javascript:;'>帮助</a> <a class='rss' href='##'>RSS</a></div>
+		</div>
+		<div class="wrapper fn-clear"><!w-- 登录后 -w->
+			<div id="user-menu">您好，<a class='user' href='#'>小丁丁</a> [<a class='logout' href='#' title='退出登录'>退出</a>]<a class='msg' href='#'>99+</a> <a class='login-community' href='##'>登录社区</a></div>
+			<div class='helps'><a id='set-home' class='set-home' href="javascript:;">设为首页</a> | <a class='help' href='javascript:;'>帮助</a> <a class='rss' href='##'>RSS</a></div>
+		</div>
+	</div>-->
+	<!-- Topbar End -->
+
+		<!-- Top Nav -->
+	<div id='top-nav' class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">电影</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://space.huoshow.com/home.php?mod=space&do=myshow&view=all">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://www.huoshow.com/index.php?m=community&c=index&a=index">社区</a>
+					<!---<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>--> </div>
+				</div>
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+							$.getJSON('http://{php global $SYSCONFIG;echo $SYSCONFIG["SpaceSiteRoot"]}/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!-- Top Nav End -->
+
+	<!-- Header -->
+	<div id="header" class='fn-clear'>
+		<a class='logo' href="http://www.huoshow.com/" title="火秀网"></a>
+		<ul id="nav">
+			<li class='first'>
+				<a href='{$CATEGORYS[11][url]}'><strong>明星</strong></a>
+				<a href='{$CATEGORYS[39][url]}'>视频</a>
+				<a href='{$CATEGORYS[38][url]}'>图集</a>
+				<br />
+				<a href='{$CATEGORYS[14][url]}'><strong>游戏</strong></a>
+				<a href='{$CATEGORYS[83][url]}'>网游</a>
+				<a href='{$CATEGORYS[87][url]}'>小游戏</a>
+			</li>
+			<li>
+				<a href='{$CATEGORYS[12][url]}'><strong>电影</strong></a>
+				<a href='{$CATEGORYS[141][url]}'>预告</a>
+				<a href='{$CATEGORYS[69][url]}'>剧照</a>
+				<br />
+				<a href='{$CATEGORYS[109][url]}'><strong>超模</strong></a>
+				<a href='{$CATEGORYS[111][url]}'>大赛</a>
+				<a href='{$CATEGORYS[114][url]}'>写真</a>
+			</li>
+			<li>
+				<a href='{$CATEGORYS[131][url]}'><strong>电视</strong></a>
+				<a href='{$CATEGORYS[147][url]}'>综艺</a>
+				<a href='{$CATEGORYS[148][url]}'>片花</a>
+				<br />
+				<a href='{$CATEGORYS[10][url]}'><strong>美图</strong></a>
+				<a href='http://bbs.huoshow.com/forum-66-1.html'>相册</a>
+				<a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all'><strong>MY秀</strong></a>
+				<a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all&type=2'>视频</a>
+			</li>
+			<li>
+				<a href='{$CATEGORYS[13][url]}'><strong>音乐</strong></a>
+				<a href='{$CATEGORYS[78][url]}'>MV</a>
+				<a href='{$CATEGORYS[73][url]}'>试听</a>
+				<br />
+				<a href='{$CATEGORYS[73][url]}'>试听</a>
+				<a href='http://bbs.huoshow.com/'><strong>论坛</strong></a>
+				<a href='http://space.huoshow.com/home.php'>微博</a>
+			</li>
+			<li>
+				<a href='{$CATEGORYS[9][url]}'><strong>赛事</strong></a>
+				<a href='{$CATEGORYS[17][url]}'>日程</a>
+				<a href='{$CATEGORYS[16][url]}'>排行</a>
+				<br />
+				<a href='{$CATEGORYS[73][url]}'>试听</a>
+				<a href='{$CATEGORYS[73][url]}'>试听</a>
+			</li>
+		</ul>
+	</div>
+	<!-- Header End -->
+
+	<!-- Search bar -->
+	<div id="search-bar">
+		<div class='wrapper fn-clear'>
+			<div id='weather'>
+				<div class='area'>
+					<span>深圳</span>
+					<span>25℃~31℃</span>
+				</div>
+				<div class='weather-img'><img src="/statics/images/weather/1.png" /></div>
+			</div>
+			<!--<script>
+				$(function(){
+					$.get('/api/weather.php', function(d){
+						$("#weather-now").html(d);
+					});
+				});
+			</script>-->
+			<div id='search'>
+				<div id='search-tab' class='search-tab'>
+					<a class='cur' href='javascript:;' data-t="news" hidefocus='true'>新闻</a>
+					<a href='javascript:;' data-t="movie" hidefocus='true'>电影</a>
+					<a href='javascript:;' data-t="tv" hidefocus='true'>电视</a>
+					<a href='javascript:;' data-t="video" hidefocus='true'>视频</a>
+					<a href='javascript:;' data-t="image" hidefocus='true'>图片</a>
+					<a href='javascript:;' data-t="game" hidefocus='true'>游戏</a>
+				</div>
+				<form id="search-form" class='search-form' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+					<input type="hidden" value="search" name="app" />
+					<input type="hidden" value="index" name="controller" />
+					<input type="hidden" value="search" name="action" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="stype" id='stype' value="news" /><!-- 搜索类型 -->
+					<fieldset><label for='search-wd'>站内搜索</label><input type="text" id="search-wd" name="q" /><button type="submit" id="search-submit">搜 索</button></fieldset>
+				</form>
+				<div class='hot-word'>
+					<a href='#' hidefocus='true'>超级英雄电影</a>
+					<a href='#' hidefocus='true'>超级雄电影</a>
+					<a href='#' hidefocus='true'>超级英雄电影辑</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Search bar End -->
+
+	<!-- ui-content main -->
+	<div class='ui-content ui-content-main fn-clear'>
+		<div class="ui-content-item-left ui-tab">
+			<ul class="ui-tab-nav fn-clear">
+				<li class="ui-tab-nav-item ui-tab-nav-item-cur">新闻</li>
+				<li class='ui-tab-nav-item'>图片</li>
+				<li class='ui-tab-nav-item'>视频</li>
+			</ul>
+			<div class="ui-tab-cnt">
+				<div class="ui-tab-cnt-item">
+					<div class='ui-art fn-clear'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+						<h2 class='ui-art-title'>规划法后天签完合</h2>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+					</div>
+					<ul class="ui-list">
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<!-- <li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li> -->
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<ul class="ui-gallery fn-clear">
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<ul class="ui-gallery fn-clear">
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-gallery-item">
+							<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status">25:88</div>
+							<h3 class="ui-gallery-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-center ui-tab">
+			<ul class="ui-tab-nav fn-clear">
+				<li class="ui-tab-nav-item ui-tab-nav-item-cur">游戏</li>
+				<li class='ui-tab-nav-item'>网络游戏</li>
+				<li class='ui-tab-nav-item'>网页游戏</li>
+				<li class='ui-tab-nav-item'>单机游戏</li>
+			</ul>
+			<div class="ui-tab-cnt">
+				<div class="ui-tab-cnt-item">
+					<div class='ui-header'>
+						<h2 class="ui-header-title"><a href='#'>《太极》曝剧照 黄圣依飞身大战李飞身大战李飞身大战李飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a class='hot' href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a class='hot' href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<div class='ui-header hr'>
+						<h2 class="ui-header-title"><a href='#'>《太极》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a class='hot' href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<ul class="ui-list">
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+					</ul>
+					<ul class="ui-game-list fn-clear">
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot hot-green">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot hot-blue">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<div class='ui-header'>
+						<h2 class="ui-header-title"><a href='#'>《太极1》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a class='hot' href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a class='hot' href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<div class='ui-header hr'>
+						<h2 class="ui-header-title"><a href='#'>《太极1》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a class='hot' href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<ul class="ui-list">
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+					</ul>
+					<ul class="ui-game-list fn-clear">
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot hot-blue">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<div class='ui-header'>
+						<h2 class="ui-header-title"><a href='#'>《太极2》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a class='hot' href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a class='hot' href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<div class='ui-header hr'>
+						<h2 class="ui-header-title"><a href='#'>《太极2》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a class='hot' href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<ul class="ui-list">
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+					</ul>
+					<ul class="ui-game-list fn-clear">
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot hot-green">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot hot-blue">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<div class='ui-header'>
+						<h2 class="ui-header-title"><a href='#'>《太极3》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a class='hot' href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a class='hot' href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<div class='ui-header hr'>
+						<h2 class="ui-header-title"><a href='#'>《太极3》曝剧照 黄圣依飞身大战李连杰</a></h2>
+						<ul class="ui-header-cnt">
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+							<li class="ui-header-cnt-item"><a href='#'>黄圣依飞身大战李连杰</a> | <a class='hot' href='#'>黄圣依飞身大战连杰</a> | <a href='#'>战李连杰</a></li>
+						</ul>
+					</div>
+					<ul class="ui-list">
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><h3><a class='hot' href='#'>极速飞升《传奇世界》飞龙朝天预注注注册开启</a></h3></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+					</ul>
+					<ul class="ui-game-list fn-clear">
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+						<li class="ui-game-list-item">
+							<a class='ui-game-list-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='78' height='78' /></a>
+							<div class="hot hot-blue">Hot</div>
+							<h3 class="ui-game-list-item-title"><a href='#'>发帖量如履如</a></h3>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-side">
+			<div class='ad-side ad-top'><a href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/02/in_the_silence_by_tatyana_klimenko-d2yple0.jpg' width='200' height='300' /></a></div>
+			<div class="ui-tab ui-tab-lite">
+				<h3 class='ui-tab-lite-header'>专题</h3>
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">电影</li>
+					<li class='ui-tab-nav-item'>音乐</li>
+					<li class='ui-tab-nav-item'>游戏</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-gallery">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='180' height='85' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='180' height='85' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰2</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='180' height='85' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰3</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ui-content main end -->
+
+	<!-- ui-content sub -->
+	<div class='ui-content ui-content-sub fn-clear'>
+		<div class='ad'><a href='#'><img src='http://i3.letvimg.com/gugwl/201208/08/tty.jpg' width='752' height='100' /></a></div>
+		<div class='ui-content-item-wrapper'>
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">明星</li>
+					<li class='ui-tab-nav-item'>内地</li>
+					<li class='ui-tab-nav-item'>港台</li>
+					<li class='ui-tab-nav-item'>写真</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合2</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合3</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">超模</li>
+					<li class='ui-tab-nav-item'>名模专区</li>
+					<li class='ui-tab-nav-item'>模特大赛</li>
+					<li class='ui-tab-nav-item'>模特写真</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合2</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合3</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-wrapper">
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">电影</li>
+					<li class='ui-tab-nav-item'>华语</li>
+					<li class='ui-tab-nav-item'>预告</li>
+					<li class='ui-tab-nav-item'>专访</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如1</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如2</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如3</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合3</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">电视</li>
+					<li class='ui-tab-nav-item'>综艺</li>
+					<li class='ui-tab-nav-item'>热播</li>
+					<li class='ui-tab-nav-item'>内地</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如2</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如3</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如4</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-side">
+			<div class="ui-goods-box">
+				<h3 class="ui-goods-box-header">购物</h3>
+				<ul class='ui-goods-list'>
+					<li class="ui-goods-list-item clothing"><span class='wrapper'><em>潮流服饰</em> <a href='#'>长袖T</a> <a href='#'>连衣裙</a></span></li>
+					<li class="ui-goods-list-item shoe"><span class='wrapper'><em>鞋包配饰</em> <a href='#'>长袖T</a> <a href='#'>连衣裙</a></span></li>
+					<li class="ui-goods-list-item sport"><span class='wrapper'><em>运动户外</em> <a href='#'>长袖T</a> <a href='#'>连衣裙</a></span></li>
+					<li class="ui-goods-list-item beauty"><span class='wrapper'><em>美容美妆</em> <a href='#'>长袖T</a> <a href='#'>连衣裙</a></span></li>
+					<li class="ui-goods-list-item house"><span class='wrapper'><em>家居家饰</em> <a href='#'>长袖T</a> <a href='#'>连衣裙</a></span></li>
+					<li class="ui-goods-list-item mais"><span class='wrapper'><em>母婴用品</em> <a href='#'>长袖T</a> <a href='#'>连衣裙</a></span></li>
+				</ul>
+			</div>
+
+			<div id='js-box-lite' class="ui-box-lite">
+				<h3 class="ui-box-lite-header">最新分享</h3>
+				<ul class='ui-arts'>
+					<li class='ui-art'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著（图）</p>
+					</li>
+					<li class='ui-art'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著（图）</p>
+					</li>
+					<li class='ui-art'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著（图）</p>
+					</li>
+					<li class='ui-art'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著（图）</p>
+					</li>
+					<li class='ui-art'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著（图）</p>
+					</li>
+					<li class='ui-art'>
+						<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著（图）</p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="ui-tab ui-tab-lite">
+				<h3 class='ui-tab-lite-header'>排行榜</h3>
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">电影</li>
+					<li class='ui-tab-nav-item'>电视</li>
+					<li class='ui-tab-nav-item'>音乐</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-rank">
+							<li class='ui-rank-item  ui-rank-item-up ui-rank-item-cur'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>1</span>
+								<a class='ui-rank-item-title' href='#'>敢死队2</a>
+								<p class="ui-rank-item-desc">敢死队2预告</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>2</span>
+								<a class='ui-rank-item-title' href='#'>敢死队1</a>
+								<p class="ui-rank-item-desc">敢死队1网络首播</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>3</span>
+								<a class='ui-rank-item-title' href='#'>敢死队2</a>
+								<p class="ui-rank-item-desc">搞定岳父大人</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>4</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>5</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>6</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>7</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>8</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>9</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>10</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-rank">
+							<li class='ui-rank-item  ui-rank-item-up ui-rank-item-cur'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>1</span>
+								<a class='ui-rank-item-title' href='#'>敢死队3</a>
+								<p class="ui-rank-item-desc">敢死队2预告</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>2</span>
+								<a class='ui-rank-item-title' href='#'>敢死队1</a>
+								<p class="ui-rank-item-desc">敢死队1网络首播</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>3</span>
+								<a class='ui-rank-item-title' href='#'>敢死队2</a>
+								<p class="ui-rank-item-desc">搞定岳父大人</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>4</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>5</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>6</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>7</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>8</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>9</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>10</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-rank">
+							<li class='ui-rank-item  ui-rank-item-up ui-rank-item-cur'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>1</span>
+								<a class='ui-rank-item-title' href='#'>敢死队4</a>
+								<p class="ui-rank-item-desc">敢死队2预告</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>2</span>
+								<a class='ui-rank-item-title' href='#'>敢死队1</a>
+								<p class="ui-rank-item-desc">敢死队1网络首播</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>3</span>
+								<a class='ui-rank-item-title' href='#'>敢死队2</a>
+								<p class="ui-rank-item-desc">搞定岳父大人</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>4</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>5</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>6</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>7</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>8</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-up'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>9</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+							<li class='ui-rank-item ui-rank-item-down'>
+								<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num'>10</span>
+								<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+								<p class="ui-rank-item-desc">肉蒲团完整版</p>
+								<p class='ui-rank-item-count'>65458798</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ui-content sub end -->
+
+	<!-- ui-content thr -->
+	<div class='ui-content ui-content-thr fn-clear'>
+		<div class='ad'>
+			<a class='ad ad-left' href='#'><img src='http://i2.letvimg.com/cms/201209/03/18735e94a5518367a6ee4107f303f97d7847.jpg' width='392' height='100' /></a>
+			<a class='ad ad-right' href='#'><img src='http://i1.letvimg.com/cms/201209/18/d94fc96b3dd367ed393eb7aa5d3c52202751.gif' width='352' height='100' /></a>
+		</div>
+
+		<div class='ui-content-item-wrapper'>
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">音乐</li>
+					<li class='ui-tab-nav-item'>MV</li>
+					<li class='ui-tab-nav-item'>碟报</li>
+					<li class='ui-tab-nav-item'>演唱会</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如1</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>sdfsdfsdfsdfsadfsadfsadfsdfsadfsadfsdfsdf</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-music-list fn-clear">
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+							<li class="ui-music-list-item"><a href='#'>全屏秒杀 - 最幸福的人</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合4</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">赛事</li>
+					<li class='ui-tab-nav-item'>快报</li>
+					<li class='ui-tab-nav-item'>视频</li>
+					<li class='ui-tab-nav-item'>图集</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如2</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如3</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+							<li class="ui-gallery-item">
+								<a class='ui-gallery-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a href='#'>黄圣依飞身大战李连杰</a></h3>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-wrapper">
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">访谈</li>
+					<li class='ui-tab-nav-item'>独家策划</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合2</h2>
+							<p class="ui-art-cnt">专访范冰冰专访《太极5》主创洪金宝：功夫打久超模甜心刘雯:妈妈总说我长得不漂亮专访张元：执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">专辑</li>
+					<li class='ui-tab-nav-item'>达人</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist ui-ilist-plus fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>sdfsdfsdfsdfsadfsadfsadfsdfsadfsadfsdfsdf</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='104' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如发帖量如履如</a></h3>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-user-list fn-clear">
+							<li class="ui-user-list-item">
+								<a class='avatar' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='80' height='80' /></a>
+								<h3 class="name boy"><a href='#'>发帖量如履如2</a></h3>
+								<div class="status">
+									<span>分享：34354</span>
+									<span>粉丝：3354</span>
+									<span>专辑：30054</span>
+								</div>
+							</li>
+							<li class="ui-user-list-item">
+								<a class='avatar' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='80' height='80' /></a>
+								<h3 class="name girl"><a href='#'>发帖量如履如2</a></h3>
+								<div class="status">
+									<span>分享：34354</span>
+									<span>粉丝：3354</span>
+									<span>专辑：30034</span>
+								</div>
+							</li>
+							<li class="ui-user-list-item">
+								<a class='avatar' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='80' height='80' /></a>
+								<h3 class="name boy"><a href='#'>发帖量如履如2</a></h3>
+								<div class="status">
+									<span>分享：34354</span>
+									<span>粉丝：3354</span>
+									<span>专辑：30054</span>
+								</div>
+							</li>
+							<li class="ui-user-list-item">
+								<a class='avatar' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='80' height='80' /></a>
+								<h3 class="name girl"><a href='#'>发帖量如履如2</a></h3>
+								<div class="status">
+									<span>分享：34354</span>
+									<span>粉丝：3354</span>
+									<span>专辑：30034</span>
+								</div>
+							</li>
+							<li class="ui-user-list-item">
+								<a class='avatar' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='80' height='80' /></a>
+								<h3 class="name boy"><a href='#'>发帖量如履如2</a></h3>
+								<div class="status">
+									<span>分享：34354</span>
+									<span>粉丝：3354</span>
+									<span>专辑：30054</span>
+								</div>
+							</li>
+							<li class="ui-user-list-item">
+								<a class='avatar' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='80' height='80' /></a>
+								<h3 class="name girl"><a href='#'>发帖量如履如2</a></h3>
+								<div class="status">
+									<span>分享：34354</span>
+									<span>粉丝：3354</span>
+									<span>专辑：30034</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='ad ad-bottom'>
+			<a class='ad ad-left' href='#'><img src='http://i2.letvimg.com/cms/201209/03/18735e94a5518367a6ee4107f303f97d7847.jpg' width='392' height='100' /></a>
+			<a class='ad ad-right' href='#'><img src='http://i1.letvimg.com/cms/201209/18/d94fc96b3dd367ed393eb7aa5d3c52202751.gif' width='352' height='100' /></a>
+		</div>
+
+		<div class="ui-content-item-side">
+			<div class="ui-box-lite">
+				<h3 class="ui-box-lite-header">热点排行</h3>
+				<ul class="ui-rank">
+					<li class='ui-rank-item  ui-rank-item-up ui-rank-item-cur'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num ui-rank-item-hotnum'>1</span>
+						<a class='ui-rank-item-title' href='#'>敢死队2</a>
+						<p class="ui-rank-item-desc">敢死队2预告</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-up'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num ui-rank-item-hotnum'>2</span>
+						<a class='ui-rank-item-title' href='#'>敢死队1</a>
+						<p class="ui-rank-item-desc">敢死队1网络首播</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-up'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num ui-rank-item-hotnum'>3</span>
+						<a class='ui-rank-item-title' href='#'>敢死队2</a>
+						<p class="ui-rank-item-desc">搞定岳父大人</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-down'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>4</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-down'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>5</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>6</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-down'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>7</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-up'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>8</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-up'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>9</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+					<li class='ui-rank-item ui-rank-item-down'>
+						<a class='ui-rank-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='110' height='68' /></a>
+						<span class='ui-rank-item-num'>10</span>
+						<a class='ui-rank-item-title' href='#'>肉蒲团</a>
+						<p class="ui-rank-item-desc">肉蒲团完整版</p>
+						<p class='ui-rank-item-count'>65458798</p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="ui-tab ui-tab-lite">
+				<h3 class='ui-tab-lite-header'>下载专区</h3>
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">单机</li>
+					<li class='ui-tab-nav-item'>手机</li>
+					<li class='ui-tab-nav-item'>壁纸</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-list ui-list-download">
+							<li class="ui-list-item"><a class='link' href='http://www.huoshow.com'>全屏秒杀霸气外开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏天预注册开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-list ui-list-download">
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏天预注册开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-list ui-list-download">
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏天预注册开启</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外技能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a class='link' href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-tab-side ui-tab">
+				<ul class="ui-tab-nav fn-cf">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">论坛</li>
+					<li class='ui-tab-nav-item'>晒图</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='60' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合</h2>
+							<p class="ui-art-cnt">专访范亮亮张执著... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='60' /></a>
+							<h2 class='ui-art-title'>规划法后天签完合2</h2>
+							<p class="ui-art-cnt">专访范专访访访访访张... <a class='detail' href='#'>[详细]</a></p>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ui-content thr end -->
+
+	<!-- ui-content footer -->
+	<div class='ui-content ui-content-footer fn-clear'>
+		<div id='js-tab-gallery' class='ui-tab-gallery ui-tab'>
+			<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">美图</li>
+					<li class='ui-tab-nav-item'>明星写真</li>
+					<li class='ui-tab-nav-item'>电影剧照</li>
+					<li class='ui-tab-nav-item'>电视剧照</li>
+					<li class='ui-tab-nav-item'>音乐美图</li>
+					<li class='ui-tab-nav-item'>超模写真</li>
+					<li class='ui-tab-nav-item'>赛事图集</li>
+					<li class='ui-tab-nav-item'>游戏图集</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a href="#" class="wrapper">
+									<img width="181" height="240" alt="" src="http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg">
+									<span href="#" class="title" style="bottom: -20px;">忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a href="#" class="wrapper">
+									<img width="181" height="119" alt="" src="http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg">
+									<span href="#" class="title" style="bottom: -20px;">忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+								<a href="#" class="wrapper wrapper-bottom">
+									<img width="181" height="119" alt="" src="http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg">
+									<span href="#" class="title" style="bottom: -20px;">忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a href="#" class="wrapper">
+									<img width="181" height="240" alt="" src="http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg">
+									<span href="#" class="title">忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a href="#" class="wrapper">
+									<img width="181" height="119" alt="" src="http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg">
+									<span href="#" class="title">忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+								<a href="#" class="wrapper wrapper-bottom">
+									<img width="181" height="119" alt="" src="http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg">
+									<span href="#" class="title">忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-img-list fn-clear">
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='#'>
+									<img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='119' />
+									<span class='title' href='#'>忠义值技能曝光忠义值技能曝光忠义值技能曝光</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+
+		<div class="ui-content-item-side">
+			<div class='ad-side'><a href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/02/in_the_silence_by_tatyana_klimenko-d2yple0.jpg' width='200' height='80' /></a></div>
+			<div class='ad-side ad-side-footer'><a href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/02/in_the_silence_by_tatyana_klimenko-d2yple0.jpg' width='200' height='210' /></a></div>
+		</div>
+	</div>
+	<!-- ui-content footer end -->
+
+	<!-- 友情链接 -->
+	<div id="partners" class='fn-clear'>
+		<h4 class="header">友情链接</h4>
+		<div class="content">
+		{pc:link action="type_list" typeid="0" siteid="$siteid" linktype="0" order="listorder asc" num="29"}
+			<p>
+				{loop $data $r}
+				<a href="{$r[url]}" target="_blank">{$r[name]}</a>{if $n<count($data)} |{/if}
+				{/loop}
+			</p>
+		{/pc}
+		</div>
+	</div>
+	<!-- 友情链接结束 -->
+
+	<!-- Footer -->
+	<div id="footer">
+		<p id='footer_nav'>
+		{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<a href="{$r[url]}" target="_blank">{$r[catname]}</a>{if $n<count($data)} |{/if}
+			{/loop}
+		{/pc}
+		</p>
+		<p>HuoShow Copyright &copy; 1998 - 2012 All Rights Reserved.</p>
+		<p>粤 ICP 备 06087881 号</p>
+	</div>
+	<!-- Footer End -->
+</body>
+</html>

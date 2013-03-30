@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>火秀网 - 中国娱乐门户,我秀我火!我火我秀!</title>
+	<meta name="keywords" content="娱乐网站,娱乐门户,娱乐新闻,赛事直播,明星八卦,音乐网站,游戏,火秀网" />
+	<meta name="description" content="火秀网致力打造国内最专业娱乐门户网站,以报道时下最 新内地、港台、日韩、欧美娱乐新闻和游戏资讯,涵盖电影、电视、音乐、游戏、视频、图片、明星、演 艺、原创及翻唱集中展示、个人博客、论坛等娱乐相关领域,结合多种娱乐与互动为主题的功能与应用,结 合线上线下活动,是年轻时尚的各类达人在线互动的娱乐门户平台。" />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+	<link href="{CSS_PATH}hs-index.css" rel="stylesheet" />
+	<script src="{JS_PATH}jquery-1.7.2.min.js"></script>
+	<script src="{JS_PATH}jquery.tabs.js"></script>
+	<script src="{JS_PATH}hs-index.js"></script>
+	<script src="{JS_PATH}cssrefresh.js"></script>
+	<!-- <script src="http://fbug.googlecode.com/svn/lite/branches/firebug1.4/content/firebug-lite-dev.js"></script> -->
+	<link href='/favicon.ico' rel='icon' />
+	{php if($index_page==1) echo "<base target='_blank' />";}
+</head>
+
+<body class="home">
+	<!-- Topbar -->
+	<!--<div id='topbar'>
+		<div class="wrapper fn-clear">
+			<form id="login" method='post' action=''><label>账号</label> <input type='text' class='account' name='account' /> <label>密码</label> <input type='text' class='password' name='password' /> <button type='submit' class='submit'>登录</button> <a class='login-community' href='##'>登录社区</a> <a class='register' href='javascript:;'>注册</a></form>
+			<div class='helps'><a id='set-home' class='set-home' href="javascript:;">设为首页</a> | <a class='help' href='javascript:;'>帮助</a> <a class='rss' href='##'>RSS</a></div>
+		</div>
+		<div class="wrapper fn-clear"><!w-- 登录后 -w->
+			<div id="user-menu">您好，<a class='user' href='#'>小丁丁</a> [<a class='logout' href='#' title='退出登录'>退出</a>]<a class='msg' href='#'>99+</a> <a class='login-community' href='##'>登录社区</a></div>
+			<div class='helps'><a id='set-home' class='set-home' href="javascript:;">设为首页</a> | <a class='help' href='javascript:;'>帮助</a> <a class='rss' href='##'>RSS</a></div>
+		</div>
+	</div>-->
+	<!-- Topbar End -->
+
+	<!-- Top Nav -->
+	<div id='top-nav' class="top_nav">
+		<div class="top_nav_bar">
+			<div class="top_nav_bg">
+				<div class="top_nav_left">
+					<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">电影</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://space.huoshow.com/home.php?mod=space&do=myshow&view=all">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://www.huoshow.com/index.php?m=community&c=index&a=index">社区</a>
+					<!---<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>--> </div>
+				</div>
+				<div class="top_nav_right" id="login_bar">&nbsp;</div>
+				<script>
+					(function($){
+						$(function(){
+							$.getJSON('http://{php global $SYSCONFIG;echo $SYSCONFIG["SpaceSiteRoot"]}/api/login.php?jsoncallback=?', function(d){
+								$("#login_bar").html(d.html);
+							});
+						});
+					})(jQuery);
+				</script>
+			</div>
+		</div>
+	</div>
+	<!-- Top Nav End -->
+
+	<!-- Header -->
+	<div id="header" class='fn-clear'>
+		<a class='logo' href="http://www.huoshow.com/" title="火秀网"></a>
+		<ul id="nav" class='fn_right'>
+		<li class='first'>
+			<a href='{$CATEGORYS[11][url]}'><strong>明星</strong></a>
+			<a href='{$CATEGORYS[39][url]}'>视频</a>
+			<a href='{$CATEGORYS[38][url]}'>图集</a>
+			<a href='{$CATEGORYS[34][url]}'>八卦</a>
+			<br />
+			<a href='{$CATEGORYS[14][url]}'><strong>游戏</strong></a>
+			<a href='{$CATEGORYS[83][url]}'>网游</a>
+			<a href='{$CATEGORYS[84][url]}'>单机</a>
+			<a href='{$CATEGORYS[85][url]}'>手机</a>
+		</li>
+		<li>
+			<a href='{$CATEGORYS[12][url]}'><strong>电影</strong></a>
+			<a href='{$CATEGORYS[141][url]}'>预告</a>
+			<a href='{$CATEGORYS[69][url]}'>剧照</a>
+			<a href='{$CATEGORYS[135][url]}'>专访</a>
+			<br />
+			<a href='{$CATEGORYS[109][url]}'><strong>超模</strong></a>
+			<a href='{$CATEGORYS[111][url]}'>大赛</a>
+			<a href='{$CATEGORYS[114][url]}'>写真</a>
+			<a href='{$CATEGORYS[112][url]}'>名模</a>
+		</li>
+		<li>
+			<a href='{$CATEGORYS[131][url]}'><strong>电视</strong></a>
+			<a href='{$CATEGORYS[147][url]}'>综艺</a>
+			<a href='{$CATEGORYS[148][url]}'>片花</a>
+			<a href='{$CATEGORYS[236][url]}'>热播</a>
+			<br />
+			<a href='/index.php?m=community&c=index&a=index'><strong>社区</strong></a>
+			<a href="/index.php?m=community&c=index&a=square">广场</a>
+			<a href="/index.php?m=community&c=index&a=talent">达人</a>
+			<a href="/index.php?m=community&c=index&a=myshow_shopping_index">购物</a>
+			<!--a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all'><strong>MY秀</strong></a>
+			<a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all&type=2'>视频</a>
+			<a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all&type=1'>音频</a-->
+		</li>
+		<li>
+			<a href='{$CATEGORYS[13][url]}'><strong>音乐</strong></a>
+			<a href='{$CATEGORYS[78][url]}'>MV</a>
+			<a href='{$CATEGORYS[73][url]}'>试听</a>
+			<a href='{$CATEGORYS[81][url]}'>碟报</a>
+			<br />
+			<a href='{$CATEGORYS[10][url]}'><strong>美图</strong></a>
+			<a href='http://bbs.huoshow.com/forum-66-1.html'>相册</a>
+			<!--<a href='http://bbs.huoshow.com/'><strong>论坛</strong></a>
+			<a href='http://space.huoshow.com/home.php'>微博</a>-->
+		</li>
+		<li>
+			<a href='{$CATEGORYS[9][url]}'><strong>赛事</strong></a>
+			<a href='{$CATEGORYS[17][url]}'>日程</a>
+			<a href='{$CATEGORYS[16][url]}'>排行</a>
+			<a href='{$CATEGORYS[15][url]}'>快报</a>
+			<br />
+			<a></a>
+			<a></a>
+		</li>
+	</ul>
+	</div>
+	<!-- Header End -->
+
+	<!-- Search bar -->
+	<div id="search-bar">
+		<div class='wrapper fn-clear'>
+			<!--todo <div id='weather' class='fn_left'></div> -->
+			<div id='weather'>
+				<img src="/statics/images/weather/1.png" />
+				<span class="status">
+					<span>深圳</span>
+					<span>25℃~31℃</span>
+				</span>
+			</div>
+			<div id='search'>
+				<form id="search-form" class='search-form' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+					<input type="hidden" value="search" name="app" />
+					<input type="hidden" value="index" name="controller" />
+					<input type="hidden" value="search" name="action" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="siteid" value="{$siteid}" id="siteid" /><!-- 搜索类型 -->
+					<label for='search-wd'>站内搜索</label>
+					<div id='jq-select' class='jq-select'>
+						<cite class='selected'>全部</cite>
+						{php $search_model = getcache('search_model_'.$siteid,'search');}
+						<ul class='options'>
+							<li><a class='option' hidefocus='true' href="javascript:;" selectid="1">全部</a></li>
+							{loop $search_model $k=>$v}
+							<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$v['typeid']}">{$v['name']}</a></li>
+							{/loop}
+						</ul>
+					</div><input type="text" id="search-wd" name="q" /><button type="submit" id="search-submit">搜 索</button>
+				</form>
+				<div class='hot-word'>
+					<a href='#' hidefocus='true'>超级英雄电影</a>
+					<a href='#' hidefocus='true'>超级雄电影</a>
+					<a href='#' hidefocus='true'>超级英雄电影辑</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Search bar End -->
+
+	<!-- ui-content main -->
+	<div class='ui-content ui-content-main fn-clear'>
+		<div class="ui-content-item-side">
+			<div class='ad-side ad-top'>
+			<a href='/index.php?m=community&c=index&a=index' target="_blank"><img src='{IMG_PATH}common/topright_banner.png' width="200" height='300' /></a>
+			</div>
+			<div class="ui-tab ui-tab-lite">
+				<h3 class='ui-tab-lite-header'>专题</h3>
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">电影</li>
+					<li class='ui-tab-nav-item'>音乐</li>
+					<li class='ui-tab-nav-item'>游戏</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="366" order="listorder DESC" num="9" }
+					{loop $data $r}
+					{if $n==1}
+						<ul class="ui-gallery">
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],180,85)}' alt='' width='180' height='85' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'> {str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						</ul>
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+						{if $n==10}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content  action="position" posid="367" order="listorder DESC" num="9" }
+						{loop $data $r}
+						{if $n==1}
+						<ul class="ui-gallery">
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],180,85)}' alt='' width='180' height='85' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'> {str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						</ul>
+						{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+						{if $n==10}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content  action="position" posid="368" order="listorder DESC" num="9" }
+						{loop $data $r}
+						{if $n==1}
+						<ul class="ui-gallery">
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],180,85)}' alt='' width='180' height='85' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'> {str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						</ul>
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+						{if $n==10}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-left ui-tab">
+			<ul class="ui-tab-nav fn-clear">
+				<li class="ui-tab-nav-item ui-tab-nav-item-cur">新闻</li>
+				<li class='ui-tab-nav-item'>图片</li>
+				<li class='ui-tab-nav-item'>视频</li>
+			</ul>
+			<div class="ui-tab-cnt">
+				<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="347" order="listorder DESC" num="21" }
+						{loop $data $r}
+					{if $n==1}
+					<div class='ui-art fn-clear'>
+						<div class='ui-art-album'>
+							<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+							<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+						</div>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<!--todo<div class='ui-art fn-clear'>
+						<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+						<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],55,'')}</a></h2>
+						<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+					</div>-->
+					{else}
+					{if $n==2}<ul class="ui-list">{/if}
+						<li class="ui-list-item">{if $n%5==0}<h3>{/if}<a target="_blank" {if $n%5==0}class='hot'{/if} href='{$r[url]}'>{str_cut($r['title'],70,'')}</a>{if $n%5==0}</h3>{/if}</li>
+					{if $n==22}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<ul class="ui-gallery fn-clear">
+					{pc:content  action="position" posid="348" order="listorder DESC" num="15" }
+						{loop $data $r}
+						<li class="ui-gallery-item">
+							<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h3 class="ui-gallery-item-title"><a target="_blank" href='{$r[title]}'>{str_cut($r['title'],30,'')}</a></h3>
+						</li>
+					{/loop}
+						{/pc}
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<ul class="ui-gallery fn-clear">
+					{pc:content  action="position" posid="349" order="listorder DESC" num="15" }
+						{loop $data $r}
+						<li class="ui-gallery-item">
+							<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<div class="ui-gallery-item-status"><!--25:88--></div>
+							<h3 class="ui-gallery-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+						</li>
+					 {/loop}
+						 {/pc}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-center ui-tab">
+			<ul class="ui-tab-nav fn-clear">
+				<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[14][url]}" target="_blank">游戏</a></li>
+				<li class='ui-tab-nav-item'><a href="{$CATEGORYS[83][url]}" target="_blank">网络游戏</a></li>
+				<li class='ui-tab-nav-item'><a href="{$CATEGORYS[86][url]}" target="_blank">网页游戏</a></li>
+				<li class='ui-tab-nav-item'><a href="{$CATEGORYS[84][url]}" target="_blank">单机游戏</a></li>
+			</ul>
+			<div class="ui-tab-cnt">
+				<div class="ui-tab-cnt-item">
+					<div class='ui-header'>
+					{pc:content  action="position" posid="350" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title" ><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank" href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class='ui-header hr'>
+						{pc:content  action="position" posid="351" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank" href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<ul class="ui-list">
+					{pc:content  action="position" posid="352" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-list-item">{if $n==5}<h3>{/if}<a target="_blank" href='{$r[url]}'>{str_cut($r[title],60,'')}</a>{if $n==5}</h3>{/if}</li>
+					{/loop}
+					{/pc}
+					</ul>
+					<ul class="ui-game-list fn-clear">
+					{pc:content  action="position" posid="353" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-game-list-item">
+							<a target="_blank" class='ui-game-list-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],78,78)}' alt='' width='78' height='78' /></a>
+							{if $n%2==0}<div {if $n==2}class="hot"{elseif $n==4}class="hot hot-green"{elseif $n==6}class="hot hot-blue"{else}class="hot"{/if}>Hot</div>{/if}
+							<h3 class="ui-game-list-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<div class='ui-header'>
+					{pc:content  action="position" posid="354" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class='ui-header hr'>
+					{pc:content  action="position" posid="355" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<ul class="ui-list">
+					{pc:content  action="position" posid="356" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-list-item">{if $n==5}<h3>{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],60,'')}</a>{if $n==5}</h3>{/if}</li>
+					{/loop}
+					{/pc}
+					</ul>
+					<ul class="ui-game-list fn-clear">
+					{pc:content  action="position" posid="357" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-game-list-item">
+							<a target="_blank" class='ui-game-list-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],78,78)}' alt='' width='78' height='78' /></a>
+							{if $n%2==0}<div {if $n==2}class="hot"{elseif $n==4}class="hot hot-green"{elseif $n==6}class="hot hot-blue"{else}class="hot"{/if}>Hot</div>{/if}
+							<h3 class="ui-game-list-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<div class='ui-header'>
+						{pc:content  action="position" posid="358" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class='ui-header hr'>
+						{pc:content  action="position" posid="359" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank" href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<ul class="ui-list">
+					{pc:content  action="position" posid="360" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-list-item">{if $n==5}<h3>{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],60,'')}</a>{if $n==5}</h3>{/if}</li>
+					{/loop}
+					{/pc}
+					</ul>
+					<ul class="ui-game-list fn-clear">
+						{pc:content  action="position" posid="361" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-game-list-item">
+							<a target="_blank" class='ui-game-list-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],78,78)}' alt='' width='78' height='78' /></a>
+							{if $n%2==0}<div {if $n==2}class="hot"{elseif $n==4}class="hot hot-green"{elseif $n==6}class="hot hot-blue"{else}class="hot"{/if}>Hot</div>{/if}
+							<h3 class="ui-game-list-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				<div class="ui-tab-cnt-item fn-hide">
+					<div class='ui-header'>
+					{pc:content  action="position" posid="362" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class='ui-header hr'>
+					{pc:content  action="position" posid="363" order="listorder DESC" num="5" }
+						{loop $data $r}
+					{if $n==1}
+						<h2 class="ui-header-title"><a target="_blank" href='{$r[url]}'>{str_cut($r[title],54,'')}</a></h2>
+					{else}
+						{if $n==2}<ul class="ui-header-cnt">{/if}
+							{if $n>1 && $n<8}{if $n%2==0}<li class="ui-header-cnt-item">{/if}<a target="_blank" href='{$r[url]}'>{str_cut($r[title],40,'')}</a> {if $n%2==0}|{/if} {if ($n-1)%2==0}</li>{/if}{/if}
+
+						{if $n==7}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<ul class="ui-list">
+					{pc:content  action="position" posid="364" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-list-item">{if $n==5}<h3>{/if}<a target="_blank"  href='{$r[url]}'>{str_cut($r[title],60,'')}</a>{if $n==5}</h3>{/if}</li>
+					{/loop}
+					{/pc}
+					</ul>
+					<ul class="ui-game-list fn-clear">
+					{pc:content  action="position" posid="365" order="listorder DESC" num="8" }
+						{loop $data $r}
+						<li class="ui-game-list-item">
+							<a target="_blank" class='ui-game-list-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],78,78)}' alt='' width='78' height='78' /></a>
+							{if $n%2==0}<div {if $n==2}class="hot"{elseif $n==4}class="hot hot-green"{elseif $n==6}class="hot hot-blue"{else}class="hot"{/if}>Hot</div>{/if}
+							<h3 class="ui-game-list-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ui-content main end -->
+
+	<!-- ui-content sub -->
+	<div class='ui-content ui-content-sub fn-clear'>
+		<div class="ui-content-item-side">
+			<div class="ui-goods-box">
+				<h3 class="ui-goods-box-header">购物</h3>
+				{pc:content action="get_share_pos"}
+				{php $i=0}
+				<ul class='ui-goods-list'>
+					{loop $data $r}
+					{php $i++}
+					{if $i==1}
+					<li class="ui-goods-list-item clothing">
+					{elseif $i==2}
+					<li class="ui-goods-list-item shoe">
+					{elseif $i==3}
+					<li class="ui-goods-list-item sport">
+					{elseif $i==4}
+					<li class="ui-goods-list-item beauty">
+					{elseif $i==5}
+					<li class="ui-goods-list-item house">
+					{else}
+					<li class="ui-goods-list-item mais">
+					{/if}
+					<span class='wrapper'><em>{$r[pos_name]}</em>
+						{loop $r[data] $v}
+							<a target="_blank" href='{$v[url]}'>{$v[name]}</a>
+						{/loop}
+					</span>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div id='js-box-lite' class="ui-box-lite">
+				<h3 class="ui-box-lite-header">最新分享</h3>
+				{pc:content action="get_my_show_share" order="LIMIT 6"}
+				<ul class='ui-arts'>
+					{loop $data $r}
+					<li class='ui-art'>
+						<a class='ui-art-img' href='/index.php?m=community&c=index&a=show&share_id={$r[id]}' target="_blank"><img src='{$r[small]}' alt='' width='58' height='58' /></a>
+						<p class="ui-art-cnt">{str_cut($r['description'],80,'')}</p>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class="ui-tab ui-tab-lite">
+				<h3 class='ui-tab-lite-header'>排行榜</h3>
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">电影</li>
+					<li class='ui-tab-nav-item'>电视</li>
+					<li class='ui-tab-nav-item'>音乐</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						{pc:content action="position" posid="393" order="listorder DESC"  num="10"}
+						<ul class="ui-rank">
+							{loop $data $r}
+							<li class='{if $n==1 || $n==2 || $n==3 || $n==6 || $n==9}ui-rank-item ui-rank-item-up{elseif $n==4 || $n==7 || $n==8}ui-rank-item ui-rank-item-down{else}ui-rank-item{/if} {if $n==1}ui-rank-item-cur{/if}'>
+								<a target="_blank" class='ui-rank-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],110,68)}' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>{$n}</span>
+								<a target="_blank" class='ui-rank-item-title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+								<p class="ui-rank-item-desc">{str_cut($r['description'],25,'')}</p>
+								<!--p class='ui-rank-item-count'>65458798</p-->
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="394" order="listorder DESC"  num="10"}
+						<ul class="ui-rank">
+							{loop $data $r}
+							<li class='{if $n==1 || $n==2 || $n==3 || $n==7 || $n==10}ui-rank-item ui-rank-item-up{elseif $n==5 || $n==8}ui-rank-item ui-rank-item-down{else}ui-rank-item{/if} {if $n==1}ui-rank-item-cur{/if}'>
+								<a target="_blank" class='ui-rank-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],110,68)}' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>{$n}</span>
+								<a target="_blank" class='ui-rank-item-title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+								<p class="ui-rank-item-desc">{str_cut($r['description'],25,'')}</p>
+								<!--p class='ui-rank-item-count'>65458798</p-->
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="395" order="listorder DESC"  num="10"}
+						<ul class="ui-rank">
+							{loop $data $r}
+							<li class='{if $n==1 || $n==2 || $n==3 || $n==6 || $n==8}ui-rank-item ui-rank-item-up{elseif $n==4 || $n==7 || $n==9}ui-rank-item ui-rank-item-down{else}ui-rank-item{/if} {if $n==1}ui-rank-item-cur{/if}'>
+								<a target="_blank" class='ui-rank-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],110,68)}' alt='' width='110' height='68' /></a>
+								<span class='ui-rank-item-num ui-rank-item-hotnum'>{$n}</span>
+								<a target="_blank" class='ui-rank-item-title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+								<p class="ui-rank-item-desc">{str_cut($r['description'],25,'')}</p>
+								<!--p class='ui-rank-item-count'>65458798</p-->
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='ad'><a href='{$CATEGORYS[14][url]}' target="_blank"><img src='{IMG_PATH}common/middle_anner.png' width='752' height='100' /></a></div>
+		<div class='ui-content-item-wrapper'>
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[11][url]}" target="_blank">明星</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[34][url]}" target="_blank">内地</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[35][url]}" target="_blank">港台</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[28][url]}" target="_blank">写真</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="369" order="listorder DESC" num="9" }
+						{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!--<div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div>-->
+						{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+						{/if}
+						{/loop}
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content  action="morecatids" catids="44,45,46,47,48" newsnum="9"}
+					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+						{/if}
+						{/loop}
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content  action="morecatids" catids="49,50,51" newsnum="9"}
+					{loop $data $r}
+						{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+						{/if}
+						{/loop}
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+						{pc:content  action="position" posid="370" order="listorder DESC" num="9" }
+							{loop $data $r}
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{/loop}
+						{/pc}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[12][url]}" target="_blank">电影</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[64][url]}" target="_blank">华语</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[141][url]}" target="_blank">预告</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[69][url]}" target="_blank">剧照</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如2</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如3</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="377" order="listorder DESC"  num="4"}
+						<ul class="ui-gallery fn-clear">
+							{loop $data $r}
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],160,162)}' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],35,'')}</a></h3>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+				<!--todo<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+						{pc:content action="position" posid="373" order="listorder DESC"  num="4"}
+						{loop $data $r}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],85,72)}' alt='{$r[url]}' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{/loop}
+						{/pc}
+						</ul>
+						<ul class="ui-list">
+						{pc:content action="position" posid="373" order="listorder DESC LIMIT 4,8--"}
+						{loop $data $r}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'> {str_cut($r['title'],70,'')}</a></li>
+						{/loop}
+						{/pc}
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="64" order="id DESC" num="12"}
+					{loop $data $r}
+					{if $n<5}
+						{if $n==1}<ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],85,72)}' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{if $n==4}</ul>{/if}
+					{else}
+						{if $n==5}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==12}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content  action="morecatids" catids="141" newsnum="12"}
+					{loop $data $r}
+					{if $n<5}
+						{if $n==1}<ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],85,72)}' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></h3>
+							</li>
+
+						{if $n==4}</ul>{/if}
+					{else}
+						{if $n==5}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+
+						{if $n==12}</ul>{/if}
+					{/if}
+						{/loop}
+						{/pc}
+					</div>
+
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+						{pc:content action="lists" catid="69" order="id DESC" num="9"}
+							{loop $data $r}
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{/loop}
+						{/pc}
+						</ul>
+					</div>
+				</div>-->
+			</div>
+		</div>
+
+		<div class="ui-content-item-wrapper">
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[131][url]}" target="_blank">电视</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[147][url]}" target="_blank">综艺</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[236][url]}" target="_blank">热播</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[143][url]}" target="_blank">内地</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如1</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如2</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如3</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-ilist fn-clear">
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如3</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='#'><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='#'>发帖量如履如</a></h3>
+							</li>
+						</ul>
+						<ul class="ui-list">
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞龙朝天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 极速飞升《传奇世界》飞天预注册开启</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--todo<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+						{pc:content action="position" posid="374" order="listorder DESC"  num="3"}
+						{loop $data $r}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{/loop}
+						{/pc}
+						</ul>
+						<ul class="ui-list">
+						{pc:content action="position" posid="374" order="listorder DESC LIMIT 3,8--"}
+						{loop $data $r}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{/loop}
+						{/pc}
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="147" order="id DESC" num="11"}
+					{loop $data $r}
+					{if $n<4}
+						  {if $n==1}  <ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{if $n==3}</ul>{/if}
+					{else}
+						{if $n==4}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==11}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="236" order="id DESC" num="11"}
+					{loop $data $r}
+					{if $n<4}
+						{if $n==1}<ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+							</li>
+						{if $n==3}</ul>{/if}
+					{else}
+						{if $n==4}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==11}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="143" order="id DESC" num="11"}
+					{loop $data $r}
+					{if $n<4}
+						{if $n==1}<ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],20,'')}</a></h3>
+							</li>
+						{if $n==3}</ul>{/if}
+					{else}
+						{if $n==4}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==11}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+				</div>-->
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[9][url]}" target="_blank">赛事</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[15][url]}" target="_blank">快报</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[19][url]}" target="_blank">视频</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[139][url]}" target="_blank">图集</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						<ul class="ui-ilist fn-clear">
+						{pc:content action="position" posid="376" order="listorder DESC"  num="3"}
+						{loop $data $r}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+						{/loop}
+						{/pc}
+						</ul>
+						<ul class="ui-list">
+						{pc:content action="position" posid="376" order="listorder DESC LIMIT 3,8--"}
+						{loop $data $r}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{/loop}
+						{/pc}
+						</ul>
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content  action="morecatids" catids="23,24,25,26" newsnum="11"}
+					{loop $data $r}
+					{if $n<4}
+						{if $n==1}<ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+
+						{if $n==3}</ul>{/if}
+					{else}
+						{if $n==4}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+
+						{if $n==11}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="19" order="id DESC" num="11"}
+					{loop $data $r}
+					{if $n<4}
+						{if $n==1}<ul class="ui-ilist fn-clear">{/if}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></h3>
+							</li>
+
+						{if $n==3}</ul>{/if}
+					{else}
+						{if $n==4}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==11}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="377" order="listorder DESC"  num="4"}
+						<ul class="ui-gallery fn-clear">
+							{loop $data $r}
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],160,162)}' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],35,'')}</a></h3>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ui-content sub end -->
+
+	<!-- ui-content thr -->
+	<div class='ui-content ui-content-thr fn-clear'>
+		<div class="ui-content-item-side">
+			<div class="ui-box-lite">
+				<h3 class="ui-box-lite-header">热点排行</h3>
+				{pc:content action="hits_index_channel" siteid="1" order="views DESC" num="10" }
+				<ul class="ui-rank">
+					{loop $data $r}
+					<li class='{if $n==1 || $n==2 || $n==3 || $n==5 || $n==8}ui-rank-item ui-rank-item-up{elseif $n==4 || $n==7 || $n==9}ui-rank-item ui-rank-item-down{else}ui-rank-item{/if} {if $n==1}ui-rank-item-cur{/if}'>
+						<a target="_blank" class='ui-rank-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],110,68)}' alt='' width='110' height='68' /></a>
+						{if $n<3}
+							<span class='ui-rank-item-num ui-rank-item-hotnum'>{$n}</span>
+						{else}
+							<span class='ui-rank-item-num'>{$n}</span>
+						{/if}
+						<a target="_blank" class='ui-rank-item-title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+						<p class="ui-rank-item-desc">{str_cut($r['description'],35,'')}</p>
+						<!--p class='ui-rank-item-count'>{$r['views']}</p-->
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class="ui-tab ui-tab-lite">
+				<h3 class='ui-tab-lite-header'>下载专区</h3>
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">单机</li>
+					<li class='ui-tab-nav-item'>手机</li>
+					<li class='ui-tab-nav-item'>壁纸</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						{pc:content action="position" posid="378" order="listorder DESC"  num="10"}
+						<ul class="ui-list ui-list-download">
+							{loop $data $r}
+							<li class="ui-list-item"><a target="_blank" class='link' href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="379" order="listorder DESC"  num="10"}
+						<ul class="ui-list ui-list-download">
+							{loop $data $r}
+							<li class="ui-list-item"><a target="_blank" class='link' href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="380" order="listorder DESC"  num="10"}
+						<ul class="ui-list ui-list-download">
+							{loop $data $r}
+							<li class="ui-list-item"><a target="_blank" class='link' href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-tab-side ui-tab">
+				<ul class="ui-tab-nav fn-cf">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">论坛</li>
+					<li class='ui-tab-nav-item'>晒图</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						{pc:content action="get_click_high" img="1" order="LIMIT 1" cache="60"}
+						{loop $data $r}
+						<div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href='{$r[url]}'><img src='{thumb($r[img],85,60)}' alt='' width='85' height='60' /></a>
+							<h2 class='ui-art-title'>{str_cut($r['subject'],10,'')}</h2>
+							<p class="ui-art-cnt">{str_cut($r['subject'],100,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div>
+						{/loop}
+						{/pc}
+						{pc:content action="get_click_high" order="LIMIT 9" cache="60"}
+						<ul class="ui-list">
+							{loop $data $r}
+							{if $n!=1}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['subject'],40,'')}</a></li>
+							{/if}
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="get_click_pic_high" img="1" order="LIMIT 1" id="66" cache="60"}
+						{loop $data $r}
+						<div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href='{$r[url]}'><img src='{thumb($r[img],85,60)}' alt='' width='85' height='60' /></a>
+							<h2 class='ui-art-title'>{str_cut($r['subject'],10,'')}</h2>
+							<p class="ui-art-cnt">{str_cut($r['subject'],100,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div>
+						{/loop}
+						{/pc}
+						{pc:content action="get_click_pic_high" order="LIMIT 9" bbs_id="66" cache="60"}
+						<ul class="ui-list">
+							{loop $data $r}
+							{if $n!=1}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['subject'],40,'')}</a></li>
+							{/if}
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='ad ad-left'><a href='{$CATEGORYS[14][url]}' target="_blank"><img src='{IMG_PATH}common/ad4.jpg' width='392' height='100' /></a></div>
+		<div class='ad ad-center'><a href='/index.php?m=community&c=index&a=myshow_shopping_index' target="_blank"><img src='{IMG_PATH}common/ad5.jpg' width='352' height='100' /></a></div>
+
+		<div class='ui-content-item-wrapper'>
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[13][url]}" target="_blank">音乐</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[78][url]}" target="_blank">MV</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[81][url]}" target="_blank">碟报</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[171][url]}" target="_blank">演唱会</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="375" order="listorder DESC" num="9" }
+						{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content  action="morecatids" catids="174,175,176" newsnum="9"}
+						<ul class="ui-gallery fn-clear">
+							{loop $data $r}
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'>{str_cut($r['description'],35,'')}</a></h3>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content  action="position" posid="391" order="listorder DESC" num="4" }
+						<ul class="ui-ilist fn-clear">
+							{loop $data $r}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],85,72)}' alt='' width='85' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></h3>
+							</li>
+							{/loop}
+						</ul>
+					{/pc}
+					{pc:content action="lists" catid="81" order="id DESC" num="16"}
+						<ul class="ui-music-list fn-clear">
+							{loop $data $r}
+							<li class="ui-music-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],30,'')}</a></li>
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+					<!--<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="81" order="id DESC" num="9"}
+					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<a class='ui-art-img'><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'>{str_cut($r['title'],40,'')}</h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],60,'')}<a class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div>
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a href='{$r[url]}'>{str_cut($r['title'],54,'')}</a></li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="171" order="id DESC" num="9"}
+					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[109][url]}" target="_blank">超模</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[112][url]}" target="_blank">名模专区</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[111][url]}" target="_blank">模特大赛</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[114][url]}" target="_blank">模特写真</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="position" posid="371" order="listorder DESC" num="9" }
+						{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')} <a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content  action="morecatids" catids="137,138" newsnum="9"}
+					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')} <a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'> {str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+					{pc:content action="lists" catid="111" order="id DESC" num="9"}
+					{loop $data $r}
+					{if $n==1}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],120,'')}<a target="_blank" class='detail' href='{$r[title]}'>[详细]</a></p>
+						</div> -->
+					{else}
+						{if $n==2}<ul class="ui-list">{/if}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'> {str_cut($r['title'],70,'')}</a></li>
+						{if $n==9}</ul>{/if}
+					{/if}
+					{/loop}
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						<ul class="ui-gallery fn-clear">
+						{pc:content  action="position" posid="372" order="listorder DESC" num="4" }
+							{loop $data $r}
+							<li class="ui-gallery-item">
+								<a target="_blank" class='ui-gallery-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],160,162)}' alt='' width='160' height='162' /></a>
+								<h3 class="ui-gallery-item-header"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],40,'')}</a></h3>
+							</li>
+						{/loop}
+						{/pc}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-content-item-wrapper">
+			<div class="ui-content-item-left ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="{$CATEGORYS[83][url]}" target="_blank">访谈</a></li>
+					<li class='ui-tab-nav-item'><a href="{$CATEGORYS[83][url]}" target="_blank">独家策划</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+					{pc:content  action="morecatids" catids="135,142,191,219" newsnum="1" img="1"}
+						{loop $data $r}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a  class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],160,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+						{/loop}
+					{/pc}
+					{php $i=0}
+					{pc:content  action="morecatids" catids="135,142,191,219" newsnum="9"}
+						<ul class="ui-list">
+							{loop $data $r}
+							{php $i++}
+							{if $i!=1}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+							{/if}
+							{/loop}
+						</ul>
+					{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content  action="morecatids" catids="68,79,152,154" newsnum="1" img="1"}
+						{loop $data $r}
+						<div class='ui-art fn-clear'>
+							<div class='ui-art-album'>
+								<a target="_blank" href="{$r[url]}"><img src='http://diggfoto.com/wp-content/uploads/2011/03/int1738.jpg' alt='' width='120' height='70' /></a>
+								<h3><a href="{$r[url]}">全屏秒杀霸气外露</a></h3>
+							</div>
+							<ul class="ui-list">
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+								<li class="ui-list-item"><a href='#'>全屏秒杀霸气外露 《梁山豪杰》忠义值技能曝光</a></li>
+							</ul>
+						</div>
+						<!-- <div class='ui-art fn-clear'>
+							<a target="_blank" class='ui-art-img' href="{$r[url]}"><img src='{thumb($r[thumb],120,90)}' alt='' width='120' height='90' /></a>
+							<h2 class='ui-art-title'><a target="_blank" href="{$r[url]}">{str_cut($r['title'],50,'')}</a></h2>
+							<p class="ui-art-cnt">{str_cut($r['description'],160,'')}<a target="_blank" class='detail' href='{$r[url]}'>[详细]</a></p>
+						</div> -->
+						{/loop}
+						{/pc}
+						{php $i=0}
+						{pc:content  action="morecatids" catids="68,79,152,154" newsnum="9"}
+						<ul class="ui-list">
+							{loop $data $r}
+							{php $i++}
+							{if $i!=1}
+							<li class="ui-list-item"><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+							{/if}
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-content-item-center ui-tab">
+				<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur"><a href="/index.php?m=community&c=index&a=myshow_album_index" target="_blank">专辑</a></li>
+					<li class='ui-tab-nav-item'><a href="/index.php?m=community&c=index&a=talent" target="_blank">达人</a></li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<!--<div class="ui-tab-cnt-item">
+						{pc:content action="position" posid="381" order="listorder DESC"  num="3"}
+						<ul class="ui-ilist fn-clear">
+							{loop $data $r}
+							<li class="ui-ilist-item">
+								<a class='ui-ilist-item-img' href='{$r[url]}'><img src='{thumb($r[thumb],104,72)}' alt='' width='104' height='72' /></a>
+								<h3 class="ui-ilist-item-title"><a href='{$r[url]}'>{str_cut($r['title'],15,'')}</a></h3>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+						{pc:content action="position" posid="392" order="listorder DESC"  num="8"}
+						<ul class="ui-list">
+							{loop $data $r}
+							<li class="ui-list-item"><a href='{$r[url]}'>{str_cut($r['title'],70,'')}</a></li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item">
+						{php $i=0}
+						{pc:content action="get_album_list" order="LIMIT 3"}
+						<ul class="ui-ilist ui-ilist-plus fn-clear">
+							{loop $data $r}
+							{php $i++}
+							<li class="ui-ilist-item">
+								<a target="_blank" class='ui-ilist-item-img' href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>
+								<img src='{$r[img][0]}' alt='' width='104' height='88' /></a>
+								<h3 class="ui-ilist-item-title"><a target="_blank" href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>{$r[album_name]}</a></h3>
+							</li>
+							{php if($i==9) break;}
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="get_talent_list"}
+						<ul class="ui-user-list fn-clear">
+							{loop $data $r}
+							<li class="ui-user-list-item">
+								<a target="_blank" class='avatar' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'>
+								<img src='{$r[avatar]}' alt='' width='80' height='80' /></a>
+								<h3 class="name boy"><a target="_blank" href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'>{$r[name]}</a></h3>
+								<div class="status">
+									<span>分享：{$r[share_count]}</span>
+									<span>粉丝：{$r[fans]}</span>
+									<span>专辑：{$r[album_count]}</span>
+								</div>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='ad ad-bottom'>
+			<a class='ad ad-left' href='{$CATEGORYS[14][url]}' target="_blank"><img src='{IMG_PATH}common/ad4.jpg' width='392' height='100' /></a>
+			<a class='ad ad-right' href='http://live.huoshow.com/' target="_blank"><img src='{IMG_PATH}common/ad5.jpg' width='352' height='100' /></a>
+		</div>
+	</div>
+	<!-- ui-content thr end -->
+
+	<!-- ui-content footer -->
+	<div class='ui-content ui-content-footer fn-clear'>
+		<div class="ui-content-item-side">
+			<div class='ad-side'><a href='{$CATEGORYS[9][url]}' target="_blank"><img src='{IMG_PATH}common/ad6.jpg' width='200' height='80' /></a></div>
+			<div class='ad-side ad-side-footer'><a href='http://www.xtep.com/index.html' target="_blank"><img src='{IMG_PATH}common/ad7.jpg' width='200' height='210' /></a></div>
+		</div>
+
+		<div id='js-tab-gallery' class='ui-tab-gallery ui-tab'>
+			<ul class="ui-tab-nav fn-clear">
+					<li class="ui-tab-nav-item ui-tab-nav-item-cur">美图</li>
+					<li class='ui-tab-nav-item'>明星写真</li>
+					<li class='ui-tab-nav-item'>电影剧照</li>
+					<li class='ui-tab-nav-item'>电视剧照</li>
+					<li class='ui-tab-nav-item'>音乐美图</li>
+					<li class='ui-tab-nav-item'>超模写真</li>
+					<li class='ui-tab-nav-item'>赛事图集</li>
+					<li class='ui-tab-nav-item'>游戏图集</li>
+				</ul>
+				<div class="ui-tab-cnt">
+					<div class="ui-tab-cnt-item">
+						{pc:content action="position" posid="384" order="listorder DESC"  num="6"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+								{if $n==1}
+								<li class="ui-img-list-item">
+									<a target="_blank" class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[thumb],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==2 || $n==3}
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+							{loop $data $r}
+								{if $n==4}
+								<li class="ui-img-list-item">
+									<a target="_blank" class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[thumb],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==5 || $n==6}
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+						</ul>
+						{/pc}
+					</div>
+					<!--<div class="ui-tab-cnt-item">
+						{pc:content action="position" posid="384" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>-->
+					<!--<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="385" order="listorder DESC"  num="6"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+								{if $n==1}
+								<li class="ui-img-list-item">
+									<a class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==2 || $n==3}
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+							{loop $data $r}
+								{if $n==4}
+								<li class="ui-img-list-item">
+									<a class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==5 || $n==6}
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+						</ul>
+						{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="385" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<!--<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="396" order="listorder DESC"  num="4"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="396" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<!--<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="386" order="listorder DESC"  num="4"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="386" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<!--<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="387" order="listorder DESC"  num="6"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+								{if $n==1}
+								<li class="ui-img-list-item">
+									<a class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==2 || $n==3}
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+							{loop $data $r}
+								{if $n==4}
+								<li class="ui-img-list-item">
+									<a class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==5 || $n==6}
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+						</ul>
+						{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="387" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<!--<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="388" order="listorder DESC"  num="6"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+								{if $n==1}
+								<li class="ui-img-list-item">
+									<a class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==2 || $n==3}
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+							{loop $data $r}
+								{if $n==4}
+								<li class="ui-img-list-item">
+									<a class='wrapper' href='{$r[url]}'>
+										<img src='{thumb($r[img],181,240)}' alt='' width='181' height='240' />
+										<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+									</a>
+								</li>
+								{/if}
+							{/loop}
+							<li class="ui-img-list-item">
+							{loop $data $r}
+								{if $n==5 || $n==6}
+								<a class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[img],181,119)}' alt='' width='181' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+								{/if}
+							{/loop}
+							</li>
+						</ul>
+						{/pc}
+					</div>-->
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="388" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="389" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+					<div class="ui-tab-cnt-item fn-hide">
+						{pc:content action="position" posid="390" order="listorder DESC"  num="12"}
+						<ul class="ui-img-list fn-clear">
+							{loop $data $r}
+							<li class="ui-img-list-item">
+								<a target="_blank" class='wrapper' href='{$r[url]}'>
+									<img src='{thumb($r[thumb],120,119)}' alt='' width='120' height='119' />
+									<span class='title' href='{$r[url]}'>{str_cut($r['title'],40,'')}</span>
+								</a>
+							</li>
+							{/loop}
+						</ul>
+						{/pc}
+					</div>
+				</div>
+		</div>
+	</div>
+	<!-- ui-content footer end -->
+
+	<!-- 友情链接 -->
+	<div id="partners" class='fn-clear'>
+		<h4 class="header">友情链接</h4>
+		<div class="content">
+		{pc:link action="type_list" typeid="0" siteid="$siteid" linktype="0" order="listorder asc" num="29"}
+			<p>
+				{loop $data $r}
+				<a href="{$r[url]}" target="_blank">{$r[name]}</a>{if $n<count($data)} |{/if}
+				{/loop}
+			</p>
+		{/pc}
+		</div>
+	</div>
+	<!-- 友情链接结束 -->
+
+	<!-- Footer -->
+	<div id="footer">
+		<p id='footer_nav'>
+		{pc:content action="category" catid="1" num="15" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<a href="{$r[url]}" target="_blank">{$r[catname]}</a>{if $n<count($data)} |{/if}
+			{/loop}
+		{/pc}
+		</p>
+		<p>HuoShow Copyright &copy; 1998 - 2012 All Rights Reserved.</p>
+		<p>粤 ICP 备 06087881 号</p>
+	</div>
+	<!-- Footer End -->
+</body>
+</html>

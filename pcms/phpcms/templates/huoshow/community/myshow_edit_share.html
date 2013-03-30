@@ -1,0 +1,47 @@
+{template "community","myshow_header"}
+<div id="edit-pin" class='edit-page'>
+	<h2>修改分享</h2>
+	<form id='edit-pin-form' class="album-form fn-clear" action="/index.php?m=community&c=myhuoshow&a=myeditshare&id={$share_id}&album_id={$album_datas[0][id]}&act_submit=yes" method="post">
+		<ul class='form-list'>
+			<li class='form-list-item'>
+				<label for='album-desc'>补充描述：</label>
+				<textarea id='pin-desc' name='desc'>{$data[0][description]}</textarea>
+				<a id='del-album-btn' class='button del-tip' href="/index.php?m=community&c=myhuoshow&a=userdelalbum&id={$album_id}">删除分享</a>
+			</li>
+			<li class='form-list-item'>
+				<label for='album-name'>来自：</label>
+				{if $data[0][file_state] == 1}
+					用户上传
+				{elseif $data[0][file_state] == 2}
+					网址采集
+				{elseif $data[0][file_state] == 3}
+					转藏
+				{/if}
+			</li>
+			<li class='form-list-item'>
+				<strong>专辑：</strong>
+				<div class='divselect'>
+					<cite class='selected'>{$album_datas[0][album_name]}</cite>
+					<ul class='options'>
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$album_datas[0][id]}">{$album_datas[0][album_name]}</a></li>
+					{loop $list_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r[id]}">{$r[album_name]}</a></li>
+					{/loop}
+					</ul>
+				</div>
+				<input name="typeid" class="inputselect" type="hidden" value="{$album_datas[0][id]}" />
+				<input name="status" class='status' type="hidden" value="{$data[0][status]}"/>
+			</li>
+			<li class='form-list-item'>
+				<strong>标签：</strong>
+				<input type='text' class='tags' name='tags' value="{$tag_name_arr}"/>
+				<input type='hidden' class='tags-default' name='tags_default' value="{$tag_name_arr}"/>
+			</li>
+			<li class='form-list-item last'><span class='esbtn'><button type='submit' class='sbtn'>保存设置</button></span></li>
+		</ul>
+
+		<div class='pin-img'><img src="{$data[0][thumb]}" /></div>
+	</form>
+</div>
+</body>
+</html>

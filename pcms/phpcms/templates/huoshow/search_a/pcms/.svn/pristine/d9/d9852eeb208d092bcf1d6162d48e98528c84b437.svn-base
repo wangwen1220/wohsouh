@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-wp.css' rel='stylesheet' />
+
+	{if (empty($pictureurls) || $img_attachment_mode==2)}{else}<link href='{CSS_PATH}hs-game-picshow.css' rel='stylesheet' />{/if}
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+<body {if (empty($pictureurls) || $img_attachment_mode==2)} class='game-wp game-wp-show'{else}class='game-picshow'{/if}>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_wp'}
+{if empty($pictureurls)}
+	<div id='content'>
+
+		<!-- 主内容 -->
+		<div id='main' class='article-box'>
+			<div class='article-header'>
+				<h2 class='title'>{$title}</h2>
+				<div class='link'>
+				<span><a target="_blank" href="http://games.huoshow.com" target="_blank">http://games.huoshow.com</a></span>
+				<span>{$inputtime}</span>
+				<span>来源：火秀网</span>
+					<!--<a target="_blank" href='#'>[欢迎纠错/提意见]</a> -->
+					<!--<a target="_blank" href='#'>[热门新闻TOP10]</a>-->
+					我来说两句(<a target="_blank" href="#comment_iframe" id="comment" class='comment' style="margin-left:0px;">0</a>)
+					</div>
+			</div>
+
+			<div class='content'>
+				<p>{$content}</p>
+			</div>
+
+			<!-- <p class='intro'>相关推荐：<a target="_blank" href='#'><em>何洁在京举办新专辑发布会</em></a> - <a target="_blank" href='#'><em>而手捧99朵玫瑰花的男友赫子铭作为神</em></a> - <a target="_blank" href='#'><em>而手捧99朵玫瑰花的男友赫子铭作为神</em></a> - <a target="_blank" href='#'>把何洁感动得泪如雨下</a> - 而手捧99朵玫瑰花的男 - 友赫子铭作为神而手 - <a target="_blank" href='#'><em>把何洁感动得泪如雨下曾遭到坊间一阵热</em></a></p> -->
+
+			<div class='article-related article-actions'>
+				<!-- JiaThis Button BEGIN -->
+				<span id='jiathis' class="jiathis_style jiathis">
+					<span class="jiathis_txt">分享到：</span>
+					<a target="_blank" class="jiathis_button_qzone"></a>
+					<a target="_blank" class="jiathis_button_tsina"></a>
+					<a target="_blank" class="jiathis_button_tqq"></a>
+					<a target="_blank" class="jiathis_button_renren"></a>
+					<a target="_blank" class="jiathis_button_tsohu"></a>
+					<a target="_blank" class="jiathis_button_kaixin001"></a>
+					<a target="_blank" class="jiathis_button_douban"></a>
+					<a target="_blank" class="jiathis_button_t163"></a>
+					<a target="_blank" class="jiathis_button_tieba"></a>
+					<a target="_blank" class="jiathis_button_taobao"></a>
+					<a target="_blank" class="jiathis_button_tianya"></a>
+					<!-- <a target="_blank" href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> -->
+					<!-- <a target="_blank" class="jiathis_counter_style"></a> -->
+					<!--<span class='desc'><a target="_blank" href='#'>[奖励规则]</a> <a target="_blank" href='#'>[Q币商城]</a></span>-->
+					<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1349664104558770" charset="utf-8"></script>
+				</span>
+				<!-- JiaThis Button END -->
+				<a class='comment' href='#'>我要评论(1)</a>
+			</div>
+
+			<div class='article-related article-hotnews'>
+				<div class='header-news'>
+					<h2 class='title'>相关新闻</h2>
+					<!-- <div class='link'><a target="_blank" class='more' href='#'>更多&gt;&gt;</a></div> -->
+				</div>
+				<ul class='ui-list fn-clear'>
+				 {pc:content action="hits" catid="$catid" num="10" order="weekviews DESC" cache="3600"}
+				 {loop $data $r}
+					<li class='ui-list-item'><a target="_blank" href='{$r[url]}'>{str_cut($r['title'],100,'')}</a></li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			{if $allow_comment && module_exists('comment')}
+		   <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+			{/if}
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-step ui-box-side-top'>
+				<h2 class='ui-box-side-title'>装机必备</h2>
+				<dl class='ui-step'>
+					{pc:content action="position" posid="561" catid="$catid" order="listorder DESC" num="3"}
+					<dt>第一步：新手上路</dt>
+					<dd>{loop $data $r}<a target="_blank" href='{$r[url]}'>{str_cut($r[title], 15,'')}</a> {/loop}</dd>
+					{/pc}
+
+					<dt>第二步：更上一级</dt>
+					{pc:content action="position" posid="562" catid="$catid" order="listorder DESC" num="12"}
+					<dd>{loop $data $r}<a target="_blank" href='{$r[url]}'>{str_cut($r[title], 15,'')}</a> {/loop}</dd>
+					{/pc}
+					<!-- <dt><a target="_blank" href='#'><img src='http://www.baidu.com/img/baidu_sylogo1.gif' alt='' width='120' height='50' /></a><a target="_blank" href='#'><img src='http://www.baidu.com/img/baidu_sylogo1.gif' alt='' width='120' height='50' /></a></dt> -->
+				</dl>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content action="position" posid="563" catid="$catid" order="listorder DESC" num="2"}
+				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],120,50)}' width='120' height='50' /></a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</div>
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>热门推荐</h2>
+				{pc:content  action="position" posid="564" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,92)}' width='122' height='92' /></a>
+						<a target="_blank" class='title' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}	
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>热门应用 <span class='link'><a target="_blank" class='more' href='#'>更多&gt;&gt;</a></span></h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="565" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],122,92)}' width='122' height='92' /></a>
+						<a target="_blank" class='title' href='{$r[url]}'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-tab ui-tab-lite'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'>本周<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>本月<span class='icon'></span></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-list-plus'>
+					 {pc:content action="hits" catid="$catid" num="10" order="weekviews DESC" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a target="_blank" class='title' href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}	
+					</ol>
+					<ol class='ui-tab-cnt-item ui-list-plus'>
+					 {pc:content action="hits" catid="$catid" num="8" order="monthviews DESC" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a target="_blank" class='title' href='{$r[url]}'>{str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}	
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+{else}
+{template "content","common_new_pic"}
+{/if}
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

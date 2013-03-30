@@ -1,0 +1,32 @@
+{template "content","movie_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="pic_banner">
+		<!--广告960*90-->
+		<p class="p_img"><img src="http://news.beta.huoshow.com/upload/2011/0423/1303525336808.jpg" border="0" width="960" height="90" /></p>
+	</div>
+	<div class="Subpage_pic">
+		<div class="Subpage_pic_01">
+			<div class="Subpage_pic_list">
+				<div class="Subpage_pic_bt">
+					<h2 class="bt1">剧照</h2>
+				</div>
+				{pc:content  action="lists" catid="69" order="id DESC" num="20" page="$page"}
+				<ul >
+				{loop $data $r}
+					<li> <a title="{$r[title]}" href="{$r[url]}" target="_blank"><img alt="{$r[title]}" src="{thumb($r[thumb],158,118)}" width="158" height="118"> <span>{str_cut($r[title],40,'')}</span></a> </li>
+				{/loop}
+				</ul>
+				{/pc}
+				<div class="clear"></div>
+				<div class="fanye fn_clear">
+					<div id="fanye_01" class='fn_right'>
+						<div id="pages" class="text-c">{$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

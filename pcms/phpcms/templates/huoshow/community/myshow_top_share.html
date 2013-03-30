@@ -1,0 +1,36 @@
+<!--<style>
+	#artform {
+		/* margin: 10px 20px; */
+	}
+	#artform .item {
+		/* margin-bottom: 10px; */
+	}
+	#artform label {
+		/* display: inline-block; */
+		/* width: 50px; */
+		/* text-align: right; */
+		/* font-size: 12px; */
+		color: #666;
+	}
+</style>-->
+
+<form action="/index.php?m=community&c=index&a=showtop2&topshare=yes" method="post" id="artform">
+	<input type="hidden" name="id" value="{$shareid[0]}" />
+	<div class='item'>
+		<label>置顶：</label>
+		<select name="toptype">
+			<!--<option value="0">无</option>-->
+			<option value="3">首页置顶</option>
+			<option value="2">分类置顶</option>
+			<option value="1">全局置顶</option>
+		</select>
+	</div>
+	<!-- <div class='item'>
+		<label>有效期：</label>
+		<select name="time">
+			<option value="0">time</option>
+		</select>
+	</div> -->
+	<input type="submit" value="submit" id="artsubmit" class='fn-hide' />
+	<input type="reset" value="reset" id="artreset" class='fn-hide' />
+</form>

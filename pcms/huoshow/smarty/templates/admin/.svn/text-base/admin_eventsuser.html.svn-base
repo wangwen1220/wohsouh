@@ -1,0 +1,85 @@
+{include file="admin/header.html"}
+<table width="998" border="0" cellspacing="1" cellpadding="1">
+ <form id="form1" name="form1" method="post" action="">
+  <tr>
+    <td>超级星光大道
+    <input name="username" type="text" id="username" value="{if $username==''}请输入用户名称{else}{$username}{/if}" onchange="document.getElementById('from2').submit();">
+    <input type="submit" name="Submit" value="搜索">
+    <input type="hidden" name="uid" id="uid" value="{$username}"/>
+  </form>
+    </td>
+  </tr>
+</table>
+<form id="form2" name="form2" method="post" action="">
+<table width="998" border="0" cellspacing="1" cellpadding="1">
+
+  <tr>
+    <td width="20">
+    </td>
+    <td width="30" align="center">排名</td>
+    <td width="52" align="center">用户名</td>
+    
+    <td width="45" align="center">积分</td>
+    <td width="50" align="center">投票</td>
+    <td width="184" align="center">参赛时间</td>
+    <td width="121" align="center">比赛总时长</td>
+    <td width="382" align="center">操作</td>
+  </tr>
+  {section name=a loop=$eventsuser}
+  <tr>
+    <td><input name="select[]" type="checkbox" id="select[]" value="{$eventsuser[a].uid}"></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">{$eventsuser[a].username}</td>
+    
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">{$eventsuser[a].join_match_time}</td>
+    <td align="center">{$eventsuser[a].match_total_time}</td>
+    <td align="center">{if $eventsuser[a].islive==0}<a href="?action=huoshow&operation=eventsuser&add=liveroom&addliveroom={$addliveroom}&matchid={$matchid}&uid={$eventsuser[a].uid}" onclick="return confirm('确实要推荐到直播大厅首页么？')">推荐到直播大厅首页 </a>{else}<a href="?action=huoshow&operation=eventsuser&delete=liveroom&deleteliveroom={$deleteliveroom}&matchid={$matchid}&uid={$eventsuser[a].uid}" onclick="return confirm('确实要取消推荐么？')">取消推荐到直播大厅首页 </a>{/if} {if $eventsuser[a].ismatch==0}<a href="?action=huoshow&operation=eventsuser&add=eventsroom&&matchid={$matchid}&uid={$eventsuser[a].uid}" onclick="return confirm('确实要推荐该赛事首页么？')">推荐到该赛事首页</a>{else}<a href="?action=huoshow&operation=eventsuser&delete=eventsroom&&matchid={$matchid}&uid={$eventsuser[a].uid}" onclick="return confirm('确实要取消推荐么？')">取消推荐到该赛事首页</a>{/if}<a href="?action=huoshow&operation=eventsuser&type=liverooms&uid={$eventsuser[a].uid}"> 详情</a></td>
+  </tr>
+  {/section}
+  
+</table>
+<table width="998" border="0" cellspacing="1" cellpadding="1">
+  <tr>
+    <td width="183">  <input type="checkbox" name="check" onclick="check_all(this,'select[]');"/><a onclick="check.click()">全选</a><a href="####" onclick="nopass('current')">禁赛</a> <a href="####" onclick="nopass('all')">永久禁赛</a></td>
+    <td width="46">&nbsp;</td>
+    <td width="759">{$page_str}</td>
+  </tr>
+  <tr style="display:none;" id="nopasstr">
+    <td colspan="3"><label>
+      <textarea name="forbid_reason" id="forbid_reason"></textarea>
+    </label>
+发送方式：
+<label>
+<input type="checkbox" name="checkbox3" value="checkbox" />
+</label>
+邮箱
+<label>
+<input type="checkbox" name="checkbox4" value="checkbox" />
+</label>
+站内信息
+<label>
+<input type="submit" name="Submit3" value="确定" />
+<input type="hidden" name="jinzhistate" id="jinzhistate" value="" />
+</label></td>
+  </tr>
+</table>
+</form>
+{literal}
+<script>
+function nopass(state)
+{
+	obj = document.getElementById("jinzhistate");
+	obj.value = state;
+	document.getElementById("nopasstr").style.display = "inline";
+}
+
+function check_all(obj, cName) {
+var checkboxs = document.getElementsByName(cName);
+for ( var i = 0; i < checkboxs.length; i+=1) {
+checkboxs[i].checked = obj.checked;
+ }
+}
+</script>
+{/literal}

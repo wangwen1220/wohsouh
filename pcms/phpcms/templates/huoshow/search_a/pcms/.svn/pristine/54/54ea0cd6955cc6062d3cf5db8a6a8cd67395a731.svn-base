@@ -1,0 +1,20 @@
+{template "content","huoshow_header"}
+<div class="main_body">
+	<div class="about_left">
+		<div class="about_left_nav">
+			<ul class="about_left_nav_texe">
+				{loop $arrchild_arr $cid}
+				<li{if $catid==$cid} class="current" {else} class="about_left_nav_zi" {/if}><a href="{$CATEGORYS[$cid][url]}">{$CATEGORYS[$cid][catname]}<span class="nav_yingwen">{$CATEGORYS[$cid][catdir]}</span></a></li>
+				{/loop}
+			</ul>
+		</div>
+	</div>
+	<div class="about_right">
+		<div class="about_banner"><a href="#"><img src="/statics/images/about/about_banner.jpg" height="130" width="752"></a></div>
+		<div class="about_right_text">
+			<div class="about_right_text_bt"><span class="banner_fuw">{$title}</span></div>
+			{$content}
+		</div>
+	</div>
+</div>
+{template "content","huoshow_footer"}

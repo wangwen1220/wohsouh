@@ -1,0 +1,47 @@
+<div class="right_news_jiaodian">
+        	 <div class="right_news_jiaodian_01" id="pbox1">
+                  <div class="right_news_jiaodian_bt"><span class="wenzi"> 　 点击排行榜 </span><span class="news_huadong"><a href="javascript:;"class="news_huadong_dangqiang">日</a> <a href="javascript:;">周</a> <a href="javascript:;">月</a></span></div>
+                  <div class="paihangbang">
+                     <div class="clear"></div><div class="right_newslist_ph"><ul>
+                     {pc:content  action="hits" catid="$catid" order="dayviews DESC" num="8"}
+                     {loop $data $r}
+                     <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],54,'...')}</a></li>
+                     {/loop}
+                     {/pc}
+                     </ul>
+                     </div>
+                  </div>
+                  <div class="paihangbang">
+                       <div class="clear"></div><div class="right_newslist_ph"><ul>
+                       {pc:content  action="hits" catid="$catid" order="weekviews DESC" num="8"}
+                     {loop $data $r}
+                     <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],54,'...')}</a></li>
+                     {/loop}
+                     {/pc}
+                       
+                       </ul></div>
+                  </div>
+                  <div class="paihangbang" >
+                     <div class="clear"></div><div class="right_newslist_ph"><ul>
+                     {pc:content  action="hits" catid="$catid" order="weekviews DESC" num="8"}
+                     {loop $data $r}
+                     <li><a href="{$r[url]}" target="_blank">{str_cut($r[title],54,'...')}</a></li>
+                     {/loop}
+                     {/pc}
+                     </ul></div>
+                  </div>
+              </div>
+                  <script>
+                      $(function(){
+                          window.pbox1 = make_pagebox('pbox1', {
+                              links_selector: '.news_huadong a',
+                              current_class: 'news_huadong_dangqiang',
+                              pages_selector: '.paihangbang',
+                              event_type: 'mouseover'
+                          });
+
+
+                      });
+
+                  </script>
+        </div>

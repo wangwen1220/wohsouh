@@ -1,0 +1,46 @@
+<!-- Header -->
+<div id="header" class='fn-clear'>
+	<div class='title'>
+		<a class='logo' href="/" title="火秀网" target='_blank'></a>
+		<h1><a href='#' target='_blank'>资料库</a></h1>
+		<h2><a href='#' target='_blank'>火秀游戏</a> &gt; <a href='#' target='_blank'>资料库</a> &gt; 天堂永恒</h2>
+	</div>
+
+	<!--<form class="search" action=''>
+		<fieldset><input type='text' name='q' class='search-wd' value='搜索关键字游戏名' /><button type='submit' class='search-submit'>搜索</button></fieldset>
+		<fieldset class='search-hotspot'>热点：<a href='#'>《第九大陆》</a> <a href='#'>《天龙八部》</a></fieldset>
+	</form>-->
+	<form id="search" class='search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+			        <input type="hidden" value="search" name="app" />
+					<input type="hidden" value="index" name="controller" />
+					<input type="hidden" value="search" name="action" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="typeid" value="1" id="typeid" />
+				    <input type="text" class="search-wd" name="q" value='请输入游戏名称...' />
+					<!--<label for='search-wd'>站内搜索</label>
+					<div id='jselect' class='jselect'>
+						<cite class='selected'>全部</cite>
+						{php $search_model = getcache('search_model_'.$siteid,'search');}
+						<ul class='options'>
+							<li><a class='option' hidefocus='true' href="javascript:;" selectid="1">全部</a></li>
+							{loop $search_model $k=>$v}
+							<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$v['typeid']}">{$v['name']}</a></li>
+							{/loop}
+						</ul>
+					</div><input type="text" id="search-wd" name="q" />-->
+				<button type="submit" id="search-submit">搜 索</button>
+				<!-- <button type='button' class="search-advance">高级搜索</button> -->
+			</form>
+	<!-- Nav -->
+	{if count($nav_arr)>0}
+	<!-- 导航 -->
+	<ul id="nav" class='nav fn-cb fn-clear'>
+	{loop $nav_arr $r $v}
+		<li class='nav-item {if $NAV[id] == id}nav-item-cur{/if}'><a target='_blank' class='nav-item-link' href='{$v[url]}'>{$v[name]}</a></li>
+	{/loop}
+	</ul>
+	{/if}
+</div>
+<!-- Header End -->

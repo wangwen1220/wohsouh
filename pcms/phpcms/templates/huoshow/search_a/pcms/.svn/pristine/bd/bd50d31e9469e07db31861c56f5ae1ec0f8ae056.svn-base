@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-apple.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script> -->
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<!-- <script src='{JS_PATH}live.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-apple game-apple-app'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_apple'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main'>
+		<!--
+			<div id='select'>
+				<dl class='select-item fn-clear'>
+					<dt>软件分类：</dt>
+					<dd>
+						<a class='all cur' href='#'>全部</a>
+						<a href='#'>角色扮演</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+						<a href='#'>角色扮演</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+						<a href='#'>角色扮演</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+						<a href='#'>角色扮</a>
+						<a href='#'>格斗</a>
+						<a href='#'>格斗</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+					</dd>
+				</dl>
+				<dl class='select-item fn-clear'>
+					<dt>资费说明：</dt>
+					<dd>
+						<a class='all cur' href='#'>全部</a>
+						<a href='#'>免费</a>
+						<a href='#'>即时免费</a>
+						<a href='#'>付费</a>
+					</dd>
+				</dl>
+				<dl class='select-item fn-clear'>
+					<dt>版本：</dt>
+					<dd>
+						<a class='all cur' href='#'>全部</a>
+						<a href='#'>中文</a>
+						<a href='#'>英文</a>
+					</dd>
+				</dl>
+			</div>-->
+
+			<div class='ui-header ui-header-content'>
+				<h2 class='title'>{$CATEGORYS[$catid][catname]}</h2>
+				<!--<div class='link link-order'>排序：<a class='cur' href='#'>最新</a> | <a href='#'>热门</a> | <a href='#'>新品</a></div>-->
+			</div>
+			<div class='ui-content-list ui-content-list-download'>
+			{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
+                {loop $data $r}
+                    <div class='ui-content-item {if $n%2==0}recommend{/if}'>
+                        <a class='img img-mgame' href="{str_replace('www','game',$r[url])}" target='_blank'><img src='{thumb($r[thumb],75,75)}' alt='' width='75' height='75' /><span class='mark-img'></span></a>
+                        <h2 class='title'><a href="{str_replace('www','game',$r[url])}" target='_blank'>{$r[title]}</a></h2>
+                        <p class='cnt'>{str_cut($r['description'],100,'')}<a class='detail' href="{str_replace('www','game',$r[url])}" target='_blank'>[详细]</a></p>
+                        <ul class='info-list'>
+                            <li>分类：{$CATEGORYS[$r[catid]][catname]}</li>
+                            <li>评分：<em>{$r[stars]}</em></li>
+                            <!--<li>大小：20M</li>
+                            <li>下载：4566次</li>-->
+                        </ul>
+                    </div>
+			    {/loop}
+			{/pc}
+			</div>
+
+			<div id='pager' class="pager ui-pager">{$pages}</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-hotgame ui-box-side-top'>
+				<h2 class='ui-box-side-title'>IPhone游戏推荐</h2>
+				{pc:content action="position" posid="547"  order="listorder DESC" num="5"}
+				<ul class='ui-hotgame-list'>
+					{loop $data $r}
+					<li class='ui-hotgame-list-item'>
+						<a class='img img-mgame img-mgame-50' href="{str_replace('www','game',$r[url])}" target='_blank'><img src='{thumb($r[thumb],50,50)}' alt='' width='50' height='50' /><span class='mark-img'></span></a>
+						<h3 class='title'><a href="{str_replace('www','game',$r[url])}" target='_blank'>{str_cut($r[title], 30,'')}</a></h3>
+						<!-- span class='num'>{$r[stars]}</span> -->
+						<div class="content" style="width: 180px;">
+							<p>{str_cut($r[description],80,'')}</p>
+						</div>
+						<a class='button' href="{str_replace('www','game',$r[url])}" target='_blank'></a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-hotgame'>
+				<h2 class='ui-box-side-title'>IPhone软件推荐</h2>
+				{pc:content action="position" posid="548"  order="listorder DESC" num="5"}
+				<ul class='ui-hotgame-list'>
+					{loop $data $r}
+					<li class='ui-hotgame-list-item'>
+						<a class='img' href="{str_replace('www','game',$r[url])}" target='_blank'><img src='{thumb($r[thumb],50,50)}' alt='' width='50' height='50' /></a>
+						<h3 class='title'><a href="{str_replace('www','game',$r[url])}" target='_blank'>{str_cut($r[title], 30,'')}</a></h3>
+						<!-- span class='num'>{$r[stars]}</span> -->
+						<div class="content" style="width: 180px;">
+							<p>{str_cut($r[description],80,'')}</p>
+						</div>
+						<a class='button' href="{str_replace('www','game',$r[url])}" target='_blank'></a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side ui-box-gallery'>
+				<h2 class='ui-box-side-title'>iPhone 推荐壁纸</h2>
+				{pc:content action="lists" catid="306" num="4" order="inputtime DESC"}
+				<ul class='ui-img-list ui-img-list-plus'>
+					{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{str_replace('www','game',$r[url])}" target='_blank'><img src='{thumb($r[thumb],110,162)}' width='110' height='162' /></a>
+						<a class='title' href="{str_replace('www','game',$r[url])}" target='_blank'>{str_cut($r[title], 30,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

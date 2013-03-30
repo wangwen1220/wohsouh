@@ -1,0 +1,81 @@
+<div id='collect-goods-pin' class="dialog dialog-repin collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>转藏</h2>
+		<a class="close" href="#"><strong>Close</strong></a>
+	</div>
+
+	<div class='select-pin fn-clear'>
+		<div id='goods-img' class='pin-img'><a class='img' href='#'><img src='/statics/images/myshow/avatar2.jpg' width='170' height='224' /></a></div>
+		<form id='pin-info-form' class='pin-info-form' name='pin_info' method='post' action="/index.php?m=community&c=index&a=ajax_transfer&act_submit=yes">
+			<input type="hidden" value="default_id" class="inputselect" name="album" />
+			<input type="hidden" name="share_id" value="{$share_id}"/>
+			<input type='hidden' name='tags_id' id='pin-tags-id' value='' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>我的专辑</cite>
+				<div class='options'>
+					<ul class='option-list'>
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+						{loop $a_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+						{/loop}
+						{loop $list_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+						{/loop}
+					</ul>
+					<div class='create-album'>
+						<input name='create_album' type='text' value='创建新专辑' />
+						<a class='button disabled' href='javascript:;'>创建</a>
+					</div>
+				</div>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc' id='goods-desc'></textarea>
+				<label>描述一下这个专辑...别忘@好友哦</label>
+			</div>
+			<div class='fancy'>
+				<input type='text' name='tags' id='pin-tags' class='tags' value='' />
+				<label>最多5个标签，以空格隔开</label>
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>转藏</button>
+				<ul class='openness'>
+					<li><a href='javascript:;'><span>分享对所有人可见</span></a></li>
+					<li class='selected'><a href='javascript:;'><span>分享仅对被@好友可见</span></a></li>
+					<li><a href='javascript:;'><span>分享对自己可见</span></a></li>
+				</ul>
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<ul id='tag-list' class='tag-list'>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag2' href='#'>美容</a></li>
+				<li><a id='tag3' href='#'>美食</a></li>
+				<li><a id='tag4' href='#'>旅行</a></li>
+				<li><a id='tag5' href='#'>汽车</a></li>
+				<li><a id='tag6' href='#'>汽车</a></li>
+				<li><a id='tag7' href='#'>汽车</a></li>
+				<li><a id='tag8' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>美女</a></li>
+				<li><a id='tag1' href='#'>美女</a></li>
+				<li><a id='tag1' href='#'>美女</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+				<li><a id='tag1' href='#'>汽车</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

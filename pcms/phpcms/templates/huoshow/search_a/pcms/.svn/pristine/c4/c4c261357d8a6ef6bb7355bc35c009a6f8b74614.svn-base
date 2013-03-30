@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-picshow.css' rel='stylesheet' />
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-picshow'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<!-- 相册 -->
+		<div id="mygallery-black" class="mygallery mygallery-black" data-skin='black'>
+			<div class='mygallery-header fn-clear'>
+				<div class='mygallery-info'>
+					<h2 class='title'>{$title}</h2>
+					<span class='count'>（<em class='index'>1</em>/<span class='total'>10</span>） </span>
+					<span class='time'>{$inputtime}</span>
+				</div>
+				<form id="search-form" class='search' name="" method="get" action="{APP_PATH}index.php" target="_blank">
+					<input type="hidden" value="search" name="app" />
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="typeid" value="3" id="typeid" /><!-- 搜索类型 -->
+					<input type='text' name='q' class='search-wd' value='搜索图片' /><button type='submit' class='search-submit'>搜索</button>
+				</form>
+				<p class='cnt'>{$description}</p>
+			</div>
+			<div class='mygallery-view'>
+				<div class='mygallery-view-loading'></div>
+				<div class='mygallery-view-img'><img src='{thumb($pictureurls[$current_imgno][url],0,600)}' /><span></span></div>
+				<div class='mygallery-view-prev'><a class='disabled' href='#p=1' hidefocus='true'></a></div>
+				<div class='mygallery-view-next'><a href='#p=2' hidefocus='true'></a></div>
+			</div>
+
+			<h2 class='mygallery-view-title'>{$description}</h2>
+
+			<div class='mygallery-action fn-clear'>
+				<!-- JiaThis Button BEGIN -->
+				<span id='jiathis' class="share jiathis_style jiathis">
+					<span class="jiathis_txt">分享到：</span>
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_renren"></a>
+					<a class="jiathis_button_tsohu"></a>
+					<a class="jiathis_button_kaixin001"></a>
+					<a class="jiathis_button_douban"></a>
+					<a class="jiathis_button_t163"></a>
+					<a class="jiathis_button_tieba"></a>
+					<a class="jiathis_button_taobao"></a>
+					<a class="jiathis_button_tianya"></a>
+					<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1349664104558770" charset="utf-8"></script>
+				</span>
+				<!-- JiaThis Button END -->
+				{php $commentid_tmp = id_encode("content_$catid",$id,$siteid);}
+				{pc:comment action="get_comment" commentid="$commentid_tmp"}
+				{php $comment = $data;}
+				<span class='view-comment'><a href='#comment_iframe'>评论</a><em>({if $comment[total]}{$comment[total]}{else}0{/if})</em></span>
+				{/pc}
+				<a class='view-original' target="_blank" href='{$pictureurls[$current_imgno][url]}'>查看原图</a>
+				<a class='view-all' href='javascript:;'>全部图片</a>
+			</div>
+
+			<div class='mygallery-nav'>
+				<div class='mygallery-nav-item mygallery-nav-prev'>
+					<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$previous_page[url])}" ><img src='{thumb($previous_page[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$previous_page[url])}" >&lt; 上一图集</a>
+				</div>
+				{pc:content action="get_next_page" id="$id" catid="$catid"}
+				{if $data ==0}
+				<div class='mygallery-nav-item mygallery-nav-next'>
+					<a class='title'>没有找到下一图集</a>
+				</div>
+				{else}
+				{loop $data $r}
+				<div class='mygallery-nav-item mygallery-nav-next'>
+					<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}">下一图集 &gt;</a>
+				</div>
+				{/loop}
+				{/if}
+				{/pc}
+
+				<!--<div class='mygallery-nav-item mygallery-nav-next'>
+					<a class='img' href='{$previous_page[url]}'><img src='{thumb($previous_page[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href='{$previous_page[url]}'>下一图集 &gt;</a>
+				</div>-->
+			</div>
+
+			<div class='mygallery-ctrl'>
+				<div class='mygallery-ctrl-thumb'>
+					<ul class='mygallery-ctrl-thumb-list fn-clear'>
+					{loop $pictureurls $r}
+						<li class='mygallery-ctrl-thumb-item {if $n==1}cur{/if}'>
+							<a class='thumb' href='#p={$n}' data-src='{$r[url]}' data-title='{$r[title]}'><img src='{thumb($r[url],75,75)}' alt='' width='75' height='75' /></a>
+						</li>
+					{/loop}
+					</ul>
+				</div>
+				<div class='mygallery-ctrl-bar'>
+					<div class='mygallery-ctrl-bar-main'>
+						<a class='mygallery-ctrl-bar-btn fn-clear' href='javascript:;'>
+							<span class='mygallery-ctrl-bar-btn-lt'></span>
+							<span class='mygallery-ctrl-bar-btn-rt'></span>
+							<span class='mygallery-ctrl-bar-btn-ct'><em></em></span>
+						</a>
+					</div>
+				</div>
+				<a class='mygallery-ctrl-prev' href='javascript:;' hidefocus='true'></a>
+				<a class='mygallery-ctrl-next' href='javascript:;' hidefocus='true'></a>
+			</div>
+		</div>
+		<!-- 相册结束 -->
+
+		<div id='jGalleryGroup' class='gallery-group'>
+			<div class='ui-header'>
+				<h2 class='title'>相关图集推荐</h2>
+				<div class='link'><a class='change' href='javascript:;'>换一组</a></div>
+			</div>
+			<ul class='ui-img-list ui-img-list-plus'>
+			{pc:content action="lists" catid="$catid" order="id DESC" num="30"}
+			{loop $data $r}
+				<li class='ui-img-list-item'>
+					<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],100,75)}' width='100' height='75' /></a>
+					<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],30,'')}</a>
+				</li>
+			{/loop}
+			{/pc}
+			</ul>
+		</div>
+
+		<div id='main' class='article-box'>
+			<div class='article-related article-gallery'>
+				<div class='header-news'>
+					<h2 class='title'>猜你喜欢</h2>
+					<div class='link'><a class='more' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[365][url])}" >更多&gt;&gt;</a></div>
+				</div>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="key_news" catids="265,266,267,268,269,277,278,279,288,296,306,354,355,356,319,320,321,322,357,358,359,365" id="$id" newsnum="12"}
+				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],142,106)}' width='142' height='106' /></a>
+						<a class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>热点推荐</h2>
+				{pc:content  action="rand_pic_hothits" catids="319,320,321,322,357,358,359" newsnum="13"}
+				{loop $data $r}
+				{if $n==1}
+				<div class='ui-art fn-clear'>
+					<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],122,90)}' alt='{$r[title]}' width='122' height='90' /></a>
+					<h3 class='title'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r[title],20,'')}</a></h3>
+					<p class="content">{str_cut($r['description'],60,'')} <a class='more' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>[详情]</a></p>
+				</div>
+				{else}
+				{if $n==2}<ul class='ui-list'>{/if}
+					<li class='ui-list-item'><a href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],40,'')}</a></li>
+				{if $n==13}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+		</div>
+
+		<!--<form id='comment' class='ui-comment-form fn-cb' method='post' action=''>
+			<div class='header-news'>
+				<h2 class='title'>网友评论</h2>
+				<div class='link'>已有 <em>1</em> 条评论，<a class='alink' href='#'>点击</a>查看全部</div>
+			</div>
+			<textarea name=''></textarea>
+			<div class='submit'>
+				<span class='login'><a href='#'>登录</a> | <a href='#'>注册</a></span> <button type='submit'>发表评论</button>
+			</div>
+		</form>-->
+
+		<!-- 评论 -->
+		{if $allow_comment && module_exists('comment')}
+		<iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="200" id="comment_iframe" frameborder="0" scrolling="no">
+		</iframe>
+		<script src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+		{/if}
+		<!-- 评论结束 -->
+	</div>
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-wp.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-wp game-wp-list'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_wp'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main'>
+			<h2 class='ui-header-wp'><a class='cur'>{getCatNameFromCatid($catid)}</a></h2>
+
+			<div class='ui-content-list ui-content-list-app'>
+			{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
+			{loop $data $r}
+				<div class='ui-content-item'>
+					<a class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],138,102)}' alt='' width='138' height='102' /></a>
+					<h2 class='title'><a target="_blank" href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{$r[title]}</a></h2>
+					<p class='status'>发表时间：{date($r['inputtime'])}</p>
+					<p class='cnt'> {str_cut($r['description'],268,'')}<a target="_blank" class='detail' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>[详细]</a></p>
+				</div>
+			{/loop}
+			{/pc}
+			</div>
+
+			<div id='pager' class="pager ui-pager">{$pages}</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-step ui-box-side-top'>
+				<h2 class='ui-box-side-title'>装机必备</h2>
+				<dl class='ui-step'>
+					{pc:content action="position" posid="561" catid="$catid" order="listorder DESC" num="3"}
+					<dt>第一步：新手上路</dt>
+					<dd>{loop $data $r}<a target="_blank" href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r[title], 15,'')}</a> {/loop}</dd>
+					{/pc}
+
+					<dt>第二步：更上一级</dt>
+					{pc:content action="position" posid="562" catid="$catid" order="listorder DESC" num="12"}
+					<dd>{loop $data $r}<a target="_blank" href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r[title], 15,'')}</a> {/loop}</dd>
+					{/pc}
+					<!-- <dt><a target="_blank" href='#'><img src='http://www.baidu.com/img/baidu_sylogo1.gif' alt='' width='120' height='50' /></a><a target="_blank" href='#'><img src='http://www.baidu.com/img/baidu_sylogo1.gif' alt='' width='120' height='50' /></a></dt> -->
+				</dl>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content action="position" posid="563" catid="$catid" order="listorder DESC" num="2"}
+				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],120,50)}' width='120' height='50' /></a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>Windows Phone 教程 <span class='link'><a target="_blank" class='more' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$CATEGORYS[312][url])}">更多&gt;&gt;</a></span></h2>
+				<ul class='ui-list fn-clear'>
+				{pc:content action="lists" catid="80" order="id DESC" num="10"}
+				{loop $data $r}
+					<li class='ui-list-item'><a target="_blank" href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],60,'')}</a></li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>专题推荐 <span class='link'><!-- <a target="_blank" class='more' href='#'>更多&gt;&gt;</a> --></span></h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="564" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],122,92)}' width='122' height='92' /></a>
+						<a target="_blank" class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-box-side-gallery'>
+				<h2 class='ui-box-side-title'>热门应用</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="565" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'><img src='{thumb($r[thumb],122,92)}' width='122' height='92' /></a>
+						<a target="_blank" class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],20,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-tab ui-tab-lite'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'>本周<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>本月<span class='icon'></span></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-list-plus'>
+					 {pc:content action="hits" catid="313" num="10" order="weekviews DESC" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a target="_blank" class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}
+					</ol>
+					<ol class='ui-tab-cnt-item ui-list-plus'>
+					 {pc:content action="hits" catid="313" num="8" order="monthviews DESC" cache="3600"}
+					 {loop $data $r}
+						<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a target="_blank" class='title' href="{str_replace('http://www.huoshow.com/games/','http://game.huoshow.com/',$r[url])}" target='_blank'>{str_cut($r['title'],60,'')}</a></li>
+					{/loop}
+					{/pc}
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

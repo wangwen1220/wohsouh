@@ -1,0 +1,43 @@
+{template "community","myshow_header"}
+<div id="modify_album">
+	<h2>修改专辑</h2>
+	<form id='modify-album-form' class="album-form" action="/index.php?m=community&c=index&a=myshow_modify_album&album_id={$album_id}" method="post">
+		<ul>
+<<<<<<< .mine
+			<li><label for='album-name'>专辑名称：</label><input name='album_name' type='text' id='album-name' value="{$album_name}" /><a id='del-album-btn' class='button' href="/index.php?m=community&c=myhuoshow&a=userdelalbum&id={$album_id}">删除专辑</a></li>
+=======
+			<li><label for='album_name'>专辑名称：</label><input name='album_name' type='text' id='album_name' value="{$album_name}" />
+			<div id='del-album-btn' class='button'><a href="javascript:void(0);" onclick="delError('/index.php?m=community&c=myhuoshow&a=userdelalbum&id={$album_id}');return false;">删除</a></div></li>
+>>>>>>> .r6567
+			<li>
+				<strong>分类：</strong>
+				<div class='divselect'>
+					<cite class='selected'>{$album_class}</cite>
+					<ul class='options'>
+					{loop $all_calss $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r[id]}">{$r[name]}</a></li>
+					{/loop}
+					</ul>
+				</div>
+				<input name="typeid" id="inputselect" type="hidden" value="{$r[id]}" />
+				<input name="album_id" type="hidden" id="album_id" value="{$album_id}" />
+				<input name="url" type="hidden" id="url" value="{$url}" />
+			</li>
+			<li><label for='album-desc'>补充描述：</label><textarea id='album-desc' name='pin_description'>搞笑图片...</textarea></li>
+			<li class='last'><span class='esbtn'><button type='submit' class='sbtn'>保存设置</button></span></li>
+		</ul>
+	</form>
+</body>
+</html>
+
+
+<script type="text/javascript">
+function delError(href)
+{
+if (!confirm("确定删除？")) {
+return false;
+}else{
+window.location.href= href;
+}
+}
+</script> 

@@ -1,0 +1,53 @@
+<!-- 简单上传 -->
+<div id='upload-img' class='pin-img'><a class='img' href='#'><img src='{$thumb}' /></a></div>
+<form id='pin-info-form' class='pin-info-form' name='community' method='post' action="/index.php?m=community&c=myhuoshow&a=myupload&act_submit=yes&list=1">
+	<input type="hidden" name="thumb" value="{$thumb}" id='img-src' />
+	<input type="hidden" name="small" value="{$small}" />
+	<input type="hidden" name="original_pic" value="{$image}" />
+	<input type="hidden" name="remote_url" id='search-url' />
+	<input type="hidden" name="album_id" class="inputselect" value="{if $getalbum_id==""}default_id{else}{$getalbum_id}{/if}"/>
+	<input type='hidden' id='pin-tags-id' />
+	<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+	<div class='divselect'>
+		<cite class='selected'>{if $getalbum_id==""}我的专辑{else}{$getalbum_name}{/if}</cite>
+		<div class='options'>
+			<ul class='option-list'>
+				<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">我的专辑</a></li>
+				{loop $list_arr $r}
+				<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+				{/loop}
+			</ul>
+			<div class='create-album'>
+				<input name='create_album' type='text' value='创建新专辑' />
+				<a class='button disabled' href='javascript:;'>创建</a>
+			</div>
+		</div>
+	</div>
+	<div class='fancy'>
+		<textarea name='description' class='desc'></textarea>
+		<label>描述一下这个专辑...别忘@好友哦</label>
+	</div>
+	<div class='fancy'>
+		<input type='text' id='pin-tags' class='tags' />
+		<label>最多5个标签，以空格隔开</label>
+	</div>
+	<div class='submit'>
+		<button type='submit' name='pin_info_submit' class='pin-info-submit'>采下来</button>
+	</div>
+</form>
+<div class='select-tags'>
+	<h3>常用标签，点击插入</h3>
+	<div class="tag-list-wrapper">
+		<div id="tag-list" class='tag-list'>
+		{loop $a_arr_tag $t}
+			{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+				<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+			{if ($n+1)%20==0}</ul>{/if}
+		{/loop}
+		</div>
+	</div>
+	<div class='tag-list-nav'>
+		<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+		<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+	</div>
+</div>

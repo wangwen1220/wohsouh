@@ -1,0 +1,46 @@
+{template "content","game_header"}
+<ul class='small_game_nav'>
+	{loop subcat(87,0,0,$siteid) $r}
+	<li class='a{$n}'><a target="_blank" href='{$r[url]}' title='{$r[catname]}'>{$r[catname]}</a></li>
+	{/loop}
+</ul>
+<div id='wrapper' class='small_game_list'>
+<!-- 射击小游戏 -->
+<div class='ui_content ui_content_box fn_clear'>
+	<h2 class='ui_content_title'>{getCatNameFromCatid($catid)}</h2>
+	{pc:content action="lists" catid="$catid" num="40" order="id DESC" page="$page"}
+	<ul class='ui_game_img_list'>
+		{loop $data $r}
+		<li>
+			<a href='{$r[url]}' title='{$r[title]}'><img src='{thumb($r[thumb],75,75)}' alt='{$r[title]}' width='75' height='75' /></a>
+			<h4><a href='{$r[url]}' title='{$r[title]}'>{str_cut($r[title],20)}</a></h4>
+		</li>
+		{/loop}
+	</ul>
+	{/pc}
+	<div class="clear"></div>
+	<div class="fanye">
+		<div id="pages" class="text-c">{$pages}</div>
+	</div>
+</div>
+<!-- 射击小游戏结束 -->
+	<div class='ui_aside ad_aside'><img src='/statics/images/tv/test.gif' alt='' width='298' height='298' /></div>
+<!-- 推荐小游戏 -->
+<div class='ui_box ui_box_aside'>
+	<h2 class='ui_box_title'>推荐小游戏</h2>
+	{pc:content action="position" posid="225" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+	<ul class='ui_game_artical_list'>
+		{loop $data $r}
+		<li>
+			<a href='{$r[url]}' title='{$r[title]}'><img src='{thumb($r[thumb],75,75)}' alt='{$r[title]}' width='75' height='75' /></a>
+			<h4><a href='{$r[url]}' title='{$r[title]}'>{str_cut($r[title],20)}</a></h4>
+			<p>{str_cut($r[description],100)}</p>
+		</li>
+		{/loop}
+	</ul>
+	{/pc}
+	<!--a class='more' href='#' title=''>更多&gt;&gt;</a-->
+</div>
+<!-- 推荐小游戏结束 -->
+</div>
+{template "content","footer"}

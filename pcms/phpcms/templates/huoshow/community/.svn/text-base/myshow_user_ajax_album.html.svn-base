@@ -1,0 +1,44 @@
+{loop $m_album $r}
+			<div class='ui-album'>
+				{if $r[front_cover] ==2}
+					<a class="img img-single" href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}">
+					<img width="165" height="165" src="{$r[thumb]}">
+					</a>
+				{elseif $r[front_cover] ==1}
+					<a class='img' href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>
+					{loop $r[thumb] $v}
+					<img src='{$v}' alt='' width='60' height='60' />
+					{/loop}
+					</a>
+				{else}
+					<a class="img img-single" href="/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}">
+					<img width="165" height="165" src="{$r[thumb]}">
+					</a>
+				</a>
+				{/if}
+				<div  class='intro'>
+					<h3><a href='/index.php?m=community&c=index&a=myshow_show_album&album_id={$r[id]}'>{$r[album_name]}</a></h3>
+					<p class='fn-hide'>{$r[description]}</p>
+				</div>
+				<div class='pinner'>
+					<a class='avatar' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'><img src='{$r[avatar]}' alt='' width='28' height='28' /></a>
+					<a class='name' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$r[uid]}'>{$r[nickname]}</a>
+					<p class='stats'>创建于：{$r[input_time]}</p>
+				</div>
+				<div class='action fn-hide'>
+					{if (empty($user['uid']))}
+					<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>关注</a>
+					{else}
+					{if (($user['uid'] == $myshowuid))}
+					<a class='edit edit-album' href='/index.php?m=community&c=index&a=myshow_modify_album&album_id={$r[id]}'>编辑</a>
+					{elseif (!empty($user['uid']) && $r[isfollowalbum] == 0)}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>关注</a>
+					{elseif (!empty($user['uid']) && ($r[isfollowalbum] == 1) && ($user['uid'] != $myshowuid))}
+						<a class='follow follow-album' href='/index.php?m=community&c=index&a=create_watchAlbum&album_id={$r[id]}'>取消关注</a>
+					{/if}
+					{/if}
+					<a class='share' href='#'>分享</a>
+				</div>
+			</div>
+			{/loop}
+			{$page_str}

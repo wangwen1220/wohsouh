@@ -1,0 +1,463 @@
+{template "content","tv_header"}
+<!-- Page Banner -->
+<div class='page_banner'>
+	<!-- 轮换大图 -->
+	<div class="star_flash">
+		<div class="slide" id="pbox3">
+			{pc:content action="position" posid="138" order="listorder DESC" num="5"}
+			{loop $data $r}
+			<div class="slide-page">
+				<a href="{$r[url]}" target="_blank"><img src="{thumb($r[thumb],660,346)}" width="660" height="346" /></a>
+				<div class="slide-page-info">
+					<h3><a title="{$r[title]}" href="{$r[url]}" title="{$r[title]}" target="_blank">{$r[title]}</a></h3>
+				</div>
+			</div>
+			{/loop}
+			{/pc}
+			<div class="slide-links-wrap"><span class="slide-links">
+				{pc:content	action="position" posid="138" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				{loop $data $r}
+				<a hidefocus='true' href="javascript:void(0);"></a>
+				{/loop}
+				{/pc}
+			</span></div>
+			<script>
+				$(function(){
+					window.pbox3 = make_pagebox('pbox3', {
+						links_selector: '.slide-links a',
+						current_class: 'slide-current',
+						pages_selector: '.slide-page',
+						prev_selector: '.slide-prev',
+						next_selector: '.slide-next',
+						interval: 4,
+						effect: 1
+					});
+					make_pagebox('p1_r', {
+						links_selector: '.bar_text li',
+						current_class: 'hover_sta',
+						pages_selector: '.p1_r-page'
+					});
+				});
+			</script>
+		</div>
+	</div>
+	<!-- 轮换大图结束 -->
+	<!-- Page News -->
+	<div class='page_news'>
+	{pc:content  action="position" posid="139" order="listorder DESC" num="9" }
+	{loop $data $r}
+	{if $n==1}
+		<h2><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h2>
+	{elseif $n>=2 && $n<6}	
+		{if $n==2}<p><!--<em>话题：</em>-->{/if}<a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a> | {if $n==5}</p>{/if}
+	{elseif $n>=6}
+		{if $n==6}<p>{/if}<a target="_blank" href="{$r[url]}">[{str_cut($r[title],30,'')}]</a> {if $n==9}</p>{/if}
+	{/if}
+	{/loop}
+	{/pc}	
+		{pc:content  action="position" posid="161" order="listorder DESC" num="5" }
+		{loop $data $r}
+		{if $n==1}
+		<h2><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h2>
+		{else}
+		{if $n==2}<p><!--<em>相关：</em>-->{/if}<a target="_blank" href="{$r[url]}">[{str_cut($r[title],30,'')}]</a>{if $n==5}</p>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+		{pc:content  action="position" posid="162" order="listorder DESC" num="5" }
+		{loop $data $r}
+		{if $n==1}
+		<h2><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h2>
+		{else}
+		{if $n==2}<p>{/if}<a target="_blank" href="{$r[url]}">[{str_cut($r[title],30,'')}]</a> {if $n==5}</p>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+		{pc:content  action="position" posid="163" order="listorder DESC" num="5" }
+		{loop $data $r}
+		{if $n==1}
+		<h2><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h2>
+		{else}
+		{if $n==2}<p>{/if}<a target="_blank" href="{$r[url]}">[{str_cut($r[title],30,'')}]</a> {if $n==5}</p>{/if}
+		{/if}
+		{/loop}
+		{/pc}
+	</div>
+	<!-- Page News End -->
+</div>
+<!-- Page Banner End -->
+<!-- 荧屏热播 -->
+<div class='ui_slide'>
+	<h2>荧屏热播</h2>
+	<div id='tv_slide_content' class='ui_slide_content'>
+		<ul>
+		{pc:content  action="position" posid="141" order="listorder DESC" num="24" }
+		{loop $data $r}
+			<li>
+				<a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],120,90)}" alt="{$r[title]}" width='120' height='90' /></a>
+				<h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4>
+			</li>
+		{/loop}	
+		</ul>
+	</div>
+	<div class='ui_slide_nav'>
+		<a id='tv_slide_prev' class='ui_slide_prev' href="">Next</a>
+		<a id='tv_slide_next' class='ui_slide_next' href="">Next</a>
+		<a class='more' target="_blank" href="{$CATEGORYS[236][url]}">更多&gt;&gt;</a>
+	</div>
+</div>
+<!-- 荧屏热播结束 -->
+
+<!-- 电视主内容 -->
+<div class='tv_content fn_clear'>
+	<!-- 主内容 -->
+	<div class='main_content fn_left'>
+		<div id="mainland_tv_news" class='tv_news'>
+			<h2>内地剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+				{pc:content  action="position" posid="142" order="listorder DESC" num="2" }
+				{loop $data $r}
+					<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],143,108)}" alt="{$r[title]}" width='143' height='108' /></a><span class="trans_bg"></span><em><!--{$r[copyfrom]}--></em><h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4></li>
+				{/loop}
+				{/pc}
+				</ul>
+				<!--<p><em>热播：</em>
+				{pc:content  action="position" posid="156" order="listorder DESC" num="25" }
+				{loop $data $r}
+				<a target="_blank" href="{$r[url]}">{str_cut($r['title'],16,'')}</a> |
+				{/loop}
+				</p>
+				{/pc}-->
+				<dl class='fn_clear'>
+					<dt>热播：</dt>
+					{pc:content  action="position" posid="156" order="listorder DESC" num="14" }
+					{loop $data $r}
+					<dd><a href="{$r[url]}" target='_blank'>{str_cut($r['title'],30,'')}</a></dd>
+					{/loop}
+					{/pc}
+				</dl>
+			</div>
+			<div class='tv_news_text'>
+				{pc:content  action="position" posid="143" order="listorder DESC" num="1" }
+				{loop $data $r}
+				<h3><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h3>
+				{/loop}
+				{/pc}
+				{pc:content  action="tv_indexcatids_news" catids="143" num="12"}
+				{loop $data $r}
+					{if $n<=2}
+					{if $n-1==0}<h4>{/if}
+				<a target="_blank" href="{$r[url]}">[{str_cut($r['title'],36,'')}]</a>
+					{if ($n-2)==0} </h4>{/if}
+				 {else}
+					{if $n==3}<ul>{/if}
+					<li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],74,'')}</a></li>
+				{if $n-12==0}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+			<a class="more" target="_blank" href="{$CATEGORYS[143][url]}">更多&gt;&gt;</a>
+		</div>
+
+		<div id="hktw_tv_news" class='tv_news'>
+			<h2>港台剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+				{pc:content  action="position" posid="145" order="listorder DESC" num="2" }
+				{loop $data $r}
+					<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],143,108)}" alt='' width='143' height='108' /></a><span class='trans_bg'></span><em><!--{$r[copyfrom]}--></em><h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4></li>
+				{/loop}
+				{/pc}
+				</ul>
+				<dl class='fn_clear'>
+					<dt>热播：</dt>
+					{pc:content  action="position" posid="157" order="listorder DESC" num="14" }
+					{loop $data $r}
+					<dd><a href="{$r[url]}" target='_blank'>{str_cut($r['title'],30,'')}</a></dd>
+					{/loop}
+					{/pc}
+				</dl>
+			</div>
+			<div class='tv_news_text'>
+			{pc:content  action="position" posid="146" order="listorder DESC" num="1" }
+				{loop $data $r}
+				<h3><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h3>
+				{/loop}
+				{/pc}
+				{pc:content  action="tv_indexcatids_news" catids="144" num="12"}
+				{loop $data $r}
+					{if $n<=2}
+					{if $n-1==0}<h4>{/if}
+				<a target="_blank" href="{$r[url]}">[{str_cut($r['title'],36,'')}]</a>
+					{if ($n-2)==0} </h4>{/if}
+				 {else}
+					{if $n==3}<ul>{/if}
+					<li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],74,'')}</a></li>
+				{if $n-12==0}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+			<a class="more" target="_blank" href="{$CATEGORYS[144][url]}">更多&gt;&gt;</a>
+		</div>
+
+		<div id="jpkr_tv_news" class='tv_news'>
+			<h2>日韩剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+				{pc:content  action="position" posid="148" order="listorder DESC" num="2" }
+				{loop $data $r}
+					<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],143,108)}" alt="{$r[title]}" width='143' height='108' /></a><span class="trans_bg"></span><em><!--{$r[copyfrom]}--></em><h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4></li>
+				{/loop}
+				{/pc}
+				</ul>
+				<dl class='fn_clear'>
+					<dt>热播：</dt>
+					{pc:content  action="position" posid="158" order="listorder DESC" num="14" }
+					{loop $data $r}
+					<dd><a href="{$r[url]}" target='_blank'>{str_cut($r['title'],30,'')}</a></dd>
+					{/loop}
+					{/pc}
+				</dl>
+			</div>
+			<div class='tv_news_text'>
+				{pc:content  action="position" posid="149" order="listorder DESC" num="1" }
+				{loop $data $r}
+				<h3><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h3>
+				{/loop}
+				{/pc}
+				{pc:content  action="tv_indexcatids_news" catids="145" num="12"}
+				{loop $data $r}
+					{if $n<=2}
+					{if $n-1==0}<h4>{/if}
+				<a target="_blank" href="{$r[url]}">[{str_cut($r['title'],36,'')}]</a>
+					{if ($n-2)==0} </h4>{/if}
+				 {else}
+					{if $n==3}<ul>{/if}
+					<li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],74,'')}</a></li>
+				{if $n-12==0}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+			<a class="more" target="_blank" href="{$CATEGORYS[145][url]}">更多&gt;&gt;</a>
+		</div>
+
+		<div id="eu_tv_news" class='tv_news'>
+			<h2>欧美剧</h2>
+			<div class='tv_news_video'>
+				<ul>
+				{pc:content  action="position" posid="150" order="listorder DESC" num="2" }
+				{loop $data $r}
+					<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],143,108)}" alt="{$r[title]}" width='143' height='108' /></a><span class="trans_bg"></span><em><!--{$r[copyfrom]}--></em><h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4></li>
+				{/loop}
+				{/pc}
+				</ul>
+				<dl class='fn_clear'>
+					<dt>热播：</dt>
+					{pc:content  action="position" posid="159" order="listorder DESC" num="14" }
+					{loop $data $r}
+					<dd><a href="{$r[url]}" target='_blank'>{str_cut($r['title'],30,'')}</a></dd>
+					{/loop}
+					{/pc}
+				</dl>
+			</div>
+			<div class='tv_news_text'>
+				{pc:content  action="position" posid="151" order="listorder DESC" num="1" }
+				{loop $data $r}
+				<h3><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h3>
+				{/loop}
+				{/pc}
+				{pc:content  action="tv_indexcatids_news" catids="146" num="12"}
+				{loop $data $r}
+					{if $n<=2}
+					{if $n-1==0}<h4>{/if}
+				<a target="_blank" href="{$r[url]}">[{str_cut($r['title'],36,'')}]</a>
+					{if ($n-2)==0} </h4>{/if}
+				 {else}
+					{if $n==3}<ul>{/if}
+					<li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],74,'')}</a></li>
+				{if $n-12==0}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+			<a class="more" target="_blank" href="{$CATEGORYS[146][url]}">更多&gt;&gt;</a>
+		</div>
+
+		<div id="popular_tv_news" class='tv_news'>
+			<h2>热门综艺</h2>
+			<div class='tv_news_video'>
+				<ul>
+				{pc:content  action="position" posid="153" order="listorder DESC" num="2" }
+				{loop $data $r}
+					<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],143,108)}" alt="{$r[title]}" width='143' height='108' /></a><span class="trans_bg"></span><em><!--{$r[copyfrom]}--></em><h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4></li>
+				{/loop}
+				{/pc}
+				</ul>
+				<dl class='fn_clear'>
+					<dt>热播：</dt>
+					{pc:content  action="position" posid="160" order="listorder DESC" num="14" }
+					{loop $data $r}
+					<dd><a href="{$r[url]}" target='_blank'>{str_cut($r['title'],30,'')}</a></dd>
+					{/loop}
+					{/pc}
+				</dl>
+			</div>
+			<div class='tv_news_text'>
+				{pc:content  action="position" posid="154" order="listorder DESC" num="1" }
+				{loop $data $r}
+				<h3><a target="_blank" href="{$r[url]}">{str_cut($r['title'],54,'')}</a></h3>
+				{/loop}
+				{/pc}
+				{pc:content  action="tv_indexcatids_news" catids="147" num="12"}
+				{loop $data $r}
+					{if $n<=2}
+					{if $n-1==0}<h4>{/if}
+				<a target="_blank" href="{$r[url]}">[{str_cut($r['title'],36,'')}]</a>
+					{if ($n-2)==0} </h4>{/if}
+				 {else}
+					{if $n==3}<ul>{/if}
+					<li><a target="_blank" href="{$r[url]}">{str_cut($r['title'],74,'')}</a></li>
+				{if $n-12==0}</ul>{/if}
+				{/if}
+				{/loop}
+				{/pc}
+			</div>
+			<a class="more" target="_blank" href="{$CATEGORYS[147][url]}">更多&gt;&gt;</a>
+		</div>
+	</div>
+	<!-- 主内容结束 -->
+	<!-- 次要内容 -->
+	<div class='sub_content fn_right'>
+		<div class='tv_zhanti'>
+			<h2>电视专题</h2>
+			<ul>
+			{pc:content  action="position" posid="144" order="listorder DESC" num="3" }
+   			{loop $data $r}
+				<li><a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],70,70)}" alt="{$r[url]}" width='70' height='70' /></a><h4><a target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></h4></li>
+			{/loop}
+			{/pc}	
+			</ul>
+			<p>
+			{pc:content  action="position" posid="170" order="listorder DESC" num="25" }
+   			{loop $data $r}
+			   	<a target="_blank" href="{$r[url]}">{str_cut($r[title],30,'')}</a>
+			{/loop}
+			{/pc}
+				</p>
+			<!--<p>
+			{pc:content  action="position" posid="170" order="listorder DESC" num="25" }
+   			{loop $data $r}
+			<a target="_blank" href="{$r[url]}">{if $n%2==0}<strong>{/if}{str_cut($r[title],10,'')}{if $n%2==0}</strong>{/if}</a>
+			{/loop}
+			{/pc}
+			</p>-->
+		</div>
+		<div class="ad_aside"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(42);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a9080930'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=42&n=a9080930' /></a>
+			</noscript></div>
+
+		<div class='tv_yingpin'>
+			<h2>荧屏红人</h2>
+			<ul>
+			{pc:content  action="position" posid="147" order="listorder DESC" num="3" }
+			 {loop $data $r}
+				<li>
+					<a class='img' target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],100,134)}" alt="{$r[title]}" width='100' height='134' /></a>
+					<h4><a target="_blank" href="{$r[url]}">{str_cut($r[title],30,'')}</a></h4>
+					<p><a target="_blank" href="{$r[url]}">{str_cut($r[description],150,'')}</a>[<a target="_blank" href="{$r[url]}">详情</a>]</p>
+				</li>
+			 {/loop}
+			 {/pc}
+			</ul>
+		</div>
+
+		<div class='tv_paihang'>
+			<h2>热播排行榜</h2>
+			<ol>
+			{pc:content  action="position" posid="152" order="listorder DESC" num="10" }
+			 {loop $data $r}
+				<li class="no{$n}"><a target="_blank" href="{$r[url]}"> {str_cut($r[title],50,'')}</a><!--<h4><a target="_blank" href="{$r[url]}">{str_cut($r[copyfrom],12,'')}</a></h4>--></li>
+				
+			{/loop}
+			{/pc}
+			</ol>
+		</div>
+
+		<div class='tv_baodao'>
+			<h2>电视焦点</h2>
+			<ul>
+			<!--{pc:content action="hits" catid="$catid" order="views DESC " num="15"}-->
+			{pc:content action="tv_hot_point" catids="143,144,145,146,147,151,152,236"  newnum="17"}
+				{loop $data $r}
+					<li><a target="_blank" href="{$r[url]}">{str_cut($r[title],54,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<!-- 次要内容结束 -->
+</div>
+<!-- 电视主内容结束 -->
+
+<!-- 精彩片花 -->
+<div class="tv_pianhua">
+	<h2 class='tv_title'>精彩片花</h2>
+	<ul>
+	{pc:content  action="tv_indexcatids_img" catids="148" nums="12"}
+	{loop $data $r}
+		<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],143,108)}" alt="{$r[title]}" width='143' height='108' /></a><span class='trans_bg'></span><em><!--{$r[copyfrom]}--></em><h4><a target="_blank" href="{$r[url]}">{str_cut($r['title'],30,'')}</a></h4></li>
+	{/loop}
+	{/pc}
+	</ul>
+</div>
+<!-- 精彩片花结束 -->
+
+<!-- 高清剧照 -->
+<div class="tv_juzhao">
+	<h2 class='tv_title'>高清剧照</h2>
+	<div class='tv_img'>
+		<div class="big_img">
+		{pc:content  action="position" posid="155" order="listorder DESC" num="1" }
+   		{loop $data $r}
+		<a target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],254,328)}" alt="{$r[title]}" width='254' height='328' /></a>	<span class="trans_bg"></span><h4><a target="_blank" href="{$r[url]}">{str_cut($r[title],64,'')}</a></h4>
+		{/loop}
+		{/pc}
+		</div>
+		<ul>
+		<!--{pc:content  action="tv_indexcatids_img" catids="149" nums="10"}-->
+		{pc:content  action="position" posid="343" order="listorder DESC" num="10" }
+		{loop $data $r}
+			<li><a class="img" target="_blank" href="{$r[url]}"><img src="{thumb($r[thumb],122,162)}" alt="{$r[title]}" width='122' height='162' /></a><span class='trans_bg'></span><h4><a target="_blank" href="{$r[url]}">{str_cut($r[title],30,'')}</a></h4></li>
+		{/loop}	
+		{/pc}
+		</ul>
+	</div>
+</div>
+<!-- 高清剧照结束 -->
+
+<!-- Partners -->
+<div class="partners">
+<div class="layer_one"><a>友情链接</a></div>
+<div class="layer_content">
+{pc:link  action="type_list" typeid="66" siteid="$siteid" linktype="0" order="listorder asc" num="29"}
+<p class="layer_content_txt">
+{loop $data $r}
+<a href="{$r[url]}" target="_blank">{$r[name]}</a> {if $n<count($data)}|{/if}
+{/loop}
+</p>
+{/pc}
+</div>
+</div>
+<div class="clear"></div>
+<!-- Partners End -->
+
+{template "content","footer"}

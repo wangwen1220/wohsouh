@@ -1,0 +1,16 @@
+<div class="right_news_jiaodian">
+			<div class="right_news_zixun">
+				<div class="right_news_zixun_01">
+					<div class="right_news_jiaodian_bt ui_list_box_title"><span class="wenzi">频道热门图片 </span></div>
+					<div class="zixun_pic">
+					{pc:content action="channel_hot_img" catids="$catids" imgcount="$img_count" cache="PCNT_CACHELEFTTIME"}
+						<ul>
+						{loop $data $r}
+							<li><a href="{$r[url]}" title="{$r[title]}" target="_blank"><img src="{thumb($r[thumb],120,90)}" width="120" height="90" />{str_cut($r[title],28,'')}</a></li>
+						{/loop}
+						</ul>
+					 {/pc}
+					</div>
+				</div>
+			</div>
+		</div>

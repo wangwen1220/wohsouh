@@ -1,0 +1,37 @@
+{template "community","myshow_header"}
+<div id="loginbar">
+	<div class="tips">
+		<h4>请完善你的火秀注册邮箱</h4>
+		<p>大侠，您是通过第三方账号直接登录的
+	</div>
+	<a class='bbutton' href='javascript:;'>完善我的注册账号</a>
+</div>
+
+<div id="wrapper" class='follow-albums follow-pinner'>
+	<div class="navbar">
+		<h2><strong>推荐关注</strong> <a class='album' href='/index.php?m=community&c=firstlogshow&a=follow_album'>好的专辑</a> 或 <a class='pinner' href='/index.php?m=community&c=firstlogshow&a=follow_user'>有趣的人</a></h2>
+	</div>
+	<div class="header">
+		<p class='tips'>您还没有关注任何人或专辑，<br />我们推荐了一些有趣的专辑和用户给您，关注后您可以看到他的最新分享哦。</p>
+		<div class='actions'><button class='sbtn lbtn btn-follow-pinner'>关注选中的用户</button> <a class='skip' href='/index.php?m=community&c=firstlogshow&a=create_album'>跳过这一步</a></div>
+	</div>
+	<div class='pinners fn-clear'>
+		{loop $datas $r}
+		<div class='pinner selected' data-id="{$r[uid]}">
+			<a class='avatar' href='#'><img src='{$r[head_img_url]}' alt='' width='93' height='93' /></a>
+			<div class='pins'>
+				{loop $r[thumb] $v}
+				<img src='{$v}' alt='' width='60' height='60' />
+				{/loop}
+			</div>
+			<h3 class='name'>{$r[nickname]}</h3>
+			<div class="mark"></div>
+		</div>
+		{/loop}
+	</div>
+	<div class="footer">
+		<div class='actions'><button class='sbtn lbtn btn-follow-pinner'>关注选中的用户</button> <a class='skip' href='/index.php?m=community&c=firstlogshow&a=create_album'>跳过这一步</a></div>
+	</div>
+</div>
+</body>
+</html>

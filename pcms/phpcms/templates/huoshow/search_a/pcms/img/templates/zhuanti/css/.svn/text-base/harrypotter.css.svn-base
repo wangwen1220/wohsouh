@@ -1,0 +1,181 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body { font-family:"宋体", arial; margin:0; padding:0; font-size:12px; color:#414141; }
+div, form, img, ul, ol, li, dl, dt, dd, p { margin: 0; padding: 0; border: 0; }
+li, dl { list-style-type:none; }
+h1, h2, h3, h4, h5, h6 { margin:0; padding:0; font-size:12px; font-weight:normal; }
+a { color:#414141; text-decoration:none; }
+a:hover { color: #d60921; }
+
+.input{border:1px solid #abadb3; width:140px; height:14px; color:#ccc; font-size:12px; padding-top:3px;}
+.select{border:1px solid #abadb3; width:60px; height:20px; color:#ccc; font-size:12px;}
+
+.clear { height:0px; line-height:0px; font-size:0px; overflow:hidden; clear:both; }
+.kongge { height:10px; width:auto; }
+.jju { height:10px; width:auto; }
+
+
+/* global */
+
+.Space_8px{float:left;  width:250px; height:8px;}
+.body_bg { background:#000;}
+#mian{ width:auto; margin:0 auto;height:3250px;}
+#mian .box{ width:auto;background:url(../images/harrypotter/ha7_bj.jpg) no-repeat;;margin:0 auto;background-position:center 0;height: auto;}
+.meili_nr{ width:960px;padding-top:330px; margin: 0 auto;}
+
+/* 头部导航 */
+#head { width:auto; height:36px; background:url(../images/harrypotter/bg.jpg) 0 160px; }
+#headnr { width:960px; height:36px; margin:0 auto;}
+.headnnav { width:480px; padding-top:8px; float:left; margin:0 auto; }
+.headnnav_01 { background:url(../images/harrypotter/bg.jpg) left 549px; width:6px; height:24px; float:left; }
+.headnnav_02 { width:auto;height:24px;background-image:url(../images/harrypotter/bg.jpg); background-position:0 581px;   float:left; color:#dedcdd; padding:0px 5px; }
+.headnnav_02 a { line-height:22px;}
+.headnnav_03 { background:url(../images/harrypotter/bg.jpg) left 488px; width:7px; height:24px; float:left; }
+.headnyou { width:410px; float:right; margin-right:10px; display:inline;}
+.headnyou_bt{ background: url(../images/harrypotter/bottom_jiantou.gif) right center no-repeat ; width:60px; height:20px;}
+.headnyou_bt a{ margin-right:10px;}
+.login{ background: url(../images/harrypotter/hover_bj.jpg) left 563px; width:187px; height:36px; float:right;}
+.login a{ line-height:35px; font-size:13px; margin-left:35px;}
+#headnyousy { width:200px;  float:left; margin-right:10px;  margin-top:8px; color:#CCC; display:inline;  height:24px; padding-top:5px;}
+#headnyousy a { padding-left:5px; padding-right:5px; vertical-align:middle;}
+.headnyou_bt_01{ background:url(../images/harrypotter/hover_bj.jpg) left 518px; width:10px; height:14px;display:inline-block;}
+.headnyou_bt_03{ background:url(../images/harrypotter/hover_bj.jpg) left 475px; width:10px; height:14px;display:inline-block;}
+
+
+/* banner */
+.banner_W960x280{ margin-bottom:8px;}
+.banner_300x250{ width:300px; height:250px;float:left;}
+.banner_300x100{  float:left; margin-top:8px;}
+
+
+/* body left */
+.body_left { width:702px; height:auto; float:left; margin-bottom:10px;}
+.left_w300{ width:300px; float:left;}
+.White_box_300{width:298px; border:1px solid #dedcdd; background:#fafafa; display:inline; float:left;}
+.White_box_300_01{ width:296px; border:1px solid #fff; float:left;}
+.right_300_bt{ background:url(../images/harrypotter/zt_bj.jpg) left 443px; width:296px; height:30px; display:inline-block; float:left; }
+.left_300_Video{ background:url(../images/harrypotter/zt_bj.jpg) left 352px; width:285px; height:214px; margin:5px;}
+.left_300_Video img{ margin:8px;}
+
+/* body center */
+.White_box{width:392px; border:1px solid #dedcdd; background:#fafafa; display:inline; float:right;}
+.White_box_01{ width:390px; border:1px solid #fff; float:right;}
+.Center_bt{ margin:20px 0 0 10px;}
+*html .Center_bt{ margin:20px 0 6px 10px;}
+.Center_bt_tb{display:inline-block; float:left; padding-right:10px; overflow:hidden;}
+.Center_news{ margin:8px 0 8px 10px; float:left; display:inline;}
+.Center_newslist li{ line-height:26px; float:left; display:inline; width:375px; font-size:14px; height:26px;}
+.Center_newslist_dian{ background:url(../images/harrypotter/zt_bj.jpg) left 560px; width:10px; height:10px; display:inline-block; float:left; margin-top:5px;}
+.Center_newslist_Date{ float:right; color:#afafaf; font-size:14px; }
+.Color_Gray{color:#8a8a8a; font-size:12px;font-weight:normal; line-height:20px;}
+.Color_red{font-size:16px;font-family:"微软雅黑","黑体"; color:#b3000b;  line-height:20px;}
+
+
+/* body right */
+.body_right{ width:250px; float:right; margin-bottom:10px;}
+.White_box_250{width:248px; border:1px solid #dedcdd; background:#fafafa; display:inline; float:right;}
+.White_box_250_01{ width:246px; border:1px solid #fff; float:right;}
+.right_250_bt{ background:url(../images/harrypotter/zt_bj.jpg) left 492px; width:246px; height:30px; display:inline-block; float:left; }
+.right_250_wz{ font-size:14px;font-family:"微软雅黑","黑体"; color:#fff; line-height:30px; padding-left:30px;}
+.right_250_Graphic{ width:232px; margin:10px 0 0 5px; color:#8a8a8a; line-height:20px;  float:left;}
+.right_250_Graphic img{ width:98px; height:120px; float:left; padding-right:8px;}
+.right_250_Bold_black{ font-weight:bold; line-height:20px; color:#000;}
+.Profile{ width:229px; float:left; line-height:26px; margin:10px 0 0 5px; font-size:14px; color:#808080;}
+.Pink{color:#eb0853;}
+.More_colors{color:#eb0853;}
+
+.Text_color{ line-height:26px;font-weight:bold; color:#000;}
+.W250_tuopiao_text{ width:226px; margin:5px 0 0 10px; color:#8a8a8a; font-size:14px;}
+.W250_tuopiao_text_list{ margin:8px 15px 0 10px;}
+.W250_tuopiao_text_list ul li{ line-height:24px; height:24px;}
+.toutiao_anniu{ margin:14px 0 9px 3px; background:url(../images/harrypotter/zt_bj.jpg) left 400px; width:85px; height:27px;}
+
+
+
+/* 主演风采 */
+.White_box_960{width:958px; border:1px solid #dedcdd; background:#fafafa; display:inline; float:left;}
+.White_box_960_01{ width:956px; border:1px solid #fff; float:left;}
+.nr_960_bt{ background:url(../images/harrypotter/zt_bj.jpg) left 95px; width:956px; height:39px; display:inline-block;}
+.nr_960_wz{font-size:18px;font-family:"微软雅黑","黑体"; color:#666; margin-left:30px; line-height:39px;}
+.zhuyan_pic{ width:944px; margin-top:10px; display:inline; float:left; margin-left:10px; overflow:hidden;}
+.zhuyan_pic ul{}
+.zhuyan_pic ul li{ float:left; margin-right:15px; width:220px; text-align:center; line-height:30px; color:#000;}
+.zt_more{ float:right; line-height:39px; margin-right:10px;}
+
+
+.paishe_pic{ margin-bottom:10px;}
+
+
+
+/* 精彩片花 */
+.zt_video{ width:960px; height:auto; float:left; display:inline; margin-top:7px; }
+.zt_video_nr{ width:954px; margin-top:10px; }
+.zt_video_left{ width:25px; height:121px; background:url(../images/harrypotter/index_bj.jpg) left 433px; float:left; margin-left:10px; display:inline;}
+.zt_video_right{ width:25px; height:121px; background:url(../images/harrypotter/index_bj.jpg) left 304px; float:right; margin-right:10px; display:inline;}
+.zt_video_list { float:left; display:inline; margin-bottom:15px;}
+.zt_video_list li {float:left; width:140px;text-align:center; display:inline; padding-right:30px;}
+.top_video_pic_bg {width:140px; height:107px; background:url(../images/harrypotter/bg.jpg) left 286px;display:inline-block; padding-top:3px; margin-top:5px;}
+#scrollbox2 .scrollbox-items-wrap{ width: 840px; overflow:hidden; float:left; margin-left:35px;}
+#scrollbox2 .scrollbox-items-wrap-body{ width: 99999em;}
+#scrollbox3 .scrollbox-items-wrap{ width: 840px; overflow:hidden; float:left; margin-left:30px;}
+#scrollbox3 .scrollbox-items-wrap-body{ width: 99999em;}
+
+/* 幕后花絮 */
+.muhou_pic{ width:925px; margin-top:10px; display:inline; float:left; margin-left:25px; overflow:hidden;}
+.muhou_pic ul{}
+.muhou_pic ul li{ float:left; margin-right:20px; width:165px; text-align:center; line-height:30px; color:#000;}
+
+
+
+.Center_news_01{ margin:10px 0 0 10px; float:left; display:inline; margin-right:20px; width:420px; margin-bottom:10px;}
+.Center_news_02{ margin:10px 0 0 10px; float:right; display:inline; width:420px; margin-right:20px; margin-bottom:10px;}
+.Center_newslist_01 li{ line-height:26px; float:left; display:inline; width:420px; font-size:14px;}
+.Center_newslist_dian_01{ background:url(../images/harrypotter/zt_bj.jpg) left 560px; width:10px; height:10px; display:inline-block; float:left; margin-top:5px;}
+.Center_newslist_Date_01{ float:right; color:#afafaf; font-size:14px; }
+
+
+/* 评论 */
+.Comments{ width:958px;background:#FFF; border:1px solid #dfdddd; margin-top:8px; float:left;}
+.Comments_bt{border-bottom:1px solid #dfdddd; height:25px; background:#f6f6f6; background:url(../images/harrypotter/game_bj.jpg) left 715px;}
+.Comments_bt_bold{ line-height:25px; font-weight:bold; text-indent:10px;float:left; font-size:14px;}
+.tiaoshu{ float:left; line-height:25px; margin-left:665px;}
+.See_all{ float:right; line-height:25px; margin-right:10px;}
+.er_hong{ color:#F00;}
+.Comments_text{ width:933px; margin:10px 0 0 17px;}
+.Comments_text li{ border-bottom:1px dashed #dedcdd; line-height:22px; font-size:14px; padding-bottom:10px; margin-top:10px;}
+.Comments_text li span{  color:#b6b6b6; font-size:12px; float:right;  line-height:30px;}
+.Comments_text_lan{ color:#30b6f8; font-size:12px;}
+.Published{ width:958px; background:#f9f9f9; float:left; border-top: 1px solid #dedcdd; margin-top:10px; }
+.Published_liuyan{ width:608px; height:160px; margin:10px 0 0 20px; display:inline; float:left; }
+.Published_liuyan_k{ width:608px; height:114px; border:1px solid #dedcdd; margin-bottom:10px;}
+.Published_liuyan img{ float:right; display:inline;}
+.Published_liuyan_text{ margin-top:10px; width:275px; float:left; line-height:20px; color:#808080; margin-left:32px;}
+
+/* common slide*/
+.common_roll_slide{}
+.common-roll-slide-pages{position:relative; overflow:hidden;}
+.common-roll-slide-page{position:relative;}
+.common-roll-slide-page-info{position:absolute;padding:0 0 22px 0; bottom:0; width:100%; overflow:hidden;background-color:rgba(0, 0, 0, 0.5); filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#80000000, endcolorstr=#80000000, gradientType=1);}
+.common-roll-slide-page-info-text{position:relative; padding:5px; color:#fff;}
+.common-roll-slide-page-info-text a{color:#fff;}
+.common-roll-slide-page-info-text a:hover{color:#fff; text-decoration:underline;}
+.common-roll-slide-page-info-text h3{font-size:16px;font-weight:bold;}
+.common-roll-slide-page-info-text p{padding-top:5px; line-height:20px;}
+.common-roll-slide-nav{padding:2px; position:relative; bottom:18px; font-family:"宋体";}
+.common-roll-slide-nav a{display:inline-block; width:18px; height:14px; overflow:hidden; line-height:14px; text-align:center; margin-right:2px; color:#fff;}
+.common-roll-slide-nav-links a{background:#3d3d3d;}
+.common-roll-slide-nav-links a:hover,
+.common-roll-slide-curr{background:#C4101C!important;color:#fff!important;}
+.common-roll-slide-nav-right{position:absolute; right:0; font-weight:bold;}
+.common-roll-slide-nav-right a:hover {color:#C4101C;}
+.common-roll-slide-prev {background:url(../images/harrypotter/slider_nav.png) 4px 2px no-repeat; }
+.common-roll-slide-prev:hover {background:url(../images/harrypotter/slider_nav.png) 4px -16px no-repeat; }
+.common-roll-slide-next {background:url(../images/harrypotter/slider_nav.png) -10px 2px no-repeat; }
+.common-roll-slide-next:hover {background:url(../images/harrypotter/slider_nav.png) -10px -16px no-repeat; }
+.common-roll-slide .prev-disabled{color:#555;}
+.common-roll-slide .next-disabled{color:#555;}
+.common-roll-slide .pagebox_pages_wrap{position:relative; overflow:hidden;}
+.common-roll-slide .pagebox_pages_wrap_body{width:9999em;}
+.common-roll-slide .pagebox_page{float:left;}
+#huoshow_zhuanti_pirates_index_image .pagebox_pages_wrap{width:300px; overflow:hidden;}
+#huoshow_zhuanti_pirates_index_image .common-roll-slide-page-info{width:300px;}

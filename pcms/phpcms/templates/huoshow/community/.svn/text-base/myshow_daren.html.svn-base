@@ -1,0 +1,52 @@
+{template "community","myshow_header"}
+<div id='navbar' class="daren fn-clear">
+	<ul class="nav">
+		<!-- <li class='first'><a class="points-ranking" title="积分排行" href="#">积分排行</a></li-->
+		<li {if $lists==1} class="selected" {/if}><a class="share-ranking" title="分享排行" href="/dr.html">分享排行</a></li>
+		<li {if $lists==2} class="selected" {/if}><a class="fans-ranking" title="粉丝排行" href="/dr2.html">粉丝排行</a></li>
+	</ul>
+</div>
+<!--/** 分享 **/  -->
+<div id="wrapper" class='daren'>
+	{loop $datas $r}
+	<div class='daren-box fn-clear'>
+		<div class='info'>
+			<a class='avatar' target='_blank' href='/m{$r[uid]}.html'><img src='{$r[avatar]}' width='70' height='70' /></a>
+			<a class='name boy' target='_blank' href='/m{$r[uid]}.html'>{if $r[info][0][nickname]}{$r[info][0][nickname]}{else}{$r[info][0][username]}{/if}</a>
+			<ul class='stats'>
+				<li class='ingot'><strong>{if $lists==1}{$r[share_count]}{else}{$r[is_watched_count]}{/if}</strong></li>
+				{if $lists ==1}
+				<li class='ingot'>分享：<em>{$r[info][0][share]}</em></li>
+				<li class='ingot'>粉丝：<em>{$r[info][0][fans]}</em></li>
+				{else}
+				<li class='ingot'>粉丝：<em>{$r[info][0][fans]}</em></li>
+				<li class='ingot'>分享：<em>{$r[info][0][share]}</em></li>
+				{/if}
+				<li class='ingot'>专辑：<em>{$r[info][0][album]}</em></li>
+			</ul>
+			<div class='actions' data-uid='{$r[uid]}'>
+				{if $user[uid] != $r[uid]}
+					{if $r[isfollow]==1}
+					<a class='follow follow-user' href='javascript:;' data-uid='{$r[uid]}'>取消关注</a>
+					{else}
+					<a class='follow follow-user' href='javascript:;' data-uid='{$r[uid]}'><span>关注Ta</span></a>
+					{/if}
+					<a class='send-letter send-msg' href='/index.php?m=community&c=index&a=send_message&src_uid={$myshowuid}&dst_uid={$r[uid]}'><span>发私信</span></a>
+				{/if}
+			</div>
+		</div>
+		<ul class='pin-list'>
+			{php $i=0}
+			{loop $r[arr][img] $v}
+			{if $i<2}
+			<li class='big'><a target='_blank' href='/show-{$r[arr][id][$i]}.html'><img src='{$v}' width='164' height='164' /></a></li>
+			{else}
+			<li><a target='_blank' href='/show-{$r[arr][id][$i]}.html'><img src='{$v}' width='80' height='80' /></a></li>
+			{/if}
+			{$i++}
+			{/loop}
+	</div>
+	{/loop}
+</div>
+</body>
+</html>

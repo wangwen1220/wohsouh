@@ -1,0 +1,120 @@
+{template "community","myshow_header_lite"}
+
+<body>
+<div id="wrapper" class='login-dialog reg-page fn-clear'>
+	<h1 class='logo'><a href='/'></a></h1>
+	<form id="reg-form" class="bind_new_account_form" method="post" autocomplete="off" name="register" action="{$space}member.php?mod=register">
+		<input type="hidden" name="s_myshow" value="s_myshow"/>
+		<input type="hidden" name="regsubmit" value="yes" />
+		<input type="hidden" name="inajax" value="1"/>
+		<input type="hidden" name="formhash" value="{$formhash}" />
+		<input type="hidden" name="activationauth" value="0" />
+		<input type="hidden" name="invitecode" value="0" />
+		<input type="hidden" name="referer" value="0" />
+		<h4>轻松完成注册</h4>
+		<!--<div id='msg-box'></div>-->
+		<div><label>用户名：</label><input type="text" id='username' class='input' name="username" /></div>
+		<div><label>常用邮箱：</label><input type="text" id='email' class='input' name="email" /></div>
+		<div><label>密 码：</label><input type="password" id='password' class='input' name="password" /></div>
+		<div><label>重复密码：</label><input type="password" id='confirm_password' class='input' name="password2" /></div>
+		<div><button type='submit' class='sbtn lbtn'>注册</button></div>
+		<div class='bind_agree'>
+			<input type="checkbox" checked='ckecked' value="{$formhash}" name="agree" class='ckbox bind_agree' id="agree" />
+			<label for='agree' class='bind_agree'>我已阅读并同意火秀网注册协议及版权声明</label>
+		</div>
+	</form>
+	<div class="login-connect">
+		<h4>使用合作网站帐号登录，几秒搞定</h4>
+		<div class="connections"><a class="weibo login-button" href="#">新浪微博</a><a class="douban login-button" href="#">豆瓣</a><a class="renren login-button" href="#">人人</a><a class="qq login-button" href="#">QQ</a></div>
+	</div>
+</div>
+
+<style type="text/css">
+#reg-form span.invalid {
+	display: block;
+	margin-left: 120px;
+	padding-top: 5px;
+	width: auto;
+	color: #f00;
+}
+</style>
+<script src="{JS_PATH}jquery.validate.js"></script>
+<script>
+(function($){
+	$(function(){
+		$("#reg-form").validate({
+			rules: {
+				username: {
+					required: true,
+					minlength: 3,
+					remote: {
+						url: "http://space.wwen.huoshow.com/home.php?mod=huoshow&do=weibo",
+						type: "get",
+						dataType: "json",
+						data: {
+							username: function(){return $("#username").val();}
+						}
+					}
+				},
+				password: {
+					required: true,
+					minlength: 5
+				},
+				password2: {
+					required: true,
+					minlength: 5,
+					equalTo: "#password"
+				},
+				email: {
+					required: true,
+					email: true,
+					remote: {
+						url: "http://space.wwen.huoshow.com/home.php?mod=huoshow&do=weibo",
+						type: "get",
+						dataType: "json",
+						data: {
+							email: function(){return $("#email").val();}
+						}
+					}
+				},
+				agree: "required"
+			},
+			messages: {
+				username: {
+					required: "请输入用户名",
+					minlength: "用户名长度最小为2个字符",
+					remote: "该用户名已经存在！"
+				},
+				email: {
+					required: "请输入邮件地址",
+					email: "请输入一个有效的邮件地址",
+					remote: "该邮箱已被注册！"
+				},
+				password: {
+					required: "请输入你的密码",
+					minlength: "密码最小长度为5个字符"
+				},
+				password2: {
+					required: "请输入你的密码",
+					minlength: "密码最小长度为5个字符",
+					equalTo: "两次输入的密码不相同"
+				},
+				agree: "请同意并勾选注册协议及版权声明"
+			},
+			errorElement: "span",
+			errorClass: "invalid",
+			success: function(span) {
+				span.remove();
+			}
+		});
+	});
+
+	// 用户名和邮件是否已注册验证
+	/*$('#username').blur(function(){
+		$.get('http://space.wwen.huoshow.com/forum.php?mod=ajax&infloat=register&handlekey=register&action=checkusername&username=ww&inajax=1&ajaxtarget=returnmessage4', function(d){
+		});
+	});*/
+})(jQuery);
+</script>
+</body>
+</html>

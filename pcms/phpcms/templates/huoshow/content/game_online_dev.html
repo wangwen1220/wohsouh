@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>网络游戏 - 火秀网</title>
+	<meta name='keywords' content='火秀网络游戏' />
+	<meta name='description' content='火秀网络游戏' />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-online.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-online'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_dev'}
+
+	<div class='ui-layout ad'><a href='#'><img src='http://pnews.huoshow.com/statics/images/common/middle_anner.png' width='960' height='60' /></a></div>
+
+	<!-- 游戏列表 -->
+	<div id='game-tab' class='ui-layout ui-layout-box ui-tab'>
+		<div class='ui-tab-header fn-clear'>
+			<ul class='ui-tab-nav fn-clear'>
+				<li class='ui-tab-nav-item ui-tab-nav-item-hot ui-tab-nav-item-cur'>热门</li>
+				<li class='ui-tab-nav-item'>ABCD</li>
+				<li class='ui-tab-nav-item'>EFGH</li>
+				<li class='ui-tab-nav-item'>IJKL</li>
+				<li class='ui-tab-nav-item'>MNOP</li>
+				<li class='ui-tab-nav-item'>QRST</li>
+				<li class='ui-tab-nav-item'>WXYZ</li>
+				<li class='ui-tab-nav-item'>新网游</li>
+			</ul>
+			<div class='link'><a href='#'>测试表</a> <a href='#'>找游戏</a></div>
+		</div>
+		<div class='ui-tab-cnt'>
+			<ul class='ui-tab-cnt-item ui-game-list ui-tab-cnt-item-cur'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙1</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙22</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙333</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙4444</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙5555</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙6666</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙777</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+			<ul class='ui-tab-cnt-item ui-game-list'>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙8888</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>赤壁</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>征途</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>鹿鼎记</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>QQ炫舞</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>西游 3</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>NBA2K</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>诛仙</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>梦幻西游</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'><em>梦幻西游</em></a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>英雄三国</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>功夫英雄</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>极光世界</a></li>
+				<li class='ui-game-list-item'><a href='#' target='_blank'>地下城与勇士</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 主内容 -->
+	<div id='content-main' class='ui-layout fn-clear'>
+		<div class='ui-layout-item ui-layout-item-left'>
+			<div id='myfocus-games' class='ui-myfocus'><!--焦点图盒子-->
+				<div class="loading"></div><!--载入画面(可删除)-->
+				<div class="pic"><!--图片列表-->
+					<ul>
+						<li><a href="#"><img src="http://m3.img.libdd.com/farm4/2012/1116/14/8BD5292C4A025178E054CD71276314F2706ECCDAE803B_250_167.jpg" thumb="" alt="版权属于作者，图片2源于网络，版权源于网络，版权源于网络，版权来源于网络" text='' width='308' height='231' /></a></li>
+						<li><a href="#"><img src="http://m2.img.libdd.com/farm5/2012/1116/14/9EB3F004A5B9E8DBD85EDDF7C9DBAD3845D94B0540005_250_167.jpg" thumb="" alt="版权属于作者，图片2来源于网络" text='' width='308' height='231' /></a></li>
+						<li><a href="#"><img src="http://m1.img.libdd.com/farm4/2012/1116/14/6DE308BACC856F43A3861CA12B94E50131676C5A506FD_250_375.jpg" thumb="" alt="图片3来源于网络，版权属源于网络，版权于作者" text='' width='308' height='231' /></a></li>
+						<li><a href="#4"><img src="http://m2.img.libdd.com/farm5/2012/1116/14/9EB3F004A5B9E8DBD85EDDF7C9DBAD3845D94B0540005_250_167.jpg" thumb="" alt="版权属于作者，图片4来源于网络" text='' width='308' height='231' /></a></li>
+						<li><a href="#5"><img src="http://m1.img.libdd.com/farm4/2012/1116/14/6DE308BACC856F43A3861CA12B94E50131676C5A506FD_250_375.jpg" thumb="" alt="图片5来源于网络，版权属于作者" text='' width='308' height='231' /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class='ui-box'>
+				<div class='ui-header'>
+					<h3 class='title'>热门网游</h3>
+					<div class='link'><a href='#'>斗战神</a> | <a href='#'>刀剑英雄</a></div>
+				</div>
+				<ul class='ui-img-list'>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='138' height='103'/></a>
+						<div class='desc'>
+							<h4><a href='#'>大话西游战歌</a></h4>
+							<p>大话西游战歌大话西, 游战歌大话西游战歌大 话西游战歌</p>
+						</div>
+					</li>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='138' height='103'/></a>
+						<div class='desc'>
+							<h4><a href='#'>大话西游战歌</a></h4>
+							<p>大话西游战歌大话西, 游战歌大话西游战歌大 话西游战歌</p>
+						</div>
+					</li>
+				</ul>
+
+				<h3 class='atitle'>圣斗士传说圣斗士传说</h3>
+				<ul class='ui-list fn-clear hr'>
+					<li class='ui-list-item'><a href='#'>圣斗士传说圣斗士传说</a></li>
+					<li class='ui-list-item'><a href='#'>圣斗士传说圣斗士传说</a></li>
+					<li class='ui-list-item'><a href='#'>圣斗士传说圣斗士传说圣斗士传说圣斗士传说圣斗士传说圣斗士传说</a></li>
+					<li class='ui-list-item'><a href='#'>圣斗士传斗士传说</a></li>
+				</ul>
+
+				<form class='search' name='' action=''>
+					<fieldset>
+						<span>数据库：</span>
+						<select>
+							<option>神仙传</option>
+							<option>巫师之怒</option>
+							<option>跑跑卡丁车</option>
+						</select>
+						<input type='text' class='search-wd' value='请输入关键字' /><button type='submit' class='search-submit'>搜索</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-center'>
+			<h2 class='ui-newgame-title'><a href='#'>测试文字sdfsadf测试文字sdfsadf测试文字sdfsadf</a></h2>
+			<div class='ui-newgame-link'><a href='#'>[车跑跑卡丁车]</a> <a href='#'>[车跑跑卡丁车]</a> <a href='#'>[车丁车]</a> <a href='#'>[车跑跑卡丁车]</a></div>
+			<h2 class='ui-newgame-title'><a href='#'>测试文字sdfsadf测试文字sdfsadf测试文字sdfsadf</a></h2>
+			<div class='ui-newgame-link'><a href='#'>[车跑跑卡丁车]</a> <a href='#'>[车跑跑卡丁车]</a> <a href='#'>[车丁车]</a> <a href='#'>[车跑跑卡丁车]</a></div>
+			<h2 class='ui-newgame-title'><a href='#'>测试文字sdfsadf测试文字sdfsadf测试文字sdfsadf</a></h2>
+			<div class='ui-newgame-link'><a href='#'>[车跑跑卡丁车]</a> <a href='#'>[车跑跑卡丁车]</a> <a href='#'>[车丁车]</a> <a href='#'>[车跑跑卡丁车]</a></div>
+			<ul class='ui-list ui-list-main hr'>
+				<li class='ui-list-item'><a href='#'>行业</a> | <strong><a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></strong></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+
+				<li class='ui-list-item bk'><a href='#'>行业</a> | <strong><a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></strong></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+
+				<li class='ui-list-item bk'><a href='#'>行业</a> | <strong><a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></strong></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+			</ul>
+		</div>
+
+		<div class='ui-layout-item ui-layout-item-right'>
+			<div class='ad'><a href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='240' height='206' /></a></div>
+			<div class='ui-box-lite'>
+				<div class='ui-box-lite-header'>
+					<h3 class='title'>网游视频</h3>
+					<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+				</div>
+				<ul class='ui-img-list'>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='102' height='76'/></a>
+						<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+					</li>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='102' height='76'/></a>
+						<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+					</li>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='102' height='76'/></a>
+						<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+					</li>
+					<li class='ui-img-list-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='102' height='76'/></a>
+						<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+					</li>
+				</ul>
+				<ul class='ui-list'>
+					<li class='ui-list-item'><a href='#'>圣斗士传说圣斗士传说 圣斗士传说圣斗士传说</a></li>
+					<li class='ui-list-item'><a href='#'>圣斗士传说圣斗士传说 圣斗斗士传说</a></li>
+					<li class='ui-list-item'><a href='#'>圣斗士传说圣斗士传说 圣斗士传斗士传说</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 攻略专区 -->
+	<div id='content-glzq' class='ui-box fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>攻略专区</h2>
+			<div class='link'><a href='#'>测试文字1</a> | <a href='#'>测试文字2</a> | <a href='#'>测试文字3</a> | <a class='more' href='#'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div id='myfocus-qiyi' class='ui-myfocus'><!--焦点图盒子-->
+				<div class="loading"></div><!--载入画面(可删除)-->
+				<div class="pic"><!--图片列表-->
+					<ul>
+						<li><a href="#1"><img src="http://pnews.huoshow.com/uploadfile/2012/1031/thumb_hs_160_158_thumb_254_362_20121031111856822.jpg" thumb="" alt="版权属于作者，图片2来源于网络" text='' width='288' height='200' /></a></li>
+						<li><a href="#2"><img src="http://pnews.huoshow.com/uploadfile/2012/1015/thumb_hs_160_158_thumb_198_276_20121015101801962.jpg" thumb="" alt="版权属于作者，图片2来源于网络" text='' width='288' height='200' /></a></li>
+						<li><a href="#3"><img src="http://pnews.huoshow.com/uploadfile/2012/1031/thumb_hs_160_158_thumb_254_362_20121031111856822.jpg" thumb="" alt="图片3来源于网络，版权属于作者" text='' width='288' height='200' /></a></li>
+						<li><a href="#4"><img src="http://pnews.huoshow.com/uploadfile/2012/1015/thumb_hs_160_158_thumb_198_276_20121015101801962.jpg" thumb="" alt="版权属于作者，图片4来源于网络" text='' width='288' height='200' /></a></li>
+						<li><a href="#5"><img src="http://pnews.huoshow.com/uploadfile/2012/1031/thumb_hs_160_158_thumb_254_362_20121031111856822.jpg" thumb="" alt="图片5来源于网络，版权属于作者" text='' width='288' height='200' /></a></li>
+					</ul>
+				</div>
+			</div>
+			<ul class='ui-list ui-list-main'>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+
+				<li class='ui-list-item hr'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<h2 class='ui-newgame-title'><a href='#'>测试文字sdfsadf测试文字sdfsadf测试文字sdfsadf</a></h2>
+			<ul class='ui-list ui-list-main hr-bottom'>
+				<li class='ui-list-item'><a href='#'>行业</a> | <strong><a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></strong></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+
+				<li class='ui-list-item bk'><a href='#'>行业</a> | <strong><a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></strong></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+			</ul>
+			<div class='ui-header'>
+				<h2 class='title'>推荐专区</h2>
+				<div class='link'><a href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-img-list'>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='104' height='104'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='104' height='104'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='104' height='104'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>测试文字</h2>
+				<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<div class='ui-img'>
+				<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='216' height='108' /></a>
+				<h4 class='title'><a href='#'>测试文字</a></h4>
+			</div>
+			<ul class='ui-list'>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+				<li class='ui-list-item'><a href='#'>测试文字sdfsadf 测试文字sdfsadf 测测试文字sdfsadf试文字sdfsadf s</a></li>
+			</ul>
+			<div class='ad'>
+				<a href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='238' height='220' /></a>
+			</div>
+		</div>
+	</div>
+
+	<div class='ui-layout ad'>
+		<a href='#'><img src='http://pnews.huoshow.com/statics/images/common/middle_anner.png' alt='' width='960' height='60' /></a>
+	</div>
+
+	<!-- 网游资讯 -->
+	<div id='content-wyzx' class='ui-box fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>网游资讯</h2>
+			<div class='link'><a href='#'>测试文字1</a> | <a href='#'>测试文字2</a> | <a href='#'>测试文字3</a> | <a class='more' href='#'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div class='ui-header'>
+				<h2 class='title'>测试文字</h2>
+			</div>
+			<div class="ui-art-list-box">
+				<ul id='js-scroll-news' class='ui-art-list'>
+					<li class='ui-art-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝：功夫打久妈妈总说我长得不漂亮专访张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+					<li class='ui-art-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝专访张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+					<li class='ui-art-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝：功夫张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+					<li class='ui-art-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝：功夫张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+					<li class='ui-art-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝：功夫张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+					<li class='ui-art-item'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝：功夫张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+					<li class='ui-art-item ui-art-item-last'>
+						<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='90' height='66' /></a>
+						<h3 class='title'><a href='#'>测试文字测试文字测试文字1</a></h3>
+						<p class="content">专访范冰冰专访《太极5》主创洪金宝：功夫打久超说我长得不漂亮专访张元：执著（图） <a class='more' href='#'>[详情]</a></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<div class='ui-header ui-header-hr'>
+				<h2 class='title'>测试文字测试文字测试文字1</h2>
+				<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<h2 class='ui-newgame-title'><a href='#'>测试文字sdfsadf测试文字sdfsadf测试文字sdfsadf</a></h2>
+			<ul class='ui-list ui-list-main'>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+			</ul>
+
+			<div class='ui-header ui-header-hr'>
+				<h2 class='title'>测试文字测试文字测试文字1</h2>
+				<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<h2 class='ui-newgame-title'><a href='#'>测试文字sdfsadf测试文字sdfsadf测试文字sdfsadf</a></h2>
+			<ul class='ui-list ui-list-main'>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+				<li class='ui-list-item'><a href='#'>行业</a> | <a href='#'>你绝对想不到!国产游戏进军韩雷国的雷囧译名(图)</a></li>
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>测试文字测试文字测试文字1</h2>
+			</div>
+			<ul class='ui-ranking'>
+				<li class='ui-ranking-item ui-ranking-item-cur'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num num-hot'>1</span>
+					<h3 class='title'><a href='#'>敢死队2敢死队2敢死队</a></h3>
+					<p class="content">敢死队2预告敢敢死敢死死告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num num-hot'>2</span>
+					<h3 class='title'><a href='#'>敢死队1</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num num-hot'>3</span>
+					<h3 class='title'><a href='#'>敢死队2</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>4</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>5</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>6</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>7</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>8</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>9</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+				<li class='ui-ranking-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='88' height='66' /></a>
+					<span class='num'>10</span>
+					<h3 class='title'><a href='#'>肉蒲团</a></h3>
+					<p class="content">敢死队2预告敢死队2预告敢死队2预告敢 <a class='more' href='#'>[详情]</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 网游大观 -->
+	<div id='content-wydg' class='ui-box ui-box-gallery fn-clear'>
+		<div class='ui-box-header'>
+			<h2 class='title'>网游大观</h2>
+			<div class='link'><a href='#'>测试文字1</a> | <a href='#'>测试文字2</a> | <a href='#'>测试文字2</a> | <a href='#'>测试文字2</a> | <a href='#'>测试文字3</a> | <a class='more' href='#'>更多&gt;&gt;</a></div>
+		</div>
+
+		<div class='ui-box-item ui-box-item-left'>
+			<div class='ui-header'>
+				<h2 class='title'>搞笑囧图</h2>
+				<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-img-box'>
+				<li class='ui-img'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='138' height='105' /></a>
+					<h4 class='title'><a href='#'>测试文字</a></h4>
+				</li>
+				<li class='ui-img'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='138' height='105' /></a>
+					<h4 class='title'><a href='#'>测试文字</a></h4>
+				</li>
+				<li class='ui-img'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='138' height='105' /></a>
+					<h4 class='title'><a href='#'>测试文字</a></h4>
+				</li>
+				<li class='ui-img'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='138' height='105' /></a>
+					<h4 class='title'><a href='#'>测试文字</a></h4>
+				</li>
+				<li class='ui-img'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='138' height='105' /></a>
+					<h4 class='title'><a href='#'>测试文字</a></h4>
+				</li>
+				<li class='ui-img'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' alt='' width='138' height='105' /></a>
+					<h4 class='title'><a href='#'>测试文字</a></h4>
+				</li>
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-center'>
+			<div class='ui-header'>
+				<h2 class='title'>测试文字测</h2>
+				<div class='link'><a href='#'>测试文</a> | <a href='#'>测试</a> | <a class='more' href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-img-list'>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='110' height='84'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+			</ul>
+		</div>
+
+		<div class='ui-box-item ui-box-item-right'>
+			<div class='ui-header'>
+				<h2 class='title'>测试文字</h2>
+				<div class='link'><a class='more' href='#'>更多&gt;&gt;</a></div>
+			</div>
+			<ul class='ui-img-list'>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1110hg04.jpg' width='104' height='78'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1104hg04.jpg' width='104' height='78'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1104hg04.jpg' width='104' height='78'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1104hg04.jpg' width='104' height='78'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1104hg04.jpg' width='104' height='78'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+				<li class='ui-img-list-item'>
+					<a class='img' href='#'><img src='http://i3.17173.itc.cn/2012/newgame/bigeyes/c1104hg04.jpg' width='104' height='78'/></a>
+					<h4 class='title'><a href='#'>大话西游战歌</a></h4>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>火秀网</title>
+	<meta charset='utf-8' />
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> -->
+	<link href="{CSS_PATH}myshow.css" rel="stylesheet" />
+	<script src="{JS_PATH}jquery-1.7.2.min.js"></script>
+	<script src="{JS_PATH}jquery.form.min.js"></script>
+	<script src="{JS_PATH}jquery.animate-colors.min.js"></script>
+	<script src="{JS_PATH}artDialog/jquery.artDialog.js?skin=default"></script>
+	<script src="{JS_PATH}myshow_jquery.js"></script>
+	<!-- <script src="{JS_PATH}cssrefresh.js"></script> -->
+	<!-- <script src="http://fbug.googlecode.com/svn/lite/branches/firebug1.4/content/firebug-lite-dev.js"></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+{php $user = UserApi::getLoginUserSessionInfo()}
+<body class='{if $user[uid]}logged welcome{/if}' data-id='http://{php global $SYSCONFIG;echo $SYSCONFIG["SpaceSiteRoot"]}/api/myshowlogin.php?jsoncallback=?'><!-- 登录后添加加类“logged” -->
+<!-- Topbar -->
+<div id='topbar' class="fn-clear">
+	<div class="nav">
+	<a target="_blank" href="/">首页</a>-<a target="_blank" href="events/">赛事</a>-<a target="_blank" href="star/">明星</a>-<a target="_blank" href="movie/">影视</a>-<a target="_blank" href="music/">音乐</a>-<a target="_blank" href="supermodel/">超模</a>-<a target="_blank" href="game/">游戏</a>-<a target="_blank" href="pic/">美图</a>-<a target="_blank" href="/index.php?m=community&c=index&a=index">MY秀社区</a>
+	</div>
+	<div class='help'><a class='home' href="###">设为首页</a> <a class='fav' href="####">加入收藏</a></div>
+</div>
+<!-- Topbar End -->
+<!-- Header -->
+<div id="header">
+	<div class='wrapper fn-clear'>
+		<h1><a hidefocus='true' href='/' title=''>火秀</a></h1>
+		<ul id='nav'>
+			{if $user['uid']}
+			<li class='my-huoshow'>
+			<a {if $_GET[a] == mylike} class="current"{/if} hidefocus='true' href='/index.php?m=community&c=myhuoshow&a=mylike&myuid={$user[uid]}' title=''>我的火秀</a>
+			</li>
+			{/if}<!-- 登录后添加“我的火秀”-->
+			<li><a {if $_GET[a] == index} class="current"{/if} hidefocus="true" href="/index.php?m=community&c=index&a=index" title=''>首页</a></li>
+			<li><a {if $_GET[a] == square} class="current"{/if} hidefocus='true' href='/index.php?m=community&c=index&a=square' title=''>分享广场</a></li>
+			<li class='hot'><a {if $_GET[a] == 'myshow_shopping_index'}class="current"{/if} hidefocus='true' href='/index.php?m=community&c=index&a=myshow_shopping_index' title=''>购物</a></li>
+			<!--<li><a href='/' title=''>圈子</a></li>-->
+			<li><a {if $_GET[a] == myshow_album_index} class="current"{/if} hidefocus='true' href='/index.php?m=community&c=index&a=myshow_album_index' title=''>专辑</a></li>
+			<li><a {if $_GET[a] == talent} class="current"{/if} hidefocus='true' href='/index.php?m=community&c=index&a=talent' title=''>达人</a></li>
+		</ul>
+		{if $user['uid']}
+		<ul id='menu' data-id="{$user['uid']}"><!-- 登录后添加此区块 -->
+			<li class='msg sys-msg'><a href='#' title='系统消息'>系统消息<span></span></a></li>
+			<li class='msg user-msg'><a href="/index.php?m=community&c=myhuoshow&a=myshowmsg" title='用户消息'>用户消息<span></span></a></li>
+			<li id="menu_user">
+				<a class="nav" href="/wangwen1220/"><img src="/statics/images/myshow/avatar.jpg" height='20' width='20' /><strong>火秀管理员</strong><em></em></a>
+				<ul>
+					<li class="mine"><div class="links"><a href="/index.php?m=community&c=myhuoshow&a=mylike&myuid={$user[uid]}">我的火秀<!--<div class="info"><span>采集</span><span>画板</span></div>--></a></div><em></em></li>
+					<!--<li class="mobile"><div class="links"><a href="/apps/">火秀手机客户端<div class="info"><span>iPhone</span><span>Android</span></div></a></div><em></em></li>-->
+					<li class="friends"><div class="links"><a href="/friends/weibo/">查找邀请好友<div class="info"></div></a></div><em></em></li>
+					<li class="goodies"><div class="links"><a href="/about/goodies/">采集工具</a></div><em></em></li>
+					<!--<li class="papers"><div class="links"><a href="http://blog.huaban.com/">火秀访谈</a><a href="/weekly/">火秀周刊</a></div><em></em></li>-->
+					<!--<li class="about"><div class="links"><a href="/about/">关于&amp;帮助</a><a href="/pins/53553/">用户反馈</a><a href="/about/links/">友情链接</a><a href="/fm/joinus/">加入我们</a></div><em></em></li>-->
+					<li class="settings"><div class="links"><a href="/index.php?m=community&c=myhuoshow&a=accountsettings">帐号设置</a><a class='logout' href="/logout/">退出登录</a></div><em></em></li>
+				</ul>
+			</li>
+		</ul>
+		{/if}
+		<div id='add' class='{if $user[uid]}logged add{else}add{/if}'><!-- 登录后添加加类“logged” -->
+			<ul class='add-list'>
+				<li><a class='collect' href='javascript:;' data-id='collect-all-pin'>网址采集</a></li>
+				<li><a class='create' href='javascript:;' data-id='create-album-dialog'>创建专辑</a></li>
+				<li><a class='create' href='javascript:;' data-id='upload-pin-dialog'>上传采集</a></li>
+			</ul>
+		</div>
+
+		<form id="search" class='search' name="search" method="post" action="/index.php?m=community&c=index&a=search" target="_blank">
+			<div class='fancy'><input type="text" class="text search-wd" name="q" id="search-wd" /><label class='label'>搜索你喜欢的</label></div><input type="submit" id="search-submit" value="搜索" />
+		</form>
+	</div>
+</div>
+<!-- Header End -->
+<!-- 登录区块 -->
+{php $spaceurl=DX_URL}
+{if !$user['uid']}
+<div id="login-dialog" class='login-dialog'><!-- 登录后去掉此区块 -->
+	<div class="header"><h2>登录火秀</h2></div>
+	<div class="body fn-clear">
+		<div class="login-connect">
+			<h4>使用合作网站帐号登录</h4>
+			<div class="connections"><a class="douban login-button" href="{$spaceurl}api/apidenglu.php?t=douban&p=get_user_base_info">豆瓣</a><a class="renren login-button" href="{$spaceurl}api/apidenglu.php?t=renren&p=get_user_base_info">人人</a><a class="qq login-button" href="{$spaceurl}api/apidenglu.php?t=qzone&p=get_user_base_info">QQ</a></div>
+			<p class="notice">未注册过火秀也可以直接登录哦</p>
+		</div>
+		<div class="login-form">
+			<h4>使用注册帐号登录</h4>
+			<form class="form" method="post" action="http://{php global $SYSCONFIG;echo $SYSCONFIG['SpaceSiteRoot']}/member.php?mod=logging&action=login&loginsubmit=yes&handlekey=login&floatlogin=yes&loginfield=username&questionid=0&answer=&loginsubmit=yes&myshow=yes">
+				<ul>
+					<li class="fancy email"><input type="text" autofocus='true' name="username" class='input' id="login_email" /><label class='label'>用户名/E-mail或ID号登录</label></li>
+					<li class="fancy password"><input type="password" name="password" class='input' id="login_password" /><label class='label'>密码</label></li>
+				</ul>
+				<div class="login-help">
+					<button type='submit' class='sbtn lbtn' href='#'>登录</button>
+					<a class="help" href="#" id="reset_password">忘记了密码？</a>
+					<a class="help fn-hide" href="#" id="back_to_login">哦，又想起来了!</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<a class="close" href="#" title="关闭"></a>
+</div>
+
+<div id="loginbar"><!-- 登录后去掉此区块 -->
+	<div class="connect">
+		<h4>使用合作网站帐号登录:</h4>
+		<a class="renren login-button" href="{$spaceurl}api/apidenglu.php?t=renren&p=get_user_base_info">人人</a>
+		<a class="douban login-button" href="{$spaceurl}api/apidenglu.php?t=douban&p=get_user_base_info">豆瓣</a>
+		<a class="qq login-button" href="{$spaceurl}api/apidenglu.php?t=qzone&p=get_user_base_info">QQ</a>
+	</div>
+	<a class='login' href='javascript:;'>登录</a>
+	<a class='reg' href="/index.php?m=community&c=firstlogshow&a=myregist">马上注册</a>
+</div>
+{/if}
+<!-- 登录区块结束 -->
+
+<!-- 遮罩层 -->
+<div id="page-overlay" class="overlay"></div>
+<!-- 回到顶部按钮 -->
+<a id="scroll-to-top" href="#">回到顶部</a>

@@ -1,0 +1,51 @@
+<link href="/huoshow/css/zhibo/master.css" rel="stylesheet" type="text/css" />
+<div class="mn"><!--[diy=diycontenttop]--><div class="area" id="diycontenttop"></div><!--[/diy]-->
+<div class="bm bw0">
+	<h1 class="mt"><img class="vm" src="/huoshow/img/zhibo/lv.jpg" alt="blog">直播</h1>
+	<ul class="tb cl"> 	    	    
+		<li class="a"><a href="home.php?mod=huoshow&do=live">我的直播</a></li> 
+		<li><a href="home.php?mod=space&do=home&view=all">随便看看</a></li>
+		<li class="o2"><a href="home.php?mod=huoshow&do=apply_room&room_id={$userinfo[0].uid}">申请多功能直播间</a></li>
+	</ul>
+	<div class="clear"></div>
+	<div class="cst">
+	<p><a href="home.php?mod=space&uid={$uid}"><img src="{$userimages}" height="96" width="96" /></a></p>
+	<ul class="lh2">
+		<li class="wel">HI！{if $userinfo[0].nickname}{$userinfo[0].nickname}{else}{$userinfo[0].username}{/if}，欢迎参加火秀直播！</li>  
+	</ul>
+<div class="clear"></div>
+					</div>
+	<div class="ba"> 
+			<a href="home.php?mod=huoshow&do=live" class="nopick bu">普通直播间</a> 
+			{if $ismutillive != 0}<a href="home.php?mod=huoshow&do=live&dou=1" class="bu pick">多功能直播间</a>{/if}
+		<div class="clear"></div>
+					</div>
+     <div class="ma ma2"> 
+	<span><a href="home.php?mod=huoshow&do=mutilive_room_manager&room_id={$roomid}"><img src="/huoshow/img/zhibo/team_mng.jpg" width="20" height="20" align="absmiddle" />成员管理</a></span></div>
+			<div class="emp">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="da">
+					  <tr class="th">
+						<td width="24%" align="left">用户名</td>
+						<td width="14%"><label>类型</label>				      </td>
+						<td width="14%">提点</td>
+						<td width="31%" class="pink">操作</td>
+					  </tr>
+					  {section name=a loop=$manager}
+					  <tr class="gray">
+						<td>{$manager[a].username} </td>
+						<td>{if $manager[a].type==1}管理员{/if} </td>
+						<td>{$show_percent[a]}%</td>
+						<td ><a href="home.php?mod=huoshow&do=mutilive_room_manager&uid={$manager[a].uid}&room_id={$manager[a].roomid}&delete=manager"  class="pink" >取消管理员</a>
+							 {if $show_percent[a]==0}<a href="home.php?mod=huoshow&do=mutilive_room_manager&uid={$manager[a].uid}&room_id={$manager[a].roomid}&add=percent"  class="pink">设置提点</a>{else}<a href="home.php?mod=huoshow&do=mutilive_room_manager&uid={$manager[a].uid}&room_id={$manager[a].roomid}&add=percent"  class="pink">更改</a>{/if}</a> 
+							 <a href="home.php?mod=space&uid={$manager[a].uid}&do=profile"  class="pink">详情</a> 
+							 <a href="#"  class="pink"></a></td>
+					  </tr>
+					  {/section}
+				</table>
+	</div>
+			</div>
+		<!--[diy=diycontentbottom]-->
+		<div class="area" id="diycontentbottom"></div>
+		<!--[/diy]-->
+	</div>
+<div class="clear"></div>

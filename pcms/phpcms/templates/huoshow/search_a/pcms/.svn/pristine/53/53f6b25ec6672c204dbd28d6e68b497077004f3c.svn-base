@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-global.css' rel='stylesheet' />
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-yxgl'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main' class='game-yxgl'>
+			<div id='select'>
+				<!--<div class='filter fn-clear'>
+					<dl class='order'>
+						<dt>排序方式：</dt>
+						<dd class='default cur'><a href='#'>默认</a></dd>
+						<dd><a href='#'>更新时间</a></dd>
+						<dd><a href='#'>发售日</a></dd>
+						<dd><a href='#'>游戏下载量</a></dd>
+					</dl>
+					<a class='reset' href='#'>重新筛选</a>
+				</div>-->
+				<dl class='select-item fn-clear'>
+					<dt>攻略专区：</dt>
+					<dd>
+						<a class='all cur' href='#'>全部</a>
+						<a href='#'>角色扮演</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+						<a href='#'>角色扮演</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+						<a href='#'>角色扮演</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+						<a href='#'>角色扮</a>
+						<a href='#'>格斗</a>
+						<a href='#'>格斗</a>
+						<a href='#'>格斗</a>
+						<a href='#'>射击</a>
+					</dd>
+				</dl>
+				<!--<dl class='select-item fn-clear'>
+					<dt>攻略秘籍：</dt>
+					<dd>
+						<a class='cur' href='#'>A</a>
+						<a href='#'>B</a>
+						<a href='#'>C</a>
+						<a href='#'>D</a>
+						<a href='#'>E</a>
+						<a href='#'>F</a>
+						<a href='#'>G</a>
+						<a href='#'>H</a>
+						<a href='#'>I</a>
+						<a href='#'>J</a>
+						<a href='#'>K</a>
+						<a href='#'>L</a>
+						<a href='#'>M</a>
+						<a href='#'>N</a>
+						<a href='#'>O</a>
+						<a href='#'>P</a>
+						<a href='#'>Q</a>
+						<a href='#'>R</a>
+						<a href='#'>S</a>
+						<a href='#'>T</a>
+						<a href='#'>U</a>
+						<a href='#'>V</a>
+						<a href='#'>W</a>
+						<a href='#'>X</a>
+						<a href='#'>Y</a>
+						<a href='#'>Z</a>
+					</dd>
+				</dl>-->
+			</div>
+
+			<div class='ui-content-header'>
+				<h2 class='title'>攻略列表</h2>
+			</div>
+
+			<div id='games'>
+				<div class='ui-content-list'>
+				{pc:content action="lists" catid="$catid" num="10" order="id DESC" page="$page"}
+				{loop $data $r}
+					<div class='ui-content-item'>
+						<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],138,103)}' alt='{$r[title]}' width='138' height='103' /></a>
+						<h2 class='title'><a href="{url_change($r[url])}" target='_blank'>{$r[title]}</a></h2>
+						<div class='info'>发表时间：{date($r['inputtime'])}<span class='status-view'>浏览：588</span> <span class='status-comment'>评论：899</span></div>
+						<p class='cnt'>{$val['description']}<a class='detail' href="{url_change($r[url])}" target='_blank'>[详细]</a></p>
+					</div>
+				{/loop}
+		        {/pc}
+				</div>
+
+				<div id='pager' class="article-related article-pager ui-pager">{$pages}</div>
+			</div>
+		</div>
+
+		<div id='side'>
+			<div class='ad'><a href='#'><img src='http://pnews.wwen.huoshow.com/statics/images/common/ad7.jpg' alt='' width='280' height='248' /></a></div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<ol class='ui-list-plus'>
+				{pc:content  action="hits" catid="249" order="views  DESC" num="10"}
+				{loop $data $r}
+						<li class='ui-list-plus-item'><span {if $n<4}class='num num-hot'{else}class='num'{/if}>{$n}</span><a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],40,'')}</a></li>
+						{/loop}
+						{/pc}
+				</ol>
+			</div>
+
+			<div class='ui-box-side ui-box-gallery'>
+				<h2 class='ui-box-side-title'><!--视频推荐-->推荐新闻</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="537" order="listorder DESC" num="4" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+						<a class='title' href="{url_change($r[url])}" target='_blank'> {str_cut($r['title'],30,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+
+			<div class='ui-box-side ui-tab ui-tab-lite'>
+				<h2 class='ui-box-side-title'>资讯排行榜</h2>
+				<div class='ui-tab-header fn-clear'>
+					<ul class='ui-tab-nav fn-clear'>
+						<li class='ui-tab-nav-item ui-tab-nav-item-cur'>本周<span class='icon'></span></li>
+						<li class='ui-tab-nav-item'>本月<span class='icon'></span></li>
+					</ul>
+				</div>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-list-plus'>
+					{pc:content  action="hits" catid="286" order="weekviews  DESC" num="10"}
+					{loop $data $r}
+						<li class='ui-list-plus-item'><span {if $n<4}class='num num-hot'{else}class='num'{/if}>{$n}</span><a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],40,'')}</a></li>
+
+						{/loop}
+						{/pc}
+					</ol>
+					<ol class='ui-tab-cnt-item ui-list-plus'>
+					{pc:content  action="hits" catid="286" order="monthviews"  DESC" num="10"}
+					{loop $data $r}
+						<li class='ui-list-plus-item'><span {if $n<4}class='num num-hot'{else}class='num'{/if}>{$n}</span><a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],40,'')}</a></li>
+
+					{/loop}
+					{/pc}
+					</ol>
+				</div>
+			</div>
+
+			<div class='ui-box-side ui-box-wydg'>
+				<h2 class='ui-box-side-title'>网游大观</h2>
+				<ul class='ui-img-list ui-img-list-plus'>
+				{pc:content  action="position" posid="484" order="listorder DESC" num="6" }
+   				{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],122,91)}' width='122' height='91' /></a>
+						<a style="text-align:left;" class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],60,'')}</a>
+					</li>
+				{/loop}
+				{/pc}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

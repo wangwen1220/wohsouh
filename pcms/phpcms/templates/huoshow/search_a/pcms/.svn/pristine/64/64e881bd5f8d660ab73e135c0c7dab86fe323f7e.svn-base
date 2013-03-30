@@ -1,0 +1,6 @@
+{template "content","movie_header"}
+<!--图片详细模块开始-->
+{template "content","common_pic"}
+<!--图片详细模块结束-->
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+{template "content","footer"}

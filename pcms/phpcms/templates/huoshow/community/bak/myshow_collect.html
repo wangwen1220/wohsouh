@@ -1,0 +1,16 @@
+{template "community","myshow_header"}
+<div id='collect-dialog' class="dialog collect-dialog">
+	<div class="header">
+		<h2 class='title'>采集</h2>
+		<a class="close" href="#"><strong>Close</strong></a>
+	</div>
+	<p class="pin-it fn-hide">使用书签小工具在浏览其它网站时直接采集上面的图片<a href="/about/goodies/">点击这里</a>添加书签工具</p>
+	<div class="actions">
+		<a class="cell scrape" id="open_scrape_pin" onclick="show_dialog('collect-all-pin');return false;"><div class="icon"></div><span>网址采集</span></a>
+		<a class="cell upload" id="open_upload_pin" onclick="show_dialog('upload_pin');return false;"><div class="icon"></div><span>上传采集</span></a>
+		<a class="cell album" id="open_create_album" onclick="show_dialog('create_album');return false;"><div class="icon"></div><span>新建专辑</span></a>
+	</div>
+</div>
+<div class="overlay"></div>
+</body>
+</html>

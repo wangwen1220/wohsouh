@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>火秀网 - 中国娱乐门户,我秀我火!我火我秀!</title>
+	<meta name="keywords" content="娱乐网站,娱乐门户,娱乐新闻,赛事直播,明星八卦,音乐网站,游戏,火秀网" />
+	<meta name="description" content="火秀网致力打造国内最专业娱乐门户网站,以报道时下最 新内地、港台、日韩、欧美娱乐新闻和游戏资讯,涵盖电影、电视、音乐、游戏、视频、图片、明星、演 艺、原创及翻唱集中展示、个人博客、论坛等娱乐相关领域,结合多种娱乐与互动为主题的功能与应用,结 合线上线下活动,是年轻时尚的各类达人在线互动的娱乐门户平台。" />
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="{CSS_PATH}huoshow_home.css" rel="stylesheet" />
+	<script src="{JS_PATH}jquery.min.js"></script>
+	<script src="{JS_PATH}jquery.cookie.js"></script>
+	<script src="{JS_PATH}huoshow_basic.js"></script>
+	<script src="{JS_PATH}huoshow_config.js"></script>
+	<script src="{JS_PATH}huoshow_common.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=2'></script>
+	<link rel='icon' href='/favicon.ico' />
+	{php if($index_page==1) echo "<base target=\"_blank\">";}
+</head>
+
+<body class="home">
+<!-- Top Nav -->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">电影</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/tv/">电视</a>-<a target="_blank" href="http://space.huoshow.com/home.php?mod=space&do=myshow&view=all">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://myshow.huoshow.com/">我秀</a>
+				<!---<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a>--> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+				(function($){
+					$(function(){
+						$.getJSON('http://{php global $SYSCONFIG;echo $SYSCONFIG["SpaceSiteRoot"]}/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!-- Top Nav End -->
+
+<div id="header" class='fn_clear'>
+	<div id="logo" class='fn_left'><a href="http://www.huoshow.com/" title="火秀网"><img src='/statics/images/home/logo.png' alt='' width='201' height='63' /></a></div>
+	<ul id="nav" class='fn_right'>
+		<li class='first'>
+			<a href='{$CATEGORYS[11][url]}'><strong>明星</strong></a>
+			<a href='{$CATEGORYS[39][url]}'>视频</a>
+			<a href='{$CATEGORYS[38][url]}'>图集</a>
+			<br />
+			<a href='{$CATEGORYS[14][url]}'><strong>游戏</strong></a>
+			<a href='{$CATEGORYS[83][url]}'>网游</a>
+			<a href='{$CATEGORYS[87][url]}'>小游戏</a>
+		</li>
+		<li>
+			<a href='{$CATEGORYS[12][url]}'><strong>电影</strong></a>
+			<a href='{$CATEGORYS[141][url]}'>预告</a>
+			<a href='{$CATEGORYS[69][url]}'>剧照</a>
+			<br />
+			<a href='{$CATEGORYS[109][url]}'><strong>超模</strong></a>
+			<a href='{$CATEGORYS[111][url]}'>大赛</a>
+			<a href='{$CATEGORYS[114][url]}'>写真</a>
+		</li>
+		<li>
+			<a href='{$CATEGORYS[131][url]}'><strong>电视</strong></a>
+			<a href='{$CATEGORYS[147][url]}'>综艺</a>
+			<a href='{$CATEGORYS[148][url]}'>片花</a>
+			<br />
+			<a href='http://myshow.huoshow.com/'><strong>我秀</strong></a>
+			<a href="http://myshow.huoshow.com/index.php?m=community&c=index&a=square">广场</a>
+			<a href="http://myshow.huoshow.com/index.php?m=community&c=index&a=talent">达人</a>
+			<!--a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all'><strong>MY秀</strong></a>
+			<a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all&type=2'>视频</a>
+			<a href='http://space.huoshow.com/home.php?mod=space&do=myshow&view=all&type=1'>音频</a-->
+		</li>
+		<li>
+			<a href='{$CATEGORYS[13][url]}'><strong>音乐</strong></a>
+			<a href='{$CATEGORYS[78][url]}'>MV</a>
+			<a href='{$CATEGORYS[73][url]}'>试听</a>
+			<br />
+			<a href='{$CATEGORYS[10][url]}'><strong>美图</strong></a>
+			<a href='http://bbs.huoshow.com/forum-66-1.html'>相册</a>
+			<!--<a href='http://bbs.huoshow.com/'><strong>论坛</strong></a>
+			<a href='http://space.huoshow.com/home.php'>微博</a>-->
+		</li>
+		<li>
+			<a href='{$CATEGORYS[9][url]}'><strong>赛事</strong></a>
+			<a href='{$CATEGORYS[17][url]}'>日程</a>
+			<a href='{$CATEGORYS[16][url]}'>排行</a>
+			<br />
+			<a></a>
+			<a></a>
+		</li>
+	</ul>
+</div>
+
+<div id="help_bar">
+	<div class='inner_wrapper fn_clear'>
+		<div id='weather' class='fn_left' style='width: 170px;'><span id='weather_now'></span><span><!--&nbsp;<?php echo date("Y年m月d日").'&nbsp;'.'星期';if(date("w")==1) echo '一';if(date("w")==2) echo '二';if(date("w")==3) echo '三';if(date("w")==4) echo '四';if(date("w")==5) echo '五';if(date("w")==6) echo '六';if(date("w")==0) echo '日';?>--></span></div>
+		<script>
+			$(function(){
+				$.get('/api/weather.php', function(data){
+					$("#weather_now").html(data);
+				});
+			});
+		</script>
+		<form class='fn_left' id="search" name="search" method="get" action="{APP_PATH}index.php" target="_blank" onSubmit="return checkSForm()">
+			<input type="hidden" value="search" name="app"/>
+			<input type="hidden" value="index" name="controller"/>
+			<input type="hidden" value="search" name="action"/>
+
+			<input type="hidden" name="m" value="search" />
+			<input type="hidden" name="c" value="index" />
+			<input type="hidden" name="a" value="init" />
+			<input type="hidden" name="siteid" value="{$siteid}" id="siteid" />
+			<div id='divselect'>
+				<cite class='selected'>全部</cite>
+				{php $search_model = getcache('search_model_'.$siteid,'search');}
+				<ul class='options'>
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="1">全部</a></li>
+					{loop $search_model $k=>$v}
+					<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$v['typeid']}">{$v['name']}</a></li>
+					{/loop}
+				</ul>
+			</div>
+			<input name="typeid" id="inputselect" type="hidden" value="1" />
+			<input type="text" class="text" name="q" id="search_wd" value="请输入关键字" onFocus="clearKeyword()" onBlur="clearKeyword()"/>
+			<input type="submit" id="search_submit" value="搜 索"/>
+		</form>
+		<script>
+			$(function(){
+				window.clearKeyword = function(){
+					var search_wd = $.trim($("#search_wd").val());
+					if(search_wd=='请输入关键字'){
+						$("#search_wd").val('');
+					}
+					if(search_wd==''){
+						$("#search_wd").val('请输入关键字');
+					}
+				}
+				window.checkSForm = function()
+				{
+					var search_wd = $.trim($("#search_wd").val());
+					if(search_wd=='请输入关键字' || search_wd==''){
+						alert('请输入关键字');
+						return false;
+					}
+				}
+			});
+		</script>
+	</div>
+</div>

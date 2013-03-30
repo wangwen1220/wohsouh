@@ -1,0 +1,66 @@
+{template "community","myshow_header"}
+
+<div id="wrapper" class='pinner-page'>
+	<div class="header">
+		{if $user['uid'] ==$myshowuid}
+		<h2 id='pinner-nav'>
+			<a id='pinner-nav-pin' class='the-pin current' href='/index.php?m=community&c=myhuoshow&a=myshare&list=1&myuid={$m_user_uid}' hidefocus='true'>我的分享</a>
+			<a id='pinner-nav-like' class='the-pin' href='/index.php?m=community&c=myhuoshow&a=mylike&list=1&myuid={$m_user_uid}' hidefocus='true'>我的喜欢</a>
+			<a id='pinner-nav-album' href='/zj{$m_user_uid}.html' hidefocus='true'>我的专辑</a>
+		</h2>
+		{else}
+		<h2 id='pinner-nav'>
+			<a id='pinner-nav-pin' class='the-pin current' href='/index.php?m=community&c=myhuoshow&a=myshare&list=1&myuid={$m_user_uid}' hidefocus='true'>Ta的分享</a>
+			<a id='pinner-nav-like' class='the-pin' href='/index.php?m=community&c=myhuoshow&a=mylike&list=1&myuid={$m_user_uid}' hidefocus='true'>Ta的喜欢</a>
+			<a id='pinner-nav-album' href='/zj{$m_user_uid}.html' hidefocus='true'>Ta的专辑</a>
+		</h2>
+		{/if}
+	</div>
+</div>
+
+<div id="content">
+	<div id='canvas' class='pinner-page' data-url='/index.php?m=community&c=myhuoshow&a=myshare&list=1&myuid={$m_user_uid}'>
+		<div class="pin pinner ks-waterfall ks-waterfall-fixed-left">
+			<div class="pinner-info">
+				<a target='_blank' class="avatar" href="/m{$m_user_uid}.html"><img src="{$big_avatar}" alt='{$user_info[0][nickname]}' width='208' height='208' /></a>
+				<h3 class="name"><a target='_blank' href="/m{$m_user_uid}.html">{$user_info[0][nickname]}</a></h3>
+				<p class='signature'><strong>签名档：</strong>{$signa}<span class='arr'></span></p>
+				<div class='stats'>
+					<span class='share first'>分享 <a target='_blank' href="/m{$m_user_uid}.html"><em>{if $user['uid'] ==$myshowuid}{$user_share_num}{else}{if $users_total[share]}{$users_total[share]}{else}0{/if}{/if}</em></a></span>
+					<span class='fans new'>专辑<a target='_blank' href="/zj{$m_user_uid}.html"><em>{if $users_total[album]}{$users_total[album]}{else}0{/if}</em></a></span>
+					<span class='follow new'>关注<a target='_blank' href="/gz{$m_user_uid}.html"><em>{if $users_total[follow]}{$users_total[follow]}{else}0{/if}</em></a></span>
+					<span class='like last'>粉丝<a target='_blank' href="/fs{$m_user_uid}.html"> <em>{if $users_total[fans]}{$users_total[fans]}{else}0{/if}</em></a></span>
+				</div>
+				{if $user['uid'] != $myshowuid}
+				<div class='action-btns fn-clear'>
+					{if $is_follow==0}
+					<a class='follow-user btn' href='javascript:;' data-uid='{$m_user_uid}'>关注Ta</a>
+					{else}
+					<a class='follow-user btn followed' href='javascript:;' data-uid='{$m_user_uid}'>取消关注</a>
+					{/if}
+					<a class='send-msg btn' href='/index.php?m=community&c=index&a=send_message&src_uid={$user[uid]}&dst_uid={$m_user_uid}'>发私信</a>
+				</div>
+				{/if}
+			</div>
+			<div class="follower">
+				<h3>关注<span>(共{if $users_total[follow]}{$users_total[follow]}{else}0{/if}人，<a target='_blank' class="view-all" href='/gz{$m_user_uid}.html'>查看全部</a>)</span></h3>
+				<div class="follower-list">
+					{loop $user_follow $r}
+					<a target='_blank' href="/m{$r[uid]}.html"><img src="{$r[head_img_url]}" width='32' height='32' /></a>
+					{/loop}
+				</div>
+			</div>
+			<ul class='links'>
+				<li><a target='_blank' href='/fs{$m_user_uid}.html'>粉丝 <span>{if $users_total[fans]}{$users_total[fans]}{else}0{/if}</span></a></li>
+				<li><a target='_blank' href='/zj{$m_user_uid}.html'>专辑 <span>{if $users_total[album]}{$users_total[album]}{else}0{/if}</span></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="loading-pins"><img src="/statics/images/myshow/loading_pins.gif" alt="加载中" /> <span>正在加载 &hellip;</span></div>
+	<div id="loading-end"><img src="/statics/images/myshow/loading-end.png" /></div>
+</div>
+
+{template "community","tpl"}
+</body>
+</html>

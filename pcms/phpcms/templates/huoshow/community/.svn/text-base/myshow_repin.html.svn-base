@@ -1,0 +1,142 @@
+<div id='collect-goods-pin' class="dialog dialog-repin collect-website-dialog">
+	<div class="header">
+		<h2 class='title'>转藏</h2>
+		<a class="close" href="#"><strong>Close</strong></a>
+	</div>
+
+	<div class='select-pin fn-clear'>
+		<div id='goods-img' class='pin-img'>
+		<a class='img' href='#'><img src='{$share_info[0][thumb]}' width='170' height='224' /></a>
+		</div>
+		<form id='pin-info-form' class='pin-info-form' name='pin_info' method='post' action="/index.php?m=community&c=index&a=ajax_transfer&act_submit=yes">
+			<input type="hidden" value="default_id" class="inputselect" name="album" />
+			<input type="hidden" name="share_id" value="{$share_id}"/>
+			<input type='hidden' name='tags_id' id='pin-tags-id' value='' />
+			<input type='hidden' name='openness' id='openness' value='分享仅对被@好友可见' />
+			<div class='divselect'>
+				<cite class='selected'>请选择专辑</cite>
+				<div class='options'>
+					<ul class='option-list'>
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="default_id">请选择专辑</a></li>
+						<!-- {loop $a_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+						{/loop}-->
+						{loop $list_arr $r}
+						<li><a class='option' hidefocus='true' href="javascript:;" selectid="{$r['id']}">{$r['album_name']}</a></li>
+						{/loop}
+					</ul>
+					<div class='create-album'>
+						<input name='create_album' type='text' value='创建新专辑' />
+						<a class='button disabled' href='javascript:;'>创建</a>
+					</div>
+				</div>
+			</div>
+			<div class='fancy'>
+				<textarea name='desc' class='desc' id='goods-desc'></textarea>
+				<label>描述一下这个这个分享</label>
+			</div>
+			<div class='fancy'>
+				<input type='text' name='tags' id='pin-tags' class='tags' value="{$tag_name_arr}"/>
+				{if !$tag_name_arr}
+				<label>最多5个标签，以空格隔开</label>
+				{/if}
+			</div>
+			<div class='submit'>
+				<button type='submit' name='pin_info_submit' class='pin-info-submit'>转藏</button>
+				<ul class='openness'>
+					<li><a href='javascript:;'><span>分享对所有人可见</span></a></li>
+					<li class='selected'><a href='javascript:;'><span>分享仅对被@好友可见</span></a></li>
+					<li><a href='javascript:;'><span>分享对自己可见</span></a></li>
+				</ul>
+			</div>
+		</form>
+		<div class='select-tags'>
+			<h3>常用标签，点击插入</h3>
+			<div class="tag-list-wrapper">
+				<div id="tag-list" class='tag-list'>
+				{loop $a_arr_tag $t}
+					{if $n==1 || $n%20==0}<ul class="tag-list-item fn-clear">{/if}
+						<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+					{if ($n+1)%20==0}</ul>{/if}
+				{/loop}
+					<!--<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>
+					<ul class="tag-list-item fn-clear">
+						<li><a id="298" href="#">家居</a></li>
+						<li><a id="299" href="#">设计</a></li>
+						<li><a id="300" href="#">电影</a></li>
+						<li><a id="301" href="#">旅行</a></li>
+						<li><a id="302" href="#">手工</a></li>
+						<li><a id="303" href="#">女装</a></li>
+						<li><a id="304" href="#">男装</a></li>
+						<li><a id="305" href="#">配饰</a></li>
+						<li><a id="306" href="#">美食</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+						<li><a id="307" href="#">摄影</a></li>
+					</ul>-->
+				</div>
+			</div>
+			<div class='tag-list-nav'>
+				<a id='tag-list-prev' class='tag-list-prev disabled' href='javascript:;' hidefocus='true'>Prev</a>
+				<a id='tag-list-next' class='tag-list-next' href='javascript:;' hidefocus='true'>Next</a>
+			</div>
+			<!--<ul id='tag-list' class='tag-list'>
+				{loop $a_arr_tag $t}
+				<li><a id='{$t[tag_id]}' href='javascript:;'>{$t[tag_name]}</a></li>
+				{/loop}
+			</ul>-->
+			<!--p class='tips'>亲爱的秀友，强烈建议5秒种设置浏览器<a href='#'>【收集工具】</a>插件</p-->
+		</div>
+	</div>
+</div>

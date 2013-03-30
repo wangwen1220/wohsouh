@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>单机游戏攻略 - 火秀网</title>
+	<meta name='keywords' content='火秀网络游戏' />
+	<meta name='description' content='火秀网络游戏' />
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-global.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-download'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_product'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main' class='game-download'>
+			<form id="search-form" class='search game-search' name="search" method="get" action="{APP_PATH}index.php" target="_blank">
+			<input type="hidden" value="search" name="app" />
+			<input type="hidden" name="m" value="search" />
+			<input type="hidden" name="c" value="search_yxk" />
+			<input type="hidden" name="a" value="init" />
+			<input type="hidden" name="typeid" value="1" id="typeid" /><!-- 搜索类型 -->
+				<fieldset>
+					<!--/*** select class='game-platform' name=''>
+						<option value=''>单机游戏</option>
+						<option value=''>网页游戏</option>
+						<option value=''>网络游戏</option>
+						<option value=''>手机游戏</option>
+					</select>
+					<select class='game-type' name=''>
+						<option value=''>全部游戏</option>
+						<option value=''>格斗游戏</option>
+						<option value=''>射击游戏</option>
+						<option value=''>小游戏</option>
+					</select>***/ -->
+					<input type='text' name='q' class='search-wd' value='请输入关键字' />
+					<button type='submit' class='search-submit'>搜索</button>
+					{pc:content  action="position" posid="418" order="listorder DESC" num="3"}
+					<span>热门：{loop $data $r}<a href='{$r[url]}'>{str_cut($r['title'],20,'')}</a> {/loop}</span>
+					{/pc}
+				</fieldset>
+			</form>
+
+			<div id='games'>
+				<div class='ui-gameshow fn-clear'>
+					<a class='img' href='#'><img src='{$thumb}' alt='' width='176' height='254' /></a>
+					<h2 class='title'><a href='#'>{$title}</a></h2>
+					<ul class='info'>
+						<li><span class='dt'>游戏制作：</span> <strong class='dd'>{$game_make}</strong></li>
+						<li><span class='dt'>游戏发行：</span> <strong class='dd'>{$game_issue}</strong></li>
+						<li><span class='dt'>发售日期：</span> <strong class='dd'>{$inputtime}</strong></li>
+						<li><span class='dt'>游戏授权：</span> <strong class='dd'>{$copytype}</strong></li>
+						<li><span class='dt'>游戏语言：</span> <strong class='dd'>{$language}</strong></li>
+						<li><span class='dt'>游戏平台：</span> <strong class='dd'>{$systems}</strong></li>
+						<li><span class='dt'>游戏类型：</span> <strong class='dd'>{$classtype}</strong></li>
+						<li><span class='dt'>游戏大小：</span> <strong class='dd'>{$filesize}</strong></li>
+						<li><span class='dt'>下载地址：</span> 
+							<strong class='dd' style="font-size:30px;">
+							{loop $downfiles $v}
+							{$v}
+							{/loop}</strong>
+					</li>
+					</ul>
+					<!-- 
+					<a class='button' href=''></a>
+					 -->
+					<div class='grade'>
+						<h3>网友评分</h3>
+						<div class='num'>{$stars}</div>
+						<!-- ul>
+							<li>浏览量：23234次</li>
+							<li>下载量：23534次</li>
+						</ul> -->
+					</div>
+				</div>
+
+				<div class='ui-header ui-header-content'>
+					<h2 class='title'>资讯</h2>
+				</div>
+				{pc:content action="relation" relation="$relation" catid="$catid" num="15" keywords="$rs[keywords]"}
+				<div class='ui-content'>
+					<ul class='ui-list ui-list-content'>
+						{loop $data $r}
+						<li class='ui-list-item'><a class='cnt' href='{$r[url]}'>{$r[title]}</a> <span class='date'>{date('m-d',$r[inputtime])}</span></li>
+						{if $n%5==0}</ul><ul class='ui-list ui-list-content'>{/if}
+						{/loop}
+					</ul>
+				</div>
+				{/pc}
+			</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>热门单机下载</h2>
+				{pc:content action="hits" catid="91" num="10" order="views DESC" cache="3600"}
+				<ol class='ui-list-plus'>
+					{loop $data $r}
+					<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{$r[url]}'>{$r[title]}</a></li>
+					{/loop}
+				</ol>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>最新入库</h2>
+				{pc:content action="lists" catid="92" num="10" order="inputtime DESC"}
+				<ol class='ui-list-plus'>
+					{loop $data $r}
+					<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{$r[url]}'>{$r[title]}</a></li>
+					{/loop}
+				</ol>
+				{/pc}
+			</div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>热门推荐</h2>
+				{pc:content action="position" posid="538" catid="$catid" order="listorder DESC" num="10"}
+				<ol class='ui-list-plus'>
+					{loop $data $r}
+					<li class='ui-list-plus-item'><span class='num {if $n<4}num-hot{/if}'>{$n}</span><a class='title' href='{$r[url]}'>{$r[title]}</a></li>
+					{/loop}
+				</ol>
+				{/pc}
+			</div>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

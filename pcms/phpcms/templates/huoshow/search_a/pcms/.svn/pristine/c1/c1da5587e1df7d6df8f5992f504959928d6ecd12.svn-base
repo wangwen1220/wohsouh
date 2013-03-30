@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-android.css' rel='stylesheet' />
+	<link href='http://www.huoshow.com/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-android game-android-download switchable'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_android'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main' class='article-box'>
+			<div class='article-related article-download fn-clear'>
+				<div class='aside'>
+					<a class='img img-mgame img-mgame-146'><img src='{thumb($thumb,146,146)}' alt='' width='146' height='146' /><span class='mark-img'></span></a>
+					<h3 class='title'><span>适用于安卓手机</span></h3>
+					<!-- <a class='btn btn-download' title='iTunes下载' href='#'></a>
+					<a class='img-qrcode' href='#'><img src='/statics/images/game/qrcode.png' alt='' width='111' height='111' /></a>
+					<a class='btn btn-qrcode' title='扫描二维码直接下载' href='#'></a> -->
+				</div>
+				<div class='article'>
+					<h2 class='title'><a href='#'>{$title}</a> <span class='num'>9.7</span></h2>
+					<ul class='info'>
+						<!--<li><span class='dt'>资费说明：</span><span class='dd'><em>{$chargingmode}</em></span></li>
+						<li><span class='dt'>最新版本：</span><span class='dd'>{$version}</span></li>
+						<li><span class='dt'>分类：</span><span class='dd'>{$gametype}</span></li>
+						<li><span class='dt'>软件语言：</span><span class='dd'>{$language}</span></li>
+						<li><span class='dt'>大小：</span><span class='dd'>{$filesize}</span></li>
+						<li><span class='dt'>特征：</span><span class='dd'><em>动作</em> <em>僵尸</em></span></li>
+						<li><span class='dt'>适用固件：</span><span class='dd'>{$systems}</span></li>
+						<li><span class='dt'>更新时间：</span><span class='dd'>{$inputtime}</span></li>
+						<li class='long'><span class='dt'>支持屏幕：</span><span class='dd'><select><option value=''>支持的分辨率</option><option value=''>800*600px</option><option value=''>1024*800px</option></select></span></li>
+						<li class='long'><span class='dt'>开发商：</span><span class='dd'>Beijing Hesad Nsdf sdlkfsldf Co., Ltd.</span></li>
+						<li class='long'><span class='dt'>游戏关键字：</span><span class='dd'><a href='#'><em>僵尸</em></a> <a href='#'><em>3D</em></a> <a href='#'><em>动作</em></a> <a href='#'><em>HD</em></a></span></li>-->
+						<li><span class='dt'>游戏大小：</span><span class='dd'><em>{$gamesize}</em></span></li>
+						<li><span class='dt'>开发商：</span><span class='dd'><em>{$developers}</em></span></li>
+						<li><span class='dt'>游戏类型：</span><span class='dd'><em>{$developers}</em></span></li>
+						<li><span class='dt'>发布日期：</span><span class='dd'><em>{$releasedate}</em></span></li>
+						<li><span class='dt'>收费模式：</span><span class='dd'><em>{$chargingmode}</em></span></li>
+						{if !empty($price)}<li><span class='dt'>价格：</span><span class='dd'><em>{$price}</em></span></li>{/if}
+						<li class='long'><span class='dt'>下载地址：</span>
+						<span class='dd'>{loop $downfiles $r}
+						{$r}
+						{/loop}</span>
+						</li>
+					</ul>
+
+					<div class='article-related article-actions'>
+						<!-- JiaThis Button BEGIN -->
+						<span id='jiathis' class="jiathis_style jiathis">
+							<span class="jiathis_txt">分享到：</span>
+							<a class="jiathis_button_qzone"></a>
+							<a class="jiathis_button_tsina"></a>
+							<a class="jiathis_button_tqq"></a>
+							<a class="jiathis_button_renren"></a>
+							<a class="jiathis_button_tsohu"></a>
+							<a class="jiathis_button_kaixin001"></a>
+							<a class="jiathis_button_douban"></a>
+							<a class="jiathis_button_t163"></a>
+							<a class="jiathis_button_tieba"></a>
+							<a class="jiathis_button_taobao"></a>
+							<a class="jiathis_button_tianya"></a>
+							<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1349664104558770" charset="utf-8"></script>
+						</span>
+						<!-- JiaThis Button END -->
+					</div>
+
+					<div class='article-explain'>
+						<h3>摘要：</h3>
+						<p class='intro'>摘要：{$description}</p>
+					</div>
+				</div>
+			</div>
+			<div class='article-related article-detail'>
+				<div class='header-news'>
+					<h2 class='title'>详细介绍</h2>
+				</div>
+				<p>{$content}</p>
+			</div>
+
+			<div class='article-related article-slider'>
+				<div class='header-news'>
+					<h2 class='title'>截图</h2>
+					<!-- div class='link'><a href='#'>查看原图</a> | <a href='#'>大图模式</a></div> -->
+				</div>
+				<div id='myslider' class='myslider'>
+					<ul class='slider-cnt'>
+						{loop $pictureurls $pic_k $r}
+						<li class='slider-cnt-item fn-clear'>
+							<img src='{thumb($r[url], 216, 385, 0)}' alt='' width='216' height='385' />
+							<h3 class='title'>{$r[alt]}</h3>
+							<!-- <span class='num'>{$n}</span> -->
+						</li>
+						{/loop}
+					</ul>
+					<div class="slider-nav">
+						<a class='slider-nav-prev slider-nav-prev-disabled' href='javascript:;'>Prev</a>
+						<a class='slider-nav-next' href='javascript:;'>Next</a>
+					</div>
+				</div>
+			</div>
+
+			<div class='article-related article-gallery'>
+				<div class='header-news'>
+					<h2 class='title'>相关推荐</h2>
+				</div>
+				{pc:content action="position" posid="546" catid="$catid" order="listorder DESC" num="12"}
+				<ul class='ui-img-list ui-img-list-plus'>
+					{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a class='img img-mgame' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],75,75)}' width='75' height='75' /><span class='mark-img'></span></a>
+						<a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 15,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			{if $allow_comment && module_exists('comment')}
+		   <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="200" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+			{/if}
+		</div>
+
+		<div id='side'>
+			<div class='ui-tab ui-tab-sd'>
+				<ul class='ui-tab-nav fn-clear'>
+					<li class='ui-tab-nav-item ui-tab-nav-item-cur'>游戏下载排行</li>
+					<li class='ui-tab-nav-item'>软件下载排行</li>
+				</ul>
+				<div class='ui-tab-cnt'>
+					<ol class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-ranking ui-ranking-hotgame'>
+					{pc:content action="hits" catid="307" num="10" order="views DESC" cache="3600"}
+					{loop $data $r}
+						<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+							<a class='img img-mgame img-mgame-50' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],50,50)}' alt='' width='50' height='50' /><span class='mark-img'></span></a>
+							<span class='num num-hot'>{$n}</span>
+							<h3 class='title'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 30,'')}</a></h3>
+							<!--<span class='ranking'>8.8</span>-->
+							<div class="content">
+							{str_cut($r[description], 50,'')}
+								<!--<p class='fn-hide'>限免 <del>￥18</del></p>-->
+								<p><span class='fn-hide'>下载</span><!--3521次--></p>
+							</div>
+							<a class='button' href="{url_change($r[url])}" target='_blank'></a>
+						</li>
+					{/loop}
+					{/pc}
+					</ol>
+
+					<ol class='ui-tab-cnt-item ui-ranking ui-ranking-hotgame'>
+					{pc:content action="hits" catid="308" num="10" order="views DESC" cache="3600"}
+					{loop $data $r}
+						<li class='ui-ranking-item {if $n==1}ui-ranking-item-cur{/if}'>
+							<a class='img img-mgame img-mgame-50' href='#'><img src='{thumb($r[thumb],50,50)}' alt='' width='50' height='50' /><span class='mark-img'></span></a>
+							<span class='num num-hot'>{$n}</span>
+							<h3 class='title'><a href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 30,'')}</a></h3>
+							<!--<span class='ranking'>8.8</span>-->
+							<div class="content">
+							{str_cut($r[description], 50,'')}
+								<!--<p class='fn-hide'>限免 <del>￥18</del></p>-->
+								<p><span class='fn-hide'>下载</span><!--3521次--></p>
+							</div>
+							<a class='button' href="{url_change($r[url])}" target='_blank'></a>
+						</li>
+						{/loop}
+						{/pc}
+
+					</ol>
+				</div>
+			</div>
+
+			<div class='ui-tab ui-tab-sd'>
+				<ul class='ui-tab-nav fn-clear'>
+					<li class='ui-tab-nav-item ui-tab-nav-item-cur'>IPhone壁纸下载</li>
+					<li class='ui-tab-nav-item'>安卓壁纸下载</li>
+				</ul>
+				<div class='ui-tab-cnt'>
+					{pc:content action="hits" catid="306" num="4" order="views DESC" cache="3600"}
+					<ul class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-img-list ui-img-list-plus' style="text-align: left;margin: 10px 0 0 10px;">
+						{loop $data $r}
+						<li class='ui-img-list-item'>
+							<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],108,162)}' width='108' height='162' /></a>
+							<a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],30,'')}</a>
+						</li>
+						{/loop}
+					</ul>
+					{/pc}
+					{pc:content action="hits" catid="309" num="4" order="views DESC" cache="3600"}
+					<ul class='ui-tab-cnt-item ui-img-list ui-img-list-plus' style="text-align: left;margin: 10px 0 0 10px;">
+						<li class='ui-img-list-item'>
+							<a class='img' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],108,162)}' width='108' height='162' /></a>
+							<a class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r['title'],30,'')}</a>
+						</li>
+					</ul>
+					{/pc}
+				</div>
+			</div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>新手入门</h2>
+				<dl class='ui-step'>
+					<dt>第一步：了解Android</dt>
+					{pc:content action="position" posid="552" order="listorder DESC" num="4"}
+					<dd>
+					{loop $data $r}
+					<a target="_blank" href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 20,'')}</a>
+					{/loop}
+					</dd>
+					{/pc}
+					<dt>第二步：使用Android</dt>
+					{pc:content action="position" posid="553" order="listorder DESC" num="10"}
+					<dd>
+					{loop $data $r}
+					<a target="_blank" href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 20,'')}</a>
+					{/loop}
+					</dd>
+					{/pc}
+
+					<dt>第三步：玩转Android</dt>
+					{pc:content action="position" posid="554" order="listorder DESC" num="6"}
+					<dd>
+					{loop $data $r}
+					<a target="_blank" href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 20,'')}</a>
+					{/loop}
+					</dd>
+					{/pc}
+				</dl>
+			</div>
+
+			<div class='ui-box-side ui-box-gallery'>
+				<h2 class='ui-box-side-title'>装机必备</h2>
+				{pc:content  action="position" posid="559" order="listorder DESC" num="8"}
+				<ul class='ui-img-list ui-img-list-plus'>
+					{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img img-mgame img-mgame-50' href="{url_change($r[url])}" target='_blank'><img src='{thumb($r[thumb],50,50)}' width='50' height='50' /><span class='mark-img'></span></a>
+						<a target="_blank" class='title' href="{url_change($r[url])}" target='_blank'>{str_cut($r[title], 20,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<script src='{JS_PATH}seajs/sea.js' id='seajsnode' data-main='hs-game-main'></script>
+	<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>

@@ -1,0 +1,328 @@
+{template "content","star_header"}
+<div class="p1">
+	<div class="p1_l">
+		<div class="pic_slide_wrapper">
+			<!-- slide start -->
+			<div class="pic_slide">
+				{pc:content  action="position" posid="119" catid="$catid" thumb="1" order="listorder DESC" num="5"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a href="{$r[url]}"><img src="{thumb($r[thumb],292,412)}" alt="{$r[title]}" width='292' height='412' /></a>
+						<h3>{str_cut($r[title],50,'')}</h3>
+					</li>
+					{/loop}
+				</ul>
+				<ol>
+					{loop $data $r}
+					<li class='num'><span>{$n}</span></li>
+					{/loop}
+					<li class='next'><span>Next</span></li>
+					<li class='prev'><span>Prev</span></li>
+				</ol>
+				{/pc}
+			</div>
+		</div>
+		<!-- slide end -->
+
+		<div class="star_rank">
+			<h2 class='ui_star_title'>明星焦点</h2>
+			{pc:content  action="position" posid="124" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+			<ul class='ui_img_list'>
+				{loop $data $r}
+				<li>
+					<a href="{$r[url]}"><img src="{thumb($r[thumb],126,84)}" alt="{$r[title]}" width='126' height='84' /></a>
+					<h5><a href="{$r[url]}">{str_cut($r[title],50,'')}</a></h5>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:content  action="position" posid="125" catid="$catid" order="listorder DESC" num="6"}
+			<ul class='ui_text_list'>
+				{loop $data $r}
+				<li><a href='{$r[url]}'>{str_cut($r[title],55,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+
+		<div class="vote">
+			<h2>狗仔街拍</h2>
+			{pc:content  action="position" posid="126" catid="$catid" thumb="1" order="listorder DESC" num="2"}
+			<ul class='ui_articel_list'>
+				{loop $data $r}
+				<li>
+					<a class='ui_articel_img' href='{$r[url]}'><img src="{thumb($r[thumb],126,84)}" alt="{$r[title]}" width='126' height='84' /></a>
+					<h5><a href='{$r[url]}'>{str_cut($r[title],30,'')}</a></h5>
+					<p>{str_cut($r[description],80)} <a href='{$r[url]}'>[详细]</a></p>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+
+	<div class="p1_m">
+		<div class="hl_p1">
+			{pc:content  action="position" posid="120" catid="$catid" order="listorder DESC" num="1"}
+				{loop $data $r}
+				<h3><a href="{$r[url]}">{str_cut($r[title],56,'')}</a></h3>
+				{/loop}
+			{/pc}
+			<div class="h1_p1_text">
+			{pc:content  action="position" posid="121" catid="$catid" order="listorder DESC" num="4"}
+				<p>
+				{loop $data $r}
+				<span><a target="_blank" href="{$r[url]}">{str_cut($r[title],44,'')}</a> </span>
+				{/loop}
+				</p>
+			{/pc}
+			</div>
+			{pc:content  action="position" posid="122" catid="$catid" order="listorder DESC" num="1"}
+				{loop $data $r}
+				<h3><a href="{$r[url]}">{str_cut($r[title],56,'')}</a></h3>
+				{/loop}
+			{/pc}
+			<div class="h1_p1_text2">
+			{pc:content  action="position" posid="123" catid="$catid" order="listorder DESC" num="6"}
+				{loop $data $r}
+				<p><span></span><a target="_blank" href="{$r[url]}">{$r[title]}</a></p>
+				{/loop}
+			{/pc}
+			</div>
+		</div>
+		<h4>港台星闻</h4>
+		{pc:content  action="lists" catid="35" order="updatetime DESC" num="5"}
+		<ul>
+			{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}">{$r[title]}</a></li>
+			{/loop}
+		</ul>
+		{/pc}
+		<h4>日韩星闻</h4>
+		{pc:content  action="lists" catid="36" order="updatetime DESC" num="5"}
+		<ul>
+			{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}">{$r[title]}</a></li>
+			{/loop}
+		</ul>
+		{/pc}
+		<h4>内地星闻</h4>
+		{pc:content  action="lists" catid="34" order="updatetime DESC" num="5"}
+		<ul>
+			{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}">{$r[title]}</a></li>
+			{/loop}
+		</ul>
+		{/pc}
+		<h4>欧美星闻</h4>
+		{pc:content  action="lists" catid="37" order="updatetime DESC" num="7"}
+		<ul>
+			{loop $data $r}
+			<li><a target="_blank" href="{$r[url]}">{$r[title]}</a></li>
+			{/loop}
+		</ul>
+		{/pc}
+	</div>
+	<div class="p1_r">
+		<div class="p1_r_1">
+			<h2>火热进行中</h2>
+			<div class="pic_word">
+				{pc:content  action="position" posid="127" catid="$catid" thumb="1" order="listorder DESC" num="4"}
+				<ul>
+					{loop $data $r}
+					<li>
+					<a target="_blank" href="{$r[url]}">
+					<img alt="{$r[title]}" src="{thumb($r[thumb],100,90)}" width="100" height="90" /></a>
+					<span><a target="_blank" href="{$r[url]}">专题</a></span>
+					<h5><a target="_blank" href="{$r[url]}">{str_cut($r[title],20,'')}</a></h5>
+					</li>
+					{/loop}
+					<div class="clear"></div>
+				</ul>
+				{/pc}
+			</div>
+		</div>
+		<div class="ad_r"> <script type="text/javascript">
+				// <![CDATA[
+				OA_show(59);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a8cbbe52'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=59&n=a8cbbe52' /></a>
+			</noscript></div>
+		<div class="p1_r_3">
+			<div class="bar_text">
+				<h2>星踪</h2>
+				<a target="_blank" href="http://www.huoshow.com/rss.php"><span class="font_12">订阅星踪</span></a>
+				<div class="clear"></div>
+			</div>
+			{pc:content  action="position" posid="140" catid="$catid" thumb="1" order="listorder DESC" num="1"}
+			<dl>
+				{loop $data $r}
+				<dt><a target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{thumb($r[thumb],111,71)}" width="111" height="71" /></a></dt>
+				<dd><span>{str_cut($r[title],20,'')}</span>
+					<p class="font_12">{str_cut($r[description],80)}<a target="_blank" href="{$r[url]}">[详细]</a></p>
+				</dd>
+				<div class="clear"></div>
+				{/loop}
+			</dl>
+			{/pc}
+			{pc:content  action="position" posid="128" catid="$catid" order="listorder DESC" num="11"}
+			<ul>
+				{loop $data $r}
+				<li><span>·</span><a target="_blank" href="{$r[url]}">{str_cut($r[title],55,'')}</a></li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="ad"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(61);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a268fa80'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=61&n=a268fa80' /></a>
+			</noscript></div>
+<div class="p2">
+	<div class="p2_l">
+		<div class="p2_l_l">
+			<div class="bar_text">
+				<h2>一周要闻</h2>
+			</div>
+			{pc:content action="position" posid="129" order="listorder DESC" num="9" }
+			{loop $data $r}
+			{if $n==1}
+			<div class='ui_star_articel'>
+				
+				<a class='ui_articel_img' href='{$r[url]}' target="_blank"><img src="{thumb($r[thumb],120,76)}" alt="{$r[title]}" width='120' height='76' /></a>
+				<h5 class="ui_articel_title"><a href='{$r[url]}' target="_blank">{str_cut($r[title],30,'')}</a></h5>
+					<p class="ui_articel_content">{str_cut($r[description],52,'...')} <a href='{$r[url]}' target="_blank">[详细]</a></p>
+			</div>
+			{else}
+			<!--{pc:content action="hits" catid="$catid" num="8" order="weekviews DESC" cache="300"}-->
+			<ul class='ui_text_list'>
+				<li><a href='{$r[url]}'>{str_cut($r[title],55,'')}</a></li>
+			</ul>
+			{/if}
+			{/loop}
+			{/pc}
+		</div>
+		<div class="p2_l_r">
+			<div class="pic_word2">
+				<div class="bar_text">
+					<h2>明星视频</h2>
+					<a target="_blank" href="/star/mingxingshipin/">更多</a>
+					<div class="clear"></div>
+				</div>
+				{pc:content  action="position" posid="130" catid="$catid" thumb="1" order="listorder DESC" num="6"}
+				<ul class="font_12">
+					{loop $data $r}
+					<li><a target="_blank" href="{$r[url]}"><img alt="{$r[title]}" src="{thumb($r[thumb],103,68)}" width="103" height="68" /></a><a target="_blank" href="{$r[url]}">{str_cut($r[title],24,'')}</a></li>
+					{/loop}
+					<div class="clear"></div>
+				</ul>
+				{/pc}
+			</div>
+		</div>
+	</div>
+	<div class="p2_r">
+		<div class="ad2"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(60);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=afcc291c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=60&n=afcc291c' /></a>
+			</noscript></div>
+		<div class="p2_r_1">
+			<div class="bar_text">
+				<h2>找明星</h2>
+				<a target="_blank" href="http://space.huoshow.com/show.php"><span class="font_12">我要成名</span></a>
+				<div class="clear"></div>
+			</div>
+			<div>
+				<form action="{APP_PATH}index.php" id="search" method="get" target="_blank" onsubmit="return checkSForm2()">
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="siteid" value="{$siteid}" id="siteid" />
+					<input type="hidden" name="typeid" value="1" id="typeid" />
+					<input type="text" class="text" name="q" id="q2" value="请输入关键字" onfocus="clearKeyword2()" onblur="clearKeyword2()"/>
+					<input type="submit" id="button" class="button_bg" value="找一下"/>
+				</form>
+				<script>
+				$(function(){
+					window.clearKeyword2 = function(){
+						var search_wd = $.trim($("#q2").val());
+						if(search_wd=='请输入关键字'){
+							$("#q2").val('');
+						}
+						if(search_wd==''){
+							$("#q2").val('请输入关键字');
+						}
+					}
+
+					window.checkSForm2 = function()
+					{
+						var search_wd = $.trim($("#q2").val());
+						if(search_wd=='请输入关键字' || search_wd==''){
+							alert('请输入关键字');
+							return false;
+						}
+					}
+				});
+				</script>
+			</div>
+			<!--找明星-->
+			<!--#include virtual="/api.php?op=movie&p=get_tags"-->
+			<!--找明星结束-->
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="ad"><script type="text/javascript">
+				// <![CDATA[
+				OA_show(62);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a394b21c'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=62&n=a394b21c' /></a>
+			</noscript></div>
+
+<div class="con_box_pic">
+	<h2 class='con_box_pic_title'>明星美图</h2>
+	<div class="con_box_pic_subtitle">
+		<a href="{$CATEGORYS[62][url]}" target="_blank">内地明星</a>
+		<a href="{$CATEGORYS[63][url]}" target="_blank">港台明星</a>
+		<a href="{$CATEGORYS[185][url]}" target="_blank">日韩明星</a>
+		<a href="{$CATEGORYS[186][url]}" target="_blank">欧美明星</a>
+	</div>
+	{pc:content  action="position" posid="131" catid="$catid" thumb="1" order="listorder DESC" num="10"}
+	<ul class="pic_set">
+		{loop $data $r}
+		<li><a title="{$r[title]}" href="{$r[url]}" target="_blank">
+			<img width="167" height="130" src="{thumb($r[thumb],167,130)}"></a>
+			<span><a title="{$r[title]}" href="{$r[url]}" target="_blank">{str_cut($r[title],32,'')}</a></span>
+		</li>
+		{/loop}
+		<div class="clear"></div>
+	</ul>
+	{/pc}
+</div>
+
+
+<!--Partners-->
+<div class="main_body">
+	<div class="partners">
+		<div class="layer_one"><a>友情链接</a></div>
+		<div class="layer_content">
+			<p class="layer_content_txt"><a href="#">中影集团</a> | <a href="#">保利博纳</a> | <a href="#">华谊兄弟</a> | <a href="#">光线传媒</a> | <a href="#">激动娱乐</a> | <a href="#">橙天娱乐</a> | <a href="#">海润影视</a> | <a href="#">安乐传媒</a> | <a href="#">夏影业</a> | <a href="#">中北影视</a> | <a href="#">天娱传媒</a> | <a href="#">中圣春秋</a> | <a href="#">小马奔腾</a> <a href="#">金牌大风</a> | <a href="#">环球音乐</a> | <a href="#">Sony音乐</a> | <a href="#">华纳唱片</a> | <a href="#">华研音乐</a> | <a href="#">星光国际</a> | <a href="#">英皇星艺</a> | <a href="#">种子音乐</a> | <a href="#">海蝶音乐</a> | <a href="#">大国文化</a> | <a href="#">太合麦田</a> | <a href="#">福茂唱片</a> <a href="#">滚石唱片</a> <a href="#">麦特文化</a> | <a href="#">欢乐传媒</a> | <a href="#">星光UP传媒</a></p>
+		</div>
+	</div>
+</div>
+{template "content","footer"}

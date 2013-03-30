@@ -1,0 +1,287 @@
+{template "content","game_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="subpage_news">
+					<div class="subpage_news_bt">
+						<h2 class="bt1">sdfsdfsd</h2>
+					</div>
+					<ul>
+						{pc:content action="lists" catid="$catid" num="70" order="id DESC" page="$page"}
+						{loop $data $r}
+						<li>
+							<span class="date_011"><a title="{$r[title]}" href="{$r[url]}" target="_blank">{$r[title]}</a></span>
+							<span class="date_01">{date('Y-m-d H:i:s',$r[inputtime])}</span>
+						</li>
+						{if $n%5==0 && $n<count($data)}
+					</ul>
+					<ul>
+						{/if}
+						{/loop}
+					</ul>
+					{/pc}
+					<div class="clear"></div>
+					<div class="fanye">
+						<div id="pages" class="text-c">{$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="Subpage_right">
+		<!-- 相关热点 -->
+		<div class="right_news_jiaodian">
+			<div class="right_news_zixun">
+				<div class="right_news_zixun_01">
+					<div class="right_news_jiaodian_bt ui_list_box_title"><span class="wenzi">相关热点</span></div>
+					<div class="zixun_pic">
+						<ul>
+							<li><a href="http://pnews.huoshow.com/2011/0929/34721.shtml" title="图:《尼基塔》第二季 Maggie Q宣传照曝光" target="_blank"><img src="/upload/2011/0929/thumb_hs_120_90_1317281028903.jpg" width="120" height="90" />sdf sdfsdfsdf sdfhskdfhsdf sdfhskdfhskjdfhs sdhfks</a></li>
+							<li><a href="http://pnews.huoshow.com/2011/0810/21336.shtml" title="闫妮《画壁》剧照 首度挑战冷血女王角色" target="_blank"><img src="/upload/2011/0810/thumb_hs_120_90_1312958891352.jpg" width="120" height="90" />闫妮《画壁》剧照</a></li>
+						</ul>
+
+						<ol>
+							<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+							<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+							<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+							<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+							<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<a class='more' href='#'>更多&gt;&gt;</a>
+		</div>
+		<!-- 相关热点结束 -->
+
+		<!-- 今日推荐 -->
+		<div class='ui_list_box'>
+			<h2 class='ui_list_box_title'><span>今日推荐</span></h2>
+			<div class='ui_list_box_content'>
+				<h3 class='ui_list_box_subtitle'><a href='#'>也不能简单的就不关心用户体验</a></h3>
+				<ul>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+				</ul>
+				<h3 class='ui_list_box_subtitle'><a href='#'>也不能品经理就不关心用户体验</a></h3>
+				<ul>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+				</ul>
+			</div>
+			<a class='more' href='#'>更多&gt;&gt;</a>
+		</div>
+		<!-- 今日推荐结束 -->
+
+		<!-- 热点资讯排行 -->
+		<div class="ui_fold_box ui_fold_box_redian">
+			<h3 class='ui_fold_box_title'><span>热点资讯排行</span></h3>
+			<ul class='ui_fold_box_content'>
+				<li class='ui_fold_box_content_selected'> <span class='top_no'>1</span>
+					<div> <img src='/upload/2012/0131/1327978907412.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2012/0131/101861.shtml" title="冯绍峰西装笔挺现身酒店 全程微笑好心情" target="_blank">冯绍峰西装笔挺现身酒店 全程微笑好心情</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span class='top_no'>2</span>
+					<div> <img src='/upload/2011/0516/1305529056607.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2011/0516/10024.shtml" title="铃木杏大胆挑战尺度 《轻蔑》全裸出镜获好评" target="_blank">铃木杏大胆挑战尺度 《轻蔑》全裸出镜获..</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span class='top_no'>3</span>
+					<div> <img src='/upload/2011/0516/1305532856642.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2011/0516/10038.shtml" title="《南京！南京！》美国获赞 刘烨震撼特写引关注" target="_blank">《南京！南京！》美国获赞 刘烨震撼特写..</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>4</span>
+					<div> <img src='/upload/2011/0516/1305517998520.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2011/0516/10002.shtml" title="张伟平：贝尔2000万美元演《金陵十三钗》很值" target="_blank">张伟平：贝尔2000万美元演《金陵十三钗》..</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>5</span>
+					<div> <img src='/upload/2012/0130/1327915104467.jpg' width='106' height='82' />
+						<h4><a href="/2012/0130/101605.shtml" title="タイナカ彩智《Flower Dance》MV" target="_blank">タイナカ彩智《Flower Dance》MV</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>6</span>
+					<div> <img src='/upload/2012/0129/1327805496828.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2012/0129/100601.shtml" title="Ella新年调皮宣布婚讯 婚期铁定5月5日" target="_blank">Ella新年调皮宣布婚讯 婚期铁定5月5日</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>7</span>
+					<div> <img src='/upload/2011/0517/1305615198993.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2011/0517/10106.shtml" title="葛存壮：拍《小兵张嘎》没片酬 自己要掏伙食费" target="_blank">葛存壮：拍《小兵张嘎》没片酬 自己要掏..</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>8</span>
+					<div> <img src='/upload/2011/0517/1305615354328.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2011/0517/10108.shtml" title="范冰冰自曝卸妆照 长睫毛是红毯秘籍之一" target="_blank">范冰冰自曝卸妆照 长睫毛是红毯秘籍之一</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>9</span>
+					<div> <img src='/upload/2012/0129/1327807924812.jpg' width='106' height='82' />
+						<h4><a href="/2012/0129/100645.shtml" title="AKB48《GIVE ME FIVE!》MV" target="_blank">AKB48《GIVE ME FIVE!》MV</a></h4>
+						<p></p>
+					</div>
+				</li>
+				<li> <span>10</span>
+					<div> <img src='/upload/2012/0130/1327914508325.jpg' width='106' height='82' />
+						<h4><a href="http://pnews.huoshow.com/2012/0130/101597.shtml" title="中歌榜“最佳女歌手”六连冠 张靓颖女神装惊艳" target="_blank">中歌榜&ldquo;最佳女歌手&rdquo;六连冠 张靓颖女神..</a></h4>
+						<p></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 热点资讯排行结束 -->
+
+		<!-- 赛事、影视、音乐、游戏 -->
+		<div class='ui_tab_artical_box' id='js_tab_artical_box'>
+			<dl>
+				<dt class='ui_tab_artical_box_title show first'><h2>赛事</h2></dt>
+				<dd class='ui_tab_artical_box_content show'>
+					<ul class='ui_tab_artical_box_img_list'>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>赛事赛事赛事赛事</a></h4>
+						</li>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>赛事赛事赛事</a></h4>
+						</li>
+					</ul>
+					<ul class='ui_tab_artical_box_text_list'>
+						<li><a href='#'>也不能简单体验</a></li>
+						<li><a href='#'>也不能简单验</a></li>
+						<li><a href='#'>也不能简单的说产用验 sss ssss</a></li>
+						<li><a href='#'>也不能简单的用体验</a></li>
+						<li><a href='#'>也不能简单心用户体验</a></li>
+						<li><a href='#'>也不能简单的用体验</a></li>
+						<li><a href='#'>也不能简单心用户体验</a></li>
+						<li><a href='#'>也不能简单的用体验</a></li>
+						<li><a href='#'>也不能简单心用户体验</a></li>
+						<li><a href='#'>也不能简单心用户体验</a></li>
+						<li><a href='#'>w也不能简单的用体验</a></li>
+					</ul>
+				</dd>
+				<dt class='ui_tab_artical_box_title'><h2>影视</h2></dt>
+				<dd class='ui_tab_artical_box_content'>
+					<ul class='ui_tab_artical_box_img_list'>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>影视影视影视</a></h4>
+						</li>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>影视影视影视</a></h4>
+						</li>
+					</ul>
+					<ul class='ui_tab_artical_box_text_list'>
+						<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+						<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+						<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+						<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+						<li><a href='#'>也不能简单的说产品经理就不关心用户体验</a></li>
+					</ul>
+				</dd>
+				<dt class='ui_tab_artical_box_title'><h2>音乐</h2></dt>
+				<dd class='ui_tab_artical_box_content'>
+					<ul class='ui_tab_artical_box_img_list'>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>音乐音乐音乐</a></h4>
+						</li>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>音乐音乐音乐</a></h4>
+						</li>
+					</ul>
+					<ul class='ui_tab_artical_box_text_list'>
+						<li><a href='#'>也不能简单的说关心用户体验</a></li>
+						<li><a href='#'>也不能简单的说产户体验</a></li>
+						<li><a href='#'>也不能简单的说户体验</a></li>
+						<li><a href='#'>也不能简单的说产心用户体验</a></li>
+						<li><a href='#'>也不能简单的说心用户体验</a></li>
+					</ul>
+				</dd>
+				<dt class='ui_tab_artical_box_title'><h2>游戏</h2></dt>
+				<dd class='ui_tab_artical_box_content'>
+					<ul class='ui_tab_artical_box_img_list'>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>游戏游戏游戏</a></h4>
+						</li>
+						<li>
+							<a href='#'><img src='' alt='' width='100' height='120' /></a>
+							<h4><a href='#'>游戏游戏游戏</a></h4>
+						</li>
+					</ul>
+					<ul class='ui_tab_artical_box_text_list'>
+						<li><a href='#'>也不能简单的说产品</a></li>
+						<li><a href='#'>也不能简单的不关心用户体验</a></li>
+						<li><a href='#'>也不能简单的说产品经心用户体验</a></li>
+						<li><a href='#'>也不能简心用户体验</a></li>
+						<li><a href='#'>也不能简单的关心用户体验</a></li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<!-- 赛事、影视、音乐、游戏结束 -->
+
+		<!-- 热点视频 -->
+		<div class="right_news_jiaodian">
+			<div class="right_news_zixun">
+				<div class="right_news_zixun_01">
+					<div class="right_news_jiaodian_bt ui_list_box_title"><span class="wenzi">热点视频</span></div>
+					<div class="zixun_pic">
+						<ul>
+							<li><a href="http://pnews.huoshow.com/2011/0929/34721.shtml" title="图:《尼基塔》第二季 Maggie Q宣传照曝光" target="_blank"><img src="/upload/2011/0929/thumb_hs_120_90_1317281028903.jpg" width="120" height="90" />图:《尼基塔》第二</a></li>
+							<li><a href="http://pnews.huoshow.com/2011/0810/21336.shtml" title="闫妮《画壁》剧照 首度挑战冷血女王角色" target="_blank"><img src="/upload/2011/0810/thumb_hs_120_90_1312958891352.jpg" width="120" height="90" />闫妮《画壁》剧照 </a></li>
+							<li><a href="http://pnews.huoshow.com/2012/0228/118718.shtml" title="电视剧《青盲》曝多张剧照 3月将播" target="_blank"><img src="/upload/2012/0228/thumb_hs_120_90_1330417323286.jpg" width="120" height="90" />电视剧《青盲》曝多</a></li>
+							<li><a href="http://pnews.huoshow.com/2011/0817/22393.shtml" title="《猿族崛起》曝精美概念图 泄露重大玄机" target="_blank"><img src="/upload/2011/0817/thumb_hs_120_90_1313573191288.jpg" width="120" height="90" />《猿族崛起》曝精美</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a class='more' href='#'>更多&gt;&gt;</a>
+		</div>
+		<!-- 热点视频结束 -->
+
+		<!-- 游戏大观 -->
+		<div class="right_news_jiaodian">
+			<div class="right_news_zixun">
+				<div class="right_news_zixun_01">
+					<div class="right_news_jiaodian_bt ui_list_box_title"><span class="wenzi">游戏大观</span></div>
+					<div class="zixun_pic">
+						<ul>
+							<li><a href="http://pnews.huoshow.com/2011/0929/34721.shtml" title="图:《尼基塔》第二季 Maggie Q宣传照曝光" target="_blank"><img src="/upload/2011/0929/thumb_hs_120_90_1317281028903.jpg" width="120" height="90" />图:《尼基塔》第二</a></li>
+							<li><a href="http://pnews.huoshow.com/2011/0810/21336.shtml" title="闫妮《画壁》剧照 首度挑战冷血女王角色" target="_blank"><img src="/upload/2011/0810/thumb_hs_120_90_1312958891352.jpg" width="120" height="90" />闫妮《画壁》剧照 </a></li>
+							<li><a href="http://pnews.huoshow.com/2012/0228/118718.shtml" title="电视剧《青盲》曝多张剧照 3月将播" target="_blank"><img src="/upload/2012/0228/thumb_hs_120_90_1330417323286.jpg" width="120" height="90" />电视剧《青盲》曝多</a></li>
+							<li><a href="http://pnews.huoshow.com/2012/0306/120861.shtml" title="《向东是大海》曝光新剧照 将登央视" target="_blank"><img src="/upload/2012/0306/thumb_hs_120_90_1331017667684.jpg" width="120" height="90" />《向东是大海》曝光</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a class='more' href='#'>更多&gt;&gt;</a>
+		</div>
+		<!-- 游戏大观结束 -->
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

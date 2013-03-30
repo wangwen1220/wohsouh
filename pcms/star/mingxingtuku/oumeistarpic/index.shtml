@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>欧美明星 - 火秀新闻</title>
+	<meta name="keywords" content="火秀 新闻 娱乐">
+	<meta name="description" content="火秀 新闻 娱乐">
+	<meta name='author' content='火秀' />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/huoshow_star.css" rel="stylesheet" />
+	<link href="http://pnews.wwen.huoshow.com/statics/css/SpryTabbedPanels.css" rel="stylesheet" />
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.min.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/jquery.cookie.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_basic.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_config.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/huoshow_common.js"></script>
+	<script src="http://pnews.wwen.huoshow.com/statics/js/SpryTabbedPanels.js"></script>
+	<script src='http://misc.huoshow.com/www/delivery/spcjs1.php?id=1'></script>
+	<link rel='icon' href='/favicon.ico' />
+</head>
+
+<body	class="body_bg">
+<!--Site Header-->
+<div class="top_nav">
+	<div class="top_nav_bar">
+		<div class="top_nav_bg">
+			<div class="top_nav_left">
+				<div class="common"> <a target="_blank" href="http://www.huoshow.com/">首页</a>-<a target="_blank" href="http://live.huoshow.com/">直播</a>-<a target="_blank" href="http://www.huoshow.com/events/">赛事</a>-<a target="_blank" href="http://www.huoshow.com/star/">明星</a>-<a target="_blank" href="http://www.huoshow.com/movie/">影视</a>-<a target="_blank" href="http://www.huoshow.com/music/">音乐</a>-<a target="_blank" href="http://www.huoshow.com/supermodel/">超模</a>-<a target="_blank" href="http://www.huoshow.com/game/">游戏</a>-<a target="_blank" href="http://www.huoshow.com/pic/">美图</a>-<a target="_blank" href="http://www.huoshow.com/myshow/">My秀</a>-<a target="_blank" href="http://space.huoshow.com/group.php">群组</a>-<a target="_blank" href="http://space.huoshow.com/home.php">空间</a>-<a target="_blank" href="http://bbs.huoshow.com/">论坛</a> </div>
+			</div>
+			<div class="top_nav_right" id="login_bar">&nbsp;</div>
+			<script>
+			(function($){
+					$(function(){
+						$.getJSON('http://space.huoshow.com/api/login.php?jsoncallback=?', function(d){
+							$("#login_bar").html(d.html);
+						});
+					});
+				})(jQuery);
+			</script>
+		</div>
+	</div>
+</div>
+<!--Site Header End-->
+<div class="nav_body">
+	<div class="nav_bg">
+		<h1 class="channel_logo"><a href="http://www.huoshow.com/star" title="火秀明星首页">火秀明星频道</a></h1>
+		<div id="sub_channel">
+			<ul id="starmenu">
+				<li><a href="http://pnews.trunk.huoshow.com/star/">明星首页</a></li>
+												<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/huoshowmingxing/">火秀明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/neidimingxing/">内地明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/gangtaimingxing/">港台明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/rihanmingxing/">日韩明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/oumeimingxing/">欧美明星</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingtuku/">明星图库</a></li>
+																<li class="menu-title"><a href="http://pnews.trunk.huoshow.com/star/mingxingshipin/">明星视频</a></li>
+							</ul>
+		</div>
+		<script type="text/JavaScript">
+			navHover = function() {
+				var lis = document.getElementById("starmenu").getElementsByTagName("LI");
+				for (var i=0; i<lis.length; i++) {
+					lis[i].onmouseover=function() {
+						this.className+=" iehover";
+					}
+					lis[i].onmouseout=function() {
+						this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+					}
+				}
+			}
+			if (window.attachEvent) window.attachEvent("onload", navHover);
+
+			//var iframemask = document.getElementById("iframemask");
+			//var ulmask = document.getElementById("ulmask");
+			//iframemask.style.height='100';
+		</script>
+	</div>
+</div>
+<div class="search">
+	<!--#include virtual="/api.php?op=movie&p=get_search_huoshow&siteid=1"-->
+	<span class="search_text"> 您现在的位置：<a href="/">火秀 </a> > <a href="/star">火秀明星</a> </span> 
+</div>
+<div class="clear"></div>
+<!--Main Body-->
+<div class="main_body">
+	<div class="subpage_pic">
+		<div class="subpage_pic_01">
+			<div class="subpage_pic_list">
+				<div class="subpage_pic_bt"><h2>欧美明星</h2></div>
+								<ul>
+										<li>
+						<a title="图：少女时代台湾开唱 粉丝粉红海洋回报" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0913/28089.html">
+						<img alt="" src="http://pnews.zyc.huoshow.com/uploadfile/2012/0419/20120419065248317.jpg" width="150" height="120">
+						<span>图：少女时代...</span></a>
+					</li>
+										<li>
+						<a title="国内惊现《暗黑5》实体版 山寨行为遭外媒调侃" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28157.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>国内惊现《暗...</span></a>
+					</li>
+										<li>
+						<a title="白皙性感的真人版芭比娃娃COS欣赏" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28169.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>白皙性感的真...</span></a>
+					</li>
+										<li>
+						<a title="当下是乳神当道 胸气逼人的美女写真合集" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28211.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>当下是乳神当...</span></a>
+					</li>
+										<li>
+						<a title="性感撩人 CCJOY电粉挥洒COS风情" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28215.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>性感撩人 CCJ...</span></a>
+					</li>
+										<li>
+						<a title="神似刘亦菲  Showgirl李淑洁清纯写真" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28219.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>神似刘亦菲 ...</span></a>
+					</li>
+										<li>
+						<a title="兔牙超模杰西卡·哈特内衣写真半裸上阵" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28291.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>兔牙超模杰西...</span></a>
+					</li>
+										<li>
+						<a title="福利壁纸大放送！诱人性感美少女欣赏" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28325.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>福利壁纸大放...</span></a>
+					</li>
+										<li>
+						<a title="DOTA2现有英雄高清截图 独特造型彰显魅力" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28361.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>DOTA2现有英雄...</span></a>
+					</li>
+										<li>
+						<a title="叶梓萱最新性感诱惑写真" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28369.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>叶梓萱最新性...</span></a>
+					</li>
+										<li>
+						<a title="那些玩具模型的销魂姿势" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28373.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>那些玩具模型...</span></a>
+					</li>
+										<li>
+						<a title="鼻血要hold住 不知火舞诱惑COSPLAY" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28377.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>鼻血要hold住...</span></a>
+					</li>
+										<li>
+						<a title="图：金钟冠军王晰《男人装》与王晓锋耍宝" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28421.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>图：金钟冠军...</span></a>
+					</li>
+										<li>
+						<a title="无限诱惑 日本美眉cos性感家庭教师" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28441.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>无限诱惑 日...</span></a>
+					</li>
+										<li>
+						<a title="名不虚传！日本C80超大尺度性感喷血COS集" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28465.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>名不虚传！日...</span></a>
+					</li>
+										<li>
+						<a title="逼真动人极度诱惑 “芭比娃娃”真人版Cos欣赏" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28559.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>逼真动人极度...</span></a>
+					</li>
+										<li>
+						<a title="李双江之子李天一宝马写真 网友直言“傻”" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28565.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>李双江之子李...</span></a>
+					</li>
+										<li>
+						<a title="曝星二代丑闻 林忆莲李宗盛幼女掌掴女同学" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0914/28603.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>曝星二代丑闻...</span></a>
+					</li>
+										<li>
+						<a title="日本AV女优现身TGS宣传剑斗士VS" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28649.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>日本AV女优现...</span></a>
+					</li>
+										<li>
+						<a title="星之海洋cosplay高清图集欣赏" target="_blank" href="http://pnews.trunk.huoshow.com/staticpage/2011/otherpic_0915/28687.html">
+						<img alt="" src="http://pnews.wwen.huoshow.com/statics/images/nopic.gif" width="150" height="120">
+						<span>星之海洋cospl...</span></a>
+					</li>
+									</ul>
+								<div class="clear"></div>
+				<div class="fanye">
+					<div id="pages" class="text-c"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+	<!--Footer-->
+	<div id="footer_bg">
+		<div id="footer">
+			<div class="footer_logo"></div>
+			<div class="footer_txt">
+				<a href="http://www.huoshow.com/about/about.shtml">关于火秀</a> | <a href="http://www.huoshow.com/about/advertising.shtml">广告服务</a> | <a href="http://www.huoshow.com/about/contact.shtml">联系我们</a> |  <a href="http://www.huoshow.com/about/partners.shtml">合作伙伴</a> | <a href="http://www.huoshow.com/about/joinus.shtml">诚聘英才</a>
+				<p>www.huoshow.com 版权所有 粤ICP备06087881号</p>
+                			</div>
+		</div>
+	</div>
+	<!--Footer End-->
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+
+		_gaq.push(['_setAccount', 'UA-19568132-1']);
+		_gaq.push(['_addOrganic', 'baidu', 'word']);
+		_gaq.push(['_addOrganic', 'soso', 'w']);
+		_gaq.push(['_addOrganic', '3721', 'name']);
+		_gaq.push(['_addOrganic', 'yodao', 'q']);
+		_gaq.push(['_addOrganic', 'vnet', 'kw']);
+		_gaq.push(['_addOrganic', 'sogou', 'query']);
+		_gaq.push(['_addIgnoredOrganic', '火秀']);
+		_gaq.push(['_addIgnoredOrganic', '火秀网']);
+		_gaq.push(['_addIgnoredOrganic', 'huoshow']);
+		_gaq.push(['_addIgnoredOrganic', 'www.huoshow.com']);
+		_gaq.push(['_setDomainName', '.huoshow.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<div style="display:none;"><script src="http://s16.cnzz.com/stat.php?id=2692090&web_id=2692090"></script></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- 火秀相册 -->
+<div id='mygallery-classic' class='mygallery mygallery-classic' data-skin='classic'>
+	<div class='mygallery-view'>
+		<div class='mygallery-view-loading'></div>
+		<div class='mygallery-view-img'><img src='http://pnews.huoshow.com/uploadfile/2012/1214/thumb_hs_0_600_20121214112819773.jpg' /><span></span></div>
+		<div class='mygallery-view-prev'><a href='javascript:;' hidefocus='true'></a></div>
+		<div class='mygallery-view-next'><a href='javascript:;' hidefocus='true'></a></div>
+		<div class='mygallery-view-text fn-clear'>
+			<div class='mygallery-view-index'>(<em class='index'>1</em>/<span class='total'>10</span>)</div>
+			<h2 class='mygallery-view-title'><a href=''>{$title}</a></h2>
+		</div>
+	</div>
+
+	<div class='mygallery-ctrl'>
+		<div class='mygallery-ctrl-thumb'>
+			<ul class='mygallery-ctrl-thumb-list fn-clear'>
+			{loop $pictureurls $r}
+				<li class='mygallery-ctrl-thumb-item cur'>
+					<a class='thumb' href='javascript:;' data-src='{thumb($r[url],75,75)}' data-title='{$r[title]}'><img src='{thumb($r[url],75,75)}' alt='' width='75' height='75' /></a>
+			{/loop}	
+			</ul>
+		</div>
+		<div class='mygallery-ctrl-bar'>
+			<div class='mygallery-ctrl-bar-lt'></div>
+			<div class='mygallery-ctrl-bar-rt'></div>
+			<div class='mygallery-ctrl-bar-main'>
+				<a class='mygallery-ctrl-bar-btn fn-clear' href='javascript:;'>
+					<span class='mygallery-ctrl-bar-btn-lt'></span>
+					<span class='mygallery-ctrl-bar-btn-rt'></span>
+					<span class='mygallery-ctrl-bar-btn-ct'><em></em></span>
+				</a>
+			</div>
+		</div>
+		<a class='mygallery-ctrl-prev' href='javascript:;' hidefocus='true'></a>
+		<a class='mygallery-ctrl-next' href='javascript:;' hidefocus='true'></a>
+	</div>
+</div>
+<!-- 火秀相册结束 -->

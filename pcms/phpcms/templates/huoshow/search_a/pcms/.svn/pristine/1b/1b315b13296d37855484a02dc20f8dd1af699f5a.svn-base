@@ -1,0 +1,28 @@
+{template "content","star_header"}
+<!--Main Body-->
+<div class="main_body">
+	<div class="subpage_pic">
+		<div class="subpage_pic_01">
+			<div class="subpage_pic_list">
+				<div class="subpage_pic_bt"><h2>{getCatNameFromCatid($catid)}</h2></div>
+				{pc:content action="lists" catid="$catid" num="40" order="id DESC" page="$page"}
+				<ul>
+					{loop $data $r}
+					<li>
+						<a title="{$r['title']}" target="_blank" href="{$r['url']}">
+						<img alt="" src="{thumb($r[thumb],150,120)}" width="150" height="120">
+						<span>{str_cut($r[title], 25)}</span></a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+				<div class="clear"></div>
+				<div class="fanye">
+					<div id="pages" class="text-c">{$pages}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+{template "content","footer"}

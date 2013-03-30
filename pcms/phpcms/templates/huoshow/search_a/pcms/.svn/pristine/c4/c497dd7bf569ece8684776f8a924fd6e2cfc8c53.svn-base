@@ -1,0 +1,17 @@
+<h2 class='ui_list_box_title'><span>今日推荐</span></h2>
+{pc:content action="get_day_recomment" catid="$catid" order="inputtime DESC" num="12" }
+<div class='ui_list_box_content'>
+	<ul>
+		{loop $data $r}
+		{if $n==1 || $n==7}
+		<h3 class='ui_list_box_subtitle'>
+			<a href='{$r[url]}'>{str_cut($r[title],56,'')}</a>
+		</h3>
+		{/if}
+		{if $n!=1 && $n!=7}
+		<li><a href='{$r[url]}'>{str_cut($r[title],66,'')}</a></li>
+		{/if}
+		{/loop}
+	</ul>
+</div>
+{/pc}

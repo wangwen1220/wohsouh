@@ -1,0 +1,90 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","events_header"); ?>
+<!--Main Body-->
+<?php if(empty($pictureurls)) { ?>
+<div class="main_body">
+	<div class="Subpage_left">
+		<div class="Subpage_left_xx_01">
+			<div class="Subpage_left_xx">
+				<div class="Subpage_left_bt">
+					<h1 class="bt_cu"><?php echo $title;?></h1>
+					<div class="titbar"> <span class="pubTime"><?php echo $inputtime;?></span> <span class="where">来源：<?php echo $copyfrom;?></span>
+						<!-- <span class="views">查看数: <span id="pvnums">0</span></span> -->
+						<span class="comment"><a href="#to_comment">我来说两句</a> (<span class="commentnums">0</span>)</span> </div>
+				</div>
+				<div class="Subpage_left_nr">摘要:<?php echo $description;?></div>
+				<div class="Subpage_left_news" id = "ctrlfscont">
+					<div id='news_content'><?php echo $content;?></div>
+					<!--- start related --->
+					<!--- end related --->
+				</div>
+				<div class="fanye">
+					<div id="pages" class="text-c"><?php echo $pages;?></div>
+				</div>
+				<div class='artical_tags'>
+					<div class='artical_tag'><em>标签</em>：&nbsp;&nbsp;&nbsp;
+						<?php $n=1;if(is_array($keywords)) foreach($keywords AS $keyword) { ?>
+							<a href="<?php echo APP_PATH;?>index.php?m=content&c=tag&catid=<?php echo $catid;?>&tag=<?php echo urlencode($keyword);?>" class="blue"><?php echo $keyword;?></a>
+						<?php $n++;}unset($n); ?>
+					</div><br />
+					<div class='artical_share'> <span><em>分享到</em>： <a href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent('<?php echo new_addslashes($title);?> ')+'&url='+encodeURIComponent(location.href)+'&appkey='+SINA_APPKEY,'_blank','width=450,height=400');})()"><img src="http://www.huoshow.com/img/templates/default/images/sina.gif" title="新浪微博"/></a> <a href="javascript:(function(){window.open('http://v.t.qq.com/share/share.php?title='+encodeURIComponent('<?php echo new_addslashes($title);?> ')+'&url='+encodeURIComponent(location.href)+'&source='+QQ_SOURCEID+'&pic=','转播到腾讯微博', 'width=700, height=580, top=320, left=180, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no'); })()"><img src="http://www.huoshow.com/img/templates/default/images/qq.png" title="腾讯微博"/></a> <a href="javascript:u=location.href;t='<?php echo new_addslashes($title);?>';c = %22%22 + (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);var url=%22http://cang.baidu.com/do/add?it=%22+encodeURIComponent(t)+%22&iu=%22+encodeURIComponent(u)+%22&dc=%22+encodeURIComponent('<?php echo new_addslashes($title);?> ')+%22&fr=ien#nw=1%22;window.open(url,%22_blank%22,%22scrollbars=no,width=600,height=450,left=75,top=20,status=no,resizable=yes%22); void 0"><img src="http://www.huoshow.com/img/templates/default/images/baidu.gif" title="百度搜藏"/></a> <a href="javascript:u='http://share.xiaonei.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('<?php echo new_addslashes($title);?>'.substring(0,76));window.open(u,'xiaonei','toolbar=0,resizable=1,scrollbars=yes,status=1,width=626,height=436');void(0)" title="人人网"/></a> <a href="javascript:window.open('http://shuqian.qq.com/post?from=3&title='+encodeURIComponent('<?php echo new_addslashes($title);?>'.substring(0,76))+'&uri='+encodeURIComponent(location.href)+'&jumpback=2&noui=1','favit','width=930,height=470,left=50,top=50,toolbar=no,menubar=no,location=no,scrollbars=yes,status=yes,resizable=yes');void(0)"><img src="http://www.huoshow.com/img/templates/default/images/qzone.gif" title="Qzone" /></a> <a href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(kaixin=window.open('http://www.kaixin001.com/~repaste/repaste.php?&rurl='+escape(d.location.href)+'&rtitle='+escape('<?php echo new_addslashes($title);?>'),'kaixin'));kaixin.focus();"><img src="http://www.huoshow.com/img/templates/default/images/kaixin.gif" title="开心网"/></a> <a href="javascript:var%20u='http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('<?php echo new_addslashes($title);?>'.substring(0,76));window.open(u,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330');void(0)"><img src="http://www.huoshow.com/img/templates/default/images/douban.gif" title="豆瓣网"/></a> <a title="分享到搜狐微博" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var f='http://t.sohu.com/third/post.jsp?',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=660,height=470,left=',(s.width-660)/2,',top=',(s.height-470)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','','','utf-8'));" ><img src="http://www.huoshow.com/img/templates/default/images/sohu.png" title="搜狐微博"/></span></a> <a href="javascript:var u=location.href;var t=document.title;t=t.substr(0,80)+'by:Addthis.org.cn';var c=''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text);c=c.substr(0,280);var e=encodeURIComponent;var url='http://share.renren.com/share/buttonshare.do?link='+e(u)+'&title='+e(t)+'';window.open(url,'addthis.org.cn','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=450');void(0)"><img src="http://www.huoshow.com/img/templates/default/images/rr.gif" title="人人网"/></span></a> </span> </div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div class="hr-h10"></div>
+
+		<!--相关阅读-->
+		<div class="related_article">
+			<!-- 相关阅读 -->
+			<!--#include virtual="/api.php?op=movie&p=get_readings_article&relation=<?php echo $relation;?>&id=<?php echo $id;?>&catid=<?php echo $catid;?>&keywords=<?php echo $rs['keywords'];?>"-->
+			<!-- 相关阅读结束 -->
+			<!-- 热点推荐 -->
+			<!--#include virtual="/api.php?op=movie&p=get_hot_recommend_content&catid=9&posidimg=47&posid=48"-->
+			<!-- 热点推荐结束 -->
+		</div>
+		<!-- 评论 -->
+		<div id='to_comment' class="comment">
+			<?php if($allow_comment && module_exists('comment')) { ?>
+      		<iframe src="<?php echo APP_PATH;?>index.php?m=comment&c=index&a=init&commentid=<?php echo id_encode("content_$catid",$id,$siteid);?>&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no">
+      		</iframe>
+      		<?php } ?>
+		</div>
+		<!-- 评论结束语 -->
+	</div>
+	<div class="Subpage_right">
+		<!--Banner 300*250-->
+		<div class="banner_300_250">
+			<script type="text/javascript">
+				// <![CDATA[
+				OA_show(50);
+				// ]]>
+			</script>
+			<noscript>
+				<a target='_blank' href='http://misc.huoshow.com/www/delivery/ck.php?n=a6657f4d'><img border='0' alt='' src='http://misc.huoshow.com/www/delivery/avw.php?zoneid=50&n=a6657f4d' /></a>
+			</noscript>
+		</div>
+
+		<!--今日推荐-->
+		<!--#include virtual="/api.php?op=movie&p=get_recommend_day_news&siteid=<?php echo $siteid;?>&catid=9&other_catids=12|电影,14|游戏,109|超模"-->
+		<!--今日推荐结束-->
+		<!--热点视频-->
+		<!--//#include virtual="/api.php?op=movie&p=get_site_hot_vedio&siteid=<?php echo $siteid;?>"-->
+		<!--热点结束-->
+		<!--热点排行-->
+		<!--#include virtual="/api.php?op=movie&p=get_all_hot_news_rand&siteid=<?php echo $siteid;?>"-->
+		<!--热点排行结束-->
+		<!--网友热议-->
+		<!--#include virtual="/api.php?op=movie&p=get_muchweibo_dynamic"-->
+		<!--网友热议结束-->
+		<!--热门图片 -->
+		<!--#include virtual="/api.php?op=movie&p=get_channel_hot_img&catids=139&num=6"-->
+		<!--热门图片结束 -->
+	</div>
+	<div class="clear"></div>
+</div>
+<?php } else { ?>
+<?php include template("content","common_pic"); ?>
+<?php } ?>
+<script language="JavaScript" src="<?php echo APP_PATH;?>api.php?op=count&id=<?php echo $id;?>&modelid=<?php echo $modelid;?>"></script>
+<?php include template("content","footer"); ?>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if} 火秀网</title>
+	<meta name="keywords" content="{$SEO['keyword']}">
+	<meta name="description" content="{$SEO['description']}">
+	<meta name='author' content='火秀网' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<link href='{CSS_PATH}hs-game-android.css' rel='stylesheet' />
+	<!-- <script src='{JS_PATH}cssrefresh.js'></script> -->
+	<link href='/favicon.ico' rel='icon' />
+</head>
+
+<body class='game-android game-android-news'>
+	{template 'content', 'hs_topbar'}
+	{template 'content', 'game_header_android'}
+
+	<div id='content'>
+		<!-- 主内容 -->
+		<div id='main'>
+			<div class='ui-header ui-header-content'>
+				<h2 class='title'>{$CATEGORYS[$catid][catname]}</h2>
+			</div>
+			<div class='ui-content'>
+			<ul class='ui-list ui-list-content'>
+			{pc:content action="lists" catid="$catid" num="50" order="id DESC" page="$page"}
+					{loop $data $r}
+					<li class='ui-list-item'><a target="_blank" class='cnt' href='{$r[url]}'>{$r[title]}</a> <span class='date'>{date('Y-m-d',time($r[inputtime]))}</span></li>
+					{if $n%5==0}</ul><ul class='ui-list ui-list-content'>{/if}
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div id='pager' class="pager ui-pager">{$pages}</div>
+		</div>
+
+		<div id='side'>
+			<div class='ui-box-side ui-box-side-top'>
+				<h2 class='ui-box-side-title'>一周热门文章</h2>
+				{pc:content action="hits" catid="288" num="1" order="weekviews DESC" cache="3600"}
+				{loop $data $r}
+				<div class='ui-img'>
+					<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],256,98)}' alt='' width='256' height='98' /></a>
+					<h4 class='title'><a target="_blank" href='{$r[url]}'>{str_cut($r[title], 30,'')}</a></h4>
+				</div>
+				{/loop}
+				{/pc}
+				{pc:content action="hits" catid="288" num="11" order="weekviews DESC" cache="3600"}
+				<ul class='ui-list fn-clear'>
+					{loop $data $r}
+					{if $n>1}
+					<li class='ui-list-item'><a target="_blank" href='{$r[url]}'>{$r[title]}</a></li>
+					{/if}
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+
+			<div class='ui-tab ui-tab-sd'>
+				<ul class='ui-tab-nav fn-clear'>
+					<li class='ui-tab-nav-item ui-tab-nav-item-cur'>IPhone壁纸下载</li>
+					<li class='ui-tab-nav-item'>安卓壁纸下载</li>
+				</ul>
+				<div class='ui-tab-cnt'>
+					{pc:content action="hits" catid="306" num="4" order="weekviews DESC" cache="3600"}
+					<ul class='ui-tab-cnt-item ui-tab-cnt-item-cur ui-img-list ui-img-list-plus'>
+						{loop $data $r}
+						<li class='ui-img-list-item'>
+							<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],108,162)}' width='108' height='162' /></a>
+							<a target="_blank" class='title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+						</li>
+						{/loop}
+					</ul>
+					{/pc}
+					{pc:content action="hits" catid="309" num="4" order="weekviews DESC" cache="3600"}
+					<ul class='ui-tab-cnt-item ui-img-list ui-img-list-plus'>
+						<li class='ui-img-list-item'>
+							<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],108,162)}' width='108' height='162' /></a>
+							<a target="_blank" class='title' href='{$r[url]}'>{str_cut($r['title'],30,'')}</a>
+						</li>
+					</ul>
+					{/pc}
+				</div>
+			</div>
+
+			<div class='ui-box-side'>
+				<h2 class='ui-box-side-title'>新手入门</h2>
+				<dl class='ui-step'>
+					<dt>第一步：了解Android</dt>
+					{pc:content action="position" posid="552" catid="$catid" order="listorder DESC" num="4"}
+					<dd>
+					{loop $data $r}
+					<a target="_blank" href='{$r[url]}'>{str_cut($r[title], 20,'')}</a> 
+					{/loop}
+					</dd>
+					{/pc}
+					<dt>第二步：使用Android</dt>
+					{pc:content action="position" posid="553" catid="$catid" order="listorder DESC" num="10"}
+					<dd>
+					{loop $data $r}
+					<a target="_blank" href='{$r[url]}'>{str_cut($r[title], 20,'')}</a> 
+					{/loop}
+					</dd>
+					{/pc}
+
+					<dt>第三步：玩转Android</dt>
+					{pc:content action="position" posid="554" catid="$catid" order="listorder DESC" num="6"}
+					<dd>
+					{loop $data $r}
+					<a target="_blank" href='{$r[url]}'>{str_cut($r[title], 20,'')}</a> 
+					{/loop}
+					</dd>
+					{/pc}
+				</dl>
+			</div>
+
+			<div class='ui-box-side ui-box-gallery'>
+				<h2 class='ui-box-side-title'>装机必备</h2>
+				{pc:content  action="position" posid="559" thumb="1" order="listorder DESC" num="8"}
+				<ul class='ui-img-list ui-img-list-plus'>
+					{loop $data $r}
+					<li class='ui-img-list-item'>
+						<a target="_blank" class='img' href='{$r[url]}'><img src='{thumb($r[thumb],50,50)}' width='50' height='50' /></a>
+						<a target="_blank" class='title' href='{$r[url]}'>{str_cut($r[title], 20,'')}</a>
+					</li>
+					{/loop}
+				</ul>
+				{/pc}
+			</div>
+		</div>
+
+		<div id='aside'>
+			<h2><a>分类检索</a></h2>
+			<dl>
+				<dt><a target="_blank" href='{$CATEGORYS[346][url]}'>安卓游戏</a></dt>
+				{loop subcat(346,0,0,$siteid) $r}
+				<dd {if $catid==$r[catid]}class='cur'{/if}><a target="_blank" href='{$r[url]}'>{$r[catname]}</a></dd>
+				{/loop}
+
+				<dt><a target="_blank" href='{$CATEGORYS[347][url]}'>安卓软件</a></dt>
+				{loop subcat(347,0,0,$siteid) $r}
+				<dd {if $catid==$r[catid]}class='cur'{/if}><a target="_blank" href='{$r[url]}'>{$r[catname]}</a></dd>
+				{/loop}
+
+				<dt><a target="_blank" href='{$CATEGORYS[309][url]}'>安卓壁纸</a></dt>
+				{loop subcat(309,0,0,$siteid) $r}
+				<dd {if $catid==$r[catid]}class='cur'{/if}><a target="_blank" href='{$r[url]}'>{$r[catname]}</a></dd>
+				{/loop}
+			</dl>
+		</div>
+	</div>
+
+	<script src='{JS_PATH}seajs/sea-debug.js' id='seajsnode' data-main='hs-game-main'></script>
+	{template 'content', 'hs_footer'}
+</body>
+</html>
